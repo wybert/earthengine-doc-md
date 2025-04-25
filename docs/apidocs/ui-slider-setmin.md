@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.slider`| ui.Slider| The ui.Slider instance.  
 `value`| Number| The slider's minimum value.  
+Was this helpful?

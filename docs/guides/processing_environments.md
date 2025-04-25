@@ -1,18 +1,6 @@
  
 #  Processing Environments 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Interactive environment](https://developers.google.com/earth-engine/guides/processing_environments#interactive_environment)
-    * [Endpoints](https://developers.google.com/earth-engine/guides/processing_environments#endpoints)
-  * [Batch environment](https://developers.google.com/earth-engine/guides/processing_environments#batch_environment)
-    * [Task lifecycle](https://developers.google.com/earth-engine/guides/processing_environments#task_lifecycle)
-    * [Task management](https://developers.google.com/earth-engine/guides/processing_environments#task_management)
-    * [Task failures](https://developers.google.com/earth-engine/guides/processing_environments#task_failures)
-    * [Task ID](https://developers.google.com/earth-engine/guides/processing_environments#task_id)
-    * [List of task states](https://developers.google.com/earth-engine/guides/processing_environments#list_of_task_states)
-    * [Task priority](https://developers.google.com/earth-engine/guides/processing_environments#task_priority)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine has different environments for processing data: _interactive_ and _batch_. These two environments (or "realms") handle different types of queries and have very different performance characteristics, so it's important to understand when and how to use each.
 **Note:** Project-level request limits apply to both interactive and batch processing requests. See the [Earth Engine quotas](https://developers.google.com/earth-engine/guides/usage) page.
 ## Interactive environment
@@ -31,7 +19,7 @@ The high-volume endpoint is designed to handle a higher volume of requests in pa
 
 For complex analyses that need efficient caching, the standard API endpoint may be preferable. The high-volume endpoint is optimized for high-throughput, low-computation tasks. Complex queries typically require more [EECU-time](https://developers.google.com/earth-engine/guides/computation_overview#eecus) when using the high-volume endpoint than they do in the regular online endpoint.
 ##### Use of the high-volume endpoint
-[Python client](https://developers.google.com/earth-engine/guides/processing_environments#python-client)[JavaScript client](https://developers.google.com/earth-engine/guides/processing_environments#javascript-client)[REST API](https://developers.google.com/earth-engine/guides/processing_environments#rest-api) More
+### Python client
 When initializing the `earthengine` library, pass in an `opt_url` parameter and set it to `https://earthengine-highvolume.googleapis.com`. As always, be sure to also pass in proper credentials and specify the Cloud project. For example:
 ```
 ee.Initialize(
@@ -42,7 +30,9 @@ ee.Initialize(
 
 ```
 
+### JavaScript client
 When initializing the `earthengine` library using [`ee.initialize()`](https://developers.google.com/earth-engine/apidocs/ee-initialize), pass `https://earthengine-highvolume.googleapis.com` for the first parameter.
+### REST API
 Direct your REST requests to `https://earthengine-highvolume.googleapis.com` (instead of `https://earthengine.googleapis.com`, as shown in the [REST API Quickstart](https://developers.google.com/earth-engine/reference/Quickstart#accessing-and-testing-your-credentials), for example).
 ## Batch environment
 **Key Term:** _Batch_ - run computations asynchronously and output results for later access (in Google Cloud Storage, the Earth Engine asset store, etc.).

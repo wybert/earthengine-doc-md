@@ -1,12 +1,7 @@
  
 #  ee.FeatureCollection.classify 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-classify#examples)
-
-
-Classifies each feature in a collection. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Classifies each feature in a collection. Usage| Returns  
 ---|---  
 `FeatureCollection.classify(classifier,  _outputName_)`| FeatureCollection  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `features`| FeatureCollection| The collection of features to classify. Eac
 `classifier`| Classifier| The classifier to use.  
 `outputName`| String, default: "classification"| The name of the output property to be added. This argument is ignored if the classifier has more than one output.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-classify#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-classify#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 /**
  * Classifies features in a FeatureCollection and computes an error matrix.
@@ -70,12 +65,15 @@ print("Consumer's accuracy",errorMatrix.consumersAccuracy());
 print("Producer's accuracy",errorMatrix.producersAccuracy());
 print("Kappa",errorMatrix.kappa());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # Classifies features in a FeatureCollection and computes an error matrix.
@@ -133,4 +131,3 @@ pprint(error_matrix.producersAccuracy().getInfo())
 print('Kappa:', error_matrix.kappa().getInfo())
 ```
 
-Was this helpful?

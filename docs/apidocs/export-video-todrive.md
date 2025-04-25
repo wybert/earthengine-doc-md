@@ -1,10 +1,10 @@
  
 #  Export.video.toDrive 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a batch task to export an ImageCollection as a video to Drive. The collection must only contain RGB images. Tasks can be started from the Tasks tab. "crsTransform", "scale", and "dimensions" are mutually exclusive. 
 Usage| Returns  
 ---|---  
-`Export.video.toDrive(collection,  _description_, _folder_, _fileNamePrefix_, _framesPerSecond_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _maxFrames_, _priority_)`  
+`Export.video.toDrive(collection,  _description_, _folder_, _fileNamePrefix_, _framesPerSecond_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _maxFrames_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `collection`| ImageCollection| The image collection to export.  
@@ -20,4 +20,3 @@ Argument|  Type| Details
 `maxPixels`| Number, optional| Restrict the number of pixels in the export. By default, you will see an error if the export exceeds 1e8 pixels. Setting this value explicitly allows one to raise or lower this limit.  
 `maxFrames`| Number, optional| Set the maximum number of frames to export. By default, a maximum of 1000 frames may be exported. By setting this explicitly, you may raise or lower this limit.  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
-Was this helpful?

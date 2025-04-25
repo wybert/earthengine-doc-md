@@ -33,4 +33,3 @@ print(ee.Number(10).log10().getInfo()) # 1
 print(ee.Number(100).log10().getInfo()) # 2
 ```
 
-Was this helpful?

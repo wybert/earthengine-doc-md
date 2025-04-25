@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Aggregates over a given property of the objects in a collection, calculating the maximum of the values of the selected property. 
 Usage| Returns  
 ---|---  
-`ImageCollection.aggregate_max(property)`  
+`ImageCollection.aggregate_max(property)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| FeatureCollection| The collection to aggregate over.  
@@ -101,4 +101,3 @@ print('Max of property values (string):',
    col.aggregate_max(prop_string).getInfo())
 ```
 
-Was this helpful?

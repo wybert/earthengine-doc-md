@@ -1,17 +1,12 @@
  
 #  Map.getCenter 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/map-getcenter#examples)
-
-
-Returns the coordinates at the center of the map. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the coordinates at the center of the map. Usage| Returns  
 ---|---  
 `Map.getCenter()`| Geometry.Point  
 **No arguments.**
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/map-getcenter#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.

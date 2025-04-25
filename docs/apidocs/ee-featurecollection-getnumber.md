@@ -35,3 +35,4 @@ print('Number property value as ee.Number:',
    fc.getNumber('number_property').getInfo())
 ```
 
+Was this helpful?

@@ -1,6 +1,10 @@
  
 #  ee.Classifier.amnhMaxent 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-amnhmaxent#examples)
+
+
 Creates a Maximum Entropy classifier. Maxent is used to model species distribution probabilities using environmental data for locations of known presence and for a large number of 'background' locations. For more information and to cite, see: https://biodiversityinformatics.amnh.org/open_source/maxent/ and the reference publication: Phillips, et. al., 2004 A maximum entropy approach to species distribution modeling, Proceedings of the Twenty-First International Conference on Machine Learning. The output is a single band named 'probability', containing the modeled probability, and an additional band named 'clamp' when the 'writeClampGrid' argument is true. 
 Usage| Returns  
 ---|---  
@@ -31,7 +35,7 @@ Argument| Type| Details
 `randomTestPoints`| Integer, default: 0| Random test percentage. The percentage of training points to hold aside as test points, used to compute AUX, omission, etc.  
 `seed`| Long, default: 0| A seed used when generating random numbers.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-classifier-amnhmaxent#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-classifier-amnhmaxent#colab-python-sample) More
 ```
 // Create some sample species presence/absence training data.
 vartrainingData=ee.FeatureCollection([
@@ -79,8 +83,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 """Demonstrates the ee.Classifier.amnhMaxent method."""
 importee
@@ -120,3 +122,4 @@ classifier = ee.Classifier.amnhMaxent().train(**{
 image_classified = image.classify(classifier)
 ```
 
+Was this helpful?

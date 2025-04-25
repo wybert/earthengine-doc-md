@@ -1,21 +1,16 @@
  
 #  ee.Image.changeProj 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-changeproj#examples)
-
-
-Tweaks the projection of the input image, moving each pixel from its location in srcProj to the same coordinates in dstProj. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Tweaks the projection of the input image, moving each pixel from its location in srcProj to the same coordinates in dstProj. Usage| Returns  
 ---|---  
 `Image.changeProj(srcProj, dstProj)`| Image  
 Argument| Type| Details  
 ---|---|---  
-this: `input`| Image  
+this: `input`| Image|   
 `srcProj`| Projection| The original projection.  
 `dstProj`| Projection| The new projection.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-changeproj#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-changeproj#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A DEM image object.
 varimg=ee.Image('MERIT/DEM/v1_0_3');
@@ -42,12 +37,15 @@ Map.addLayer(ee.Image(1),{palette:'grey'},'Grey background',false);
 // Add the projection-tweaked image to the map.
 Map.addLayer(imgProj,{min:0,max:3000},'DEM in Robinson projection');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A DEM image object.
 img = ee.Image('MERIT/DEM/v1_0_3')
@@ -83,4 +81,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

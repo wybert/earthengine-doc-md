@@ -12,3 +12,4 @@ this: `collection`| FeatureCollection| The input collection to which to add a ra
 `seed`| Long, default: 0| A seed used when generating the random numbers.  
 `distribution`| String, default: "uniform"| The distribution type of random numbers to produce; one of 'uniform' or 'normal'.  
 `rowKeys`| List, optional| A list of properties that should uniquely and repeatably identify an element of the collection, used to generate the random number. Defaults to [system:index].  
+Was this helpful?

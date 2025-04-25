@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `image`| Image| The image whose acquisition time to return.  
+Was this helpful?

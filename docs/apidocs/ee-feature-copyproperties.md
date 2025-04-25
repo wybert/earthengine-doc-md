@@ -11,3 +11,4 @@ this: `destination`| Element, default: null| The object whose properties to over
 `source`| Element, default: null| The object from which to copy the properties.  
 `properties`| List, default: null| The properties to copy. If omitted, all ordinary (i.e. non-system) properties are copied.  
 `exclude`| List, default: null| The list of properties to exclude when copying all properties. Must not be specified if properties is.  
+Was this helpful?

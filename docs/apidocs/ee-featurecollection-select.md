@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.select 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-select#examples)
 
@@ -77,4 +77,3 @@ print('Multiple properties selected, geometry removed:',
    multi_prop_no_geom.first().getInfo())
 ```
 
-Was this helpful?

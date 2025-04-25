@@ -48,4 +48,3 @@ m.add_layer(bbox, {'color': 'black'}, 'Geometry [black]: bbox')
 m
 ```
 
-Was this helpful?

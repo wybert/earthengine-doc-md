@@ -39,4 +39,3 @@ display(ee.Array([0.1]).ceil()) # [1]
 display(ee.Array([1.1]).ceil()) # [2]
 ```
 
-Was this helpful?

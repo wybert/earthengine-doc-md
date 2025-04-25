@@ -1,8 +1,8 @@
  
 #  Inverted Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Suppose that the purpose of the join is to retain all images in the `primary` collection that are not in the `secondary` collection. You can perform this type of inverted join using `ee.Join.inverted()`.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_inverted#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_inverted#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 image collection at a point of interest.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -28,12 +28,15 @@ varinvertedJoined=invertedJoin.apply(primary,secondary,filter);
 // Print the result.
 print('Inverted join:',invertedJoined);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 image collection at a point of interest.
 collection = ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA').filterBounds(

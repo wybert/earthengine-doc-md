@@ -1,19 +1,14 @@
  
 #  ee.ImageCollection.first 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-first#examples)
-
-
-Returns the first entry from a given collection. 
-Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the first entry from a given collection. Usage| Returns  
 ---|---  
 `ImageCollection.first()`| Image  
 Argument| Type| Details  
 ---|---|---  
 this: `imagecollection`| ImageCollection| The ImageCollection instance.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-first#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-first#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varimage=ee.ImageCollection('COPERNICUS/S2_SR').first();
 Map.centerObject(image,8);
@@ -22,12 +17,15 @@ Map.addLayer(image,vis,'first of S2_SR');
 // Display the image metadata.
 print(image);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 image = ee.ImageCollection('COPERNICUS/S2_SR').first()
 m = geemap.Map()

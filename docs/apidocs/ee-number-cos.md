@@ -43,4 +43,3 @@ radians = degrees * (math.pi/180)
 print('Cosine of 45 degrees:', ee.Number(radians).cos().getInfo())
 ```
 
-Was this helpful?

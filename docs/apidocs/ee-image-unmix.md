@@ -1,8 +1,7 @@
  
 #  ee.Image.unmix 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Unmix each pixel with the given endmembers, by computing the pseudo-inverse and multiplying it through each pixel. Returns an image of doubles with the same number of bands as endmembers. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Unmix each pixel with the given endmembers, by computing the pseudo-inverse and multiplying it through each pixel. Returns an image of doubles with the same number of bands as endmembers. Usage| Returns  
 ---|---  
 `Image.unmix(endmembers,  _sumToOne_, _nonNegative_)`| Image  
 Argument| Type| Details  

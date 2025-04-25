@@ -127,3 +127,4 @@ m.add_layer(mosaic, vis_refl, 'Mosaic (B11, B8, B3)')
 m
 ```
 
+Was this helpful?

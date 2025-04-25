@@ -7,5 +7,6 @@ Usage| Returns
 `Reducer.repeat(count)`| Reducer  
 Argument| Type| Details  
 ---|---|---  
-this: `reducer`| Reducer  
+this: `reducer`| Reducer|   
 `count`| Integer| The number of copies of the reducer to combine.  
+Was this helpful?

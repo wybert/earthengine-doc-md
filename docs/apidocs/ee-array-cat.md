@@ -1,6 +1,6 @@
  
 #  ee.Array.cat 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-cat#examples)
 
@@ -102,4 +102,3 @@ display(ee.Array.cat([e, f], 2))
 display(ee.Array.cat([e, f], 3))
 ```
 
-Was this helpful?

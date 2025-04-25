@@ -11,7 +11,7 @@ Usage| Returns
 `Date.get(unit,  _timeZone_)`| Long  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 `unit`| String| One of 'year', 'month' (returns 1-12), 'week' (1-53), 'day' (1-31), 'hour' (0-23), 'minute' (0-59), or 'second' (0-59).  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
@@ -43,3 +43,4 @@ display('Minute:', date.get('minute'))
 display('Second:', date.get('second'))
 ```
 
+Was this helpful?

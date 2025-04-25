@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.move 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Moves an asset.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{sourceName=projects/*/assets/**}:move`

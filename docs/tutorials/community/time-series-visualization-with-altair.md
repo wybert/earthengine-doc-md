@@ -40,7 +40,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Charts](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#charts)
 
 
-Author(s): [ jdbcode ](https://github.com/jdbcode)
+Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb)  
 ---|---  
@@ -929,4 +929,3 @@ band = alt.Chart(climate_df).mark_errorband(extent='iqr').encode(
 ```
 
 Future climate projections suggest that precipitation will decrease and temperature will increase for the selected point of interest. We can hypothesize, given the RCP 8.5 trajectory, that future conditions will more regularly resemble the 2012-2016 drought, which could lead to the same vegetation reduction response documented here and that more frequent drought events could lead to development of plant communities that are better adapted to low precipitation, high temperature conditions. 
-Was this helpful?

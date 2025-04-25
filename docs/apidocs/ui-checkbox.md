@@ -1,8 +1,7 @@
  
 #  ui.Checkbox 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-A checkbox with a label. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+A checkbox with a label. Usage| Returns  
 ---|---  
 `ui.Checkbox( _label_, _value_, _onChange_, _disabled_, _style_)`| ui.Checkbox  
 Argument| Type| Details  

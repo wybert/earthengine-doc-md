@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `ui.textbox`| ui.Textbox| The ui.Textbox instance.  
 `value`| String| The value of the textbox.  
 `trigger`| Boolean, optional| Whether to trigger onChange callbacks when the value property changes. Defaults to true.  
+Was this helpful?

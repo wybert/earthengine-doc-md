@@ -92,3 +92,4 @@ display('2D array image (pixel)', samp_arr_img(array_img_2_d))
 # [2]]
 ```
 
+Was this helpful?

@@ -13,3 +13,4 @@ this: `image`| Image| The input image.
 `reducer`| Reducer| The reducer to apply to be used for combining pixels.  
 `bestEffort`| Boolean, default: false| If using the input at its default resolution would require too many pixels, start with already-reduced input pixels from a pyramid level that allows the operation to succeed.  
 `maxPixels`| Integer, default: 64| The maximum number of input pixels to combine for each output pixel. Setting this too large will cause out-of-memory problems.  
+Was this helpful?

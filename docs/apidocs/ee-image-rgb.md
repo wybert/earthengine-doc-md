@@ -1,6 +1,6 @@
  
 #  ee.Image.rgb 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Create a 3-band image specifically for visualization. This uses the first band in each image. 
 Returns the combined image.
 Usage| Returns  

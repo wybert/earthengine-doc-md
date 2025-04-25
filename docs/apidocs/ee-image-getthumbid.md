@@ -1,6 +1,6 @@
  
 #  ee.Image.getThumbId 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Applies transformations and returns the thumbId. 
 Returns the thumb ID and optional token, or null if a callback is specified.
 Usage| Returns  

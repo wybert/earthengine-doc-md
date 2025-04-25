@@ -43,3 +43,4 @@ display(ee.Array([-0.1, 0.1, 0.5, 127.1, 255.1, 255.9]).byte())
 display(ee.Array([[], []], ee.PixelType.float()).byte()) # [[], []]
 ```
 
+Was this helpful?

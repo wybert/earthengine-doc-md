@@ -27,3 +27,4 @@ Enums
 `NOT_REGISTERED` | Project is not registered.  
 `REGISTERED_COMMERCIALLY` | Project is registered for commercial use.  
 `REGISTERED_NOT_COMMERCIALLY` | Project is registered for non-commercial use.  
+Was this helpful?

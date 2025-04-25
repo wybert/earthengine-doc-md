@@ -53,4 +53,3 @@ fc = fc.map(mw_to_gw)
 print('Note the new "capacitygw" property in each feature:', fc.getInfo())
 ```
 
-Was this helpful?

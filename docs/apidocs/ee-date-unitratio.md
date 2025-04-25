@@ -11,8 +11,8 @@ Usage| Returns
 `ee.Date.unitRatio(numerator, denominator)`| Float  
 Argument| Type| Details  
 ---|---|---  
-`numerator`| String  
-`denominator`| String  
+`numerator`| String|   
+`denominator`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-unitratio#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-unitratio#colab-python-sample) More
 ```
@@ -34,3 +34,4 @@ display('Years in a month:', ee.Date.unitRatio('month', 'year'))
 display('Hours in a week:', ee.Date.unitRatio('week', 'hour'))
 ```
 
+Was this helpful?

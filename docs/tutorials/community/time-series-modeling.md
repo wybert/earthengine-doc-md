@@ -1,18 +1,6 @@
  
 #  Time Series Modeling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#overview)
-  * [Background](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#background)
-    * [Limitations in remote sensing time series](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#limitations_in_remote_sensing_time_series)
-    * [Multi-temporal data in Earth Engine](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#multi-temporal_data_in_earth_engine)
-    * [Data preparation and preprocessing](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#data_preparation_and_preprocessing)
-    * [Linear modeling of time](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#linear_modeling_of_time)
-  * [Estimate seasonality with a harmonic model](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#estimate_seasonality_with_a_harmonic_model)
-    * [Complex time series modeling](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#complex_time_series_modeling)
-    * [Exporting data](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#exporting_data)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/time-series-modeling/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/time-series-modeling/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/time-series-modeling/index.md "View changes to this article over time.")

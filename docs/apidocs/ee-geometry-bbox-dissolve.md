@@ -53,3 +53,4 @@ m.add_layer(bbox_dissolve, {'color': 'red'}, 'Result [red]: bbox.dissolve')
 m
 ```
 
+Was this helpful?

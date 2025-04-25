@@ -11,7 +11,7 @@ Usage| Returns
 `Dictionary.size()`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
+this: `dictionary`| Dictionary|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-size#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-size#colab-python-sample) More
 ```

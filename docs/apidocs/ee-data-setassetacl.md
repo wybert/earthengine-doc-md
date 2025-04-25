@@ -6,10 +6,9 @@ The owner ACL cannot be changed, and the final ACL of the asset is constructed b
 The authenticated user must be a writer or owner of an asset to set its ACL.
 Usage| Returns  
 ---|---  
-`ee.data.setAssetAcl(assetId, aclUpdate,  _callback_)`  
+`ee.data.setAssetAcl(assetId, aclUpdate,  _callback_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `assetId`| String| The ID of the asset to set the ACL on.  
 `aclUpdate`| AssetAclUpdate| The updated ACL.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously. The callback is passed an empty object.  
-Was this helpful?

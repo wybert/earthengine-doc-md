@@ -42,3 +42,4 @@ print('0 / 10:', ee.Number(0).divide(ee.Number(10)).getInfo()) # 0
 print('10 / 0:', ee.Number(10).divide(ee.Number(0)).getInfo()) # 0
 ```
 
+Was this helpful?

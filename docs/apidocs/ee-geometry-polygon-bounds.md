@@ -62,3 +62,4 @@ m.add_layer(polygon_bounds, {'color': 'red'}, 'Result [red]: polygon.bounds')
 m
 ```
 
+Was this helpful?

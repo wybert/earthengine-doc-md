@@ -1,6 +1,6 @@
  
 #  ee.Image.arrayMask 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arraymask#examples)
 
@@ -119,4 +119,3 @@ print(
 # [[0, 1, 2]]
 ```
 
-Was this helpful?

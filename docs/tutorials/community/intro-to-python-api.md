@@ -17,7 +17,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#acknowledgements)
 
 
-Author(s): [ guiattard ](https://github.com/guiattard "View the profile for guiattard on GitHub")
+Author(s): [ guiattard ](https://github.com/guiattard)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb)  
 ---|---  
@@ -213,12 +213,12 @@ lst_df_urban.head()
 ```
 
 Now that we have our data in a good shape, we can easily make plots and compare the trends. As the area of Lyon, France experiences a semi-continental climate, we expect that LST has a seasonality influence and the sinusoidal trend described by [Stallman (1965)](https://doi.org/10.1029/JZ070i012p02821) reading as follow:
-$$ LST(t) = LST_{0} + \frac{\Delta _{LST}}{2}sin(\frac{2\pi t}{\tau} + \phi) $$
+LST(t)=LST0+ΔLST2sin(2πtτ+ϕ)
 where:
-  * \\(LST_{0}\\) represents the mean annual LST,
-  * \\(\Delta _{LST}\\) represents the amplitude between maximal and minimal LST,
-  * \\(\tau\\) represents the period of oscillation of LST, and
-  * \\(\phi\\) represents an offset needed to adjust the time when \\(LST(t) = LST_{0}\\)
+  * LST0 represents the mean annual LST,
+  * ΔLST represents the amplitude between maximal and minimal LST,
+  * τ represents the period of oscillation of LST, and
+  * ϕ represents an offset needed to adjust the time when LST(t)=LST0
 
 
 Consequently, on the top of the data scatter plot, we plot the fitting curve using the scipy library:

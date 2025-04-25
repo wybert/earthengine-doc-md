@@ -1,8 +1,7 @@
  
 #  ee.Reducer.toList 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Creates a reducer that collects its inputs into a list, optionally grouped into tuples. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a reducer that collects its inputs into a list, optionally grouped into tuples. Usage| Returns  
 ---|---  
 `ee.Reducer.toList( _tupleSize_, _numOptional_)`| Reducer  
 Argument| Type| Details  

@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Prints the arguments to the console. 
 Usage| Returns  
 ---|---  
-`print(var_args)`  
+`print(var_args)`|   
 Argument| Type| Details  
 ---|---|---  
 `var_args`| VarArgs| The objects to print.  
@@ -48,3 +48,4 @@ print(
 ) # 28547
 ```
 
+Was this helpful?

@@ -39,3 +39,4 @@ display(ee.Date.parse('MMM. dd, YYYY', 'Apr. 30, 2021'))
 display(ee.Date.parse('YYYY-MM-dd HH:mm:ss', '2021-4-30 00:00:00'))
 ```
 
+Was this helpful?

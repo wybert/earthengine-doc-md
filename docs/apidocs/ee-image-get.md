@@ -4,7 +4,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Extract a property from a feature. 
 Usage| Returns  
 ---|---  
-`Image.get(property)`  
+`Image.get(property)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `object`| Element| The feature to extract the property from.  

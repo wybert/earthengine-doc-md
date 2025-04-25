@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 `object`| Object, optional| A JavaScript object with properties and values to initialize this object with.  
 `allowedProperties`| List, optional| An array of allowed properties for this object. If undefined, then any property is allowed.  
-Was this helpful?

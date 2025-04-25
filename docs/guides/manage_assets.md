@@ -1,6 +1,21 @@
  
 #  Manage assets 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Asset types](https://developers.google.com/earth-engine/guides/manage_assets#asset_types)
+  * [Asset organization](https://developers.google.com/earth-engine/guides/manage_assets#asset_organization)
+  * [Create assets](https://developers.google.com/earth-engine/guides/manage_assets#create_assets)
+  * [List assets](https://developers.google.com/earth-engine/guides/manage_assets#list_assets)
+  * [Set asset permissions](https://developers.google.com/earth-engine/guides/manage_assets#set_asset_permissions)
+  * [Check asset permissions](https://developers.google.com/earth-engine/guides/manage_assets#check_asset_permissions)
+  * [Copy assets](https://developers.google.com/earth-engine/guides/manage_assets#copy_assets)
+  * [Move or rename assets](https://developers.google.com/earth-engine/guides/manage_assets#move_or_rename_assets)
+  * [Delete assets](https://developers.google.com/earth-engine/guides/manage_assets#delete_assets)
+  * [View asset metadata](https://developers.google.com/earth-engine/guides/manage_assets#view_asset_metadata)
+  * [Set asset metadata](https://developers.google.com/earth-engine/guides/manage_assets#set_asset_metadata)
+  * [Check asset quota](https://developers.google.com/earth-engine/guides/manage_assets#check_asset_quota)
+
+
 Earth Engine assets are project-owned geospatial data stored within the platform. You can upload your own data and store data produced from your Earth Engine analyses as assets.
 ## Asset types
 Earth Engine offers various asset formats for different data types, along with container elements for organization.
@@ -32,26 +47,22 @@ Earth Engine uses a tree-like directory structure for organizing assets. Each Cl
 
 ### Asset ID
 Earth Engine uses asset IDs to reference data in both scripts and command-line operations. They define asset locations using forward slashes (/) as separators between directories. For example, `projects/my-project/assets/my-asset` specifies an asset named "my-asset" located in the "my-project" root. Here's an example of using this ID to get information about the asset.
-### Python
+[Python](https://developers.google.com/earth-engine/guides/manage_assets#python)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 ```
 print(ee.data.getAsset('projects/my-project/assets/my-asset'))
 
 ```
-
-### Code Editor
 ```
 print(ee.Image('projects/my-project/assets/my-asset'))
 
 ```
-
-### Command line
 ```
 earthengineassetinfoprojects/my-project/assets/my-asset
 ```
 
 ## Create assets
 You can create folders and ImageCollections and ingest images and tables from local files or files in a Google Cloud Storage bucket. Supported image formats include GeoTIFF (standard and COG) and TFRecord. Supported table formats include Shapefile and CSV. (Assets can also be created by [exporting an Earth Engine analysis result](https://developers.google.com/earth-engine/guides/exporting) using batch functions `Export.*.toAsset`).
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 ### Image
 Use the [`ee.data.startIngestion`](https://developers.google.com/earth-engine/apidocs/ee-data-startingestion) function to ingest images from Cloud Storage. See the [image manifest](https://developers.google.com/earth-engine/guides/image_manifest#using-manifests) page for more information on configuring the upload.
 ```
@@ -100,9 +111,7 @@ ee.data.createAsset(
 
 ```
 
-### Code Editor
 Within the Asset Manager, click the NEW button and select the asset type you'd like to upload or create from the drop list. Configure the asset upload or creation in the dialog.
-### Command line
 ### Image or table
 ```
 earthengineuploadimage--asset_id=projects/my-project/assets/asset-namegs://my-bucket/filename.tif
@@ -123,7 +132,7 @@ earthenginealphauploadexternal_image--manifest/tmp/foo.json
 ```
 
 ## List assets
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.listAssets`](https://developers.google.com/earth-engine/apidocs/ee-data-listassets) function to list assets in a folder or collection (not recursive). See the reference docs for more information about filtering and pagination.
 ```
 ee.data.listAssets('projects/my-project/assets')
@@ -131,16 +140,14 @@ ee.data.listAssets('projects/my-project/assets')
 ```
 
 Also see [`ee.data.listImages`](https://developers.google.com/earth-engine/apidocs/ee-data-listimages) and [`ee.data.listFeatures`](https://developers.google.com/earth-engine/apidocs/ee-data-listfeatures).
-### Code Editor
 Expand folders in the Asset Manager to view assets.
-### Command line
 Use the [`earthengine ls`](https://developers.google.com/earth-engine/guides/command_line#ls) command to list assets in a folder or collection (not recursive). See the reference docs for more information about limiting the number of assets to list and the amount detail to return.
 ```
 earthenginelsprojects/my-project/assets
 ```
 
 ## Set asset permissions
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.setAssetAcl`](https://developers.google.com/earth-engine/apidocs/ee-data-setassetacl) function to set permissions on an asset.
 ```
 asset_id = 'projects/my-project/assets/asset-name'
@@ -164,9 +171,7 @@ ee.data.setAssetAcl(asset_id, acl_update)
 
 ```
 
-### Code Editor
 Within the Asset Manager, hold the pointer over an asset and click the share icon. In the dialog, enter an email address or domain to share the asset with, then select a permission level to grant from the drop list. Click the ADD ACCESS button to confirm the change. Check the "Anyone can read" box to grant any entity read permission. You can also provide access to Earth Engine apps from the dialog by selecting the app's name from the drop list (assets owned by the active Code Editor project).
-### Command line
 Use the `earthengine acl set` command to set an asset's read access to `public` or `private`.
 ```
 earthengineaclsetpublicprojects/my-project/assets/asset-name
@@ -179,83 +184,73 @@ earthengineaclch-uperson@gmail.com:Rprojects/my-project/assets/asset-name
 
 See the [command line reference](https://developers.google.com/earth-engine/guides/command_line#acl) page for more details.
 ## Check asset permissions
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.getAssetAcl`](https://developers.google.com/earth-engine/apidocs/ee-data-getassetacl) function to fetch the access control list for an asset.
 ```
 ee.data.getAssetAcl('projects/my-project/assets/asset-name')
 
 ```
 
-### Code Editor
 Within the Asset Manager, hold the pointer over an asset and click the share icon. The dialog displays a list of emails and domains along with their respective access levels.
-### Command line
 Use the [`earthengine acl get`](https://developers.google.com/earth-engine/guides/command_line#acl) command to fetch the access control list for an asset.
 ```
 earthengineaclgetprojects/my-project/assets/asset-name
 ```
 
 ## Copy assets
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.copyAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-copyasset) function to copy an asset.
 ```
 ee.data.copyAsset('projects/my-project/assets/asset-name', 'projects/my-project/assets/asset-copy-name')
 
 ```
 
-### Code Editor
 Use the Python client or the command line tool to copy assets.
-### Command line
 Use the [`earthengine cp`](https://developers.google.com/earth-engine/guides/command_line#cp) command to copy an asset.
 ```
 earthenginecpprojects/my-project/assets/asset-nameprojects/my-project/assets/asset-copy-name
 ```
 
 ## Move or rename assets
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.renameAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-renameasset) function to move or rename an asset.
 ```
 ee.data.renameAsset('projects/my-project/assets/asset-name', 'projects/my-project/assets/new-asset-name')
 
 ```
 
-### Code Editor
 #### Move
 Within the Asset Manager, drag an asset into a new folder.
 #### Rename
 Within the Asset Manager, hold the pointer over an asset and click the edit icon and type a new name in the editable input field.
-### Command line
 Use the [`earthengine mv`](https://developers.google.com/earth-engine/guides/command_line#mv) command to move or rename an asset.
 ```
 earthenginemvprojects/my-project/assets/asset-nameprojects/my-project/assets/new-asset-name
 ```
 
 ## Delete assets
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.deleteAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-deleteasset) function to delete an asset.
 ```
 ee.data.deleteAsset('projects/my-project/assets/asset-name')
 
 ```
 
-### Code Editor
 Click an asset to open the asset dialog page, then click the DELETE button.
-### Command line
 Use the [`earthengine rm`](https://developers.google.com/earth-engine/guides/command_line#rm) command to delete an asset. See the function reference for recursive and dry run options.
 ```
 earthenginermprojects/my-project/assets/asset-name
 ```
 
 ## View asset metadata
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.getAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-getasset) function to get asset metadata.
 ```
 ee.data.getAsset('projects/my-project/assets/asset-name')
 
 ```
 
-### Code Editor
 Click an asset to open the asset dialog page. View the asset information.
-### Command line
 Use the [`earthengine asset info`](https://developers.google.com/earth-engine/guides/command_line#asset) command to get asset metadata.
 ```
 earthengineassetinfoprojects/my-project/assets/asset-name
@@ -268,7 +263,7 @@ The following asset metadata can be set:
   * `properties`
 
 
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.updateAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-updateasset) function to update asset metadata.
 ```
 asset_id = 'projects/my-project/assets/asset-name'
@@ -284,9 +279,7 @@ ee.data.updateAsset(asset_id, new_metadata, update_these)
 
 ```
 
-### Code Editor
 Click an asset to open the asset dialog page, then activate the edit toggle in the upper right. You can edit the description, properties, and start and end date. Deactivate the edit toggle to save the changes.
-### Command line
 Use the [`earthengine asset set`](https://developers.google.com/earth-engine/guides/command_line#asset) command to update asset metadata. See the reference docs for more information.
 ```
 earthengine asset set \
@@ -299,14 +292,12 @@ earthengine asset set \
 
 ## Check asset quota
 Quota is applied at the project level. Learn more about asset quota in the [usage and quota limits](https://developers.google.com/earth-engine/guides/usage#adjustable_quota_limits) page.
-### Python client
+[Python client](https://developers.google.com/earth-engine/guides/manage_assets#python-client)[Code Editor](https://developers.google.com/earth-engine/guides/manage_assets#code-editor)[Command line](https://developers.google.com/earth-engine/guides/manage_assets#command-line) More
 Use the [`ee.data.getAssetRootQuota`](https://developers.google.com/earth-engine/apidocs/ee-data-getassetrootquota) function to get the storage quota usage for an asset root.
 ```
 ee.data.getAssetRootQuota('projects/my-project/assets')
 
 ```
 
-### Code Editor
 Within the Asset Manager, hold the pointer over a project root and click the data_usage icon. An information dialog will appear.
-### Command line
 Use the Python client or the Code Editor to check asset quota.

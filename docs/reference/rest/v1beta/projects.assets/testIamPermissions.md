@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.testIamPermissions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#path-parameters)

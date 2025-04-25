@@ -1,6 +1,6 @@
  
 #  Identifying Annual First Day of No Snow Cover 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#context)
   * [Identify first day of zero percent snow cover](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#identify_first_day_of_zero_percent_snow_cover)

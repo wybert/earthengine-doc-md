@@ -1,14 +1,8 @@
  
 #  Compositing, Masking, and Mosaicking 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Compositing with Reducers](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#compositing-with-reducers)
-  * [Masking](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#masking)
-  * [Mosaicking](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#mosaicking)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 With the [Landsat 8 TOA reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC8_L1T_TOA) loaded into a variable called `l8`, you saw that the following code results in a recent-value composite:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA');
 varlandsat2016=l8.filterDate('2016-01-01','2016-12-31');
@@ -19,7 +13,7 @@ One of the problems with this composite is that it's full of clouds. Instead of 
 ## Compositing with Reducers
 You were first introduced to reducers for [getting statistics in an image region](https://developers.google.com/earth-engine/tutorials/tutorial_api_03#image-statistics). That was a _spatial_ reduction. Reducing an image collection to an image is a _temporal_ reduction when the collection represents images over time. The type of `Reducer` you use defines how Earth Engine handles overlapping pixels. Landsat 8 visits the same spot on the Earth every 16 days. That means that over a 6 month period, there will be approximately 12 images (and more where the scenes overlap). Each pixel on the map is derived from a stack of pixels - one from each image in the collection being displayed.
 Merely adding the collection to the map results in selecting the most recent pixel - the one from the latest image in the stack. This behavior may be altered, using Earth Engine reducers. For example, rather than take the most recent pixel from the stack, Earth Engine can be instructed to pick the median value in the stack. This has the benefit of removing clouds (which have a high value) and shadows (which have a low value). When an image collection is reduced using the median reducer, the composite value is the median in each band, over time. For example, using Landsat scenes in 2016:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Get the median over time, in each band, in each pixel.
 varmedian=l8.filterDate('2016-01-01','2016-12-31').median();
@@ -36,7 +30,7 @@ Learn more about compositing and mosaicking [here](https://developers.google.com
 ## Masking
 Although the median composite is an improvement over the recent-value composite, you may want to mask parts of the image. Masking pixels in an image makes those pixels transparent and excludes them from analysis. Each pixel in each band of an image has a mask. Those with a mask value of 0 or below will be transparent. Those with a mask of any value above 0 will be rendered. The mask of an image is set using a call like `image1.mask(image2)`. This call takes the values of `image2` and makes them the mask of `image1`. Any pixels in `image2` that have the value 0 will be made transparent in `image1`.
 For example, suppose you would like to mask all the water pixels in the median composite. A water mask can be created using the dataset described by [Hansen et al. (2013)](http://www.sciencemag.org/content/342/6160/850) which is in the Earth Engine data catalog. (Learn more about the Hansen et al. dataset in [this tutorial](https://developers.google.com/earth-engine/tutorials/tutorial_forest_01).) In this dataset, water has a value of 2, land has the value 1, and 'no data' has the value 0. Use a bit of logic to create a mask image that has zeros where there's no land:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Load or import the Hansen et al. forest change dataset.
 varhansenImage=ee.Image('UMD/hansen/global_forest_change_2015');
@@ -53,7 +47,7 @@ There are a couple new things in this code that are worth mentioning in detail. 
 As a result of this masking, all the pixels in the median composite that are over land (according to the [Hansen et al. dataset](https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2015_v1_3)) are visible, but those over water (or nodata) are transparent and will be excluded from any analysis you do on the `maskedComposite` image.
 ## Mosaicking
 By combining the concepts of image collections, logical operators, masking and compositing, you can achieve interesting cartographic results. For example, suppose you want an image in which land pixels are displayed in true-color and all the other pixels are displayed in blue, you can do something like:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Make a water image out of the mask.
 varwater=mask.not();

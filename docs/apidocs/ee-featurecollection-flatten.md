@@ -1,19 +1,14 @@
  
 #  ee.FeatureCollection.flatten 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-flatten#examples)
-
-
-Flattens collections of collections. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Flattens collections of collections. Usage| Returns  
 ---|---  
 `FeatureCollection.flatten()`| FeatureCollection  
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| FeatureCollection| The input collection of collections.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-flatten#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-flatten#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Counties in New Mexico, USA.
 varcounties=ee.FeatureCollection('TIGER/2018/Counties')
@@ -39,12 +34,15 @@ print('FeatureCollection of FeatureCollections',countiesClimate);
 print('Flattened FeatureCollection of FeatureCollections',
 countiesClimate.flatten());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Counties in New Mexico, USA.
 counties = ee.FeatureCollection('TIGER/2018/Counties').filter('STATEFP == "35"')

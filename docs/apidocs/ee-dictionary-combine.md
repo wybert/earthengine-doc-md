@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.combine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#examples)
 
@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.combine(second,  _overwrite_)`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
-this: `first`| Dictionary  
-`second`| Dictionary  
-`overwrite`| Boolean, default: true  
+this: `first`| Dictionary|   
+`second`| Dictionary|   
+`overwrite`| Boolean, default: true|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#colab-python-sample) More
 ```

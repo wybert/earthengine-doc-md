@@ -37,3 +37,4 @@ Map.addLayer(geometry,{color:'FF0000'},'source geometry');
 
 The result should look something like Figure 1, in which each output pixel represents the accumulated cost to the nearest source. Note that discontinuities can appear in places where the least cost path to the nearest source exceeds _maxPixels_ in length.
 ![costMap](https://developers.google.com/static/earth-engine/images/CumulativeCost.png) Figure 1. The cumulative cost to the source pixels, where cost is determined by the land cover categories. Low costs are black, higher costs are white. 
+Was this helpful?

@@ -7,6 +7,6 @@ Usage| Returns
 `ee.Algorithms.IsEqual( _left_, _right_)`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-`left`| Object, default: null  
-`right`| Object, default: null  
+`left`| Object, default: null|   
+`right`| Object, default: null|   
 Was this helpful?

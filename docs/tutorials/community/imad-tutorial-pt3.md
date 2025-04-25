@@ -1,18 +1,7 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 3) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#preliminaries)
-    * [Routines from Parts 1 and 2](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#routines_from_parts_1_and_2)
-    * [Relative radiometric normalization](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#relative_radiometric_normalization)
-    * [A Slightly Artificial Example](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#a_slightly_artificial_example)
-    * [A More Realistic Example](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#a_more_realistic_example)
-    * [Harmonization](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#harmonization)
-    * [Conclusion](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#conclusion)
-    * [Exercises](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#exercises)
-
-
-Author(s): [ mortcanty ](https://github.com/mortcanty)
+Stay organized with collections  Save and categorize content based on your preferences. 
+Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt3/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt3/index.ipynb)  
 ---|---  
@@ -271,16 +260,16 @@ defrun_imad(aoi, image1, image2, assetId, scale=10, maxiter=100):
 
 ### Relative radiometric normalization
 We will illustrate the idea with the German administrative district scene used in the first two parts of this tutorial ([Part 1](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1), [Part 2](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2)), the Landkreis Olpe. Once we have isolated what we think to be the no-change pixels for two different Sentinel-2 acquisitions in the aoi, we can perform a regression analysis on them to determine how well their radiometric parameters compare _relative_ to the identified no-change pixels in the two scenes. Clearly, both variables involved have measurement uncertainty associated with them. In fact, which acquisition is termed reference and which is termed target data is arbitrary. Therefore it is preferable to use _orthogonal linear regression_ rather than ordinary linear regression. The former method treats the data symmetrically whereas the latter assumes uncertainty only in the dependent variable.
-Orthogonal linear regression on two variables is explained in detail in the Appendix of [Canty et al. (2004)](https://www.sciencedirect.com/science/article/abs/pii/S0034425704001208), but can be briefly summarized as follows: let the no-change observations in a given spectral band of the reference and target images be Xi and Yi,i=1…n, respectively. Then define the n×2 _data matrix_
-d=(X1Y1X2Y2⋮⋮XnYn),
-and calculate from it the mean values ˉX,ˉY and the covariance matrix
-Σ=(σ2XσXYσYXσ2Y).
-The best estimates for the slope b and intercept a of the orthogonal regression line
-Y=bX+a
+Orthogonal linear regression on two variables is explained in detail in the Appendix of [Canty et al. (2004)](https://www.sciencedirect.com/science/article/abs/pii/S0034425704001208), but can be briefly summarized as follows: let the no-change observations in a given spectral band of the reference and target images be \\(X_i\\) and \\(Y_i, \ i=1\dots n\\), respectively. Then define the \\(n\times 2\\) _data matrix_
+$$ d = \begin{pmatrix} X_1 & Y_1\cr X_2 & Y_2 \cr \vdots & \vdots \cr X_n & Y_n\end{pmatrix}, $$
+and calculate from it the mean values \\(\bar X,\ \bar Y\\) and the covariance matrix
+$$ \Sigma =\begin{pmatrix} \sigma^2_X & \sigma_{XY} \cr \sigma_{YX}\ & \sigma^2_Y\end{pmatrix}. $$
+The best estimates for the slope \\(b\\) and intercept \\(a\\) of the orthogonal regression line
+$$ Y = bX+a $$
 are then given by
-ˆb=σ2X−σ2Y+√(σ2X−σ2Y)2+4σ2XY2σXY,ˆa=ˉY−bˉX.
+$$ \hat b = {\sigma^2_X -\sigma^2_Y + \sqrt{(\sigma^2_X -\sigma^2_Y)^2+4\sigma^2_{XY}}\over 2\sigma_{XY}}, \quad \hat a = \bar Y - b\bar X. $$
 As a simple quality criterion we can use the correlation coefficient
-ρ=σXYσXσY
+$$ \rho = {\sigma_{XY}\over \sigma_X\sigma_Y} $$
 which has value one for a perfect fit.
 The following cell codes a function to iterate orthogonal regression over all of the spectral bands of an image pair.
 ```
@@ -448,7 +437,7 @@ array([[ 0.81309867, 691.93588492,  0.96608128],
 
 ```
 
-The ρ values are all >0.96 indicating well-defined regressions. Here we have a look at them:
+The \\(\rho\\) values are all \\(>0.96\\) indicating well-defined regressions. Here we have a look at them:
 ```
 defplot_orthoregress(coeffs, im_stack, bandNames=visirbands, aoi=None):
 '''Plot the regression fits for 6 spectral bands.'''
@@ -594,7 +583,7 @@ M3
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/imad-tutorial-pt3/index_files/output_R0ZM9GLALXYt_1.png)
 ### Harmonization
 The term _harmonization_ , with reference to Sentinel-2 data, has a special meaning, see [the note](https://developers.google.com/earth-engine/datasets/catalog/sentinel-2) in the GEE data catalogue. However, here we'll use it to characterize relative radiometric normalization across two different remote sensing satellite missions.
-Landsat-9 surface reflectance images are available from October, 2021, Landsat-8 SR from March, 2013. Paralleling our investigation of clear cutting in [Part 2](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2), we gather a cloud-free Landsat-8 image from March 30, 2021 and a Landsat-9 acquisition from March 9, 2022, likewise cloud-free. For convenience, the reflectances are rescaled to the same range [0,10000] as for Sentinel-2.
+Landsat-9 surface reflectance images are available from October, 2021, Landsat-8 SR from March, 2013. Paralleling our investigation of clear cutting in [Part 2](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2), we gather a cloud-free Landsat-8 image from March 30, 2021 and a Landsat-9 acquisition from March 9, 2022, likewise cloud-free. For convenience, the reflectances are rescaled to the same range \\([0,10000]\\) as for Sentinel-2.
 ```
 im_ls8, im_ls9 = collect(aoi, '2021-03-29', '2021-03-31', '2022-03-08', '2022-03-10', 'LANDSAT/LC08/C02/T1_L2', coll2='LANDSAT/LC09/C02/T1_L2')
 im_ls8 = rescale_ls(im_ls8)

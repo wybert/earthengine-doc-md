@@ -1,12 +1,7 @@
  
 #  ee.Image.arrayLength 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arraylength#examples)
-
-
-Returns the length of each pixel's array along the given axis. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the length of each pixel's array along the given axis. Usage| Returns  
 ---|---  
 `Image.arrayLength(axis)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `input`| Image| Input image.  
 `axis`| Integer| The axis along which to take the length.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arraylength#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arraylength#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -47,12 +42,15 @@ vararrayImg2Daxis1Len=arrayImg2D.arrayLength(1);
 print('Array length 1-axis (columns)',sampArrImg(arrayImg2Daxis1Len));
 // 1
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):

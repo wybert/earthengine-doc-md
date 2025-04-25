@@ -44,3 +44,4 @@ print('Largest 5 power plants by capacity in descending order:',
          'opt_ascending': False}).getInfo())
 ```
 
+Was this helpful?

@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `image`| Image| The image to cluster. Must contain all the bands in the clusterer's schema.  
 `clusterer`| Clusterer| The clusterer to use.  
 `outputName`| String, default: "cluster"| The name of the output band.  
+Was this helpful?

@@ -1,12 +1,7 @@
  
 #  ee.Geometry.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-bounds#examples)
-
-
-Returns the bounding rectangle of the geometry. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the bounding rectangle of the geometry. Usage| Returns  
 ---|---  
 `Geometry.bounds( _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `geometry`| Geometry| Return the bounding box of this geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in this projection. Otherwise it will be in EPSG:4326.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bounds#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bounds#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Geometry object.
 vargeometry=ee.Geometry({
@@ -39,12 +34,15 @@ Map.addLayer(geometryBounds,
 {'color':'red'},
 'Result [red]: geometry.bounds');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Geometry object.
 geometry = ee.Geometry({

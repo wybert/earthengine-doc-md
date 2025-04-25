@@ -17,3 +17,4 @@ this: `image`| Image| The image to visualize.
 `opacity`| Number, default: null| The opacity scaling factor to use.  
 `palette`| Object, default: null| The color palette to use. List of CSS color identifiers or hexadecimal color strings (e.g., ['red', '00FF00', 'blueviolet']).  
 `forceRgbOutput`| Boolean, default: false| Whether to produce RGB output even for single-band inputs.  
+Was this helpful?

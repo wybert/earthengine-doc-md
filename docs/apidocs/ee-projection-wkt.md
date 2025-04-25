@@ -7,4 +7,5 @@ Usage| Returns
 `Projection.wkt()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `projection`| Projection  
+this: `projection`| Projection|   
+Was this helpful?

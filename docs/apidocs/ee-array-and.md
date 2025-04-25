@@ -1,10 +1,6 @@
  
 #  ee.Array.and 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-and#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, returns 1 if and only if both values are non-zero. 
 Usage| Returns  
 ---|---  
@@ -14,7 +10,7 @@ Argument| Type| Details
 this: `left`| Array| The left-hand value.  
 `right`| Array| The right-hand value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-and#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-and#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Element-wise boolean "and" operator.
 // Both arrays must be the same dimensions.
@@ -42,6 +38,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Element-wise boolean "and" operator.
 # Both arrays must be the same dimensions.

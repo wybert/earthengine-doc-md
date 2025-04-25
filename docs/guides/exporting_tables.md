@@ -1,6 +1,6 @@
  
 #  Exporting Table and Vector Data 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 You can export a `FeatureCollection` as CSV, SHP (shapefile), GeoJSON, KML, KMZ or TFRecord using `Export.table`. The `FeatureCollection` may represent vectors or simply a table of data. In the latter case, the features in the collection will have null geometry.
 Note some additional constraints when working with some file formats, including:
   * **KML** : A `FeatureCollection` exported to a KML file will have all the geometries transformed to unprojected (WGS84) coordinates.
@@ -25,6 +25,7 @@ description:'vectorsToDriveExample',
 fileFormat:'KML'
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -73,6 +74,7 @@ description:'exportTableExample',
 fileFormat:'CSV'
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -122,6 +124,7 @@ fileNamePrefix:'exampleTableExport',
 fileFormat:'KML'
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -153,6 +156,7 @@ description:'exportToTableAssetExample',
 assetId:'exampleAssetId',
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

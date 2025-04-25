@@ -63,3 +63,4 @@ print('FeatureCollection property overwritten:')
 pprint(fc.getInfo())
 ```
 
+Was this helpful?

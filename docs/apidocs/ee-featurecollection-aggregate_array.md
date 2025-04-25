@@ -36,3 +36,4 @@ print('Power plant fuel sources:',
    fc.aggregate_array('fuel1').getInfo()) # ee.List
 ```
 
+Was this helpful?

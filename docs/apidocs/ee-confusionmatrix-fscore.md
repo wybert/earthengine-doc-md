@@ -7,6 +7,5 @@ Usage| Returns
 `ConfusionMatrix.fscore( _beta_)`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `confusionMatrix`| ConfusionMatrix  
+this: `confusionMatrix`| ConfusionMatrix|   
 `beta`| Float, default: 1| A factor indicating how much more important recall is than precision. The standard F-score is equivalent to setting β to one.  
-Was this helpful?

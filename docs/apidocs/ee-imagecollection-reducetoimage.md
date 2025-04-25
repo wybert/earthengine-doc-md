@@ -70,3 +70,4 @@ m.add_layer(mean_cloud_cover, {'min': 0, 'max': 50}, 'Cloud cover mean')
 m
 ```
 
+Was this helpful?

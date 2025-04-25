@@ -52,3 +52,4 @@ m.add_layer(linearring, {'color': 'black'}, 'Geometry [black]: linearring')
 m
 ```
 
+Was this helpful?

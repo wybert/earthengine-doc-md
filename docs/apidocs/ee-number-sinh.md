@@ -48,3 +48,4 @@ print('Hyperbolic sine of 45 degrees:',
    ee.Number(radians).sinh().getInfo()) # 0.868670961
 ```
 
+Was this helpful?

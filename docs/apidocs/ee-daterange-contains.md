@@ -11,8 +11,8 @@ Usage| Returns
 `DateRange.contains(other)`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `dateRange`| DateRange  
-`other`| Object  
+this: `dateRange`| DateRange|   
+`other`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-contains#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-contains#colab-python-sample) More
 ```

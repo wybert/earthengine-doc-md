@@ -51,3 +51,4 @@ random_sample_70 = fc.filter('random >= 0.3')
 print('N features in 70% sample:', random_sample_70.size().getInfo())
 ```
 
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Extracting Raster Values for Points 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#context)
   * [Functions](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#functions)

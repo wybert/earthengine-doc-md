@@ -116,3 +116,4 @@ varaString=ee.Algorithms.String(42);
 ```
 
 In the next section, learn more about [Earth Engine Objects and Methods](https://developers.google.com/earth-engine/tutorials/tutorial_js_02).
+Was this helpful?

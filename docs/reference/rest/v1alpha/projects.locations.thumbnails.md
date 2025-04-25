@@ -1,12 +1,6 @@
  
 #  REST Resource: projects.locations.thumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: Thumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.thumbnails#resource:-thumbnail)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.thumbnails#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.thumbnails#create)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: Thumbnail
 Information about a thumbnail.
 JSON representation  

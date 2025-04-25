@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `ui.data.activedictionary`| ui.data.ActiveDictionary| The ui.data.ActiveDictionary instance.  
 `keyOrDict`| Object|String| Either the key of the property to set or a dictionary of key/value pairs to set on the object.  
 `value`| Object, optional| The property's new value. This is required when the first argument is a key string.  
+Was this helpful?

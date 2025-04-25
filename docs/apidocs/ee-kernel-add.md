@@ -79,3 +79,4 @@ pprint(kernel_a.add(kernel_b).getInfo())
 # [3, 3,  3,  3,  3, 3, 3]
 ```
 
+Was this helpful?

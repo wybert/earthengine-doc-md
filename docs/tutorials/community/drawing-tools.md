@@ -1,6 +1,20 @@
  
 #  Getting Started with Drawing Tools 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Background](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#background)
+  * [Getting Started with Drawing Tools](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#getting_started_with_drawing_tools)
+  * [Configuring the Drawing Tools](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#configuring_the_drawing_tools)
+    * [Example: Linked Maps](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_linked_maps)
+  * [Client Side Geometries](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#client_side_geometries)
+    * [Example: Build a Client-Side Grid](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_build_a_client-side_grid)
+  * [Event handling](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#event_handling)
+    * [Drawing Tools Events:](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#drawing_tools_events)
+    * [Example: Classification With User-Drawn Geometries](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_classification_with_user-drawn_geometries)
+  * [Conclusion](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#conclusion)
+    * [Bonus](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#bonus)
+
+
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools/index.md "View changes to this article over time.")

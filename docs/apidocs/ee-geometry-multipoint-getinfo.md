@@ -1,10 +1,6 @@
  
 #  ee.Geometry.MultiPoint.getInfo 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-getinfo#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Retrieves the value of this object from the server. 
 If no callback function is provided, the request is made synchronously. If a callback is provided, the request is made asynchronously.
 The asynchronous mode is preferred because the synchronous mode stops all other code (for example, the EE Code Editor UI) while waiting for the server. To make an asynchronous request, evaluate() is preferred over getInfo().
@@ -17,7 +13,7 @@ Argument| Type| Details
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-getinfo#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-getinfo#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MultiPoint object.
 varmultiPoint=ee.Geometry.MultiPoint([[-122.082,37.420],[-122.081,37.426]]);
@@ -31,12 +27,15 @@ Map.addLayer(multiPoint,
 {'color':'black'},
 'Geometry [black]: multiPoint');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a MultiPoint object.
 multipoint = ee.Geometry.MultiPoint([[-122.082, 37.420], [-122.081, 37.426]])

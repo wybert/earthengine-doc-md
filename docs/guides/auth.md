@@ -1,6 +1,6 @@
  
 #  Authentication and Initialization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Earth Engine Code Editor and JavaScript](https://developers.google.com/earth-engine/guides/auth#earth_engine_code_editor_and_javascript)
   * [Python and Command Line](https://developers.google.com/earth-engine/guides/auth#python_and_command_line)
@@ -64,8 +64,8 @@ This decision guide outlines the possible options if the default mode selected b
 
 
 This table shows which combinations of features are supported by each mode.
-For Local or Remote? | Project Needed | Scopes Settable | Local CLI Needed | Project Owner  
----|---|---|---|---  
+| For Local or Remote? | Project Needed | Scopes Settable | Local CLI Needed | Project Owner  
+---|---|---|---|---|---  
 `localhost` | local | Y | Y | N | N  
 `colab` | remote | Y | N | N | N  
 `gcloud` | both | Y | Y | N | N  

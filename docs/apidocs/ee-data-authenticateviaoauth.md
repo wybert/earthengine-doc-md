@@ -7,7 +7,7 @@ Note that if the user has not previously granted access to the application ident
 The auth token will be refreshed automatically when possible. You can safely assume that all async calls will be sent with the appropriate credentials. For synchronous calls, however, you should check for an auth token with ee.data.getAuthToken() and call ee.data.refreshAuthToken() manually if there is none. The token refresh operation is asynchronous and cannot be performed behind-the-scenes on-demand prior to synchronous calls.
 Usage| Returns  
 ---|---  
-`ee.data.authenticateViaOauth(clientId, success,  _error_, _extraScopes_, _onImmediateFailed_, _suppressDefaultScopes_)`  
+`ee.data.authenticateViaOauth(clientId, success,  _error_, _extraScopes_, _onImmediateFailed_, _suppressDefaultScopes_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `clientId`| String| The application's OAuth client ID, or null to disable authenticated calls. This can be obtained through the Google Developers Console. The project must have a JavaScript origin that corresponds to the domain where the script is running.  
@@ -16,3 +16,4 @@ Argument|  Type| Details
 `extraScopes`| List, optional| Extra OAuth scopes to request.  
 `onImmediateFailed`| Function, optional| The function to call if automatic behind-the-scenes authentication fails. Defaults to ee.data.authenticateViaPopup(), bound to the passed callbacks.  
 `suppressDefaultScopes`| Boolean, optional| When true, only scopes specified in opt_extraScopes are requested; the default scopes are not requested unless explicitly specified in opt_extraScopes.  
+Was this helpful?

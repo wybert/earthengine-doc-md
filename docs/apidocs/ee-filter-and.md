@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `var_args`| VarArgs| The filters to combine.  
-Was this helpful?

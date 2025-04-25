@@ -1,6 +1,14 @@
  
 #  Method: projects.getConfig 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig#authorization-scopes)
+
+
 Gets the config state of a project.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/config}`

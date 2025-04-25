@@ -1,6 +1,6 @@
  
 #  Machine Learning in Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 **Note:** This overview assumes familiarity with basic Machine Learning (ML) concepts like training, prediction and models. The introduction to Machine Learning video on this page provides an introduction to these concepts. Alternatively, please take a look at Google's [ Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course). 
 ## Machine Learning APIs
 Machine Learning (ML) is a powerful technique for analyzing Earth Observation data. Earth Engine has built-in capabilities to allow users to build and use ML models for common scenarios with easy-to-use APIs. 

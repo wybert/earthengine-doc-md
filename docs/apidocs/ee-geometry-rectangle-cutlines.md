@@ -34,4 +34,3 @@ importgeemap.coreasgeemap
 # in an empty MultiLineString.
 ```
 
-Was this helpful?

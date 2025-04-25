@@ -12,4 +12,3 @@ this: `image`| Image| The input image.
 `radius`| Integer| The radius of the window.  
 `buckets`| Integer, default: 100| The number of HERS buckets.  
 `peakWidthScale`| Float, default: 1| The HERS peak width scale.  
-Was this helpful?

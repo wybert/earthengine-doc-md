@@ -7,5 +7,5 @@ Usage| Returns
 `PixelType.precision()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `pixelType`| PixelType  
+this: `pixelType`| PixelType|   
 Was this helpful?

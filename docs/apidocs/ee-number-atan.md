@@ -37,3 +37,4 @@ print('Arctangent of 1:', ee.Number(1).atan().getInfo()) # 0.785398163
 print('Arctangent of 1e13:', ee.Number(1e13).atan().getInfo())
 ```
 
+Was this helpful?

@@ -34,4 +34,3 @@ print('5 - 10.2:', ee.Number(5).subtract(10.2).getInfo()) # -5.199999999
 print('5 - -10.2:', ee.Number(5).subtract(-10.2).getInfo()) # 15.2
 ```
 
-Was this helpful?

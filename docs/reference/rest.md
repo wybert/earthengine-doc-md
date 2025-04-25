@@ -1,6 +1,6 @@
  
 #  Google Earth Engine API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Service: earthengine.googleapis.com](https://developers.google.com/earth-engine/reference/rest#service:-earthengine.googleapis.com)
     * [Discovery document](https://developers.google.com/earth-engine/reference/rest#discovery-document)
@@ -103,8 +103,8 @@ A [service endpoint](https://cloud.google.com/apis/design/glossary#api_service_e
 ## REST Resource: [v1beta.projects](https://developers.google.com/earth-engine/reference/rest/v1beta/projects)
 Methods  
 ---  
-`getConfig[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig)` |  `GET /v1beta/{name=projects/*/config}` Gets the config state of a project.  
-`listAssets[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/listAssets)` |  `GET /v1beta/{parent=projects/*}:listAssets` Lists any container asset, such as a folder or collection.  
+`get[Config](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/getConfig)` |  `GET /v1beta/{name=projects/*/config}` Gets the config state of a project.  
+`list[Assets](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/listAssets)` |  `GET /v1beta/{parent=projects/*}:listAssets` Lists any container asset, such as a folder or collection.  
 `updateConfig[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/updateConfig)` |  `PATCH /v1beta/{projectConfig.name=projects/*/config}` Updates the config state of a project.  
 ## REST Resource: [v1beta.projects.algorithms](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms)
 Methods  

@@ -18,4 +18,3 @@ Argument| Type| Details
 ` filter ` (string) An additional filter query to apply. Example query: `properties.my_property>=1 AND properties.my_property<2 AND startTime >= "2019-01-01T00:00:00.000Z" AND endTime < "2020-01-01T00:00:00.000Z" AND intersects("{'type':'Point','coordinates':[0,0]}")` See https://google.aip.dev/160 for how to construct a query.  
 ` view ` (string) Specifies how much detail is returned in the list. Either "FULL" (default) for all image properties or "BASIC".  
 `callback`| Function, optional| If not supplied, the call is made synchronously.  
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.distance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Produces a DOUBLE image where each pixel is the distance in meters from the pixel center to the nearest Point, LineString, or polygonal boundary in the collection. Note distance is also measured within interiors of polygons. Pixels that are not within 'searchRadius' meters of a geometry will be masked out. 
 Distances are computed on a sphere, so there is a small error proportional to the latitude difference between each pixel and the nearest geometry.
 Usage| Returns  

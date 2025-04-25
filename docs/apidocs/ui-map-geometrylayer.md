@@ -1,8 +1,7 @@
  
 #  ui.Map.GeometryLayer 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-A layer of ee.Geometries for display as shapes on a ui.Map. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+A layer of ee.Geometries for display as shapes on a ui.Map. Usage| Returns  
 ---|---  
 `ui.Map.GeometryLayer( _geometries_, _name_, _color_, _shown_, _locked_)`| ui.Map.GeometryLayer  
 Argument| Type| Details  

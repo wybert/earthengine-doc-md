@@ -1,8 +1,7 @@
  
 #  ee.Filter.contains 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Creates a unary or binary filter that passes if the left geometry contains the right geometry (empty geometries are not contained in anything). 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a unary or binary filter that passes if the left geometry contains the right geometry (empty geometries are not contained in anything). Usage| Returns  
 ---|---  
 `ee.Filter.contains( _leftField_, _rightValue_, _rightField_, _leftValue_, _maxError_)`| Filter  
 Argument| Type| Details  

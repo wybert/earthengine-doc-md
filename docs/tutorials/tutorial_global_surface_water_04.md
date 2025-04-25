@@ -1,14 +1,6 @@
  
 #  Water Class Transition 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Basic Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#basic-visualization)
-  * [Summarizing Area by Transition Class](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#summarizing-area-by-transition-class)
-  * [Creating a Summary Chart](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#creating-a-summary-chart)
-    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript_6)
-  * [Final Script](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#final-script)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The water transition layer captures changes between three classes of water occurrence (not water, seasonal water, and permanent water) along with two additional classes for ephemeral water (ephemeral permanent and ephemeral seasonal).
 This section of the tutorial will: 
   1. add a map layer for visualizing water transition, 
@@ -18,14 +10,14 @@ This section of the tutorial will:
 
 ## Basic Visualization
 In the Asset List section of the script, add the following statement which creates a single band image object called `transition`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 vartransition=gsw.select('transition');
 ```
 
 The GSW images contain metadata on the transition class numbers and names, and a default palette for styling the transition classes. When the transition layer is added to the map, these visualization parameters will be used automatically.
 At the bottom of the Map Layers section of your script, add the following statement which adds a new map layer that displays the transition classes:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.setCenter(105.26,11.2134,9);// Mekong River Basin, SouthEast Asia
 Map.addLayer({
@@ -39,30 +31,30 @@ When you run the script, the transition layer will be displayed.
 The map key for the transition classes is:
 Value | Symbol | Label  
 ---|---|---  
-0 | Not water  
-1 | Permanent  
-2 | New permanent  
-3 | Lost permanent  
-4 | Seasonal  
-5 | New seasonal  
-6 | Lost seasonal  
-7 | Seasonal to permanent  
-8 | Permanent to seasonal  
-9 | Ephemeral permanent  
-10 | Ephemeral seasonal  
+0 |  | Not water  
+1 |  | Permanent  
+2 |  | New permanent  
+3 |  | Lost permanent  
+4 |  | Seasonal  
+5 |  | New seasonal  
+6 |  | Lost seasonal  
+7 |  | Seasonal to permanent  
+8 |  | Permanent to seasonal  
+9 |  | Ephemeral permanent  
+10 |  | Ephemeral seasonal  
 ## Summarizing Area by Transition Class
 In this section we will once again use the geometry polygon tool to define a region-of-interest. If you want to analyze a new location, you will want to first select and delete the original polygon that you drew so that you don't get results from the combined areas. See the [ Geometry tools](https://developers.google.com/earth-engine/guides/playground#geometry-tools) section of the Code Editor docs from information on how to modify geometries.
 For this example we will draw a new polygon within the Mekong River delta.
 ![Transition Classes with ROI](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_04_roi.png) Figure 11. The Mekong River delta in Vietnam, with a region-of-interest created by using the Code Editor's polygon drawing tool. 
 In order to calculate the area covered by parts of an image, we will add an additional band to the transition image object that identifies the size of each pixel in square meters using the [ ee.Image.pixelArea](https://developers.google.com/earth-engine/apidocs/ee-image-pixelarea) method. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 vararea_image_with_transition_class=ee.Image.pixelArea().addBands(transition);
 ```
 
 The resulting image object (`area_image_with_transition_class`) is a two band image where the first band contains the area information in units of square meters (produced by the [ `ee.Image.pixelArea`code> ](https://developers.google.com/earth-engine/apidocs/ee-image-pixelarea) method), and the second band contains the transition class information.
 We then summarize the class transitions within a region of interest (`roi`) using the [ `ee.Image.reduceRegion` ](https://developers.google.com/earth-engine/apidocs/ee-image-reduceregion) method and a [ grouped reducer ](https://developers.google.com/earth-engine/guides/reducers_grouping) which acts to sum up the area within each transition class:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varreduction_results=area_image_with_transition_class.reduceRegion({
 reducer:ee.Reducer.sum().group({
@@ -81,14 +73,14 @@ The console tab output now displays the `reduction_results`. Note that you will 
 While the `reduction_results` object does contain information on the area covered by each transition class, it is not particularly easy to read. In the next section we will make it easier to view the results. 
 ## Creating a Summary Chart
 In this section we will make a chart to better summarize the results. To get started, we first extract out the list of transition classes with areas as follows: 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varroi_stats=ee.List(reduction_results.get('groups'));
 ```
 
 The result of the grouped reducer (`reduction_results`) is a dictionary containing a list of dictionaries. There is one dictionary in the list for each transition class. These statements use the [ ee.Dictionary.get ](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get) method to extract the grouped reducer results from that dictionary and casts the results to an [ee.List](https://developers.google.com/earth-engine/apidocs/ee-list) data type, so we can access the individual dictionaries.
 In order to make use of the [ charting functions of the Code Editor](https://developers.google.com/earth-engine/guides/charts), we will build a FeatureCollection that contains the necessary information. To do this we first create two lookup dictionaries and two helper functions. The code that creates the lookup dictionaries can be placed at the top of the "Calculations" section as follows: 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 //////////////////////////////////////////////////////////////
 // Calculations
@@ -107,7 +99,6 @@ gsw.get('transition_class_palette')
 
 The `lookup_names` dictionary associates transition class values with their names, while the `lookup_palette` dictionary associates the transition class values with color definitions.
 The two helper functions can be placed in a new code section called "Helper functions". 
-More
 ### Code Editor (JavaScript)
 ```
 //////////////////////////////////////////////////////////////
@@ -141,14 +132,14 @@ returnee.Number(num).format();
 
 The function `createFeature` takes a dictionary (containing the area and the water transition class) and returns a Feature suitable for charting. The function `createPieChartSliceDictionary` creates a list of colors that correspond to the transition classes, using the format expected by the pie chart. 
 Next, we will apply the `createFeature` function over each dictionary in the list (`roi_stats`), using [ee.List.map](https://developers.google.com/earth-engine/apidocs/ee-list-map) to apply the helper function to each element of the list.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 vartransition_fc=ee.FeatureCollection(roi_stats.map(createFeature));
 print('transition_fc',transition_fc);
 ```
 
 Now that we have a FeatureCollection containing the attributes we want to display on the chart, we can create a chart object and print it to the console.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Add a summary chart.
 vartransition_summary_chart=ui.Chart.feature.byFeature({
@@ -169,7 +160,7 @@ The `slices` option colors the pie chart slices so that they use the default pal
 ![Water transition class summary chart](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_04_summary_chart.png) Figure 13. Chart summarizing the relatives size of the water transition classes. 
 ## Final Script
 The entire script for this section is:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 //////////////////////////////////////////////////////////////
 // Asset List

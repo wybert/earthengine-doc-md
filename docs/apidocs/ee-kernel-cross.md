@@ -51,3 +51,4 @@ pprint(ee.Kernel.cross(**{'radius': 3}).getInfo())
 # [0.076, 0.000, 0.000, 0.000, 0.000, 0.000, 0.076]
 ```
 
+Was this helpful?

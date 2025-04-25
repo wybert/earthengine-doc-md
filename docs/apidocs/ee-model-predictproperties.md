@@ -7,5 +7,6 @@ Usage| Returns
 `Model.predictProperties(collection)`| FeatureCollection  
 Argument| Type| Details  
 ---|---|---  
-this: `model`| Model  
+this: `model`| Model|   
 `collection`| FeatureCollection| The input collection.  
+Was this helpful?

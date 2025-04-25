@@ -41,3 +41,4 @@ defprint_date(ee_date, message):
 ee_date = ee.Date(datetime.now()).aside(print_date, "Today's date (UTC):")
 ```
 
+Was this helpful?

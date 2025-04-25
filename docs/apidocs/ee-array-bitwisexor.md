@@ -43,3 +43,4 @@ display(ee.Array(0x00FF).bitwiseXor(ee.Array(0xFF00))) # 65535
 display(ee.Array([1, 2, 3]).bitwiseXor(ee.Array([5, 8, 16])))
 ```
 
+Was this helpful?

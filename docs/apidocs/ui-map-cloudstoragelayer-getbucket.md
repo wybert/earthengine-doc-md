@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map.cloudstoragelayer`| ui.Map.CloudStorageLayer| The ui.Map.CloudStorageLayer instance.  
-Was this helpful?

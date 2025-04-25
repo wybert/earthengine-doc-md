@@ -170,4 +170,3 @@ display_chart(pt_3, cumulative)
 
 Charting these sequences indicates whether NDVI is stabilizing relative to previous disturbances or whether NDVI is trending to a new state. Learn more about charts in Earth Engine from the [Charts section](https://developers.google.com/earth-engine/guides/charts).
 The iterated function is limited in the operations it can perform. Specifically, it can’t modify variables outside the function; it can’t print anything; it can’t use JavaScript ‘if’ or ‘for’ statements. Any results you wish to collect or intermediate information you wish to carry over to the next iteration must be in the function’s return value. You can use `ee.Algorithms.If()` to perform conditional operations. 
-Was this helpful?

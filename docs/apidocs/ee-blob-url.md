@@ -7,4 +7,5 @@ Usage| Returns
 `Blob.url()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `blob`| Blob  
+this: `blob`| Blob|   
+Was this helpful?

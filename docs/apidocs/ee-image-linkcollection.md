@@ -15,3 +15,4 @@ this: `input`| Image| The source image a matching image in the collection will b
 `linkedBands`| Object, default: null| A band name or list of band names to add or update from the matching image.  
 `linkedProperties`| Object, default: null| A metadata property or list of properties to add or update from the matching image.  
 `matchPropertyName`| String, default: "system:index"| The metadata property name to use as a match criteria.  
+Was this helpful?

@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `reducer`| Reducer| The reducer to apply to each group, without the group field.  
 `groupField`| Integer, default: 0| The field that contains record groups.  
 `groupName`| String, default: "group"| The dictionary key that contains the group. Defaults to 'group'.  
+Was this helpful?

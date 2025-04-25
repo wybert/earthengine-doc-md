@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.slider`| ui.Slider| The ui.Slider instance.  
+Was this helpful?

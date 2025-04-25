@@ -1,6 +1,27 @@
  
 #  Image Charts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Chart functions](https://developers.google.com/earth-engine/guides/charts_image#chart_functions)
+  * [Example data](https://developers.google.com/earth-engine/guides/charts_image#example_data)
+  * [ui.Chart.image.byRegion](https://developers.google.com/earth-engine/guides/charts_image#uichartimagebyregion)
+    * [Column chart](https://developers.google.com/earth-engine/guides/charts_image#column_chart)
+    * [Bar chart](https://developers.google.com/earth-engine/guides/charts_image#bar_chart)
+    * [Stacked column chart](https://developers.google.com/earth-engine/guides/charts_image#stacked_column_chart)
+    * [Scatter chart](https://developers.google.com/earth-engine/guides/charts_image#scatter_chart)
+    * [Combo chart](https://developers.google.com/earth-engine/guides/charts_image#combo_chart)
+  * [ui.Chart.image.regions](https://developers.google.com/earth-engine/guides/charts_image#uichartimageregions)
+    * [Example setup](https://developers.google.com/earth-engine/guides/charts_image#example_setup)
+    * [Column chart](https://developers.google.com/earth-engine/guides/charts_image#column_chart_2)
+    * [Line chart](https://developers.google.com/earth-engine/guides/charts_image#line_chart)
+    * [Area chart](https://developers.google.com/earth-engine/guides/charts_image#area_chart)
+    * [Pie chart](https://developers.google.com/earth-engine/guides/charts_image#pie_chart)
+    * [Donut chart](https://developers.google.com/earth-engine/guides/charts_image#donut_chart)
+  * [ui.Chart.image.byClass](https://developers.google.com/earth-engine/guides/charts_image#uichartimagebyclass)
+    * [Line chart](https://developers.google.com/earth-engine/guides/charts_image#line_chart_2)
+  * [ui.Chart.image.histogram](https://developers.google.com/earth-engine/guides/charts_image#uichartimagehistogram)
+
+
 The `ui.Chart.image` module contains a set of functions for reducing `Image` objects by region(s) and rendering charts from the results. The choice of function dictates the arrangement of data in the chart, i.e., what defines x- and y-axis values and what defines the series. Use the following function descriptions and examples to determine the best function and chart type for your purpose.
 ## Chart functions
 Use the following plot diagrams as a visual guide to understand how each function arranges image region reduction results in a chart; i.e., what elements define x values, y values, and series.

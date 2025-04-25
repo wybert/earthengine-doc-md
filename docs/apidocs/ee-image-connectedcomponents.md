@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `image`| Image| The image to label.  
 `connectedness`| Kernel| Connectedness kernel.  
 `maxSize`| Integer| Maximum size of objects to be labeled.  
+Was this helpful?

@@ -7,6 +7,6 @@ Usage| Returns
 `List.indexOfSublist(target)`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`target`| List  
+this: `list`| List|   
+`target`| List|   
 Was this helpful?

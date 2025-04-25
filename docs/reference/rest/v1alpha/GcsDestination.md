@@ -1,10 +1,6 @@
  
 #  GcsDestination 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [TilePermissions](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination#tilepermissions)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 This item is deprecated!
 Configuration for a destination in Google Cloud Storage.
 JSON representation  
@@ -33,4 +29,3 @@ Enums
 `TILE_PERMISSIONS_UNSPECIFIED` | Unspecified.  
 `PUBLIC` | Write public tiles. Requires the caller to be an OWNER of the bucket.  
 `DEFAULT_OBJECT_ACL` | Write tiles using the bucket's default object ACL.  
-Was this helpful?

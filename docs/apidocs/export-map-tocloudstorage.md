@@ -4,7 +4,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Creates a batch task to export an Image as a rectangular pyramid of map tiles for use with web map viewers. The map tiles will be accompanied by a reference index.html file that displays them using the Google Maps API, and an earth.html file for opening the map on Google Earth. 
 Usage| Returns  
 ---|---  
-`Export.map.toCloudStorage(image,  _description_, _bucket_, _fileFormat_, _path_, _writePublicTiles_, _maxZoom_, _scale_, _minZoom_, _region_, _skipEmptyTiles_, _mapsApiKey_, _bucketCorsUris_, _priority_)`  
+`Export.map.toCloudStorage(image,  _description_, _bucket_, _fileFormat_, _path_, _writePublicTiles_, _maxZoom_, _scale_, _minZoom_, _region_, _skipEmptyTiles_, _mapsApiKey_, _bucketCorsUris_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `image`| Image| The image to export as tiles.  

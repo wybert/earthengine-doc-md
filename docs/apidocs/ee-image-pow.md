@@ -76,4 +76,3 @@ m.add_layer(exponent, {'min': 0, 'max': 2e10}, 'exponent')
 m
 ```
 
-Was this helpful?

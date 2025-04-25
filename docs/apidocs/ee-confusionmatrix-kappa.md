@@ -11,7 +11,7 @@ Usage| Returns
 `ConfusionMatrix.kappa()`| Float  
 Argument| Type| Details  
 ---|---|---  
-this: `confusionMatrix`| ConfusionMatrix  
+this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-kappa#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-kappa#colab-python-sample) More
 ```
@@ -73,3 +73,4 @@ pprint(confusion_matrix.producersAccuracy().getInfo())
 print("Kappa statistic:", confusion_matrix.kappa().getInfo())
 ```
 
+Was this helpful?

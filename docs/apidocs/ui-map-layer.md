@@ -1,6 +1,6 @@
  
 #  ui.Map.Layer 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A layer generated from an Earth Engine object for display on a ui.Map. 
 Usage| Returns  
 ---|---  

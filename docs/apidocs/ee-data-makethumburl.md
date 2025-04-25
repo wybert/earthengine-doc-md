@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `id`| ThumbnailId| A thumbnail ID and token.  
-Was this helpful?

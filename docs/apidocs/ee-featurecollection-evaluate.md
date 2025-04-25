@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. 
 Usage| Returns  
 ---|---  
-`FeatureCollection.evaluate(callback)`  
+`FeatureCollection.evaluate(callback)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `computedobject`| ComputedObject| The ComputedObject instance.  

@@ -11,8 +11,8 @@ Usage| Returns
 `List.get(index)`| Object  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`index`| Integer  
+this: `list`| List|   
+`index`| Integer|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-get#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-get#colab-python-sample) More
 ```
@@ -55,3 +55,4 @@ print('Add fetched number to another number:',
    ee.Number(list.get(1)).add(2).getInfo())
 ```
 
+Was this helpful?

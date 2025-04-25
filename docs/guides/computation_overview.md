@@ -1,18 +1,6 @@
  
 #  Computation Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [EECUs](https://developers.google.com/earth-engine/guides/computation_overview#eecus)
-    * [Overview](https://developers.google.com/earth-engine/guides/computation_overview#overview)
-    * [Motivation](https://developers.google.com/earth-engine/guides/computation_overview#motivation)
-    * [Comparison with CPU metrics](https://developers.google.com/earth-engine/guides/computation_overview#comparison_with_cpu_metrics)
-    * [Stability and predictability](https://developers.google.com/earth-engine/guides/computation_overview#stability_and_predictability)
-    * [Benchmarks](https://developers.google.com/earth-engine/guides/computation_overview#benchmarks)
-    * [Metrics for failed requests](https://developers.google.com/earth-engine/guides/computation_overview#metrics_for_failed_requests)
-  * [Profiler](https://developers.google.com/earth-engine/guides/computation_overview#profiler)
-    * [Enabling the profiler](https://developers.google.com/earth-engine/guides/computation_overview#enabling_the_profiler)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine is built on top of Google's tools and services for performing computations at a massive scale. To make it easy to run large geospatial analyses, the Earth Engine platform and API hide much of the complexity of the underlying parallel-processing infrastructure.
 ## EECUs
 ### Overview
@@ -56,8 +44,9 @@ Peak Mem
     
 Maximum memory used on any single compute node for the operation.
 ### Enabling the profiler
-[Code Editor](https://developers.google.com/earth-engine/guides/computation_overview#code-editor)[Python](https://developers.google.com/earth-engine/guides/computation_overview#python) More
+### Code Editor
 Use the "Run with Profiler" button, as described in the [Code Editor guide](https://developers.google.com/earth-engine/guides/playground#profiler).
+### Python
 Include the following code in your Python script to enable the profiler:
 ```
 with ee.profilePrinting():

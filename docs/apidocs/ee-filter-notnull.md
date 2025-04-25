@@ -7,5 +7,5 @@ Usage| Returns
 `ee.Filter.notNull(properties)`| Filter  
 Argument| Type| Details  
 ---|---|---  
-`properties`| List  
+`properties`| List|   
 Was this helpful?

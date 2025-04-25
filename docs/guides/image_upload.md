@@ -53,3 +53,4 @@ There are a few constraints on the types of files that can be uploaded into an i
   3. Gaps between tiles will be filled with masked pixels in the final image, so the tiles should ideally be adjacent and not sparsely spread out. Images with gaps taking up >99% of the image area won't be ingested.
 
 
+Was this helpful?

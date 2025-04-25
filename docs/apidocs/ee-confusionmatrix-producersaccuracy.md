@@ -1,6 +1,6 @@
  
 #  ee.ConfusionMatrix.producersAccuracy 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-producersaccuracy#examples)
 
@@ -11,7 +11,7 @@ Usage| Returns
 `ConfusionMatrix.producersAccuracy()`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `confusionMatrix`| ConfusionMatrix  
+this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-producersaccuracy#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-producersaccuracy#colab-python-sample) More
 ```
@@ -73,4 +73,3 @@ pprint(confusion_matrix.producersAccuracy().getInfo())
 print("Kappa statistic:", confusion_matrix.kappa().getInfo())
 ```
 
-Was this helpful?

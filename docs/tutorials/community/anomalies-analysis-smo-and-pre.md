@@ -1,18 +1,6 @@
  
 #  Anomalies Analysis of Soil Moisture and Precipitation Over a River Basin 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [1. Importing Mosul river basin boundary](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#1_importing_mosul_river_basin_boundary)
-  * [2. Importing soil moisture and precipitation datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#2_importing_soil_moisture_and_precipitation_datasets)
-  * [3. Define study period and functions](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#3_define_study_period_and_functions)
-  * [4. Processing soil moisture datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#4_processing_soil_moisture_datasets)
-  * [5. Processing precipitation datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#5_processing_precipitation_datasets)
-  * [6. Plot anomalies time series for both soil moisture and precipitation](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#6_plot_anomalies_time_series_for_both_soil_moisture_and_precipitation)
-  * [7. Plot spatial distribution of soil moisture and precipitation anomalies](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#7_plot_spatial_distribution_of_soil_moisture_and_precipitation_anomalies)
-  * [8. Remarks](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#8_remarks)
-  * [9. References](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#9_references)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/anomalies-analysis-smo-and-pre/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/anomalies-analysis-smo-and-pre/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/anomalies-analysis-smo-and-pre/index.md "View changes to this article over time.")

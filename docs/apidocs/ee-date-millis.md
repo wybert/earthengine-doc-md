@@ -1,6 +1,6 @@
  
 #  ee.Date.millis 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-millis#examples)
 
@@ -11,7 +11,7 @@ Usage| Returns
 `Date.millis()`| Long  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-millis#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-millis#colab-python-sample) More
 ```
@@ -30,4 +30,3 @@ date = ee.Date(datetime.now())
 display('Milliseconds since Unix epoch:', date.millis())
 ```
 
-Was this helpful?

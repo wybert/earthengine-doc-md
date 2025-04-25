@@ -1,9 +1,9 @@
  
 #  Inner Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 To enumerate all matches between the elements of two collections, use an `ee.Join.inner()`. The output of an inner join is a `FeatureCollection` (even if joining one `ImageCollection` to another `ImageCollection`). Each feature in the output represents a match, where the matching elements are stored in two properties of the feature. For example, `feature.get('primary')` is the element in the primary collection that matches the element from the secondary collection stored in `feature.get('secondary')`. (Different names for these properties can be specified as arguments to `inner()`, but `‘primary’` and `‘secondary’` are the defaults). One-to-many relationships are represented by multiple features in the output. If an element in either collection doesn’t have a match, it is not present in the output.
 Join examples using `ImageCollection` inputs apply without modification to `FeatureCollection` inputs. It is also possible to join a `FeatureCollection` to an `ImageCollection` and vice versa. Consider the following toy example of inner join:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_inner#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_inner#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Create the primary collection.
 varprimaryFeatures=ee.FeatureCollection([
@@ -31,12 +31,15 @@ vartoyJoin=innerJoin.apply(primaryFeatures,secondaryFeatures,toyFilter);
 // Print the result.
 print('Inner join toy example:',toyJoin);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Create the primary collection.
 primary_features = ee.FeatureCollection([
@@ -64,7 +67,7 @@ display('Inner join toy example:', toy_join)
 
 In the previous example, notice that the relationship between the tables is defined in the filter, which indicates that fields `‘foo’` and `‘bar’` are the join fields. An inner join is then specified and applied to the collections. Inspect the output and observe that each possible match is represented as one `Feature`.
 For a motivated example, consider joining MODIS `ImageCollection` objects. MODIS quality data are sometimes stored in a separate collection from the image data, so an inner join is convenient for joining the two collections in order to apply the quality data. In this case, the image acquisition times are identical, so an equals filter handles the job of specifying this relationship between the two collections:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_inner#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_inner#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Make a date filter to get images in this date range.
 vardateFilter=ee.Filter.date('2014-01-01','2014-02-01');
@@ -86,12 +89,15 @@ varinnerJoinedMODIS=innerJoin.apply(mcd43a4,mcd43a2,filterTimeEq);
 // Display the join result: a FeatureCollection.
 print('Inner join output:',innerJoinedMODIS);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Make a date filter to get images in this date range.
 date_filter = ee.Filter.date('2014-01-01', '2014-02-01')
@@ -112,7 +118,7 @@ display('Inner join output:', inner_joined_modis)
 ```
 
 To make use of the joined images in the output `FeatureCollection`, `map()` a combining function over the output. For example, the matching images can be stacked together such that the quality bands are added to the image data:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_inner#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_inner#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Map a function to merge the results in the output FeatureCollection.
 varjoinedMODIS=innerJoinedMODIS.map(function(feature){
@@ -121,12 +127,15 @@ returnee.Image.cat(feature.get('primary'),feature.get('secondary'));
 // Print the result of merging.
 print('Inner join, merged bands:',joinedMODIS);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Map a function to merge the results in the output FeatureCollection.
 joined_modis = inner_joined_modis.map(

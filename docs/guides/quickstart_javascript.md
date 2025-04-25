@@ -1,16 +1,6 @@
  
 #  Get started with Earth Engine in the Code Editor 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_javascript#before_you_begin)
-  * [Welcome to the Code Editor](https://developers.google.com/earth-engine/guides/quickstart_javascript#welcome_to_the_code_editor)
-  * [Get started](https://developers.google.com/earth-engine/guides/quickstart_javascript#get_started)
-  * [Add raster data to a map](https://developers.google.com/earth-engine/guides/quickstart_javascript#add_raster_data_to_a_map)
-  * [Add vector data to a map](https://developers.google.com/earth-engine/guides/quickstart_javascript#add_vector_data_to_a_map)
-  * [Extract and chart data](https://developers.google.com/earth-engine/guides/quickstart_javascript#extract_and_chart_data)
-  * [What's next](https://developers.google.com/earth-engine/guides/quickstart_javascript#whats_next)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 This quickstart will give you an interactive introduction to visualizing and analyzing geospatial data with the Earth Engine Code Editor.
 ## Before you begin
 [Register or create](https://console.cloud.google.com/earth-engine) a Google Cloud Project; you'll be prompted to complete the following steps. If you already have a project registered for Earth Engine access, skip to the next section. 

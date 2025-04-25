@@ -94,3 +94,4 @@ img_from_2d_array = array_img_2d.arrayFlatten(band_names_2d)
 print('Image from 2D array:', img_from_2d_array.getInfo())
 ```
 
+Was this helpful?

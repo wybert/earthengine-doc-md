@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `input`| Image| An elevation image, in meters.  
+Was this helpful?

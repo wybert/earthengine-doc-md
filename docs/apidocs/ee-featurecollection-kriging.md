@@ -1,12 +1,7 @@
  
 #  ee.FeatureCollection.kriging 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-kriging#examples)
-
-
-Returns the results of sampling a Kriging estimator at each pixel. 
-Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the results of sampling a Kriging estimator at each pixel. Usage| Returns  
 ---|---  
 `FeatureCollection.kriging(propertyName, shape, range, sill, nugget,  _maxDistance_, _reducer_)`| Image  
 Argument| Type| Details  
@@ -20,7 +15,7 @@ this: `collection`| FeatureCollection| Feature collection to use as source data 
 `maxDistance`| Float, default: null| Radius which determines which features are included in each pixel's computation, in meters. Defaults to the semivariogram's range.  
 `reducer`| Reducer, default: null| Reducer used to collapse the 'propertyName' value of overlapping points into a single value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-kriging#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-kriging#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 /**
  * This example generates an interpolated surface using kriging from a
@@ -55,12 +50,15 @@ reducer:ee.Reducer.mean()
 Map.setCenter(-137.47,-30.47,3);
 Map.addLayer(tmeanImg,{min:279,max:300},'Temperature (K)');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # This example generates an interpolated surface using kriging from a
 # FeatureCollection of random points that simulates a table of air temperature

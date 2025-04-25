@@ -1,12 +1,7 @@
  
 #  ee.Image.arrayDotProduct 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arraydotproduct#examples)
-
-
-Computes the dot product of each pair of 1-D arrays in the bands of the input images. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the dot product of each pair of 1-D arrays in the bands of the input images. Usage| Returns  
 ---|---  
 `Image.arrayDotProduct(image2)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `image1`| Image| First array image of 1-D vectors.  
 `image2`| Image| Second array image of 1-D vectors.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arraydotproduct#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arraydotproduct#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -34,12 +29,15 @@ vartest=arrayImg1Da.arrayDotProduct(arrayImg1Db);
 print('A⋅B = 0(3) + 1(4) + 2(5) = ',sampArrImg(test));
 // 14
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):

@@ -7,6 +7,6 @@ Usage| Returns
 `Projection.translate(x, y)`| Projection  
 Argument| Type| Details  
 ---|---|---  
-this: `projection`| Projection  
+this: `projection`| Projection|   
 `x`| Float| The amount to translate by in the x axis.  
 `y`| Float| The amount to translate by in the y axis.  

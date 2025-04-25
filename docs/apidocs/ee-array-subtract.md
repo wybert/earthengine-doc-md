@@ -36,3 +36,4 @@ empty = ee.Array([], ee.PixelType.int8())
 display(empty.subtract(empty)) # []
 ```
 
+Was this helpful?

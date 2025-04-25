@@ -1,6 +1,6 @@
  
 #  ui.Map.DrawingTools.edit 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Starts editing the selected layer. 
 Returns this set of drawing tools.
 Usage| Returns  

@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.thumbnail`| ui.Thumbnail| The ui.Thumbnail instance.  
 `callback`| Function| The callback to fire when the thumbnail is clicked. The callback is passed the thumbnail widget.  
-Was this helpful?

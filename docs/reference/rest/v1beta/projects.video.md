@@ -13,3 +13,4 @@ There is no persistent data associated with this resource.
 ---  
 ### `export[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export)`
 |  Initiates a batch process that computes a video and writes the result to one of several destinations.  
+Was this helpful?

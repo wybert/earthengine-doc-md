@@ -1,6 +1,6 @@
  
 #  Earth Engine resources for higher education 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications](https://developers.google.com/earth-engine/tutorials/edu#cloud-based-remote-sensing-with-google-earth-engine:-fundamentals-and-applications)
   * [Introductory Remote Sensing Code Labs](https://developers.google.com/earth-engine/tutorials/edu#introductory-remote-sensing-code-labs)
@@ -73,4 +73,3 @@ A practice book and guidance manual are provided by the [Junior Academy of Scien
 Materials developed by James Coll, Xingong Li and Terry Slocum at the [University of Kansas](http://www.ku.edu/) for a workshop at the Association of American Geographers 2015 annual meeting are available from the [Global Snow Observatory website](https://sites.google.com/site/globalsnowobservatory/home/Presentations-and-Tutorials/aag-workshop).
 ## Where The City Meets The Sea
 For the [Where The City Meets The Sea](https://www.nyu.edu/faculty/teaching-and-learning-resources/instructional-technology/ways-to-engage/globally-linked-course-design/where-city-meets-sea.html) course at [NYU](https://www.nyu.edu/), Mary Killilea and Holly Orr developed [this introductory doc](https://docs.google.com/document/d/1xZjDrbWldodoKA1ddLWthNTQlFnA-dTVKLqx-ltag7k).
-Was this helpful?

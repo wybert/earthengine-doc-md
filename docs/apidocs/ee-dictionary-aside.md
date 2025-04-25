@@ -53,3 +53,4 @@ defprint_dic(dic):
 ee_dic = ee.Dictionary(dic).aside(print_dic)
 ```
 
+Was this helpful?

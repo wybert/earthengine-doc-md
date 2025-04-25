@@ -86,3 +86,4 @@ display('Timestamp:', ee_date) # ee.Date
 display('Datetime:', ee_date.format()) # ISO standard date string
 ```
 
+Was this helpful?

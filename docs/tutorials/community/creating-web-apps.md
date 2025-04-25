@@ -1,20 +1,6 @@
  
 #  Creating Web Apps 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Generating a new base map for your web app](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#generating_a_new_base_map_for_your_web_app)
-  * [Setting up a panel to hold your text, widgets, and charts](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#setting_up_a_panel_to_hold_your_text_widgets_and_charts)
-  * [Adding links and references to main panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#adding_links_and_references_to_main_panel)
-  * [Defining a panel to interact with the layers and update values on the main panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#defining_a_panel_to_interact_with_the_layers_and_update_values_on_the_main_panel)
-  * [Loading images to display and defining visualization options](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#loading_images_to_display_and_defining_visualization_options)
-  * [Function to interact with layers](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#function_to_interact_with_layers)
-  * [Creating the legend panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#creating_the_legend_panel)
-  * [Function to update visualization based on selected layer](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#function_to_update_visualization_based_on_selected_layer)
-  * [Initializing the script](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#initializing_the_script)
-  * [Publishing your web app](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#publishing_your_web_app)
-  * [Additional resources](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#additional_resources)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/creating-web-apps/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/creating-web-apps/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md "View changes to this article over time.")
@@ -790,4 +776,3 @@ To publish the web app, we just need to go to the manage app option on the Javas
   * [Curated Earth Engine apps](https://www.earthengine.app/).
 
 
-Was this helpful?

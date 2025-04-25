@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `array`| Array| Array to convert.  
+Was this helpful?

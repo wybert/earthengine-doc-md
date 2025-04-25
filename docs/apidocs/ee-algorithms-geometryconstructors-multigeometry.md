@@ -1,6 +1,6 @@
  
 #  ee.Algorithms.GeometryConstructors.MultiGeometry 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs a MultiGeometry from the given list of geometry elements. 
 Usage| Returns  
 ---|---  

@@ -1,6 +1,6 @@
  
 #  ee.Geometry.MultiLineString 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs an ee.Geometry describing a MultiLineString. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating geodesic EPSG:4326 MultiLineStrings with a single LineString, given an even number of arguments, e.g. ee.Geometry.MultiLineString(aLng, aLat, bLng, bLat, ...).
 Usage| Returns  

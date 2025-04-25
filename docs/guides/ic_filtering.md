@@ -1,6 +1,6 @@
  
 #  Filtering an ImageCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 As illustrated in the [Get Started section](https://developers.google.com/earth-engine/guides/getstarted) and the [ImageCollection Information section](https://developers.google.com/earth-engine/guides/ic_info), Earth Engine provides a variety of convenience methods for filtering image collections. Specifically, many common use cases are handled by `imageCollection.filterDate()`, and `imageCollection.filterBounds()`. For general purpose filtering, use `imageCollection.filter()` with an `ee.Filter` as an argument. The following example demonstrates both convenience methods and `filter()` to identify and remove images with high cloud cover from an `ImageCollection`.
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_filtering#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_filtering#colab-python-sample) More
 ```

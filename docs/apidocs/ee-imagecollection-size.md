@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.size 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-size#examples)
 
@@ -45,4 +45,3 @@ col = ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA').filterBounds(
 print('Number of images', col.size().getInfo())
 ```
 
-Was this helpful?

@@ -1,27 +1,6 @@
  
 #  Feature and FeatureCollection Charts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Chart functions](https://developers.google.com/earth-engine/guides/charts_feature#chart_functions)
-  * [Example data](https://developers.google.com/earth-engine/guides/charts_feature#example_data)
-  * [ui.Chart.feature.byFeature](https://developers.google.com/earth-engine/guides/charts_feature#uichartfeaturebyfeature)
-    * [Column chart](https://developers.google.com/earth-engine/guides/charts_feature#column_chart)
-    * [Bar chart](https://developers.google.com/earth-engine/guides/charts_feature#bar_chart)
-    * [Stacked column chart](https://developers.google.com/earth-engine/guides/charts_feature#stacked_column_chart)
-    * [Scatter chart](https://developers.google.com/earth-engine/guides/charts_feature#scatter_chart)
-    * [Combo chart](https://developers.google.com/earth-engine/guides/charts_feature#combo_chart)
-  * [ui.Chart.feature.byProperty](https://developers.google.com/earth-engine/guides/charts_feature#uichartfeaturebyproperty)
-    * [Example setup](https://developers.google.com/earth-engine/guides/charts_feature#example_setup)
-    * [Column chart](https://developers.google.com/earth-engine/guides/charts_feature#column_chart_2)
-    * [Line chart](https://developers.google.com/earth-engine/guides/charts_feature#line_chart)
-    * [Area chart](https://developers.google.com/earth-engine/guides/charts_feature#area_chart)
-    * [Pie chart](https://developers.google.com/earth-engine/guides/charts_feature#pie_chart)
-    * [Donut chart](https://developers.google.com/earth-engine/guides/charts_feature#donut_chart)
-  * [ui.Chart.feature.groups](https://developers.google.com/earth-engine/guides/charts_feature#uichartfeaturegroups)
-    * [Column chart](https://developers.google.com/earth-engine/guides/charts_feature#column_chart_3)
-  * [ui.Chart.feature.histogram](https://developers.google.com/earth-engine/guides/charts_feature#uichartfeaturehistogram)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The `ui.Chart.feature` module contains a set of functions for rendering charts from `Feature` and `FeatureCollection` objects. The choice of function determines the arrangement of data in the chart, i.e., what defines x- and y-axis values and what defines the series. Use the following function descriptions and examples to determine the best function and chart type for your purpose.
 ## Chart functions
 Use the following plot diagrams as a visual guide to understand how each function arranges features and their properties in a chart; i.e., what elements define x values, y values, and series.
@@ -42,8 +21,8 @@ Frequency histogram for values of a selected property.
 
 ## Example data
 The following examples rely on a `FeatureCollection` composed of three ecoregion features with properties that describe climate normals.
-See how the example data were created
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+##### See how the example data were created
+### Code Editor (JavaScript)
 ```
 // Define three representative ecoregions in the USA.
 vardesert=ee.Feature(
@@ -72,7 +51,7 @@ returnecoregion.set('warm',ee.Number(ecoregion.get('01_tmean')).gt(0));
 ### Column chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_01.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by adjacent columns defined by a list of property names whose values are plotted along the y-axis.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -107,7 +86,7 @@ print(chart);
 ### Bar chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_02.svg)
 Features are plotted along the y-axis, labeled by values of a selected property. Series are represented by adjacent bars defined by a list of property names whose values are plotted along the x-axis.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -143,7 +122,7 @@ print(chart);
 #### Absolute
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_03.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by stacked columns defined by a list of property names whose values are plotted along the y-axis as the cumulative series sum.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -179,7 +158,7 @@ print(chart);
 #### Relative
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_04.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by stacked columns defined by a list of property names whose values are plotted along the y-axis as percent of the summed series.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -215,7 +194,7 @@ print(chart);
 ### Scatter chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_05.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by points defined by a list of property names whose values are plotted along the y-axis.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -246,7 +225,7 @@ print(chart);
 ### Combo chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_06.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by points and columns defined by a list of property names whose values are plotted along the y-axis. This chart is achieved using [two axes](https://developers.google.com/chart/interactive/docs/gallery/columnchart#dual-y-charts) and series-specific styling.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -296,7 +275,7 @@ The `ui.Chart.feature.byProperty` function accepts a dictionary that allows you 
 ### Column chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_07.svg)
 Feature properties are plotted along the x-axis, labeled and sorted by a dictionary input; the values of the given properties are plotted along the y-axis. Series are features, represented by columns, labeled by values of a selected property. To convert to a bar chart, use `.setChartType('BarChart')`.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -350,7 +329,7 @@ print(chart);
 ### Line chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_08.svg)
 Feature properties are plotted along the x-axis, labeled and sorted by a dictionary input; the values of the given properties are plotted along the y-axis. Series are features, represented by lines, labeled by values of a selected property.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -406,7 +385,7 @@ print(chart);
 ### Area chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_09.svg)
 Feature properties are plotted along the x-axis, labeled and sorted by a dictionary input; the values of the given properties are plotted along the y-axis. Series are features, represented by lines and shaded areas, labeled by values of a selected property.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -463,7 +442,7 @@ print(chart);
 ### Pie chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_10.svg)
 The pie is a feature, each slice is a property label whose value is cast as a percentage of the sum of all values of properties composing the pie.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -497,7 +476,7 @@ print(chart);
 ### Donut chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_11.svg)
 Convert a pie chart to a donut chart by setting the [`pieHole`](https://developers.google.com/chart/interactive/docs/gallery/piechart#making-a-donut-chart) chart option; numbers between 0.4 and 0.6 will look best on most charts.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -533,7 +512,7 @@ print(chart);
 ### Column chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_12.svg)
 Features are plotted along the x-axis, labeled by values of a selected property. Series are represented by columns defined by the set of unique values of a given property. Y-axis position is defined by a given property’s value. This plot can be changed to a scatter plot by setting the chart type as `'ScatterChart'` (`.setChartType('ScatterChart')`). Alternatively, if time is the x-axis variable, you might prefer to use a line chart: `.setChartType('LineChart')`.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
@@ -566,7 +545,7 @@ print(chart);
 ## `ui.Chart.feature.histogram`
 ![](https://developers.google.com/static/earth-engine/images/Charts_feature_13.svg)
 The x-axis is defined by value bins for the range of values of a selected property; the y-axis is the number of elements in the given bin.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_feature#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Load PRISM climate normals image collection; convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();

@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.data.activelist`| ui.data.ActiveList| The ui.data.ActiveList instance.  
 `list`| List, optional| A list of elements.  
-Was this helpful?

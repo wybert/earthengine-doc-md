@@ -13,3 +13,4 @@ Argument| Type| Details
 `onChange`| Function, optional| The callback to fire when an item is selected. The callback is passed the currently selected value and the select widget.  
 `disabled`| Boolean, optional| Whether the select is disabled. Defaults to false.  
 `style`| Object, optional| An object of allowed CSS styles with their values to be set for this widget. See style() documentation.  
+Was this helpful?

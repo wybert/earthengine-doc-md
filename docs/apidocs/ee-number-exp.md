@@ -33,4 +33,3 @@ print('e^1:', ee.Number(1).exp().getInfo()) # 2.718281828
 print('e^2:', ee.Number(2).exp().getInfo()) # 7.389056098
 ```
 
-Was this helpful?

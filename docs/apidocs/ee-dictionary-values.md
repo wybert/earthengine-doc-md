@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.values( _keys_)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`keys`| List, default: null  
+this: `dictionary`| Dictionary|   
+`keys`| List, default: null|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#colab-python-sample) More
 ```

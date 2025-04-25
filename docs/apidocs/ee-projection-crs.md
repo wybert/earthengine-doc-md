@@ -7,4 +7,4 @@ Usage| Returns
 `Projection.crs()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `projection`| Projection  
+this: `projection`| Projection|   

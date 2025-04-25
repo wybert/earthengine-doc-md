@@ -1,6 +1,6 @@
  
 #  Water Occurrence (1984-2015) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Creating a Basic Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#creating-a-basic-visualization)
   * [Inspecting Values](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#inspecting-values)

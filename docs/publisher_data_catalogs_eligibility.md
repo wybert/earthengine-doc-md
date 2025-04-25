@@ -1,6 +1,6 @@
  
 #  Publisher Data Catalogs 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Eligibility](https://developers.google.com/earth-engine/publisher_data_catalogs_eligibility#eligibility)
 
@@ -21,4 +21,3 @@ Data publishers who meet the following requirements can request to publish a Pub
 
 
 If you meet these requirements, and want to become a Publisher Data Catalog, fill out this [form](http://forms.gle/V9UdR145L8hmbJoL6).
-Was this helpful?

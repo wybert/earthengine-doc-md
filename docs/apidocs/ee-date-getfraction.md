@@ -11,7 +11,7 @@ Usage| Returns
 `Date.getFraction(unit,  _timeZone_)`| Float  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 `unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples

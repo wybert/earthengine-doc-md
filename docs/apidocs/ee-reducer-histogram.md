@@ -1,6 +1,6 @@
  
 #  ee.Reducer.histogram 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Create a reducer that will compute a histogram of the inputs. 
 Usage| Returns  
 ---|---  
@@ -10,4 +10,3 @@ Argument| Type| Details
 `maxBuckets`| Integer, default: null| The maximum number of buckets to use when building a histogram; will be rounded up to a power of 2.  
 `minBucketWidth`| Float, default: null| The minimum histogram bucket width, or null to allow any power of 2.  
 `maxRaw`| Integer, default: null| The number of values to accumulate before building the initial histogram.  
-Was this helpful?

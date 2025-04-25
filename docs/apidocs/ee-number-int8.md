@@ -1,19 +1,14 @@
  
 #  ee.Number.int8 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-int8#examples)
-
-
-Casts the input value to a signed 8-bit integer. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Casts the input value to a signed 8-bit integer. Usage| Returns  
 ---|---  
 `Number.int8()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-int8#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-int8#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Cast a number to signed 8-bit integer: [-128, 127].
 varnumber=ee.Number(100);
@@ -43,12 +38,15 @@ print('Less than int8 min:',outOfRangeLo);
 varoutOfRangeLoToInt8=outOfRangeLo.int8();
 print('Less than int8 min cast to int8 becomes int8 min:',outOfRangeLoToInt8);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Cast a number to signed 8-bit integer: [-128, 127].
 number = ee.Number(100)

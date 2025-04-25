@@ -1,6 +1,6 @@
  
 #  Unsupervised Classification (clustering) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 The `ee.Clusterer` package handles unsupervised classification (or _clustering_) in Earth Engine. These algorithms are currently based on the algorithms with the same name in [Weka](http://www.cs.waikato.ac.nz/ml/weka/). More details about each `Clusterer` are available in the [reference docs](https://developers.google.com/earth-engine/apidocs).
 Clusterers are used in the same manner as classifiers in Earth Engine. The general workflow for clustering is:
   1. Assemble features with numeric properties in which to find clusters.

@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.reduceColumns 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Apply a reducer to each element of a collection, using the given selectors to determine the inputs. 
 Returns a dictionary of results, keyed with the output names.
 Usage| Returns  
@@ -51,6 +51,7 @@ weightSelectors:['weight']
 });
 print('Weighted mean of a single property',weightedMean);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

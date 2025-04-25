@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.chart`| ui.Chart| The ui.Chart instance.  
+Was this helpful?

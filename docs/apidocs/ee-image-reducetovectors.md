@@ -1,6 +1,6 @@
  
 #  ee.Image.reduceToVectors 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Convert an image to a feature collection by reducing homogeneous regions. Given an image containing a band of labeled segments and zero or more additional bands, runs a reducer over the pixels in each segment producing a feature per segment. 
 Either the reducer must have one fewer inputs than the image has bands, or it must have a single input and will be repeated for each band.
 Usage| Returns  

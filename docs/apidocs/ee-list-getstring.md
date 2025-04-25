@@ -7,6 +7,6 @@ Usage| Returns
 `List.getString(index)`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`index`| Integer  
+this: `list`| List|   
+`index`| Integer|   
 Was this helpful?

@@ -1,19 +1,14 @@
  
 #  ee.Geometry.MultiLineString.edgesAreGeodesics 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-edgesaregeodesics#examples)
-
-
-Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. Usage| Returns  
 ---|---  
 `MultiLineString.edgesAreGeodesics()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-edgesaregeodesics#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-edgesaregeodesics#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -29,12 +24,15 @@ Map.addLayer(multiLineString,
 {'color':'black'},
 'Geometry [black]: multiLineString');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -57,4 +55,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

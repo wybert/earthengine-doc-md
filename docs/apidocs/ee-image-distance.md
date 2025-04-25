@@ -1,10 +1,6 @@
  
 #  ee.Image.distance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-distance#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the distance to the nearest non-zero pixel in each band, using the specified distance kernel. 
 Usage| Returns  
 ---|---  
@@ -15,7 +11,7 @@ this: `image`| Image| The input image.
 `kernel`| Kernel, default: null| The distance kernel. One of chebyshev, euclidean, or manhattan.  
 `skipMasked`| Boolean, default: true| Mask output pixels if the corresponding input pixel is masked.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-distance#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-distance#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // The objective is to determine the per-pixel distance to a target
 // feature (pixel value). In this example, the target feature is water in a
@@ -57,6 +53,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # The objective is to determine the per-pixel distance to a target
 # feature (pixel value). In this example, the target feature is water in a

@@ -1,8 +1,7 @@
  
 #  ee.Feature.union 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns a feature containing the union of the geometries of two features. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a feature containing the union of the geometries of two features. Usage| Returns  
 ---|---  
 `Feature.union(right,  _maxError_, _proj_)`| Feature  
 Argument| Type| Details  

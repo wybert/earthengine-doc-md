@@ -42,3 +42,4 @@ radians = degrees * (math.pi/180)
 print('Sine of 45 degrees:', ee.Number(radians).sin().getInfo()) # 0.707106781
 ```
 
+Was this helpful?

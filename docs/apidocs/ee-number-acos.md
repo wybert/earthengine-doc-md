@@ -33,4 +33,3 @@ print('Arccosine of 0:', ee.Number(0).acos().getInfo()) # 1.570796326 (π/2)
 print('Arccosine of 1:', ee.Number(1).acos().getInfo()) # 0
 ```
 
-Was this helpful?

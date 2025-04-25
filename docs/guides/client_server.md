@@ -1,6 +1,6 @@
  
 #  Client vs. Server 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine client libraries for [Python](https://github.com/google/earthengine-api/tree/master/python) and [JavaScript](https://github.com/google/earthengine-api/tree/master/javascript) translate complex geospatial analyses to Earth Engine requests. Code that you write for a client library may contain a mixture of references to client-side objects and variables that represent server-side objects. 
 **Note:** Fetching values from server-side objects requires a call to `getInfo()`. In the JavaScript Code Editor, `getInfo()` is automatically called when printing a server-side object. In the Python client library, you must explicitly call `getInfo()` when printing server-side objects. Some libraries, like [geemap](https://developers.google.com/earth-engine/guides/python_install#interactive-exploration-with-geemap) or [eerepr](https://github.com/aazuspan/eerepr), may automatically call `getInfo()` for you when displaying an object in a Jupyter-like notebook. In the following Python code samples, `getInfo()` is called explicitly to make it more clear about when client and server objects are being printed. 
 It is important to distinguish Earth Engine objects from other Python or JavaScript objects or primitives that might be in your code. You can manipulate objects on the server by manipulating client-side "proxy" objects in your script. You can recognize a proxy object as anything starting with `ee`. These Earth Engine proxy objects don't contain any actual data and are just handles for objects on the server. To start, consider a client-side string object (which is NOT a proxy object):
@@ -9,6 +9,7 @@ It is important to distinguish Earth Engine objects from other Python or JavaScr
 varclientString='I am a String';
 print(typeofclientString);// string
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -30,6 +31,7 @@ print(typeofserverString);// object
 print('Is this an EE object?',
 serverStringinstanceofee.ComputedObject);// true
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -51,6 +53,7 @@ Observe from the output that the `ee.String` is an `object`, NOT a `string`. Mor
 ```
 print(serverString);// I am not a String
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -68,6 +71,7 @@ To see what the container itself looks like, print the string representation of 
 ```
 print(serverString.toString());// ee.String("I am not a String!")
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -87,6 +91,7 @@ varsomeString=serverString.getInfo();
 varstrings=someString+' Am I?';
 print(strings);// I am not a String! Am I?
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -112,6 +117,7 @@ clientList.push(i+1);
 }
 print(clientList);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -136,6 +142,7 @@ returnee.Number(n).add(1);
 });
 print(serverList);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -157,6 +164,7 @@ It's also worth noting that occasionally client-side functionality is convenient
 ```
 vartoServerList=ee.List(clientList);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -178,6 +186,7 @@ varmyList=ee.List([1,2,3]);
 varserverBoolean=myList.contains(5);
 print(serverBoolean);// false
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -204,6 +213,7 @@ clientConditional=false;
 }
 print('Should be false:',clientConditional);// True!
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -226,6 +236,7 @@ Recommended — server-side conditional
 varserverConditional=ee.Algorithms.If(serverBoolean,'True!','False!');
 print('Should be false:',serverConditional);// False!
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

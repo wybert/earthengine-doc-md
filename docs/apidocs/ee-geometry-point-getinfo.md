@@ -51,3 +51,4 @@ m.add_layer(point, {'color': 'black'}, 'Geometry [black]: point')
 m
 ```
 
+Was this helpful?

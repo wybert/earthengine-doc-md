@@ -32,12 +32,12 @@ Much of the material is based on Chapters 5 and 9 of my text [Image Analysis, Cl
 The [Sentinel-1 missions of the ESA](https://sentinel.esa.int/web/sentinel/missions/sentinel-1) provide a fantastic source of weather-independent, day-or-night Earth observation data with repeat times of the order of 6 days. The Google Earth Engine team monitor and ingest the imagery data almost as fast as they are produced, thus removing the burden from the user of searching, downloading, pre-processing and georeferencing. The JavaScript and Python API's to GEE can then be easily programmed to analyze time series of Sentinel-1 acquisitions virtually anywhere on the globe. Detected changes, both short- and long-term, can be related to landscape dynamics and human activity.
 ## Prerequisites
 A basic knowledge of the Sentinel-1 SAR platform is assumed on the part of the reader, at the level of the [ESA User Guides](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar). The reader should also be familiar with ordinary Python syntax and also with the GEE API (Python or JavaScript, it doesn't matter as they are almost identical). We will take a relaxed view of statistical formalism, without clearly distinguishing random variables from their realizations (measurements). We assume that the reader has, at least, an intuitive understanding of the mean and variance of independent measurements xi of a quantity x,
-mean(x)=1n∑i=1nxi
-var(x)=1n∑i=1n(xi−mean(x))2
+mean(x)=1nn∑i=1xi
+var(x)=1nn∑i=1(xi−mean(x))2
 and that the measurements can be described by a probability density function p(x) with
-mean(x)=∫−∞∞xp(x)dx,var(x)=∫−∞∞(x−mean(x))2p(x)dx
+mean(x)=∫∞−∞xp(x)dx,var(x)=∫∞−∞(x−mean(x))2p(x)dx
 and
-∫−∞∞p(x)dx=1.
+∫∞−∞p(x)dx=1.
 More statistics will be introduced as needed. A highly recommended reference is [Freund's Mathematical Statistics](https://www.amazon.de/John-Freunds-Mathematical-Statistics/dp/013123613X/ref=sr_1_8?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=freund+mathematical+statistics&qid=1597837319&sr=8-8).
 ## Part 1. Single and multi-look image statistics
 ### Run me first
@@ -164,7 +164,7 @@ ffa_db.bandNames().getInfo()
 
 ```
 
-and display the VV band of the decibel version using the _getThumbURL()_ method and IPython's _display_ module. The float intensities I are generally between 0 and 1, so we stretch the decibel image 10log10⁡(I) from −20 to 0:
+and display the VV band of the decibel version using the _getThumbURL()_ method and IPython's _display_ module. The float intensities I are generally between 0 and 1, so we stretch the decibel image 10log10(I) from −20 to 0:
 ```
 url = ffa_db.select('VV').getThumbURL({'min': -20, 'max': 0})
 disp.Image(url=url, width=800)
@@ -259,9 +259,9 @@ plt.show()
 
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1/index_files/output_pMgsrzHHUuSX_0.png)
 The above histogram is in fact a _gamma probability density distribution_
-(1.1)pγ;α,β(x)=1βαΓ(α)xα−1e−x/β,mean(x)=αβ,var(x)=αβ2
+pγ;α,β(x)=1βαΓ(α)xα−1e−x/β,mean(x)=αβ,var(x)=αβ2
 where
-Γ(α)=∫0∞zα−1e−zdz.
+Γ(α)=∫∞0zα−1e−zdz.
 The parameters are in this case α=5 and β=μ/α, where μ is the estimated mean value we just determined with _ee.Reducer.mean()_. This can easily be verified by plotting the gamma distribution _gamma.pdf()_ and overlaying it onto the histogram. Since the bucket widths are 0.001, we have to divide the plot by 1000.
 ```
 alpha = 5
@@ -278,26 +278,26 @@ plt.show()
 In order to understand just why this is the case, let's take a step back and consider how the pixels were generated.
 ### Single look complex (SLC) SAR measurements
 The Sentinel-1 platform is a dual polarimetric synthetic aperture radar system, emitting radar microwaves in the C-band with one polarization (vertical in most cases) and recording both vertical and horizontal reflected polarizations. This is represented mathematically as
-(1.2)(EvbEhb)=e−irkr(SvvSvhShvShh)(Evi0).
-The incident, vertically polarized radar signal (Evi0) is transformed by a complex _scattering matrix_ (SvvSvhShvShh) into the backscattered signal (EvbEhb) having both vertical and horizontal polarization components. The exponent term accounts for the phase shift due to the return distance r from target to sensor, where k is the wave number, k=2π/λ. From measurement of the backscattered radiation at the sensor, two of the four complex scattering matrix elements can be derived and processed into two-dimensional (slant range × azimuth) arrays, comprising the so-called _single look complex_ image. Written as a complex vector, the two derived elements are
-(1.3)S=(SvvSvh).
-We write the complex transpose of the vector S as S†=(Svv∗Svh∗), where the ∗ denotes complex conjugation. The inner product of S with itself is the total power (also referred to as the _span_ image)
-(1.4)P=S†S=(Svv∗Svh∗)(SvvSvh)=|Svv|2+|Svh|2
+(EbvEbh)=e−irkr(SvvSvhShvShh)(Eiv0).
+The incident, vertically polarized radar signal (Eiv0) is transformed by a complex _scattering matrix_ (SvvSvhShvShh) into the backscattered signal (EbvEbh) having both vertical and horizontal polarization components. The exponent term accounts for the phase shift due to the return distance r from target to sensor, where k is the wave number, k=2π/λ. From measurement of the backscattered radiation at the sensor, two of the four complex scattering matrix elements can be derived and processed into two-dimensional (slant range × azimuth) arrays, comprising the so-called _single look complex_ image. Written as a complex vector, the two derived elements are
+S=(SvvSvh).
+We write the complex transpose of the vector S as S†=(S∗vvS∗vh), where the ∗ denotes complex conjugation. The inner product of S with itself is the total power (also referred to as the _span_ image)
+P=S†S=(S∗vvS∗vh)(SvvSvh)=|Svv|2+|Svh|2
 and the outer product is the (dual pol) _covariance matrix image_
-(1.5)C2=SS†=(SvvSvh)(Svv∗Svh∗)=(|Svv|2Svv∗SvhSvh∗Svv|Svh|2).
+C2=SS†=(SvvSvh)(S∗vvS∗vh)=(|Svv|2S∗vvSvhS∗vhSvv|Svh|2).
 The diagonal elements are real numbers, the off-diagonal elements are complex conjugates of each other and contain the relative phases of the Svv and Svh components. The off-diagonal elements are not available for S1 archived imagery in GEE, so that if we nevertheless choose to represent the data in covariance matrix form, the matrix is diagonal:
-(1.6a)C2=(|Svv|200|Svh|2),
+C2=(|Svv|200|Svh|2),
 In terms of radar scattering cross sections (sigma nought),
-(1.6b)C2=14π(σvvo00σvho).
+C2=14π(σovv00σovh).
 ### Speckle
 The most striking characteristic of SAR images, when compared to their visual/infrared counterparts, is the disconcerting _speckle_ effect which makes visual interpretation very difficult. Speckle gives the appearance of random noise, but it is actually a deterministic consequence of the coherent nature of the radar signal.
 For single polarization transmission and reception, e.g., vertical-vertical (vv), the received SLC signal can be modelled in the form
-(1.7)Svv=|Svva|n∑k=1neiϕk,
-where |Svva| is the overall amplitude characterizing the signal scattered from the area covered by a single pixel, e.g., 10×10m2 for our S1 data, with the phase set equal to zero for convenience. The effects of randomly distributed scatterers within the irradiated area, with dimensions of the order of the incident wavelength 5.6 cm (for Sentinel-1), add coherently and introduce a change in phase of the received signal. This is indicated by the sum term in the above equation. The effect varies from pixel to pixel and gives rise to speckle. 
+Svv=|Savv|√nn∑k=1eiϕk,
+where |Savv| is the overall amplitude characterizing the signal scattered from the area covered by a single pixel, e.g., 10×10m2 for our S1 data, with the phase set equal to zero for convenience. The effects of randomly distributed scatterers within the irradiated area, with dimensions of the order of the incident wavelength 5.6 cm (for Sentinel-1), add coherently and introduce a change in phase of the received signal. This is indicated by the sum term in the above equation. The effect varies from pixel to pixel and gives rise to speckle. 
 If we expand Eq. (1.7) into its real and imaginary parts, we can understand it better:
-(1.8)Svv=|Svva|n∑k=1neiϕk=|Svva|n(∑kcos⁡ϕk+i∑ksin⁡ϕk)=|Svva|n(x+iy)
+Svv=|Savv|√nn∑k=1eiϕk=|Savv|√n(∑kcosϕk+i∑ksinϕk)=|Savv|√n(x+iy)
 where
-x=∑kcos⁡ϕk,y=∑ksin⁡ϕk.
+x=∑kcosϕk,y=∑ksinϕk.
 Because the phase shifts ϕk are randomly and uniformly distributed, the variables x and y are sums of identically distributed cosine and sine terms respectively. The **Central Limit Theorem** of statistics then says that x and y will have a normal distribution with zero mean and variance σ2=n/2 in the limit of large number n of scatterers. We can verify this with a simple piece of code in which we set n=10000:
 ```
 defX(n):
@@ -316,48 +316,48 @@ plt.show()
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1/index_files/output_jGx_jHFSanpR_0.png)
 Furthermore, x and y are uncorrelated since, in the expression for covariance of x and y, the sums of products of cosine and sine terms cancel to zero. This means that x+iy, and hence the observed single look complex signal Svv (see Eq. (1.8)), has a _complex normal distribution_ .
 Now what about the pixels values in the Sentinel-1 VV intensity images? They are given by the square of the amplitude of Svv,
-(1.9)|Svv|2=SvvSvv∗=|Svva|2n(x2+y2).
+|Svv|2=SvvS∗vv=|Savv|2n(x2+y2).
 (Actually averages of the above, as we'll see later.) We can write this in the form
-(1.10)|Svv|2=|Svva|2nn2(x2n/2+y2n/2)=|Svva|2u2,
+|Svv|2=|Savv|2nn2(x2n/2+y2n/2)=|Savv|2u2,
 where
-(1.11)u=(x2n/2+y2n/2)
+u=(x2n/2+y2n/2)
 is the sum of the squares of two variables with independent standard normal distributions. Applying the 
-  * **Theorem:** If the measurements xi,i=1…m, are independent and standard normally distributed (i.e., with mean 0 and variance 1), then the variable x=∑i=1mxi2 is chi-square distributed with m degrees of freedom, given by
+  * **Theorem:** If the measurements xi,i=1…m, are independent and standard normally distributed (i.e., with mean 0 and variance 1), then the variable x=∑mi=1x2i is chi-square distributed with m degrees of freedom, given by
 
 
-(1.12)pχ2;m(x)=12m/2Γ(m/2)z(m−2)/2e−x/2,mean(x)=m,var(x)=2m.
+pχ2;m(x)=12m/2Γ(m/2)z(m−2)/2e−x/2,mean(x)=m,var(x)=2m.
 we see that u is chi-square distributed with degrees of freedom m=2,
-(1.13)pu(u)=12e−u/2
+pu(u)=12e−u/2
 since Γ(1)=1.
-To simplify the notation, let s=|Svv|2 and a=|Svva|2. Then from (1.10)
-(1.14)s=au2
+To simplify the notation, let s=|Svv|2 and a=|Savv|2. Then from (1.10)
+s=au2
 To get the distribution ps(s) of the observed signal from the distribution of u, we apply the standard transformation formula
-(1.15)ps(s)=pu(u)|duds|=12e−u/22a=1ae−s/a.
+ps(s)=pu(u)|duds|=12e−u/22a=1ae−s/a.
 Compare this with the definition of the _exponential probability distribution_
-(1.16)pe;β(x)=1βe−x/β,mean(x)=β,var(x)=β.
-We conclude that the measured intensity signal s=|Svv|2 has an exponential distribution with mean and variance equal to the underlying signal strength a=|Svva|2.
+pe;β(x)=1βe−x/β,mean(x)=β,var(x)=β.
+We conclude that the measured intensity signal s=|Svv|2 has an exponential distribution with mean and variance equal to the underlying signal strength a=|Savv|2.
 So far so good, however we still haven't quite characterized the statistics of the pixels in the intensity bands of the Sentinel-1 images. 
 ### Multi-look SAR statistics
 Multi-look processing essentially corresponds to the averaging of neighborhood pixels with the objective of reducing speckle and compressing the data. In practice, the averaging is often not performed in the spatial domain, but rather in the frequency domain during range/azimuth compression of the received signal. 
 Look averaging takes place at the cost of spatial resolution. The spatial resolution attainable with SAR satellite platforms involves, among many other considerations, a compromise between azimuthal resolution and swath width, see [Moreira et al. (2013)](https://elib.dlr.de/82313/) for a good discussion. In the Sentinel-1 _Interferometric Wide Swath_ acquisition mode, the pixels are about 20m × 4m (azimuth × range) in extent and the swath widths are about 250km. For the multi-looking procedure, five cells are incoherently averaged in the range direction to achieve approx. 20m×20m resolution. The pixels are then resampled to 10×10m2. (Note that spatial resolution is a measure of the system's ability to distinguish between adjacent targets while pixel spacing is the distance between adjacent pixels in an image, measured in metres.) The look averaging process, which we can symbolize using angular brackets as ⟨|Svv|2⟩ or ⟨|Svh|2⟩, has the desirable effect of reducing speckle (at the cost of resolution) in the intensity images. We can see this as follows, first quoting another well-known Theorem in statistics:
-  * **Theorem:** If the quantities si,i=1…m, are independent and each have exponential distributions given by Eq. (1.16), then x=∑i=1msi has the gamma distribution Eq. (1.1) with α=m,β=a. Its mean is αβ=ma and its variance is αβ2=ma2.
+  * **Theorem:** If the quantities si,i=1…m, are independent and each have exponential distributions given by Eq. (1.16), then x=∑mi=1si has the gamma distribution Eq. (1.1) with α=m,β=a. Its mean is αβ=ma and its variance is αβ2=ma2.
 
 
-Again with the notation s=|Svv|2 and a=|Svva|2, if intensity measurements s are summed over m looks to give ∑i=1msi, then according to this Theorem the sum (not the average!) will be gamma distributed with α=m and β=a, provided the si are independent. The look-averaged image is
-(1.17)⟨s⟩=1m∑i=1msi
+Again with the notation s=|Svv|2 and a=|Savv|2, if intensity measurements s are summed over m looks to give ∑mi=1si, then according to this Theorem the sum (not the average!) will be gamma distributed with α=m and β=a, provided the si are independent. The look-averaged image is
+⟨s⟩=1mm∑i=1si
 and its mean value is
-(1.18)mean(⟨s⟩)=1m∑i=1mmean(si)=1m∑i=1ma=a.
+mean(⟨s⟩)=1mm∑i=1mean(si)=1mm∑i=1a=a.
 Now we see that the histogram of the Sentinel-1 multi-look image ⟨s⟩=⟨|Svv|2⟩ follows a gamma distribution with the parameters
-(1.19)α=m,β′=am=mean(⟨s⟩)m,
+α=m,β′=am=mean(⟨s⟩)m,
 as we demonstrated earlier with the measured histogram.
 The covariance representation of the dual pol multilook images is
-(1.20)C2=(⟨|Svv|2⟩00⟨|Svh|2⟩).
+C2=(⟨|Svv|2⟩00⟨|Svh|2⟩).
 ### Equivalent number of looks
 The variance of ⟨s⟩ is given by
-(1.21)var(⟨s⟩)=1m2var(∑i=1msi)=1m2ma2=a2m,
+var(⟨s⟩)=1m2var(m∑i=1si)=1m2ma2=a2m,
 where we have used the fact that the variance of the gamma distribution is αβ′2=ma2. Thus the variance of the look-averaged image, the speckle effect, decreases inversely with the number of looks.
 In practice, the neighborhood pixel intensities contributing to the look average will not be completely independent, but correlated to some extent. This is accounted for by defining an _equivalent number of looks_ (ENL) whose definition is motivated by Eq. (1.21), that is,
-(1.22)ENL=a2var(⟨s⟩)=mean(⟨s⟩)2var(⟨s⟩).
+ENL=a2var(⟨s⟩)=mean(⟨s⟩)2var(⟨s⟩).
 In general it will be smaller than m. Let's see what we get for our subset of the airport image:
 ```
 mean ** 2 / variance

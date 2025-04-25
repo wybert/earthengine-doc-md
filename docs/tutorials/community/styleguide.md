@@ -1,13 +1,6 @@
  
 #  Community Tutorial Style Guide 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/styleguide#overview)
-  * [General guidelines](https://developers.google.com/earth-engine/tutorials/community/styleguide#general_guidelines)
-  * [Tutorial file headers](https://developers.google.com/earth-engine/tutorials/community/styleguide#tutorial_file_headers)
-  * [Tutorial templates](https://developers.google.com/earth-engine/tutorials/community/styleguide#tutorial_templates)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Overview
 This guide provides general guidelines for writing your own Google Earth Engine tutorials. It aims to make it easy to create high-quality tutorials that are clear, concise, and easily understood by the entire Earth Engine community.
 The [tutorial templates](https://developers.google.com/earth-engine/tutorials/community/styleguide#tutorial_templates) below double as an additional guide to help kickstart your own tutorials. Details on how to use the templates to get started can be found in [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write).
@@ -35,7 +28,7 @@ In addition, the [Google Cloud Platform Community Tutorial Style Guide](https://
 
 ## Tutorial file headers
 If you're creating and submitting community tutorials manually without using the templates provided in [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write), you'll need to manually add the appropriate metadata and license header to the start of the file. Select the desired format to view a template which can be copied into your own tutorial:
-[Markdown](https://developers.google.com/earth-engine/tutorials/community/styleguide#markdown)[Colab](https://developers.google.com/earth-engine/tutorials/community/styleguide#colab) More
+### Markdown
 Add the following to the beginning of the document. No whitespace or other characters should precede the header:
 ```
 ---
@@ -61,6 +54,7 @@ limitations under the License.
 ```
 
 Be sure to replace the appropriate template fields before submitting your tutorial for review.
+### Colab
 Add the following to a code cell at the beginning of the notebook:
 ```
 #@title Copyright 2023 The Earth Engine Community Authors { display-mode: "form" }
@@ -80,7 +74,7 @@ Add the following to a code cell at the beginning of the notebook:
 ```
 
 ## Tutorial templates
-[Markdown](https://developers.google.com/earth-engine/tutorials/community/styleguide#markdown)[Colab](https://developers.google.com/earth-engine/tutorials/community/styleguide#colab) More
+### Markdown
 If you're familiar with git and GitHub, you may use the code below as a template to get you started:
 ```
 ---
@@ -138,6 +132,7 @@ pages into subsections.
 
 Alternatively, the above template can be opened directly in GitHub's web based file editor by following instructions at [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write).
 Be sure to refer to [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write) for important details on how to propose, author, and submit tutorials.
+### Colab
 To create a new Colab notebook using the recommended style template, click here:
 [New Colab tutorial](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/tutorial-template.ipynb)
 This will open a notebook containing instructions for authoring and submitting your tutorial. Be sure to refer to [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write) for important details on the proposal, authoring, and submission process.

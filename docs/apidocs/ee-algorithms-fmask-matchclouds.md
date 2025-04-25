@@ -14,3 +14,4 @@ Argument| Type| Details
 `sceneLow`| Float| The 0.175 percentile brightness temperature of the scene.  
 `sceneHigh`| Float| The 0.825 percentile brightness temperature of the scene.  
 `neighborhood`| Integer, default: 50| The neighborhood to pad around each tile.  
+Was this helpful?

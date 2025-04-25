@@ -1,6 +1,6 @@
  
 #  Exporting to BigQuery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Overview](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#overview)
   * [BigQuery basics](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#bigquery_basics)
@@ -106,18 +106,18 @@ Invalid characters in property names cause the export to fail, due to [restricti
 Earth Engine (the values of `ee.Feature` properties) data are converted to an equivalent [BigQuery type](https://developers.google.com/bigquery/docs/reference/standard-sql/data-types) when possible. Note that nullability is controlled by the table schema, not the type.
 **Earth Engine type** | **BigQuery type** | **Notes**  
 ---|---|---  
-`ee.String` | `STRING`  
-`ee.Number` | `FLOAT` or `INTEGER`  
-`ee.Geometry` | `GEOGRAPHY`  
-`ee.Date` | `TIMESTAMP`  
-`ee.ByteString` | `BYTES`  
+`ee.String` | `STRING` |   
+`ee.Number` | `FLOAT` or `INTEGER` |   
+`ee.Geometry` | `GEOGRAPHY` |   
+`ee.Date` | `TIMESTAMP` |   
+`ee.ByteString` | `BYTES` |   
 `ee.Array` | `STRUCT<ARRAY<INT64>,` `ARRAY<INT64|FLOAT64>>` | See the section on [arrays](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#arrays)  
 Other `ee.*` types  | not supported  | See the section on [JSON values](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#json-values)  
 ### Arrays
 Earth Engine exports any multi-dimensional `ee.Array` to `STRUCT<ARRAY<INT64> dimensions, ARRAY<INT64|FLOAT64> values>`, similar to the format used by BigQuery's [ML.DECODE_IMAGE](https://developers.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-decode-image) function.
-The first array in the struct, `dimensions`, contains the dimensions of the Earth Engine array, $d_1$ through $d_n$.
-The second array in the struct, `values`, contains all of the values in the multi-dimensional array, flattened into a single BigQuery array. The total number of values in the flattened array is $\sum_{i=1}^n d_i$, and the value at index $(i_i, \ldots, i_n)$ in the original Earth Engine array corresponds to the value at the following index in the flattened array:
-\\[ \sum_{j=1}^n \left( i_j \cdot \prod_{k=j+1}^n d_k \right) \\]
+The first array in the struct, `dimensions`, contains the dimensions of the Earth Engine array, d1 through dn.
+The second array in the struct, `values`, contains all of the values in the multi-dimensional array, flattened into a single BigQuery array. The total number of values in the flattened array is ∑ni=1di, and the value at index (ii,…,in) in the original Earth Engine array corresponds to the value at the following index in the flattened array:
+n∑j=1(ij⋅n∏k=j+1dk)
 For common cases, the indexing expression for the `values` array is as follows:
 **Array Size** | **Dimensions** | **Indexing Expression**  
 ---|---|---  

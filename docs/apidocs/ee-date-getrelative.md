@@ -11,7 +11,7 @@ Usage| Returns
 `Date.getRelative(unit, inUnit,  _timeZone_)`| Long  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 `unit`| String| One of 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 `inUnit`| String| One of 'year', 'month' 'week', 'day', 'hour', or 'minute'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  

@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.getString(key)`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
+this: `dictionary`| Dictionary|   
+`key`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#colab-python-sample) More
 ```

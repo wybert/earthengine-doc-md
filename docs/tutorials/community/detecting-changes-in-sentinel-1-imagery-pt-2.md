@@ -608,4 +608,3 @@ The more or less compact blue changes indicate a decrease in reflectivity in bot
 We have now covered the subject of bitemporal change detection with GEE Sentinel-1 imagery. The beauty of GEE is that it is trivially easy to gather arbitrarily long time series of S1 images from the archive, all with revisit times of 6 or 12 days depending on whether one or both satellites are collecting data. The next part of the Tutorial will generalize the techniques we have learned so far to treat multitemporal change detection.
 ### Oh, and one more thing ...
 We didn't mention it above, but note the similarity between Eq. (2.10) and Eq. (2.15). To go from the monovariate LRT to the bivariate LRT, we simply replace the product of intensities s1s2 by the product of determinants |c1||c2|, the sum s1+s2 by |c1+c2| and the factor 22 by 24=22⋅2. This observation will come in handy in Part 3. 
-Was this helpful?

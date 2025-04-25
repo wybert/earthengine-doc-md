@@ -12,3 +12,4 @@ Argument| Type| Details
 `rightField`| String, default: null| A selector for the right operand. Should not be specified if rightValue is specified.  
 `leftValue`| Object, default: null| The value of the left operand. Should not be specified if leftField is specified.  
 `maxError`| ErrorMargin, optional| The maximum reprojection error allowed during filter application.  
+Was this helpful?

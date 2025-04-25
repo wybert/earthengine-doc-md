@@ -46,4 +46,3 @@ trees = fc.remap(['NotTree', 'Tree'], [0, 1], 'isTree')
 print('Remapped trees:', trees.getInfo())
 ```
 
-Was this helpful?

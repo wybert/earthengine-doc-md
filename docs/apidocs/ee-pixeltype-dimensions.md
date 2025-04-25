@@ -7,4 +7,4 @@ Usage| Returns
 `PixelType.dimensions()`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `pixelType`| PixelType  
+this: `pixelType`| PixelType|   

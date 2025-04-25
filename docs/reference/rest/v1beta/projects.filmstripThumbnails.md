@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.filmstripThumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: FilmstripThumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#resource:-filmstripthumbnail)
     * [Orientation](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#orientation)

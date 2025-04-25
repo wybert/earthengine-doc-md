@@ -48,3 +48,4 @@ pprint(ee.Kernel.gaussian(**{'radius': 3}).getInfo())
 # [0.002, 0.013, 0.021, 0.013, 0.002]
 ```
 
+Was this helpful?

@@ -7,4 +7,5 @@ Usage| Returns
 `List.size()`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
+this: `list`| List|   
+Was this helpful?

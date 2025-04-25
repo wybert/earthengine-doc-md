@@ -40,3 +40,4 @@ display(ee.Array([0, 1, 8, 27]).cbrt()) # [0, 1, 2, 3]
 display(ee.Array([[0, 1, 8], [27, 64, 125]]).cbrt())
 ```
 
+Was this helpful?

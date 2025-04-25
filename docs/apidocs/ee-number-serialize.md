@@ -28,3 +28,4 @@ importgeemap.coreasgeemap
 print('Serialized representation of ee.Number:', ee.Number(10).serialize())
 ```
 
+Was this helpful?

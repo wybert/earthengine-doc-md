@@ -1,18 +1,6 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 1) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#context)
-  * [Outline](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#outline)
-  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#prerequisites)
-  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#preliminaries)
-  * [Simple Differences](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#simple_differences)
-    * [Landkreis Olpe](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#landkreis_olpe)
-  * [The MAD Transformation](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#the_mad_transformation)
-    * [Auxiliary functions](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#auxiliary_functions)
-    * [The MAD transformation](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt1#the_mad_transformation_2)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt1/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt1/index.ipynb)  
@@ -32,12 +20,12 @@ The tutorial is split into three parts, of which this is the first:
 
 In Part 3, a convenient Jupyter widget interface for running the iMAD algorithm from a Docker container is also described.
 ## Prerequisites
-Little prior knowledge is required to follow the discussion, apart from some familiarity with the GEE API and a basic, intuitive understanding of the simple statistical concepts of probability distributions and their moments, in particular, mean, variance (var) and covariance (cov). Since we'll be working with multispectral imagery, in the course of the tutorial we'll frequently mention the so-called _dispersion matrix_ or _variance-covariance matrix_ , or simply _covariance matrix_ for short. The covariance matrix of a set of measured variables Xi,i=1…N, such as the band-wise values of a multispectral image pixel, is defined as
-ΣX=(σ21σ12…σ1Nσ21σ22…σ2N⋮⋮⋮⋮σN1σN2…σ2N),
+Little prior knowledge is required to follow the discussion, apart from some familiarity with the GEE API and a basic, intuitive understanding of the simple statistical concepts of probability distributions and their moments, in particular, mean, variance (var) and covariance (cov). Since we'll be working with multispectral imagery, in the course of the tutorial we'll frequently mention the so-called _dispersion matrix_ or _variance-covariance matrix_ , or simply _covariance matrix_ for short. The covariance matrix of a set of measured variables \\(X_i,\ i=1\dots N\\), such as the band-wise values of a multispectral image pixel, is defined as
+$$ \Sigma_X\ =\ \begin{pmatrix} \sigma^2_1 & \sigma_{12} & \dots & \sigma_{1N} \cr \sigma_{21} & \sigma^2_2& \dots & \sigma_{2N} \cr \vdots & \vdots & \vdots& \vdots \cr \sigma_{N1} & \sigma_{N2} & \dots & \sigma^2_N \end{pmatrix}, $$
 where
-σij=cov(Xi,Xj)=⟨(Xi−ˉXi)(Xj−ˉXj)⟩,σ2i=cov(Xi,Xi)=var(Xi)=⟨(Xi−ˉXi)2⟩,i,j=1…N.
-Here, ˉXi denotes mean value and ⟨…⟩ is ensemble average. The covariance matrix is symmetric about its principal diagonal. The _correlation_ between Xi and Xj is defined as the normalized covariance
-ρij=cov(Xi,Xj)√var(Xi)√var(Xj)=σijσiσj.
+$$ \sigma_{ij} = {\rm cov}(X_i,X_j) = \langle (X_i - \bar X_i)(X_j - \bar X_j)\rangle, \quad \sigma^2_i = {\rm cov}(X_i,X_i) = {\rm var}(X_i) = \langle (X_i-\bar X_i)^2\rangle, \quad \ i,j = 1\dots N. $$
+Here, \\(\bar X_i\\) denotes mean value and \\(\langle\dots\rangle\\) is ensemble average. The covariance matrix is symmetric about its principal diagonal. The _correlation_ between \\(X_i\\) and \\(X_j\\) is defined as the normalized covariance
+$$ \rho_{ij} = {{\rm cov}(X_i,X_j)\over \sqrt{{\rm var}(X_i)}\sqrt{{\rm var}(X_j)}} = {\sigma_{ij} \over \sigma_i\sigma_j}. $$
 Since we are in a Colab environment we will use the Python API, but it is so similar to the JavaScript version that this should pose no problems to anyone not acquainted with it.
 ## Preliminaries
 The cells below execute the necessary formalities for accessing Earth Engine from this Colab notebook. They also import the various Python add-ons needed, including the [geemap](https://geemap.org/) interactive map package, and define a few helper routines for displaying results.
@@ -89,10 +77,10 @@ defdisplay_ls(image, map, name, centered = False):
 ```
 
 ## Simple Differences
-Let's begin by considering two N-band optical/infrared images of the same scene acquired with the same sensor at two different times, between which ground reflectance changes have occurred at some locations but not everywhere. To see those changes we can "flick back and forth" between gray scale or RGB representations of the images on a computer display. Alternatively we can simply subtract one image from the other and, provided the intensities at the two time points have been calibrated or normalized in some way, examine the difference. Symbolically the difference image is
-Z=X−Y
+Let's begin by considering two \\(N\\)-band optical/infrared images of the same scene acquired with the same sensor at two different times, between which ground reflectance changes have occurred at some locations but not everywhere. To see those changes we can "flick back and forth" between gray scale or RGB representations of the images on a computer display. Alternatively we can simply subtract one image from the other and, provided the intensities at the two time points have been calibrated or normalized in some way, examine the difference. Symbolically the difference image is
+$$ Z = X-Y $$
 where
-X=(X1X2⋮XN),Y=(Y1Y2⋮YN)
+$$ X= \begin{pmatrix}X_1\cr X_2\cr\vdots\cr X_N\end{pmatrix},\quad Y= \begin{pmatrix}Y_1\cr Y_2\cr\vdots\cr Y_N\end{pmatrix} $$
 are 'typical' pixel vectors (more formally: _random vectors_) representing the first and second image, respectively.
 ### Landkreis Olpe
 For example, here is an area of interest (aoi) covering a heavily forested administrative district (Landkreis Olpe) in North Rhine Westphalia, Germany. Due to severe drought in recent years large swaths of shallow-root coniferous trees have died and been cleared away, leaving deciduous trees for the most part untouched.
@@ -158,30 +146,30 @@ display_ls(diff, M1, 'Difference')
 ```
 
 Small intensity differences (the gray-ish background in the difference image above) indicate no change, large positive (bright) or negative (dark) colors indicate change. The most obvious changes are in fact due to the clear cutting. Decision thresholds can be set to define significant changes. The thresholds are usually expressed in terms of standard deviations from the mean difference value, which is taken to correspond to no change. The per-band variances of the difference images are simply
-var(Zi)=var(Xi−Yi)=var(Xi)+var(Yi)−2⋅cov(Xi,Yi),i=1…N,
-or, if the bands are uncorrelated, about twice as noisy as the individual image bands. Normally Xi and Yi are positively correlated (cov(Xi,Yi)>0) so the variance of Zi is somewhat smaller. When the difference signatures in the spectral channels are combined so as to try to characterize the nature of the changes that have taken place, one speaks of _spectral change vector analysis_.
+$$ {\rm var}(Z_i) = {\rm var}(X_i - Y_i) = {\rm var}(X_i) + {\rm var}(Y_i) - 2\cdot{\rm cov}(X_i,Y_i),\quad i=1\dots N, $$
+or, if the bands are uncorrelated, about twice as noisy as the individual image bands. Normally \\(X_i\\) and \\(Y_i\\) are positively correlated (\\({\rm cov}(X_i,Y_i) > 0\\)) so the variance of \\(Z_i\\) is somewhat smaller. When the difference signatures in the spectral channels are combined so as to try to characterize the nature of the changes that have taken place, one speaks of _spectral change vector analysis_.
 While the recent clear cuts are fairly easily identified as (some but not all of) the dark areas in the simple difference image above, it is possible to derive a better and more informative change map. This involves taking greater advantage of the statistical properties of the images.
 ## The MAD Transformation
-Let's make a linear combination of the intensities for all N bands in the first image X, thus creating a scalar image
-U=a1X1+a2X2+⋯+aNXN=a⊤X.
-The symbol a⊤ denotes the transpose of the column vector a=(a1a2⋮aN), in other words the row vector a⊤=(a1,a2…aN).
-The expression a⊤X is called an _inner vector product_. The vector of coefficients a is as yet unspecified. We'll do the same for the second image Y, forming the linear combination
-V=b1Y1+b2Y2+⋯+bNYN=b⊤Y,
-and then look at the scalar difference U−V. Change information is now contained, for the time being, in a single image rather than distributed among all N bands.
-We have of course to choose the coefficient vectors a and b in some suitable way. In [Nielsen et al. (1998)](https://www2.imm.dtu.dk/pubdb/pubs/1220-full.html) it is suggested that they be determined by making the transformed images U and V _as similar as they can be_ before taking their difference. This sounds at first counter-intuitive: Why make the images similar when we want to see the dissimilarities? The crux is that, in making them match one another by taking suitable linear combinations, we ensure that pixels in the transformed images U and V at which _indeed no change has taken place_ will be as similar as possible before they are compared (subtracted). The genuine changes will then, it is hoped, be all the more apparent in the difference image.
+Let's make a linear combination of the intensities for all \\(N\\) bands in the first image \\(X\\), thus creating a scalar image
+$$ U = a_1X_1 + a_2X_2 + \dots + a_NX_N = {\bf a}^\top X. \tag{1} $$
+The symbol \\({\bf a}^\top\\) denotes the transpose of the column vector \\({\bf a}=\begin{pmatrix}a_1\cr a_2\cr\vdots\cr a_N\end{pmatrix}\\), in other words the row vector \\({\bf a}^\top = (a_1,a_2 \dots a_N)\\).
+The expression \\({\bf a}^\top X\\) is called an _inner vector product_. The vector of coefficients \\({\bf a}\\) is as yet unspecified. We'll do the same for the second image \\(Y\\), forming the linear combination
+$$ V = b_1Y_1 + b_2Y_2 + \dots + b_NY_N = {\bf b}^\top Y, \tag{2} $$
+and then look at the scalar difference \\(U-V\\). Change information is now contained, for the time being, in a single image rather than distributed among all \\(N\\) bands.
+We have of course to choose the coefficient vectors \\({\bf a}\\) and \\({\bf b}\\) in some suitable way. In [Nielsen et al. (1998)](https://www2.imm.dtu.dk/pubdb/pubs/1220-full.html) it is suggested that they be determined by making the transformed images \\(U\\) and \\(V\\) _as similar as they can be_ before taking their difference. This sounds at first counter-intuitive: Why make the images similar when we want to see the dissimilarities? The crux is that, in making them match one another by taking suitable linear combinations, we ensure that pixels in the transformed images \\(U\\) and \\(V\\) at which _indeed no change has taken place_ will be as similar as possible before they are compared (subtracted). The genuine changes will then, it is hoped, be all the more apparent in the difference image.
 This process of "similar making" can be accomplished in statistics with standard [_Canonical Correlation Analysis_ (CCA)](https://en.wikipedia.org/wiki/Canonical_correlation), a technique first described by Harold Hotelling in 1936. Canonical Correlation Analysis of the images represented by Equations (1) and (2) _maximizes the correlation_
-ρ=cov(U,V)√var(U)√var(V),
-between the random variables U and V, which is just what we want.
-One technical point: Arbitrary multiples of U and V would clearly have the same correlation (the multiples will cancel off in numerator and denominator), so a constraint must be chosen. A convenient one is
-var(U)=var(V)=1.
-For those more versed in linear algebra the details of CCA are given in [Canty (2019)](https://www.taylorfrancis.com/books/image-analysis-classification-change-detection-remote-sensing-morton-john-canty/10.1201/9780429464348) beginning on page 385. It all boils down to solving two so-called _generalized eigenvalue problems_ for determining the transformation vectors a and b in Equations (1) and (2), respectively. There is not just one solution but rather N solutions. They consist of the N pairs of _eigenvectors_ (ai,bi),
-ai=(a1a2⋮aN)i,bi=(b1b2⋮bN)i,i=1…N
-and, correspondingly, the N pairs of _canonical variates_ (Ui,Vi),i=1…N. (Readers familiar with Principal Components Analysis (PCA) will recognize the similarity. When applying PCA to an N-band image, an ordinary (rather than a generalized) eigenvalue problem is solved to maximize variance, resulting in N principal component bands.)
-Unlike the bands of the original images X and Y, which are ordered by spectral wavelength, the canonical variates are ordered by similarity or correlation. The difference images
-Mi=Ui−Vi=(ai)⊤X−(bi)⊤Y,i=1…N,
+$$ \rho = {{\rm cov}(U,V)\over \sqrt{{\rm var}(U)}\sqrt{{\rm var}(V)}}, \tag{3} $$
+between the random variables \\(U\\) and \\(V\\), which is just what we want.
+One technical point: Arbitrary multiples of \\(U\\) and \\(V\\) would clearly have the same correlation (the multiples will cancel off in numerator and denominator), so a constraint must be chosen. A convenient one is
+$$ {\rm var}(U)={\rm var}(V)=1. \tag{4} $$
+For those more versed in linear algebra the details of CCA are given in [Canty (2019)](https://www.taylorfrancis.com/books/image-analysis-classification-change-detection-remote-sensing-morton-john-canty/10.1201/9780429464348) beginning on page 385. It all boils down to solving two so-called _generalized eigenvalue problems_ for determining the transformation vectors \\({\bf a}\\) and \\({\bf b}\\) in Equations (1) and (2), respectively. There is not just one solution but rather \\(N\\) solutions. They consist of the \\(N\\) pairs of _eigenvectors_ \\(({\bf a}^i, {\bf b}^i)\\),
+$$ {\bf a}^i=\begin{pmatrix}a_1\cr a_2\cr\vdots\cr a_N \end{pmatrix}_i,\quad {\bf b}^i=\begin{pmatrix}b_1\cr b_2\cr\vdots\cr b_N \end{pmatrix}_i, \quad i=1\dots N $$
+and, correspondingly, the \\(N\\) pairs of _canonical variates_ \\((U_i, V_i),\ i= 1\dots N\\). (Readers familiar with Principal Components Analysis (PCA) will recognize the similarity. When applying PCA to an N-band image, an ordinary (rather than a generalized) eigenvalue problem is solved to maximize variance, resulting in \\(N\\) principal component bands.)
+Unlike the bands of the original images \\(X\\) and \\(Y\\), which are ordered by spectral wavelength, the canonical variates are ordered by similarity or correlation. The difference images
+$$ M_i = U_i - V_i = ({\bf a}^i)^\top X - ({\bf b}^i)^\top Y,\quad i=1\dots N, \tag{5} $$
 contain the change information and are called the _MAD variates_.
 ### Auxiliary functions
-To run the MAD transformation on GEE image pairs we need some helper routines. These are coded below. The first, called _covarw()_ , returns the weighted covariance matrix of an N-band image as well as a weighted, centered (mean-zero) version of the image. Why it is important to weight the pixels before centering or calculating the covariance matrix will become apparent in Part 2 of the tutorial.
+To run the MAD transformation on GEE image pairs we need some helper routines. These are coded below. The first, called _covarw()_ , returns the weighted covariance matrix of an \\(N\\)-band image as well as a weighted, centered (mean-zero) version of the image. Why it is important to weight the pixels before centering or calculating the covariance matrix will become apparent in Part 2 of the tutorial.
 ```
 defcovarw(image, weights = None, scale = 20, maxPixels = 1e10):
 '''Return the weighted centered image and its weighted covariance matrix'''
@@ -283,8 +271,8 @@ pprint(corr(cov))
 
 Note that the spectral bands of the image are generally highly and positively correlated with one another.
 By stacking the images one atop the other we can use the helper functions to display the between image correlations
-corr(Xi,Yi),i=1…N.
-They can be found in the diagonal of the upper left 6×6 submatrix of the correlation matrix for the stacked image.
+$$ \rm{corr}(X_i,Y_i), \quad i= 1\dots N. $$
+They can be found in the diagonal of the upper left \\(6\times 6\\) submatrix of the correlation matrix for the stacked image.
 ```
 im12 = im1.select(visirbands).addBands(im2.select(visirbands))
 _, covar = covarw(im12)
@@ -299,8 +287,8 @@ print(np.diag(correl[:6, 6:]))
 
 It is these between image correlations that the MAD algorithm tries to maximize.
 The third and last auxiliary routine, _geneiv()_ , is the core of CCA and the MAD transformation. It solves the _generalized eigenproblem_ ,
-CX=λBX
-for two N×N matrices C and B, returning the N solutions, or eigenvectors, Xi and the N eigenvalues λi,i=1…N.
+$$ CX = \lambda BX $$
+for two \\(N\times N\\) matrices \\(C\\) and \\(B\\), returning the \\(N\\) solutions, or eigenvectors, \\(X_i\\) and the \\(N\\) eigenvalues \\(\lambda_i, \ i=1\dots N\\).
 Toggle code ```
 defgeneiv(C,B):
 '''Return the eigenvalues and eigenvectors of the generalized eigenproblem
@@ -327,11 +315,11 @@ defgeneiv(C,B):
 ```
 
 The next cell codes the MAD transformation itself in the function _mad_run()_ , taking as input two multiband images and returning the _canonical variates_
-Ui,Vi,i=1…N,
+$$ U_i, \ V_i, \quad i=1\dots N, $$
 the _MAD variates_
-Mi=Ui−Vi,i=1…N,
+$$ M_i = U_i - V_i, \quad i=1\dots N, $$
 as well as the sum of the squares of the standardized MAD variates,
-Z=N∑i=1(MiσMi)2.
+$$ Z = \sum_{i=1}^N\left({M_i\over \sigma_{M_i}}\right)^2. $$
 ### The MAD transformation
 Toggle code ```
 defmad_run(image1, image2, scale = 20):
@@ -413,10 +401,10 @@ M2
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/imad-tutorial-pt1/index_files/output_zNAGaOr8sShC_1.png)
 The richness in colors in the MAD image is a consequence of the decoupling (orthogonalization) of the MAD components, as will be explained below.
 Pretty colors notwithstanding, when compared with the simple difference image the result is _mittelprächtig_ (German slang for "not so hot"), and certainly no easier to interpret. However we're not finished.
-The canonical variates have very nice properties indeed. They are _all mutually uncorrelated_ except for the pairs (Ui,Vi), and these are ordered by decreasing positive correlation:
-ρi=cov(Ui,Vi),i=1…N,
-with ρ1≥ρ2≥⋯≥ρN.
-Stacking the images U and V, these facts can be read from the 12×12 correlation matrix:
+The canonical variates have very nice properties indeed. They are _all mutually uncorrelated_ except for the pairs \\((U_i,V_i)\\), and these are ordered by decreasing positive correlation:
+$$ \rho_i = {\rm cov}(U_i, V_i),\quad i=1\dots N, \tag{6} $$
+with \\(\rho_1 \ge \rho_2 \ge\dots \ge\rho_N\\).
+Stacking the images \\(U\\) and \\(V\\), these facts can be read from the \\(12\times 12\\) correlation matrix:
 ```
 _, covar = covarw(U.addBands(V))
 correl = np.array(corr(covar))
@@ -454,9 +442,9 @@ rho = [0.923 0.864 0.707 0.642 0.536 0.369]
 ```
 
 The MAD variates themselves are consequently also mutually uncorrelated, their covariances being given by
-cov(Mi,Mj)=cov(Ui−Vi,Uj−Vj)=0,i≠j=1…N,
+$$ {\rm cov}(M_i,M_j) = {\rm cov}(U_i-V_i,U_j-V_j)= 0,\quad i\ne j=1\dots N, \tag{7} $$
 and their variances by
-σ2Mi=var(Ui−Vi)=var(Ui)+var(Vi)−2cov(Ui,Vi)=2(1−ρi),i=1…N,
+$$ \sigma_{M_i}^2={\rm var}(U_i-V_i)= {\rm var}(U_i)+{\rm var}(V_i) -2{\rm cov}(U_i,V_i) = 2(1-\rho_i),\quad i=1\dots N, \tag{8} $$
 where the last equality follows from the constraint Equation (4). Let's check.
 ```
 # display MAD covariance matrix

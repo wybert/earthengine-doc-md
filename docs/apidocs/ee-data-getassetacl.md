@@ -1,6 +1,6 @@
  
 #  ee.data.getAssetAcl 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the access control list of the asset with the given ID. 
 The authenticated user must be a writer or owner of an asset to see its ACL.
 Usage| Returns  

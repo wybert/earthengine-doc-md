@@ -1,16 +1,6 @@
  
 #  Method: projects.algorithms.list 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#authorization-scopes)
-  * [Algorithm](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#algorithm)
-  * [AlgorithmArgument](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#algorithmargument)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets the list of all the algorithms available for use in Expressions.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{parent=projects/*}/algorithms`

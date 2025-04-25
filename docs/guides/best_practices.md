@@ -709,4 +709,3 @@ print(deduped.reduceRegion('first',sf,10));
 ```
 
 Inspect the printed collections to verify that duplicates have been removed.
-Was this helpful?

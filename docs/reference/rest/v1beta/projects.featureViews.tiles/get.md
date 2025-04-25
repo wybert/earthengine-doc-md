@@ -1,14 +1,6 @@
  
 #  Method: projects.featureViews.tiles.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews.tiles/get#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews.tiles/get#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews.tiles/get#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews.tiles/get#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews.tiles/get#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes a map tile image showing a portion of a FeatureView. The request includes values from a previous `CreateFeatureView` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{parent=projects/*/featureViews/*}/tiles/{zoom}/{x}/{y}`

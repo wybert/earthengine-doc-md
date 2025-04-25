@@ -1,13 +1,6 @@
  
 #  Customizing Base Map Styles 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [The default maps in Earth Engine](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#the_default_maps_in_earth_engine)
-  * [Changing the basic map style](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#changing_the_basic_map_style)
-  * [Changing map elements](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#changing_map_elements)
-  * [Cheat codes](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#cheat_codes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/customizing-base-map-styles/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/customizing-base-map-styles/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/customizing-base-map-styles/index.md "View changes to this article over time.")

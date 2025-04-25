@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.map(baseAlgorithm)`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`baseAlgorithm`| Algorithm  
+this: `dictionary`| Dictionary|   
+`baseAlgorithm`| Algorithm|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-map#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-map#colab-python-sample) More
 ```

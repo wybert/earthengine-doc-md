@@ -11,8 +11,8 @@ Usage| Returns
 `List.add(element)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`element`| Object  
+this: `list`| List|   
+`element`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-add#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-add#colab-python-sample) More
 ```

@@ -7,6 +7,7 @@ Usage| Returns
 `List.swap(pos1, pos2)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`pos1`| Integer  
-`pos2`| Integer  
+this: `list`| List|   
+`pos1`| Integer|   
+`pos2`| Integer|   
+Was this helpful?

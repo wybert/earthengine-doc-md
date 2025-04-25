@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.geometrylayer`| ui.Map.GeometryLayer| The ui.Map.GeometryLayer instance.  
 `locked`| Boolean| Whether the layer is locked.  
+Was this helpful?

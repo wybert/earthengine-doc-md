@@ -31,3 +31,4 @@ importgeemap.coreasgeemap
 point = ee.Geometry.Point([-122.08412, 37.42189])
 ```
 
+Was this helpful?

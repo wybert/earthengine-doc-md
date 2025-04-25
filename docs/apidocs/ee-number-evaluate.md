@@ -1,6 +1,6 @@
  
 #  ee.Number.evaluate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-evaluate#examples)
 
@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. 
 Usage| Returns  
 ---|---  
-`Number.evaluate(callback)`  
+`Number.evaluate(callback)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
@@ -44,4 +44,3 @@ importgeemap.coreasgeemap
 # Use ee.Number.getInfo() instead.
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ui.Slider.setMax 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the maximum value of the slider. 
 Returns this slider.
 Usage| Returns  

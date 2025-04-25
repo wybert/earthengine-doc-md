@@ -4,7 +4,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Creates a batch task to export a FeatureCollection as a table to Google Cloud Storage. Tasks can be started from the Tasks tab. 
 Usage| Returns  
 ---|---  
-`Export.table.toCloudStorage(collection,  _description_, _bucket_, _fileNamePrefix_, _fileFormat_, _selectors_, _maxVertices_, _priority_)`  
+`Export.table.toCloudStorage(collection,  _description_, _bucket_, _fileNamePrefix_, _fileFormat_, _selectors_, _maxVertices_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `collection`| FeatureCollection| The feature collection to export.  

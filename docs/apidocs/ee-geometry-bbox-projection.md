@@ -11,7 +11,7 @@ Usage| Returns
 `BBox.projection()`| Projection  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-projection#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-projection#colab-python-sample) More
 ```
@@ -47,3 +47,4 @@ m.add_layer(bbox, {'color': 'black'}, 'Geometry [black]: bbox')
 m
 ```
 
+Was this helpful?

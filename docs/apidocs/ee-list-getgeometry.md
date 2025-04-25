@@ -7,5 +7,5 @@ Usage| Returns
 `List.getGeometry(index)`| Geometry  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`index`| Integer  
+this: `list`| List|   
+`index`| Integer|   

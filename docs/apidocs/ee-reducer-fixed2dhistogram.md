@@ -13,3 +13,4 @@ Argument| Type| Details
 `yMin`| Float| The lower (inclusive) bound of the first bucket on the Y axis.  
 `yMax`| Float| The upper (exclusive) bound of the last bucket on the Y axis.  
 `ySteps`| Integer| The number of buckets to use on the Y axis.  
+Was this helpful?

@@ -11,7 +11,7 @@ Usage| Returns
 `Polygon.type()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-type#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-type#colab-python-sample) More
 ```
@@ -56,3 +56,4 @@ m.add_layer(polygon, {'color': 'black'}, 'Geometry [black]: polygon')
 m
 ```
 
+Was this helpful?

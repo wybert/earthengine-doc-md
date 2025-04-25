@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.sensSlope()`| Reducer  
 **No arguments.**
+Was this helpful?

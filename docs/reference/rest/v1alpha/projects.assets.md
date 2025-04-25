@@ -1,50 +1,6 @@
  
 #  REST Resource: projects.assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Resource: EarthEngineAsset](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#resource:-earthengineasset)
-    * [CloudStorageLocation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#cloudstoragelocation)
-    * [GcsLocation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#gcslocation)
-    * [FeatureViewLocation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#featureviewlocation)
-    * [FeatureViewOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#featureviewoptions)
-    * [FeatureViewAttribute](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#featureviewattribute)
-    * [Type](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#type)
-    * [FeatureViewIngestionTimeParameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#featureviewingestiontimeparameters)
-    * [ThinningOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#thinningoptions)
-    * [ThinningStrategy](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#thinningstrategy)
-    * [RankingOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankingoptions)
-    * [RankingRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankingrule)
-    * [RankByOneThingRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankbyonethingrule)
-    * [RankByAttributeRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankbyattributerule)
-    * [RankByMinVisibleLodRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankbyminvisiblelodrule)
-    * [RankByGeometryTypeRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankbygeometrytyperule)
-    * [RankByMinZoomLevelRule](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#rankbyminzoomlevelrule)
-    * [Direction](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#direction)
-    * [Type](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#type_1)
-    * [ImageBand](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#imageband)
-    * [PixelDataType](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#pixeldatatype)
-    * [Precision](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#precision)
-    * [MissingData](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#missingdata)
-    * [FolderQuota](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#folderquota)
-    * [Tileset](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#tileset)
-    * [ImageSource](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#imagesource)
-    * [DataType](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#datatype)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#methods)
-    * [copy](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#copy)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#create)
-    * [delete](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#delete)
-    * [get](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#get)
-    * [getIamPolicy](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#getiampolicy)
-    * [getPixels](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#getpixels)
-    * [listAssets](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#listassets)
-    * [listFeatures](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#listfeatures)
-    * [listImages](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#listimages)
-    * [move](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#move)
-    * [patch](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#patch)
-    * [setIamPolicy](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#setiampolicy)
-    * [testIamPermissions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#testiampermissions)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: EarthEngineAsset
 Information about an Earth Engine asset.
 JSON representation  

@@ -1,25 +1,6 @@
  
 #  Introduction to Dynamic World (Part 1) - Visualization and Creating Composites 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#prerequisites)
-  * [Hello [Dynamic] World](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#hello_dynamic_world)
-    * [Using the NRT Image Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#using_the_nrt_image_collection)
-    * [Load a Sentinel-2 Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#load_a_sentinel-2_image)
-    * [Find the Matching Dynamic World Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#find_the_matching_dynamic_world_image)
-    * [Visualize the Classified Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_classified_image)
-    * [Create a Probability Hillshade Visualization](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_visualization)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary)
-  * [Creating Multi-Temporal Composites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#creating_multi-temporal_composites)
-    * [Select a Region](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#select_a_region)
-    * [Filter the Dynamic World NRT Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#filter_the_dynamic_world_nrt_collection)
-    * [Create a Mode Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_mode_composite)
-    * [Visualize the Annual Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_annual_composite)
-    * [Create a Probability Hillshade Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_composite)
-    * [Export the Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#export_the_composite)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary_2)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-1/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "View changes to this article over time.")

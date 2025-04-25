@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.getNumber(key)`| Number  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
+this: `dictionary`| Dictionary|   
+`key`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getnumber#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getnumber#colab-python-sample) More
 ```

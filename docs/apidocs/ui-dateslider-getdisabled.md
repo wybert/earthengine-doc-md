@@ -1,8 +1,7 @@
  
 #  ui.DateSlider.getDisabled 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns whether the slider is disabled. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns whether the slider is disabled. Usage| Returns  
 ---|---  
 `DateSlider.getDisabled()`| Boolean  
 Argument| Type| Details  

@@ -1,7 +1,12 @@
  
 #  ee.Projection 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a Projection with the given base coordinate system and the given transform between projected coordinates and the base. If no transform is specified, the identity transform is assumed. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-projection#examples)
+
+
+Returns a Projection with the given base coordinate system and the given transform between projected coordinates and the base. If no transform is specified, the identity transform is assumed. 
+Usage| Returns  
 ---|---  
 `ee.Projection(crs,  _transform_, _transformWkt_)`| Projection  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ Argument| Type| Details
 `transform`| List, default: null| The transform between projected coordinates and the base coordinate system, specified as a 2x3 affine transform matrix in row-major order: [xScale, xShearing, xTranslation, yShearing, yScale, yTranslation]. May not specify both this and 'transformWkt'.  
 `transformWkt`| String, default: null| The transform between projected coordinates and the base coordinate system, specified as a WKT string. May not specify both this and 'transform'.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-projection#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-projection#colab-python-sample) More
 ```
 // Construct projections.
 // Printing the projection will show the EPSG code if it is a direct match.
@@ -46,15 +51,12 @@ varproj=ee.Projection(
 ' AUTHORITY["EPSG","27572"]]');
 print(proj);// crs: EPSG:27572
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Construct projections.
 # Printing the projection will show the EPSG code if it is a direct match.
@@ -91,3 +93,4 @@ proj = ee.Projection(
 print(proj.getInfo()) # crs: EPSG:27572
 ```
 
+Was this helpful?

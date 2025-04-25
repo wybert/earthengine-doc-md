@@ -67,4 +67,3 @@ print('SRTM scale in meters',scale);
 If you specify a scale smaller than the native resolution, Earth Engine will happily resample the input image using nearest neighbor, then include all those smaller pixels in the computation. If you set the scale to be larger, Earth Engine will use input pixels from an aggregated version of the input (i.e. get pixels from a higher level of the image pyramid). Learn more about how Earth Engine handles scale in [this doc](https://developers.google.com/earth-engine/guides/scale). 
 So far, you've been working with a single image with a single band. In the next page, you'll learn about multi-band images and image collections.
 [ arrow_backPrevious page](https://developers.google.com/earth-engine/tutorials/tutorial_api_02) [ Next pagearrow_forward](https://developers.google.com/earth-engine/tutorials/tutorial_api_04)
-Was this helpful?

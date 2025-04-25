@@ -1,6 +1,6 @@
  
 #  Compositing and Mosaicking 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 In general, compositing refers to the process of combining spatially overlapping images into a single image based on an aggregation function. Mosaicking refers to the process of spatially assembling image datasets to produce a spatially continuous image. In Earth Engine, these terms are used interchangeably, though both compositing and mosaicking are supported. For example, consider the task of compositing multiple images in the same location. For example, using one National Agriculture Imagery Program (NAIP) Digital Orthophoto Quarter Quadrangle (DOQQ) at different times, the following example demonstrates making a maximum value composite:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#colab-python-sample) More
 ```

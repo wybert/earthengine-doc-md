@@ -40,4 +40,3 @@ print('Original FeatureCollection:', fc.getInfo())
 print('All geometries merged into one:', fc.union(1).getInfo())
 ```
 
-Was this helpful?

@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.cloudstoragelayer`| ui.Map.CloudStorageLayer| The ui.Map.CloudStorageLayer instance.  
 `path`| String| The path to this layer's tiles, relative to the bucket.  
-Was this helpful?

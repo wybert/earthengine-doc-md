@@ -66,3 +66,4 @@ pprint(sobel_kernel.rotate(-2).getInfo())
 # [1, 0, -1]
 ```
 
+Was this helpful?

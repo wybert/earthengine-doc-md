@@ -11,7 +11,7 @@ Usage| Returns
 `Polygon.geometries()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-geometries#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-geometries#colab-python-sample) More
 ```
@@ -56,4 +56,3 @@ m.add_layer(polygon, {'color': 'black'}, 'Geometry [black]: polygon')
 m
 ```
 
-Was this helpful?

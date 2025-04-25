@@ -1,12 +1,7 @@
  
 #  ee.Number.format 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-format#examples)
-
-
-Convert a number to a string using printf-style formatting. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Convert a number to a string using printf-style formatting. Usage| Returns  
 ---|---  
 `Number.format( _pattern_)`| String  
 Argument| Type| Details  
@@ -21,7 +16,7 @@ this: `number`| Number| The number to convert to a string.
 
 For more about format strings, see https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-format#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-format#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('Zero-fill to length of 3',
 ee.Number(1).format('%03d'));// 001
@@ -34,12 +29,15 @@ ee.Number(123476).format('%.3e'));// 1.235e+05 (rounds up)
 print('Integer with 2 decimal places of precision',
 ee.Number(123476).format('%.2f'));// 123476.00
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 print('Zero-fill to length of 3:',
    ee.Number(1).format('%03d').getInfo()) # 001

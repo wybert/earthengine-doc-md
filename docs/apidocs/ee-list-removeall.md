@@ -7,6 +7,6 @@ Usage| Returns
 `List.removeAll(other)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`other`| List  
+this: `list`| List|   
+`other`| List|   
 Was this helpful?

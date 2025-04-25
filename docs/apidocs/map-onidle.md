@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `callback`| Function| The callback to fire when the map becomes idle. The callback is passed two parameters: an object containing the coordinates of the map center (with keys lon, lat, and zoom) and the map widget itself.  
-Was this helpful?

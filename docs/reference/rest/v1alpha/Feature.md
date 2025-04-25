@@ -1,6 +1,6 @@
  
 #  Feature 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 A GeoJSON feature object (see RFC 7946) containing the string "Feature" in a field named "type", the geometry in a field named "geometry", and key/value properties in a field named "properties".
 JSON representation  
 ---  

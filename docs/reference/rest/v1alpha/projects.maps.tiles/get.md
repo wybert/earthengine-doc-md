@@ -1,14 +1,6 @@
  
 #  Method: projects.maps.tiles.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps.tiles/get#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps.tiles/get#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps.tiles/get#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps.tiles/get#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps.tiles/get#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes a map tile image showing a portion of a computation. The request includes values (a map ID and authorisation token) from a previous `CreateMap` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{parent=projects/*/maps/*}/tiles/{zoom}/{x}/{y}`

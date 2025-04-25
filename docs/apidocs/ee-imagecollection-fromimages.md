@@ -1,19 +1,14 @@
  
 #  ee.ImageCollection.fromImages 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-fromimages#examples)
-
-
-Returns the image collection containing the given images. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the image collection containing the given images. Usage| Returns  
 ---|---  
 `ee.ImageCollection.fromImages(images)`| ImageCollection  
 Argument| Type| Details  
 ---|---|---  
 `images`| List| The images to include in the collection.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-fromimages#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-fromimages#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A series of images.
 varimg1=ee.Image(0);
@@ -52,12 +47,15 @@ returnee.ImageCollection.fromImages(img.get('img_list')).mean()
 });
 print('Mean annual NDVI collection',annualNdviMean);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A series of images.
 img1 = ee.Image(0)

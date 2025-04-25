@@ -72,3 +72,4 @@ pprint(fc.aggregate_stats('capacitymw').getInfo())
 # }
 ```
 
+Was this helpful?

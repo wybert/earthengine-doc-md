@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 `func`| Function|String| The function to call. Either an ee.Function object or the name of an API function.  
 `var_args`| VarArgs| Positional arguments to pass to the function.  
+Was this helpful?

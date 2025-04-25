@@ -1,8 +1,8 @@
  
 #  Grouped Reductions and Zonal Statistics 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 You can get statistics in each zone of an `Image` or `FeatureCollection` by using `reducer.group()` to group the output of a reducer by the value of a specified input. For example, to compute the total population and number of housing units in each state, this example groups the output of a reduction of a census block `FeatureCollection` as follows:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_grouping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_grouping#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a collection of US census blocks.
 varblocks=ee.FeatureCollection('TIGER/2010/Blocks');
@@ -21,12 +21,15 @@ groupName:'state-code',
 // Print the resultant Dictionary.
 print(sums);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a collection of US census blocks.
 blocks = ee.FeatureCollection('TIGER/2010/Blocks')
@@ -47,7 +50,7 @@ display(sums)
 
 The `groupField` argument is the index of the input in the selectors array that contains the codes by which to group, the `groupName` argument specifies the name of the property to store the value of the grouping variable. Since the reducer is not automatically repeated for each input, the `repeat(2)` call is needed.
 To group output of `image.reduceRegions()` you can specify a grouping band that defines groups by integer pixel values. This type of computation is sometimes called "zonal statistics" where the zones are specified as the grouping band and the statistic is determined by the reducer. In the following example, change in nightlights in the United States is grouped by land cover category:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_grouping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_grouping#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a region representing the United States
 varregion=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
@@ -76,12 +79,15 @@ maxPixels:1e8
 // Print the resultant Dictionary.
 print(means);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a region representing the United States
 region = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017').filter(

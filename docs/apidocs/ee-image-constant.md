@@ -1,15 +1,14 @@
  
 #  ee.Image.constant 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Generates an image containing a constant value everywhere. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Generates an image containing a constant value everywhere. Usage| Returns  
 ---|---  
 `ee.Image.constant(value)`| Image  
 Argument| Type| Details  
 ---|---|---  
 `value`| Object| The value of the pixels in the constant image. Must be a number or an Array or a list of numbers or Arrays.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-constant#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a constant image, where every pixel has bands of the same value.
 varimage1=ee.Image.constant(1);

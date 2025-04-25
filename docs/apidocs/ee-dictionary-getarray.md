@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.getArray(key)`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
+this: `dictionary`| Dictionary|   
+`key`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getarray#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getarray#colab-python-sample) More
 ```
@@ -43,3 +43,4 @@ print('The "Array" value as an ee.Array object:',
    dic.getArray('Array').getInfo())
 ```
 
+Was this helpful?

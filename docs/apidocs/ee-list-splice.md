@@ -11,10 +11,10 @@ Usage| Returns
 `List.splice(start, count,  _other_)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`start`| Integer  
-`count`| Integer  
-`other`| List, default: null  
+this: `list`| List|   
+`start`| Integer|   
+`count`| Integer|   
+`other`| List, default: null|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-splice#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-splice#colab-python-sample) More
 ```
@@ -65,3 +65,4 @@ print('Insert new elements:', ee_list.splice(2, 0, ['X', 'Y', 'Z']).getInfo())
 print('Replace elements:', ee_list.splice(2, 3, ['X', 'Y', 'Z']).getInfo())
 ```
 
+Was this helpful?

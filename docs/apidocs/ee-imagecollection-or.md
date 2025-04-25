@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| ImageCollection| The image collection to reduce.  
+Was this helpful?

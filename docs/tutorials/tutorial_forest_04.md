@@ -112,3 +112,4 @@ gfc_forma.updateMask(gfc_forma),
 ```
 
 This concludes the overview of forest change datasets in Earth Engine. We're looking forward to seeing what you can do with them!
+Was this helpful?

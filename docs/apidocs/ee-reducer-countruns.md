@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.countRuns()`| Reducer  
 **No arguments.**
+Was this helpful?

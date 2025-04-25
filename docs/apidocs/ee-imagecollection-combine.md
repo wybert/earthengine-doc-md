@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `primary`| ImageCollection| The primary collection to join.  
 `secondary`| ImageCollection| The secondary collection to join.  
 `overwrite`| Boolean, default: false| If true, bands with the same name will get overwritten. If false, bands with the same name will be renamed.  
+Was this helpful?

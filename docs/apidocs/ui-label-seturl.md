@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.label`| ui.Label| The ui.Label instance.  
 `targetUrl`| String| The url of the hyperlink.  
+Was this helpful?

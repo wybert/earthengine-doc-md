@@ -1,6 +1,6 @@
  
 #  Earth Engine access 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Get access to Earth Engine](https://developers.google.com/earth-engine/guides/access#get_access_to_earth_engine)
   * [Specify a project](https://developers.google.com/earth-engine/guides/access#specify_a_project)

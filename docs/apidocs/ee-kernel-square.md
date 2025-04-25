@@ -51,3 +51,4 @@ pprint(ee.Kernel.square(**{'radius': 3}).getInfo())
 # [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
 ```
 
+Was this helpful?

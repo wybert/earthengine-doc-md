@@ -1,6 +1,6 @@
  
 #  Relational, Conditional, and Boolean Operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Relational and boolean operators](https://developers.google.com/earth-engine/guides/image_relational#relational-and-boolean-operators)
   * [Conditional operators](https://developers.google.com/earth-engine/guides/image_relational#conditional-operators)

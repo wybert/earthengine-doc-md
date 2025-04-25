@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.button`| ui.Button| The ui.Button instance.  
 `label`| String| The button's label.  
+Was this helpful?

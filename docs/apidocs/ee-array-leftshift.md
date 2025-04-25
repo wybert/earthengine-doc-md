@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `left`| Array| The left-hand value.  
 `right`| Array| The right-hand value.  
+Was this helpful?

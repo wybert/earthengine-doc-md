@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.select`| ui.Select| The ui.Select instance.  
+Was this helpful?

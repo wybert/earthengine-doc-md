@@ -4,7 +4,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Creates a batch task to export a feature collection to an Earth Engine table asset. Tasks can be started from the Tasks tab. 
 Usage| Returns  
 ---|---  
-`Export.table.toAsset(collection,  _description_, _assetId_, _maxVertices_, _priority_)`  
+`Export.table.toAsset(collection,  _description_, _assetId_, _maxVertices_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `collection`| FeatureCollection| The feature collection to export.  

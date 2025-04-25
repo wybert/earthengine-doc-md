@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#authorization-scopes)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Gets detailed information about an asset.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/assets/**}`

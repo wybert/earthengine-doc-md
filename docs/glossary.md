@@ -1,29 +1,6 @@
  
 #  Glossary 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Anisotropic](https://developers.google.com/earth-engine/glossary#anisotropic)
-  * [crs](https://developers.google.com/earth-engine/glossary#crs)
-  * [crs_transform](https://developers.google.com/earth-engine/glossary#crs_transform)
-  * [DEM](https://developers.google.com/earth-engine/glossary#dem)
-  * [DN](https://developers.google.com/earth-engine/glossary#dn)
-  * [DOY](https://developers.google.com/earth-engine/glossary#doy)
-  * [FIRMS](https://developers.google.com/earth-engine/glossary#firms)
-  * [google:registration_count](https://developers.google.com/earth-engine/glossary#google:registration_count)
-  * [google:registration_offset_*](https://developers.google.com/earth-engine/glossary#google:registration_offset_)
-  * [Isotropic](https://developers.google.com/earth-engine/glossary#isotropic)
-  * [MODIS](https://developers.google.com/earth-engine/glossary#modis)
-  * [NIR](https://developers.google.com/earth-engine/glossary#nir)
-  * [NDVI](https://developers.google.com/earth-engine/glossary#ndvi)
-  * [NDWI](https://developers.google.com/earth-engine/glossary#ndwi)
-  * [SAD](https://developers.google.com/earth-engine/glossary#sad)
-  * [SD](https://developers.google.com/earth-engine/glossary#sd)
-  * [system:time_start](https://developers.google.com/earth-engine/glossary#system:time_start)
-  * [system:time_end](https://developers.google.com/earth-engine/glossary#system:time_end)
-  * [USGS](https://developers.google.com/earth-engine/glossary#usgs)
-  * [WRI](https://developers.google.com/earth-engine/glossary#wri)
-
-
+Stay organized with collections  Save and categorize content based on your preferences.  
 
 
 ### Anisotropic

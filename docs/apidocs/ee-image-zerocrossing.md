@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `image`| Image| The image from which to compute zero crossings.  
+Was this helpful?

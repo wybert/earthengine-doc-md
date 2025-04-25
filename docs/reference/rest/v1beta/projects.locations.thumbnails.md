@@ -44,4 +44,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create)`
 |  Creates an ID that can be used to render a "thumbnail" image.  
-Was this helpful?

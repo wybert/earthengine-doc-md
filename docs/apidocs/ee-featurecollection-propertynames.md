@@ -6,7 +6,7 @@ Returns the names of properties on this element. Usage| Returns
 `FeatureCollection.propertyNames()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `element`| Element  
+this: `element`| Element|   
 ## Examples
 ### Code Editor (JavaScript)
 ```

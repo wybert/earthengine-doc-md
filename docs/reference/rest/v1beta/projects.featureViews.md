@@ -33,4 +33,3 @@ Union field `source`. The source of this map's data. `source` can be only one of
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureViews/create)`
 |  Create a FeatureView.  
-Was this helpful?

@@ -95,7 +95,7 @@ where:
 
 
 Similarly, the calculation of the water content at field capacity θFC can be done as follows:
-θFC=θ33t+(1.283θ233t−0.374θ33t−0.15)
+θFC=θ33t+(1.283θ33t2−0.374θ33t−0.15)
 with:
 θ33t=−0.251S+0.195C+0.011OM+0.006(S×OM)−0.027(C×OM)+0.452(S×C)+0.299
 #### Determination of soil texture and properties
@@ -755,7 +755,8 @@ and the relationship between APWL and the amount of water stored in the root zon
 **Case 2: potential evapotranspiration is lower than precipitation.**
 In that case, PET<P and STm is incremented as follows: STm=STm−1+(Pm−PETm).
 **_Case 2.1: the storage STm is higher than the water stored at the field capacity._**
-If STm>STFC the recharge is calculated as: Rm=STm−STFC+Pm−PETm
+If STm>STFC the recharge is calculated as: 
+Rm=STm−STFC+Pm−PETm
 In addition, the water stored at the end of the month m becomes equal to STFC and APWLm is set equal to zero.
 **_Case 2.2: the storage STm is less than or equal to the water stored at the field capacity._**
 If STm<=STFC, APWLm is implemented as follows: APWLm=−STFC×ln(STm/STFC), and no percolation occurs.

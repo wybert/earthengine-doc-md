@@ -1,12 +1,6 @@
  
 #  Hosted Model Payload Formats Supported on Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Supported Model Inputs](https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats#supported_model_inputs)
-    * [gRPC Prediction Payloads](https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats#grpc_prediction_payloads)
-    * [HTTP API Payloads](https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats#http_api_payloads)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Your custom trained model must be configured such that Earth Engine can send well-formed, interpretable inference requests to the model as it is hosted on Vertex AI.
 ## Supported Model Inputs
 Earth Engine constructs requests on your behalf when performing inference. Specify the payload format that EE will send requests with using the `payloadFormat` parameter when you instantiate the model connector with `ee.Model.fromVertexAi`.

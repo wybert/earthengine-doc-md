@@ -1,15 +1,6 @@
  
 #  Get started with Earth Engine for Python 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_python#before_you_begin)
-  * [Notebook setup](https://developers.google.com/earth-engine/guides/quickstart_python#notebook_setup)
-  * [Add raster data to a map](https://developers.google.com/earth-engine/guides/quickstart_python#add_raster_data_to_a_map)
-  * [Add vector data to a map](https://developers.google.com/earth-engine/guides/quickstart_python#add_vector_data_to_a_map)
-  * [Extract and chart data](https://developers.google.com/earth-engine/guides/quickstart_python#extract_and_chart_data)
-  * [What's next](https://developers.google.com/earth-engine/guides/quickstart_python#whats_next)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/quickstart_python.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/quickstart_python.ipynb)  
 ---|---  
 This quickstart will give you an interactive introduction to visualizing and analyzing geospatial data with the Earth Engine Python interface.

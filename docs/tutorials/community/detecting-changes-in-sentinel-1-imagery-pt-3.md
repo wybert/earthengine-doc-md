@@ -426,13 +426,13 @@ With a time series of k SAR images (c1,c2,…,ck),
   6. Set ℓ=k−j+1 and go to 2.
 
 
-Table 3.1  
----  
-ℓ | c1 | c2 | c3 | c4 | c5  
-5 | R52 | R53 | R54 | R55 | Q5  
-4 | R42 | R43 | R44 | Q4  
-3 | R32 | R33 | Q3  
-2 | R22 | Q2  
+Table 3.1 |  |  |  |  |  |   
+---|---|---|---|---|---|---  
+ℓ | c1 | c2 | c3 | c4 | c5 |   
+5 |  | R52 | R53 | R54 | R55 | Q5  
+4 |  |  | R42 | R43 | R44 | Q4  
+3 |  |  |  | R32 | R33 | Q3  
+2 |  |  |  |  | R22 | Q2  
 Thus if a change is found, the series is truncated up to the point of change and the testing procedure is repeated for the rest of the series. Take for example a series of k=5 images. (See Table 3.1 where, to avoid ambiguity, we add superscript ℓ to each Rj test). Suppose there is one change in the second interval only. Then the test sequence is (the asterisk means H0 is rejected)
 Q∗5→R52→R5∗3→Q3.
 If there are changes in the second and last intervals,
@@ -498,13 +498,13 @@ defp_values(im_list):
 ```
 
 #### Filtering the _P_ values
-Table 3.2  
----  
-i / j | 1 | 2 | 3 | 4  
-1 | P2 | P3 | P4 | P5 | PQ5  
-2 | P2 | P3 | P4 | PQ4  
-3 | P2 | P3 | PQ3  
-4 | P2 | PQ2  
+Table 3.2 |  |  |  |  |  |   
+---|---|---|---|---|---|---  
+i / j |  | 1 | 2 | 3 | 4 |   
+1 |  | P2 | P3 | P4 | P5 | PQ5  
+2 |  |  | P2 | P3 | P4 | PQ4  
+3 |  |  |  | P2 | P3 | PQ3  
+4 |  |  |  |  | P2 | PQ2  
 The pre-calculated _P_ values in _pv_arr_ (shown schematically in Table 3.2 for k=5) are then scanned in nested iterations over indices i and j to determine the following thematic change maps:
   * cmap: the interval of the most recent change, one band, byte values ∈[0,k−1],
   * smap: the interval of the first change, one band, byte values ∈[0,k−1],

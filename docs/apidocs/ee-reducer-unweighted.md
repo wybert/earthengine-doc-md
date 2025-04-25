@@ -7,4 +7,5 @@ Usage| Returns
 `Reducer.unweighted()`| Reducer  
 Argument| Type| Details  
 ---|---|---  
-this: `reducer`| Reducer  
+this: `reducer`| Reducer|   
+Was this helpful?

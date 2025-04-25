@@ -1,24 +1,6 @@
  
 #  Sentinel-2 Cloud Masking with s2cloudless 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Run me first](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#run_me_first)
-  * [Assemble cloud mask components](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#assemble_cloud_mask_components)
-    * [Define collection filter and cloud mask parameters](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#define_collection_filter_and_cloud_mask_parameters)
-    * [Build a Sentinel-2 collection](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#build_a_sentinel-2_collection)
-    * [Define cloud mask component functions](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#define_cloud_mask_component_functions)
-  * [Visualize and evaluate cloud mask components](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#visualize_and_evaluate_cloud_mask_components)
-    * [Define functions to display image and mask component layers.](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#define_functions_to_display_image_and_mask_component_layers)
-    * [Display mask component layers](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#display_mask_component_layers)
-    * [Evaluate mask component layers](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#evaluate_mask_component_layers)
-  * [Apply cloud and cloud shadow mask](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#apply_cloud_and_cloud_shadow_mask)
-    * [Define collection filter and cloud mask parameters](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#define_collection_filter_and_cloud_mask_parameters_2)
-    * [Build a Sentinel-2 collection](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#build_a_sentinel-2_collection_2)
-    * [Define cloud mask application function](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#define_cloud_mask_application_function)
-    * [Process the collection](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#process_the_collection)
-    * [Display the cloud-free composite](https://developers.google.com/earth-engine/tutorials/community/sentinel-2-s2cloudless#display_the_cloud-free_composite)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/sentinel-2-s2cloudless/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/sentinel-2-s2cloudless/index.ipynb)  

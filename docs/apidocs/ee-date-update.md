@@ -1,6 +1,6 @@
  
 #  ee.Date.update 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-update#examples)
 
@@ -11,13 +11,13 @@ Usage| Returns
 `Date.update( _year_, _month_, _day_, _hour_, _minute_, _second_, _timeZone_)`| Date  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
-`year`| Integer, default: null  
-`month`| Integer, default: null  
-`day`| Integer, default: null  
-`hour`| Integer, default: null  
-`minute`| Integer, default: null  
-`second`| Number, default: null  
+this: `date`| Date|   
+`year`| Integer, default: null|   
+`month`| Integer, default: null|   
+`day`| Integer, default: null|   
+`hour`| Integer, default: null|   
+`minute`| Integer, default: null|   
+`second`| Number, default: null|   
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-update#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-update#colab-python-sample) More

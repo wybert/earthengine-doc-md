@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `input`| Image| Input image.  
 `axis1`| Integer, default: 0| First axis to swap.  
 `axis2`| Integer, default: 1| Second axis to swap.  
+Was this helpful?

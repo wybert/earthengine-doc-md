@@ -1,16 +1,6 @@
  
 #  Method: projects.map.export 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#authorization-scopes)
-  * [TileOptions](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#tileoptions)
-  * [ZoomSubset](https://developers.google.com/earth-engine/reference/rest/v1/projects.map/export#zoomsubset)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a tiled map and writes the result to Google Cloud Storage.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1/{project=projects/*}/map:export`

@@ -1,8 +1,7 @@
  
 #  ee.Filter.dateRangeContains 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Creates a unary or binary filter that passes if the left operand, a date range, contains the right operand, a date. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a unary or binary filter that passes if the left operand, a date range, contains the right operand, a date. Usage| Returns  
 ---|---  
 `ee.Filter.dateRangeContains( _leftField_, _rightValue_, _rightField_, _leftValue_)`| Filter  
 Argument| Type| Details  

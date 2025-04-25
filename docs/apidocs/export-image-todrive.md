@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Creates a batch task to export an Image as a raster to Drive. Tasks can be started from the Tasks tab. "crsTransform", "scale", and "dimensions" are mutually exclusive. 
 Usage| Returns  
 ---|---  
-`Export.image.toDrive(image,  _description_, _folder_, _fileNamePrefix_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _shardSize_, _fileDimensions_, _skipEmptyTiles_, _fileFormat_, _formatOptions_, _priority_)`  
+`Export.image.toDrive(image,  _description_, _folder_, _fileNamePrefix_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _shardSize_, _fileDimensions_, _skipEmptyTiles_, _fileFormat_, _formatOptions_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `image`| Image| The image to export.  

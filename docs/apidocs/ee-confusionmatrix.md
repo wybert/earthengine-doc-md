@@ -1,12 +1,7 @@
  
 #  ee.ConfusionMatrix 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix#examples)
-
-
-Creates a confusion matrix. Axis 0 (the rows) of the matrix correspond to the actual values, and Axis 1 (the columns) to the predicted values. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a confusion matrix. Axis 0 (the rows) of the matrix correspond to the actual values, and Axis 1 (the columns) to the predicted values. Usage| Returns  
 ---|---  
 `ee.ConfusionMatrix(array,  _order_)`| ConfusionMatrix  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 `array`| Object| A square, 2D array of integers, representing the confusion matrix. Note that unlike the ee.Array constructor, this argument cannot take a list.  
 `order`| List, default: null| The row and column size and order, for non-contiguous or non-zero based matrices.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A confusion matrix. Rows correspond to actual values, columns to
 // predicted values.
@@ -38,12 +33,15 @@ varorder=[11,22,42,52,71,81];
 print('Specified row/column labels (specified "order" parameter)',
 ee.ConfusionMatrix({array:array,order:order}).order());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # A confusion matrix. Rows correspond to actual values, columns to

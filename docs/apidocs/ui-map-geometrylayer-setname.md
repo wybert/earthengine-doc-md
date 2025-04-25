@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.geometrylayer`| ui.Map.GeometryLayer| The ui.Map.GeometryLayer instance.  
 `name`| String| The name of the layer.  
-Was this helpful?

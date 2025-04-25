@@ -81,3 +81,4 @@ Union field `location`. Information about where and how the raster tiles are sto
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create)`
 |  Creates an asset.  
+Was this helpful?

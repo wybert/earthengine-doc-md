@@ -11,8 +11,8 @@ Usage| Returns
 `List.frequency(element)`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`element`| Object  
+this: `list`| List|   
+`element`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-frequency#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-frequency#colab-python-sample) More
 ```
@@ -42,4 +42,3 @@ print('Frequency of value 2:', ee_list.frequency(2).getInfo())
 print('Frequency of value 9:', ee_list.frequency(9).getInfo())
 ```
 
-Was this helpful?

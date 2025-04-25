@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `image`| Image| The input image.  
+Was this helpful?

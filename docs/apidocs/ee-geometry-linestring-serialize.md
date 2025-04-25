@@ -48,4 +48,3 @@ m.add_layer(linestring, {'color': 'black'}, 'Geometry [black]: linestring')
 m
 ```
 
-Was this helpful?

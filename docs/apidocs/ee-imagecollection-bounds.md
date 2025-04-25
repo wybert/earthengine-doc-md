@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs a bounding box around the geometries in a collection. 
 Usage| Returns  
 ---|---  

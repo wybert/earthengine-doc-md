@@ -1,6 +1,6 @@
  
 #  ee.Number.pow 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-pow#examples)
 
@@ -36,4 +36,3 @@ print('5 ** 2.2', ee.Number(5).pow(ee.Number(2.2)).getInfo()) # 34.493241536
 print('5.2 ** 2', ee.Number(5.2).pow(ee.Number(2)).getInfo()) # 27.040000000
 ```
 
-Was this helpful?

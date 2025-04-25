@@ -1,6 +1,6 @@
  
 #  ee.Number.firstNonZero 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-firstnonzero#examples)
 
@@ -32,4 +32,3 @@ print('First non-zero in [5, 0]:',
    ee.Number(5).firstNonZero(ee.Number(0)).getInfo()) # 5
 ```
 
-Was this helpful?

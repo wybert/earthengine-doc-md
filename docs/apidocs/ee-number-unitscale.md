@@ -11,9 +11,9 @@ Usage| Returns
 `Number.unitScale(min, max)`| Number  
 Argument| Type| Details  
 ---|---|---  
-this: `number`| Number  
-`min`| Float  
-`max`| Float  
+this: `number`| Number|   
+`min`| Float|   
+`max`| Float|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-unitscale#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-unitscale#colab-python-sample) More
 ```

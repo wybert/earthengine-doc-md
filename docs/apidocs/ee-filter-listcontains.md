@@ -1,8 +1,7 @@
  
 #  ee.Filter.listContains 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Creates a unary or binary filter that passes if the left operand, a list, contains the right operand. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a unary or binary filter that passes if the left operand, a list, contains the right operand. Usage| Returns  
 ---|---  
 `ee.Filter.listContains( _leftField_, _rightValue_, _rightField_, _leftValue_)`| Filter  
 Argument| Type| Details  

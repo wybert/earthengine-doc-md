@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#examples)
 
@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.get(key,  _defaultValue_)`| Object  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
-`defaultValue`| Object, default: null  
+this: `dictionary`| Dictionary|   
+`key`| String|   
+`defaultValue`| Object, default: null|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#colab-python-sample) More
 ```

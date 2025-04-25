@@ -9,7 +9,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Caveats](https://developers.google.com/earth-engine/tutorials/community/histogram-matching#caveats)
 
 
-Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
+Author(s): [ jdbcode ](https://github.com/jdbcode)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/histogram-matching/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/histogram-matching/index.ipynb)  
 ---|---  
@@ -173,3 +173,4 @@ m
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/histogram-matching/index_files/output_QJDqpNtDpUKO_1.png)
 ## Caveats
 If there's anything anomalous in your image that's not in the reference image (or vice versa), like clouds, the CDF can end up skewed, and the histogram matching results might not look that good. Additionally, a little mis-registration between the source and target images is usually ok, since it is using the statistics of the whole region and doesn't really rely on a pixel-to-pixel correspondence. 
+Was this helpful?

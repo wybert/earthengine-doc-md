@@ -1,12 +1,7 @@
  
 #  ee.FeatureCollection.cluster 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-cluster#examples)
-
-
-Clusters each feature in a collection, adding a new column to each feature containing the cluster number to which it has been assigned. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Clusters each feature in a collection, adding a new column to each feature containing the cluster number to which it has been assigned. Usage| Returns  
 ---|---  
 `FeatureCollection.cluster(clusterer,  _outputName_)`| FeatureCollection  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `features`| FeatureCollection| The collection of features to cluster. Each
 `clusterer`| Clusterer| The clusterer to use.  
 `outputName`| String, default: "cluster"| The name of the output property to be added.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-cluster#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-cluster#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Import a Sentinel-2 surface reflectance image.
 varimage=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -43,12 +38,15 @@ Map.setCenter(-122.35,37.47,9);
 Map.addLayer(image,{bands:['B4','B3','B2'],min:0,max:1500},'S2 image');
 Map.addLayer(clusterVis,null,'Clusters');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Import a Sentinel-2 surface reflectance image.
 image = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')
@@ -84,4 +82,3 @@ m.add_layer(cluster_vis, None, 'Clusters')
 m
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Monitoring usage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [View consumption in Cloud Monitoring](https://developers.google.com/earth-engine/guides/monitoring_usage#view_consumption_in_cloud_monitoring)
     * [Chart metrics in Metrics Explorer](https://developers.google.com/earth-engine/guides/monitoring_usage#chart_metrics_in_metrics_explorer)

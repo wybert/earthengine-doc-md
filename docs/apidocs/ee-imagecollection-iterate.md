@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.iterate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Applies a user-supplied function to each element of a collection. The user-supplied function is given two arguments: the current element, and the value returned by the previous call to iterate() or the first argument, for the first iteration. The result is the value returned by the final call to the user-supplied function. 
 Returns the result of the Collection.iterate() call.
 Usage| Returns  

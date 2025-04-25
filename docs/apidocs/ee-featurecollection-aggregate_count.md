@@ -36,3 +36,4 @@ print('Number of non-null values for the fuel1 property:',
    fc.aggregate_count('fuel1').getInfo()) # 66
 ```
 
+Was this helpful?

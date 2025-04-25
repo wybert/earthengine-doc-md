@@ -1,15 +1,11 @@
  
 #  Export.classifier.toAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/export-classifier-toasset#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a batch task to export an ee.Classifier as an Earth Engine asset. 
 Only supported for ee.Classifier.smileRandomForest, ee.Classifier.smileCart, ee.Classifier.DecisionTree and ee.Classifier.DecisionTreeEnsemble.
 Usage| Returns  
 ---|---  
-`Export.classifier.toAsset(classifier,  _description_, _assetId_, _priority_)`  
+`Export.classifier.toAsset(classifier,  _description_, _assetId_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `classifier`| ComputedObject| The classifier to export.  
@@ -17,7 +13,7 @@ Argument|  Type| Details
 `assetId`| String, optional| The destination asset ID.  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/export-classifier-toasset#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/export-classifier-toasset#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // First gather the training data for a random forest classifier.
 // Let's use MCD12Q1 yearly landcover for the labels.
@@ -74,12 +70,15 @@ landsatComposite.classify(savedClassifier),
 landcoverVisualization,
 'Upsampled landcover, saved');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # First gather the training data for a random forest classifier.
 # Let's use MCD12Q1 yearly landcover for the labels.

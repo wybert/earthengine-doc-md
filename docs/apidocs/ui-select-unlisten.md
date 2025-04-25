@@ -4,7 +4,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Deletes callbacks. 
 Usage| Returns  
 ---|---  
-`Select.unlisten( _idOrType_)`  
+`Select.unlisten( _idOrType_)`|   
 Argument|  Type| Details  
 ---|---|---  
 this: `ui.widget`| ui.Widget| The ui.Widget instance.  

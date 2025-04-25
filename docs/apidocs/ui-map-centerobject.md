@@ -1,10 +1,6 @@
  
 #  ui.Map.centerObject 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-centerobject#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Centers the map view on a given object. **Caution:** providing a large or complex collection as input can result in poor performance. Collating the geometry of collections does not scale well; use the smallest collection (or geometry) that is required to achieve the desired outcome.
 Returns this ui.Map.
 Usage| Returns  
@@ -17,7 +13,7 @@ this: `ui.map`| ui.Map| The ui.Map instance.
 `zoom`| Number, optional| The zoom level, from 0 to 24. If unspecified, computed based on the object's bounding box.  
 `onComplete`| Function, optional| A callback which is triggered after the recentering completes successfully. Passing this parameter causes the `centerObject` operation to run asynchronously.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-map-centerobject#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.

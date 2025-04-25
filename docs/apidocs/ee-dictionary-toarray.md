@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.toArray( _keys_, _axis_)`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`keys`| List, default: null  
-`axis`| Integer, default: 0  
+this: `dictionary`| Dictionary|   
+`keys`| List, default: null|   
+`axis`| Integer, default: 0|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-toarray#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-toarray#colab-python-sample) More
 ```

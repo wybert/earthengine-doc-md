@@ -11,4 +11,3 @@ Argument| Type| Details
 `numX`| Integer| the number of independent variables being regressed.  
 `numY`| Integer, default: 1| the number of dependent variables.  
 `lambda`| Float, default: 0.1| Regularization parameter.  
-Was this helpful?

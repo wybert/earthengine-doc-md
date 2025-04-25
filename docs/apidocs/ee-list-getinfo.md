@@ -12,3 +12,4 @@ Argument| Type| Details
 ---|---|---  
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+Was this helpful?

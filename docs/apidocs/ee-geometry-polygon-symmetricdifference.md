@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Polygon.symmetricDifference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the symmetric difference between two geometries. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the symmetric difference between two geometries. Usage| Returns  
 ---|---  
 `Polygon.symmetricDifference(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -38,6 +37,7 @@ Map.addLayer(polygonSymmetricDifference,
 {'color':'red'},
 'Result [red]: polygon.symmetricDifference');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

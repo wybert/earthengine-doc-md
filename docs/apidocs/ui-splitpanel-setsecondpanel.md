@@ -1,8 +1,7 @@
  
 #  ui.SplitPanel.setSecondPanel 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns this split panel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns this split panel. Usage| Returns  
 ---|---  
 `SplitPanel.setSecondPanel(panel)`| ui.SplitPanel  
 Argument| Type| Details  

@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.mean()`| Reducer  
 **No arguments.**
-Was this helpful?

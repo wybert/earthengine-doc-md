@@ -121,7 +121,7 @@ Zoom Level | Pixel Size (at equator) | Zoom Level | Pixel Size (at equator)
 7 | 1.2 km | 17 | 1.2 m  
 8 | 611 m | 18 | 0.6 m  
 9 | 305 m | 19 | 0.3 m  
-20 | 0.15 m  
+|  | 20 | 0.15 m  
 Observe from the previous table that the `maxZoom` set in the example corresponds to 19 meters at the equator, smaller at higher latitudes. This is less than the nominal 30 arc-seconds per pixel resolution of the input image. As a result, the map displayed in the output [ index.html ](https://storage.googleapis.com/ee-docs-demos/mapToCloudExample/index.html) can be zoomed in until pixels in native resolution are visible in the map. To limit the map display to native pixel resolution, set `maxZoom` to a value that corresponds to the native resolution or less. 
 ## Platform Specific Guidelines
 Below are a number of platforms where you might want to view and use map tiles. Each section indicates which settings are required for the tiles to work with that platform, and a copy of the example code with the necessary parameters. 

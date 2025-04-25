@@ -1,6 +1,6 @@
  
 #  Functional Programming Concepts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Introduction to functional programming](https://developers.google.com/earth-engine/tutorials/tutorial_js_03#introduction-to-functional-programming)
     * [For Loops](https://developers.google.com/earth-engine/tutorials/tutorial_js_03#for-loops)

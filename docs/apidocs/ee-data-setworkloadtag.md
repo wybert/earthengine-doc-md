@@ -6,8 +6,8 @@ Workload tag must be 1 - 63 characters, beginning and ending with an alphanumeri
 (.), and alphanumerics between, or an empty string to clear the workload tag.
 Usage| Returns  
 ---|---  
-`ee.data.setWorkloadTag(tag)`  
+`ee.data.setWorkloadTag(tag)`|   
 Argument| Type| Details  
 ---|---|---  
-`tag`| String  
+`tag`| String|   
 Was this helpful?

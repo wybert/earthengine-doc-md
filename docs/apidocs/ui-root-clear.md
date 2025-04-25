@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Clears the root panel. 
 Usage| Returns  
 ---|---  
-`ui.root.clear()`  
+`ui.root.clear()`|   
 **No arguments.**
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-root-clear#code-editor-javascript-sample) More
@@ -18,3 +18,4 @@ ui.root.clear();
 ui.root.add(ui.Label('This is a custom user interface.'));
 ```
 
+Was this helpful?

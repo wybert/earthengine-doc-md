@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.sampleVariance()`| Reducer  
 **No arguments.**
-Was this helpful?

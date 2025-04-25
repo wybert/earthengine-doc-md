@@ -1,12 +1,7 @@
  
 #  ee.Image.clipToCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-cliptocollection#examples)
-
-
-Clips an image to a FeatureCollection. The output bands correspond exactly the input bands, except data not covered by the geometry of at least one feature from the collection is masked. The output image retains the metadata of the input image. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Clips an image to a FeatureCollection. The output bands correspond exactly the input bands, except data not covered by the geometry of at least one feature from the collection is masked. The output image retains the metadata of the input image. Usage| Returns  
 ---|---  
 `Image.clipToCollection(collection)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `input`| Image| The image to clip.  
 `collection`| Object| The FeatureCollection to clip to.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-cliptocollection#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-cliptocollection#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A digital elevation model.
 vardem=ee.Image('NASA/NASADEM_HGT/001');
@@ -32,12 +27,15 @@ Map.addLayer(demClip,
 {bands:'elevation',min:0,max:2500,palette:['green','yellow','brown']},
 'Clipped DEM');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A digital elevation model.
 dem = ee.Image('NASA/NASADEM_HGT/001')
@@ -66,4 +64,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?
