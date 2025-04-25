@@ -1,0 +1,131 @@
+ 
+#  ImageCollection Overview 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+An `ImageCollection` is a stack or sequence of images. An `ImageCollection` can be loaded by pasting an Earth Engine asset ID into the `ImageCollection` constructor. You can find `ImageCollection` IDs in the [data catalog](https://developers.google.com/earth-engine/datasets). For example, to load the [Sentinel-2 surface reflectance collection](https://developers.google.com/earth-engine/guides/datasets/catalog/COPERNICUS_S2_SR): 
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
+```
+varsentinelCollection=ee.ImageCollection('COPERNICUS/S2_SR');
+```
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+```
+sentinel_collection = ee.ImageCollection('COPERNICUS/S2_SR')
+```
+
+This collection contains every Sentinel-2 image in the public catalog. There are a lot. Usually you want to filter the collection as shown [here](https://developers.google.com/earth-engine/guides/ic_info) or [here](https://developers.google.com/earth-engine/guides/ic_filtering). 
+In addition to loading an `ImageCollection` using an Earth Engine collection ID, Earth Engine has methods to create image collections. The constructor `ee.ImageCollection()` or the convenience method `ee.ImageCollection.fromImages()` create image collections from lists of images. You can also create new image collections by merging existing collections. For example:
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
+```
+// Create arbitrary constant images.
+varconstant1=ee.Image(1);
+varconstant2=ee.Image(2);
+// Create a collection by giving a list to the constructor.
+varcollectionFromConstructor=ee.ImageCollection([constant1,constant2]);
+print('collectionFromConstructor: ',collectionFromConstructor);
+// Create a collection with fromImages().
+varcollectionFromImages=ee.ImageCollection.fromImages(
+[ee.Image(3),ee.Image(4)]);
+print('collectionFromImages: ',collectionFromImages);
+// Merge two collections.
+varmergedCollection=collectionFromConstructor.merge(collectionFromImages);
+print('mergedCollection: ',mergedCollection);
+// Create a toy FeatureCollection
+varfeatures=ee.FeatureCollection(
+[ee.Feature(null,{foo:1}),ee.Feature(null,{foo:2})]);
+// Create an ImageCollection from the FeatureCollection
+// by mapping a function over the FeatureCollection.
+varimages=features.map(function(feature){
+returnee.Image(ee.Number(feature.get('foo')));
+});
+// Print the resultant collection.
+print('Image collection: ',images);
+```
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+```
+# Create arbitrary constant images.
+constant_1 = ee.Image(1)
+constant_2 = ee.Image(2)
+# Create a collection by giving a list to the constructor.
+collection_from_constructor = ee.ImageCollection([constant_1, constant_2])
+display('Collection from constructor:', collection_from_constructor)
+# Create a collection with fromImages().
+collection_from_images = ee.ImageCollection.fromImages(
+  [ee.Image(3), ee.Image(4)]
+)
+display('Collection from images:', collection_from_images)
+# Merge two collections.
+merged_collection = collection_from_constructor.merge(collection_from_images)
+display('Merged collection:', merged_collection)
+# Create a toy FeatureCollection
+features = ee.FeatureCollection(
+  [ee.Feature(None, {'foo': 1}), ee.Feature(None, {'foo': 2})]
+)
+# Create an ImageCollection from the FeatureCollection
+# by mapping a function over the FeatureCollection.
+images = features.map(lambda feature: ee.Image(ee.Number(feature.get('foo'))))
+# Display the resultant collection.
+display('Image collection:', images)
+```
+
+Note that in this example an `ImageCollection` is created by mapping a function that returns an `Image` over a `FeatureCollection`. Learn more about mapping in the [Mapping over an ImageCollection section](https://developers.google.com/earth-engine/guides/ic_mapping). Learn more about feature collections from the [FeatureCollection section](https://developers.google.com/earth-engine/guides/feature_collections).
+You can also create an `ImageCollection` from GeoTiffs in Cloud Storage. For example: 
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
+```
+// All the GeoTiffs are in this folder.
+varuriBase='gs://gcp-public-data-landsat/LC08/01/001/002/'+
+'LC08_L1GT_001002_20160817_20170322_01_T2/';
+// List of URIs, one for each band.
+varuris=ee.List([
+uriBase+'LC08_L1GT_001002_20160817_20170322_01_T2_B2.TIF',
+uriBase+'LC08_L1GT_001002_20160817_20170322_01_T2_B3.TIF',
+uriBase+'LC08_L1GT_001002_20160817_20170322_01_T2_B4.TIF',
+uriBase+'LC08_L1GT_001002_20160817_20170322_01_T2_B5.TIF',
+]);
+// Make a collection from the list of images.
+varimages=uris.map(ee.Image.loadGeoTIFF);
+varcollection=ee.ImageCollection(images);
+// Get an RGB image from the collection of bands.
+varrgb=collection.toBands().rename(['B2','B3','B4','B5']);
+Map.centerObject(rgb);
+Map.addLayer(rgb,{bands:['B4','B3','B2'],min:0,max:20000},'rgb');
+```
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+```
+# All the GeoTiffs are in this folder.
+uri_base = (
+  'gs://gcp-public-data-landsat/LC08/01/001/002/'
+  + 'LC08_L1GT_001002_20160817_20170322_01_T2/'
+)
+# List of URIs, one for each band.
+uris = ee.List([
+  uri_base + 'LC08_L1GT_001002_20160817_20170322_01_T2_B2.TIF',
+  uri_base + 'LC08_L1GT_001002_20160817_20170322_01_T2_B3.TIF',
+  uri_base + 'LC08_L1GT_001002_20160817_20170322_01_T2_B4.TIF',
+  uri_base + 'LC08_L1GT_001002_20160817_20170322_01_T2_B5.TIF',
+])
+# Make a collection from the list of images.
+images = uris.map(lambda uri: ee.Image.loadGeoTIFF(uri))
+collection = ee.ImageCollection(images)
+# Get an RGB image from the collection of bands.
+rgb = collection.toBands().rename(['B2', 'B3', 'B4', 'B5'])
+m = geemap.Map()
+m.center_object(rgb)
+m.add_layer(rgb, {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 20000}, 'rgb')
+m
+```
+
+[Learn more about loading images from Cloud GeoTiffs](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs). 
