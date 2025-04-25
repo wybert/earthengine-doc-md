@@ -9,10 +9,14 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add explicit write permissions
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for proper updates
       
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -38,8 +42,8 @@ jobs:
     - name: Commit and push if changes exist
       if: steps.check_changes.outputs.changes > 0
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
         git add -A
         git commit -m "Auto-update GEE documentation $(date +'%Y-%m-%d')"
         git push 
