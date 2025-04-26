@@ -7,7 +7,8 @@ Usage| Returns
 `List.slice(start,  _end_, _step_)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`start`| Integer  
-`end`| Integer, default: null  
-`step`| Integer, default: null  
+this: `list`| List|   
+`start`| Integer|   
+`end`| Integer, default: null|   
+`step`| Integer, default: null|   
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ee.data.makeTableDownloadUrl 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Create a table download URL from a docid and token. 
 Returns the download URL.
 Usage| Returns  

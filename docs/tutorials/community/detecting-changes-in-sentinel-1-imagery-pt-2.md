@@ -343,8 +343,49 @@ mp.add_child(folium.LayerControl())
 display(mp)
 
 ```
+```
 
-![png](https://developers.google.com/static/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2/index_files/output_DXpGkHFrp4Q3_0.png)
+---------------------------------------------------------------------------
+WebDriverException            Traceback (most recent call last)
+File /tmpfs/src/tf_docs_env/lib/python3.9/site-packages/IPython/core/formatters.py:922, in IPythonDisplayFormatter.__call__(self, obj)
+  920 method = get_real_method(obj, self.print_method)
+  921 if method is not None:
+--> 922   method()
+  923   return True
+
+Cell In[1], line 96, in __set_up_ee_live_docs.<locals>.patch_ipython_display.<locals>.<lambda>(self)
+   95 defpatch_ipython_display(map_class, css_class):
+---> 96  map_class._ipython_display_ = lambda self: display_png(self,css_class)
+
+Cell In[1], line 64, in __set_up_ee_live_docs.<locals>.display_png(map_class, css_class)
+   62 driver.fullscreen_window()
+   63 time.sleep(map_render_delay_secs)
+---> 64 div = driver.find_element(webdriver.common.by.By.CLASS_NAME,css_class)
+   65 png = div.screenshot_as_png
+   66 driver.quit()
+
+File /tmpfs/src/tf_docs_env/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:898, in WebDriver.find_element(self, by, value)
+  895     raise NoSuchElementException(f"Cannot locate relative element with: {by.root}")
+  896   return elements[0]
+--> 898 return self.execute(Command.FIND_ELEMENT,{"using":by,"value":value})["value"]
+
+File /tmpfs/src/tf_docs_env/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:429, in WebDriver.execute(self, driver_command, params)
+  427 response = self.command_executor.execute(driver_command, params)
+  428 if response:
+--> 429   self.error_handler.check_response(response)
+  430   response["value"] = self._unwrap_value(response.get("value", None))
+  431   return response
+
+File /tmpfs/src/tf_docs_env/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:232, in ErrorHandler.check_response(self, response)
+  230     alert_text = value["alert"].get("text")
+  231   raise exception_class(message, screen, stacktrace, alert_text) # type: ignore[call-arg] # mypy is not smart enough here
+--> 232 raise exception_class(message, screen, stacktrace)
+
+WebDriverException: Message: Failed to decode response from marionette
+
+
+```
+
 Most changes are within the airport or on the Autobahn. Barge movements on the Main River (upper left hand corner) are also signaled as significant changes. Note that the 'red' changes (significant increases in intensity) do not show up in the 'ratio' overlay, which displays s1/s2.
 ### Bivariate change detection
 Rather than analyzing the VV and VH bands individually, it would make more sense to treat them together, and that is what we will now do. It is convenient to work with the covariance matrix form for measured intensities that we introduce in Part 1, see [Eq.(1.6a)](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1#single_look_complex_slc_sar_measurements). Again with the aim of keeping the notation simple, define
@@ -608,4 +649,3 @@ The more or less compact blue changes indicate a decrease in reflectivity in bot
 We have now covered the subject of bitemporal change detection with GEE Sentinel-1 imagery. The beauty of GEE is that it is trivially easy to gather arbitrarily long time series of S1 images from the archive, all with revisit times of 6 or 12 days depending on whether one or both satellites are collecting data. The next part of the Tutorial will generalize the techniques we have learned so far to treat multitemporal change detection.
 ### Oh, and one more thing ...
 We didn't mention it above, but note the similarity between Eq. (2.10) and Eq. (2.15). To go from the monovariate LRT to the bivariate LRT, we simply replace the product of intensities s1s2 by the product of determinants |c1||c2|, the sum s1+s2 by |c1+c2| and the factor 22 by 24=22⋅2. This observation will come in handy in Part 3. 
-Was this helpful?

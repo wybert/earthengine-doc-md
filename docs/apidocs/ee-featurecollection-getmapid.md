@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `featurecollection`| FeatureCollection| The FeatureCollection instance.  
 `visParams`| Object, optional| The visualization parameters. Currently only one parameter, 'color', containing an RGB color string is allowed. If visParams is not specified, black ("000000") is used.  
 `callback`| Function, optional| An async callback.  
+Was this helpful?

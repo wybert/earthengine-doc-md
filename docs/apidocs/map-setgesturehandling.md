@@ -5,7 +5,7 @@ Controls how gestures are handled on the map.
 See https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions.gestureHandling.
 Usage| Returns  
 ---|---  
-`Map.setGestureHandling(option)`  
+`Map.setGestureHandling(option)`|   
 Argument| Type| Details  
 ---|---|---  
 `option`| String| The option that controls how gestures are handled on the map. Allowed values: 

@@ -7,4 +7,4 @@ Usage| Returns
 `List.unzip()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
+this: `list`| List|   

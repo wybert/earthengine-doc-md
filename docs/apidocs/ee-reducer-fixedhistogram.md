@@ -11,3 +11,4 @@ Argument| Type| Details
 `max`| Float| The upper (exclusive) bound of the last bucket.  
 `steps`| Integer| The number of buckets to use.  
 `cumulative`| Boolean, default: false| When true, generates a cumulative histogram.  
+Was this helpful?

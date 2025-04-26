@@ -11,7 +11,7 @@ Usage| Returns
 `ConfusionMatrix.producersAccuracy()`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `confusionMatrix`| ConfusionMatrix  
+this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-producersaccuracy#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-producersaccuracy#colab-python-sample) More
 ```

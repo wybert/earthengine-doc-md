@@ -11,3 +11,4 @@ this: `image`| Image| The image to which the interpolation is applied.
 `x`| List| The x axis (input) values in the piecewise function.  
 `y`| List| The y axis (output) values in the piecewise function.  
 `behavior`| String, default: "extrapolate"| The behavior for points that are outside of the range of the supplied function. Options are: 'extrapolate', 'clamp', 'mask', or 'input'.  
+Was this helpful?

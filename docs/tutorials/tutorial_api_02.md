@@ -1,17 +1,8 @@
  
 #  Visualizing Images and Image Bands 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Image Constructor](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#image-constructor)
-  * [Configuring the Map](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#configuring-the-map)
-  * [Adding a layer to the Map](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#adding-a-layer-to-the-map)
-  * [Digression: Images in Earth Engine](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#digression:-images-in-earth-engine)
-  * [Customizing layer visualization](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#customizing-layer-visualization)
-  * [Digression: Palettes](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#digression:-palettes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Now that you're ready to begin writing Earth Engine JavaScript, start by copying the following code into the Code Editor:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Instantiate an image with the Image constructor.
 varimage=ee.Image('CGIAR/SRTM90_V4');
@@ -35,7 +26,7 @@ Congratulations! You've created your first Earth Engine script. In the next sect
 Images in Earth Engine (see [this page](https://developers.google.com/earth-engine/guides/image_overview) for more details) are made up of one or more bands. Each band in an image has its own name, pixel values, pixel resolution, and projection. As you'll soon discover, the SRTM image has one band: 'elevation'.
 When you add an image to a map using `Map.addLayer()`, Earth Engine needs to determine how to map the values in the image band(s) to colors on the display. If a single-band image is added to a map, by default Earth Engine displays the band in grayscale, where the minimum value is assigned to black, and the maximum value is assigned to white. If you don't specify what the minimum and maximum should be, Earth Engine will use default values. For example, the image you just added to the map is displayed as a grayscale image stretched to the full range of the data, or signed 16-bit integer [-32768, 32767]. (`float` bands are stretched to [0, 1] and `byte` bands are stretched to [0, 255] by default).
 You can discover the data type of the image by printing it and inspecting the image object in the **Console** tab. For example, paste the following after the previous code:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 print('SRTM image',image);
 ```
@@ -43,7 +34,7 @@ print('SRTM image',image);
 When you click run, note that an object appears in the console. To investigate the object properties, expand it by clicking on the zippy (![](https://code.earthengine.google.com/images/zippy-tab.svg)) to the left of the object or property. Expand the image object, the 'bands' property, the 'elevation' band at index '0' and the 'data_type' property of the 'elevation' band to discover that it is a `signed int16` data type.
 ## Customizing layer visualization
 To change the way the data are stretched, you can provide another parameter to the `Map.addLayer()` call. Specifically, the second parameter, `visParams`, lets you specify the minimum and maximum values to display. To discover what values to use, activate the [**Inspector** tab](https://developers.google.com/earth-engine/guides/playground#inspector-tab) and click around on the map to get an idea of the range of pixel values. Alternatively, use the [Layer manager](https://developers.google.com/earth-engine/guides/playground#layer-manager) to interactively stretch the data, then observe the minimum and maximum corresponding to percentiles or standard deviation stretches. Suppose that through such experimentation, you determine that the data should be stretched to [0, 3000]. To display the image using this range, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.addLayer(image,{min:0,max:3000},'custom visualization');
 ```
@@ -51,7 +42,7 @@ Map.addLayer(image,{min:0,max:3000},'custom visualization');
 Note that the `visParams` parameter is an object, with properties specifying the `min` and the `max`. (Learn more about JavaScript objects from [the JavaScript tutorial](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#basic-javascript-data-types) or [this external reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)). Note that the third parameter for `Map.addLayer()` is the name of the layer that is displayed in the [Layer manager](https://developers.google.com/earth-engine/guides/playground#layer-manager). The result should look something like Figure 1. Hover the mouse over the **Layers** box on the right to see the effect of renaming that layer.
 ![Tutorial_api_01_elevation.png](https://developers.google.com/static/earth-engine/images/Tutorial_api_01_elevation.png) Figure 1. Elevation image as grayscale, stretched to [0, 3000]. 
 To display a single band using a color palette, add a `palette` property to the `visParams` object:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.addLayer(image,{min:0,max:3000,palette:['blue','green','red']},
 'custom palette');

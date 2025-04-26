@@ -1,16 +1,6 @@
  
 #  Earth Engine audit logging 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Service name](https://developers.google.com/earth-engine/guides/audit_logging#service_name)
-  * [Methods by permission type](https://developers.google.com/earth-engine/guides/audit_logging#permission-type)
-  * [API interface audit logs](https://developers.google.com/earth-engine/guides/audit_logging#api-interface-reference)
-    * [google.earthengine.v1.EarthEngine](https://developers.google.com/earth-engine/guides/audit_logging#google.earthengine.v1.EarthEngine)
-    * [google.earthengine.v1alpha.EarthEngine](https://developers.google.com/earth-engine/guides/audit_logging#google.earthengine.v1alpha.EarthEngine)
-    * [google.earthengine.v1beta.EarthEngine](https://developers.google.com/earth-engine/guides/audit_logging#google.earthengine.v1beta.EarthEngine)
-    * [google.longrunning.Operations](https://developers.google.com/earth-engine/guides/audit_logging#google.longrunning.Operations)
-
-
 This document describes audit logging for Cloud Earth Engine. Google Cloud services generate audit logs that record administrative and access activities within your Google Cloud resources. For more information about Cloud Audit Logs, see the following: 
   * [Types of audit logs](https://cloud.google.com/logging/docs/audit#types)
   * [Audit log entry structure](https://cloud.google.com/logging/docs/audit#audit_log_entry_structure)

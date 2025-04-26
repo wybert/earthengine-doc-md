@@ -36,3 +36,4 @@ print('Product of power plant capacities (MW):',
    fc.aggregate_product('capacitymw').getInfo()) # 2.149198109e+109
 ```
 
+Was this helpful?

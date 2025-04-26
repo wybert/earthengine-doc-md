@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.combine(second,  _overwrite_)`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
-this: `first`| Dictionary  
-`second`| Dictionary  
-`overwrite`| Boolean, default: true  
+this: `first`| Dictionary|   
+`second`| Dictionary|   
+`overwrite`| Boolean, default: true|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#colab-python-sample) More
 ```
@@ -60,3 +60,4 @@ print('\nCombined dictionaries (overwrite true)')
 pprint.pprint(dic_1.combine(dic_2, True).getInfo())
 ```
 
+Was this helpful?

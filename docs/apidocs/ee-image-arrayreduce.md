@@ -150,3 +150,4 @@ print('2D array image minMax (pixel):', samp_arr_img(min_max_2d).getInfo())
 #  [2, 5]]]
 ```
 
+Was this helpful?

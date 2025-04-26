@@ -3,7 +3,7 @@
 Stay organized with collections  Save and categorize content based on your preferences. 
 Copies the asset from sourceId into destinationId. Usage| Returns  
 ---|---  
-`ee.data.copyAsset(sourceId, destinationId,  _overwrite_, _callback_)`  
+`ee.data.copyAsset(sourceId, destinationId,  _overwrite_, _callback_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `sourceId`| String| The ID of the asset to copy.  

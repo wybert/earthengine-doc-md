@@ -38,3 +38,4 @@ display(ee.Array([2]).lte([1])) # [0]
 display(ee.Array([-1, 0, 1]).lte([-2, 1, 1])) # [0, 1, 1]
 ```
 
+Was this helpful?

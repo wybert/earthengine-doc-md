@@ -27,4 +27,3 @@ map.setCenter({lon:-123.6,lat:47.7,zoom:9});
 print(map);
 ```
 
-Was this helpful?

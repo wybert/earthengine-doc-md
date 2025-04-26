@@ -1,6 +1,6 @@
  
 #  Projections 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [ The default projection ](https://developers.google.com/earth-engine/guides/projections#the-default-projection)
   * [Reprojecting](https://developers.google.com/earth-engine/guides/projections#reprojecting)

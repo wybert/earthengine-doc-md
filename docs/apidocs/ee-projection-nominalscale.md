@@ -7,5 +7,4 @@ Usage| Returns
 `Projection.nominalScale()`| Float  
 Argument| Type| Details  
 ---|---|---  
-this: `proj`| Projection  
-Was this helpful?
+this: `proj`| Projection|   

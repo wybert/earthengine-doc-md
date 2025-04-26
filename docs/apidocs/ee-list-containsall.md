@@ -7,6 +7,6 @@ Usage| Returns
 `List.containsAll(other)`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`other`| List  
+this: `list`| List|   
+`other`| List|   
 Was this helpful?

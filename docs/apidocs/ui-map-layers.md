@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  
+Was this helpful?

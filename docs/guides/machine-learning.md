@@ -1,6 +1,14 @@
  
 #  Machine Learning in Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Machine Learning APIs](https://developers.google.com/earth-engine/guides/machine-learning#machine-learning-apis)
+  * [Training and Prediction outside Earth Engine](https://developers.google.com/earth-engine/guides/machine-learning#training-and-prediction-outside-earth-engine)
+    * [Exporting Data from Earth Engine for Training](https://developers.google.com/earth-engine/guides/machine-learning#exporting-data-from-earth-engine-for-training)
+    * [Getting Predictions from a Model outside Earth Engine](https://developers.google.com/earth-engine/guides/machine-learning#getting-predictions-from-a-model-outside-earth-engine)
+    * [Other Reasons to train models outside Earth Engine](https://developers.google.com/earth-engine/guides/machine-learning#other-reasons-to-train-models-outside-earth-engine)
+
+
 **Note:** This overview assumes familiarity with basic Machine Learning (ML) concepts like training, prediction and models. The introduction to Machine Learning video on this page provides an introduction to these concepts. Alternatively, please take a look at Google's [ Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course). 
 ## Machine Learning APIs
 Machine Learning (ML) is a powerful technique for analyzing Earth Observation data. Earth Engine has built-in capabilities to allow users to build and use ML models for common scenarios with easy-to-use APIs. 

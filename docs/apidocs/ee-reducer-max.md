@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `numInputs`| Integer, default: 1| The number of inputs.  
-Was this helpful?

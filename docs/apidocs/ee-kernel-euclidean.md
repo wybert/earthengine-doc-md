@@ -51,4 +51,3 @@ pprint(ee.Kernel.euclidean(**{'radius': 3}).getInfo())
 # [4.242, 3.605, 3.162, 3.000, 3.162, 3.605, 4.242]
 ```
 
-Was this helpful?

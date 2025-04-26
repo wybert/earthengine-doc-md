@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `image`| Image| The image to convolve.  
 `kernel`| Kernel| The kernel to convolve with.  
+Was this helpful?

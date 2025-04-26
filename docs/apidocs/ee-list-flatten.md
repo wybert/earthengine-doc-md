@@ -7,5 +7,5 @@ Usage| Returns
 `List.flatten()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
+this: `list`| List|   
 Was this helpful?

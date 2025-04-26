@@ -1,15 +1,6 @@
  
 #  Writing your first community tutorial 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/tutorials/community/write#before_you_begin)
-    * [Code of Conduct](https://developers.google.com/earth-engine/tutorials/community/write#code_of_conduct)
-    * [Joining GitHub](https://developers.google.com/earth-engine/tutorials/community/write#joining_github)
-    * [Proposing a tutorial](https://developers.google.com/earth-engine/tutorials/community/write#proposing_a_tutorial)
-    * [First time setup](https://developers.google.com/earth-engine/tutorials/community/write#first_time_setup)
-  * [Writing and submitting a tutorial](https://developers.google.com/earth-engine/tutorials/community/write#writing_and_submitting_a_tutorial)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 This space is dedicated to Earth Engine users who want to share their knowledge with the rest of the Earth Engine community. Created by Earth Engine users, for Earth Engine users, tutorials in this section are intended for all levels, from beginner to more advanced users.
 Tutorials may be submitted as plain text and code formatted using the Markdown markup language, or as Colab notebooks containing Markdown and executable Python code. Tutorials built using the Earth Engine JavaScript client libraries are generally written in Markdown, while Colab is recommended for tutorials based on the Earth Engine Python client libraries.
 ## Before you begin
@@ -29,7 +20,7 @@ https://cla.developers.google.com
 
 ## Writing and submitting a tutorial
 Once your tutorial proposal is accepted by the maintainers, there several options for editing the tutorial and for submitting it to the Earth Engine community repository:
-[Markdown quick start](https://developers.google.com/earth-engine/tutorials/community/write#markdown-quick-start)[Colab notebook](https://developers.google.com/earth-engine/tutorials/community/write#colab-notebook)[Advanced](https://developers.google.com/earth-engine/tutorials/community/write#advanced) More
+### Markdown quick start
 You can fork the GitHub repository and create a new tutorial directly via the GitHub website to quickly get started without additional tools or setup:
   1. If you haven't already, [sign into GitHub](https://github.com/login).
   2. To create and edit a new tutorial file, click _New tutorial_. You'll be prompted to fork the repository, if needed.
@@ -41,9 +32,11 @@ Where `your-tutorial-name` is the short name of your tutorial in all lowercase. 
   5. Once ready, commit your changes and open a pull request.
 
 
+### Colab notebook
 Click here to get started writing a tutorial in Colab:
 [New Colab tutorial](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/tutorial-template.ipynb)
 This will open a notebook containing instructions for authoring and submitting your tutorial.
+### Advanced
 If you're already familiar with GitHub, git, and related tools, the overall process is the same for submitting both Markdown and Colab tutorials:
   1. Fork and clone the [google/earthengine-community](https://github.com/google/earthengine-community) GitHub repository.
   2. Create a directory under `tutorials` with the slugified short name of your tutorial (e.g., `tutorials/my-amazing-tutorial`).

@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.button`| ui.Button| The ui.Button instance.  
 `imageUrl`| String| The url of the image.  
+Was this helpful?

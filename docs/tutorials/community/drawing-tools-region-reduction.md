@@ -9,10 +9,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Result](https://developers.google.com/earth-engine/tutorials/community/drawing-tools-region-reduction#result)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools-region-reduction/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools-region-reduction/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools-region-reduction/index.md "View changes to this article over time.")
-Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools-region-reduction/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools-region-reduction/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools-region-reduction/index.md)
+Author(s): [ jdbcode ](https://github.com/jdbcode)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 This tutorial demonstrates how to use the [drawing tools API](https://developers.google.com/earth-engine/ui_widgets#ui.map.drawingtools) with a custom interface to make a simple [Earth Engine App](https://developers.google.com/earth-engine/apps) that charts an NDVI time series for a user-drawn geometry. The app provides options for drawing a rectangle, polygon, or point. It listens for when a user draws a geometry and displays a chart of mean NDVI for pixels intersecting the drawn geometry. 
 ![](https://developers.google.com/static/earth-engine/tutorials/community/drawing-tools-region-reduction/app-img.jpg) _The Earth Engine App resulting from this tutorial. Shown is an NDVI time series chart for the drawn polygon around Carmel Valley, California._
@@ -197,3 +197,4 @@ Map.add(controlPanel);
 The following animation is the result of putting the entire script together and publishing it as an Earth Engine App. The simplicity of this custom drawing tool interface and automatic clearing of the previous drawing and plot will allow you and your app users to focus on exploring data instead of geometry management.
 ![](https://developers.google.com/static/earth-engine/tutorials/community/drawing-tools-region-reduction/app-animation.gif)
 Learn more about the drawing tools API in the [Getting Started with Drawing Tools](https://developers.google.com/earth-engine/tutorials/community/drawing-tools) tutorial.
+Was this helpful?

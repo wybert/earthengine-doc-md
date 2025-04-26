@@ -11,7 +11,7 @@ Usage| Returns
 `Rectangle.isUnbounded()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-isunbounded#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-isunbounded#colab-python-sample) More
 ```
@@ -47,4 +47,3 @@ m.add_layer(rectangle, {'color': 'black'}, 'Geometry [black]: rectangle')
 m
 ```
 
-Was this helpful?

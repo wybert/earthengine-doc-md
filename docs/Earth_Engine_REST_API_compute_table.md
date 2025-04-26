@@ -118,3 +118,4 @@ pprint(json.loads(response.content))
 ```
 
 The response contains the resultant `FeatureCollection` as GeoJSON, which can be consumed by other apps or processes.
+Was this helpful?

@@ -19,4 +19,3 @@ Argument| Type| Details
 `sameDayReducer`| Reducer, optional| Reducer for aggregating band values across images with the same (DoY, year) pair. Must return a single value. Defaults to ee.Reducer.mean().  
 `startDay`| Number, optional| Day of year to start the series. Must be between 1 and 366.  
 `endDay`| Number, optional| Day of year to end the series. Must be between startDay and 366.  
-Was this helpful?

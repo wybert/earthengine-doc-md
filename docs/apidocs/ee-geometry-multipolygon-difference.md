@@ -1,10 +1,6 @@
  
 #  ee.Geometry.MultiPolygon.difference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipolygon-difference#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the result of subtracting the 'right' geometry from the 'left' geometry. 
 Usage| Returns  
 ---|---  
@@ -16,7 +12,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipolygon-difference#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipolygon-difference#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MultiPolygon object.
 varmultiPolygon=ee.Geometry.MultiPolygon(
@@ -51,6 +47,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a MultiPolygon object.
 multipolygon = ee.Geometry.MultiPolygon([

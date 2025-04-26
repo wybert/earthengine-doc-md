@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `feature`| Element| The feature the geometry of which is being unioned.  
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the union will be performed in this projection. Otherwise it will be performed in a spherical coordinate system.  
+Was this helpful?

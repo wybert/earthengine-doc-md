@@ -11,7 +11,7 @@ Usage| Returns
 `LinearRing.type()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-type#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-type#colab-python-sample) More
 ```

@@ -11,3 +11,4 @@ this: `image`| Image| The input image.
 `endmembers`| List| The endmembers to unmix with.  
 `sumToOne`| Boolean, default: false| Constrain the outputs to sum to one.  
 `nonNegative`| Boolean, default: false| Constrain the outputs to be non-negative.  
+Was this helpful?

@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.countDistinctNonNull()`| Reducer  
 **No arguments.**
+Was this helpful?

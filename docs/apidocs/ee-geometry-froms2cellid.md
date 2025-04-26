@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `cellId`| Long| The S2 cell id as 64 bit integer. From Javascript, which does not support integers larger than 53 bits, use fromS2CellToken instead.  
+Was this helpful?

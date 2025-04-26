@@ -53,3 +53,4 @@ m.add_layer(bbox_centroid, {'color': 'red'}, 'Result [red]: bbox.centroid')
 m
 ```
 
+Was this helpful?

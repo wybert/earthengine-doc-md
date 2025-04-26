@@ -11,3 +11,4 @@ Argument| Type| Details
 `path`| String| The path of the folder to create.  
 `force`| Boolean, optional| Force overwrite.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+Was this helpful?

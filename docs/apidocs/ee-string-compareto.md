@@ -1,6 +1,6 @@
  
 #  ee.String.compareTo 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-compareto#examples)
 
@@ -34,4 +34,3 @@ print(ee.String('b').compareTo('a').getInfo()) # 1
 print(ee.String('a').compareTo(ee.String('b')).getInfo()) # -1
 ```
 
-Was this helpful?

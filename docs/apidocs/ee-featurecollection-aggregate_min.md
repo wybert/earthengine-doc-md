@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.aggregate_min 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-aggregate_min#examples)
 
@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Aggregates over a given property of the objects in a collection, calculating the minimum of the values of the selected property. 
 Usage| Returns  
 ---|---  
-`FeatureCollection.aggregate_min(property)`  
+`FeatureCollection.aggregate_min(property)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| FeatureCollection| The collection to aggregate over.  
@@ -36,3 +36,4 @@ print('Min of power plant capacities (MW):',
    fc.aggregate_min('capacitymw').getInfo()) # 1.8
 ```
 
+Was this helpful?

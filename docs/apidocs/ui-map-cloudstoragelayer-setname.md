@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.abstractlayer`| ui.Map.AbstractLayer| The ui.Map.AbstractLayer instance.  
 `name`| String, optional| The name of the layer.  
-Was this helpful?

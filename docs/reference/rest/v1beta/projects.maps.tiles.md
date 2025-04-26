@@ -65,4 +65,3 @@ Fields
 ---  
 ### `get[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.maps.tiles/get)`
 |  Computes a map tile image showing a portion of a computation.  
-Was this helpful?

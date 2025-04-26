@@ -50,3 +50,4 @@ ic_merged = ic2018.merge(ic2021)
 print('Merged image collection:', ic_merged.getInfo())
 ```
 
+Was this helpful?

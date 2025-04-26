@@ -6,7 +6,7 @@ This or another authentication method should be called before ee.initialize().
 The auth token will be refreshed automatically when possible. You can safely assume that all async calls will be sent with the appropriate credentials. For synchronous calls, however, you should check for an auth token with ee.data.getAuthToken() and call ee.data.refreshAuthToken() manually if there is none. The token refresh operation is asynchronous and cannot be performed behind-the-scenes, on demand, prior to synchronous calls.
 Usage| Returns  
 ---|---  
-`ee.data.authenticateViaPrivateKey(privateKey,  _success_, _error_, _extraScopes_, _suppressDefaultScopes_)`  
+`ee.data.authenticateViaPrivateKey(privateKey,  _success_, _error_, _extraScopes_, _suppressDefaultScopes_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `privateKey`| AuthPrivateKey| JSON content of private key.  

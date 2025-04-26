@@ -9,7 +9,7 @@ Creates a batch task to export an Image as a raster to Google Cloud Storage. Tas
 "crsTransform", "scale", and "dimensions" are mutually exclusive.
 Usage| Returns  
 ---|---  
-`Export.image.toCloudStorage(image,  _description_, _bucket_, _fileNamePrefix_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _shardSize_, _fileDimensions_, _skipEmptyTiles_, _fileFormat_, _formatOptions_, _priority_)`  
+`Export.image.toCloudStorage(image,  _description_, _bucket_, _fileNamePrefix_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _shardSize_, _fileDimensions_, _skipEmptyTiles_, _fileFormat_, _formatOptions_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `image`| Image| The image to export.  
@@ -193,3 +193,4 @@ task = ee.batch.Export.image.toDrive(
 task.start()
 ```
 
+Was this helpful?

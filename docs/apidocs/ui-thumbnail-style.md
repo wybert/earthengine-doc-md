@@ -51,3 +51,4 @@ widgetStyle.set({border:'5px solid darkgray'});
 print(widgetStyle);
 ```
 
+Was this helpful?

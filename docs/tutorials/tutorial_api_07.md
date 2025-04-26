@@ -1,14 +1,8 @@
  
 #  Exporting Charts and Images 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Charting](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#charting)
-  * [Digression: Simple Cloud Masking for Landsat](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#digression:-simple-cloud-masking-for-landsat)
-  * [Exporting Images](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#exporting-images)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine is a powerful analytical tool, but you may have need to export the results of your analysis in order to embed charts, images, maps, etc. into reports or publications. In this section, you will learn how to create charts and images that can be exported and viewed in other software. Recall that in the [previous section](https://developers.google.com/earth-engine/tutorials/tutorial_api_06), you used code like the following to add an NDVI band to every image in a collection, where the `l8` variable references the [Landsat 8 TOA reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC8_L1T_TOA):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Import the Landsat 8 TOA image collection.
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA');
@@ -22,7 +16,7 @@ returnimage.addBands(ndvi);
 ## Charting
 Suppose that what you want is actually a chart of NDVI over time at a given location. To make such a chart, the first step is to choose a location of interest. Create a point by getting the point drawing tool (![](https://developers.google.com/static/earth-engine/images/Playground_button_placemark.png)) and make a single point geometry in your area of interest. (If you already have imports, hover on **Geometry Imports** and click **+ new layer** first). Locate the point in an area of agriculture, deciduous forest, annual grassland or some other land cover with an annual cycle). Name the import `roi`. (See [this page](https://developers.google.com/earth-engine/guides/geometries) for information about creating geometries programmatically).
 Now let's use the `roi` point to make a chart of NDVI over time in the pixel under that point. The way to make charts in Earth Engine is with the `ui.Chart` package. ([Learn more about making charts in Earth Engine](https://developers.google.com/earth-engine/guides/charts)). Specifically, to make a chart over time, you can use the `ui.Chart.image.series()` method:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a chart.
 varchart=ui.Chart.image.series({
@@ -39,7 +33,7 @@ For the `roi` geometry, we chose a point in an agricultural area, resulting in a
 ![Tutorial_api_10_ndvi_chart.png](https://developers.google.com/static/earth-engine/images/Tutorial_api_10_ndvi_chart.png) Figure 10. Chart of Landsat NDVI over time at a point geometry.  **Note:** The upper right corner of the chart contains a little pop-out icon (open_in_new). Click that icon to get a new tab with a version of the chart that can be downloaded in a variety of formats. See the `ui.Chart` section of the **Docs** tab for a complete list of the charting options in Earth Engine.
 ## Digression: Simple Cloud Masking for Landsat
 Something you may have noticed about this chart is that the time series of NDVI values at the point looks a little noisy. This is likely due to clouds. To ameliorate this effect, Earth Engine includes a cloud-masking algorithm for Landsat sensors with a thermal band: `ee.Algorithms.Landsat.simpleCloudScore()`. It takes a Landsat TOA reflectance image as input and adds a band named `cloud` which is an index of cloudiness in the pixel from zero to 100, from least to most cloudy, respectively. By modifying the function you mapped over the collection, you can use an arbitrary threshold (20) on the cloud index to clean up the chart a bit:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varcloudlessNDVI=l8.map(function(image){
 // Get a cloud score in [0, 100].
@@ -63,13 +57,13 @@ The cloud-masked result is illustrated in Figure 11. Note that the time series l
 ![Tutorial_api_11_cloudless_chart.png](https://developers.google.com/static/earth-engine/images/Tutorial_api_11_cloudless_chart.png) Figure 11. Chart of cloud-masked NDVI over time at a point geometry. 
 ## Exporting Images
 You have seen a way to export a chart of data computed by Earth Engine, but what about a whole image? Suppose, for example that you have built a greenest-pixel composite [as discussed in the previous section](https://developers.google.com/earth-engine/tutorials/tutorial_api_06#make-a-greenest-pixel-composite):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 vargreenest=cloudlessNDVI.qualityMosaic('NDVI');
 ```
 
 The only difference in this code from what you did previously is that now we're using the cloud masked collection. You can export a subset (defined by a region) of this using the `Export` package. ([Learn more about exporting raster and vector data from Earth Engine](https://developers.google.com/earth-engine/guides/exporting).) For example, to export an image that can be easily embedded in other docs, let's create a visualization image, [as you've done previously](https://developers.google.com/earth-engine/tutorials/tutorial_api_05#mosaicking), an Export it to your Google Drive folder:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a 3-band, 8-bit, color-IR composite to export.
 varvisualization=greenest.visualize({

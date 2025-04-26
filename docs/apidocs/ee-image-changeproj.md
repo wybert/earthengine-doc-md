@@ -1,6 +1,6 @@
  
 #  ee.Image.changeProj 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-changeproj#examples)
 
@@ -11,7 +11,7 @@ Usage| Returns
 `Image.changeProj(srcProj, dstProj)`| Image  
 Argument| Type| Details  
 ---|---|---  
-this: `input`| Image  
+this: `input`| Image|   
 `srcProj`| Projection| The original projection.  
 `dstProj`| Projection| The new projection.  
 ## Examples
@@ -83,4 +83,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

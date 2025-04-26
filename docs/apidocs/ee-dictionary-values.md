@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.values 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#examples)
 
@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.values( _keys_)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`keys`| List, default: null  
+this: `dictionary`| Dictionary|   
+`keys`| List, default: null|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#colab-python-sample) More
 ```
@@ -44,4 +44,3 @@ print('Values for selected keys converted to ee.List:',
 print('Values for all keys converted to ee.List:', dic.values().getInfo())
 ```
 
-Was this helpful?

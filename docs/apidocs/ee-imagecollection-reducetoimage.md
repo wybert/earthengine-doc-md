@@ -1,12 +1,7 @@
  
 #  ee.ImageCollection.reduceToImage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-reducetoimage#examples)
-
-
-Creates an image from a feature collection by applying a reducer over the selected properties of all the features that intersect each pixel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates an image from a feature collection by applying a reducer over the selected properties of all the features that intersect each pixel. Usage| Returns  
 ---|---  
 `ImageCollection.reduceToImage(properties, reducer)`| Image  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `collection`| FeatureCollection| Feature collection to intersect with each
 `properties`| List| Properties to select from each feature and pass into the reducer.  
 `reducer`| Reducer| A Reducer to combine the properties of each intersecting feature into a final result to store in the pixel.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-reducetoimage#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-reducetoimage#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varcol=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
 .filterBounds(ee.Geometry.BBox(-124.0,43.2,-116.5,46.3))
@@ -40,12 +35,15 @@ reducer:ee.Reducer.mean()
 Map.setCenter(-119.87,44.76,6);
 Map.addLayer(meanCloudCover,{min:0,max:50},'Cloud cover mean');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 col = (
   ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')

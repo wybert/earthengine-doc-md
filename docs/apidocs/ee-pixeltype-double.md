@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.PixelType.double()`| PixelType  
 **No arguments.**
+Was this helpful?

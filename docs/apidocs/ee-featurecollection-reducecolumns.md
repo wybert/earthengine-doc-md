@@ -1,6 +1,10 @@
  
 #  ee.FeatureCollection.reduceColumns 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#examples)
+
+
 Apply a reducer to each element of a collection, using the given selectors to determine the inputs. 
 Returns a dictionary of results, keyed with the output names.
 Usage| Returns  
@@ -13,7 +17,7 @@ this: `collection`| FeatureCollection| The collection to aggregate over.
 `selectors`| List| A selector for each input of the reducer.  
 `weightSelectors`| List, default: null| A selector for each weighted input of the reducer.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#colab-python-sample) More
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
@@ -57,8 +61,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(

@@ -20,10 +20,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Resources](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#resources)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/smap-soil-moisture/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/smap-soil-moisture/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/smap-soil-moisture/index.md "View changes to this article over time.")
-Author(s): [ purplekrayon ](https://github.com/purplekrayon "View the profile for purplekrayon on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/smap-soil-moisture/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/smap-soil-moisture/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/smap-soil-moisture/index.md)
+Author(s): [ purplekrayon ](https://github.com/purplekrayon)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ![Soil Moisture Active Passive](https://developers.google.com/static/earth-engine/tutorials/community/smap-soil-moisture/SMAP_header.png)
 The thematic focus is learning about the SMAP instrument for water resources management applications.
@@ -256,3 +256,4 @@ print(chart);
 ## Resources
 [SMAP website](https://smap.jpl.nasa.gov/)
 [NASA ARSET SMAP training](https://appliedsciences.nasa.gov/join-mission/training/english/arset-applications-remote-sensing-soil-moisture-and)
+Was this helpful?

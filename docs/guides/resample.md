@@ -167,3 +167,4 @@ m.add_layer(forest_area, {'max': 500 * 500}, 'forested area at MODIS scale')
 m
 ```
 
+Was this helpful?

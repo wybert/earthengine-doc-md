@@ -14,4 +14,3 @@ Argument| Type| Details
 `name`| String, optional| The name of the layer.  
 `shown`| Boolean, optional| Whether the layer is initially shown. Defaults to true.  
 `opacity`| Number, optional| The layer's opacity represented as a number between 0 and 1. Defaults to 1.  
-Was this helpful?

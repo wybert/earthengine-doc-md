@@ -12,4 +12,3 @@ this: `clusterer`| Clusterer| An input Clusterer.
 `inputProperties`| List, default: null| The list of property names to include as training data. Each feature must have all these properties, and their values must be numeric. This argument is optional if the input collection contains a 'band_order' property (as produced by Image.sample).  
 `subsampling`| Float, default: 1| An optional subsampling factor, within (0, 1].  
 `subsamplingSeed`| Integer, default: 0| A randomization seed to use for subsampling.  
-Was this helpful?

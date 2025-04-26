@@ -32,3 +32,4 @@ Enums
 `TILE_PERMISSIONS_UNSPECIFIED` | Unspecified.  
 `PUBLIC` | Write public tiles. Requires the caller to be an OWNER of the bucket.  
 `DEFAULT_OBJECT_ACL` | Write tiles using the bucket's default object ACL.  
+Was this helpful?

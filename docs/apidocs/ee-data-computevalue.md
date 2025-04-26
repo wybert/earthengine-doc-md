@@ -8,6 +8,5 @@ Usage| Returns
 `ee.data.computeValue(obj,  _callback_)`| Object|Value  
 Argument| Type| Details  
 ---|---|---  
-`obj`| Object  
-`callback`| Function, optional  
-Was this helpful?
+`obj`| Object|   
+`callback`| Function, optional|   

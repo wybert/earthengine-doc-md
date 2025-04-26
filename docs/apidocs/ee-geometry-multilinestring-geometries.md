@@ -11,7 +11,7 @@ Usage| Returns
 `MultiLineString.geometries()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-geometries#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-geometries#colab-python-sample) More
 ```

@@ -11,8 +11,8 @@ Usage| Returns
 `Date.advance(delta, unit,  _timeZone_)`| Date  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
-`delta`| Float  
+this: `date`| Date|   
+`delta`| Float|   
 `unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
@@ -44,4 +44,3 @@ display('+2 years', BASE_DATE.advance(2, 'years'))
 display('-1 second', BASE_DATE.advance(-1, 'second'))
 ```
 
-Was this helpful?

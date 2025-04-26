@@ -13,3 +13,4 @@ There is no persistent data associated with this resource.
 ---  
 ### `compute[Images](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages)`
 |  Computes a set of features by applying an arbitrary computation to features in one or more tables.  
+Was this helpful?

@@ -12,3 +12,4 @@ Argument| Type| Details
 `learningRate`| Float, default: 1| The learning rate for the training algorithm. Value should be greater than 0 and less or equal to 1.  
 `epochs`| Integer, default: 1000| Number of training epochs. Value should be greater than or equal to 1.  
 `normalizeInput`| Boolean, default: false| Skip normalizing the attributes.  
+Was this helpful?

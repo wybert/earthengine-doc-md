@@ -1,10 +1,6 @@
  
 #  ee.ImageCollection.count 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-count#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Reduces an image collection by calculating the number of images with a valid mask at each pixel across the stack of all matching bands. Bands are matched by name. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `collection`| ImageCollection| The image collection to reduce.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-count#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-count#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Sentinel-2 image collection for July 2021 intersecting a point of interest.
 // Reflectance, cloud probability, and scene classification bands are selected.
@@ -70,6 +66,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Sentinel-2 image collection for July 2021 intersecting a point of interest.
 # Reflectance, cloud probability, and scene classification bands are selected.
@@ -127,4 +125,3 @@ m.add_layer(mosaic, vis_refl, 'Mosaic (B11, B8, B3)')
 m
 ```
 
-Was this helpful?

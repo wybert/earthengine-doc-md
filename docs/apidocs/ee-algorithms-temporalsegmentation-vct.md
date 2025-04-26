@@ -15,3 +15,4 @@ Argument| Type| Details
 `minNdvi`| Float, default: 0.45| Minimum NDVI value for forest.  
 `forThrMax`| Float, default: 3| Maximum threshold for forest.  
 `nYears`| Integer, default: 30| Maximum number of years.  
+Was this helpful?

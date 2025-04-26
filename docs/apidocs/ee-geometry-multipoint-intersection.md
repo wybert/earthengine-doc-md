@@ -1,8 +1,7 @@
  
 #  ee.Geometry.MultiPoint.intersection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns the intersection of the two geometries. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the intersection of the two geometries. Usage| Returns  
 ---|---  
 `MultiPoint.intersection(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -34,6 +33,7 @@ Map.addLayer(multiPointIntersection,
 {'color':'red'},
 'Result [red]: multiPoint.intersection');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

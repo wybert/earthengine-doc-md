@@ -115,3 +115,4 @@ display('Square meters above 2250m elevation', square_meters)
 display('Square kilometers above 2250m elevation', square_kilometers)
 ```
 
+Was this helpful?

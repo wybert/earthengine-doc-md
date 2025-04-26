@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 `key`| String| The name of the parameter to read.  
 `default`| Boolean|Number|String, optional| optional default value to return if no value is present.  
+Was this helpful?

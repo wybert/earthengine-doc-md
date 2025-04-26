@@ -1,7 +1,8 @@
  
 #  ui.Map.Linker 
-Stay organized with collections  Save and categorize content based on your preferences. 
-A utility for creating linked maps. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+A utility for creating linked maps. 
+Usage| Returns  
 ---|---  
 `ui.Map.Linker( _maps_, _event_)`| ui.Map.Linker  
 Argument| Type| Details  
@@ -13,3 +14,4 @@ Argument| Type| Details
   * change-zoom 
 
   
+Was this helpful?

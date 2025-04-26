@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-get#examples)
 
@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Extract a property from a feature. 
 Usage| Returns  
 ---|---  
-`ImageCollection.get(property)`  
+`ImageCollection.get(property)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `object`| Element| The feature to extract the property from.  
@@ -80,4 +80,3 @@ print('Project year (ee.Number):', col.getNumber('project_year').getInfo())
 print('Plot IDs (ee.Array):', col.getArray('plot_ids').getInfo())
 ```
 
-Was this helpful?

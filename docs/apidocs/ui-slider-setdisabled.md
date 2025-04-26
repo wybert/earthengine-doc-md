@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.slider`| ui.Slider| The ui.Slider instance.  
 `disabled`| Boolean| Whether the slider is disabled.  
+Was this helpful?

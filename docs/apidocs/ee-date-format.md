@@ -11,7 +11,7 @@ Usage| Returns
 `Date.format( _format_, _timeZone_)`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 `format`| String, default: null| A pattern, as described at http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html; if omitted will use ISO standard date formatting.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples

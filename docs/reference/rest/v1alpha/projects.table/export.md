@@ -1,20 +1,6 @@
  
 #  Method: projects.table.export 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#authorization-scopes)
-  * [TableFileExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#tablefileexportoptions)
-  * [TableAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#tableassetexportoptions)
-  * [FeatureViewAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#featureviewassetexportoptions)
-  * [FeatureViewDestination](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#featureviewdestination)
-  * [BigQueryExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#bigqueryexportoptions)
-  * [BigQueryDestination](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#bigquerydestination)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a table and writes the result to one of several destinations.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/table:export`

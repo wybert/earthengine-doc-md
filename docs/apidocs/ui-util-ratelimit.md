@@ -12,3 +12,4 @@ Argument| Type| Details
 `func`| Function| Function to call.  
 `delay`| Number| After the function is called and executed, the number of milliseconds to delay before allowing an additional invocation of the function.  
 `scope`| Object, optional| Object in whose scope to call the function.  
+Was this helpful?

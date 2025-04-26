@@ -10,4 +10,3 @@ Argument| Type| Details
 this: `ui.splitpanel`| ui.SplitPanel| The ui.SplitPanel instance.  
 `index`| Number| 0 for top or left panel, 1 for bottom or right panel.  
 `panel`| ui.Panel| The panel to add to the split panel.  
-Was this helpful?

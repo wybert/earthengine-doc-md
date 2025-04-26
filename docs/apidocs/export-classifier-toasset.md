@@ -9,7 +9,7 @@ Creates a batch task to export an ee.Classifier as an Earth Engine asset.
 Only supported for ee.Classifier.smileRandomForest, ee.Classifier.smileCart, ee.Classifier.DecisionTree and ee.Classifier.DecisionTreeEnsemble.
 Usage| Returns  
 ---|---  
-`Export.classifier.toAsset(classifier,  _description_, _assetId_, _priority_)`  
+`Export.classifier.toAsset(classifier,  _description_, _assetId_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `classifier`| ComputedObject| The classifier to export.  

@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.drawingtools`| ui.Map.DrawingTools| The ui.Map.DrawingTools instance.  
 `callback`| Function| The callback to fire when a shape is selected. The callback is passed two parameters: the selected GeometryLayer (or null for deselect) and the ui.Map.DrawingTools widget that the event listener is bound to.  
+Was this helpful?

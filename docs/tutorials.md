@@ -1,10 +1,5 @@
  
-  * On this page
-  * [Tutorials](https://developers.google.com/earth-engine/tutorials#tutorials)
-  * [Educational resources](https://developers.google.com/earth-engine/tutorials#educational-resources)
-  * [Developer resources](https://developers.google.com/earth-engine/tutorials#developer-resources)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ![](https://developers.google.com/static/earth-engine/images/community.jpg)
 ###  Earth Engine Community Content 
 This space is dedicated to our prolific and talented users who want to share their own educational materials and developer resources with the rest of the Earth Engine community. 
@@ -75,7 +70,7 @@ Earth Engine on YouTube
     * [ Google Home Developer Console ](https://console.home.google.com)
 
 
-[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v02f7c7b934487be255c5f28ebb00ed6c2fde7a607ac1d91773e0036b0a06ec31/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
+[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
   * [ Android ](https://developer.android.com)
   * [ Chrome ](https://developer.chrome.com/home)
   * [ Firebase ](https://firebase.google.com)
@@ -90,18 +85,15 @@ Earth Engine on YouTube
   * Sign up for the Google for Developers newsletter [ Subscribe ](https://developers.google.com/newsletter/subscribe)
 
 
-  * [English](https://developers.google.com/earth-engine/tutorials)
-  * [Deutsch](https://developers.google.com/earth-engine/tutorials?hl=de)
-  * [Español](https://developers.google.com/earth-engine/tutorials?hl=es)
-  * [Français](https://developers.google.com/earth-engine/tutorials?hl=fr)
-  * [Indonesia](https://developers.google.com/earth-engine/tutorials?hl=id)
-  * [Português – Brasil](https://developers.google.com/earth-engine/tutorials?hl=pt-br)
-  * [Русский](https://developers.google.com/earth-engine/tutorials?hl=ru)
-  * [中文 – 简体](https://developers.google.com/earth-engine/tutorials?hl=zh-cn)
-  * [日本語](https://developers.google.com/earth-engine/tutorials?hl=ja)
-  * [한국어](https://developers.google.com/earth-engine/tutorials?hl=ko)
+  * English
+  * Deutsch
+  * Español
+  * Français
+  * Indonesia
+  * Português – Brasil
+  * Русский
+  * 中文 – 简体
+  * 日本語
+  * 한국어
 
 
-Info 
-Chat 
-API 

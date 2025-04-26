@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 `name`| String| The property name to filter on.  
 `value`| Object| The value to compare against.  
-Was this helpful?

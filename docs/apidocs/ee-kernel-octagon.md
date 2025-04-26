@@ -51,3 +51,4 @@ pprint(ee.Kernel.octagon(**{'radius': 3}).getInfo())
 # [0.000, 0.000, 0.027, 0.027, 0.027, 0.000, 0.000]
 ```
 
+Was this helpful?

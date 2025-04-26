@@ -1,6 +1,6 @@
  
 #  Tutorials 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 These video tutorials are from lectures or hands-on trainings conducted at Earth Engine User Summits and [Earth Outreach digital events](https://earthoutreachonair.withgoogle.com/). 
 ## Introduction to Earth Engine (condensed)
 Learn about Earth Engine from developer advocate Noel Gorelick in this fast-paced intro.

@@ -11,3 +11,4 @@ Argument| Type| Details
 `rightValue`| Object, default: null| The value of the right operand. Should not be specified if rightField is specified.  
 `rightField`| String, default: null| A selector for the right operand. Should not be specified if rightValue is specified.  
 `leftValue`| Object, default: null| The value of the left operand. Should not be specified if leftField is specified.  
+Was this helpful?

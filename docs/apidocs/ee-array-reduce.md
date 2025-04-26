@@ -17,3 +17,4 @@ this: `array`| Array| The array.
 `reducer`| Reducer| The reducer to apply. Each of its outputs must be a number, not an array or other type.  
 `axes`| List| The list of axes over which to reduce. The output will have a length of 1 in all these axes.  
 `fieldAxis`| Integer, default: null| The axis to use as the reducer's input and output fields. Only required if the reducer has multiple inputs or multiple outputs, in which case the axis must have length equal to the number of reducer inputs, and in the result it will have length equal to the number of reducer outputs.  
+Was this helpful?

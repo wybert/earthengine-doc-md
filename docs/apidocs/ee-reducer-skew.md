@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.skew()`| Reducer  
 **No arguments.**
-Was this helpful?

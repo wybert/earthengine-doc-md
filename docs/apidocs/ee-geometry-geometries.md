@@ -11,7 +11,7 @@ Usage| Returns
 `Geometry.geometries()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-geometries#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-geometries#colab-python-sample) More
 ```
@@ -62,3 +62,4 @@ m.add_layer(geometry, {'color': 'black'}, 'Geometry [black]: geometry')
 m
 ```
 
+Was this helpful?

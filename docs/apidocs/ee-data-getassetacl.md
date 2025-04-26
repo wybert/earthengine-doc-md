@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 `assetId`| String| The ID of the asset to check.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+Was this helpful?

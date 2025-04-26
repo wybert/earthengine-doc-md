@@ -41,3 +41,4 @@ pprint(ee.Kernel.sobel().getInfo())
 # [-1, 0, 1]
 ```
 
+Was this helpful?

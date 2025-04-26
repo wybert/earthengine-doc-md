@@ -1,9 +1,9 @@
  
 #  Cumulative Cost Mapping 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Use `image.cumulativeCost()` to compute a cost map where every pixel contains the total cost of the lowest cost path to the nearest source location. This process is useful in a variety of contexts such as habitat analysis [(Adriaensen et al. 2003)](http://www.sciencedirect.com/science/article/pii/S0169204602002426), watershed delineation [(Melles et al. 2011)](http://www.sciencedirect.com/science/article/pii/S1878029611001691) and image segmentation [(Falcao et al. 2004).](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1261076) Call the cumulative cost function on an image in which each pixel represents the cost per meter to traverse it. Paths are computed through any of a pixel's eight neighbors. Required inputs include a `source` image, in which each non-zero pixel represents a potential source (or start of a path), and a `maxDistance` (in meters) over which to compute paths. The algorithm finds the cumulative cost of all paths less than _maxPixels_ = `maxDistance`/_scale_ in length, where _scale_ is the pixel resolution, or [scale of analysis in Earth Engine](https://developers.google.com/earth-engine/guides/scale).
 The following example demonstrates computing least-cost paths across a land cover image:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_cumulative_cost#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // A rectangle representing Bangui, Central African Republic.
 vargeometry=ee.Geometry.Rectangle([18.5229,4.3491,18.5833,4.4066]);

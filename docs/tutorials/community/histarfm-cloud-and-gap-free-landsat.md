@@ -1,19 +1,6 @@
  
 #  HISTARFM - How to Work with Gap-Filled Imagery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#overview)
-    * [Background](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#background)
-    * [Versions](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#versions)
-    * [Study areas](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#study_areas)
-  * [Examples of use of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#examples_of_use_of_the_histarfm_database)
-    * [1. Importing and visualizing the database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#1_importing_and_visualizing_the_database)
-    * [2. Calculate the timing and value of the maximum NDVI](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#2_calculate_the_timing_and_value_of_the_maximum_ndvi)
-    * [3. Temporal interpolation of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#3_temporal_interpolation_of_the_histarfm_database)
-    * [4. High resolution biophysical variable retrieval](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#4_high_resolution_biophysical_variable_retrieval)
-  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#acknowledgements)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/histarfm-cloud-and-gap-free-landsat/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "View changes to this article over time.")

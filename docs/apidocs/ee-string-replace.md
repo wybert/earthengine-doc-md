@@ -38,3 +38,4 @@ print(ee.String('aBc-Abc').replace('abc', 'Z', 'i').getInfo()) # Z-Abc
 print(ee.String('aBc-Abc').replace('abc', 'Z', 'ig').getInfo()) # Z-Z
 ```
 
+Was this helpful?

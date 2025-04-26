@@ -122,3 +122,4 @@ alt.Chart(city_climates_dataframe).mark_bar(size=100).encode(
   * Learn how to [export your computation results to BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery).
 
 
+Was this helpful?

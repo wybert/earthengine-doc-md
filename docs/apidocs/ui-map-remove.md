@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  
 `item`| Object| The item to remove.  
+Was this helpful?

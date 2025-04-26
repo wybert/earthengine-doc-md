@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.data.activelist`| ui.data.ActiveList| The ui.data.ActiveList instance.  
 `el`| Object| The element to add.  
+Was this helpful?

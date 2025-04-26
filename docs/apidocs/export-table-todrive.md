@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Creates a batch task to export a FeatureCollection as a table to Drive. Tasks can be started from the Tasks tab. 
 Usage| Returns  
 ---|---  
-`Export.table.toDrive(collection,  _description_, _folder_, _fileNamePrefix_, _fileFormat_, _selectors_, _maxVertices_, _priority_)`  
+`Export.table.toDrive(collection,  _description_, _folder_, _fileNamePrefix_, _fileFormat_, _selectors_, _maxVertices_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `collection`| FeatureCollection| The feature collection to export.  

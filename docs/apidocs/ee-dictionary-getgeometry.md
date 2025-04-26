@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.getGeometry 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getgeometry#examples)
 
@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.getGeometry(key)`| Geometry  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
+this: `dictionary`| Dictionary|   
+`key`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getgeometry#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getgeometry#colab-python-sample) More
 ```
@@ -44,3 +44,4 @@ print('The "Geometry" value as an ee.Geometry object',
    dic.getGeometry('Geometry').getInfo(), sep='\n')
 ```
 
+Was this helpful?

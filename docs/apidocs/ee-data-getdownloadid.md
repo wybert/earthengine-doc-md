@@ -1,6 +1,6 @@
  
 #  ee.data.getDownloadId 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-data-getdownloadid#examples)
 
@@ -163,4 +163,3 @@ with open('multi_band.tif', 'wb') as fd:
  fd.write(response.content)
 ```
 
-Was this helpful?

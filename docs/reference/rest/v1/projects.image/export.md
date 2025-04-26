@@ -96,3 +96,4 @@ Fields
 `pyramidingPolicyOverrides` |  `map (key: string, value: enum (`PyramidingPolicy[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/PyramidingPolicy)`))` Specific per-band pyramid policy overrides.An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `earthEngineDestination` |  `object (`EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1/EarthEngineDestination)`)` If specified, configures export to Earth Engine.  
+Was this helpful?

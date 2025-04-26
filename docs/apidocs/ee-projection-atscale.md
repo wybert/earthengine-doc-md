@@ -6,5 +6,5 @@ Returns the projection scaled such that its units have the given scale in linear
 `Projection.atScale(meters)`| Projection  
 Argument| Type| Details  
 ---|---|---  
-this: `projection`| Projection  
+this: `projection`| Projection|   
 `meters`| Float| The scale in linear meters.  

@@ -7,7 +7,7 @@ Usage| Returns
 `Image.translate(x, y,  _units_, _proj_)`| Image  
 Argument| Type| Details  
 ---|---|---  
-this: `input`| Image  
+this: `input`| Image|   
 `x`| Float| The amount to translate the image in the x direction.  
 `y`| Float| The amount to translate the image in the y direction.  
 `units`| String, default: "meters"| The units for x and y; 'meters' or 'pixels'.  

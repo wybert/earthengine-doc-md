@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `input`| Object| The object to describe.  
+Was this helpful?

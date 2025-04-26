@@ -45,4 +45,3 @@ print('Complementary error function of 10:',
    ee.Number(10).erfc().getInfo()) # 2.088487583e-45
 ```
 
-Was this helpful?

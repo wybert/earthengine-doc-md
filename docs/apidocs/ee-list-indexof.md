@@ -7,6 +7,6 @@ Usage| Returns
 `List.indexOf(element)`| Integer  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`element`| Object  
+this: `list`| List|   
+`element`| Object|   
 Was this helpful?

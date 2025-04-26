@@ -1,6 +1,10 @@
  
 #  ee.Geometry.MultiLineString.distance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-distance#examples)
+
+
 Returns the minimum distance between two geometries. 
 Usage| Returns  
 ---|---  
@@ -13,7 +17,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 `spherical`| Boolean, default: false| When proj is not specified, if true the calculation will be done on the unit sphere. If false the calculation will be elliptical, taking earth flattening into account. Ignored if proj is specified. Default is false.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-distance#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-distance#colab-python-sample) More
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -40,8 +44,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -66,3 +68,4 @@ m.add_layer(input_geom, {'color': 'blue'}, 'Parameter [blue]: input_geom')
 m
 ```
 
+Was this helpful?

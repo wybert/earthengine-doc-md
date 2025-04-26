@@ -1,6 +1,6 @@
  
 #  Exporting to BigQuery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Overview](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#overview)
   * [BigQuery basics](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#bigquery_basics)
@@ -106,11 +106,11 @@ Invalid characters in property names cause the export to fail, due to [restricti
 Earth Engine (the values of `ee.Feature` properties) data are converted to an equivalent [BigQuery type](https://developers.google.com/bigquery/docs/reference/standard-sql/data-types) when possible. Note that nullability is controlled by the table schema, not the type.
 **Earth Engine type** | **BigQuery type** | **Notes**  
 ---|---|---  
-`ee.String` | `STRING`  
-`ee.Number` | `FLOAT` or `INTEGER`  
-`ee.Geometry` | `GEOGRAPHY`  
-`ee.Date` | `TIMESTAMP`  
-`ee.ByteString` | `BYTES`  
+`ee.String` | `STRING` |   
+`ee.Number` | `FLOAT` or `INTEGER` |   
+`ee.Geometry` | `GEOGRAPHY` |   
+`ee.Date` | `TIMESTAMP` |   
+`ee.ByteString` | `BYTES` |   
 `ee.Array` | `STRUCT<ARRAY<INT64>,` `ARRAY<INT64|FLOAT64>>` | See the section on [arrays](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#arrays)  
 Other `ee.*` types  | not supported  | See the section on [JSON values](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#json-values)  
 ### Arrays

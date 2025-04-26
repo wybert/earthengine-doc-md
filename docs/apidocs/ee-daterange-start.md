@@ -11,7 +11,7 @@ Usage| Returns
 `DateRange.start()`| Date  
 Argument| Type| Details  
 ---|---|---  
-this: `dateRange`| DateRange  
+this: `dateRange`| DateRange|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-start#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-start#colab-python-sample) More
 ```
@@ -33,4 +33,3 @@ date_range = ee.DateRange('2017-06-24', '2017-07-24')
 display('The start of this ee.DateRange is', date_range.start())
 ```
 
-Was this helpful?

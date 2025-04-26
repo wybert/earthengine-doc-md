@@ -1,6 +1,6 @@
  
 #  ee.Array.leftShift 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, calculates the left shift of v1 by v2 bits. 
 Usage| Returns  
 ---|---  

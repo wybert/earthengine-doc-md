@@ -1,6 +1,6 @@
  
 #  Reducer Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Reducers have inputs and outputs](https://developers.google.com/earth-engine/guides/reducers_intro#reducers-have-inputs-and-outputs)
   * [Reducers use weighted inputs](https://developers.google.com/earth-engine/guides/reducers_intro#reducers-use-weighted-inputs)

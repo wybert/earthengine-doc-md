@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `callback`| Function| The callback to fire when the map center changes. The callback is passed two parameters: an object containing the coordinates of the new center (with keys lon and lat) and the map widget itself.  
+Was this helpful?

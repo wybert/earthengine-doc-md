@@ -610,4 +610,3 @@ Sat Jun 25 17:15:27 2022
 ```
 
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/imad-tutorial-pt2/index_files/output_bfcd4420_2.png)
-Was this helpful?

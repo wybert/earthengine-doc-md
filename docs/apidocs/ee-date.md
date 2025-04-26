@@ -55,3 +55,4 @@ print(ee.Date('2020', 'US/Mountain').format().getInfo()) # 2020-01-01T07:00:00
 print(ee.Date(datetime.now()).format().getInfo())
 ```
 
+Was this helpful?

@@ -11,4 +11,3 @@ this: `collection`| FeatureCollection| The input collection.
 `actual`| String| The name of the property containing the actual value.  
 `predicted`| String| The name of the property containing the predicted value.  
 `order`| List, default: null| A list of the expected values. If this argument is not specified, the values are assumed to be contiguous and span the range 0 to maxValue. If specified, only values matching this list are used, and the matrix will have dimensions and order matching this list.  
-Was this helpful?

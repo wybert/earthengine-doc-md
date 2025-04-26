@@ -1,6 +1,6 @@
  
 #  ee.Number.log10 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-log10#examples)
 
@@ -33,4 +33,3 @@ print(ee.Number(10).log10().getInfo()) # 1
 print(ee.Number(100).log10().getInfo()) # 2
 ```
 
-Was this helpful?

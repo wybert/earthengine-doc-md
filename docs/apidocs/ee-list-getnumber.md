@@ -7,6 +7,6 @@ Usage| Returns
 `List.getNumber(index)`| Number  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`index`| Integer  
+this: `list`| List|   
+`index`| Integer|   
 Was this helpful?

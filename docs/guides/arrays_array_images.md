@@ -1,6 +1,6 @@
  
 #  Arrays and Array Images 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [ Array Images ](https://developers.google.com/earth-engine/guides/arrays_array_images#array-images)
 
@@ -54,15 +54,15 @@ display(coefficients.length()) #  [6,6]
 ```
 
 The following table illustrates the arrangement of the matrix entries along the 0-axis and the 1-axis:
-1-axis ->  
----  
-**0**| **1**| **2**| **3**| **4**| **5**  
-**0**|  0.3029| 0.2786| 0.4733| 0.5599| 0.508| 0.1872  
-**1**|  -0.2941| -0.243| -0.5424| 0.7276| 0.0713| -0.1608  
+| | 1-axis ->  
+---|---|---  
+| | **0**| **1**| **2**| **3**| **4**| **5**  
+| **0**|  0.3029| 0.2786| 0.4733| 0.5599| 0.508| 0.1872  
+| **1**|  -0.2941| -0.243| -0.5424| 0.7276| 0.0713| -0.1608  
 **0-axis**| **2**|  0.1511| 0.1973| 0.3283| 0.3407| -0.7117| -0.4559  
-**3**|  -0.8239| 0.0849| 0.4396| -0.058| 0.2013| -0.2773  
-**4**|  -0.3294| 0.0557| 0.1056| 0.1855| -0.4349| 0.8085  
-**5**|  0.1079| -0.9023| 0.4119| 0.0575| -0.0259| 0.0252  
+| **3**|  -0.8239| 0.0849| 0.4396| -0.058| 0.2013| -0.2773  
+| **4**|  -0.3294| 0.0557| 0.1056| 0.1855| -0.4349| 0.8085  
+| **5**|  0.1079| -0.9023| 0.4119| 0.0575| -0.0259| 0.0252  
 The indices on the left of the table indicate positions along the 0-axis. The n-th element within each list on the 0-axis is in the n-th position along the 1-axis. For example, the entry at coordinate [3,1] of the array is 0.0849. Suppose ‘greenness’ is the TC component of interest. You can get the greenness sub-matrix using `slice()`: 
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_array_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_array_images#colab-python-sample) More
 ```

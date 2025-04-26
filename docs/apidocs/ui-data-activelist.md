@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `list`| List, optional| An optional list to initialize with.  
+Was this helpful?

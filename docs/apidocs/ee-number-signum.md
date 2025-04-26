@@ -31,4 +31,3 @@ print('Sign of 0:', ee.Number(0).signum().getInfo()) # 0
 print('Sign of 5:', ee.Number(5).signum().getInfo()) # 1
 ```
 
-Was this helpful?

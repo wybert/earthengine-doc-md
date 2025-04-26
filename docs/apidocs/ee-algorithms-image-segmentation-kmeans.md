@@ -14,4 +14,3 @@ Argument| Type| Details
 `gridSize`| Integer, default: null| Grid cell-size. If greater than 0, kMeans will be run independently on cells of this size. This has the effect of limiting the size of any cluster to be gridSize or smaller. This option is mutually exclusive with neighborhoodSize.  
 `forceConvergence`| Boolean, default: false| If true, an error is thrown if convergence is not achieved before numIterations.  
 `uniqueLabels`| Boolean, default: true| If true, clusters are assigned unique IDs. Otherwise, they repeat per tile or grid cell.  
-Was this helpful?

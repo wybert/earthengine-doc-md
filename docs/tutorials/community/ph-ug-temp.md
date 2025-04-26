@@ -1,16 +1,6 @@
  
 #  Land Surface Temperature in Uganda 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [A workflow to explore spatiotemporal temperature patterns](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#a_workflow_to_explore_spatiotemporal_temperature_patterns)
-    * [1. Define the border of Uganda as a feature](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#1_define_the_border_of_uganda_as_a_feature)
-    * [2. Import land surface temperature data](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#2_import_land_surface_temperature_data)
-    * [3. Define a function to convert temperature units](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#3_define_a_function_to_convert_temperature_units)
-    * [4. Chart land surface temperature as a time series](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#4_chart_land_surface_temperature_as_a_time_series)
-    * [5. Visualize temperature data on the map](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#5_visualize_temperature_data_on_the_map)
-    * [6. Export data for further analysis](https://developers.google.com/earth-engine/tutorials/community/ph-ug-temp#6_export_data_for_further_analysis)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/ph-ug-temp/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/ph-ug-temp/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/ph-ug-temp/index.md "View changes to this article over time.")

@@ -11,3 +11,4 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `right`| Geometry| The geometry used as the right operand of the operation.  
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
+Was this helpful?

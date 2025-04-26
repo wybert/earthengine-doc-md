@@ -13,4 +13,3 @@ Enums
 `TF_RECORD_IMAGE` | TFRecord format. Only supported for image exports.  
 `ZIPPED_GEO_TIFF` | A format which returns a GeoTIFF file wrapped in a zip file. This is only available when using CreateThumbnail.  
 `ZIPPED_GEO_TIFF_PER_BAND` | A format which returns a GeoTIFF file for each band, wrapped in a zip file. This is only available when using CreateThumbnail.  
-Was this helpful?

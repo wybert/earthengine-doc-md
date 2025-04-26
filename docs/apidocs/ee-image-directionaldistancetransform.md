@@ -1,6 +1,6 @@
  
 #  ee.Image.directionalDistanceTransform 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 For each zero-valued pixel in the source, get the distance to the nearest non-zero pixels in the given direction. 
 Returns a band of floating point distances called "distance".
 Usage| Returns  

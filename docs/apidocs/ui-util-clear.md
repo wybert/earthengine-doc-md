@@ -4,6 +4,6 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Clears all state related to utility functions, including cancelling any active timeouts, intervals, debounces, etc. 
 Usage| Returns  
 ---|---  
-`ui.util.clear()`  
+`ui.util.clear()`|   
 **No arguments.**
 Was this helpful?

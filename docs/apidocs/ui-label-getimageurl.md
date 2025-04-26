@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.label`| ui.Label| The ui.Label instance.  
+Was this helpful?

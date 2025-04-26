@@ -69,7 +69,7 @@ monthly_precip.bandNames()
 
 ```
 ```
-<ee.ee_list.List at 0x7f11ac1e28e0>
+<ee.ee_list.List at 0x7f41d00c9be0>
 
 ```
 
@@ -95,7 +95,7 @@ wa_basins.limit(5)
 
 ```
 ```
-<ee.featurecollection.FeatureCollection at 0x7f117953ca30>
+<ee.featurecollection.FeatureCollection at 0x7f41d015b370>
 
 ```
 
@@ -316,7 +316,7 @@ array([[ 1.29e+02, 1.33e+02, 1.26e+02, ..., 2.30e+01, 2.20e+01,
 
 ```
 ```
-<matplotlib.image.AxesImage at 0x7f11743d9070>
+<matplotlib.image.AxesImage at 0x7f41cd78ca30>
 
 ```
 
@@ -469,4 +469,3 @@ plt.show()
 ```
 
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/data-converters/index_files/output_wAyb5bpiMMR4_0.png)
-Was this helpful?

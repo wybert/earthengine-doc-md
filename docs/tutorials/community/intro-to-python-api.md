@@ -213,12 +213,12 @@ lst_df_urban.head()
 ```
 
 Now that we have our data in a good shape, we can easily make plots and compare the trends. As the area of Lyon, France experiences a semi-continental climate, we expect that LST has a seasonality influence and the sinusoidal trend described by [Stallman (1965)](https://doi.org/10.1029/JZ070i012p02821) reading as follow:
-$$ LST(t) = LST_{0} + \frac{\Delta _{LST}}{2}sin(\frac{2\pi t}{\tau} + \phi) $$
+LST(t)=LST0+ΔLST2sin(2πtτ+ϕ)
 where:
-  * \\(LST_{0}\\) represents the mean annual LST,
-  * \\(\Delta _{LST}\\) represents the amplitude between maximal and minimal LST,
-  * \\(\tau\\) represents the period of oscillation of LST, and
-  * \\(\phi\\) represents an offset needed to adjust the time when \\(LST(t) = LST_{0}\\)
+  * LST0 represents the mean annual LST,
+  * ΔLST represents the amplitude between maximal and minimal LST,
+  * τ represents the period of oscillation of LST, and
+  * ϕ represents an offset needed to adjust the time when LST(t)=LST0
 
 
 Consequently, on the top of the data scatter plot, we plot the fitting curve using the scipy library:
@@ -306,7 +306,7 @@ Image(url=url)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-b3dc28945ae5d9e6d48c3be1bd473aff:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-8c713886a3b38795b5297fc746ab1bb3:getPixels
 Please wait while the thumbnail loads, it may take a moment...
 
 ```
@@ -409,7 +409,7 @@ print(link)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-c9c1bf78e227aa0e67fe3a9eae0b6405:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-63c43d7a855294b5a80b3bdcf993fc15:getPixels
 
 ```
 **Note:** The above output contains an Earth Engine API link. Calls to the API can only be made by registered, authenticated users. If you want to create API links that work for you, click "Run in Colab" at the top of this page and run the notebook.
@@ -509,3 +509,4 @@ my_map
 
 ## Acknowledgements
 Thanks to Susanne Benz and Justin Braaten for reviewing and helping write this tutorial. 
+Was this helpful?

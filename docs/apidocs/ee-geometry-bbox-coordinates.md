@@ -11,7 +11,7 @@ Usage| Returns
 `BBox.coordinates()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-coordinates#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-coordinates#colab-python-sample) More
 ```
@@ -47,3 +47,4 @@ m.add_layer(bbox, {'color': 'black'}, 'Geometry [black]: bbox')
 m
 ```
 
+Was this helpful?

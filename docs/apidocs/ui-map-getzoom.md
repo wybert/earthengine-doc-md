@@ -45,4 +45,3 @@ print('defaultMap zoom level',defaultMap.getZoom());
 print('defaultMap approximate pixel scale',defaultMap.getScale());
 ```
 
-Was this helpful?

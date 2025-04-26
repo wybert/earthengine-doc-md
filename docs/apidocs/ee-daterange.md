@@ -11,8 +11,8 @@ Usage| Returns
 `ee.DateRange(start,  _end_, _timeZone_)`| DateRange  
 Argument| Type| Details  
 ---|---|---  
-`start`| Object  
-`end`| Object, default: null  
+`start`| Object|   
+`end`| Object, default: null|   
 `timeZone`| String, default: null| If start and/or end are provided as strings, the time zone in which to interpret them; defaults to UTC.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange#colab-python-sample) More

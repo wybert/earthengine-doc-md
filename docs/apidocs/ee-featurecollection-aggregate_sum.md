@@ -36,3 +36,4 @@ print('Sum of power plant capacities (MW):',
    fc.aggregate_sum('capacitymw').getInfo()) # 13288.600000000002
 ```
 
+Was this helpful?

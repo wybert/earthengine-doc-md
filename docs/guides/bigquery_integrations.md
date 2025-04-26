@@ -1,6 +1,6 @@
  
 #  BigQuery integrations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Query raster data within BigQuery](https://developers.google.com/earth-engine/guides/bigquery_integrations#query_raster_data_within_bigquery)
   * [Read BigQuery data from Earth Engine](https://developers.google.com/earth-engine/guides/bigquery_integrations#read_bigquery_data_from_earth_engine)
@@ -44,4 +44,3 @@ Earth Engine can export vector data to BigQuery using the [`Export.table.toBigQu
 
 This facilitates a workflow where vector data results from Earth Engine's processing are readily available in BigQuery.
 Learn more about writing Earth Engine vector data to BigQuery in the [Exporting to BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery) page.
-Was this helpful?

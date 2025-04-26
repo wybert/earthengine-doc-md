@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.remove 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-remove#examples)
 
@@ -11,7 +11,7 @@ Usage| Returns
 `Dictionary.remove(selectors,  _ignoreMissing_)`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
+this: `dictionary`| Dictionary|   
 `selectors`| List| A list of keys names or regular expressions of key names to remove.  
 `ignoreMissing`| Boolean, default: false| Ignore selectors that don't match at least 1 key.  
 ## Examples

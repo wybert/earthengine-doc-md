@@ -11,4 +11,3 @@ this: `join`| Join| The join to apply; determines how the results are constructe
 `primary`| FeatureCollection| The primary collection.  
 `secondary`| FeatureCollection| The secondary collection.  
 `condition`| Filter| The join condition used to select the matches from the two collections.  
-Was this helpful?

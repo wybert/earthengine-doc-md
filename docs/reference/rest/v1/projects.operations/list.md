@@ -1,15 +1,6 @@
  
 #  Method: projects.operations.list 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/list#authorization-scopes)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*}/operations`

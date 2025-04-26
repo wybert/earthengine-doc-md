@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  
 `callback`| Function| The callback to fire when the map is clicked. The callback is passed an object containing the coordinates of the clicked point on the map (with keys lon and lat) and the map widget itself.  
-Was this helpful?

@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Join.simple()`| Join  
 **No arguments.**
+Was this helpful?

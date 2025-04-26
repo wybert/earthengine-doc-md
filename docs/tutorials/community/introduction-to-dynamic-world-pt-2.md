@@ -1,6 +1,6 @@
  
 #  Introduction to Dynamic World (Part 2) - Calculating Statistics of a Region 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Calculate the Fraction of a Single Class](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2#calculate_the_fraction_of_a_single_class)
   * [Summarizing Pixel Counts for All Classes](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2#summarizing_pixel_counts_for_all_classes)

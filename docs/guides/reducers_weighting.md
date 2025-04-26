@@ -1,6 +1,6 @@
  
 #  Weighted Reductions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 By default, reducers applied to imagery weight the inputs according to the mask value. This is relevant in the context of fractional pixels created through operations such as `clip()`. Adjust this behavior by calling `unweighted()` on the reducer. Using an unweighted reducer forces all pixels in the region to have the same weight. The following example illustrates how pixel weighting can affect the reducer output:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_weighting#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_weighting#colab-python-sample) More
 ```
@@ -114,4 +114,3 @@ display('weighted:', weighted)
 ```
 
 Observe that `cloudWeight` needs to be added as a band prior to calling `reduceRegion()`. The result indicates that the estimated mean NDVI is higher as a result of decreasing the weight of cloudy pixels.
-Was this helpful?

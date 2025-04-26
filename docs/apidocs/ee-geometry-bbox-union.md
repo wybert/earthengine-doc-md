@@ -62,3 +62,4 @@ m.add_layer(bbox_union, {'color': 'red'}, 'Result [red]: bbox.union')
 m
 ```
 
+Was this helpful?

@@ -112,3 +112,4 @@ Fields
 ---  
 `start` |  `number` Starting zoom level subset for which to generate tiles (ExportVideoMap) Here, subset is a double precision value, allowing you to render a zoom level incrementally, so 12.1 for example is the first 10% of the tiles in zoom 12 in some unspecified but deterministic order.  
 `end` |  `number` Ending zoom level subset for which to generate tiles (ExportVideoMap), allowing you to render a zoom level incrementally, up to but not including the maximum subset (if provided) in some unspecified but deterministic order.  
+Was this helpful?

@@ -1,8 +1,7 @@
  
 #  ee.Array.reshape 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Reshapes an array to a new list of dimension lengths. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Reshapes an array to a new list of dimension lengths. Usage| Returns  
 ---|---  
 `Array.reshape(shape)`| Array  
 Argument| Type| Details  

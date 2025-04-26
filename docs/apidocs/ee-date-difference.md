@@ -1,6 +1,6 @@
  
 #  ee.Date.difference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-difference#examples)
 
@@ -11,8 +11,8 @@ Usage| Returns
 `Date.difference(start, unit)`| Float  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
-`start`| Date  
+this: `date`| Date|   
+`start`| Date|   
 `unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-difference#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-difference#colab-python-sample) More
@@ -56,4 +56,3 @@ print(f'The difference between {t2} relative to {t1} is {diff_1} days.')
 print(f'The difference between {t1} relative to {t2} is {diff_2} weeks.')
 ```
 
-Was this helpful?

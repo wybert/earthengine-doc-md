@@ -1,6 +1,6 @@
  
 #  ee.Filter.expression 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs a filter tree from a string. 
 Usage| Returns  
 ---|---  

@@ -11,8 +11,8 @@ Usage| Returns
 `List.filter(filter)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`filter`| Filter  
+this: `list`| List|   
+`filter`| Filter|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-filter#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-filter#colab-python-sample) More
 ```

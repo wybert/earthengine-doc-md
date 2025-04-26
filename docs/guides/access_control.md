@@ -1,6 +1,24 @@
  
 #  Access control 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Set Earth Engine service usage](https://developers.google.com/earth-engine/guides/access_control#set_earth_engine_service_usage)
+  * [Set asset permissions](https://developers.google.com/earth-engine/guides/access_control#set_asset_permissions)
+    * [Set asset-level permissions](https://developers.google.com/earth-engine/guides/access_control#set_asset-level_permissions)
+    * [Set project-level asset permissions](https://developers.google.com/earth-engine/guides/access_control#set_project-level_asset_permissions)
+  * [Set project level permissions](https://developers.google.com/earth-engine/guides/access_control#set_project_level_permissions)
+  * [VPC Service Controls](https://developers.google.com/earth-engine/guides/access_control#vpc_service_controls)
+    * [Limitations](https://developers.google.com/earth-engine/guides/access_control#limitations)
+  * [Roles and permissions](https://developers.google.com/earth-engine/guides/access_control#roles_and_permissions)
+    * [Predefined Earth Engine IAM Roles](https://developers.google.com/earth-engine/guides/access_control#predefined_earth_engine_iam_roles)
+    * [Full access to the Earth Engine API](https://developers.google.com/earth-engine/guides/access_control#full_access_to_the_earth_engine_api)
+    * [Asset sharing only](https://developers.google.com/earth-engine/guides/access_control#asset_sharing_only)
+    * [Project management](https://developers.google.com/earth-engine/guides/access_control#project_management)
+    * [Commercial Earth Engine plan management](https://developers.google.com/earth-engine/guides/access_control#commercial_earth_engine_plan_management)
+    * [Batch task management](https://developers.google.com/earth-engine/guides/access_control#batch_task_management)
+    * [Apps management](https://developers.google.com/earth-engine/guides/access_control#apps_management)
+
+
 You can share the assets or compute quota of your [Earth Engine enabled project](https://developers.google.com/earth-engine/guides/access) with other Earth Engine users at the project level. Earth Engine assets or compute can be shared with another user or group of users. If you want to share with a group of users, [Create a new Google Group](https://groups.google.com/forum/#!creategroup) and note its email (available from the About link on the group page). This page describes how to provide access to resources, for either an individual or group and the [Roles and Permissions](https://developers.google.com/earth-engine/guides/access_control#roles_and_permissions) required for different activities.
 ## Set Earth Engine service usage
 To use the Earth Engine API on a Cloud project, the API must be [enabled on the project](https://developers.google.com/earth-engine/guides/access), and the user must have at least the permissions in the _Earth Engine Resource Viewer_ role (learn more about [predefined Earth Engine IAM Roles](https://developers.google.com/earth-engine/guides/access_control#predefined_earth_engine_iam_roles)). Additionally, the user must have at least `serviceusage.services.use` permission on the project. That permission can be provided through the project _Owner_ or _Editor_ roles, or through the specific [_Service Usage Consumer_ role](https://cloud.google.com/service-usage/docs/access-control#roles). An error will be thrown if the user does not have required Earth Engine permissions and Service Usage permissions on the selected project.
@@ -62,6 +80,7 @@ To give users full access to the Earth Engine service, either through the REST A
   * Creating/deleting Earth Engine assets
   * [Using OAuth Authentication via a Client Library](https://developers.google.com/earth-engine/guides/auth#authentication_with_earth_engine_client_library_helpers) to connect to Earth Engine
 
+
 Permissions needed | 
   * `clientauthconfig.clients.listWithSecrets`
   * `earthengine.assets.get`
@@ -114,9 +133,7 @@ Permissions needed |
   * `resourcemanager.projects.get`
   * `serviceusage.services.get`
 
-
-###### If project has not previously been set up
-On first selecting a project through the Code Editor, the project is initialized for use with Earth Engine. If this hasn't been done before, you will need these roles for setup to succeed.
+If project has not previously been set up On first selecting a project through the Code Editor, the project is initialized for use with Earth Engine. If this hasn't been done before, you will need these roles for setup to succeed.
   * `resourcemanager.projects.update` AND
   * `serviceusage.services.enable`
 
@@ -126,8 +143,7 @@ Suggested roles |
   * _Viewer_ (`roles/viewer`) OR 
   * _Earth Engine Resource Viewer_ (`roles/earthengine.viewer`) AND _Service Usage Consumer_ (`roles/serviceusage.serviceUsageConsumer`) 
 
-
-###### Additional roles (if project has not previously been set up)
+Additional roles (if project has not previously been set up)
   * _Editor_ (`roles/editor`) OR
   * _Project Mover_ (`roles/resourcemanager.projectMover`) AND _Project IAM Admin_ (`roles/resourcemanager.projectIamAdmin`) AND _Service Usage Admin_ (`roles/serviceusage.serviceUsageAdmin`) 
 

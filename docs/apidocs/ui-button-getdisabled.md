@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.button`| ui.Button| The ui.Button instance.  
+Was this helpful?

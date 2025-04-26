@@ -11,7 +11,7 @@ Usage| Returns
 `ConfusionMatrix.order()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `confusionMatrix`| ConfusionMatrix  
+this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-order#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-order#colab-python-sample) More
 ```

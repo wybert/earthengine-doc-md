@@ -128,3 +128,4 @@ m.add_layer(js_math_img, {'min': 5000, 'max': 20000}, 'Hypotenuse', False)
 m
 ```
 
+Was this helpful?

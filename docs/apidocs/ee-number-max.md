@@ -29,3 +29,4 @@ print('Given 5 and 10, max is 10:',
    ee.Number(5).max(ee.Number(10)).getInfo()) # 10
 ```
 
+Was this helpful?

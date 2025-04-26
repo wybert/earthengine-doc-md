@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.minMax()`| Reducer  
 **No arguments.**
+Was this helpful?

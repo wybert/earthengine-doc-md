@@ -1,8 +1,7 @@
  
 #  ee.Geometry.MultiPoint.symmetricDifference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the symmetric difference between two geometries. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the symmetric difference between two geometries. Usage| Returns  
 ---|---  
 `MultiPoint.symmetricDifference(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  

@@ -11,7 +11,7 @@ Usage| Returns
 `Blob.string( _encoding_)`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `blob`| Blob  
+this: `blob`| Blob|   
 `encoding`| String, default: null| The character set encoding to use when decoding the blob. Options include, but are not limited to, 'US-ASCII', 'UTF-8', and 'UTF-16'.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-blob-string#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-blob-string#colab-python-sample) More
@@ -40,3 +40,4 @@ print(entry.getInfo()) # Point (1.00, 2.00)...
 print(entry.get('a_field').getInfo()) # "a demo field"
 ```
 
+Was this helpful?

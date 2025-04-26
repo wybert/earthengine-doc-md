@@ -46,3 +46,4 @@ empty = ee.Array([], ee.PixelType.int8())
 display(empty.mask(empty)) # []
 ```
 
+Was this helpful?

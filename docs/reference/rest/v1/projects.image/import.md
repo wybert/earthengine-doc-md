@@ -1,6 +1,19 @@
  
 #  Method: projects.image.import 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#authorization-scopes)
+  * [ImageManifest](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#imagemanifest)
+  * [TilesetBand](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#tilesetband)
+  * [TilesetMaskBand](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#tilesetmaskband)
+  * [PixelFootprint](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#pixelfootprint)
+  * [GridPoint](https://developers.google.com/earth-engine/reference/rest/v1/projects.image/import#gridpoint)
+
+
 Imports an image.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1/{project=projects/*}/image:import`

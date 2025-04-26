@@ -1,6 +1,6 @@
  
 #  ui.Checkbox 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A checkbox with a label. 
 Usage| Returns  
 ---|---  
@@ -12,3 +12,4 @@ Argument| Type| Details
 `onChange`| Function, optional| A callback to fire when the value of the checkbox changes. The callback is passed a boolean indicating whether the checkbox is now checked and the checkbox widget.  
 `disabled`| Boolean, optional| Whether the checkbox is disabled. Defaults to false.  
 `style`| Object, optional| An object of allowed CSS styles with their values to be set for this widget. See style() documentation.  
+Was this helpful?

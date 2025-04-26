@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 `seed`| Long, default: 0| Seed for the random number generator.  
 `distribution`| String, default: "uniform"| The distribution type of random numbers to produce. One of 'uniform' or 'normal'.  
+Was this helpful?

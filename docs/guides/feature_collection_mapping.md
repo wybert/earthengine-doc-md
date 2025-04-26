@@ -2,7 +2,7 @@
 #  Mapping over a FeatureCollection 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 To apply the same operation to every `Feature` in a `FeatureCollection`, use `featureCollection.map()`. For example, to add another area attribute to every feature in a watersheds `FeatureCollection`, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_mapping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_mapping#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load watersheds from a data table.
 varsheds=ee.FeatureCollection('USGS/WBD/2017/HUC06');
@@ -15,12 +15,15 @@ varareaAdded=sheds.map(addArea);
 // Print the first feature from the collection with the added property.
 print('First feature:',areaAdded.first());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load watersheds from a data table.
 sheds = ee.FeatureCollection('USGS/WBD/2017/HUC06')
@@ -36,7 +39,7 @@ display('First feature:', area_added.first())
 
 In the previous example, note that a new property is set based on a computation with the feature's geometry. Properties can also be set using a computation involving existing properties.
 An entirely new `FeatureCollection` can be generated with `map()`. The following example converts the watersheds to centroids:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_mapping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_mapping#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // This function creates a new feature from the centroid of the geometry.
 vargetCentroid=function(feature){
@@ -52,12 +55,15 @@ varcentroids=sheds.map(getCentroid);
 // Display the results.
 Map.addLayer(centroids,{color:'FF0000'},'centroids');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # This function creates a new feature from the centroid of the geometry.
 defget_centroid(feature):

@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `feature`| Element| The feature on which to set the geometry.  
 `geometry`| Geometry, default: null| The geometry to set.  
+Was this helpful?

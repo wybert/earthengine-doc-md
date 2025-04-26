@@ -7,4 +7,3 @@ Usage| Returns
 ---|---  
 `Map.clear()`| ui.Map  
 **No arguments.**
-Was this helpful?

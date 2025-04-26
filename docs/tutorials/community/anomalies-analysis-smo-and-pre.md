@@ -1,6 +1,6 @@
  
 #  Anomalies Analysis of Soil Moisture and Precipitation Over a River Basin 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [1. Importing Mosul river basin boundary](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#1_importing_mosul_river_basin_boundary)
   * [2. Importing soil moisture and precipitation datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#2_importing_soil_moisture_and_precipitation_datasets)

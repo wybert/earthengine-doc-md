@@ -35,4 +35,3 @@ print('5 less than or equal to 5?',
    ee.Number(5).lte(ee.Number(5)).getInfo()) # 1
 ```
 
-Was this helpful?

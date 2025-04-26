@@ -1,6 +1,13 @@
  
 #  REST Resource: projects.locations.tables 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: Table](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.tables#resource:-table)
+    * [TableFileFormat](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.tables#tablefileformat)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.tables#methods)
+    * [create](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.tables#create)
+
+
 ## Resource: Table
 Information about a table.
 JSON representation  
@@ -41,3 +48,4 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.tables/create)`
 |  Creates an ID that can be used to render "table" data.  
+Was this helpful?

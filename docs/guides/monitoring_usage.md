@@ -1,14 +1,6 @@
  
 #  Monitoring usage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [View consumption in Cloud Monitoring](https://developers.google.com/earth-engine/guides/monitoring_usage#view_consumption_in_cloud_monitoring)
-    * [Chart metrics in Metrics Explorer](https://developers.google.com/earth-engine/guides/monitoring_usage#chart_metrics_in_metrics_explorer)
-    * [Available Metrics](https://developers.google.com/earth-engine/guides/monitoring_usage#available_metrics)
-    * [Units and Aligners](https://developers.google.com/earth-engine/guides/monitoring_usage#units-and-aligners)
-    * [Workload Tags](https://developers.google.com/earth-engine/guides/monitoring_usage#workload-tags)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 This page describes how to create charts to monitor Earth Engine compute and storage consumption using Cloud Monitoring.
 There are other ways to monitor Earth Engine usage from the Cloud Console, which are not the focus of the document but include:
   * The **APIs & Services > Metrics** [page](https://console.cloud.google.com/apis/api/earthengine.googleapis.com/metrics), which shows basic metrics including traffic (number of requests), errors and latency (per API method, response code or credentials).
@@ -49,7 +41,7 @@ Workload tags are labels for monitoring specific computations within Earth Engin
 You can then monitor and track tagged computations in the [Metrics Explorer](https://console.cloud.google.com/monitoring/metrics-explorer) using the **Earth Engine Cloud Project > Project > Used EECUs** metric, and grouping or filtering by `workload_tag`.
 **Note:** the name passed to `ee.data.setWorkloadTag` must be under 64 characters long, begin and ending with an alphanumeric character (`[a-zA-Z0-9]`) with dashes (`-`), underscores (`_`), and alphanumerics between, and not be empty.
 For example, to monitor the EECUs used for an image computation and/or and export:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/monitoring_usage#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/monitoring_usage#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Set a default workload tag.
 ee.data.setDefaultWorkloadTag('landsat-compositing')
@@ -68,6 +60,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Authenticate, then initialize with your Cloud Project.
 ee.Initialize(project='your-project')

@@ -1,6 +1,6 @@
  
 #  Statistics of FeatureCollection Columns 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 To reduce properties of features in a `FeatureCollection`, use `featureCollection.reduceColumns()`. Consider the following toy example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#colab-python-sample) More
 ```
@@ -108,4 +108,3 @@ sum: [85579,36245]
 Note that the above example uses the `notNull()` filter to include only features with non-null entries for selected properties in the collection being reduced. It is good practice to check for null entries to catch unexpected missing data and avoid errors resulting from calculations that include null values. 
 Also note that unlike `imageCollection.reduce()`, in which reducers are automatically repeated for each band, reducers on a `FeatureCollection` must be explicitly repeated using `repeat()`. Specifically, repeat the reducer _m_ times for _m_ inputs. The following error may be thrown as a result of not repeating the reducer:
 Dictionary (Error) Collection.reduceColumns: Need 1 inputs for <Reducer>, got 2. 
-Was this helpful?

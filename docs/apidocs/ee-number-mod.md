@@ -46,4 +46,3 @@ print('Remainder of -1/2:', ee.Number(-1).mod(ee.Number(2)).getInfo()) # -1
 print('Remainder of -4/2:', ee.Number(-4).mod(ee.Number(2)).getInfo()) # 0
 ```
 
-Was this helpful?

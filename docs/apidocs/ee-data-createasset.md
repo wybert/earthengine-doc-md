@@ -13,3 +13,4 @@ Argument| Type| Details
 `force`| Boolean, optional| Force overwrite.  
 `properties`| Object, optional| The keys and values of the properties to set  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+Was this helpful?

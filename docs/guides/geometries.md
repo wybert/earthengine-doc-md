@@ -36,3 +36,4 @@ print('Point 1',pt1);
 print('Point 2',pt2);
 ```
 
+Was this helpful?

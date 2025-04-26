@@ -1,6 +1,6 @@
  
 #  ee.Feature.intersection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a feature containing the intersection of the geometries of two features, with the properties of the left feature. 
 Usage| Returns  
 ---|---  

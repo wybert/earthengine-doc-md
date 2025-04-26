@@ -27,4 +27,3 @@ Map.setOptions('SATELLITE');
 Map.setOptions('TERRAIN');
 ```
 
-Was this helpful?

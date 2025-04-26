@@ -1,12 +1,7 @@
  
 #  ee.Kernel.rectangle 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-rectangle#examples)
-
-
-Generates a rectangular-shaped kernel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Generates a rectangular-shaped kernel. Usage| Returns  
 ---|---  
 `ee.Kernel.rectangle(xRadius, yRadius,  _units_, _normalize_, _magnitude_)`| Kernel  
 Argument| Type| Details  
@@ -17,7 +12,7 @@ Argument| Type| Details
 `normalize`| Boolean, default: true| Normalize the kernel values to sum to 1.  
 `magnitude`| Float, default: 1| Scale each value by this amount.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-rectangle#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-rectangle#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('A rectangle kernel',ee.Kernel.rectangle({xRadius:2,yRadius:1}));
 /**
@@ -28,12 +23,15 @@ print('A rectangle kernel',ee.Kernel.rectangle({xRadius:2,yRadius:1}));
  * [0.066, 0.066, 0.066, 0.066, 0.066]
  */
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 print('A rectangle kernel:')

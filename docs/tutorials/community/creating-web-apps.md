@@ -15,10 +15,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Additional resources](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#additional_resources)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/creating-web-apps/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/creating-web-apps/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md "View changes to this article over time.")
-Author(s): [ TC25 ](https://github.com/TC25 "View the profile for TC25 on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/creating-web-apps/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/creating-web-apps/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md)
+Author(s): [ TC25 ](https://github.com/TC25)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 The Earth Engine Javascript API allows users to develop and [deploy web apps](https://developers.google.com/earth-engine/guides/apps) to make [datasets](https://developers.google.com/earth-engine/datasets) and results easy to explore and query. In addition to being able to control how others interact with your data, this lets individuals without Earth Engine access explore your data without having to use the [Code Editor](https://developers.google.com/earth-engine/guides/playground). In this tutorial, we will give an introduction to developing a simple Earth Engine web app for a sample dataset (in this case, some global gridded ground-level concentration estimates for particulate matter under 2.5 microns (PM2.5)). The tutorial breaks down the web app development process into some major stages, with relevant comments accompanying the code blocks. All web app development starts by writing a regular script on the Code Editor using the Earth Engine JavaScript API. 
 ## Generating a new base map for your web app

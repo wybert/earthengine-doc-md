@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.set 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-set#examples)
 
@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.set(key, value)`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
-`value`| Object  
+this: `dictionary`| Dictionary|   
+`key`| String|   
+`value`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-set#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-set#colab-python-sample) More
 ```
@@ -41,3 +41,4 @@ dic = ee.Dictionary({
 print('Set value for B3 key as -9999:', dic.set('B3', -9999).getInfo())
 ```
 
+Was this helpful?

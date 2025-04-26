@@ -11,9 +11,9 @@ Usage| Returns
 `Dictionary.get(key,  _defaultValue_)`| Object  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
-`defaultValue`| Object, default: null  
+this: `dictionary`| Dictionary|   
+`key`| String|   
+`defaultValue`| Object, default: null|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#colab-python-sample) More
 ```
@@ -47,3 +47,4 @@ print('Value for nonexistent "Band_1" key:',
    dic.get(**{'key': 'Band_1', 'defaultValue': -9999}).getInfo())
 ```
 
+Was this helpful?

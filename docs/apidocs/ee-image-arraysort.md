@@ -136,3 +136,4 @@ print('2D array image sorted cols (pixel):',
 # [0, 10, 6, 5]]
 ```
 
+Was this helpful?

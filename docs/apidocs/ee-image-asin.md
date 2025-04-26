@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `value`| Image| The image to which the operation is applied.  
-Was this helpful?

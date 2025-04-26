@@ -38,3 +38,4 @@ For detailed information on costs, see each product's associated pricing page.
 You can use the [Pricing Calculator](https://cloud.google.com/products/calculator) to generate a cost estimate based on your projected usage.
 ### Further Reading
 For more details on how to use a hosted model with Earth Engine see our [Image Prediction page](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions) for image prediction, or our [Properties Prediction page](https://developers.google.com/earth-engine/guides/ee-vertex-property-predictions)
+Was this helpful?

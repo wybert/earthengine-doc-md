@@ -31,3 +31,4 @@ display(ee.Array([-2, 0, 2]).abs()) # [2, 0, 2]
 display(ee.Array([[-3.1, -2], [-1, 0]]).abs()) # [[3.1, 2], [1, 0]]
 ```
 
+Was this helpful?

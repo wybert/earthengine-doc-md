@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.getArray 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getarray#examples)
 
@@ -11,8 +11,8 @@ Usage| Returns
 `Dictionary.getArray(key)`| Array  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
-`key`| String  
+this: `dictionary`| Dictionary|   
+`key`| String|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getarray#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getarray#colab-python-sample) More
 ```

@@ -7,5 +7,5 @@ Usage| Returns
 `ImageCollection.propertyNames()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `element`| Element  
+this: `element`| Element|   
 Was this helpful?

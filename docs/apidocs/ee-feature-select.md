@@ -11,3 +11,4 @@ this: `input`| Element| The feature to select properties from.
 `propertySelectors`| List| A list of names or regexes specifying the properties to select.  
 `newProperties`| List, default: null| Optional new names for the output properties. Must match the number of properties selected.  
 `retainGeometry`| Boolean, default: true| When false, the result will have a NULL geometry.  
+Was this helpful?

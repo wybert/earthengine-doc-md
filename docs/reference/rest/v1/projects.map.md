@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.map 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource](https://developers.google.com/earth-engine/reference/rest/v1/projects.map#resource)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.map#methods)

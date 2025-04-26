@@ -8,7 +8,7 @@ Limits panning and zooming on the map.
 - To reset the map to default, set locked to false and nothing else.
 Usage| Returns  
 ---|---  
-`Map.setLocked(locked,  _minZoom_, _maxZoom_)`  
+`Map.setLocked(locked,  _minZoom_, _maxZoom_)`|   
 Argument|  Type| Details  
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  

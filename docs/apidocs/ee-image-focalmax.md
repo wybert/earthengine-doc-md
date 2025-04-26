@@ -1,6 +1,6 @@
  
 #  ee.Image.focalMax 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Applies a morphological reducer() filter to each band of an image using a named or custom kernel. 
 Usage| Returns  
 ---|---  

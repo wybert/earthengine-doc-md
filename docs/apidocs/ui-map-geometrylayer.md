@@ -12,3 +12,4 @@ Argument| Type| Details
 `color`| String, optional| The CSS color of shapes in the layer, for instance "white" or "#FFFFFF". Defaults to "#000000" (black).  
 `shown`| Boolean, optional| Whether to show the shapes in the layer. Defaults to true.  
 `locked`| Boolean, optional| Whether to lock shape editing in the layer. Defaults to false.  
+Was this helpful?

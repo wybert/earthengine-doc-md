@@ -1,6 +1,6 @@
  
 #  ImageCollection Information and Metadata 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 As with Images, there are a variety of ways to get information about an `ImageCollection`. The collection can be printed directly to the console, but the console printout is limited to 5000 elements. Collections larger than 5000 images will need to be filtered before printing. Printing a large collection will be correspondingly slower. The following example shows various ways of getting information about image collections programmatically:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_info#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_info#colab-python-sample) More
 ```

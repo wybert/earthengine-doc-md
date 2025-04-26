@@ -7,6 +7,6 @@ Usage| Returns
 `List.join( _separator_)`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`separator`| String, default: ""  
+this: `list`| List|   
+`separator`| String, default: ""|   
 Was this helpful?

@@ -1,6 +1,6 @@
  
 #  NDVI, Mapping a Function over a Collection, Quality Mosaicking 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_06#code-editor-javascript)
   * [Mapping a Function over a Collection](https://developers.google.com/earth-engine/tutorials/tutorial_api_06#mapping-a-function-over-a-collection)

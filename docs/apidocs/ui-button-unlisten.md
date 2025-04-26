@@ -1,10 +1,9 @@
  
 #  ui.Button.unlisten 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Deletes callbacks. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Deletes callbacks. Usage| Returns  
 ---|---  
-`Button.unlisten( _idOrType_)`  
+`Button.unlisten( _idOrType_)`|   
 Argument|  Type| Details  
 ---|---|---  
 this: `ui.widget`| ui.Widget| The ui.Widget instance.  

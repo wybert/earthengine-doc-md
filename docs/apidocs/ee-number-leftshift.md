@@ -41,4 +41,3 @@ Left shift 2: 01010000
 print(ee.Number(20).leftShift(2).getInfo()) # 80
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Vertex AI example workflows 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Costs](https://developers.google.com/earth-engine/guides/ml_examples#costs)
   * [AutoML](https://developers.google.com/earth-engine/guides/ml_examples#automl)

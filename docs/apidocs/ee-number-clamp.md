@@ -11,7 +11,7 @@ Usage| Returns
 `Number.clamp(min, max)`| Number  
 Argument| Type| Details  
 ---|---|---  
-this: `number`| Number  
+this: `number`| Number|   
 `min`| Float| The minimum value to clamp to.  
 `max`| Float| The maximum value to clamp to.  
 ## Examples

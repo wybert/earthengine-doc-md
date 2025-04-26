@@ -12,3 +12,4 @@ Argument| Type| Details
 `zenith`| Float| Zenith in degrees.  
 `neighborhoodSize`| Integer, default: 0| Neighborhood size.  
 `hysteresis`| Boolean, default: false| Use hysteresis. Less physically accurate, but may generate better images.  
+Was this helpful?

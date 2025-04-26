@@ -41,3 +41,4 @@ Right shift 2: 00000101
 print(ee.Number(20).rightShift(2).getInfo()) # 5
 ```
 
+Was this helpful?

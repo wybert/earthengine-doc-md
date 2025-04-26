@@ -8,7 +8,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 Aggregates over a given property of the objects in a collection, calculating the property value of the first object in the collection. 
 Usage| Returns  
 ---|---  
-`FeatureCollection.aggregate_first(property)`  
+`FeatureCollection.aggregate_first(property)`|   
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| FeatureCollection| The collection to aggregate over.  

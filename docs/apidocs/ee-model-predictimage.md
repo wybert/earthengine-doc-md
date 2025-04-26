@@ -8,5 +8,6 @@ Usage| Returns
 `Model.predictImage(image)`| Image  
 Argument| Type| Details  
 ---|---|---  
-this: `model`| Model  
+this: `model`| Model|   
 `image`| Image| The input image.  
+Was this helpful?

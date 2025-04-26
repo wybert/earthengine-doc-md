@@ -11,9 +11,9 @@ Usage| Returns
 `List.iterate(function, first)`| Object  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`function`| Algorithm  
-`first`| Object  
+this: `list`| List|   
+`function`| Algorithm|   
+`first`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-iterate#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-iterate#colab-python-sample) More
 ```

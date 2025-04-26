@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.textbox`| ui.Textbox| The ui.Textbox instance.  
+Was this helpful?

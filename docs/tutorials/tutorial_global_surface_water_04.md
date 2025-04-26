@@ -39,17 +39,17 @@ When you run the script, the transition layer will be displayed.
 The map key for the transition classes is:
 Value | Symbol | Label  
 ---|---|---  
-0 | Not water  
-1 | Permanent  
-2 | New permanent  
-3 | Lost permanent  
-4 | Seasonal  
-5 | New seasonal  
-6 | Lost seasonal  
-7 | Seasonal to permanent  
-8 | Permanent to seasonal  
-9 | Ephemeral permanent  
-10 | Ephemeral seasonal  
+0 |  | Not water  
+1 |  | Permanent  
+2 |  | New permanent  
+3 |  | Lost permanent  
+4 |  | Seasonal  
+5 |  | New seasonal  
+6 |  | Lost seasonal  
+7 |  | Seasonal to permanent  
+8 |  | Permanent to seasonal  
+9 |  | Ephemeral permanent  
+10 |  | Ephemeral seasonal  
 ## Summarizing Area by Transition Class
 In this section we will once again use the geometry polygon tool to define a region-of-interest. If you want to analyze a new location, you will want to first select and delete the original polygon that you drew so that you don't get results from the combined areas. See the [ Geometry tools](https://developers.google.com/earth-engine/guides/playground#geometry-tools) section of the Code Editor docs from information on how to modify geometries.
 For this example we will draw a new polygon within the Mekong River delta.

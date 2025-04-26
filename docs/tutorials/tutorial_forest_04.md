@@ -1,6 +1,6 @@
  
 #  Introduction to Forest Monitoring for Action (FORMA) data 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Filtering FORMA by Date](https://developers.google.com/earth-engine/tutorials/tutorial_forest_04#filtering-forma-by-date)
   * [Counting FORMA Alerts in a Region of Interest](https://developers.google.com/earth-engine/tutorials/tutorial_forest_04#counting-forma-alerts-in-a-region-of-interest)

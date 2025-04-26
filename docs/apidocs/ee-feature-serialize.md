@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `legacy`| Boolean, optional| Enables legacy format.  
+Was this helpful?

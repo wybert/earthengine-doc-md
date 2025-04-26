@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.cloudstoragelayer`| ui.Map.CloudStorageLayer| The ui.Map.CloudStorageLayer instance.  
 `suffix`| String| The suffix for the tile files, for example ".png".  
+Was this helpful?

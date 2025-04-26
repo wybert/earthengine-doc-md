@@ -1,13 +1,6 @@
  
 #  REST Resource: projects.locations.tables 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Resource: Table](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#resource:-table)
-    * [TableFileFormat](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#tablefileformat)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#create)
-
-
 ## Resource: Table
 Information about a table.
 JSON representation  

@@ -1,10 +1,10 @@
  
 #  ui.DateSlider.unlisten 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Deletes callbacks. 
 Usage| Returns  
 ---|---  
-`DateSlider.unlisten( _idOrType_)`  
+`DateSlider.unlisten( _idOrType_)`|   
 Argument|  Type| Details  
 ---|---|---  
 this: `ui.widget`| ui.Widget| The ui.Widget instance.  

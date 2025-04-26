@@ -11,7 +11,7 @@ Usage| Returns
 `Dictionary.keys()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `dictionary`| Dictionary  
+this: `dictionary`| Dictionary|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-keys#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-keys#colab-python-sample) More
 ```
@@ -39,4 +39,3 @@ dic = ee.Dictionary({
 print('The list of dictionary keys:', dic.keys().getInfo())
 ```
 
-Was this helpful?

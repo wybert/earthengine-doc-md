@@ -62,3 +62,4 @@ print('Array of features:', fc_client['features'])
 print('Properties of first feature:', fc_client['features'][0]['properties'])
 ```
 
+Was this helpful?

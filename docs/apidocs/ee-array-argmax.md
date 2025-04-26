@@ -11,7 +11,7 @@ Usage| Returns
 `Array.argmax()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `array`| Array  
+this: `array`| Array|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-argmax#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-argmax#colab-python-sample) More
 ```
@@ -41,3 +41,4 @@ display(ee.Array([[3, 4, 2], [6, 5, 7]]).argmax()) # [1, 2]
 display(ee.Array([1, 1, 1, 9, 9, 9]).argmax()) # [3]
 ```
 
+Was this helpful?

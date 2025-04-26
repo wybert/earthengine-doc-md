@@ -129,3 +129,4 @@ m
 ```
 
 [Learn more about loading images from Cloud GeoTiffs](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs). 
+Was this helpful?

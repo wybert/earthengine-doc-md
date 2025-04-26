@@ -7,5 +7,4 @@ Usage| Returns
 `Reducer.getOutputs()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `reducer`| Reducer  
-Was this helpful?
+this: `reducer`| Reducer|   

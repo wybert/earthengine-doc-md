@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| ImageCollection| Image collection to convert to an array image. Bands must have scalar values, not array values.  
+Was this helpful?

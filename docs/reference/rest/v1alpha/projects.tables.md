@@ -39,3 +39,4 @@ Fields
 |  Creates an ID that can be used to render "table" data.  
 ### `getFeatures[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables/getFeatures)`
 |  Fetches `Table` features, the request includes the name of the Table to download from a previous `CreateTable` request.  
+Was this helpful?

@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.panel`| ui.Panel| The ui.Panel instance.  
 `layout`| ui.Panel.Layout| The new layout.  
+Was this helpful?

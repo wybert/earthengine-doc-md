@@ -7,4 +7,4 @@ Usage| Returns
 `Feature.propertyNames()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `element`| Element  
+this: `element`| Element|   

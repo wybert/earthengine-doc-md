@@ -1,10 +1,6 @@
  
 #  ee.Feature 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-feature#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Features can be constructed from one of the following arguments plus an optional dictionary of properties: 
 - An ee.Geometry.
 - A GeoJSON Geometry.
@@ -18,7 +14,7 @@ Argument| Type| Details
 `geometry`| ComputedObject|Feature|Geometry|Object| A geometry or feature.  
 `properties`| Object, optional| A dictionary of metadata properties. If the first parameter is a Feature (instead of a geometry), this is unused.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-feature#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-feature#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Create the simplest possible feature.
 print(ee.Feature(null));// Empty feature
@@ -36,6 +32,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Create the simplest possible feature.
 display(ee.Feature(None)) # Empty feature

@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.checkbox`| ui.Checkbox| The ui.Checkbox instance.  
+Was this helpful?

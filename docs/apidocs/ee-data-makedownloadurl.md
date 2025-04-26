@@ -72,4 +72,3 @@ with open('single_band.zip', 'wb') as fd:
  fd.write(response.content)
 ```
 
-Was this helpful?

@@ -11,7 +11,7 @@ Usage| Returns
 `LinearRing.geometries()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-geometries#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-geometries#colab-python-sample) More
 ```
@@ -52,4 +52,3 @@ m.add_layer(linearring, {'color': 'black'}, 'Geometry [black]: linearring')
 m
 ```
 
-Was this helpful?

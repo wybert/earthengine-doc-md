@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `feature`| Element| The feature from which the geometry is taken.  
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in the units of the coordinate system of this projection. Otherwise it will be in meters.  
+Was this helpful?

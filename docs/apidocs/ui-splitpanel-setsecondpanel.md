@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.splitpanel`| ui.SplitPanel| The ui.SplitPanel instance.  
 `panel`| ui.Panel| The panel to display right of or below the split.  
+Was this helpful?

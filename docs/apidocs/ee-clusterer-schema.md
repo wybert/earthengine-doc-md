@@ -7,5 +7,5 @@ Usage| Returns
 `Clusterer.schema()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `clusterer`| Clusterer  
+this: `clusterer`| Clusterer|   
 Was this helpful?

@@ -52,3 +52,4 @@ pprint(ee.Kernel.fixed(**{'weights': weights}).getInfo())
 # [4, 3, 2, 1, 2, 3, 4]
 ```
 
+Was this helpful?

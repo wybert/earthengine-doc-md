@@ -218,3 +218,4 @@ coefficients_image = (
 ```
 
 Examine the outputs of the three methods and observe that the resultant matrix of coefficients is the same regardless of the solver. That `solve()` is flexible and efficient makes it a good choice for general purpose linear modeling.
+Was this helpful?

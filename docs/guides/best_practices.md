@@ -1,6 +1,6 @@
  
 #  Coding Best Practices 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Avoid mixing client functions and objects with server functions and objects](https://developers.google.com/earth-engine/guides/best_practices#avoid_mixing_client_functions_and_objects_with_server_functions_and_objects)
   * [Avoid converting to list unnecessarily](https://developers.google.com/earth-engine/guides/best_practices#avoid_converting_to_list_unnecessarily)
@@ -709,4 +709,3 @@ print(deduped.reduceRegion('first',sf,10));
 ```
 
 Inspect the printed collections to verify that duplicates have been removed.
-Was this helpful?

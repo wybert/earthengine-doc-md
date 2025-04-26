@@ -36,3 +36,4 @@ print('Sample variance of power plant capacities (MW):',
    fc.aggregate_sample_var('capacitymw').getInfo()) # 217604.420018647
 ```
 
+Was this helpful?

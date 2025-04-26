@@ -11,7 +11,7 @@ Usage| Returns
 `DateRange.end()`| Date  
 Argument| Type| Details  
 ---|---|---  
-this: `dateRange`| DateRange  
+this: `dateRange`| DateRange|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-end#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-end#colab-python-sample) More
 ```

@@ -11,8 +11,8 @@ Usage| Returns
 `DateRange.union(other)`| DateRange  
 Argument| Type| Details  
 ---|---|---  
-this: `dateRange`| DateRange  
-`other`| DateRange  
+this: `dateRange`| DateRange|   
+`other`| DateRange|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-union#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-union#colab-python-sample) More
 ```
@@ -48,4 +48,3 @@ display(
 )
 ```
 
-Was this helpful?

@@ -12,3 +12,4 @@ Argument| Type| Details
 ---|---|---  
 `count`| Number, optional| The number of IDs to generate, one by default.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+Was this helpful?

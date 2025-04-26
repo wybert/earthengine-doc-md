@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.PixelType.uint16()`| PixelType  
 **No arguments.**
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Method: projects.thumbnails.getPixels 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.thumbnails/getPixels#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.thumbnails/getPixels#path-parameters)
@@ -30,4 +30,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

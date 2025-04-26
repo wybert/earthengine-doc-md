@@ -64,8 +64,8 @@ This decision guide outlines the possible options if the default mode selected b
 
 
 This table shows which combinations of features are supported by each mode.
-For Local or Remote? | Project Needed | Scopes Settable | Local CLI Needed | Project Owner  
----|---|---|---|---  
+| For Local or Remote? | Project Needed | Scopes Settable | Local CLI Needed | Project Owner  
+---|---|---|---|---|---  
 `localhost` | local | Y | Y | N | N  
 `colab` | remote | Y | N | N | N  
 `gcloud` | both | Y | Y | N | N  
@@ -157,3 +157,4 @@ For the technically curious: the need for these different credential creation me
   * `notebook`: We create a new auth client specifically for your work - you'll see your email address on the consent page. This client is set in "development" mode, which is a special case which allows the older paste mode tokens. We need to use your own project for this, because such clients cannot be shared with large numbers of users.
 
 
+Was this helpful?

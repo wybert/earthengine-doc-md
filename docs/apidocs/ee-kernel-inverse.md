@@ -52,3 +52,4 @@ pprint(sobel_kernel.inverse().getInfo())
 # [-1.0, 0.0, 1.0]
 ```
 
+Was this helpful?

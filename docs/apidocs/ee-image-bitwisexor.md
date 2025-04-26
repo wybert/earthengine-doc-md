@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `image1`| Image| The image from which the left operand bands are taken.  
 `image2`| Image| The image from which the right operand bands are taken.  
+Was this helpful?

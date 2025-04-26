@@ -1,13 +1,6 @@
  
 #  FeatureView Optimization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Max features per tile](https://developers.google.com/earth-engine/guides/featureview_optimization#max_features_per_tile)
-  * [Thinning ranking](https://developers.google.com/earth-engine/guides/featureview_optimization#thinning_ranking)
-  * [Thinning strategy](https://developers.google.com/earth-engine/guides/featureview_optimization#thinning_strategy)
-  * [Z-order ranking](https://developers.google.com/earth-engine/guides/featureview_optimization#z-order_ranking)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 When [exporting a `FeatureCollection` as a `FeatureView`](https://developers.google.com/earth-engine/guides/featureview_overview#creating_a_featureview) asset, you can set parameters that prioritize which features are rendered at a given zoom level (thinning) and how overlapping features are ordered (z-order). These settings affect the speed and display characteristics of `FeatureView` objects. The following sections describe the optimization parameters and demonstrate their impact using conceptual diagrams where map tiles are delineated by dashed lines, visible features are solid-line polygons, and discarded (thinned) features are polygons with dashed lines and no fill.
 The following code block is an example of a `FeatureCollection` to `FeatureView` export that highlights the optimization parameters described in this page.
 ```

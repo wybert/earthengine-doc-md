@@ -133,4 +133,3 @@ pprint(error_matrix.producersAccuracy().getInfo())
 print('Kappa:', error_matrix.kappa().getInfo())
 ```
 
-Was this helpful?

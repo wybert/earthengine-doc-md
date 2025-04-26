@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `reducer`| Reducer| The reducer for which to disaggregate inputs.  
 `axis`| Integer, default: null| If specified, indicates an array axis along which to disaggregate. If not specified, arrays are completely disaggregated. Ignored for non-array types.  
+Was this helpful?

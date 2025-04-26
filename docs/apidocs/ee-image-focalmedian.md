@@ -1,8 +1,7 @@
  
 #  ee.Image.focalMedian 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Applies a morphological reducer() filter to each band of an image using a named or custom kernel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Applies a morphological reducer() filter to each band of an image using a named or custom kernel. Usage| Returns  
 ---|---  
 `Image.focalMedian( _radius_, _kernelType_, _units_, _iterations_, _kernel_)`| Image  
 Argument| Type| Details  

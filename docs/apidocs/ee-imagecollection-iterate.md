@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `collection`| Collection| The Collection instance.  
 `algorithm`| Function| The function to apply to each element. Must take two arguments: an element of the collection and the value from the previous iteration.  
 `first`| Object, optional| The initial state.  
+Was this helpful?

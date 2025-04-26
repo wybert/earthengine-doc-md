@@ -11,3 +11,4 @@ Argument| Type| Details
 this: `features`| FeatureCollection| Feature collection from which to get features used to compute pixel distances.  
 `searchRadius`| Float, default: 100000| Maximum distance in meters from each pixel to look for edges. Pixels will be masked unless there are edges within this distance.  
 `maxError`| Float, default: 100| Maximum reprojection error in meters, only used if the input polylines require reprojection. If '0' is provided, then this operation will fail if projection is required.  
+Was this helpful?

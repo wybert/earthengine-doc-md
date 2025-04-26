@@ -56,3 +56,4 @@ display(landsat_met)
 ```
 
 Note that a `saveBest()` join defines the name of the property with which to store the best match (`‘bestImage’`) and the name of the property with which to store the goodness of the match metric (`‘timeDiff’`). Inspection of the results indicates that a matching DAYMET image has been added to the property `bestImage` for each Landsat scene in the `primary` collection. Each of these DAYMET images has the property `timeDiff` indicating the time difference in milliseconds between the DAYMET image and the Landsat image, which will be minimum among the DAYMET images passing the condition in the filter.
+Was this helpful?

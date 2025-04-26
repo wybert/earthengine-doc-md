@@ -40,3 +40,4 @@ print('Atan2 of point (-1,0):', ee.Number(-1).atan2(0).getInfo())
 print('Atan2 of point (0,-1):', ee.Number(0).atan2(-1).getInfo())
 ```
 
+Was this helpful?

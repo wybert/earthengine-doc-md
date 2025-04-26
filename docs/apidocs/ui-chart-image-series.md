@@ -1,10 +1,6 @@
  
 #  ui.Chart.image.series 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-chart-image-series#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an ImageCollection. Plots derived values of each band in a region across images. Usually a time series. 
 - X-axis: Image, labeled by xProperty value.
 - Y-axis: Band value.
@@ -21,7 +17,7 @@ Argument| Type| Details
 `scale`| Number, optional| Scale to use with the reducer in meters.  
 `xProperty`| String, optional| Property to be used as the label for each image on the x-axis. Defaults to 'system:time_start'.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-chart-image-series#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a region of pixels to reduce and chart a time series for.
 varregion=ee.Geometry.BBox(-121.916,37.130,-121.844,37.076);

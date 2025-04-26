@@ -7,5 +7,5 @@ Usage| Returns
 `Classifier.schema()`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `classifier`| Classifier  
+this: `classifier`| Classifier|   
 Was this helpful?

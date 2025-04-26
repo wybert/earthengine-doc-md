@@ -60,3 +60,4 @@ m.add_layer(terrain.select('hillshade'), {'min': 0, 'max': 255}, 'Hillshade')
 m
 ```
 
+Was this helpful?

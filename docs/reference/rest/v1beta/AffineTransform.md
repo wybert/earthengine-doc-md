@@ -1,6 +1,6 @@
  
 #  AffineTransform 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 The affine transform. The six values form a 2x3 matrix:
 ```
 ( ( scaleX, shearX, translateX )

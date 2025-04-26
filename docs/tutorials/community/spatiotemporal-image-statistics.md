@@ -1,6 +1,16 @@
  
 #  Spatiotemporal Statistics of Vegetation Indices 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Import datasets](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#import_datasets)
+    * [Vegetation index](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#vegetation_index)
+    * [Region of interest](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#region_of_interest)
+  * [Defining spatiotemporal reduction parameters](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#defining_spatiotemporal_reduction_parameters)
+  * [Calculating spatiotemporal statistics](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#calculating_spatiotemporal_statistics)
+    * [Long table](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#long_table)
+    * [Wide table](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#wide_table)
+
+
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/spatiotemporal-image-statistics/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/spatiotemporal-image-statistics/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/spatiotemporal-image-statistics/index.md "View changes to this article over time.")

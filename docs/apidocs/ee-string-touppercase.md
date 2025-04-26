@@ -29,3 +29,4 @@ s = ee.String('AaBbCc123')
 print(s.toUpperCase().getInfo()) # AABBCC123
 ```
 
+Was this helpful?

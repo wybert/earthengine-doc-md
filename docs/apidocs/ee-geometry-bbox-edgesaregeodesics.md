@@ -11,7 +11,7 @@ Usage| Returns
 `BBox.edgesAreGeodesics()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-edgesaregeodesics#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-edgesaregeodesics#colab-python-sample) More
 ```

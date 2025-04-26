@@ -14,3 +14,4 @@ Argument| Type| Details
 `neighborhoodSize`| Integer, default: 0| Neighborhood size. The amount to extend each tile (overlap) when computing the clusters. This option is mutually exclusive with gridSize.  
 `gridSize`| Integer, default: null| Grid cell-size. If greater than 0, kMeans will be run independently on cells of this size. This has the effect of limiting the size of any cluster to be gridSize or smaller. This option is mutually exclusive with neighborhoodSize.  
 `uniqueLabels`| Boolean, default: true| If true, clusters are assigned unique IDs. Otherwise, they repeat per tile or grid cell.  
+Was this helpful?

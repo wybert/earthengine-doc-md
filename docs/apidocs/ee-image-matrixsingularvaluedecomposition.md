@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `image`| Image| Image of 2-D matrices to be decomposed.  
+Was this helpful?

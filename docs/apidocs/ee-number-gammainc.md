@@ -46,3 +46,4 @@ print('Lower incomplete gamma function for x = 10, a = -1:',
    ee.Number(10).gammainc(-1).getInfo()) # NaN
 ```
 
+Was this helpful?

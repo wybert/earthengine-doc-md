@@ -7,5 +7,5 @@ Usage| Returns
 `Classifier.mode()`| String  
 Argument| Type| Details  
 ---|---|---  
-this: `classifier`| Classifier  
+this: `classifier`| Classifier|   
 Was this helpful?

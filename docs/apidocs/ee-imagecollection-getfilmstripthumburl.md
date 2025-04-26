@@ -14,4 +14,3 @@ this: `imagecollection`| ImageCollection| The ImageCollection instance.
 ` region ` (E,S,W,N or GeoJSON) Geospatial region of the image to render. By default, the whole image.  
 ` format ` (string) Encoding format. Only 'png' or 'jpg' are accepted.  
 `callback`| Function, optional| An optional callback which handles the resulting URL string. If not supplied, the call is made synchronously.  
-Was this helpful?

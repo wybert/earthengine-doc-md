@@ -1,19 +1,15 @@
  
 #  ee.Geometry.MultiPoint.geodesic 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-geodesic#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. 
 Usage| Returns  
 ---|---  
 `MultiPoint.geodesic()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `geometry`| Geometry  
+this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-geodesic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-geodesic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MultiPoint object.
 varmultiPoint=ee.Geometry.MultiPoint([[-122.082,37.420],[-122.081,37.426]]);
@@ -33,6 +29,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a MultiPoint object.
 multipoint = ee.Geometry.MultiPoint([[-122.082, 37.420], [-122.081, 37.426]])

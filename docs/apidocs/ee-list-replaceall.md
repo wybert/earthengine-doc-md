@@ -7,7 +7,7 @@ Usage| Returns
 `List.replaceAll(oldval, newval)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`oldval`| Object  
-`newval`| Object  
+this: `list`| List|   
+`oldval`| Object|   
+`newval`| Object|   
 Was this helpful?

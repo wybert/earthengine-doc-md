@@ -1,6 +1,6 @@
  
 #  ee.Feature.transform 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Transforms the geometry of a feature to a specific projection. 
 Usage| Returns  
 ---|---  

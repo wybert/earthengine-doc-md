@@ -11,7 +11,7 @@ Usage| Returns
 `Date.getRange(unit,  _timeZone_)`| DateRange  
 Argument| Type| Details  
 ---|---|---  
-this: `date`| Date  
+this: `date`| Date|   
 `unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
@@ -43,3 +43,4 @@ display('1-minute date range covering input date:', date.getRange('minute'))
 display('1-second date range covering input date:', date.getRange('second'))
 ```
 
+Was this helpful?

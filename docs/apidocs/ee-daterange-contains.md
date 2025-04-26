@@ -1,6 +1,6 @@
  
 #  ee.DateRange.contains 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-daterange-contains#examples)
 
@@ -11,8 +11,8 @@ Usage| Returns
 `DateRange.contains(other)`| Boolean  
 Argument| Type| Details  
 ---|---|---  
-this: `dateRange`| DateRange  
-`other`| Object  
+this: `dateRange`| DateRange|   
+`other`| Object|   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-contains#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-contains#colab-python-sample) More
 ```
@@ -46,4 +46,3 @@ display(
 )
 ```
 
-Was this helpful?

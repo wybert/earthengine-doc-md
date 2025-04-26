@@ -12,3 +12,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `var_args`| VarArgs| The images to be combined.  
+Was this helpful?

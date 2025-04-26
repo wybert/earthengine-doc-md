@@ -90,4 +90,3 @@ print('Match "B" or "QA" each followed by any character, any number of times:',
    col.select('B.*|QA.*').first().bandNames().getInfo())
 ```
 
-Was this helpful?

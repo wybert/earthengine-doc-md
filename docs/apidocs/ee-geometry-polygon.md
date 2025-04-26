@@ -59,3 +59,4 @@ Map.addLayer(polygonCoordList,{},'polygonCoordList');
 Map.centerObject(polygonLinearRing);
 ```
 
+Was this helpful?

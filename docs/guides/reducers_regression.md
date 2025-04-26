@@ -357,3 +357,4 @@ print('Slope:',b1);
 print('Residuals:',residuals);
 ```
 
+Was this helpful?

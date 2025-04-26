@@ -1,16 +1,6 @@
  
 #  Non-Parametric Trend Analysis 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Time series data](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#time_series_data)
-  * [Join the time series to itself](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#join_the_time_series_to_itself)
-  * [Mann-Kendall trend test](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#mann-kendall_trend_test)
-  * [Sen's slope](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#sens_slope)
-  * [Variance of the Mann-Kendall statistic](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#variance_of_the_mann-kendall_statistic)
-  * [Significance testing](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#significance_testing)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#references)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/nonparametric-trends/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/nonparametric-trends/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/nonparametric-trends/index.md "View changes to this article over time.")

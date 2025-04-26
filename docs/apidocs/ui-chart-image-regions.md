@@ -1,6 +1,6 @@
  
 #  ui.Chart.image.regions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image. Extracts and plots the value of each band in one or more regions. 
 - X-axis = Band labeled by xProperty (default: band name).
 - Y-axis = Reducer output.
@@ -17,4 +17,3 @@ Argument| Type| Details
 `scale`| Number, optional| The pixel scale in meters.  
 `seriesProperty`| String, optional| Property to be used as the label for each region in the legend. Defaults to 'system:index'.  
 `xLabels`| List, optional| A list of labels used for bands on the x-axis. Must have the same number of elements as the image bands. If omitted, bands will be labeled with their names. If the labels are numeric (e.g. wavelengths), x-axis will be continuous.  
-Was this helpful?

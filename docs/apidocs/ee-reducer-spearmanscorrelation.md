@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.spearmansCorrelation()`| Reducer  
 **No arguments.**
+Was this helpful?

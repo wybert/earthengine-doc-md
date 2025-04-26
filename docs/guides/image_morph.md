@@ -19,3 +19,4 @@ Map.addLayer(opened,{},'opened');
 ```
 
 Note that in the previous example, a kernel argument is provided to the morphological operator. The pixels covered by non-zero elements of the kernel are used in the computation. The iterations argument indicates how many times to apply the operator.
+Was this helpful?

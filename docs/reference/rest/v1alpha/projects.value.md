@@ -13,3 +13,4 @@ There is no persistent data associated with this resource.
 ---  
 ### `compute[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute)`
 |  Computes an arbitrary value.  
+Was this helpful?

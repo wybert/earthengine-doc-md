@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `array`| Array| The array to decompose.  
-Was this helpful?

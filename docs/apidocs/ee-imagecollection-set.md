@@ -77,3 +77,4 @@ print('Project year (ee.Number):', col.getNumber('project_year').getInfo())
 print('Plot IDs (ee.Array):', col.getArray('plot_ids').getInfo())
 ```
 
+Was this helpful?

@@ -11,3 +11,4 @@ Argument| Type| Details
 `r`| Image| The red image.  
 `g`| Image| The green image.  
 `b`| Image| The blue image.  
+Was this helpful?

@@ -1,12 +1,7 @@
  
 #  ee.Geometry.Polygon.distance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-distance#examples)
-
-
-Returns the minimum distance between two geometries. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the minimum distance between two geometries. Usage| Returns  
 ---|---  
 `Polygon.distance(right,  _maxError_, _proj_, _spherical_)`| Float  
 Argument| Type| Details  
@@ -17,7 +12,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 `spherical`| Boolean, default: false| When proj is not specified, if true the calculation will be done on the unit sphere. If false the calculation will be elliptical, taking earth flattening into account. Ignored if proj is specified. Default is false.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-distance#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-distance#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Polygon object.
 varpolygon=ee.Geometry.Polygon(
@@ -40,12 +35,15 @@ Map.addLayer(inputGeom,
 {'color':'blue'},
 'Parameter [blue]: inputGeom');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Polygon object.
 polygon = ee.Geometry.Polygon([[

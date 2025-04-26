@@ -7,5 +7,5 @@ Usage| Returns
 `List.reduce(reducer)`| Object  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`reducer`| Reducer  
+this: `list`| List|   
+`reducer`| Reducer|   

@@ -49,3 +49,4 @@ print('Hyperbolic cosine of 45 degrees:',
    ee.Number(radians).cosh().getInfo()) # 1.324609089
 ```
 
+Was this helpful?

@@ -7,7 +7,7 @@ Usage| Returns
 `List.insert(index, element)`| List  
 Argument| Type| Details  
 ---|---|---  
-this: `list`| List  
-`index`| Integer  
-`element`| Object  
+this: `list`| List|   
+`index`| Integer|   
+`element`| Object|   
 Was this helpful?

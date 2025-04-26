@@ -13,3 +13,4 @@ this: `image`| Image| The image to which to apply the operations.
 `units`| String, default: "pixels"| If a kernel is not specified, this determines whether the kernel is in meters or pixels.  
 `iterations`| Integer, default: 1| The number of times to apply the given kernel.  
 `kernel`| Kernel, default: null| A custom kernel. If used, kernelType and radius are ignored.  
+Was this helpful?

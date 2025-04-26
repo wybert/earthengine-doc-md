@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 this: `list`| List| The list to sort.  
 `keys`| List, default: null| Optional keys to sort by. If 'keys' is provided, it must have the same length as 'list'.  
-Was this helpful?

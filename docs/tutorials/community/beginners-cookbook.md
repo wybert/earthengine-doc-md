@@ -1,6 +1,6 @@
  
 #  Beginner's Cookbook 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Introduction](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook#introduction)
   * [Vector data](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook#vector_data)
@@ -88,10 +88,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Additional resources](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook#additional_resources)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/beginners-cookbook/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/beginners-cookbook/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/beginners-cookbook/index.md)
-Author(s): [ TC25 ](https://github.com/TC25)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/beginners-cookbook/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/beginners-cookbook/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/beginners-cookbook/index.md "View changes to this article over time.")
+Author(s): [ TC25 ](https://github.com/TC25 "View the profile for TC25 on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 In this tutorial, we will introduce several types of geospatial data, and enumerate key Earth Engine functions for analyzing and visualizing them. This cookbook was originally created as a workshop during Yale-NUS Data 2.0 hackathon, and later updated for Yale GIS Day 2018 and 2019. 
 ## Introduction
@@ -871,4 +871,3 @@ What can you do with Google Earth Engine?
   * [Example scripts from Prof. Dana Tomlin's handouts for his course on Geospatial Software Design](https://github.com/EEYale/example-scripts)
 
 
-Was this helpful?

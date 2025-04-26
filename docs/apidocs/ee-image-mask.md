@@ -68,4 +68,3 @@ m.add_layer(single_band_mask_img, None, 'Single-band mask image')
 m
 ```
 
-Was this helpful?

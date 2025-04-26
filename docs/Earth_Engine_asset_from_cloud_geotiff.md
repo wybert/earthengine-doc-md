@@ -1,21 +1,6 @@
  
 #  Cloud GeoTiff-Backed Earth Engine Assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Sample image manifest with one Tileset](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#sample_image_manifest_with_one_tileset)
-  * [More than one Tileset](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#more_than_one_tileset)
-  * [Details on COG-backed assets](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#details_on_cog-backed_assets)
-    * [Location](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#location)
-    * [Storage class](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#storage_class)
-    * [Permissions](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#permissions)
-    * [Generations](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#generations)
-    * [Configuration](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#configuration)
-  * [Creating Cloud GeoTiff-Backed Assets using the REST API](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#creating_cloud_geotiff-backed_assets_using_the_rest_api)
-  * [Start an authorized session](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#start_an_authorized_session)
-  * [Request body](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#request_body)
-  * [Send the request](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#send_the_request)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/Earth_Engine_asset_from_cloud_geotiff.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/Earth_Engine_asset_from_cloud_geotiff.ipynb)  
 ---|---  
 This notebook demonstrates how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs). An advantage of COG-backed assets is that the spatial and metadata fields of the image will be indexed at asset creation time, making the image more performant in collections. The performance of COG-backed assets is comparable to that of ingested assets in typical use cases.
@@ -174,4 +159,3 @@ pprint(json.loads(response.content))
 
 ```
 
-Was this helpful?

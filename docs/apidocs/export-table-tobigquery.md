@@ -5,7 +5,7 @@ Creates a batch task to export a FeatureCollection to BigQuery. Tasks can be sta
 Note that this feature is in Preview, and the API and behavior may change significantly. For more information, see https://developers.google.com/earth-engine/guides/export_to_bigquery
 Usage| Returns  
 ---|---  
-`Export.table.toBigQuery(collection,  _description_, _table_, _overwrite_, _append_, _selectors_, _maxVertices_, _priority_)`  
+`Export.table.toBigQuery(collection,  _description_, _table_, _overwrite_, _append_, _selectors_, _maxVertices_, _priority_)`|   
 Argument|  Type| Details  
 ---|---|---  
 `collection`| FeatureCollection| The feature collection to export.  

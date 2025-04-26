@@ -33,3 +33,4 @@ print('The first feature (power plant) in the collection:')
 pprint(fc.first().getInfo())
 ```
 
+Was this helpful?

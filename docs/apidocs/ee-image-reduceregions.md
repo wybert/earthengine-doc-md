@@ -121,4 +121,3 @@ multi_stats = img.reduceRegions(
 display('Mean & SD band values, Santa Cruz Mountains ecoregions', multi_stats)
 ```
 
-Was this helpful?
