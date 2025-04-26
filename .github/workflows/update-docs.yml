@@ -2,8 +2,8 @@ name: Update GEE Documentation
 
 on:
   schedule:
-    # Runs at 1 AM UTC every day
-    - cron: '0 1 * * *'
+    # Runs at 1 AM UTC on the first day of every month
+    - cron: '0 1 1 * *'
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
