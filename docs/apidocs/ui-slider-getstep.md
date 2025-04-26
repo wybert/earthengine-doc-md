@@ -1,7 +1,8 @@
  
 #  ui.Slider.getStep 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the slider's step value. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the slider's step value. 
+Usage| Returns  
 ---|---  
 `Slider.getStep()`| Number  
 Argument| Type| Details  

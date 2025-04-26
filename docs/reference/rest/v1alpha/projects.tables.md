@@ -1,6 +1,13 @@
  
 #  REST Resource: projects.tables 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: Table](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables#resource:-table)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables#methods)
+    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables#create)
+    * [getFeatures](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables#getfeatures)
+
+
 ## Resource: Table
 Information about a table.
 JSON representation  
@@ -32,3 +39,4 @@ Fields
 |  Creates an ID that can be used to render "table" data.  
 ### `getFeatures[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.tables/getFeatures)`
 |  Fetches `Table` features, the request includes the name of the Table to download from a previous `CreateTable` request.  
+Was this helpful?

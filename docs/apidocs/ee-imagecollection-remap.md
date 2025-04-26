@@ -11,3 +11,4 @@ this: `collection`| FeatureCollection| The collection to be modified.
 `lookupIn`| List| The input mapping values. Restricted to strings and integers.  
 `lookupOut`| List| The output mapping values. Must be the same size as lookupIn.  
 `columnName`| String| The name of the property to remap.  
+Was this helpful?

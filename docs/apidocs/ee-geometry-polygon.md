@@ -1,6 +1,10 @@
  
 #  ee.Geometry.Polygon 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon#examples)
+
+
 Constructs an ee.Geometry describing a polygon. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating geodesic EPSG:4326 Polygons with a single LinearRing given an even number of arguments, e.g. ee.Geometry.Polygon(aLng, aLat, bLng, bLat, ..., aLng, aLat).
 Usage| Returns  
@@ -14,7 +18,7 @@ Argument| Type| Details
 `maxError`| ErrorMargin, optional| Max error when input geometry must be reprojected to an explicitly requested result projection or geodesic state.  
 `evenOdd`| Boolean, optional| If true, polygon interiors will be determined by the even/odd rule, where a point is inside if it crosses an odd number of edges to reach a point at infinity. Otherwise polygons use the left- inside rule, where interiors are on the left side of the shell's edges when walking the vertices in the given order. If unspecified, defaults to true.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon#code-editor-javascript-sample) More
 ```
 // Construct a polygon from a list of GeoJSON 'Polygon' formatted coordinates.
 varpolygonGeoJSON=ee.Geometry.Polygon(
@@ -55,3 +59,4 @@ Map.addLayer(polygonCoordList,{},'polygonCoordList');
 Map.centerObject(polygonLinearRing);
 ```
 
+Was this helpful?

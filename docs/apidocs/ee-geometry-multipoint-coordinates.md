@@ -1,14 +1,19 @@
  
 #  ee.Geometry.MultiPoint.coordinates 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a GeoJSON-style list of the geometry's coordinates. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-coordinates#examples)
+
+
+Returns a GeoJSON-style list of the geometry's coordinates. 
+Usage| Returns  
 ---|---  
 `MultiPoint.coordinates()`| List  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-coordinates#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-coordinates#colab-python-sample) More
 ```
 // Define a MultiPoint object.
 varmultiPoint=ee.Geometry.MultiPoint([[-122.082,37.420],[-122.081,37.426]]);
@@ -22,15 +27,12 @@ Map.addLayer(multiPoint,
 {'color':'black'},
 'Geometry [black]: multiPoint');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a MultiPoint object.
 multipoint = ee.Geometry.MultiPoint([[-122.082, 37.420], [-122.081, 37.426]])

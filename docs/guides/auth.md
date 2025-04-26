@@ -1,6 +1,6 @@
  
 #  Authentication and Initialization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Earth Engine Code Editor and JavaScript](https://developers.google.com/earth-engine/guides/auth#earth_engine_code_editor_and_javascript)
   * [Python and Command Line](https://developers.google.com/earth-engine/guides/auth#python_and_command_line)
@@ -157,3 +157,4 @@ For the technically curious: the need for these different credential creation me
   * `notebook`: We create a new auth client specifically for your work - you'll see your email address on the consent page. This client is set in "development" mode, which is a special case which allows the older paste mode tokens. We need to use your own project for this, because such clients cannot be shared with large numbers of users.
 
 
+Was this helpful?

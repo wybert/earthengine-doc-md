@@ -1,7 +1,8 @@
  
 #  ee.Geometry.MultiPolygon.toGeoJSON 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a GeoJSON representation of the geometry. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a GeoJSON representation of the geometry. 
+Usage| Returns  
 ---|---  
 `MultiPolygon.toGeoJSON()`| GeoJSONGeometry  
 Argument| Type| Details  

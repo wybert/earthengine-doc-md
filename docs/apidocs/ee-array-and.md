@@ -1,8 +1,7 @@
  
 #  ee.Array.and 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-On an element-wise basis, returns 1 if and only if both values are non-zero. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+On an element-wise basis, returns 1 if and only if both values are non-zero. Usage| Returns  
 ---|---  
 `Array.and(right)`| Array  
 Argument| Type| Details  
@@ -32,6 +31,7 @@ print(arrayNeither.and(arraySecond));// [0, 0]
 vararrayDouble=ee.Array([0.0,2.0],ee.PixelType.double());
 print(arrayBoth.and(arrayDouble));// [0, 1]
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -1,6 +1,6 @@
  
 #  ee.Geometry.BBox.centroid 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-centroid#examples)
 
@@ -53,3 +53,4 @@ m.add_layer(bbox_centroid, {'color': 'red'}, 'Result [red]: bbox.centroid')
 m
 ```
 
+Was this helpful?

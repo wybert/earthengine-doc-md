@@ -1,7 +1,8 @@
  
 #  ee.Geometry.LineString.intersects 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if and only if the geometries intersect. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if and only if the geometries intersect. 
+Usage| Returns  
 ---|---  
 `LineString.intersects(right,  _maxError_, _proj_)`| Boolean  
 Argument| Type| Details  
@@ -30,7 +31,6 @@ Map.addLayer(inputGeom,
 {'color':'blue'},
 'Parameter [blue]: inputGeom');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -1,6 +1,6 @@
  
 #  Events 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Events are fired by user interaction with a widget or a programmatic change to a widget. To do something when the event occurs, register a callback function on the widget with either `onClick()` (for `ui.Map` or `ui.Button`) or `onChange()` (everything else). You can also specify a callback in the constructor. The parameters to event callbacks vary depending on the widget and event type. For example, a `ui.Textbox` passes the currently entered string value to its ‘click’ event callback functions. Check the API reference in the **Docs** tab for the type of parameter passed to the callback functions of each widget.
 The following example demonstrates multiple events originating from a single user action of specifying an image to display. When the user selects an image, another select widget is updated with the bands of the image and displays the first band in the map:
 ### Code Editor (JavaScript)

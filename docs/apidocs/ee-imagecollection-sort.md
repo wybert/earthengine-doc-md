@@ -70,3 +70,4 @@ m.add_layer(col_cld_sort_desc.first(), vis_params, 'Most cloudy')
 m
 ```
 
+Was this helpful?

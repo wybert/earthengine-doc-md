@@ -1,6 +1,16 @@
  
 #  Importing Table Data 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Uploading table assets](https://developers.google.com/earth-engine/guides/table_upload#uploading-table-assets)
+    * [Upload a Shapefile](https://developers.google.com/earth-engine/guides/table_upload#upload-a-shapefile)
+    * [Upload a CSV file](https://developers.google.com/earth-engine/guides/table_upload#upload-a-csv-file)
+  * [Advanced Options](https://developers.google.com/earth-engine/guides/table_upload#advanced-options)
+  * [Tracking upload progress](https://developers.google.com/earth-engine/guides/table_upload#tracking-upload-progress)
+  * [Table Upload Limits](https://developers.google.com/earth-engine/guides/table_upload#table-upload-limits)
+  * [Loading a table asset to your script](https://developers.google.com/earth-engine/guides/table_upload#loading-a-table-asset-to-your-script)
+
+
 ## Uploading table assets
 You can use the [Asset Manager](https://developers.google.com/earth-engine/guides/asset_manager) or [command line interface (CLI)](https://developers.google.com/earth-engine/guides/command_line#upload) to upload datasets in the Shapefile or CSV format. (See [Importing Raster Data](https://developers.google.com/earth-engine/guides/image_upload) for details on importing rasters using the Code Editor or CLI.) Your uploaded assets are initially private, but can be shared as described in the [Sharing Assets Section](https://developers.google.com/earth-engine/guides/asset_manager#sharing-assets).
 **Warning:** All vector data in Earth Engine is stored in a spherical coordinate system (specifically, `EPSG:4326`). When data is uploaded, the resultant coordinate transformation may have unintended consequences that include change of geometry type (e.g. from polygon to linestring or point) or incorrect georeferencing. To minimize the possibility of unintended changes, first reproject vector data to `EPSG:4326` before uploading. 

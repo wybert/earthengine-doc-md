@@ -17,7 +17,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#acknowledgements)
 
 
-Author(s): [ guiattard ](https://github.com/guiattard)
+Author(s): [ guiattard ](https://github.com/guiattard "View the profile for guiattard on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb)  
 ---|---  
@@ -306,7 +306,7 @@ Image(url=url)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-b3dc28945ae5d9e6d48c3be1bd473aff:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-8c713886a3b38795b5297fc746ab1bb3:getPixels
 Please wait while the thumbnail loads, it may take a moment...
 
 ```
@@ -409,7 +409,7 @@ print(link)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-c9c1bf78e227aa0e67fe3a9eae0b6405:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-63c43d7a855294b5a80b3bdcf993fc15:getPixels
 
 ```
 **Note:** The above output contains an Earth Engine API link. Calls to the API can only be made by registered, authenticated users. If you want to create API links that work for you, click "Run in Colab" at the top of this page and run the notebook.
@@ -509,3 +509,4 @@ my_map
 
 ## Acknowledgements
 Thanks to Susanne Benz and Justin Braaten for reviewing and helping write this tutorial. 
+Was this helpful?

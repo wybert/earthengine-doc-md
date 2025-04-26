@@ -1,6 +1,6 @@
  
 #  Mapping over a FeatureCollection 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 To apply the same operation to every `Feature` in a `FeatureCollection`, use `featureCollection.map()`. For example, to add another area attribute to every feature in a watersheds `FeatureCollection`, use:
 ### Code Editor (JavaScript)
 ```

@@ -1,7 +1,8 @@
  
 #  ee.ImageCollection.getString 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Extract a property from a feature. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Extract a property from a feature. 
+Usage| Returns  
 ---|---  
 `ImageCollection.getString(property)`| String  
 Argument| Type| Details  
@@ -37,7 +38,6 @@ print('Project year (ee.Number)',col.getNumber('project_year'));
 // Get the value of an ee.Array collection property as an ee.Array object.
 print('Plot IDs (ee.Array)',col.getArray('plot_ids'));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

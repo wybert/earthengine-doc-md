@@ -1,7 +1,12 @@
  
 #  ee.Filter.maxDifference 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Creates a unary or binary filter that passes if the left and right operands, both numbers, are within a given maximum difference. If used as a join condition, this numeric difference is used as a join measure. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-filter-maxdifference#examples)
+
+
+Creates a unary or binary filter that passes if the left and right operands, both numbers, are within a given maximum difference. If used as a join condition, this numeric difference is used as a join measure. 
+Usage| Returns  
 ---|---  
 `ee.Filter.maxDifference(difference,  _leftField_, _rightValue_, _rightField_, _leftValue_)`| Filter  
 Argument| Type| Details  
@@ -12,7 +17,7 @@ Argument| Type| Details
 `rightField`| String, default: null| A selector for the right operand. Should not be specified if rightValue is specified.  
 `leftValue`| Object, default: null| The value of the left operand. Should not be specified if leftField is specified.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-filter-maxdifference#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-filter-maxdifference#colab-python-sample) More
 ```
 // Field site vegetation characteristics from projects in western USA.
 varfc=ee.FeatureCollection('BLM/AIM/v1/TerrADat/TerrestrialAIM')
@@ -68,15 +73,12 @@ varjoinFilter=ee.Filter.equals(
 vargroupedPlots=ee.Join.saveAll('site_plots').apply(sitesFc,fc,joinFilter);
 print('List of plots in first site',groupedPlots.first().get('site_plots'));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Field site vegetation characteristics from projects in western USA.
 fc = ee.FeatureCollection('BLM/AIM/v1/TerrADat/TerrestrialAIM').filter(
@@ -168,3 +170,4 @@ grouped_plots = ee.Join.saveAll('site_plots').apply(sites_fc, fc, join_filter)
 display('List of plots in first site', grouped_plots.first().get('site_plots'))
 ```
 
+Was this helpful?

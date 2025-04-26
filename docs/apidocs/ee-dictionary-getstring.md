@@ -43,4 +43,3 @@ print('The "Region" value as an ee.String object:',
    dic.getString('Region').getInfo(), sep='\n')
 ```
 
-Was this helpful?

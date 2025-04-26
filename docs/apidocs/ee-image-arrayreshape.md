@@ -1,7 +1,12 @@
  
 #  ee.Image.arrayReshape 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Converts array bands of an image with equally-shaped, possibly multidimensional pixels to an image of arrays with a new shape. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayreshape#examples)
+
+
+Converts array bands of an image with equally-shaped, possibly multidimensional pixels to an image of arrays with a new shape. 
+Usage| Returns  
 ---|---  
 `Image.arrayReshape(lengths, dimensions)`| Image  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `image`| Image| The image of arrays to reshape.
 `lengths`| Image| A 1-band image specifying the new lengths of each axis of the input image specified as a 1-D array per pixel. There should be 'dimensions' lengths values in each shape' array. If one of the lengths is -1, then the corresponding length for that axis will be computed such that the total size remains constant. In particular, a shape of [-1] flattens into 1-D. At most one component of shape can be -1.  
 `dimensions`| Integer| The number of dimensions shared by all output array pixels.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayreshape#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayreshape#colab-python-sample) More
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -39,15 +44,12 @@ varflattened=reshape2x3.arrayReshape(ee.Image([-1]).toArray(),1);
 print('2D array flattened to 1D',sampArrImg(flattened));
 // [0, 1, 2, 3, 4, 5]
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):

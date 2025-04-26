@@ -39,3 +39,4 @@ print('Digamma for 100:', ee.Number(100).digamma().getInfo()) # 4.600161852
 print('Digamma for 1e13:', ee.Number(1e13).digamma().getInfo()) # 29.933606208
 ```
 
+Was this helpful?

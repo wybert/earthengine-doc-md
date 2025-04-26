@@ -18,3 +18,4 @@ Argument| Type| Details
 `scale`| Number, optional| Scale to use with the reducer in meters.  
 `classLabels`| List., optional| A dictionary of labels used to identify classes in the series legend. If omitted, classes will be labeled with the value of classBand.  
 `xLabels`| List, optional| A list of labels used to label bands on the xAxis. Must have one fewer elements than the number of image bands. If omitted, bands will be labeled with their names. If the labels are numeric (e.g. wavelengths), x-axis will be continuous.  
+Was this helpful?

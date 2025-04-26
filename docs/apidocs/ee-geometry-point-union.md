@@ -1,7 +1,12 @@
  
 #  ee.Geometry.Point.union 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the union of the two geometries. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-union#examples)
+
+
+Returns the union of the two geometries. 
+Usage| Returns  
 ---|---  
 `Point.union(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-union#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-union#colab-python-sample) More
 ```
 // Define a Point object.
 varpoint=ee.Geometry.Point(-122.082,37.42);
@@ -33,15 +38,12 @@ Map.addLayer(pointUnion,
 {'color':'red'},
 'Result [red]: point.union');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a Point object.
 point = ee.Geometry.Point(-122.082, 37.42)
@@ -60,3 +62,4 @@ m.add_layer(point_union, {'color': 'red'}, 'Result [red]: point.union')
 m
 ```
 
+Was this helpful?

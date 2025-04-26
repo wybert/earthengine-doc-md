@@ -36,4 +36,3 @@ print('Number of distinct power plant fuel sources:',
    fc.aggregate_count_distinct('fuel1').getInfo()) # 7
 ```
 
-Was this helpful?

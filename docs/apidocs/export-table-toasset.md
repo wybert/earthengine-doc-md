@@ -12,3 +12,4 @@ Argument|  Type| Details
 `assetId`| String, optional| The destination asset ID.  
 `maxVertices`| Number, optional| Max number of uncut vertices per geometry; geometries with more vertices will be cut into pieces smaller than this size.  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
+Was this helpful?

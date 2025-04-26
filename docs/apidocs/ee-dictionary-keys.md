@@ -39,4 +39,3 @@ dic = ee.Dictionary({
 print('The list of dictionary keys:', dic.keys().getInfo())
 ```
 
-Was this helpful?

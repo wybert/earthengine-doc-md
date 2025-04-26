@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Array| The array to compute on.  
-Was this helpful?

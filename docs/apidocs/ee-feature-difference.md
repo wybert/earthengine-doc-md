@@ -1,6 +1,6 @@
  
 #  ee.Feature.difference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a feature with the properties of the 'left' feature, and the geometry that results from subtracting the 'right' geometry from the 'left' geometry. 
 Usage| Returns  
 ---|---  

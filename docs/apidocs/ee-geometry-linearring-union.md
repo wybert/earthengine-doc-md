@@ -1,7 +1,12 @@
  
 #  ee.Geometry.LinearRing.union 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the union of the two geometries. Usage| Returns  
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-union#examples)
+
+
+Returns the union of the two geometries. 
+Usage| Returns  
 ---|---  
 `LinearRing.union(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-union#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-union#colab-python-sample) More
 ```
 // Define a LinearRing object.
 varlinearRing=ee.Geometry.LinearRing(
@@ -36,15 +41,12 @@ Map.addLayer(linearRingUnion,
 {'color':'red'},
 'Result [red]: linearRing.union');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a LinearRing object.
 linearring = ee.Geometry.LinearRing(

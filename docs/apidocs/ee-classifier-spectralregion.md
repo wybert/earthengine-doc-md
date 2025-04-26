@@ -1,8 +1,7 @@
  
 #  ee.Classifier.spectralRegion 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Creates a classifier that tests if its inputs lie within a polygon defined by a set of coordinates in an arbitrary 2D coordinate system. Each input to be classified must have 2 values (e.g., images must have 2 bands). The result will be 1 wherever the input values are contained within the given polygon and 0 otherwise. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a classifier that tests if its inputs lie within a polygon defined by a set of coordinates in an arbitrary 2D coordinate system. Each input to be classified must have 2 values (e.g., images must have 2 bands). The result will be 1 wherever the input values are contained within the given polygon and 0 otherwise. Usage| Returns  
 ---|---  
 `ee.Classifier.spectralRegion(coordinates,  _schema_)`| Classifier  
 Argument| Type| Details  

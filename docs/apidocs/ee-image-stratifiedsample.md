@@ -19,3 +19,4 @@ this: `image`| Image| The image to sample.
 `dropNulls`| Boolean, default: true| Skip pixels in which any band is masked.  
 `tileScale`| Float, default: 1| A scaling factor used to reduce aggregation tile size; using a larger tileScale (e.g., 2 or 4) may enable computations that run out of memory with the default.  
 `geometries`| Boolean, default: false| If true, the results will include a geometry per sampled pixel. Otherwise, geometries will be omitted (saving memory).  
+Was this helpful?

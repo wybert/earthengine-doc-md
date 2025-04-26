@@ -1,7 +1,12 @@
  
 #  ee.Image.remap 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Maps from input values to output values, represented by two parallel lists. Any input values not included in the input list are either set to defaultValue if it is given or masked if it isn't. Note that inputs containing floating point values might sometimes fail to match due to floating point precision errors. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-remap#examples)
+
+
+Maps from input values to output values, represented by two parallel lists. Any input values not included in the input list are either set to defaultValue if it is given or masked if it isn't. Note that inputs containing floating point values might sometimes fail to match due to floating point precision errors. 
+Usage| Returns  
 ---|---  
 `Image.remap(from, to,  _defaultValue_, _bandName_)`| Image  
 Argument| Type| Details  
@@ -12,7 +17,7 @@ this: `image`| Image| The image to which the remapping is applied.
 `defaultValue`| Object, default: null| The default value to replace values that weren't matched by a value in 'from'. If not specified, unmatched values are masked out.  
 `bandName`| String, default: null| The name of the band to remap. If not specified, the first band in the image is used.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-remap#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-remap#colab-python-sample) More
 ```
 // A land cover image.
 varimg=ee.Image('ESA/WorldCover/v100/2020');
@@ -38,15 +43,12 @@ min:1,max:6,
 palette:'darkgreen, lightgreen, red, white, blue, lightblue'
 },'Remapped image');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A land cover image.
 img = ee.Image('ESA/WorldCover/v100/2020')

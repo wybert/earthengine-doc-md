@@ -1,6 +1,6 @@
  
 #  Method: projects.table.export 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a table and writes the result to one of several destinations.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/table:export`

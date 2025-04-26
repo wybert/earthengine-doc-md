@@ -1,6 +1,6 @@
  
 #  About Google Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Key Features](https://developers.google.com/earth-engine/guides#key_features)
     * [Geospatial analysis, simplified and scalable](https://developers.google.com/earth-engine/guides#geospatial_analysis_simplified_and_scalable)

@@ -1,6 +1,6 @@
  
 #  ee.data.deleteAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Deletes the asset with the given id. 
 Usage| Returns  
 ---|---  

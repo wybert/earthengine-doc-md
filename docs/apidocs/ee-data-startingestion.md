@@ -11,4 +11,3 @@ Argument| Type| Details
 `taskId`| String| Unsubmitted ID for the task (obtained from newTaskId).  
 `request`| IngestionRequest| The object that describes the ingestion.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

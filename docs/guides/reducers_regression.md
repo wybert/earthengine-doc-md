@@ -1,6 +1,19 @@
  
 #  Linear Regression 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [ee.ImageCollection](https://developers.google.com/earth-engine/guides/reducers_regression#eeimagecollection)
+    * [linearFit()](https://developers.google.com/earth-engine/guides/reducers_regression#linearfit)
+    * [linearRegression()](https://developers.google.com/earth-engine/guides/reducers_regression#linearregression)
+  * [ee.Image](https://developers.google.com/earth-engine/guides/reducers_regression#eeimage)
+    * [linearFit()](https://developers.google.com/earth-engine/guides/reducers_regression#linearfit_2)
+    * [linearRegression()](https://developers.google.com/earth-engine/guides/reducers_regression#linearregression_2)
+  * [ee.FeatureCollection](https://developers.google.com/earth-engine/guides/reducers_regression#eefeaturecollection)
+  * [ee.List](https://developers.google.com/earth-engine/guides/reducers_regression#eelist)
+    * [linearFit()](https://developers.google.com/earth-engine/guides/reducers_regression#linearfit_3)
+    * [linearRegression()](https://developers.google.com/earth-engine/guides/reducers_regression#linearregression_3)
+
+
 Earth Engine has several methods for performing linear regression using reducers:
   * `ee.Reducer.linearFit()`
   * `ee.Reducer.linearRegression()`
@@ -14,7 +27,7 @@ Regression analysis with these methods is suitable for reducing `ee.ImageCollect
 ## ee.ImageCollection
 ### `linearFit()`
 The data should be set up as a two-band input image, where the first band is the independent variable and the second band is the dependent variable. The following example shows estimation of the linear trend of future precipitation (after 2006 in the [NEX-DCP30 data](https://developers.google.com/earth-engine/guides/earth-engine/datasets/catalog/NASA_NEX-DCP30)) projected by climate models. The dependent variable is projected precipitation and the independent variable is time, added prior to calling `linearFit()`:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // This function adds a time band to the image.
 varcreateTimeBand=function(image){
@@ -42,7 +55,7 @@ Observe that the output contains two bands, the ‘offset’ (intercept) and the
 ![](https://developers.google.com/static/earth-engine/images/Reducers_linearFit.png) Figure 1. The output of `linearFit()` applied to projected precipitation. Areas projected to be increased precipitation are shown in blue and decreased precipitation in red.
 ### `linearRegression()`
 For example, suppose there are two dependent variables: precipitation and maximum temperature, and two independent variables: a constant and time. The collection is identical to the previous example, but the constant band must be manually added prior to the reduction. The first two bands of the input are the ‘X’ (independent) variables and the next two bands are the ‘Y’ (dependent) variables. In this example, first get the regression coefficients, then flatten the array image to extract the bands of interest:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // This function adds a time band to the image.
 varcreateTimeBand=function(image){
@@ -103,7 +116,7 @@ Inspect the results to discover that `linearRegression()` output is equivalent t
 In the context of an `ee.Image` object, regression reducers can be used with `reduceRegion` or `reduceRegions` to perform linear regression on the pixels in the region(s). The following examples demonstrate how to calculate regression coefficients between Landsat bands in an arbitrary polygon.
 ### `linearFit()`
 The guide section describing [array data charts](https://developers.google.com/earth-engine/guides/charts_array_values) shows a scatter plot of the correlation between Landsat 8 SWIR1 and SWIR2 bands. Here, the linear regression coefficients for this relationship are calculated. A dictionary containing the properties `'offset'` (y-intercept) and `'scale'` (slope) are returned.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // Define a rectangle geometry around San Francisco.
 varsanFrancisco=ee.Geometry.Rectangle([-122.45,37.74,-122.4,37.8]);
@@ -129,7 +142,7 @@ print('Slope:',linearFit.get('scale'));
 
 ### `linearRegression()`
 The same analysis from the previous `linearFit` section is applied here, except this time the `ee.Reducer.linearRegression` function is used. Note that a regression image is constructed from three separate images: a constant image and images representing SWIR1 and SWIR2 bands from the same Landsat 8 image. Keep in mind that you can combine any set of bands to construct an input image for region reduction by `ee.Reducer.linearRegression`, they do not have to belong to the same source image.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // Define a rectangle geometry around San Francisco.
 varsanFrancisco=ee.Geometry.Rectangle([-122.45,37.74,-122.4,37.8]);
@@ -171,7 +184,7 @@ print('Residuals:',residuals);
 A dictionary containing properties `'coefficients'` and `'residuals'` are returned. The `'coefficients'` property is an array with dimensions (numX, numY); each column contains the coefficients for the corresponding dependent variable. In this case, the array has two rows and one column; row one, column one is the y-intercept and row two, column one is the slope. The `'residuals'` property is the vector of the root mean square of the residuals of each dependent variable. Extract the coefficients by casting the result as an array and then slicing out the desired elements or converting the array to a list and selecting coefficients by index position.
 ## ee.FeatureCollection
 Suppose you want to know the linear relationship between Sentinel-2 and Landsat 8 SWIR1 reflectance. In this example, a random sample of pixels formatted as a feature collection of points are used to calculate the relationship. A scatter plot of the pixel pairs along with the least squares line of best fit are generated (Figure 2).
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // Import a Sentinel-2 TOA image.
 vars2ImgSwir1=ee.Image('COPERNICUS/S2/20191022T185429_20191022T185427_T10SEH');
@@ -264,7 +277,7 @@ lineWidth:2,
 **Columns** of 2-D `ee.List` objects can be inputs to regression reducers. The following examples provide simple proofs; the independent variable is a copy of the dependent variable producing a y-intercept equal to 0 and a slope equal to 1.
 **Note:** that the result of `ee.List` reduction is an object. Cast it to an `ee.Dictionary` to make accessing the properties easier.**Caution:** lengths among rows and columns must be equal. Use `null` to represent missing data entries.
 ### `linearFit()`
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // Define a list of lists, where columns represent variables. The first column
 // is the independent variable and the second is the dependent variable.
@@ -286,7 +299,7 @@ print('Slope:',linearFit.get('scale'));
 ```
 
 **Transpose the list if variables are represented by rows** by converting to an `ee.Array`, transposing it, then converting back to an `ee.List`.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // If variables in the list are arranged as rows, you'll need to transpose it.
 // Define a list of lists where rows represent variables. The first row is the
@@ -309,7 +322,7 @@ print('Slope:',linearFit.get('scale'));
 
 ### `linearRegression()`
 Application of `ee.Reducer.linearRegression()` is similar to the above [linearFit()](https://developers.google.com/earth-engine/guides/reducers_regression#linearfit_3) example, except that a constant independent variable is included.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_regression#code-editor-javascript-sample) More
 ```
 // Define a list of lists where columns represent variables. The first column
 // represents a constant term, the second an independent variable, and the third
@@ -344,3 +357,4 @@ print('Slope:',b1);
 print('Residuals:',residuals);
 ```
 
+Was this helpful?

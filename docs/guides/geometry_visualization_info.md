@@ -1,14 +1,9 @@
  
 #  Geometry Visualization and Information 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Visualizing geometries](https://developers.google.com/earth-engine/guides/geometry_visualization_info#visualizing-geometries)
-  * [Geometry information and metadata](https://developers.google.com/earth-engine/guides/geometry_visualization_info#geometry-information-and-metadata)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Visualizing geometries
 To visualize a geometry, add it to the map. For example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/geometry_visualization_info#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a geodesic polygon.
 varpolygon=ee.Geometry.Polygon([
@@ -25,7 +20,7 @@ Map.addLayer(planarPolygon,{color:'000000'},'planar polygon');
 For more on visualizing, see [Feature and FeatureCollection Visualization](https://developers.google.com/earth-engine/guides/feature_collections_visualizing).
 ## Geometry information and metadata
 To view information about a geometry, print it. To access the information programmatically, Earth Engine provides several methods. For example, to get information about the polygon created previously, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/geometry_visualization_info#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 print('Polygon printout: ',polygon);
 // Print polygon area in square kilometers.

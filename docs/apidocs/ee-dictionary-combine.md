@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.combine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-combine#examples)
 
@@ -60,3 +60,4 @@ print('\nCombined dictionaries (overwrite true)')
 pprint.pprint(dic_1.combine(dic_2, True).getInfo())
 ```
 
+Was this helpful?

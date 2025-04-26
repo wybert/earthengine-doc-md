@@ -40,7 +40,7 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Charts](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#charts)
 
 
-Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
+Author(s): [ jdbcode ](https://github.com/jdbcode)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb)  
 ---|---  
@@ -263,9 +263,9 @@ for prop in pdsi_dict.keys():
 ```
 ```
 <class 'dict'> 
-millis: [1114408800000, 1114840800000, 1115272800000, '...']
-pdsi: [0.9777470793677852, 0.9680586839736841, 0.9976896117388457, '...']
-system:index: ['20050425', '20050430', '20050505', '...']
+millis: [1114840800000, 1115272800000, 1115704800000, '...']
+pdsi: [0.9680586839736841, 0.9976896117388457, 1.145109757293725, '...']
+system:index: ['20050430', '20050505', '20050510', '...']
 
 ```
 
@@ -460,11 +460,11 @@ lines = base.mark_line().encode(
 
 ```
 ```
-/tmpfs/tmp/ipykernel_6813/3208543205.py:1: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_25059/3208543205.py:1: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use 'selection_point()' or 'selection_interval()' instead.
 These functions also include more helpful docstrings.
  highlight = alt.selection(
-/tmpfs/tmp/ipykernel_6813/3208543205.py:9: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_25059/3208543205.py:9: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use add_params instead.
  points = base.mark_circle().encode(
 
@@ -929,3 +929,4 @@ band = alt.Chart(climate_df).mark_errorband(extent='iqr').encode(
 ```
 
 Future climate projections suggest that precipitation will decrease and temperature will increase for the selected point of interest. We can hypothesize, given the RCP 8.5 trajectory, that future conditions will more regularly resemble the 2012-2016 drought, which could lead to the same vegetation reduction response documented here and that more frequent drought events could lead to development of plant communities that are better adapted to low precipitation, high temperature conditions. 
+Was this helpful?

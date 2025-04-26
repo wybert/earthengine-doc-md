@@ -1,8 +1,8 @@
  
 #  Filtering a FeatureCollection 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Filtering a `FeatureCollection` is analogous to filtering an `ImageCollection`. (See the [Filtering an ImageCollection section](https://developers.google.com/earth-engine/guides/ic_filtering)). There are the `featureCollection.filterDate()`, and `featureCollection.filterBounds()` convenience methods and the `featureCollection.filter()` method for use with any applicable `ee.Filter`. For example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_filtering#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_filtering#colab-python-sample) More
 ```
 // Load watersheds from a data table.
 varsheds=ee.FeatureCollection('USGS/WBD/2017/HUC06')
@@ -22,15 +22,12 @@ varlargeSheds=filtered.filter(ee.Filter.gt('areasqkm',25000));
 // Check the number of watersheds after filtering for size and location.
 print('Count after filtering by size:',largeSheds.size());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Load watersheds from a data table.
 sheds = (

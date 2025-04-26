@@ -1,6 +1,10 @@
  
 #  ee.Image 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image#examples)
+
+
 An object to represent an Earth Engine image. This constructor accepts a variety of arguments: 
 - A string: an EarthEngine asset id,
 - A string and a number: an EarthEngine asset id and version,
@@ -15,7 +19,7 @@ Argument| Type| Details
 ---|---|---  
 `args`| Image|List, optional| Constructor argument.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image#colab-python-sample) More
 ```
 varimage=ee.Image('JAXA/ALOS/AW3D30/V2_2');
 Map.setZoom(3);
@@ -62,15 +66,12 @@ Map.addLayer(imageOfArray,null,'imageOfArray',false);
 // precision: int
 print(imageOfArray);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 image = ee.Image('JAXA/ALOS/AW3D30/V2_2')
 m = geemap.Map()

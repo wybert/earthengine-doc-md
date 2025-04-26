@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.dateslider`| ui.DateSlider| The ui.DateSlider instance.  
+Was this helpful?

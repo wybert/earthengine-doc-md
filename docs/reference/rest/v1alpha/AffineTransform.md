@@ -1,6 +1,6 @@
  
 #  AffineTransform 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 The affine transform. The six values form a 2x3 matrix:
 ```
 ( ( scaleX, shearX, translateX )
@@ -30,3 +30,4 @@ Fields
 `shearY` |  `number` The vertical shear factor for some, though not all, transformations.  
 `scaleY` |  `number` The vertical scale factor.  
 `translateY` |  `number` The vertical offset.  
+Was this helpful?

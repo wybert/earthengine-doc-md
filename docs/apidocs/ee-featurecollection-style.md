@@ -1,7 +1,12 @@
  
 #  ee.FeatureCollection.style 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Draw a vector collection for visualization using a simple style language. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#examples)
+
+
+Draw a vector collection for visualization using a simple style language. 
+Usage| Returns  
 ---|---  
 `FeatureCollection.style( _color_, _pointSize_, _pointShape_, _width_, _fillColor_, _styleProperty_, _neighborhood_, _lineType_)`| Image  
 Argument| Type| Details  
@@ -16,7 +21,7 @@ this: `collection`| FeatureCollection| The collection to draw.
 `neighborhood`| Integer, default: 5| If styleProperty is used and any feature has a pointSize or width larger than the defaults, tiling artifacts can occur. Specifies the maximum neighborhood (pointSize + width) needed for any feature.  
 `lineType`| String, default: "solid"| The default line style for lines and outlines of polygons and point shapes. Defaults to 'solid'. One of: solid, dotted, dashed.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#colab-python-sample) More
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
@@ -56,15 +61,12 @@ neighborhood:8// maximum "pointSize" + "width" among features
 // Display the FeatureCollection visualization (ee.Image) on the map.
 Map.addLayer(fcVisCustom,null,'Feature-specific style');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(
@@ -108,3 +110,4 @@ m.add_layer(fc_vis_custom, None, 'Feature-specific style')
 m
 ```
 
+Was this helpful?

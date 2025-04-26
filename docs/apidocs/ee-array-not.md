@@ -35,3 +35,4 @@ display(ee.Array([1]).Not()) # [0]
 display(ee.Array([-1, -0.1, 0, 0.1, 1]).Not()) # [0, 0, 1, 0, 0]
 ```
 
+Was this helpful?

@@ -1,10 +1,6 @@
  
 #  ui.Chart.image.seriesByRegion 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-chart-image-seriesbyregion#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image collection. Extracts and plots the value of the specified band in each region for each image in the collection. Usually a time series. 
 - X-axis = Image labeled by xProperty (default: 'system:time_start').
 - Y-axis = Reducer output.
@@ -23,7 +19,7 @@ Argument| Type| Details
 `xProperty`| String, optional| Property to be used as the label for each image on the x-axis. Defaults to 'system:time_start'.  
 `seriesProperty`| String, optional| Property of features in opt_regions to be used for series labels. Defaults to 'system:index'.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-chart-image-seriesbyregion#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Define regions of pixels to reduce and chart a time series for.
 varregions=ee.FeatureCollection([

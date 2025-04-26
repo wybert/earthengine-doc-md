@@ -1,7 +1,8 @@
  
 #  ee.Dictionary.evaluate 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. 
+Usage| Returns  
 ---|---  
 `Dictionary.evaluate(callback)`|   
 Argument| Type| Details  
@@ -27,7 +28,6 @@ print('  '+key+': '+dictClient[key]);
 });
 });
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

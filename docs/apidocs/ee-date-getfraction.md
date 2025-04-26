@@ -43,3 +43,4 @@ display('Elapsed fraction of a minute:', date.getFraction('minute'))
 display('Elapsed fraction of a second:', date.getFraction('second'))
 ```
 
+Was this helpful?

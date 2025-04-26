@@ -1,6 +1,6 @@
  
 #  Method: projects.tables.getFeatures 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Fetches `Table` features, the request includes the name of the Table to download from a previous `tables.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/tables/*}:getFeatures`

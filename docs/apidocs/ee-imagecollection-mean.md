@@ -1,7 +1,8 @@
  
 #  ee.ImageCollection.mean 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Reduces an image collection by calculating the mean of all values at each pixel across the stack of all matching bands. Bands are matched by name. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Reduces an image collection by calculating the mean of all values at each pixel across the stack of all matching bands. Bands are matched by name. 
+Usage| Returns  
 ---|---  
 `ImageCollection.mean()`| Image  
 Argument| Type| Details  
@@ -59,7 +60,6 @@ Map.addLayer(count,{min:1,max:5},'Count (not cloud observations)');
 varmosaic=notCloudCol.mosaic();
 Map.addLayer(mosaic,visRefl,'Mosaic (B11, B8, B3)');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

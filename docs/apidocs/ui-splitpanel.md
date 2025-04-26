@@ -1,6 +1,6 @@
  
 #  ui.SplitPanel 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 A widget containing two panels with a divider between them. The divider can be dragged, allowing the panels to be resized. One or both panels may be ui.Map objects. 
 By default the layout initializes with a 50/50 split. The width and max/minWidth styles on the panels control the split sizing for horizontal orientations. Similarly, use height and max/minHeight for vertical. These can be given in pixels as '{n}px' or as a percentage of the containing SplitPanel as '{n}%'.
 Note that the given size for the second panel will be ignored if the first panel size is specified, since the overall width of the split panel is controlled independently. Max/min sizes may be set for both panels.

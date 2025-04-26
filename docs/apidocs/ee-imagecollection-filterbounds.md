@@ -56,3 +56,4 @@ fc = ee.FeatureCollection([
 print('Images intersecting feature collection:', ic.filterBounds(fc).getInfo())
 ```
 
+Was this helpful?

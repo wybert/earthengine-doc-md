@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 `id`| String| The asset ID of the image.  
 `version`| Long, default: -1| The version of the asset. -1 signifies the latest version.  
+Was this helpful?

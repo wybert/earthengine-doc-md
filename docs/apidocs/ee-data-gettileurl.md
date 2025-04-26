@@ -12,3 +12,4 @@ Argument| Type| Details
 `x`| Number| The tile x coordinate.  
 `y`| Number| The tile y coordinate.  
 `z`| Number| The tile zoom level.  
+Was this helpful?

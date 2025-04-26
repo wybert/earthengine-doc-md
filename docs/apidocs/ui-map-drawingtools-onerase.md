@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.drawingtools`| ui.Map.DrawingTools| The ui.Map.DrawingTools instance.  
 `callback`| Function| The callback to fire when a shape is erased. The callback is passed three parameters: the removed ee.Geometry, the GeometryLayer from which the geometry was removed, and the ui.Map.DrawingTools widget that the event listener is bound to.  
+Was this helpful?

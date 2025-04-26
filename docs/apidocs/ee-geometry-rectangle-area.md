@@ -1,7 +1,12 @@
  
 #  ee.Geometry.Rectangle.area 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the area of the geometry. Area of points and line strings is 0 and the area of multi geometries is the sum of the areas of their components (intersecting areas are counted multiple times). Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-area#examples)
+
+
+Returns the area of the geometry. Area of points and line strings is 0 and the area of multi geometries is the sum of the areas of their components (intersecting areas are counted multiple times). 
+Usage| Returns  
 ---|---  
 `Rectangle.area( _maxError_, _proj_)`| Float  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `geometry`| Geometry| The geometry input.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in the units of the coordinate system of this projection. Otherwise it will be in square meters.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-area#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-area#colab-python-sample) More
 ```
 // Define a Rectangle object.
 varrectangle=ee.Geometry.Rectangle(-122.09,37.42,-122.08,37.43);
@@ -24,15 +29,12 @@ Map.addLayer(rectangle,
 {'color':'black'},
 'Geometry [black]: rectangle');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a Rectangle object.
 rectangle = ee.Geometry.Rectangle(-122.09, 37.42, -122.08, 37.43)

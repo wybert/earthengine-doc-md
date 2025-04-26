@@ -1,6 +1,20 @@
  
 #  FeatureView Overview 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Creating a FeatureView](https://developers.google.com/earth-engine/guides/featureview_overview#creating_a_featureview)
+  * [FeatureView asset locations](https://developers.google.com/earth-engine/guides/featureview_overview#featureview_asset_locations)
+  * [Importing FeatureView assets into scripts](https://developers.google.com/earth-engine/guides/featureview_overview#importing_featureview_assets_into_scripts)
+    * [Data Catalog asset dialog](https://developers.google.com/earth-engine/guides/featureview_overview#data_catalog_asset_dialog)
+    * [Personal asset dialog](https://developers.google.com/earth-engine/guides/featureview_overview#personal_asset_dialog)
+    * [Asset ID](https://developers.google.com/earth-engine/guides/featureview_overview#asset_id)
+  * [FeatureView metadata](https://developers.google.com/earth-engine/guides/featureview_overview#featureview_metadata)
+  * [Visualizing a FeatureView](https://developers.google.com/earth-engine/guides/featureview_overview#visualizing_a_featureview)
+    * [Code Editor](https://developers.google.com/earth-engine/guides/featureview_overview#code_editor)
+    * [Google Maps API](https://developers.google.com/earth-engine/guides/featureview_overview#google_maps_api)
+  * [Inspecting a FeatureView](https://developers.google.com/earth-engine/guides/featureview_overview#inspecting_a_featureview)
+
+
 A `FeatureView` is a view-only, accelerated representation of a [`FeatureCollection`](https://developers.google.com/earth-engine/guides/feature_collections). Unlike a `FeatureCollection`, whose raster map tiles are generated on the fly, `FeatureView` raster tiles are pre-computed to provide rapid rendering. In addition to rendering faster, `FeatureView` assets implement zoom level-dependent feature thinning. The effect is that dense datasets might look incomplete when zoomed out (small features are not drawn), but more of the data becomes visible as you zoom in, which can improve map aesthetics at lower zoom levels. The thinning behavior of a dataset is controlled by several [optimization parameters](https://developers.google.com/earth-engine/guides/featureview_optimization) that are set during export of a `FeatureCollection` to a `FeatureView` asset.
 As a view-only asset, `FeatureView` objects cannot be included in computations or expressions, but can be visualized and inspected in the JavaScript Code Editor and Earth Engine Apps as a `FeatureViewLayer`. They can also be integrated into Google Maps API applications.
 ## Creating a FeatureView
@@ -16,7 +30,7 @@ A `FeatureView` can be customized using several parameters in the `Export.table.
 See the [`FeatureView` Optimization page](https://developers.google.com/earth-engine/guides/featureview_optimization) for more details on these parameters and their accepted arguments.
 **Caution:** If the value of `maxFeaturesPerTile` argument provided to the `Export.table.toFeatureView` is too large, it’s possible for Earth Engine to timeout serving tiles. In such a case, try lowering this value and re-exporting the asset. The optimal value is a tradeoff between how many features are thinned out and how long it takes to load tiles (latency). Latency also depends on the geometry type (points and lines render faster than polygons), geometry complexity, and number of style rules.
 In the example below, the specified arguments for these parameters produce a `FeatureView` where the maximum features per tile at a given zoom level is 1500, the density of features per tile is independent and allowed to reach the maximum of 1500, smaller polygons are thinned out first, and smaller polygons lay on top of larger ones.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/featureview_overview#code-editor-javascript-sample) More
 ```
 // Import the WDPA feature collection.
 varwdpa=ee.FeatureCollection('WCMC/WDPA/current/polygons');
@@ -51,7 +65,7 @@ Figure 1. Data Catalog asset dialog highlighting `FeatureView` import methods.
 A `FeatureView` object can be visualized in the Code Editor, Earth Engine Apps, and Google Maps.
 ### Code Editor
 The Code Editor includes the `ui.Map.FeatureViewLayer` component to visualize `FeatureView` assets on a map. The following example defines a `FeatureView` asset ID, imports the asset as a `FeatureViewLayer`, and displays it on the map.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/featureview_overview#code-editor-javascript-sample) More
 ```
 // Define the FeatureView asset ID.
 varassetId='WCMC/WDPA/current/polygons_FeatureView';
@@ -69,7 +83,7 @@ You can style the `FeatureViewLayer` by passing a style dictionary to the `ui.Ma
 
 
 Visit the [FeatureView Styling page](https://developers.google.com/earth-engine/guides/featureview_styling) for more details on the styling options that are available.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/featureview_overview#code-editor-javascript-sample) More
 ```
 // Set visualization properties for the defined layer.
 layer.setVisParams({
@@ -111,7 +125,7 @@ pointSize:6.0,
 
 #### Filtering
 Filter rules can be applied to selectively style or hide features based on their properties. For example, to filter out protected areas smaller than a certain area given by a slider widget, you can use the following code. See the [Specific Rules](https://developers.google.com/earth-engine/guides/featureview_styling#specific_rules) section of the `FeatureView` Styling page to learn more about the `rules` field.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/featureview_overview#code-editor-javascript-sample) More
 ```
 // Define the FeatureView asset ID.
 varassetId='WCMC/WDPA/current/polygons_FeatureView';

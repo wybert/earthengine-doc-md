@@ -1,6 +1,6 @@
  
 #  ui.Button.style 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the widget's style ActiveDictionary, which can be modified to update the widget's styles. 
 Properties which behave like their CSS counterparts:
 - height, maxHeight, minHeight (e.g. '100px')

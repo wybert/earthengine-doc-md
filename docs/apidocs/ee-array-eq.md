@@ -1,6 +1,6 @@
  
 #  ee.Array.eq 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-eq#examples)
 
@@ -44,3 +44,4 @@ display(ee.Array([1]).int8().eq(ee.Array([1]))) # 1
 display(ee.Array([1]).int8().eq(ee.Array([1]).int32())) # 1
 ```
 
+Was this helpful?

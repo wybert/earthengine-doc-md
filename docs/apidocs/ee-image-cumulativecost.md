@@ -12,4 +12,3 @@ this: `cost`| Image| An image representing the cost to traverse each pixel. Mask
 `source`| Image| A single-band image representing the sources. A pixel value different from 0 defines a source pixel.  
 `maxDistance`| Float| Maximum distance for computation, in meters.  
 `geodeticDistance`| Boolean, default: true| If true, geodetic distance along the curved surface is used, assuming a spherical Earth of radius 6378137.0. If false, Euclidean distance in the 2D plane of the map projection is used (faster, but less accurate).  
-Was this helpful?

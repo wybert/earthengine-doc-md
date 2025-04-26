@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.listFeatures 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Lists the features in a table asset. This method allows the caller to apply spatiotemporal and property filters to a table. Results are returned as a list of GeoJSON feature objects.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{asset=projects/*/assets/**}:listFeatures`

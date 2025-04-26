@@ -1,6 +1,6 @@
  
 #  ui.Select.items 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 See ui.data.ActiveList. 
 Returns the list of items in the selection menu.
 Usage| Returns  

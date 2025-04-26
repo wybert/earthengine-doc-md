@@ -1,6 +1,6 @@
  
 #  Texture 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine has several special methods for estimating spatial texture. When the image is discrete valued (not floating point), you can use `image.entropy()` to compute the [entropy](http://en.wikipedia.org/wiki/Entropy_\(information_theory\)) in a neighborhood:
 ### Code Editor (JavaScript)
 ```

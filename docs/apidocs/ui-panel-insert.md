@@ -1,6 +1,6 @@
  
 #  ui.Panel.insert 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Inserts a widget into to the panel at the specified index. 
 Returns this panel.
 Usage| Returns  

@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.aggregate_total_sd 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-aggregate_total_sd#examples)
 
@@ -36,3 +36,4 @@ print('Total std. deviation of power plant capacities (MW):',
    fc.aggregate_total_sd('capacitymw').getInfo()) # 462.9334545609107
 ```
 
+Was this helpful?

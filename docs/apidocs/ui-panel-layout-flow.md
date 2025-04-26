@@ -12,3 +12,4 @@ Argument| Type| Details
 ---|---|---  
 `direction`| String, optional| The direction of the flow. One of 'horizontal' or 'vertical'. Defaults to 'vertical'.  
 `wrap`| Boolean, optional| Whether to wrap children in the layout if there are too many to show in one line. Defaults to false.  
+Was this helpful?

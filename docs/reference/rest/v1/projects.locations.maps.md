@@ -1,12 +1,6 @@
  
 #  REST Resource: projects.locations.maps 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: EarthEngineMap](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.maps#resource:-earthenginemap)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.maps#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.maps#create)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: EarthEngineMap
 Information about a map.
 JSON representation  

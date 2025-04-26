@@ -1,20 +1,10 @@
  
 #  Non-Parametric Trend Analysis 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Time series data](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#time_series_data)
-  * [Join the time series to itself](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#join_the_time_series_to_itself)
-  * [Mann-Kendall trend test](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#mann-kendall_trend_test)
-  * [Sen's slope](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#sens_slope)
-  * [Variance of the Mann-Kendall statistic](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#variance_of_the_mann-kendall_statistic)
-  * [Significance testing](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#significance_testing)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#references)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/nonparametric-trends/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/nonparametric-trends/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/nonparametric-trends/index.md)
-Author(s): [ n-clinton ](https://github.com/n-clinton)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/nonparametric-trends/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/nonparametric-trends/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/nonparametric-trends/index.md "View changes to this article over time.")
+Author(s): [ n-clinton ](https://github.com/n-clinton "View the profile for n-clinton on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 Trend analysis is finding places where something of interest is increasing or decreasing and by how much. More specifically, this tutorial demonstrates detecting monotonic trends in imagery using the non-parametric Mann-Kendall test for the presence of an increasing or decreasing trend and Sen's slope to quantify the magnitude of the trend (if one exists). The tutorial also shows estimating the variance of the Mann-Kendall test statistic, a Z-statistic for the test of presence of any trend, and a P-value of the statistic (assuming a normal distribution). 
 **Important: the methods presented here are suitable for assessing _monotonic trends_ (i.e. data without seasonality) in _discrete data_ (i.e. not floating point). Additionally, if you apply the methods in this tutorial to new data (i.e. region, time frame, source) you may need to adjust the `min` and `max` visualization parameters to suit the particular results.**

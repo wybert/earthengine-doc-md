@@ -1,6 +1,6 @@
  
 #  Statistics of an Image Region 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ##  `reduceRegion`
 To get statistics of pixel values in a region of an `ee.Image`, use [`image.reduceRegion()`](https://developers.google.com/earth-engine/apidocs/ee-image-reduceregion). This reduces all the pixels in the region(s) to a statistic or other compact representation of the pixel data in the region (e.g. histogram). The region is represented as a `Geometry`, which might be a polygon, containing many pixels, or it might be a single point, in which case there will only be one pixel in the region. In either case, as illustrated in Figure 1, the output is a statistic derived from the pixels in the region.
 ![reduceRegion diagram](https://developers.google.com/static/earth-engine/images/Reduce_region_diagram.png) Figure 1. An illustration of an `ee.Reducer` applied to an image and a region.

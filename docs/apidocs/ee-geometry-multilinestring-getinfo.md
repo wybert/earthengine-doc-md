@@ -1,6 +1,10 @@
  
 #  ee.Geometry.MultiLineString.getInfo 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-getinfo#examples)
+
+
 Retrieves the value of this object from the server. 
 If no callback function is provided, the request is made synchronously. If a callback is provided, the request is made asynchronously.
 The asynchronous mode is preferred because the synchronous mode stops all other code (for example, the EE Code Editor UI) while waiting for the server. To make an asynchronous request, evaluate() is preferred over getInfo().
@@ -13,7 +17,7 @@ Argument| Type| Details
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-getinfo#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-getinfo#colab-python-sample) More
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -29,15 +33,12 @@ Map.addLayer(multiLineString,
 {'color':'black'},
 'Geometry [black]: multiLineString');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -57,3 +58,4 @@ m.add_layer(
 m
 ```
 
+Was this helpful?

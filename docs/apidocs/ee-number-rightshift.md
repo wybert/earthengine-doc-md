@@ -1,6 +1,6 @@
  
 #  ee.Number.rightShift 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-rightshift#examples)
 
@@ -41,3 +41,4 @@ Right shift 2: 00000101
 print(ee.Number(20).rightShift(2).getInfo()) # 5
 ```
 
+Was this helpful?

@@ -56,3 +56,4 @@ Map.addLayer(closestPoints.getGeometry('right'),
 'Result [red]: closestPointOnRight');
 ```
 
+Was this helpful?

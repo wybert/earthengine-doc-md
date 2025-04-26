@@ -1,24 +1,6 @@
  
 #  Tutorials 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Introduction to Earth Engine (condensed)](https://developers.google.com/earth-engine/tutorials/videos#introduction-to-earth-engine-condensed)
-  * [Hands-on Intermediate Training](https://developers.google.com/earth-engine/tutorials/videos#hands-on-intermediate-training)
-  * [Tables and Vectors](https://developers.google.com/earth-engine/tutorials/videos#tables-and-vectors)
-  * [Importing and Exporting](https://developers.google.com/earth-engine/tutorials/videos#importing-and-exporting)
-  * [Classification](https://developers.google.com/earth-engine/tutorials/videos#classification)
-  * [Machine Learning](https://developers.google.com/earth-engine/tutorials/videos#machine-learning)
-    * [Machine Learning Best Practices](https://developers.google.com/earth-engine/tutorials/videos#machine-learning-best-practices)
-    * [Neural Segmentation](https://developers.google.com/earth-engine/tutorials/videos#neural-segmentation)
-  * [Arrays and Matrices](https://developers.google.com/earth-engine/tutorials/videos#arrays-and-matrices)
-  * [Time Series Analysis](https://developers.google.com/earth-engine/tutorials/videos#time-series-analysis)
-  * [Earth Engine and the Google Cloud Platform](https://developers.google.com/earth-engine/tutorials/videos#earth-engine-and-the-google-cloud-platform)
-  * [Google Maps API](https://developers.google.com/earth-engine/tutorials/videos#google-maps-api)
-  * [Publishing and storytelling with your Earth Engine results](https://developers.google.com/earth-engine/tutorials/videos#publishing-and-storytelling-with-your-earth-engine-results)
-  * [Datasets](https://developers.google.com/earth-engine/tutorials/videos#datasets)
-    * [Synthetic Aperture Radar (Sentinel-1)](https://developers.google.com/earth-engine/tutorials/videos#synthetic-aperture-radar-sentinel-1)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 These video tutorials are from lectures or hands-on trainings conducted at Earth Engine User Summits and [Earth Outreach digital events](https://earthoutreachonair.withgoogle.com/). 
 ## Introduction to Earth Engine (condensed)
 Learn about Earth Engine from developer advocate Noel Gorelick in this fast-paced intro.

@@ -1,12 +1,7 @@
  
 #  ee.Image.add 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-add#examples)
-
-
-Adds the first value to the second for each matched pair of bands in image1 and image2. If either image1 or image2 has only 1 band, then it is used against all the bands in the other image. If the images have the same number of bands, but not the same names, they're used pairwise in the natural order. The output bands are named for the longer of the two inputs, or if they're equal in length, in image1's order. The type of the output pixels is the union of the input types. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Adds the first value to the second for each matched pair of bands in image1 and image2. If either image1 or image2 has only 1 band, then it is used against all the bands in the other image. If the images have the same number of bands, but not the same names, they're used pairwise in the natural order. The output bands are named for the longer of the two inputs, or if they're equal in length, in image1's order. The type of the output pixels is the union of the input types. Usage| Returns  
 ---|---  
 `Image.add(image2)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `image1`| Image| The image from which the left operand bands are taken.  
 `image2`| Image| The image from which the right operand bands are taken.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-add#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-add#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -41,12 +36,15 @@ Map.addLayer(remainder,{min:0,max:1500},'remainder');
 varexponent=swir1.pow(3);
 Map.addLayer(exponent,{min:0,max:2e10},'exponent');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image.
 img = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')
@@ -76,4 +74,3 @@ m.add_layer(exponent, {'min': 0, 'max': 2e10}, 'exponent')
 m
 ```
 
-Was this helpful?

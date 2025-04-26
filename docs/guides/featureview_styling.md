@@ -1,6 +1,6 @@
  
 #  FeatureView Styling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Style object](https://developers.google.com/earth-engine/guides/featureview_styling#style_object)
     * [Broad rules](https://developers.google.com/earth-engine/guides/featureview_styling#broad_rules)
@@ -155,7 +155,7 @@ max:1000
 
 #### Interval
 Interval interpolation mode sets a feature style property by mapping input values to class breaks and then applying a class-specific symbology. Input values from the selected feature property are assigned to the nearest class break value by rounding down. The `palette` property is formatted as a list of lists, where each inner list contains a class break value followed by a style property value. Features whose property value are less than the minimum class break value maintain their default style property setting.
-In the following example, feature fill opacity is set according to graduated classes of the "REP_AREA" property. Class definition and style symbology are provided in the `palette` property as a list of lists. It indicates that there should be 4 classes with breaks at value 0, 80, 2000, and 5000, with respective feature opacities of 0.5, 0.35, 0.22, and 0.15. In other words, features with "REP_AREA" values in the interval $ 0 \le x < 80 $ will have a fill opacity of 0.5, values in the interval $ 80 \le x < 2000 $ will have fill opacity of 0.35, and so on.
+In the following example, feature fill opacity is set according to graduated classes of the "REP_AREA" property. Class definition and style symbology are provided in the `palette` property as a list of lists. It indicates that there should be 4 classes with breaks at value 0, 80, 2000, and 5000, with respective feature opacities of 0.5, 0.35, 0.22, and 0.15. In other words, features with "REP_AREA" values in the interval 0≤x<80 will have a fill opacity of 0.5, values in the interval 80≤x<2000 will have fill opacity of 0.35, and so on.
 ```
 varvisParams={
 fillOpacity:{
@@ -199,3 +199,4 @@ _Polygon geometries_
 `polygonStrokeOpacity` | `Double` | Sets stroke opacity for polygon geometries. Must be a double between 0 and 1. | Yes  
 `polygonFillColor` | `String` | Sets fill color for polygon geometries. Must be a hex value or a CSS3 color. | Yes  
 `polygonFillOpacity` | `Double` | Sets fill opacity for polygon geometries. Must be a double between 0 and 1. | Yes  
+Was this helpful?

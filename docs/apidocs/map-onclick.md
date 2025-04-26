@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `callback`| Function| The callback to fire when the map is clicked. The callback is passed an object containing the coordinates of the clicked point (with keys lon and lat) and the map widget.  
-Was this helpful?

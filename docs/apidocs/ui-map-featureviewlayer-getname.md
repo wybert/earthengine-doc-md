@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map.abstractlayer`| ui.Map.AbstractLayer| The ui.Map.AbstractLayer instance.  
+Was this helpful?

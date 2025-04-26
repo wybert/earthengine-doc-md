@@ -32,4 +32,3 @@ varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
 .aside(Map.addLayer,{color:'blue'},'Power plants');
 ```
 
-Was this helpful?

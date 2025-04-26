@@ -1,7 +1,8 @@
  
 #  ui.Map.DrawingTools.unlisten 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Deletes callbacks. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Deletes callbacks. 
+Usage| Returns  
 ---|---  
 `DrawingTools.unlisten( _idOrType_)`|   
 Argument|  Type| Details  

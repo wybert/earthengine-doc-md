@@ -16,4 +16,3 @@ Argument| Type| Details
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `func`| Function| The function to call.  
 `var_args`| VarArgs| Any extra arguments to pass to the function.  
-Was this helpful?

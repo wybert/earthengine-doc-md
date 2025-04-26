@@ -1,6 +1,6 @@
  
 #  Table Manifest Upload 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [One-time setup](https://developers.google.com/earth-engine/guides/table_manifest#one-time-setup)
   * [Asset IDs and names](https://developers.google.com/earth-engine/guides/table_manifest#asset-ids-and-names)

@@ -1,6 +1,6 @@
  
 #  ui.Map.centerObject 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Centers the map view on a given object. **Caution:** providing a large or complex collection as input can result in poor performance. Collating the geometry of collections does not scale well; use the smallest collection (or geometry) that is required to achieve the desired outcome.
 Returns this ui.Map.
 Usage| Returns  

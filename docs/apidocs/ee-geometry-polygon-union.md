@@ -1,6 +1,6 @@
  
 #  ee.Geometry.Polygon.union 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the two geometries. Usage| Returns  
 ---|---  
 `Polygon.union(right,  _maxError_, _proj_)`| Geometry  

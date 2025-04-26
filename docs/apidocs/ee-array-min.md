@@ -15,6 +15,7 @@ varempty=ee.Array([],ee.PixelType.int8());
 print(empty.min(empty));// []
 print(ee.Array([0,1,2,3]).min(ee.Array([-1,3,0,2])));// [-1,1,0,2]
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -1,7 +1,8 @@
  
 #  ui.Map.DrawingTools 
-Stay organized with collections  Save and categorize content based on your preferences. 
-A set of tools for drawing on a map. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+A set of tools for drawing on a map. 
+Usage| Returns  
 ---|---  
 `ui.Map.DrawingTools( _layers_, _shape_, _selected_, _shown_, _linked_)`| ui.Map.DrawingTools  
 Argument| Type| Details  

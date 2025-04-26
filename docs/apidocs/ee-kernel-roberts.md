@@ -39,4 +39,3 @@ pprint(ee.Kernel.roberts().getInfo())
 # [0, -1]
 ```
 
-Was this helpful?

@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Image| The input image.  
-Was this helpful?

@@ -13,3 +13,4 @@ JSON representation
 Fields  
 ---  
 `name` |  `string` The name of the asset to be created. `name` is of the format "projects/*/assets/**" (e.g. "projects/earthengine-legacy/assets/users//").  
+Was this helpful?

@@ -13,3 +13,4 @@ this: `ui.chart`| ui.Chart| The ui.Chart instance.
 ---  
 ` colors ` (Array) An array of colors used to draw the chart.  
 Its format should follow the Google Visualization API's options: https://developers.google.com/chart/interactive/docs/customizing_charts  
+Was this helpful?

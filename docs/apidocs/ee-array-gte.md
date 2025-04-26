@@ -1,6 +1,6 @@
  
 #  ee.Array.gte 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-gte#examples)
 
@@ -38,4 +38,3 @@ display(ee.Array([2]).gte([1])) # [1]
 display(ee.Array([-1, 0, 1]).gte([-2, 1, 1])) # [1, 0, 1]
 ```
 
-Was this helpful?

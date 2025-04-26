@@ -949,7 +949,7 @@ The mean annual recharge at our point of interest is 154 mm/an
 
 ```
 ```
-/tmpfs/tmp/ipykernel_26327/1140476268.py:2: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmpfs/tmp/ipykernel_12568/1140476268.py:2: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
  rdfy = rdf.resample("Y").sum()
 
 ```
@@ -986,7 +986,7 @@ rdf2y.head()
 
 ```
 ```
-/tmpfs/tmp/ipykernel_26327/891754906.py:9: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmpfs/tmp/ipykernel_12568/891754906.py:9: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
  rdf2y = rdf2.resample("Y").sum()
 
 ```
@@ -1160,4 +1160,3 @@ Please note the following points:
 **Yang, Y., Donohue, R. J., & McVicar, T. R. (2016).** Global estimation of effective plant rooting depth: Implications for hydrological modeling. _Water Resources Research_ , 52(10), 8260-8276.
 ### Acknowledgements
 Thanks to Susanne Benz for precious advice. 
-Was this helpful?

@@ -1,14 +1,19 @@
  
 #  ee.Array.atan 
-Stay organized with collections  Save and categorize content based on your preferences. 
-On an element-wise basis, computes the arctangent in radians of the input. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-atan#examples)
+
+
+On an element-wise basis, computes the arctangent in radians of the input. 
+Usage| Returns  
 ---|---  
 `Array.atan()`| Array  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Array| The input array.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-atan#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-atan#colab-python-sample) More
 ```
 print(ee.Array([-5]).atan());// [-1.3734]
 print(ee.Array([0]).atan());// [0]
@@ -41,15 +46,12 @@ pointSize:0,
 });
 print(chart);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importmath
 importaltairasalt
@@ -69,3 +71,4 @@ alt.Chart(df).mark_line().encode(
 )
 ```
 
+Was this helpful?

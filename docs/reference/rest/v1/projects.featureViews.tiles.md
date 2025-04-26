@@ -65,3 +65,4 @@ Fields
 ---  
 ### `get[](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews.tiles/get)`
 |  Computes a map tile image showing a portion of a FeatureView.  
+Was this helpful?

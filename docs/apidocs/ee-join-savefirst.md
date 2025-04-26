@@ -1,7 +1,8 @@
  
 #  ee.Join.saveFirst 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a join that pairs each element from the first collection with a matching element from the second collection. The first match is added to the result as an additional property. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a join that pairs each element from the first collection with a matching element from the second collection. The first match is added to the result as an additional property. 
+Usage| Returns  
 ---|---  
 `ee.Join.saveFirst(matchKey,  _ordering_, _ascending_, _measureKey_, _outer_)`| Join  
 Argument| Type| Details  

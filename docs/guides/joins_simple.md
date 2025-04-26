@@ -1,8 +1,8 @@
  
 #  Simple Joins 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 A simple join returns elements from the `primary` collection that match any element in the `secondary` collection according to the match condition in the filter. To perform a simple join, use an `ee.Join.simple()`. This might be useful for finding the common elements among different collections or filtering one collection by another. For example, consider two image collections which (might) have some matching elements, where “matching” is defined by the condition specified in a filter. For example, let matching mean the image IDs are equal. Since the matching images in both collections are the same, use a simple join to discover this set of matching images:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_simple#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_simple#colab-python-sample) More
 ```
 // Load a Landsat 8 image collection at a point of interest.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -28,15 +28,12 @@ varsimpleJoined=simpleJoin.apply(primary,secondary,filter);
 // Display the result.
 print('Simple join: ',simpleJoined);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Load a Landsat 8 image collection at a point of interest.
 collection = ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA').filterBounds(

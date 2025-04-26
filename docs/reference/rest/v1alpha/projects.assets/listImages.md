@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.listImages 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#path-parameters)
@@ -104,4 +104,3 @@ Fields
 `geometry` |  `object (`Struct[](https://protobuf.dev/reference/protobuf/google.protobuf/#struct)` format)` The spatial footprint associated with the image, if any, as a GeoJSON geometry object (see RFC 7946).  
 `bands[]` |  `object (`ImageBand[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#EarthEngineAsset.ImageBand)`)` Information about the data bands of the image.  
 `sizeBytes` |  `string (int64[](https://developers.google.com/discovery/v1/type-format) format)` The size of a leaf asset (e.g. an image) in bytes. This should typically be non-zero for stored images, and zero for computed ones.  
-Was this helpful?

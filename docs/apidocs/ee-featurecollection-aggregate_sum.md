@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.aggregate_sum 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-aggregate_sum#examples)
 
@@ -36,3 +36,4 @@ print('Sum of power plant capacities (MW):',
    fc.aggregate_sum('capacitymw').getInfo()) # 13288.600000000002
 ```
 
+Was this helpful?

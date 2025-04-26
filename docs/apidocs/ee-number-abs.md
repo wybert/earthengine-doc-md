@@ -31,4 +31,3 @@ print('Absolute value of 0:', ee.Number(0).abs().getInfo()) # 0
 print('Absolute value of 2.3:', ee.Number(2.3).abs().getInfo()) # 2.3
 ```
 
-Was this helpful?

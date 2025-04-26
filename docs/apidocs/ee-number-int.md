@@ -1,6 +1,6 @@
  
 #  ee.Number.int 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-int#examples)
 
@@ -80,3 +80,4 @@ print('Less than int min cast to int becomes int min:',
    out_of_range_lo_to_int.getInfo())
 ```
 
+Was this helpful?

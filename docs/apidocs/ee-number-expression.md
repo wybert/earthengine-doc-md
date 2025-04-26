@@ -134,4 +134,3 @@ print('Use ee.Number add and subtract. subtract(add(x, y), 5):',
    ee.Number.expression('subtract(add(x, y), 5)', variables).getInfo())
 ```
 
-Was this helpful?

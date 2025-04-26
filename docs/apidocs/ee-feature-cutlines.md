@@ -1,7 +1,8 @@
  
 #  ee.Feature.cutLines 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Converts LineString, MultiLineString, and LinearRing geometries into a MultiLineString by cutting them into parts no longer than the given distance along their length. All other geometry types will be converted to an empty MultiLineString. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Converts LineString, MultiLineString, and LinearRing geometries into a MultiLineString by cutting them into parts no longer than the given distance along their length. All other geometry types will be converted to an empty MultiLineString. 
+Usage| Returns  
 ---|---  
 `Feature.cutLines(distances,  _maxError_, _proj_)`| Feature  
 Argument| Type| Details  

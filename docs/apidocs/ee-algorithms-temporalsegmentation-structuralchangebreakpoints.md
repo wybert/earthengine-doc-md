@@ -1,6 +1,6 @@
  
 #  ee.Algorithms.TemporalSegmentation.StructuralChangeBreakpoints 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Runs breakpoint detection, similar to R's strucchange::breakpoints function. 
 Each pixel is fit by a piecewise linear/harmonic model, of the form
 Y = A + B * t + C * cos(2 * pi * season(t)) + D * sin(2 * pi * season(t)) + E * cos(4 * pi * season(t)) + F * sin(4 * pi * season(t)) + ...
@@ -20,3 +20,4 @@ Argument| Type| Details
 `minSpacing`| Float, default: 0.15| The minimum spacing between breakpoints. If this is between 0 and 1 (exclusive), it will be interpreted as a fraction of the number of images in the collection. Otherwise, it will be interpreted as a number of samples.  
 `maxBreaks`| Integer, default: 0| The maximum number of breakpoints.  
 `dateFormat`| Integer, default: 1| The time representation to use in the results: 1 = fractional years, 2 = unix time in milliseconds. This affects the values in the tStart and tEnd bands and the 't' values used in the harmonic model. The fractional years used here and in that model are defined as the fractional number of 365.25-day years since 1 Jan 1970.  
+Was this helpful?

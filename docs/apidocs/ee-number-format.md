@@ -1,7 +1,8 @@
  
 #  ee.Number.format 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Convert a number to a string using printf-style formatting. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Convert a number to a string using printf-style formatting. 
+Usage| Returns  
 ---|---  
 `Number.format( _pattern_)`| String  
 Argument| Type| Details  

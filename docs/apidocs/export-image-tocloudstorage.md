@@ -1,6 +1,10 @@
  
 #  Export.image.toCloudStorage 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/export-image-tocloudstorage#examples)
+
+
 Creates a batch task to export an Image as a raster to Google Cloud Storage. Tasks can be started from the Tasks tab. 
 "crsTransform", "scale", and "dimensions" are mutually exclusive.
 Usage| Returns  
@@ -25,7 +29,7 @@ Argument|  Type| Details
 `formatOptions`| ImageExportFormatConfig, optional| A dictionary of string keys to format-specific options. For 'GeoTIFF': 'cloudOptimized' (Boolean), 'noData' (float). For 'TFRecord': see https://developers.google.com/earth-engine/guides/tfrecord#formatoptions  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/export-image-tocloudstorage#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/export-image-tocloudstorage#colab-python-sample) More
 ```
 // A Landsat 8 surface reflectance image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_L2/LC08_044034_20210508')
@@ -101,15 +105,12 @@ noData:noDataVal
 }
 });
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Landsat 8 surface reflectance image.
 image = ee.Image(
@@ -192,3 +193,4 @@ task = ee.batch.Export.image.toDrive(
 task.start()
 ```
 
+Was this helpful?

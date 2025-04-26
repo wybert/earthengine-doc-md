@@ -1,6 +1,6 @@
  
 #  ee.Image.arrayReduce 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayreduce#examples)
 
@@ -150,3 +150,4 @@ print('2D array image minMax (pixel):', samp_arr_img(min_max_2d).getInfo())
 #  [2, 5]]]
 ```
 
+Was this helpful?

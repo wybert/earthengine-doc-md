@@ -36,3 +36,4 @@ An object for multi-dimensional analyses.
 [ ![](https://developers.google.com/static/earth-engine/images/classes_chart.png) ](https://developers.google.com/earth-engine/guides/charts_overview)
 ### [Chart ](https://developers.google.com/earth-engine/guides/charts_overview)
 An object for charting properties and spatiotemporal reductions. 
+Was this helpful?

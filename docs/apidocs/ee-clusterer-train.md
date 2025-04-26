@@ -1,6 +1,6 @@
  
 #  ee.Clusterer.train 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Trains the Clusterer on a collection of features using the specified numeric properties of each feature as training data. The geometry of the features is ignored. 
 Usage| Returns  
 ---|---  

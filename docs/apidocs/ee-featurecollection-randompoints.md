@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.randomPoints 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Generates points that are uniformly random in the given geometry. If the geometry is two-dimensional (polygon or multi-polygon) then the returned points are uniformly distributed on the given region of the sphere. If the geometry is one-dimensional (linestrings), the returned points are interpolated uniformly along the geometry's edges. If the geometry has dimension zero (points), the returned points are sampled uniformly from the input points. If a multi-geometry of mixed dimension is given, points are sampled from the component geometries with the highest dimension. Usage| Returns  
 ---|---  
 `ee.FeatureCollection.randomPoints(region,  _points_, _seed_, _maxError_)`| FeatureCollection  

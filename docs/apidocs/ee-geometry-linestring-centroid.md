@@ -1,12 +1,7 @@
  
 #  ee.Geometry.LineString.centroid 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-centroid#examples)
-
-
-Returns a point at the center of the highest-dimension components of the geometry. Lower-dimensional components are ignored, so the centroid of a geometry containing two polygons, three lines and a point is equivalent to the centroid of a geometry containing just the two polygons. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a point at the center of the highest-dimension components of the geometry. Lower-dimensional components are ignored, so the centroid of a geometry containing two polygons, three lines and a point is equivalent to the centroid of a geometry containing just the two polygons. Usage| Returns  
 ---|---  
 `LineString.centroid( _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `geometry`| Geometry| Calculates the centroid of this geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in this projection. Otherwise it will be in EPSG:4326.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-centroid#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-centroid#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a LineString object.
 varlineString=ee.Geometry.LineString([[-122.09,37.42],[-122.08,37.43]]);
@@ -32,12 +27,15 @@ Map.addLayer(lineStringCentroid,
 {'color':'red'},
 'Result [red]: lineString.centroid');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a LineString object.
 linestring = ee.Geometry.LineString([[-122.09, 37.42], [-122.08, 37.43]])
@@ -55,4 +53,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

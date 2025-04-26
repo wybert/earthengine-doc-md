@@ -11,4 +11,3 @@ Argument| Type| Details
 this: `feature`| Element| The feature whose geometry is being simplified.  
 `maxError`| ErrorMargin| The maximum amount of error by which the result may differ from the input.  
 `proj`| Projection, default: null| If specified, the result will be in this projection. Otherwise it will be in the same projection as the input. If the error margin is in projected units, the margin will be interpreted as units of this projection.  
-Was this helpful?

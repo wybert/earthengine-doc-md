@@ -1,23 +1,10 @@
  
 #  HISTARFM - How to Work with Gap-Filled Imagery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#overview)
-    * [Background](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#background)
-    * [Versions](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#versions)
-    * [Study areas](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#study_areas)
-  * [Examples of use of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#examples_of_use_of_the_histarfm_database)
-    * [1. Importing and visualizing the database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#1_importing_and_visualizing_the_database)
-    * [2. Calculate the timing and value of the maximum NDVI](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#2_calculate_the_timing_and_value_of_the_maximum_ndvi)
-    * [3. Temporal interpolation of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#3_temporal_interpolation_of_the_histarfm_database)
-    * [4. High resolution biophysical variable retrieval](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#4_high_resolution_biophysical_variable_retrieval)
-  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#acknowledgements)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/histarfm-cloud-and-gap-free-landsat/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md)
-Author(s): [ EIzquierdo ](https://github.com/EIzquierdo)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/histarfm-cloud-and-gap-free-landsat/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "View changes to this article over time.")
+Author(s): [ EIzquierdo ](https://github.com/EIzquierdo "View the profile for EIzquierdo on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ## Overview
 Although there is an extensive array of optical remote sensing sensors from a variety of satellites providing long time data records, their data are incapable of retrieving reliable land surface information when clouds, aerosols, shadows, and strong angular effects are present in the scenes. The mitigation of noise and gap filling of satellite data are preliminary and almost mandatory tasks for any remote sensing application aimed at effectively analyzing the earth's surface continuously through time.
@@ -110,9 +97,9 @@ Map.addLayer(GF_Landsat,imageVisParam,'example error B1');
 The Normalized Difference Vegetation Index (NDVI) is the most widely used among the vast options of remotely sensed vegetation indices. The annual maximum value of NDVI is especially relevant in many studies as it represents the best status the vegetation can achieve in a growing season related to characteristics such as biomass, health, and photosynthetic capacity. To achieve this goal, the gap-free observations provided by the HISTARFM to correctly track vegetation phenology are very beneficial.
 #### a. Calculate the NDVI and its error
 The NDVI is based on the RED and NIR reflectances difference defined as follows:
-NDVI=NIR−REDNIR+RED
+$$ NDVI = \frac{NIR-RED}{NIR+RED} $$
 As HISTARFM provides the reflectance values and reflectance uncertainties, it is possible to calculate the NDVI error using standard [error propagation approach](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). Under the assumption of independence among the input variables, it is possible to obtain the error using a simplified approach:
-ϵ(NDVI)=2(NIR+RED)2⋅√NIR2⋅ϵ(RED)2+RED2⋅ϵ(NIR)2
+$$ \epsilon(NDVI) = \frac{2}{(NIR+RED)^2} \cdot \sqrt{NIR^2 \cdot \epsilon(RED)^2 + RED^2 \cdot \epsilon(NIR)^2} $$
 Reminder: NIR reflectance is the band called B4_mean_post and the RED is B3_mean_post in HISTARFM database.
 Therefore, a function to calculate the NDVI and its error of the image collection is defined. The function `ndvicompGF` calculates NDVI and the error for each image. Additionally, the properties 'system:time_start', 'DOY', 'month', and 'year' are also included in the images from the original ones.
 ```
@@ -234,9 +221,9 @@ ee.ImageCollection(join.apply(fiveDaysRes,GF_Landsat,filter));
 ```
 
 ##### b.2 Defining the interpolation function step
-Once the `fiveDaysRes` ImageCollection contains the selected GF_Landsat images in the 'LS' property, an interpolation function (named `CompositeInterpolate`) is defined to map the `fiveDaysRes` ImageCollection. The interpolation between two points is a method to estimate new data between two known points. Considering (x0,y0) and (x1,y1) as these two known points, the linear prediction in an intermediate location is possible using the following equation:
-y=y0+y1−y0x1−x0⋅(x−x0),
-where y0 and y1 are the Gap-filled Landsat reflectances before and after respectively from `GF_Landsat`, x0 and x1 are their respective acquisition times (i.e. 'system:time_start'), x is the time step for prediction, and y is the predicted reflectance (of the new point) in the instant x.
+Once the `fiveDaysRes` ImageCollection contains the selected GF_Landsat images in the 'LS' property, an interpolation function (named `CompositeInterpolate`) is defined to map the `fiveDaysRes` ImageCollection. The interpolation between two points is a method to estimate new data between two known points. Considering \\((x_0,y_0)\\) and \\((x_1,y_1)\\) as these two known points, the linear prediction in an intermediate location is possible using the following equation:
+$$ y = y_0 + \frac{y_1-y_0}{x_1-x_0} \cdot (x-x_0), $$
+where \\(y_0\\) and \\(y_1\\) are the Gap-filled Landsat reflectances before and after respectively from `GF_Landsat`, \\(x_0\\) and \\(x_1\\) are their respective acquisition times (i.e. 'system:time_start'), \\(x\\) is the time step for prediction, and \\(y\\) is the predicted reflectance (of the new point) in the instant \\(x\\).
 Note two essential points:
   * Landsat images within the 'LS' property are sorted by 'system:time_start'. Therefore selecting the last element (i.e., get -1 element of the list) always is the after reflectance image, and selecting the previous to the last element (i.e., get -2 element of the list) always is the before reflectance image.
   * If the number of Landsat images in the 'LS' property is lower than 2 (extrapolation case), the image is either the first or the last in the `fiveDaysRes` ImageCollection. Therefore, the first or last images in `fiveDaysRes` are not interpolated. We only consider the values of Gap-filled Landsat reflectance contained in the 'LS' property.

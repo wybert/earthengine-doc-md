@@ -1,6 +1,10 @@
  
 #  ee.Geometry.Rectangle 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle#examples)
+
+
 Constructs an ee.Geometry describing a rectangular polygon. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating EPSG:4326 Polygons given exactly four coordinates, e.g. ee.Geometry.Rectangle(minLng, minLat, maxLng, maxLat).
 Usage| Returns  
@@ -13,7 +17,7 @@ Argument| Type| Details
 `geodesic`| Boolean, optional| If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. The default is the geodesic state of the inputs, or true if the inputs are numbers.  
 `evenOdd`| Boolean, optional| If true, polygon interiors will be determined by the even/odd rule, where a point is inside if it crosses an odd number of edges to reach a point at infinity. Otherwise polygons use the left- inside rule, where interiors are on the left side of the shell's edges when walking the vertices in the given order. If unspecified, defaults to true.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle#code-editor-javascript-sample) More
 ```
 // Coordinates for the bounds of a rectangle.
 varxMin=-122.09;

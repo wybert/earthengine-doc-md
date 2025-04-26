@@ -32,4 +32,3 @@ this: `image`| Image| The image for which to compute texture metrics.
 `size`| Integer, default: 1| The size of the neighborhood to include in each GLCM.  
 `kernel`| Kernel, default: null| A kernel specifying the x and y offsets over which to compute the GLCMs. A GLCM is computed for each pixel in the kernel that is non-zero, except the center pixel and as long as a GLCM hasn't already been computed for the same direction and distance. For example, if either or both of the east and west pixels are set, only 1 (horizontal) GLCM is computed. Kernels are scanned from left to right and top to bottom. The default is a 3x3 square, resulting in 4 GLCMs with the offsets (-1, -1), (0, -1), (1, -1) and (-1, 0).  
 `average`| Boolean, default: true| If true, the directional bands for each metric are averaged.  
-Was this helpful?

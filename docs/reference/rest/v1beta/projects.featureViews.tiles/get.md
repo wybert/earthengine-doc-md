@@ -1,6 +1,6 @@
  
 #  Method: projects.featureViews.tiles.get 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Computes a map tile image showing a portion of a FeatureView. The request includes values from a previous `CreateFeatureView` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{parent=projects/*/featureViews/*}/tiles/{zoom}/{x}/{y}`

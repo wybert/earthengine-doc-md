@@ -1,6 +1,10 @@
  
 #  ProjectConfig 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [RegistrationState](https://developers.google.com/earth-engine/reference/rest/v1/ProjectConfig#registrationstate)
+
+
 Information about a Cloud-based Earth Engine project. <https://developers.google.com/earth-engine/cloud/projects>.
 JSON representation  
 ---  

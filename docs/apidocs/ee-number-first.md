@@ -28,3 +28,4 @@ importgeemap.coreasgeemap
 print(ee.Number(1).first(ee.Number(2)).getInfo()) # 1
 ```
 
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets detailed information about an asset.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/assets/**}`

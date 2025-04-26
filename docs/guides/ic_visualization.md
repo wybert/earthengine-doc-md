@@ -1,6 +1,19 @@
  
 #  ImageCollection Visualization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Collection preparation](https://developers.google.com/earth-engine/guides/ic_visualization#collection_preparation)
+    * [Filtering](https://developers.google.com/earth-engine/guides/ic_visualization#filtering)
+    * [Compositing](https://developers.google.com/earth-engine/guides/ic_visualization#compositing)
+    * [Sorting](https://developers.google.com/earth-engine/guides/ic_visualization#sorting)
+    * [Image visualization](https://developers.google.com/earth-engine/guides/ic_visualization#image_visualization)
+  * [Video thumb](https://developers.google.com/earth-engine/guides/ic_visualization#video_thumb)
+  * [Filmstrip](https://developers.google.com/earth-engine/guides/ic_visualization#filmstrip)
+  * [Advanced techniques](https://developers.google.com/earth-engine/guides/ic_visualization#advanced_techniques)
+    * [Overlays](https://developers.google.com/earth-engine/guides/ic_visualization#overlays)
+    * [Transitions](https://developers.google.com/earth-engine/guides/ic_visualization#transitions)
+
+
 Images composing an `ImageCollection` can be visualized as either an animation or a series of thumbnails referred to as a “filmstrip”. These methods provide a quick assessment of the contents of an `ImageCollection` and an effective medium for witnessing spatiotemporal change (Figure 1).
   * [`getVideoThumbURL()`](https://developers.google.com/earth-engine/guides/ic_visualization#video_thumb) produces an animated image series
   * [`getFilmstripThumbURL()`](https://developers.google.com/earth-engine/guides/ic_visualization#filmstrip) produces a thumbnail image series

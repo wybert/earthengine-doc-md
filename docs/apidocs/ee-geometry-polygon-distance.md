@@ -1,6 +1,6 @@
  
 #  ee.Geometry.Polygon.distance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the minimum distance between two geometries. Usage| Returns  
 ---|---  
 `Polygon.distance(right,  _maxError_, _proj_, _spherical_)`| Float  

@@ -48,4 +48,3 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables/create)`
 |  Creates an ID that can be used to render "table" data.  
-Was this helpful?

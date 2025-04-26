@@ -37,3 +37,4 @@ print('"Abies grandis" equals "Thuja plicata"?',
    sp.equals('Thuja plicata').getInfo())
 ```
 
+Was this helpful?

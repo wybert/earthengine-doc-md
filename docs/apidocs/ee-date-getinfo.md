@@ -65,3 +65,4 @@ print('Client-side date in Python:',
    datetime.fromtimestamp(date_client['value'] / 1000))
 ```
 
+Was this helpful?

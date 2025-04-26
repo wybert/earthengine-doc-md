@@ -1,7 +1,12 @@
  
 #  ee.Date.difference 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the difference between two Dates in the specified units; the result is floating-point and based on the average length of the unit. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-difference#examples)
+
+
+Returns the difference between two Dates in the specified units; the result is floating-point and based on the average length of the unit. 
+Usage| Returns  
 ---|---  
 `Date.difference(start, unit)`| Float  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `date`| Date|
 `start`| Date|   
 `unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-difference#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-difference#colab-python-sample) More
 ```
 // Demonstrates the ee.Date.difference method.
 varDATE_1=ee.Date('2020-01-01');
@@ -32,15 +37,12 @@ DATE_2,
 diff_2,
 ' weeks.');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 DATE_1 = ee.Date('2020-01-01')
 DATE_2 = ee.Date('2020-01-15')

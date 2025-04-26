@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.create 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates an asset.
 The following asset types are createable: * `FOLDER`: No fields in `asset` may be specified. * `IMAGE`: To create a COG-backed asset, use `image.importExternal` instead. See <https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff> for more details. * `IMAGE_COLLECTION`: Only the fields `startTime`, `endTime`, and `properties` may be specified.
 ### HTTP request

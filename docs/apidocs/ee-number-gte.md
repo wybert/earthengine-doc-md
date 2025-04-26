@@ -38,3 +38,4 @@ print('5 greater than or equal to 5?',
    ee.Number(5).gte(ee.Number(5)).getInfo())
 ```
 
+Was this helpful?

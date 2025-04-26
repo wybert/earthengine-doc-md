@@ -83,3 +83,4 @@ print('Less than int64 min cast to int64 becomes int64 min:',
    '{:.0f}'.format(out_of_range_lo_to_int64.getInfo()))
 ```
 
+Was this helpful?

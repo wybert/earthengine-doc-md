@@ -1,14 +1,19 @@
  
 #  ee.Number.erfInv 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the inverse error function of the input. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-erfinv#examples)
+
+
+Computes the inverse error function of the input. 
+Usage| Returns  
 ---|---  
 `Number.erfInv()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-erfinv#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-erfinv#colab-python-sample) More
 ```
 print('Inverse error function of -1',
 ee.Number(-1).erfInv());// -Infinity
@@ -21,15 +26,12 @@ ee.Number(0.001).erfInv());// 0.000886227
 print('Inverse error function of 1',
 ee.Number(1).erfInv());// Infinity
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 print('Inverse error function of -1:',
    ee.Number(-1).erfInv().getInfo()) # -Infinity

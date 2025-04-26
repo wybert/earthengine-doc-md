@@ -1,14 +1,19 @@
  
 #  ee.Number.short 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Casts the input value to a signed 16-bit integer. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-short#examples)
+
+
+Casts the input value to a signed 16-bit integer. 
+Usage| Returns  
 ---|---  
 `Number.short()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-short#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-short#colab-python-sample) More
 ```
 // Cast a number to signed 16-bit integer: [-32768, 32767].
 varnumber=ee.Number(100);
@@ -38,15 +43,12 @@ print('Less than short min:',outOfRangeLo);
 varoutOfRangeLoToShort=outOfRangeLo.short();
 print('Less than short min cast to short becomes short min:',outOfRangeLoToShort);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Cast a number to signed 16-bit integer: [-32768, 32767].
 number = ee.Number(100)

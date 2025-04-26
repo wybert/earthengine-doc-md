@@ -1,16 +1,6 @@
  
 #  Chart Overview 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [DataTable charts](https://developers.google.com/earth-engine/guides/charts_overview#datatable_charts)
-  * [Earth Engine object charts](https://developers.google.com/earth-engine/guides/charts_overview#earth_engine_object_charts)
-  * [Chart types](https://developers.google.com/earth-engine/guides/charts_overview#chart_types)
-  * [Display and download](https://developers.google.com/earth-engine/guides/charts_overview#display_and_download)
-  * [Interactivity](https://developers.google.com/earth-engine/guides/charts_overview#interactivity)
-  * [Styling](https://developers.google.com/earth-engine/guides/charts_overview#styling)
-  * [Limitations](https://developers.google.com/earth-engine/guides/charts_overview#limitations)
-
-
 The Earth Engine JavaScript [Code Editor](https://developers.google.com/earth-engine/guides/playground) seamlessly integrates with [Google Charts](https://developers.google.com/chart/interactive/docs/gallery) for convenient tabular data visualization via `ui.Chart` functions. Charts can be displayed interactively in the Code Editor console, `ui.Panel` widgets, and in stand-alone browser tabs.
 **Caution:** the `ui.Chart` widget is available for the JavaScript Code Editor API only.
 ## `DataTable` charts

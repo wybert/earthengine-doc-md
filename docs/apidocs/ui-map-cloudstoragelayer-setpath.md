@@ -1,6 +1,6 @@
  
 #  ui.Map.CloudStorageLayer.setPath 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the location of the folder from which the layer will retrieve its tiles. 
 Returns this map layer.
 Usage| Returns  

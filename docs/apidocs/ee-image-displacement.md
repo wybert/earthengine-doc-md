@@ -1,8 +1,7 @@
  
 #  ee.Image.displacement 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Determines displacements required to register an image to a reference image while allowing local, rubber sheet deformations. Displacements are computed in the CRS of the reference image, at a scale dictated by the lowest resolution of the following three projections: input image projection, reference image projection, and requested projection. The displacements are then transformed into the user-specified projection for output. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Determines displacements required to register an image to a reference image while allowing local, rubber sheet deformations. Displacements are computed in the CRS of the reference image, at a scale dictated by the lowest resolution of the following three projections: input image projection, reference image projection, and requested projection. The displacements are then transformed into the user-specified projection for output. Usage| Returns  
 ---|---  
 `Image.displacement(referenceImage, maxOffset,  _projection_, _patchWidth_, _stiffness_)`| Image  
 Argument| Type| Details  

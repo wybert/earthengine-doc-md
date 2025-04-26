@@ -1,12 +1,6 @@
  
 #  REST Resource: projects.featureViews 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: FeatureView](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews#resource:-featureview)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews#create)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: FeatureView
 Information about a FeatureView map.
 JSON representation  
@@ -33,4 +27,3 @@ Union field `source`. The source of this map's data. `source` can be only one of
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews/create)`
 |  Create a FeatureView.  
-Was this helpful?

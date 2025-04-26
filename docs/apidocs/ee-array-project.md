@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 this: `array`| Array| Array to project.  
 `axes`| List| The axes to project onto. Other axes will be discarded, and must be at most length 1.  
-Was this helpful?

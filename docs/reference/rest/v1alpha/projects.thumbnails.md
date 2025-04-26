@@ -47,3 +47,4 @@ Fields
 |  Creates an ID that can be used to render a "thumbnail" image.  
 ### `getPixels[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.thumbnails/getPixels)`
 |  Computes an image showing the result of a computation.  
+Was this helpful?

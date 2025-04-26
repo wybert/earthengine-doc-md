@@ -1,19 +1,14 @@
  
 #  ee.Geometry.Point.geodesic 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-geodesic#examples)
-
-
-If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage| Returns  
 ---|---  
 `Point.geodesic()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-geodesic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-geodesic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Point object.
 varpoint=ee.Geometry.Point(-122.082,37.42);
@@ -27,12 +22,15 @@ Map.addLayer(point,
 {'color':'black'},
 'Geometry [black]: point');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Point object.
 point = ee.Geometry.Point(-122.082, 37.42)
@@ -47,4 +45,3 @@ m.add_layer(point, {'color': 'black'}, 'Geometry [black]: point')
 m
 ```
 
-Was this helpful?

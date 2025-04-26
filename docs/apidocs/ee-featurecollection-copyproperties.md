@@ -1,7 +1,12 @@
  
 #  ee.FeatureCollection.copyProperties 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Copies metadata properties from one element to another. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-copyproperties#examples)
+
+
+Copies metadata properties from one element to another. 
+Usage| Returns  
 ---|---  
 `FeatureCollection.copyProperties( _source_, _properties_, _exclude_)`| Element  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `destination`| Element, default: null| The object whose properties to over
 `properties`| List, default: null| The properties to copy. If omitted, all ordinary (i.e. non-system) properties are copied.  
 `exclude`| List, default: null| The list of properties to exclude when copying all properties. Must not be specified if properties is.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-copyproperties#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-copyproperties#colab-python-sample) More
 ```
 // Import a Landsat 8 surface reflectance image to sample.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_L2/LC08_038032_20170722')
@@ -36,15 +41,12 @@ source:image,
 exclude:['TIRS_SSM_MODEL','TIRS_SSM_POSITION_STATUS']
 }));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Import a Landsat 8 surface reflectance image to sample.
 image = ee.Image('LANDSAT/LC08/C02/T1_L2/LC08_038032_20170722').select(
@@ -70,3 +72,4 @@ print('All but selected image properties copied to the FeatureCollection:',
    }).getInfo())
 ```
 
+Was this helpful?

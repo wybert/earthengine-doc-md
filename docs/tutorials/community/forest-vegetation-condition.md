@@ -1,6 +1,16 @@
  
 #  Monitoring Forest Vegetation Condition 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Context](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#context)
+  * [Rationale](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#rationale)
+  * [Approach](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#approach)
+    * [Import images, features](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#import_images_features)
+    * [Compute annual summertime composites](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#compute_annual_summertime_composites)
+    * [Estimate trends and infer vegetation condition](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#estimate_trends_and_infer_vegetation_condition)
+    * [Visualise results](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#visualise_results)
+
+
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/forest-vegetation-condition/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/forest-vegetation-condition/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/forest-vegetation-condition/index.md "View changes to this article over time.")
@@ -96,6 +106,7 @@ sens,nps.filter(ee.Filter.eq('NAME','Rajiv Gandhi (Nagarhole)')),
 'Rajiv Gandhi (Nagarhole)'));
 
 ```
+
 ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-vegetation-condition/slopes-histogram-bandipur.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-vegetation-condition/slopes-histogram-nagarhole.png)  
 ---|---  
 Infer pixel-wise vegetation greening or browning based on the sign of the slope value. Calculate summary of areas under greening and browning for each national park.

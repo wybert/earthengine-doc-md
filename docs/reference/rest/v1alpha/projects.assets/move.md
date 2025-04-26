@@ -1,6 +1,14 @@
  
 #  Method: projects.assets.move 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/move#authorization-scopes)
+
+
 Moves an asset.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{sourceName=projects/*/assets/**}:move`
@@ -37,3 +45,4 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

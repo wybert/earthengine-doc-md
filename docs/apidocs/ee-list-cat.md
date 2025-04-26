@@ -1,6 +1,6 @@
  
 #  ee.List.cat 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Concatenates the contents of other onto list. Usage| Returns  
 ---|---  
 `List.cat(other)`| List  

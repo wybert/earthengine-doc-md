@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `widget`| ui.Widget| The widget to remove.  
-Was this helpful?

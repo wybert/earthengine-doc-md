@@ -1,6 +1,6 @@
  
 #  Method: projects.video.export 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#path-parameters)
@@ -86,4 +86,3 @@ Fields
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `driveDestination` |  `object (`DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/DriveDestination)`)` If specified, configures export to Google Drive.  
 `cloudStorageDestination` |  `object (`CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/CloudStorageDestination)`)` If specified, configures export to Google Cloud Storage.  
-Was this helpful?

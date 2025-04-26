@@ -1,6 +1,13 @@
  
 #  REST Resource: projects.videoThumbnails 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#resource:-videothumbnail)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#methods)
+    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#create)
+    * [getPixels](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#getpixels)
+
+
 ## Resource: VideoThumbnail
 Information about a video thumbnail.
 JSON representation  

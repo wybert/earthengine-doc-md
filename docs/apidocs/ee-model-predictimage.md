@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `model`| Model|   
 `image`| Image| The input image.  
+Was this helpful?

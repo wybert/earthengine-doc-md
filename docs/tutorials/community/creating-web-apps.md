@@ -1,10 +1,24 @@
  
 #  Creating Web Apps 
-Stay organized with collections  Save and categorize content based on your preferences. 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/creating-web-apps/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/creating-web-apps/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md "View changes to this article over time.")
-Author(s): [ TC25 ](https://github.com/TC25 "View the profile for TC25 on GitHub")
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Generating a new base map for your web app](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#generating_a_new_base_map_for_your_web_app)
+  * [Setting up a panel to hold your text, widgets, and charts](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#setting_up_a_panel_to_hold_your_text_widgets_and_charts)
+  * [Adding links and references to main panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#adding_links_and_references_to_main_panel)
+  * [Defining a panel to interact with the layers and update values on the main panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#defining_a_panel_to_interact_with_the_layers_and_update_values_on_the_main_panel)
+  * [Loading images to display and defining visualization options](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#loading_images_to_display_and_defining_visualization_options)
+  * [Function to interact with layers](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#function_to_interact_with_layers)
+  * [Creating the legend panel](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#creating_the_legend_panel)
+  * [Function to update visualization based on selected layer](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#function_to_update_visualization_based_on_selected_layer)
+  * [Initializing the script](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#initializing_the_script)
+  * [Publishing your web app](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#publishing_your_web_app)
+  * [Additional resources](https://developers.google.com/earth-engine/tutorials/community/creating-web-apps#additional_resources)
+
+
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/creating-web-apps/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/creating-web-apps/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md)
+Author(s): [ TC25 ](https://github.com/TC25)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 The Earth Engine Javascript API allows users to develop and [deploy web apps](https://developers.google.com/earth-engine/guides/apps) to make [datasets](https://developers.google.com/earth-engine/datasets) and results easy to explore and query. In addition to being able to control how others interact with your data, this lets individuals without Earth Engine access explore your data without having to use the [Code Editor](https://developers.google.com/earth-engine/guides/playground). In this tutorial, we will give an introduction to developing a simple Earth Engine web app for a sample dataset (in this case, some global gridded ground-level concentration estimates for particulate matter under 2.5 microns (PM2.5)). The tutorial breaks down the web app development process into some major stages, with relevant comments accompanying the code blocks. All web app development starts by writing a regular script on the Code Editor using the Earth Engine JavaScript API. 
 ## Generating a new base map for your web app
@@ -776,3 +790,4 @@ To publish the web app, we just need to go to the manage app option on the Javas
   * [Curated Earth Engine apps](https://www.earthengine.app/).
 
 
+Was this helpful?

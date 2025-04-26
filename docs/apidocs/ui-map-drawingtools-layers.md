@@ -1,7 +1,8 @@
  
 #  ui.Map.DrawingTools.layers 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the list of geometry layers in the drawing tools. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the list of geometry layers in the drawing tools. 
+Usage| Returns  
 ---|---  
 `DrawingTools.layers()`| ui.data.ActiveList  
 Argument| Type| Details  

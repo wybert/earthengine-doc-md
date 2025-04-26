@@ -1,6 +1,15 @@
  
 #  Method: projects.assets.listAssets 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#path-parameters)
+  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#query-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/listAssets#authorization-scopes)
+
+
 Lists any container asset, such as a folder or collection.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{parent=projects/*/assets/**}:listAssets`

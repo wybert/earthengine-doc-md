@@ -1,7 +1,12 @@
  
 #  ee.Geometry.Polygon.containedIn 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if and only if one geometry is contained in the other. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-containedin#examples)
+
+
+Returns true if and only if one geometry is contained in the other. 
+Usage| Returns  
 ---|---  
 `Polygon.containedIn(right,  _maxError_, _proj_)`| Boolean  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-containedin#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-containedin#colab-python-sample) More
 ```
 // Define a Polygon object.
 varpolygon=ee.Geometry.Polygon(
@@ -34,15 +39,12 @@ Map.addLayer(inputGeom,
 {'color':'blue'},
 'Parameter [blue]: inputGeom');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a Polygon object.
 polygon = ee.Geometry.Polygon([[
@@ -65,3 +67,4 @@ m.add_layer(input_geom, {'color': 'blue'}, 'Parameter [blue]: input_geom')
 m
 ```
 
+Was this helpful?

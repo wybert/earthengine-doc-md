@@ -71,3 +71,4 @@ gcloudaiendpointsdeploy-model{endpoint-id}\
 ```
 
 Once your model is deployed you are ready to connect to your model in Earth Engine to perform inferences.
+Was this helpful?

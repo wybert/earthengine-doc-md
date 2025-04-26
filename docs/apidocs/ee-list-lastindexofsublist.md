@@ -1,7 +1,8 @@
  
 #  ee.List.lastIndexOfSubList 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the starting position of the last occurrence of target within list, or -1 if there is no such occurrence. Usage| Returns  
+Returns the starting position of the last occurrence of target within list, or -1 if there is no such occurrence. 
+Usage| Returns  
 ---|---  
 `List.lastIndexOfSubList(target)`| Integer  
 Argument| Type| Details  

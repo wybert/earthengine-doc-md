@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `list`| List|   
-Was this helpful?

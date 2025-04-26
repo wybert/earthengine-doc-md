@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.toImage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-toimage#examples)
 
@@ -47,3 +47,4 @@ all_keys_img = dic.toImage()
 print('All keys image band names:', all_keys_img.bandNames().getInfo())
 ```
 
+Was this helpful?

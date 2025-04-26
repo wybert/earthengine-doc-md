@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.copy 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/copy#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/copy#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/copy#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/copy#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/copy#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Copies an asset.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1beta/{sourceName=projects/*/assets/**}:copy`

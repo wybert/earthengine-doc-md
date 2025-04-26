@@ -1,6 +1,6 @@
  
 #  ui.Map.Linker.getJsArray 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the list as a JS array. 
 Usage| Returns  
 ---|---  

@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-get#examples)
 
@@ -47,3 +47,4 @@ print('Value for nonexistent "Band_1" key:',
    dic.get(**{'key': 'Band_1', 'defaultValue': -9999}).getInfo())
 ```
 
+Was this helpful?

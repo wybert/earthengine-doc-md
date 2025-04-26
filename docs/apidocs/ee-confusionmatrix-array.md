@@ -54,4 +54,3 @@ print("ee.ConfusionMatrix as ee.Array:")
 pprint(confusion_matrix.array().getInfo())
 ```
 
-Was this helpful?

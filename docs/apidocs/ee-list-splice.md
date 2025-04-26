@@ -65,4 +65,3 @@ print('Insert new elements:', ee_list.splice(2, 0, ['X', 'Y', 'Z']).getInfo())
 print('Replace elements:', ee_list.splice(2, 3, ['X', 'Y', 'Z']).getInfo())
 ```
 
-Was this helpful?

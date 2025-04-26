@@ -1,10 +1,6 @@
  
 #  ee.Image.clip 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-clip#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Clips an image to a Geometry or Feature. 
 The output bands correspond exactly to the input bands, except data not covered by the geometry is masked. The output image retains the metadata of the input image.
 Use clipToCollection to clip an image to a FeatureCollection.
@@ -17,7 +13,7 @@ Argument| Type| Details
 this: `image`| Image| The Image instance.  
 `geometry`| Feature|Geometry|Object| The Geometry or Feature to clip to.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-clip#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-clip#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A digital elevation model.
 vardem=ee.Image('NASA/NASADEM_HGT/001');
@@ -53,12 +49,15 @@ varwatersheds=ee.FeatureCollection('USGS/WBD/2017/HUC10')
 Map.addLayer(dem.clipToCollection(watersheds),demVis,'Watersheds clip');
 Map.addLayer(watersheds,{color:'red'},'Watersheds',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A digital elevation model.
 dem = ee.Image('NASA/NASADEM_HGT/001')
@@ -98,4 +97,3 @@ m.add_layer(watersheds, {'color': 'red'}, 'Watersheds', False)
 m
 ```
 
-Was this helpful?

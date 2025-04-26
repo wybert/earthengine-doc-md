@@ -1,7 +1,8 @@
  
 #  ee.Geometry.MultiPoint.geodesic 
-Stay organized with collections  Save and categorize content based on your preferences. 
-If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. 
+Usage| Returns  
 ---|---  
 `MultiPoint.geodesic()`| Boolean  
 Argument| Type| Details  
@@ -22,7 +23,6 @@ Map.addLayer(multiPoint,
 {'color':'black'},
 'Geometry [black]: multiPoint');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

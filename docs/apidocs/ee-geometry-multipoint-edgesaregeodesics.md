@@ -47,4 +47,3 @@ m.add_layer(multipoint, {'color': 'black'}, 'Geometry [black]: multipoint')
 m
 ```
 
-Was this helpful?

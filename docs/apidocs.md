@@ -1,12 +1,6 @@
  
 #  API Reference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [ Client Libraries ](https://developers.google.com/earth-engine/apidocs#client-libraries)
-  * [ Code Editor ](https://developers.google.com/earth-engine/apidocs#code-editor)
-  * [ REST API ](https://developers.google.com/earth-engine/apidocs#rest-api)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The API reference is divided into sections:
   * The **Client Libraries** section is the API reference for both JavaScript and Python clients.
   * The **Code Editor** section is the reference for functionality available through the Earth Engine [Code Editor](https://code.earthengine.google.com/), an online IDE for Earth Engine JavaScript ([learn more](https://developers.google.com/earth-engine/playground)).

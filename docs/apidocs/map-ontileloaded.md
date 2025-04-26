@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `callback`| Function| Called with an array of per layer values. Each value is the fraction of tiles still pending: a value of 0 means there are no more tiles to load for the layer.  
+Was this helpful?

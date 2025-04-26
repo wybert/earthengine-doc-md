@@ -1,6 +1,6 @@
  
 #  Method: projects.videoThumbnails.getPixels 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes an image showing the result of a computation. The request includes values (an ID and authorisation token) from a previous `videoThumbnails.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/videoThumbnails/*}:getPixels`

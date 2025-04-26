@@ -1,6 +1,6 @@
  
 #  ee.Number.sqrt 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-sqrt#examples)
 
@@ -29,3 +29,4 @@ importgeemap.coreasgeemap
 print('Square root of 100:', ee.Number(100).sqrt().getInfo()) # 10
 ```
 
+Was this helpful?

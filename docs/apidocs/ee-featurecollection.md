@@ -1,10 +1,6 @@
  
 #  ee.FeatureCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 FeatureCollections can be constructed from the following arguments: 
 - A string: assumed to be the name of a collection.
 - A single geometry.
@@ -20,7 +16,7 @@ Argument| Type| Details
 `args`| ComputedObject|Feature|FeatureCollection|Geometry|List| The constructor arguments.  
 `column`| String, optional| The name of the geometry column to use. Only useful when working with a named collection.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // FeatureCollection from a string (collection name). Note that this only works
 // with client-side strings, it won't accept computed, server-side strings.
@@ -70,12 +66,15 @@ vargeojson={
 vargeojsonFc=ee.FeatureCollection(geojson);
 print('FeatureCollection from GeoJSON',geojsonFc);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # FeatureCollection from a string (collection name). Note that this only works
 # with client-side strings, it won't accept computed, server-side strings.

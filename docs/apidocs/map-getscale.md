@@ -1,12 +1,17 @@
  
 #  Map.getScale 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the approximate pixel scale of the current map view, in meters. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/map-getscale#examples)
+
+
+Returns the approximate pixel scale of the current map view, in meters. 
+Usage| Returns  
 ---|---  
 `Map.getScale()`| Number|String  
 **No arguments.**
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/map-getscale#code-editor-javascript-sample) More
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.

@@ -1,10 +1,6 @@
  
 #  ee.Kernel.rotate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-rotate#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a Kernel. 
 Usage| Returns  
 ---|---  
@@ -66,4 +62,3 @@ pprint(sobel_kernel.rotate(-2).getInfo())
 # [1, 0, -1]
 ```
 
-Was this helpful?

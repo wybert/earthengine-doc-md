@@ -1,7 +1,8 @@
  
 #  ee.Image.displace 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Warps an image using an image of displacements. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Warps an image using an image of displacements. 
+Usage| Returns  
 ---|---  
 `Image.displace(displacement,  _mode_, _maxOffset_)`| Image  
 Argument| Type| Details  

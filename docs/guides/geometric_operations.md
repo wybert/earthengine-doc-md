@@ -1,6 +1,6 @@
  
 #  Geometric Operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine supports a wide variety of operations on `Geometry` objects. These include operations on individual geometries such as computing a buffer, centroid, bounding box, perimeter, convex hull, etc. For example:
 ### Code Editor (JavaScript)
 ```

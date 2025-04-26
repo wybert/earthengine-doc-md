@@ -301,3 +301,4 @@ ee.data.getAssetRootQuota('projects/my-project/assets')
 
 Within the Asset Manager, hold the pointer over a project root and click the data_usage icon. An information dialog will appear.
 Use the Python client or the Code Editor to check asset quota.
+Was this helpful?

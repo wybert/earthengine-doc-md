@@ -1,6 +1,6 @@
  
 #  ee.Image.asin 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the arcsine in radians of the input. 
 Usage| Returns  
 ---|---  

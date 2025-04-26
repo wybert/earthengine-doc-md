@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 `project`| String, optional| Project to query, e.g. "projects/my-project". Defaults to current project. Use "projects/earthengine-legacy" for user home folders.  
 `callback`| Function, optional| If not supplied, the call is made synchronously.  
-Was this helpful?

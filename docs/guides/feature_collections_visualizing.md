@@ -1,6 +1,6 @@
  
 #  Feature and FeatureCollection Visualization 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 As with images, geometries and features, feature collections can be added to the map directly with `Map.addLayer()`. The default visualization will display the vectors with solid black lines and semi-opaque black fill. To render the vectors in color, specify the `color` parameter. The following displays the 'RESOLVE' ecoregions ([Dinerstein et al. 2017](https://academic.oup.com/bioscience/article/67/6/534/3102935)) as the default visualization and in red:
 ### Code Editor (JavaScript)
 ```

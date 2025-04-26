@@ -17,3 +17,4 @@ Fields
 `type` |  `string` This string is always present and equal to "Feature".  
 `geometry` |  `value (`Value[](https://protobuf.dev/reference/protobuf/google.protobuf/#value)` format)` The geometry of the feature. This will contain a `google.protobuf.Struct` if geometry is present for this feature. Otherwise, it will hold a `google.protobuf.NullValue`.  
 `properties` |  `value (`Value[](https://protobuf.dev/reference/protobuf/google.protobuf/#value)` format)` The properties of the feature. This will contain a `google.protobuf.Struct` if properties are present for this feature. Otherwise, it will hold a `google.protobuf.NullValue`.  
+Was this helpful?

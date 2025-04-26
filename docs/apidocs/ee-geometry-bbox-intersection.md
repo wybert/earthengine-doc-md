@@ -1,7 +1,8 @@
  
 #  ee.Geometry.BBox.intersection 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the intersection of the two geometries. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the intersection of the two geometries. 
+Usage| Returns  
 ---|---  
 `BBox.intersection(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  

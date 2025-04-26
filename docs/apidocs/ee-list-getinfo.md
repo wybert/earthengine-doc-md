@@ -1,6 +1,6 @@
  
 #  ee.List.getInfo 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Retrieves the value of this object from the server. 
 If no callback function is provided, the request is made synchronously. If a callback is provided, the request is made asynchronously.
 The asynchronous mode is preferred because the synchronous mode stops all other code (for example, the EE Code Editor UI) while waiting for the server. To make an asynchronous request, evaluate() is preferred over getInfo().
@@ -12,4 +12,3 @@ Argument| Type| Details
 ---|---|---  
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

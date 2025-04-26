@@ -1,7 +1,12 @@
  
 #  ee.Kernel.euclidean 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Generates a distance kernel based on Euclidean (straight-line) distance. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-euclidean#examples)
+
+
+Generates a distance kernel based on Euclidean (straight-line) distance. 
+Usage| Returns  
 ---|---  
 `ee.Kernel.euclidean(radius,  _units_, _normalize_, _magnitude_)`| Kernel  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ Argument| Type| Details
 `normalize`| Boolean, default: false| Normalize the kernel values to sum to 1.  
 `magnitude`| Float, default: 1| Scale each value by this amount.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-euclidean#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-euclidean#colab-python-sample) More
 ```
 print('A Euclidean distance kernel',ee.Kernel.euclidean({radius:3}));
 /**
@@ -26,15 +31,12 @@ print('A Euclidean distance kernel',ee.Kernel.euclidean({radius:3}));
  * [4.242, 3.605, 3.162, 3.000, 3.162, 3.605, 4.242]
  */
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 frompprintimport pprint
 print('A Euclidean distance kernel:')

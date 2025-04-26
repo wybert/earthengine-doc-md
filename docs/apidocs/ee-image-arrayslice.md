@@ -1,7 +1,12 @@
  
 #  ee.Image.arraySlice 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Creates a subarray by slicing out each position along the given axis from the 'start' (inclusive) to 'end' (exclusive) by increments of 'step'. The result will have as many dimensions as the input, and the same length in all directions except the slicing axis, where the length will be the number of positions from 'start' to 'end' by 'step' that are in range of the input array's length along 'axis'. This means the result can be length 0 along the given axis if start=end, or if the start or end values are entirely out of range. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayslice#examples)
+
+
+Creates a subarray by slicing out each position along the given axis from the 'start' (inclusive) to 'end' (exclusive) by increments of 'step'. The result will have as many dimensions as the input, and the same length in all directions except the slicing axis, where the length will be the number of positions from 'start' to 'end' by 'step' that are in range of the input array's length along 'axis'. This means the result can be length 0 along the given axis if start=end, or if the start or end values are entirely out of range. 
+Usage| Returns  
 ---|---  
 `Image.arraySlice( _axis_, _start_, _end_, _step_)`| Image  
 Argument| Type| Details  
@@ -12,7 +17,7 @@ this: `input`| Image| Input array image.
 `end`| Image, default: null| The coordinate (exclusive) at which to stop taking slices. By default this will be the length of the given axis. Negative numbers are used to position the end of slicing relative to the end of the array, where -1 will exclude the last position, -2 will exclude the last two positions, etc. There must be one band for end indices, or one band per 'input' band. If this argument is not set or masked at some pixel, then the slice at that pixel will end just after the last index.  
 `step`| Integer, default: 1| The separation between slices along 'axis'; a slice will be taken at each whole multiple of 'step' from 'start' (inclusive) to 'end' (exclusive). Must be positive.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayslice#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayslice#colab-python-sample) More
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -66,15 +71,12 @@ sampArrImg(arrayImg2D.arraySlice(1,0,-1)));
 // [4, 5, 6],
 // [8, 9, 10]]
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):

@@ -48,3 +48,4 @@ print('Using the client-side object (e.g. fetch number of keys):',
    len(dic.getInfo().keys()))
 ```
 
+Was this helpful?

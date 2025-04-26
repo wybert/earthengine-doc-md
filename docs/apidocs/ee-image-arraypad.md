@@ -78,3 +78,4 @@ print('2D array image padded:', samp_arr_img(array_img_2d_pad).getInfo())
 # [9, 9, 9, 9, 9]]
 ```
 
+Was this helpful?

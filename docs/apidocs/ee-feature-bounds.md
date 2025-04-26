@@ -10,4 +10,3 @@ Argument| Type| Details
 this: `feature`| Element| The feature the bound of which is being calculated.  
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in this projection. Otherwise it will be in EPSG:4326.  
-Was this helpful?

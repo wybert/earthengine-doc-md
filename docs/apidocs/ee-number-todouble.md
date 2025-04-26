@@ -1,7 +1,8 @@
  
 #  ee.Number.toDouble 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Casts the input value to a 64-bit float. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Casts the input value to a 64-bit float. 
+Usage| Returns  
 ---|---  
 `Number.toDouble()`| Number  
 Argument| Type| Details  
@@ -17,7 +18,6 @@ print('ee.Number:',number);
 vardoubleNumber=number.toDouble();
 print('ee.Number cast to double:',doubleNumber);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

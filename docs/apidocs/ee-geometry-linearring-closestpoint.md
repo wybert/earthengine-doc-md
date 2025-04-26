@@ -1,7 +1,8 @@
  
 #  ee.Geometry.LinearRing.closestPoint 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the point on the right input that is nearest to the left input. If either input is empty, null is returned. If both inputs are unbounded, an arbitrary point is returned. If one input is unbounded, an arbitrary point in the bounded input is returned. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the point on the right input that is nearest to the left input. If either input is empty, null is returned. If both inputs are unbounded, an arbitrary point is returned. If one input is unbounded, an arbitrary point in the bounded input is returned. 
+Usage| Returns  
 ---|---  
 `LinearRing.closestPoint(right,  _maxError_, _proj_)`| Object  
 Argument| Type| Details  

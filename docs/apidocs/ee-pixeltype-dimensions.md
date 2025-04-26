@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `pixelType`| PixelType|   
+Was this helpful?

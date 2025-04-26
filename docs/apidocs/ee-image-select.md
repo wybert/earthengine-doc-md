@@ -1,6 +1,10 @@
  
 #  ee.Image.select 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-select#examples)
+
+
 Selects bands from an image. 
 Returns an image with the selected bands.
 Usage| Returns  
@@ -15,7 +19,7 @@ this: `image`| Image| The Image instance.
 
   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-select#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-select#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -46,15 +50,12 @@ img.select('B[1-9][1-2]').bandNames());
 print('Match "B" or "QA" each followed by any character, any number of times.',
 img.select('B.*|QA.*').bandNames());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image.
 img = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')
@@ -85,3 +86,4 @@ print('Match "B" or "QA" each followed by any character, any number of times.',
    img.select('B.*|QA.*').bandNames().getInfo())
 ```
 
+Was this helpful?

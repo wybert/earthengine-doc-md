@@ -1,14 +1,19 @@
  
 #  ee.Image.selfMask 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Updates an image's mask at all positions where the existing mask is not zero using the value of the image as the new mask value. The output image retains the metadata and footprint of the input image. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-selfmask#examples)
+
+
+Updates an image's mask at all positions where the existing mask is not zero using the value of the image as the new mask value. The output image retains the metadata and footprint of the input image. 
+Usage| Returns  
 ---|---  
 `Image.selfMask()`| Image  
 Argument| Type| Details  
 ---|---|---  
 this: `image`| Image| The image to mask with itself.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-selfmask#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-selfmask#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -30,15 +35,12 @@ varlandMaskMasked=landMask.selfMask();
 print('Land mask, masked',landMaskMasked);
 Map.addLayer(landMaskMasked,{palette:['gold']},'Land mask, masked');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image.
 img = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')
@@ -63,3 +65,4 @@ m.add_layer(land_mask_masked, {'palette': ['gold']}, 'Land mask, masked')
 m
 ```
 
+Was this helpful?

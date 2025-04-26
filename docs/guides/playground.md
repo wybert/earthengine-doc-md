@@ -1,6 +1,6 @@
  
 #  Earth Engine Code Editor 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 The Earth Engine (EE) Code Editor at [code.earthengine.google.com](https://code.earthengine.google.com) is a web-based IDE for the Earth Engine JavaScript API. Code Editor features are designed to make developing complex geospatial workflows fast and easy. The Code Editor has the following elements (illustrated in Figure 1):
   * JavaScript code editor
   * Map display for visualizing geospatial datasets

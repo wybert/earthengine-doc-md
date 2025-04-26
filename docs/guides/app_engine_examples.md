@@ -40,3 +40,4 @@ This example also uses the client authorization flow. The example demonstrates f
 ### [export-to-drive](https://github.com/google/earthengine-api/tree/master/demos/export-to-drive)
 ![assets](https://developers.google.com/static/earth-engine/images/Demo_export_to_drive.png)
 This is a relatively complex example. It demonstrates the use of two authentication flows, one for Earth Engine using the application's credentials and one for Google Drive using the user's personal credentials. It allows the user to select a layer, draw a polygon and export the layer clipped by the polygon to Drive.
+Was this helpful?

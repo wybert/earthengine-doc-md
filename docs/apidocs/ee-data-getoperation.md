@@ -1,6 +1,6 @@
  
 #  ee.data.getOperation 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets information on an operation or list of operations. 
 See more details on Operations here: https://cloud.google.com/apis/design/design_patterns#long_running_operations
 Returns operation status, or a map from operation names to status. Each Operation contains:
@@ -25,4 +25,3 @@ Argument| Type| Details
 ---|---|---  
 `operationName`| List| Operation name(s).  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

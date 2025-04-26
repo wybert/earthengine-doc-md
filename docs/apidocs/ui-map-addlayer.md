@@ -1,6 +1,10 @@
  
 #  ui.Map.addLayer 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-addlayer#examples)
+
+
 Adds a given EE object to the map as a layer. 
 Returns the new map layer.
 Usage| Returns  
@@ -15,7 +19,7 @@ this: `ui.map`| ui.Map| The ui.Map instance.
 `shown`| Boolean, optional| A flag indicating whether the layer should be on by default.  
 `opacity`| Number, optional| The layer's opacity represented as a number between 0 and 1. Defaults to 1.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-map-addlayer#code-editor-javascript-sample) More
 ```
 // Define a ui.Map widget and add it to the cleared ui.root.
 varmap=ui.Map();
