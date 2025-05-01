@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `array`| Array| The array from which to extract the axis lengths.  
+Was this helpful?

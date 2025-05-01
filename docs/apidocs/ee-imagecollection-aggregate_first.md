@@ -1,7 +1,12 @@
  
 #  ee.ImageCollection.aggregate_first 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Aggregates over a given property of the objects in a collection, calculating the property value of the first object in the collection. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_first#examples)
+
+
+Aggregates over a given property of the objects in a collection, calculating the property value of the first object in the collection. 
+Usage| Returns  
 ---|---  
 `ImageCollection.aggregate_first(property)`|   
 Argument| Type| Details  
@@ -9,7 +14,7 @@ Argument| Type| Details
 this: `collection`| FeatureCollection| The collection to aggregate over.  
 `property`| String| The property to use from each element of the collection.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_first#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_first#colab-python-sample) More
 ```
 // A Lansat 8 TOA image collection for a specific year and location.
 varcol=ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA")
@@ -44,15 +49,12 @@ print('List of property values (string)',col.aggregate_array(propString));
 print('Min of property values (string)',col.aggregate_min(propString));
 print('Max of property values (string)',col.aggregate_max(propString));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 frompprintimport pprint
 # A Lansat 8 TOA image collection for a specific year and location.

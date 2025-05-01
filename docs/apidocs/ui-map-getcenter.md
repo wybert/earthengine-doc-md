@@ -1,6 +1,6 @@
  
 #  ui.Map.getCenter 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-getcenter#examples)
 
@@ -45,4 +45,3 @@ print('defaultMap zoom level',defaultMap.getZoom());
 print('defaultMap approximate pixel scale',defaultMap.getScale());
 ```
 
-Was this helpful?

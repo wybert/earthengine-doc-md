@@ -1,6 +1,6 @@
  
 #  ee.Geometry.Rectangle 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle#examples)
 
@@ -48,3 +48,4 @@ Map.addLayer(rectangleBounds,{},'rectangleBounds');
 Map.setCenter(-122.085,37.422,15);
 ```
 
+Was this helpful?

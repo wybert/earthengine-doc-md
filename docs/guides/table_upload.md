@@ -32,3 +32,4 @@ After starting a table upload, an 'Asset ingestion' task is added to the Task Ma
 When uploading tables, the maximum number of features in the table is 100 million. The maximum number of properties on a feature is 1,024. These limits ensure that the resulting asset can be queried efficiently. Additionally, each feature has a maximum number of vertices as explained in the "Advanced Options" section above. 
 ## Loading a table asset to your script
 To create a `FeatureCollection` in your script from a table asset, import it as described on the [Managing Assets](https://developers.google.com/earth-engine/guides/asset_manager#importing-assets-to-your-script) page.
+Was this helpful?

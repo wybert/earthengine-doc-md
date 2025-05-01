@@ -1,8 +1,7 @@
  
 #  ee.Algorithms.GeometryConstructors.Rectangle 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Constructs a rectangular polygon from the given corner points. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Constructs a rectangular polygon from the given corner points. Usage| Returns  
 ---|---  
 `ee.Algorithms.GeometryConstructors.Rectangle(coordinates,  _crs_, _geodesic_, _evenOdd_)`| Geometry  
 Argument| Type| Details  

@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.aggregate_total_var 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-aggregate_total_var#examples)
 
@@ -36,3 +36,4 @@ print('Total variance of power plant capacities (MW):',
    fc.aggregate_total_var('capacitymw').getInfo()) # 214307.38335169878
 ```
 
+Was this helpful?

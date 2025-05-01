@@ -1,6 +1,22 @@
  
 #  Earth Engine resources for higher education 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications](https://developers.google.com/earth-engine/tutorials/edu#cloud-based-remote-sensing-with-google-earth-engine:-fundamentals-and-applications)
+  * [Introductory Remote Sensing Code Labs](https://developers.google.com/earth-engine/tutorials/edu#introductory-remote-sensing-code-labs)
+  * [Introductory Workshop on Geospatial Analysis at Yale-NUS Data 2.0](https://developers.google.com/earth-engine/tutorials/edu#introductory-workshop-on-geospatial-analysis-at-yale-nus-data-2.0)
+  * [Introduction to Remote Sensing Course at Colorado State University](https://developers.google.com/earth-engine/tutorials/edu#introduction-to-remote-sensing-course-at-colorado-state-university)
+  * [Introductory Remote Sensing Lectures](https://developers.google.com/earth-engine/tutorials/edu#introductory-remote-sensing-lectures)
+  * [Geospatial Software Design Exercises](https://developers.google.com/earth-engine/tutorials/edu#geospatial-software-design-exercises)
+  * [ Advanced Remote Sensing Tutorials ](https://developers.google.com/earth-engine/tutorials/edu#advanced-remote-sensing-tutorials)
+  * [ Chinese language materials ](https://developers.google.com/earth-engine/tutorials/edu#chinese-language-materials)
+  * [ Russian language materials ](https://developers.google.com/earth-engine/tutorials/edu#russian-language-materials)
+  * [ Persian language materials ](https://developers.google.com/earth-engine/tutorials/edu#persian-language-materials)
+  * [ Ukrainian language materials ](https://developers.google.com/earth-engine/tutorials/edu#ukrainian-language-materials)
+  * [The Global Snow Observatory](https://developers.google.com/earth-engine/tutorials/edu#the-global-snow-observatory)
+  * [Where The City Meets The Sea](https://developers.google.com/earth-engine/tutorials/edu#where-the-city-meets-the-sea)
+
+
 Content produced by the Earth Engine developer community is not part of the official Earth Engine product documentation. 
 Use Earth Engine in your teaching! The materials on this page are community developed curricula for teaching Earth Engine in higher education. Scroll the directories below to see all the contributed content. If you use these materials to develop courses with Earth Engine, please give attribution! To contribute teaching materials to this page, contact nclinton@google.com.
 ## Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications
@@ -57,3 +73,4 @@ A practice book and guidance manual are provided by the [Junior Academy of Scien
 Materials developed by James Coll, Xingong Li and Terry Slocum at the [University of Kansas](http://www.ku.edu/) for a workshop at the Association of American Geographers 2015 annual meeting are available from the [Global Snow Observatory website](https://sites.google.com/site/globalsnowobservatory/home/Presentations-and-Tutorials/aag-workshop).
 ## Where The City Meets The Sea
 For the [Where The City Meets The Sea](https://www.nyu.edu/faculty/teaching-and-learning-resources/instructional-technology/ways-to-engage/globally-linked-course-design/where-city-meets-sea.html) course at [NYU](https://www.nyu.edu/), Mary Killilea and Holly Orr developed [this introductory doc](https://docs.google.com/document/d/1xZjDrbWldodoKA1ddLWthNTQlFnA-dTVKLqx-ltag7k).
+Was this helpful?

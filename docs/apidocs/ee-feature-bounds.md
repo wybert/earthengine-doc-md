@@ -1,6 +1,6 @@
  
 #  ee.Feature.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a feature containing the bounding box of the geometry of a given feature. 
 Usage| Returns  
 ---|---  

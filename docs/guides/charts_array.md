@@ -1,6 +1,6 @@
  
 #  Array and List Charts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [ee.Array region scatter plot](https://developers.google.com/earth-engine/guides/charts_array#eearray_region_scatter_plot)
   * [ee.List region scatter plot](https://developers.google.com/earth-engine/guides/charts_array#eelist_region_scatter_plot)

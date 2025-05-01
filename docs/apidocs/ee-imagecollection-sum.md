@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.sum 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-sum#examples)
 
@@ -127,3 +127,4 @@ m.add_layer(mosaic, vis_refl, 'Mosaic (B11, B8, B3)')
 m
 ```
 
+Was this helpful?

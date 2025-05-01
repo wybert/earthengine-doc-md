@@ -39,4 +39,3 @@ dic = ee.Dictionary({
 print('The number of dictionary entries:', dic.size().getInfo())
 ```
 
-Was this helpful?

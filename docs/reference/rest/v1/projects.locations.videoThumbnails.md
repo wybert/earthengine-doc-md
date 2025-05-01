@@ -65,3 +65,4 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails/create)`
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
+Was this helpful?

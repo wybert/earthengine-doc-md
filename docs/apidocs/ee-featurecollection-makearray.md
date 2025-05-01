@@ -50,4 +50,3 @@ print('See example of new "gwh_by_year" property:')
 pprint(fc.first().toDictionary().getInfo())
 ```
 
-Was this helpful?

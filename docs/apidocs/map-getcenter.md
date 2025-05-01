@@ -11,7 +11,7 @@ Usage| Returns
 `Map.getCenter()`| Geometry.Point  
 **No arguments.**
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/map-getcenter#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.

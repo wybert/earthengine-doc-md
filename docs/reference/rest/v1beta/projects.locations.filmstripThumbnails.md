@@ -1,12 +1,6 @@
  
 #  REST Resource: projects.locations.filmstripThumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: FilmstripThumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.filmstripThumbnails#resource:-filmstripthumbnail)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.filmstripThumbnails#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.filmstripThumbnails#create)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: FilmstripThumbnail
 Information about a filmstrip thumbnail.
 JSON representation  
@@ -36,4 +30,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.filmstripThumbnails/create)`
 |  Creates an ID that can be used to render an image containing multiple images from a collection.  
-Was this helpful?

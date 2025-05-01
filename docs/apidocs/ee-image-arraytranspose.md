@@ -63,3 +63,4 @@ print('Transposed (3x2) array image (pixel):',
 # [2, 5]]
 ```
 
+Was this helpful?

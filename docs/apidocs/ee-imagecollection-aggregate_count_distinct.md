@@ -1,10 +1,6 @@
  
 #  ee.ImageCollection.aggregate_count_distinct 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_count_distinct#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Aggregates over a given property of the objects in a collection, calculating the number of distinct values for the selected property. 
 Usage| Returns  
 ---|---  
@@ -14,7 +10,7 @@ Argument| Type| Details
 this: `collection`| FeatureCollection| The collection to aggregate over.  
 `property`| String| The property to use from each element of the collection.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_count_distinct#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_count_distinct#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Lansat 8 TOA image collection for a specific year and location.
 varcol=ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA")
@@ -55,6 +51,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # A Lansat 8 TOA image collection for a specific year and location.
@@ -101,4 +99,3 @@ print('Max of property values (string):',
    col.aggregate_max(prop_string).getInfo())
 ```
 
-Was this helpful?

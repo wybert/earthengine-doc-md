@@ -30,7 +30,6 @@ Map.addLayer(multiPolygon,
 {'color':'black'},
 'Geometry [black]: multiPolygon');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

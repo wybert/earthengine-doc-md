@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `layout`| String|ui.Panel.Layout| The root panel's new layout.  
-Was this helpful?

@@ -1,8 +1,8 @@
  
 #  Vector to Raster Conversion 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Vector to raster conversion in Earth Engine is handled by the `featureCollection.reduceToImage()` method. This method assigns pixels under each feature the value of the specified property. This example uses the counties data to create an image representing the land area of each county:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_to_image#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_to_image#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a collection of US counties.
 varcounties=ee.FeatureCollection('TIGER/2018/Counties');
@@ -21,12 +21,15 @@ max:1.5e10,
 palette:['FCFDBF','FDAE78','EE605E','B63679','711F81','2C105C']
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a collection of US counties.
 counties = ee.FeatureCollection('TIGER/2018/Counties')

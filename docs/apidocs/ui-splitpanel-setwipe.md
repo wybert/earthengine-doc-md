@@ -1,6 +1,6 @@
  
 #  ui.SplitPanel.setWipe 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Enables or disables the wiping effect. 
 Returns this split panel.
 Usage| Returns  

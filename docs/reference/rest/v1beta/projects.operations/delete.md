@@ -1,14 +1,6 @@
  
 #  Method: projects.operations.delete 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/delete#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/delete#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/delete#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/delete#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/delete#authorization-scopes)
-
-
 Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 ### HTTP request
 `DELETE https://earthengine.googleapis.com/v1beta/{name=projects/*/operations/**}`

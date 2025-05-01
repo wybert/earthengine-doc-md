@@ -15,7 +15,6 @@ varareaAdded=sheds.map(addArea);
 // Print the first feature from the collection with the added property.
 print('First feature:',areaAdded.first());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -55,7 +54,6 @@ varcentroids=sheds.map(getCentroid);
 // Display the results.
 Map.addLayer(centroids,{color:'FF0000'},'centroids');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

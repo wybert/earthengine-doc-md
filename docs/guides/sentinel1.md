@@ -125,4 +125,3 @@ Earth Engine uses the following preprocessing steps (as implemented by the [Sent
   * GRD SM assets are not ingested because the `computeNoiseScalingFactor()` function in the [border noise removal operation in the S1 toolbox](https://github.com/senbox-org/s1tbx/blob/master/s1tbx-op-calibration/src/main/java/org/esa/s1tbx/calibration/gpf/RemoveGRDBorderNoiseOp.java) does not support the SM mode.
 
 
-Was this helpful?

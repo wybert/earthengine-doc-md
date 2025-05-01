@@ -1,6 +1,6 @@
  
 #  ui.Map.DrawingTools.addLayer 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Adds a given list of ee.Geometry objects to the drawing tools as a geometry layer. 
 Returns the new geometry layer.
 Usage| Returns  

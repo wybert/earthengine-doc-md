@@ -33,4 +33,3 @@ display(empty.Or(empty)) # []
 display(ee.Array([0, 0, 1, 1]).Or(ee.Array([0, 1, 0, 1])))
 ```
 
-Was this helpful?

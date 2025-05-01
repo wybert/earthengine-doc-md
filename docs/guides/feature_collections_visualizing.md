@@ -10,7 +10,6 @@ varecoregions=ee.FeatureCollection('RESOLVE/ECOREGIONS/2017');
 Map.addLayer(ecoregions,{},'default display');
 Map.addLayer(ecoregions,{color:'FF0000'},'colored');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -35,7 +34,6 @@ For additional display options, use `featureCollection.draw()`. Specifically, pa
 ```
 Map.addLayer(ecoregions.draw({color:'006600',strokeWidth:5}),{},'drawn');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -62,7 +60,6 @@ width:3
 });
 Map.addLayer(outline,{palette:'FF0000'},'edges');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -91,7 +88,6 @@ width:4
 varpalette=['FF0000','00FF00','0000FF'];
 Map.addLayer(outlines,{palette:palette,max:14},'different color edges');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -118,7 +114,6 @@ width:'NNH'
 });
 Map.addLayer(outlines,{palette:palette,max:14},'different color, width edges');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -147,7 +142,6 @@ color:'BIOME_NUM',
 });
 Map.addLayer(fills,{palette:palette,max:14},'colored fills');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -169,7 +163,6 @@ To render both the interior and edges of the features, paint the empty image twi
 varfilledOutlines=empty.paint(ecoregions,'BIOME_NUM').paint(ecoregions,0,2);
 Map.addLayer(filledOutlines,{palette:['000000'].concat(palette),max:14},'edges and fills');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

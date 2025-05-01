@@ -1,7 +1,8 @@
  
 #  ee.Algorithms.HoughTransform 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Applies the Hough transform to an image. For every input band, outputs a band where lines are detected by thresholding the Hough transform with a value of lineThreshold. The output band is named [input]_lines, where [input] is the name of the original band. The defaults provided for the parameters are intended as a starting point for use with UINT8 images. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Applies the Hough transform to an image. For every input band, outputs a band where lines are detected by thresholding the Hough transform with a value of lineThreshold. The output band is named [input]_lines, where [input] is the name of the original band. The defaults provided for the parameters are intended as a starting point for use with UINT8 images. 
+Usage| Returns  
 ---|---  
 `ee.Algorithms.HoughTransform(image,  _gridSize_, _inputThreshold_, _lineThreshold_, _smooth_)`| Image  
 Argument| Type| Details  

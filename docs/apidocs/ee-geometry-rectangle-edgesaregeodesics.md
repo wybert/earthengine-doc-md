@@ -1,10 +1,6 @@
  
 #  ee.Geometry.Rectangle.edgesAreGeodesics 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-edgesaregeodesics#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-edgesaregeodesics#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-edgesaregeodesics#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Rectangle object.
 varrectangle=ee.Geometry.Rectangle(-122.09,37.42,-122.08,37.43);
@@ -33,6 +29,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Rectangle object.
 rectangle = ee.Geometry.Rectangle(-122.09, 37.42, -122.08, 37.43)
@@ -47,4 +45,3 @@ m.add_layer(rectangle, {'color': 'black'}, 'Geometry [black]: rectangle')
 m
 ```
 
-Was this helpful?

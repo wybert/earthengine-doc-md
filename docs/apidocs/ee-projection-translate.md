@@ -1,8 +1,7 @@
  
 #  ee.Projection.translate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns the projection translated by the given amount in each axis. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the projection translated by the given amount in each axis. Usage| Returns  
 ---|---  
 `Projection.translate(x, y)`| Projection  
 Argument| Type| Details  

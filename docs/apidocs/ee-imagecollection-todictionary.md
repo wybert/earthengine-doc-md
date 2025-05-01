@@ -1,12 +1,7 @@
  
 #  ee.ImageCollection.toDictionary 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-todictionary#examples)
-
-
-Extract properties from a feature as a dictionary. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Extract properties from a feature as a dictionary. Usage| Returns  
 ---|---  
 `ImageCollection.toDictionary( _properties_)`| Dictionary  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `element`| Element| The feature to extract the property from.  
 `properties`| List, default: null| The list of properties to extract. Defaults to all non-system properties.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-todictionary#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-todictionary#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A contrived, empty image collection for simple demonstration.
 varcol=ee.ImageCollection([]);
@@ -42,12 +37,15 @@ print('Project year (ee.Number)',col.getNumber('project_year'));
 // Get the value of an ee.Array collection property as an ee.Array object.
 print('Plot IDs (ee.Array)',col.getArray('plot_ids'));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A contrived, empty image collection for simple demonstration.
 col = ee.ImageCollection([])

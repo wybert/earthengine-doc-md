@@ -258,3 +258,4 @@ m
 ```
 
 Note that the input to the simple composite is a collection of raw imagery. Also note that by default, reflective band output is reflectance scaled to 8-bits and thermal band output is Kelvin minus 100, to fit in the 8-bit range. You can change this behavior by setting the `asFloat` parameter to true, to get un-scaled, un-shifted float output.
+Was this helpful?

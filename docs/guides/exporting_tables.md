@@ -1,6 +1,6 @@
  
 #  Exporting Table and Vector Data 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [to Drive](https://developers.google.com/earth-engine/guides/exporting_tables#to_drive)
   * [to Cloud Storage](https://developers.google.com/earth-engine/guides/exporting_tables#to_cloud_storage)

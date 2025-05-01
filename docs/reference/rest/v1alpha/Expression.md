@@ -1,6 +1,6 @@
  
 #  Expression 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Specifies an arbitrary expression, of an arbitrary type. The context in which it is used determines the type of the response.
 JSON representation  
 ---  

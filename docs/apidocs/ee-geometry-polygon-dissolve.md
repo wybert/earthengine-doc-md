@@ -1,10 +1,6 @@
  
 #  ee.Geometry.Polygon.dissolve 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-dissolve#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. 
 Usage| Returns  
 ---|---  
@@ -15,7 +11,7 @@ this: `geometry`| Geometry| The geometry to union.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the union will be performed in this projection. Otherwise it will be performed in a spherical coordinate system.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-dissolve#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-dissolve#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Polygon object.
 varpolygon=ee.Geometry.Polygon(
@@ -42,6 +38,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Polygon object.
 polygon = ee.Geometry.Polygon([[

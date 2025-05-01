@@ -1,12 +1,7 @@
  
 #  ee.Number.serialize 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-serialize#examples)
-
-
-Returns the serialized representation of this object. 
-Usage| Returns  
+Returns the serialized representation of this object. Usage| Returns  
 ---|---  
 `Number.serialize( _legacy_)`| String  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `computedobject`| ComputedObject| The ComputedObject instance.  
 `legacy`| Boolean, optional| Enables legacy format.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-serialize#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-serialize#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('Serialized representation of ee.Number',ee.Number(10).serialize());
 ```
@@ -24,6 +19,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 print('Serialized representation of ee.Number:', ee.Number(10).serialize())
 ```

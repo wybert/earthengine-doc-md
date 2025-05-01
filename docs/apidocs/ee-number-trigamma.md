@@ -38,3 +38,4 @@ print('Trigamma for 100:', ee.Number(100).trigamma().getInfo()) # 0.010050166
 print('Trigamma for 200:', ee.Number(200).trigamma().getInfo()) # 0.005012520
 ```
 
+Was this helpful?

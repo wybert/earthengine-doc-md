@@ -30,4 +30,3 @@ Fields
 `shearY` |  `number` The vertical shear factor for some, though not all, transformations.  
 `scaleY` |  `number` The vertical scale factor.  
 `translateY` |  `number` The vertical offset.  
-Was this helpful?

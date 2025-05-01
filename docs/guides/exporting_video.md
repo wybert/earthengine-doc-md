@@ -1,15 +1,10 @@
  
 #  Exporting Video and Animations 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [to Drive](https://developers.google.com/earth-engine/guides/exporting_video#to_drive)
-  * [to Cloud Storage](https://developers.google.com/earth-engine/guides/exporting_video#to_cloud_storage)
-
-
 To export ordered image collections as video, where frames are defined by images in the collection, use `Export.video()`. You can configure the way the `ImageCollection` is turned into video by setting frame rate, scale and dimensions. The video will be encoded as an MP4.
 ## to Drive
 Export video to your Drive account with `Export.video.toDrive()`. For example, the following export makes a video from 20 years of Landsat imagery:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_video#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 5 image collection.
 varcollection=ee.ImageCollection('LANDSAT/LT05/C02/T1_TOA')
@@ -39,7 +34,7 @@ region:polygon
 Note that the frame rate and dimensions can be set from a dictionary of parameters passed to the export. Adjust these parameters to customize the video. Also note that the input ImageCollection is required to have 3-band (RGB), 8-bit images. In this example, the 8-bit, 3-band format is explicitly set. Alternatively, map a function which calls `image.visualize()` over the collection. See [the section on Visualization images](https://developers.google.com/earth-engine/guides/image_visualization#visualization-images) for details. Video exports can take a significant amount of time to complete, so it's not unusual to see the export task running for an extended period.
 ## to Cloud Storage
 To export a video to Cloud Storage, use `Export.video.toCloudStorage()`. For example, using the `ImageCollection` from the previous example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_video#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Export video to cloud storage.
 Export.video.toCloudStorage({

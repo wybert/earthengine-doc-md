@@ -139,3 +139,4 @@ display("Inner join, merged 'bands':", joined_modis)
 ```
 
 Although this function is mapped over a `FeatureCollection`, the result is an `ImageCollection`. Each image in the resultant `ImageCollection` has all the bands of the images in the primary collection (in this example just `‘EVI’`) and all the bands of the matching image in the secondary collection (the quality bands).
+Was this helpful?

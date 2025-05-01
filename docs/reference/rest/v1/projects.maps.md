@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.maps 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: EarthEngineMap
 Information about a map.
 JSON representation  

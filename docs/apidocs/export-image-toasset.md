@@ -1,7 +1,12 @@
  
 #  Export.image.toAsset 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Creates a batch task to export an Image as a raster to an Earth Engine asset. Tasks can be started from the Tasks tab. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/export-image-toasset#examples)
+
+
+Creates a batch task to export an Image as a raster to an Earth Engine asset. Tasks can be started from the Tasks tab. 
+Usage| Returns  
 ---|---  
 `Export.image.toAsset(image,  _description_, _assetId_, _pyramidingPolicy_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _shardSize_, _priority_)`|   
 Argument|  Type| Details  
@@ -19,7 +24,7 @@ Argument|  Type| Details
 `shardSize`| Number, optional| Size in pixels of the tiles in which this image will be computed. Defaults to 256.  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/export-image-toasset#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/export-image-toasset#colab-python-sample) More
 ```
 // A Landsat 8 surface reflectance image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_L2/LC08_044034_20210508')
@@ -69,15 +74,12 @@ crs:'EPSG:5070',
 pyramidingPolicy:{SR_B5:'mode'}
 });
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Landsat 8 surface reflectance image.
 image = ee.Image(
@@ -133,3 +135,4 @@ task = ee.batch.Export.image.toAsset(
 task.start()
 ```
 
+Was this helpful?

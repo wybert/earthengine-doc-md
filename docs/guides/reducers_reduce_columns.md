@@ -1,8 +1,8 @@
  
 #  Statistics of FeatureCollection Columns 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 To reduce properties of features in a `FeatureCollection`, use `featureCollection.reduceColumns()`. Consider the following toy example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Make a toy FeatureCollection.
 varaFeatureCollection=ee.FeatureCollection([
@@ -17,12 +17,15 @@ selectors:['foo'],
 weightSelectors:['weight']
 }));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Make a toy FeatureCollection.
 a_feature_collection = ee.FeatureCollection([
@@ -45,7 +48,7 @@ mean: 2.333333333333333
 ```
 
 As a more complex example, consider a `FeatureCollection` of US census blocks with census data as attributes. The variables of interest are total population and total housing units. You can get their sum(s) by supplying a summing reducer argument to `reduceColumns()` and printing the result:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load US census data as a FeatureCollection.
 varcensus=ee.FeatureCollection('TIGER/2010/Blocks');
@@ -70,12 +73,15 @@ selectors:properties
 // Print the resultant Dictionary.
 print(sums);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load US census data as a FeatureCollection.
 census = ee.FeatureCollection('TIGER/2010/Blocks')

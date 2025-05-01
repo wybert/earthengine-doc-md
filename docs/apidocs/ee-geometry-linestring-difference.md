@@ -1,8 +1,7 @@
  
 #  ee.Geometry.LineString.difference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the result of subtracting the 'right' geometry from the 'left' geometry. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the result of subtracting the 'right' geometry from the 'left' geometry. Usage| Returns  
 ---|---  
 `LineString.difference(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -34,6 +33,7 @@ Map.addLayer(lineStringDifference,
 {'color':'red'},
 'Result [red]: lineString.difference');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

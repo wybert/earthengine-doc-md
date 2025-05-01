@@ -1,6 +1,6 @@
  
 #  ui.Map.DrawingTools.layers 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the list of geometry layers in the drawing tools. 
 Usage| Returns  
 ---|---  
@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map.drawingtools`| ui.Map.DrawingTools| The ui.Map.DrawingTools instance.  
+Was this helpful?

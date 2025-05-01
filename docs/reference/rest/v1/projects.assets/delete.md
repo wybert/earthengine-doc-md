@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.delete 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Deletes an asset.
 ### HTTP request
 `DELETE https://earthengine.googleapis.com/v1/{name=projects/*/assets/**}`

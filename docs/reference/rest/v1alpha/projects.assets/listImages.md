@@ -1,16 +1,6 @@
  
 #  Method: projects.assets.listImages 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#authorization-scopes)
-  * [Image](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages#image)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Lists the images in an image collection asset. This method allows the caller to apply spatiotemporal and metadata filters to an image collection.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{parent=projects/*/assets/**}:listImages`

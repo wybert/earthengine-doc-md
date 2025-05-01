@@ -1,6 +1,16 @@
  
 #  Object-based methods 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Thermal hotspots](https://developers.google.com/earth-engine/guides/image_objects#thermal_hotspots)
+  * [Label objects](https://developers.google.com/earth-engine/guides/image_objects#label_objects)
+  * [Object size](https://developers.google.com/earth-engine/guides/image_objects#object_size)
+    * [Number of pixels](https://developers.google.com/earth-engine/guides/image_objects#number_of_pixels)
+    * [Area](https://developers.google.com/earth-engine/guides/image_objects#area)
+  * [Filter objects by size](https://developers.google.com/earth-engine/guides/image_objects#filter_objects_by_size)
+  * [Zonal statistics](https://developers.google.com/earth-engine/guides/image_objects#zonal_statistics)
+
+
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/image_objects.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/image_objects.ipynb)  
 ---|---  
 Image objects are sets of connected pixels having the same integer value. Categorical, binned, and boolean image data are suitable for object analysis.
@@ -19,7 +29,7 @@ Earth Engine offers methods for labeling each object with a unique ID, counting 
 Take special note of scale determined by Map zoom level. Results of object-based methods will vary when viewing or inspecting image layers in the Map, as each pyramid layer has a different scale. To force a desired scale of analysis in Map exploration, use `reproject()`. However, it is strongly recommended that you **NOT** use `reproject()` because the entire area visible in the Map will be requested at the set scale and projection. At large extents this can cause too much data to be requested, often triggering errors. Within the image pyramid-based architecture of Earth Engine, scale and projection need only be set for operations that provide `scale` and `crs` as parameters. See [Scale of Analysis](https://developers.google.com/earth-engine/scale#scale-of-analysis) and [Reprojecting](https://developers.google.com/earth-engine/projections#reprojecting) for more information. 
 ## Thermal hotspots
 The following sections provide examples of object-based methods applied to Landsat 8 surface temperature with each section building on the former. Run the next snippet to generate the base image: thermal hotspots (> 303 degrees Kelvin) for a small region of San Francisco.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Make an area of interest geometry centered on San Francisco.
 varpoint=ee.Geometry.Point(-122.1899,37.5010);
@@ -39,15 +49,12 @@ varhotspots=kelvin.gt(303)
 // Display the thermal hotspots on the Map.
 Map.addLayer(hotspots,{palette:'FF0000'},'Hotspots');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Make an area of interest geometry centered on San Francisco.
 point = ee.Geometry.Point(-122.1899, 37.5010)
@@ -70,7 +77,7 @@ map_objects.add_layer(hotspots, {'palette': 'FF0000'}, 'Hotspots')
 ![](https://developers.google.com/static/earth-engine/images/Images_object_hotspots.png) Figure 1. Temperature for a region of San Francisco. Pixels with temperature greater than 303 degrees Kelvin are distinguished by the color red (thermal hotspots). 
 ## Label objects
 Labeling objects is often the first step in object analysis. Here, the `connectedComponents()` function is used to identify image objects and assign a unique ID to each; all pixels belonging to an object are assigned the same integer ID value. The result is a copy of the input image with an additional "labels" band associating pixels with an object ID value based on connectivity of pixels in the first band of the image.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Uniquely label the hotspot image objects.
 varobjectId=hotspots.connectedComponents({
@@ -80,15 +87,12 @@ maxSize:128
 // Display the uniquely ID'ed objects to the Map.
 Map.addLayer(objectId.randomVisualizer(),null,'Objects');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Uniquely label the hotspot image objects.
 object_id = hotspots.connectedComponents(
@@ -103,7 +107,7 @@ Note that the maximum patch size is set to 128 pixels; objects composed of more 
 ## Object size
 ### Number of pixels
 Calculate the number of pixels composing objects using the `connectedPixelCount()` image method. Knowing the number of pixels in an object can be helpful for masking objects by size and calculating object area. The following snippet applies `connectedPixelCount()` to the "labels" band of the `objectId` image defined in the previous section.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Compute the number of pixels in each object defined by the "labels" band.
 varobjectSize=objectId.select('labels')
@@ -113,15 +117,12 @@ maxSize:128,eightConnected:false
 // Display object pixel count to the Map.
 Map.addLayer(objectSize,null,'Object n pixels');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Compute the number of pixels in each object defined by the "labels" band.
 object_size = object_id.select('labels').connectedPixelCount(
@@ -135,7 +136,7 @@ map_objects.add_layer(object_size, None, 'Object n pixels')
 ![](https://developers.google.com/static/earth-engine/images/Images_object_hotspots_size.png) Figure 3. Thermal hotspot objects labeled and styled by size. 
 ### Area
 Calculate object area by multiplying the area of a single pixel by the number of pixels composing an object (determined by `connectedPixelCount()`). Pixel area is provided by an image generated from `ee.Image.pixelArea()`.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Get a pixel area image.
 varpixelArea=ee.Image.pixelArea();
@@ -148,15 +149,12 @@ Map.addLayer(objectArea,
 {min:0,max:30000,palette:['0000FF','FF00FF']},
 'Object area m^2');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Get a pixel area image.
 pixel_area = ee.Image.pixelArea()
@@ -175,7 +173,7 @@ map_objects.add_layer(
 The result is an image where each pixel of an object relates the area of the object in square meters. In this example, the `objectSize` image contains a single band, if it were multi-band, the multiplication operation would be applied to each band of the image.
 ## Filter objects by size
 Object size can be used as a mask condition to focus your analysis on objects of a certain size (e.g., mask out objects that are too small). Here the `objectArea` image calculated in the previous step is used as a mask to remove objects whose area are less than one hectare.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Threshold the `objectArea` image to define a mask that will mask out
 // objects below a given size (1 hectare in this case).
@@ -185,15 +183,12 @@ varareaMask=objectArea.gte(10000);
 objectId=objectId.updateMask(areaMask);
 Map.addLayer(objectId,null,'Large hotspots');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Threshold the `object_area` image to define a mask that will mask out
 # objects below a given size (1 hectare in this case).
@@ -210,7 +205,7 @@ The result is a copy of the `objectId` image where objects less than one hectare
 Figure 4a. Thermal hotspot objects labeled and styled by unique ID. | Figure 4b. Thermal hotspot objects filtered by minimum area (1 hectare).  
 ## Zonal statistics
 The `reduceConnectedComponents()` method applies a reducer to the pixels composing unique objects. The following snippet uses it to calculate the mean temperature of hotspot objects. `reduceConnectedComponents()` requires an input image with a band (or bands) to be reduced and a band that defines object labels. Here, the `objectID` "labels" image band is added to the `kelvin` temperature image to construct a suitable input image.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_objects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_objects#colab-python-sample) More
 ```
 // Make a suitable image for `reduceConnectedComponents()` by adding a label
 // band to the `kelvin` temperature image.
@@ -228,15 +223,12 @@ patchTemp,
 'Mean temperature'
 );
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Make a suitable image for `reduceConnectedComponents()` by adding a label
 # band to the `kelvin` temperature image.

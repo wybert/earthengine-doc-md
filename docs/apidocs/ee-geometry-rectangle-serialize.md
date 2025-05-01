@@ -1,6 +1,6 @@
  
 #  ee.Geometry.Rectangle.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-serialize#examples)
 
@@ -48,3 +48,4 @@ m.add_layer(rectangle, {'color': 'black'}, 'Geometry [black]: rectangle')
 m
 ```
 
+Was this helpful?

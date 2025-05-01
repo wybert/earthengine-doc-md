@@ -70,7 +70,7 @@ Earth Engine on YouTube
     * [ Google Home Developer Console ](https://console.home.google.com)
 
 
-[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
+[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
   * [ Android ](https://developer.android.com)
   * [ Chrome ](https://developer.chrome.com/home)
   * [ Firebase ](https://firebase.google.com)

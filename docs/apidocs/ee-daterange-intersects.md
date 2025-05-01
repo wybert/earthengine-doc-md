@@ -1,6 +1,10 @@
  
 #  ee.DateRange.intersects 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-daterange-intersects#examples)
+
+
 Returns true if the given DateRange has at least one point in common with this DateRange. 
 Usage| Returns  
 ---|---  
@@ -10,7 +14,7 @@ Argument| Type| Details
 this: `dateRange`| DateRange|   
 `other`| DateRange|   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-intersects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-intersects#colab-python-sample) More
 ```
 // A series of ee.DateRange objects.
 vardateRange1=ee.DateRange('2017-06-24','2017-07-24');
@@ -28,8 +32,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A series of ee.DateRange objects.
 date_range_1 = ee.DateRange('2017-06-24', '2017-07-24')

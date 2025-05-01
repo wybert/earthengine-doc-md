@@ -1,6 +1,6 @@
  
 #  ui.Chart.image.byClass 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image. Plots derived band values in classified regions in an image. 
 - X-axis = Band name (all bands except the class band are charted).
 - Y-axis = Band value.
@@ -18,4 +18,3 @@ Argument| Type| Details
 `scale`| Number, optional| Scale to use with the reducer in meters.  
 `classLabels`| List., optional| A dictionary of labels used to identify classes in the series legend. If omitted, classes will be labeled with the value of classBand.  
 `xLabels`| List, optional| A list of labels used to label bands on the xAxis. Must have one fewer elements than the number of image bands. If omitted, bands will be labeled with their names. If the labels are numeric (e.g. wavelengths), x-axis will be continuous.  
-Was this helpful?

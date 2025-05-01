@@ -1,10 +1,6 @@
  
 #  ee.FeatureCollection.size 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-size#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the number of elements in the collection. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `collection`| FeatureCollection| The collection to count.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-size#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-size#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
@@ -26,6 +22,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(

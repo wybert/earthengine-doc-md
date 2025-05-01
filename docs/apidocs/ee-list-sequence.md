@@ -1,7 +1,8 @@
  
 #  ee.List.sequence 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Generate a sequence of numbers from start to end (inclusive) in increments of step, or in count equally-spaced increments. If end is not specified it is computed from start + step * count, so at least one of end or count must be specified. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Generate a sequence of numbers from start to end (inclusive) in increments of step, or in count equally-spaced increments. If end is not specified it is computed from start + step * count, so at least one of end or count must be specified. 
+Usage| Returns  
 ---|---  
 `ee.List.sequence(start,  _end_, _step_, _count_)`| List  
 Argument| Type| Details  

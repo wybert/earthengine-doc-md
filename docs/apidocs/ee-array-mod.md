@@ -1,7 +1,12 @@
  
 #  ee.Array.mod 
-Stay organized with collections  Save and categorize content based on your preferences. 
-On an element-wise basis, calculates the remainder of the first value divided by the second. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-mod#examples)
+
+
+On an element-wise basis, calculates the remainder of the first value divided by the second. 
+Usage| Returns  
 ---|---  
 `Array.mod(right)`| Array  
 Argument| Type| Details  
@@ -9,7 +14,7 @@ Argument| Type| Details
 this: `left`| Array| The left-hand value.  
 `right`| Array| The right-hand value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-mod#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-mod#colab-python-sample) More
 ```
 varempty=ee.Array([],ee.PixelType.int8());
 print(empty.mod(empty));// []
@@ -46,15 +51,12 @@ pointSize:0,
 });
 print(chart);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importaltairasalt
 importpandasaspd
@@ -89,3 +91,4 @@ alt.Chart(df).mark_line().encode(
 )
 ```
 
+Was this helpful?

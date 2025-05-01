@@ -1,7 +1,12 @@
  
 #  ee.Image.arrayFlatten 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Converts a single-band image of equal-shape multidimensional pixels to an image of scalar pixels, with one band for each element of the array. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayflatten#examples)
+
+
+Converts a single-band image of equal-shape multidimensional pixels to an image of scalar pixels, with one band for each element of the array. 
+Usage| Returns  
 ---|---  
 `Image.arrayFlatten(coordinateLabels,  _separator_)`| Image  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `image`| Image| Image of multidimensional pixels to flatten.
 `coordinateLabels`| List| Name of each position along each axis. For example, 2x2 arrays with axes meaning 'day' and 'color' could have labels like [['monday', 'tuesday'], ['red', 'green']], resulting in band names'monday_red', 'monday_green', 'tuesday_red', and 'tuesday_green'.  
 `separator`| String, default: "_"| Separator between array labels in each band name.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayflatten#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayflatten#colab-python-sample) More
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -47,15 +52,12 @@ varbandNames2D=[['row0','row1','row2'],['col0','col1']];
 varimgFrom2Darray=arrayImg2D.arrayFlatten(bandNames2D);
 print('Image from 2D array',imgFrom2Darray);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):
@@ -92,3 +94,4 @@ img_from_2d_array = array_img_2d.arrayFlatten(band_names_2d)
 print('Image from 2D array:', img_from_2d_array.getInfo())
 ```
 
+Was this helpful?

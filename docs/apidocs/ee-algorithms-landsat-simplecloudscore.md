@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `image`| Image| The Landsat TOA image to process.  
-Was this helpful?

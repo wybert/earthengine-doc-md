@@ -1,6 +1,6 @@
  
 #  Unsupervised Classification (clustering) 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 The `ee.Clusterer` package handles unsupervised classification (or _clustering_) in Earth Engine. These algorithms are currently based on the algorithms with the same name in [Weka](http://www.cs.waikato.ac.nz/ml/weka/). More details about each `Clusterer` are available in the [reference docs](https://developers.google.com/earth-engine/apidocs).
 Clusterers are used in the same manner as classifiers in Earth Engine. The general workflow for clustering is:
   1. Assemble features with numeric properties in which to find clusters.
@@ -12,7 +12,7 @@ Clusterers are used in the same manner as classifiers in Earth Engine. The gener
 
 The training data is a `FeatureCollection` with properties that will be input to the clusterer. Unlike classifiers, there is no input class value for an `Clusterer`. Like classifiers, the data for the train and apply steps are expected to have the same number of values. When a trained clusterer is applied to an image or table, it assigns an integer cluster ID to each pixel or feature.
 Here is a simple example of building and using an `ee.Clusterer`:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/clustering#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/clustering#colab-python-sample) More
 ```
 // Define a region in which to generate a segmented map.
 varregion=ee.Geometry.Rectangle(29.7,30,32.5,31.7);
@@ -37,15 +37,12 @@ varresult=input.cluster(clusterer);
 // Display the clusters with random colors.
 Map.addLayer(result.randomVisualizer(),{},'clusters');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a region in which to generate a segmented map.
 region = ee.Geometry.Rectangle(29.7, 30, 32.5, 31.7)
@@ -78,3 +75,4 @@ Please note:
   * The output clusters and their IDs are dependent on the algorithm and inputs.
 
 
+Was this helpful?

@@ -64,3 +64,4 @@ print(ee.PixelType('double', None, 2.3, 0).getInfo()) # double
 print(ee.PixelType('double', 3.4, None, 0).getInfo()) # double
 ```
 
+Was this helpful?

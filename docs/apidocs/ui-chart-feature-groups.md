@@ -1,6 +1,6 @@
  
 #  ui.Chart.feature.groups 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Generates a Chart from a set of features. Plots the value of a given property across groups of features. Features with the same value of groupProperty will be grouped and plotted as a single series. 
 - X-axis = xProperty values.
 - Y-axis = yProperty values.

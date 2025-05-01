@@ -1,8 +1,8 @@
  
 #  Compositing and Mosaicking 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 In general, compositing refers to the process of combining spatially overlapping images into a single image based on an aggregation function. Mosaicking refers to the process of spatially assembling image datasets to produce a spatially continuous image. In Earth Engine, these terms are used interchangeably, though both compositing and mosaicking are supported. For example, consider the task of compositing multiple images in the same location. For example, using one National Agriculture Imagery Program (NAIP) Digital Orthophoto Quarter Quadrangle (DOQQ) at different times, the following example demonstrates making a maximum value composite:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load three NAIP quarter quads in the same location, different times.
 varnaip2004_2012=ee.ImageCollection('USDA/NAIP/DOQQ')
@@ -14,12 +14,15 @@ varcomposite=naip2004_2012.max();
 Map.setCenter(-71.12532,42.3712,12);
 Map.addLayer(composite,{},'max value composite');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load three NAIP quarter quads in the same location, different times.
 naip_2004_2012 = (
@@ -36,7 +39,7 @@ m
 ```
 
 Consider the need to mosaic four different DOQQs at the same time, but different locations. The following example demonstrates that using `imageCollection.mosaic()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load four 2012 NAIP quarter quads, different locations.
 varnaip2012=ee.ImageCollection('USDA/NAIP/DOQQ')
@@ -47,12 +50,15 @@ varmosaic=naip2012.mosaic();
 Map.setCenter(-71.12532,42.3712,12);
 Map.addLayer(mosaic,{},'spatial mosaic');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load four 2012 NAIP quarter quads, different locations.
 naip_2012 = (
@@ -70,7 +76,7 @@ m.add_layer(mosaic, {}, 'spatial mosaic')
 ```
 
 Note that there is some overlap in the DOQQs in the previous example. The `mosaic()` method composites overlapping images according to their order in the collection (last on top). To control the source of pixels in a mosaic (or a composite), use image masks. For example, the following uses thresholds on spectral indices to mask the image data in a mosaic:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a NAIP quarter quad, display.
 varnaip=ee.Image('USDA/NAIP/DOQQ/m_4207148_nw_19_1_20120710');
@@ -100,12 +106,15 @@ bare1.updateMask(bare1).visualize({palette:['FFFFFF']}),
 ]).mosaic();
 Map.addLayer(mosaic,{},'Visualization mosaic');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a NAIP quarter quad, display.
 naip = ee.Image('USDA/NAIP/DOQQ/m_4207148_nw_19_1_20120710')
@@ -140,7 +149,7 @@ m
 ```
 
 To make a composite which maximizes an arbitrary band in the input, use `imageCollection.qualityMosaic()`. The `qualityMosaic()` method sets each pixel in the composite based on which image in the collection has a maximum value for the specified band. For example, the following code demonstrates making a greenest pixel composite and a recent value composite:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_composite_mosaic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a function that scales and masks Landsat 8 surface reflectance images.
 functionprepSrL8(image){
@@ -188,12 +197,15 @@ Map.addLayer(greenestPixelComposite,vizParams,'Greenest pixel composite');
 varcloudy=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140825');
 Map.addLayer(cloudy,{bands:['B5','B4','B3'],min:0,max:0.4},'Cloudy');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a function that scales and masks Landsat 8 surface reflectance images.
 defprep_sr_l8(image):

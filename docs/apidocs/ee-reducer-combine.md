@@ -12,3 +12,4 @@ this: `reducer1`| Reducer| The first reducer.
 `reducer2`| Reducer| The second reducer.  
 `outputPrefix`| String, default: ""| Prefix for reducer2's output names.  
 `sharedInputs`| Boolean, default: false| Whether the reducers share inputs.  
+Was this helpful?

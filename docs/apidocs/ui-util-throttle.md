@@ -12,3 +12,4 @@ Argument| Type| Details
 `func`| Function| The function to call.  
 `delay`| Number| The delay, in milliseconds, for the throttle. The function can only be called once after the initial invocation until after the delay has elapsed.  
 `scope`| Object, optional| The object in whose scope to call the function.  
+Was this helpful?

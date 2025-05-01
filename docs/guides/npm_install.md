@@ -1,17 +1,6 @@
  
 #  NPM Installation 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Installing the client library](https://developers.google.com/earth-engine/guides/npm_install#installing-the-client-library)
-  * [Updating the client library](https://developers.google.com/earth-engine/guides/npm_install#updating-the-client-library)
-  * [Uninstalling the client library](https://developers.google.com/earth-engine/guides/npm_install#uninstalling-the-client-library)
-  * [ Create a Cloud Project and activate the Earth Engine API ](https://developers.google.com/earth-engine/guides/npm_install#create-a-cloud-project-and-activate-the-earth-engine-api)
-  * [Setting Up Authentication Credentials](https://developers.google.com/earth-engine/guides/npm_install#setting-up-authentication-credentials)
-    * [Client-side authentication with OAuth](https://developers.google.com/earth-engine/guides/npm_install#client-side-authentication-with-oauth)
-    * [Server-side authentication with a service account](https://developers.google.com/earth-engine/guides/npm_install#server-side-authentication-with-a-service-account)
-  * [Testing the installation](https://developers.google.com/earth-engine/guides/npm_install#testing-the-installation)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Keep your client library up to date by running: `npm update @google/earthengine`
 The Earth Engine JavaScript API is distributed as an [npm package](https://www.npmjs.com/package/@google/earthengine) that is [hosted on GitHub](https://github.com/google/earthengine-api). The following instructions give an overview of installing the Google Earth Engine JavaScript API. To use the Earth Engine JavaScript API you'll need to [install the client library and its dependencies](https://developers.google.com/earth-engine/guides/npm_install#installing-the-client-library) on your computer and then [set up authentication credentials](https://developers.google.com/earth-engine/guides/npm_install#setting-up-authentication-credentials).
 _The JavaScript client library does not include all functionality of the Earth Engine[Code Editor](https://developers.google.com/earth-engine/guides/playground). Notably, user interface features such as buttons, panels, and charts are excluded._
@@ -115,4 +104,3 @@ console.log(map);
 
 If everything is installed correctly, the metadata for an image should be printed.
 **Notice:** When using Earth Engine in a Node.js environment, some best practices differ from typical scripts. Synchronous API calls should be avoided — they prevent the app from handling other requests while waiting for a response from the Earth Engine API. Instead, use asynchronous requests with callback functions. When using the Earth Engine API in Google Cloud Functions, _synchronous requests are not supported._
-Was this helpful?

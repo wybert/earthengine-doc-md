@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 this: `image`| Image| The input image.  
 `coefficients`| List| The polynomial coefficients in increasing order of degree starting with the constant term.  
-Was this helpful?

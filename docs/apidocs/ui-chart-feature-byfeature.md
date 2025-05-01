@@ -15,3 +15,4 @@ Argument| Type| Details
 `features`| Feature|FeatureCollection|List| The features to include in the chart.  
 `xProperty`| String, optional| The property used as the value of each feature on the x-axis. Defaults to 'system:index'.  
 `yProperties`| List, optional| Property or properties used on the y-axis. If omitted, all properties of all features will be charted on the y-axis (except xProperty).  
+Was this helpful?

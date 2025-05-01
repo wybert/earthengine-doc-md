@@ -138,3 +138,4 @@ print('theDate:',theDate);
 Note that the names of the object properties (the keys) match the names specified in the [`ee.Date.fromYMD()` docs](https://developers.google.com/earth-engine/apidocs/ee-date-fromymd). Also note that the object that is passed as an argument can be saved in a variable for reuse, as illustrated by the [JavaScript object example](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#objects).
 You now have enough of an introduction to JavaScript to start using Earth Engine! See the [Client vs. Server page](https://developers.google.com/earth-engine/guides/client_server) for a more detailed explanation of JavaScript vs. Earth Engine objects.
 In the next section, learn more about [Functional programming concepts](https://developers.google.com/earth-engine/tutorials/tutorial_js_03) to effectively use for-loops, if/else conditions and iterations in Earth Engine.
+Was this helpful?

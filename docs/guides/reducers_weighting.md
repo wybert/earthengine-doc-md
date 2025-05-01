@@ -1,8 +1,8 @@
  
 #  Weighted Reductions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 By default, reducers applied to imagery weight the inputs according to the mask value. This is relevant in the context of fractional pixels created through operations such as `clip()`. Adjust this behavior by calling `unweighted()` on the reducer. Using an unweighted reducer forces all pixels in the region to have the same weight. The following example illustrates how pixel weighting can affect the reducer output:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_weighting#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_weighting#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 input image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318');
@@ -28,12 +28,15 @@ scale:30})
 print('weighted:',weighted);
 print('unweighted',unweighted);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 input image.
 image = ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318')
@@ -62,7 +65,7 @@ display('unweighted', unweighted)
 
 The difference in results is due to pixels at the edge of the region receiving a weight of one as a result of calling `unweighted()` on the reducer.
 In order to obtain an explicitly weighted output, it is preferable to set the weights explicitly with `splitWeights()` called on the reducer. A reducer modified by `splitWeights()` takes two inputs, where the second input is the weight. The following example illustrates `splitWeights()` by computing the weighted mean Normalized Difference Vegetation Index (NDVI) in a region, with the weights given by cloud score (the cloudier, the lower the weight):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_weighting#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_weighting#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load an input Landsat 8 image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_186059_20130419');
@@ -84,12 +87,15 @@ varweighted=ndvi.reduceRegion(reducer.splitWeights(),region,30);
 print('unweighted:',unweighted);
 print('weighted:',weighted);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load an input Landsat 8 image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_186059_20130419')

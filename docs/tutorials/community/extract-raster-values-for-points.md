@@ -1,10 +1,30 @@
  
 #  Extracting Raster Values for Points 
-Stay organized with collections  Save and categorize content based on your preferences. 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md "View changes to this article over time.")
-Author(s): [ swinsem ](https://github.com/swinsem "View the profile for swinsem on GitHub")
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Context](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#context)
+  * [Functions](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#functions)
+    * [bufferPoints(radius, bounds) ⇒ Function](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#bufferpointsradius_bounds_⇒_function)
+    * [zonalStats(fc, params) ⇒ ee.FeatureCollection](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#zonalstatsfc_params_⇒_eefeaturecollection)
+  * [Point collection import](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#point_collection_import)
+  * [Neighborhood statistic examples](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#neighborhood_statistic_examples)
+    * [Topographic variables](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#topographic_variables)
+    * [MODIS time series](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#modis_time_series)
+    * [Landsat time series](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#landsat_time_series)
+    * [Dealing with large collections](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#dealing_with_large_collections)
+  * [Additional notes](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#additional_notes)
+    * [Common reducers](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#common_reducers)
+    * [Weighted vs unweighted region reduction](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#weighted_vs_unweighted_region_reduction)
+    * [Copy properties to computed images](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#copy_properties_to_computed_images)
+    * [Understanding which pixels are included in polygon statistics](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#understanding_which_pixels_are_included_in_polygon_statistics)
+    * [Notes on CRS and scale:](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#notes_on_crs_and_scale)
+  * [References](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#references)
+
+
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md)
+Author(s): [ swinsem ](https://github.com/swinsem)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 _This tutorial uses the[Earth Engine Code Editor JavaScript API](https://developers.google.com/earth-engine/guides/playground)._
 Extracting raster values for points or plots is essential for many types of projects. This tutorial will show you how to use Earth Engine to get a full time series of image values for points or plots in your dataset. We will lay out the process and functions for how to extract raster values for points using any dataset and then apply them to a few examples.

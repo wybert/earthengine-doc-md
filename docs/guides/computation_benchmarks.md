@@ -117,3 +117,4 @@ Operation | Processing | Region | Scale | Timeframe | Samples | Compute benchmar
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 12 months | N/A | 105.09 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 6 months | N/A | 41.53 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 3 months | N/A | 29.95 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Was this helpful?

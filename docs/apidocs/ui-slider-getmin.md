@@ -1,8 +1,7 @@
  
 #  ui.Slider.getMin 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns the slider's minimum value. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the slider's minimum value. Usage| Returns  
 ---|---  
 `Slider.getMin()`| Number  
 Argument| Type| Details  

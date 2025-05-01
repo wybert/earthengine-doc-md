@@ -29,4 +29,3 @@ importgeemap.coreasgeemap
 print('Square root of 100:', ee.Number(100).sqrt().getInfo()) # 10
 ```
 
-Was this helpful?

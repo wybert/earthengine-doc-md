@@ -1,6 +1,10 @@
  
 #  ee.Dictionary.aside 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-aside#examples)
+
+
 Calls a function passing this object as the first argument, and returning itself. Convenient e.g. when debugging: 
 var c = ee.ImageCollection('foo').aside(print)
 .filterDate('2001-01-01', '2002-01-01').aside(print, 'In 2001')
@@ -17,7 +21,7 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
 `func`| Function| The function to call.  
 `var_args`| VarArgs| Any extra arguments to pass to the function.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-aside#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-aside#colab-python-sample) More
 ```
 // A dictionary (e.g. results of ee.Image.reduceRegion of an S2 image).
 vardict={
@@ -28,15 +32,12 @@ B3:443
 // Print a message when constructing the ee.Dictionary.
 vareeDict=ee.Dictionary(dict).aside(print,'ee.Dictionary from an object');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A dictionary (e.g. results of ee.Image.reduceRegion of an S2 image).
 dic = {
@@ -52,3 +53,4 @@ defprint_dic(dic):
 ee_dic = ee.Dictionary(dic).aside(print_dic)
 ```
 
+Was this helpful?

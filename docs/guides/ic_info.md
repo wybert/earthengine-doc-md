@@ -1,8 +1,8 @@
  
 #  ImageCollection Information and Metadata 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 As with Images, there are a variety of ways to get information about an `ImageCollection`. The collection can be printed directly to the console, but the console printout is limited to 5000 elements. Collections larger than 5000 images will need to be filtered before printing. Printing a large collection will be correspondingly slower. The following example shows various ways of getting information about image collections programmatically:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_info#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_info#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 ImageCollection for a single path-row.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -26,12 +26,15 @@ print('Least cloudy image: ',image);
 varrecent=collection.sort('system:time_start',false).limit(10);
 print('Recent images: ',recent);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 ImageCollection for a single path-row.
 collection = (

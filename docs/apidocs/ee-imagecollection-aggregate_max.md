@@ -101,4 +101,3 @@ print('Max of property values (string):',
    col.aggregate_max(prop_string).getInfo())
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ee.Geometry.BBox.buffer 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-buffer#examples)
 
@@ -54,4 +54,3 @@ m.add_layer(bbox_buffer, {'color': 'red'}, 'Result [red]: bbox.buffer')
 m
 ```
 
-Was this helpful?

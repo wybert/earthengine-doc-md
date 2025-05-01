@@ -1,6 +1,6 @@
  
 #  ee.Array.toList 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Turns an Array into a list of lists of numbers. 
 Usage| Returns  
 ---|---  

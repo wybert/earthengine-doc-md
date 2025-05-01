@@ -1,15 +1,6 @@
  
 #  Method: projects.video.export 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#authorization-scopes)
-  * [VideoFileExportOptions](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#videofileexportoptions)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a video and writes the result to one of several destinations.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1beta/{project=projects/*}/video:export`

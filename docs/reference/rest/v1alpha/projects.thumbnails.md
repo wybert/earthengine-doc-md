@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.thumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: Thumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.thumbnails#resource:-thumbnail)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.thumbnails#methods)
@@ -47,4 +47,3 @@ Fields
 |  Creates an ID that can be used to render a "thumbnail" image.  
 ### `getPixels[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.thumbnails/getPixels)`
 |  Computes an image showing the result of a computation.  
-Was this helpful?

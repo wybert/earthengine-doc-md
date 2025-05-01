@@ -17,3 +17,4 @@ Argument| Type| Details
 `dateFormat`| Integer, default: 0| The time representation to use during fitting: 0 = jDays, 1 = fractional years, 2 = unix time in milliseconds. The start, end and break times for each temporal segment will be encoded this way.  
 `lambda`| Float, default: 20| Lambda for LASSO regression fitting. If set to 0, regular OLS is used instead of LASSO.  
 `maxIterations`| Integer, default: 25000| Maximum number of runs for LASSO regression convergence. If set to 0, regular OLS is used instead of LASSO.  
+Was this helpful?

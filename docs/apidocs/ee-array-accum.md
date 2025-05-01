@@ -62,4 +62,3 @@ display(ee.Array([2, -2, 3, 1]).accum(0, ee.Reducer.min()))
 display(ee.Array([2, -2, 3]).accum(0, ee.Reducer.product()))
 ```
 
-Was this helpful?

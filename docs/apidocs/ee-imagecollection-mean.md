@@ -1,6 +1,10 @@
  
 #  ee.ImageCollection.mean 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-mean#examples)
+
+
 Reduces an image collection by calculating the mean of all values at each pixel across the stack of all matching bands. Bands are matched by name. 
 Usage| Returns  
 ---|---  
@@ -9,7 +13,7 @@ Argument| Type| Details
 ---|---|---  
 this: `collection`| ImageCollection| The image collection to reduce.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-mean#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-mean#colab-python-sample) More
 ```
 // Sentinel-2 image collection for July 2021 intersecting a point of interest.
 // Reflectance, cloud probability, and scene classification bands are selected.
@@ -66,8 +70,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Sentinel-2 image collection for July 2021 intersecting a point of interest.
 # Reflectance, cloud probability, and scene classification bands are selected.

@@ -10,4 +10,3 @@ Argument| Type| Details
 this: `list`| List|   
 `oldval`| Object|   
 `newval`| Object|   
-Was this helpful?

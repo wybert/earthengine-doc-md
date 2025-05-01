@@ -1,7 +1,12 @@
  
 #  ee.ImageCollection.getRegion 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Output an array of values for each [pixel, band, image] tuple in an ImageCollection. The output contains rows of id, lon, lat, time, and all bands for each image that intersects each pixel in the given region. Attempting to extract more than 1048576 values will result in an error. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getregion#examples)
+
+
+Output an array of values for each [pixel, band, image] tuple in an ImageCollection. The output contains rows of id, lon, lat, time, and all bands for each image that intersects each pixel in the given region. Attempting to extract more than 1048576 values will result in an error. 
+Usage| Returns  
 ---|---  
 `ImageCollection.getRegion(geometry,  _scale_, _crs_, _crsTransform_)`| List  
 Argument| Type| Details  
@@ -12,7 +17,7 @@ this: `collection`| ImageCollection| The image collection to extract data from.
 `crs`| Projection, optional| The projection to work in. If unspecified, defaults to EPSG:4326. If specified in addition to scale, the projection is rescaled to the specified scale.  
 `crsTransform`| List, default: null| The array of CRS transform values. This is a row-major ordering of a 3x2 affine transform. This option is mutually exclusive with the scale option, and will replace any transform already set on the given projection.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getregion#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getregion#colab-python-sample) More
 ```
 // A Landsat 8 TOA image collection (3 months at a specific point, RGB bands).
 varcol=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -56,15 +61,12 @@ scale:30
 });
 print('Point geometry example',pixelInfoPoints);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Landsat 8 TOA image collection (3 months at a specific point, RGB bands).
 col = (
@@ -103,3 +105,4 @@ pixel_info_points = col.getRegion(geometry=points, scale=30)
 display('Point geometry example', pixel_info_points)
 ```
 
+Was this helpful?

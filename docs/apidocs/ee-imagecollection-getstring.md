@@ -1,6 +1,10 @@
  
 #  ee.ImageCollection.getString 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getstring#examples)
+
+
 Extract a property from a feature. 
 Usage| Returns  
 ---|---  
@@ -10,7 +14,7 @@ Argument| Type| Details
 this: `object`| Element| The feature to extract the property from.  
 `property`| String| The property to extract.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getstring#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getstring#colab-python-sample) More
 ```
 // A contrived, empty image collection for simple demonstration.
 varcol=ee.ImageCollection([]);
@@ -44,8 +48,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 frompprintimport pprint
 # A contrived, empty image collection for simple demonstration.
@@ -78,3 +80,4 @@ print('Project year (ee.Number):', col.getNumber('project_year').getInfo())
 print('Plot IDs (ee.Array):', col.getArray('plot_ids').getInfo())
 ```
 
+Was this helpful?

@@ -1,8 +1,7 @@
  
 #  ee.Blob 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Loads a Blob from a Google Cloud Storage URL. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Loads a Blob from a Google Cloud Storage URL. Usage| Returns  
 ---|---  
 `ee.Blob(url)`| Blob  
 Argument| Type| Details  

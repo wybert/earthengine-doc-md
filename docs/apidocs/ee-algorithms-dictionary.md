@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `input`| Object, default: null| An object to convert to a dictionary. Either a JSON dictionary or a list of alternating key/value pairs. Keys must be strings.  
-Was this helpful?

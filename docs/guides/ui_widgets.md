@@ -1,6 +1,6 @@
  
 #  Widgets 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 There are a variety of widgets you can use to build your UIs. These widgets include buttons, checkboxes, sliders, textboxes and selection menus. Widgets can only be printed or added to a panel once. The following sections illustrate the basic functionality, look, and feel of the widgets. See the [Style section](https://developers.google.com/earth-engine/guides/ui_widgets#styling-widgets) for more information on styling your widgets. The following examples simply `print()` the widgets to the console. For details on adding widgets to panels, see the [Panels and Layouts page](https://developers.google.com/earth-engine/guides/ui_panels).
 ## ui.Label
 Labels are simply areas in which text is displayed. For example, the following code prints a label:

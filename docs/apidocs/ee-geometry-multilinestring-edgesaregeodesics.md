@@ -1,8 +1,7 @@
  
 #  ee.Geometry.MultiLineString.edgesAreGeodesics 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. 
-Usage| Returns  
+Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. Usage| Returns  
 ---|---  
 `MultiLineString.edgesAreGeodesics()`| Boolean  
 Argument| Type| Details  

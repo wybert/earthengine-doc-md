@@ -1,6 +1,6 @@
  
 #  ee.initialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Initialize the library. If this hasn't been called by the time any object constructor is used, it will be called then. If this is called a second time with a different baseurl or tileurl, this doesn't do an un-initialization of e.g.: the previously loaded Algorithms, but will overwrite them and let point at alternate servers. 
 If initialize() is first called in asynchronous mode (by passing a success callback), any future asynchronous mode calls will add their callbacks to a queue and all the callbacks will be run together.
 If a synchronous mode call is made after any number of asynchronous calls, it will block and execute all the previously supplied callbacks before returning.

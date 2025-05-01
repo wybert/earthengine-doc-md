@@ -1,14 +1,19 @@
  
 #  ee.ImageCollection.median 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Reduces an image collection by calculating the median of all values at each pixel across the stack of all matching bands. Bands are matched by name. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-median#examples)
+
+
+Reduces an image collection by calculating the median of all values at each pixel across the stack of all matching bands. Bands are matched by name. 
+Usage| Returns  
 ---|---  
 `ImageCollection.median()`| Image  
 Argument| Type| Details  
 ---|---|---  
 this: `collection`| ImageCollection| The image collection to reduce.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-median#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-median#colab-python-sample) More
 ```
 // Sentinel-2 image collection for July 2021 intersecting a point of interest.
 // Reflectance, cloud probability, and scene classification bands are selected.
@@ -59,15 +64,12 @@ Map.addLayer(count,{min:1,max:5},'Count (not cloud observations)');
 varmosaic=notCloudCol.mosaic();
 Map.addLayer(mosaic,visRefl,'Mosaic (B11, B8, B3)');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Sentinel-2 image collection for July 2021 intersecting a point of interest.
 # Reflectance, cloud probability, and scene classification bands are selected.
@@ -125,3 +127,4 @@ m.add_layer(mosaic, vis_refl, 'Mosaic (B11, B8, B3)')
 m
 ```
 
+Was this helpful?

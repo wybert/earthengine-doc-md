@@ -1,6 +1,12 @@
  
 #  REST Resource: projects.featureViews 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Resource: FeatureView](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureViews#resource:-featureview)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureViews#methods)
+    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureViews#create)
+
+
 ## Resource: FeatureView
 Information about a FeatureView map.
 JSON representation  

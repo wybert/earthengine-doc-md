@@ -18,4 +18,3 @@ ui.root.clear();
 ui.root.add(ui.Label('This is a custom user interface.'));
 ```
 
-Was this helpful?

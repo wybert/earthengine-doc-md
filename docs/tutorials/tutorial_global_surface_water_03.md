@@ -1,6 +1,6 @@
  
 #  Water Occurrence Change Intensity 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#visualization)
   * [Summarizing Change within a Region of Interest](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#summarizing-change-within-a-region-of-interest)

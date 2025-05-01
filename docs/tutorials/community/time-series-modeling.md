@@ -13,10 +13,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Exporting data](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#exporting_data)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/time-series-modeling/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/time-series-modeling/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/time-series-modeling/index.md "View changes to this article over time.")
-Author(s): [ ghidora77 ](https://github.com/ghidora77 "View the profile for ghidora77 on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/time-series-modeling/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/time-series-modeling/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/time-series-modeling/index.md)
+Author(s): [ ghidora77 ](https://github.com/ghidora77)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ## Overview
 The purpose of this tutorial is to establish a foundation for time series analysis on remotely sensed data. You will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes. At the completion of this tutorial, you will be able to build an explanatory model for temporal data which can be used in many different avenues of research.
@@ -258,3 +258,4 @@ More complex harmonic models might not be appropriate due to overfitting—in ot
 ### Exporting data
 Many of you might be more familiar with building statistical models in other languages or tools, such as Python, R or JMP. In that case, you might want to export the data for your own analysis. There are several ways to do it, but the simplest method is to click the 'expand into new tab' button next to the chart that contains the data you want to work with (likely the raw NDVI data). In the new tab, you can click 'Download .csv', which is a data table that you can use with whichever software you prefer.
 ![Exporting Data](https://developers.google.com/static/earth-engine/tutorials/community/time-series-modeling/im_05_06.png)
+Was this helpful?

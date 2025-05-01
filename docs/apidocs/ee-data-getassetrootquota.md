@@ -1,6 +1,6 @@
  
 #  ee.data.getAssetRootQuota 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns quota usage details for the asset root with the given ID. 
 Usage notes:
 - The id _must_ be a root folder like "users/foo" (not "users/foo/bar").

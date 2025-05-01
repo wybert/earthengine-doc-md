@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.patch 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/patch#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/patch#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/patch#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/patch#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/patch#authorization-scopes)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Updates an asset. There are a number of constraints on the update operation:
   * Only the `title`, `description`, `startTime`, `endTime`, and `properties` fields of the asset can be updated.
   * Naming `"properties"` in `updateMask` results in all user-defined properties of the asset being replaced by the properties in `asset`.

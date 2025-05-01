@@ -1,10 +1,6 @@
  
 #  Objects and Methods Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Common Earth Engine object classes](https://developers.google.com/earth-engine/guides/objects_methods_overview#common_earth_engine_object_classes)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 The Earth Engine API is composed of objects and methods. Objects represent data types such as raster images, vector features, numbers, and strings. Each of these objects belongs to a specific class, and each class has a strict set of functions available to it.
 Objects and methods are combined in workflow scripts and sent to Earth Engine servers for processing. Learn about common object classes and their methods by clicking on the following cards to see example procedures.
 The full list of Earth Engine classes and their methods can be found in the **Client Libraries** section of the [API Reference Guide](https://developers.google.com/earth-engine/apidocs) (e.g. [`ee.Image.add`](https://developers.google.com/earth-engine/apidocs/ee-date-advance)). The same reference information is also available under the JavaScript Code Editor [**Docs**](https://developers.google.com/earth-engine/guides/playground#api-reference-docs-tab) tab.
@@ -36,4 +32,3 @@ An object for multi-dimensional analyses.
 [ ![](https://developers.google.com/static/earth-engine/images/classes_chart.png) ](https://developers.google.com/earth-engine/guides/charts_overview)
 ### [Chart ](https://developers.google.com/earth-engine/guides/charts_overview)
 An object for charting properties and spatiotemporal reductions. 
-Was this helpful?

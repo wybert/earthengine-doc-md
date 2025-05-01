@@ -1,7 +1,8 @@
  
 #  ui.Map.CloudStorageLayer.getShown 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns whether the layer is shown. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns whether the layer is shown. 
+Usage| Returns  
 ---|---  
 `CloudStorageLayer.getShown()`| Boolean  
 Argument| Type| Details  

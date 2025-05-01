@@ -45,3 +45,4 @@ importgeemap.coreasgeemap
 # Use ee.String.getInfo() instead.
 ```
 
+Was this helpful?

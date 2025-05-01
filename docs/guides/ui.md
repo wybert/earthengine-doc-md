@@ -1,6 +1,6 @@
  
 #  Earth Engine User Interface API 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine provides access to client-side user interface (UI) widgets through the `ui` package. Use the `ui` package to construct graphical interfaces for your Earth Engine scripts. These interfaces can include simple input widgets like buttons and checkboxes, more complex widgets like charts and maps, panels to control the layout of the UI, and event handlers for interactions between UI widgets. Explore the full functionality of the `ui` API in the **Docs** tab on the left side of the Code Editor. The following example uses the `ui` package to illustrate basic functions for making a widget, defining behavior for when the user clicks the widget, and displaying the widget.
 ## Hello, world!
 This example represents a simple UI of a button displayed in the console. Clicking the button results in 'Hello, world!' getting printed to the console:

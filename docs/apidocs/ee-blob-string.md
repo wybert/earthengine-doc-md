@@ -40,4 +40,3 @@ print(entry.getInfo()) # Point (1.00, 2.00)...
 print(entry.get('a_field').getInfo()) # "a demo field"
 ```
 
-Was this helpful?

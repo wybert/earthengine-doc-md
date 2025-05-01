@@ -43,4 +43,3 @@ point = ee.Geometry.Point([-122.08412, 37.42189]).aside(
 )
 ```
 
-Was this helpful?

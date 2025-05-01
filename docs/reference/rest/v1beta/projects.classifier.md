@@ -13,4 +13,3 @@ There is no persistent data associated with this resource.
 ---  
 ### `export[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.classifier/export)`
 |  Initiates a batch process that computes a classifier and saves it as an Earth Engine asset.  
-Was this helpful?

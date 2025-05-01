@@ -1,6 +1,6 @@
  
 #  Cost controls 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Configure alerts
 In order to control your Earth Engine resource usage and costs, you can configure alerts in Cloud Monitoring to warn you when a metric hits a certain threshold.
 The Cloud Monitoring alerting system is very flexible. We've collected a few of our favorite recipes here, but feel free to experiment with custom configurations that suit your needs.

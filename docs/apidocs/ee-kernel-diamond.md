@@ -1,12 +1,7 @@
  
 #  ee.Kernel.diamond 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-diamond#examples)
-
-
-Generates a diamond-shaped boolean kernel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Generates a diamond-shaped boolean kernel. Usage| Returns  
 ---|---  
 `ee.Kernel.diamond(radius,  _units_, _normalize_, _magnitude_)`| Kernel  
 Argument| Type| Details  
@@ -16,7 +11,7 @@ Argument| Type| Details
 `normalize`| Boolean, default: true| Normalize the kernel values to sum to 1.  
 `magnitude`| Float, default: 1| Scale each value by this amount.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-diamond#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-diamond#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('A diamond kernel',ee.Kernel.diamond({radius:3}));
 /**
@@ -31,12 +26,15 @@ print('A diamond kernel',ee.Kernel.diamond({radius:3}));
  * [0.00, 0.00, 0.00, 0.04, 0.00, 0.00, 0.00]
  */
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 print('A diamond kernel:')

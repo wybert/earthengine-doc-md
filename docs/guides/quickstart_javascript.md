@@ -94,3 +94,4 @@ print(chart);
   * Learn how to [export your computation results to BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery).
 
 
+Was this helpful?

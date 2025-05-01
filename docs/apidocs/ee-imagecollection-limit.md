@@ -12,3 +12,4 @@ this: `collection`| Collection| The Collection instance.
 `max`| Number| The number to limit the collection to.  
 `property`| String, optional| The property to sort by, if sorting.  
 `ascending`| Boolean, optional| Whether to sort in ascending or descending order. The default is true (ascending).  
+Was this helpful?

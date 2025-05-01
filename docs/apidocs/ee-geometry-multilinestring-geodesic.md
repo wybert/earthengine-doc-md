@@ -1,19 +1,14 @@
  
 #  ee.Geometry.MultiLineString.geodesic 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-geodesic#examples)
-
-
-If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage| Returns  
 ---|---  
 `MultiLineString.geodesic()`| Boolean  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-geodesic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-geodesic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -29,12 +24,15 @@ Map.addLayer(multiLineString,
 {'color':'black'},
 'Geometry [black]: multiLineString');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -54,4 +52,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

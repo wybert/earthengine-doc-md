@@ -1,6 +1,6 @@
  
 #  ee.Feature 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Features can be constructed from one of the following arguments plus an optional dictionary of properties: 
 - An ee.Geometry.
 - A GeoJSON Geometry.
@@ -26,6 +26,7 @@ varfeature=ee.Feature(ee.Geometry.Point([-114.318,38.985]));
 Map.addLayer(feature);
 Map.centerObject(feature,10);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -1,6 +1,14 @@
  
 #  Method: projects.assets.get 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/get#authorization-scopes)
+
+
 Gets detailed information about an asset.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/assets/**}`
@@ -25,3 +33,4 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

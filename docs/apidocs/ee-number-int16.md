@@ -80,4 +80,3 @@ print('Less than int16 min cast to int16 becomes int16 min:',
    out_of_range_lo_to_int16.getInfo())
 ```
 
-Was this helpful?

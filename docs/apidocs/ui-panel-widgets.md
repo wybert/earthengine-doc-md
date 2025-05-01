@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.panel`| ui.Panel| The ui.Panel instance.  
+Was this helpful?

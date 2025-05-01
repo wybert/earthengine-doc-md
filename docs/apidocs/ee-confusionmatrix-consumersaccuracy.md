@@ -1,19 +1,14 @@
  
 #  ee.ConfusionMatrix.consumersAccuracy 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-consumersaccuracy#examples)
-
-
-Computes the consumer's accuracy (reliability) of a confusion matrix defined as (correct / total) for each row. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the consumer's accuracy (reliability) of a confusion matrix defined as (correct / total) for each row. Usage| Returns  
 ---|---  
 `ConfusionMatrix.consumersAccuracy()`| Array  
 Argument| Type| Details  
 ---|---|---  
 this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-consumersaccuracy#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-consumersaccuracy#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Construct a confusion matrix from an array (rows are actual values,
 // columns are predicted values). We construct a confusion matrix here for
@@ -38,12 +33,15 @@ print("Producer's accuracy",confusionMatrix.producersAccuracy());
 // Calculate kappa statistic.
 print('Kappa statistic',confusionMatrix.kappa());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # Construct a confusion matrix from an array (rows are actual values,
@@ -73,4 +71,3 @@ pprint(confusion_matrix.producersAccuracy().getInfo())
 print("Kappa statistic:", confusion_matrix.kappa().getInfo())
 ```
 
-Was this helpful?

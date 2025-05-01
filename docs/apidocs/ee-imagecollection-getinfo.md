@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.getInfo 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 An imperative function that returns all the known information about this collection via an AJAX call. 
 Returns a collection description whose fields include:
 - features: a list containing metadata about the images in the collection.

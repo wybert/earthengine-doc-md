@@ -16,4 +16,3 @@ this: `ui.map`| ui.Map| The ui.Map instance.
 `mapTypeControl`| Boolean, optional| Whether to show the control that allows the user to change the base map. Defaults to true.  
 `fullscreenControl`| Boolean, optional| Whether to show the control that allows the user to make the map full-screen. Defaults to true.  
 `drawingToolsControl`| Boolean, optional| Whether to show the control that allows the user to add or edit the geometry drawing tools. Defaults to true if the drawing tools were previously added to the map. Ignored if the drawing tools were not previously added to the map.  
-Was this helpful?

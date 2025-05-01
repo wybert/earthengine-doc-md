@@ -1,10 +1,6 @@
  
 #  ee.Array.log10 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-log10#examples)
-
-
 On an element-wise basis, computes the base-10 logarithm of the input. 
 Usage| Returns  
 ---|---  

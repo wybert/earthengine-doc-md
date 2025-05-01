@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.algorithms 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms#resource)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms#methods)

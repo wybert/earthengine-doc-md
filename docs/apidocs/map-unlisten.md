@@ -8,3 +8,4 @@ Usage| Returns
 Argument|  Type| Details  
 ---|---|---  
 `idOrType`| String, optional| Either an ID returned by listen() when a callback was registered, an event type, or nothing. If an ID is passed, the corresponding callback is deleted. If an event type is passed, all callbacks registered with that event type are deleted. If nothing is passed, all callbacks are deleted.  
+Was this helpful?

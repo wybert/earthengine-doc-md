@@ -53,3 +53,4 @@ Map.addLayer(zeroXings.selfMask(),{palette:'FF0000'},'zero crossings');
 
 The zero-crossings output for an area near the San Francisco, CA airport should look something like Figure 1.
 ![zero crossings SFO](https://developers.google.com/static/earth-engine/images/Images_zero_crossings.png) Figure 1. Zero-crossings output (red) with the Landsat 8 panchromatic band in the background for an area near the San Francisco, California airport (right). 
+Was this helpful?

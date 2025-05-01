@@ -1,6 +1,6 @@
  
 #  ui.Map.DrawingTools 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 A set of tools for drawing on a map. 
 Usage| Returns  
 ---|---  

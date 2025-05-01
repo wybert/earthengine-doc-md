@@ -380,3 +380,4 @@ When adding an API key, referrer restrictions ensure that only the designated ap
   * Hit Save. The "Saving..." indicator should appear.
 
 ![Add referrers](https://developers.google.com/static/earth-engine/images/maps-api-set-referrer-restriction.jpg)
+Was this helpful?

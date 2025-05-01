@@ -1,17 +1,6 @@
  
 #  MODIS NDVI Times Series Animation 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#context)
-  * [Instructions](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#instructions)
-    * [1. Get MODIS NDVI collection](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#1_get_modis_ndvi_collection)
-    * [2. Define clipping and region boundary geometries](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#2_define_clipping_and_region_boundary_geometries)
-    * [3. Group images by composite date](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#3_group_images_by_composite_date)
-    * [4. Reduce composite groups](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#4_reduce_composite_groups)
-    * [5. Make visualization images](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#5_make_visualization_images)
-    * [6. Create an animated GIF](https://developers.google.com/earth-engine/tutorials/community/modis-ndvi-time-series-animation#6_create_an_animated_gif)
-
-
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/modis-ndvi-time-series-animation/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/modis-ndvi-time-series-animation/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/modis-ndvi-time-series-animation/index.md "View changes to this article over time.")

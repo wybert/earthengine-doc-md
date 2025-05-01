@@ -184,3 +184,4 @@ Fields
 ---  
 `x` |  `number` The x coordinate value.  
 `y` |  `number` The y coordinate value.  
+Was this helpful?

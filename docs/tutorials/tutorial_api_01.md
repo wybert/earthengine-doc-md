@@ -1,10 +1,6 @@
  
 #  Introduction to the Earth Engine JavaScript API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/tutorial_api_01#prerequisites)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Welcome to the introductory tutorial for the Google Earth Engine JavaScript API. This tutorial provides examples of how to use Earth Engine to analyze geospatial raster and vector data. By the end of the tutorial, you will have seen most of the basic functionality of the Earth Engine API.
 ## Prerequisites
   * [Register for Earth Engine](https://console.cloud.google.com/earth-engine). 

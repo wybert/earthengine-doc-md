@@ -139,3 +139,4 @@ Map.addLayer(
   'Upsampled landcover, saved')
 ```
 
+Was this helpful?

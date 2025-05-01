@@ -62,4 +62,3 @@ m.add_layer(point_union, {'color': 'red'}, 'Result [red]: point.union')
 m
 ```
 
-Was this helpful?

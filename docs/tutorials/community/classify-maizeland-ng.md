@@ -1,16 +1,6 @@
  
 #  Rapid Classification of Croplands 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Background](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#background)
-  * [Caveat](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#caveat)
-  * [Acknowledgement](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#acknowledgement)
-  * [1. Importing and visualizing data](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#1_importing_and_visualizing_data)
-  * [2. Setting up and implementing analytics](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#2_setting_up_and_implementing_analytics)
-  * [3. Calculate class area and export classified map](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#3_calculate_class_area_and_export_classified_map)
-  * [4.Final notes](https://developers.google.com/earth-engine/tutorials/community/classify-maizeland-ng#4final_notes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/classify-maizeland-ng/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/classify-maizeland-ng/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/classify-maizeland-ng/index.md "View changes to this article over time.")

@@ -45,3 +45,4 @@ importgeemap.coreasgeemap
 # Use ee.FeatureCollection.getInfo() instead.
 ```
 
+Was this helpful?

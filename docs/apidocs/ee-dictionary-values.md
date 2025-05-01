@@ -1,6 +1,6 @@
  
 #  ee.Dictionary.values 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-values#examples)
 
@@ -44,3 +44,4 @@ print('Values for selected keys converted to ee.List:',
 print('Values for all keys converted to ee.List:', dic.values().getInfo())
 ```
 
+Was this helpful?

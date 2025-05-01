@@ -1,6 +1,6 @@
  
 #  ui.Button.onClick 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Registers a callback that's fired when the button is clicked. 
 Returns an ID which can be passed to unlisten() to unregister the callback.
 Usage| Returns  

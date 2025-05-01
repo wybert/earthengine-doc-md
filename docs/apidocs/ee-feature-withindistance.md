@@ -1,7 +1,8 @@
  
 #  ee.Feature.withinDistance 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if and only if the geometries of two features are within a specified distance. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if and only if the geometries of two features are within a specified distance. 
+Usage| Returns  
 ---|---  
 `Feature.withinDistance(right, distance,  _maxError_, _proj_)`| Boolean  
 Argument| Type| Details  

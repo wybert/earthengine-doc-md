@@ -1,7 +1,18 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 3) 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#preliminaries)
+    * [Routines from Parts 1 and 2](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#routines_from_parts_1_and_2)
+    * [Relative radiometric normalization](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#relative_radiometric_normalization)
+    * [A Slightly Artificial Example](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#a_slightly_artificial_example)
+    * [A More Realistic Example](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#a_more_realistic_example)
+    * [Harmonization](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#harmonization)
+    * [Conclusion](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#conclusion)
+    * [Exercises](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt3#exercises)
+
+
+Author(s): [ mortcanty ](https://github.com/mortcanty)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt3/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt3/index.ipynb)  
 ---|---  
@@ -415,6 +426,13 @@ nc = ee.Image.constant(1).clip(aoi).updateMask(noChangeMask)
 
 ```
 ```
+iMAD result:
+iterations: 55
+canonical correlations: [0.9962911580327083,0.9939077628476969,0.973485998677739,0.9382149017221215,0.8926650749941412,0.733742800381792]
+orthogonal regression:
+
+```
+```
 /tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:207: DeprecationWarning: 
 Attention required for UMD/hansen/global_forest_change_2015! You are using a deprecated asset.
 To make sure your code keeps working, please update it.
@@ -423,11 +441,7 @@ Learn more: https://developers.google.com/earth-engine/datasets/catalog/UMD_hans
 
 ```
 ```
-iMAD result:
-iterations: 55
-canonical correlations: [0.9962911580327083,0.9939077628476969,0.973485998677739,0.9382149017221215,0.8926650749941412,0.733742800381792]
-orthogonal regression:
-     Slope    Intercept   Rho
+Slope    Intercept   Rho
 array([[ 0.81309867, 691.93588492,  0.96608128],
     [ 0.78237873, 442.69252666,  0.98327486],
     [ 0.92497782, 256.47932175,  0.991671 ],
@@ -625,7 +639,7 @@ iterations: 39
 canonical correlations: [0.9933014385513874,0.9792572713542846,0.92833667420112,0.862596267514323,0.8190016125288903,0.8002150414634657]
 orthogonal regression:
      Slope    Intercept   Rho
-array([[ 1.03444777, 33.24681386,  0.99082878],
+array([[ 1.03677993, 33.09499064,  0.98923624],
     [ 1.01143874, 45.80300849,  0.99367202],
     [ 1.04955523, 35.67312078,  0.99482327],
     [ 0.83321303, 224.78213871,  0.98303965],

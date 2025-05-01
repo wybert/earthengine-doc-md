@@ -241,3 +241,4 @@ Image(image_content)
 
 Here is the resulting thumbnail image:
 ![](https://developers.google.com/static/earth-engine/images/sentinel_2_thumbnail.png)
+Was this helpful?

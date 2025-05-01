@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.reset()`|   
 **No arguments.**
-Was this helpful?

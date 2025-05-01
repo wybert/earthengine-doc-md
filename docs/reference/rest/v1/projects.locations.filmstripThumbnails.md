@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.locations.filmstripThumbnails 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: FilmstripThumbnail
 Information about a filmstrip thumbnail.
 JSON representation  

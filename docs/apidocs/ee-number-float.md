@@ -37,3 +37,4 @@ float_number = number.float()
 print('ee.Number cast to float:', float_number.getInfo())
 ```
 
+Was this helpful?

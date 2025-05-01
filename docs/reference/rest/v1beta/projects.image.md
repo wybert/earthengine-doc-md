@@ -19,4 +19,3 @@ There is no persistent data associated with this resource.
 |  Initiates a batch process that computes an image and writes the result to one of several destinations.  
 ### `import[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import)`
 |  Imports an image.  
-Was this helpful?

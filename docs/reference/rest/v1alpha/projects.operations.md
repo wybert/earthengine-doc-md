@@ -1,16 +1,6 @@
  
 #  REST Resource: projects.operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: Operation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#resource:-operation)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#methods)
-    * [cancel](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#cancel)
-    * [delete](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#delete)
-    * [get](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#get)
-    * [list](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#list)
-    * [wait](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#wait)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: Operation
 This resource represents a long-running operation that is the result of a network API call.
 JSON representation  
@@ -57,4 +47,3 @@ Union field `result`. The operation result, which can be either an `error` or a 
 |  Lists operations that match the specified filter in the request.  
 ### `wait[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations/wait)`
 |  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state.  
-Was this helpful?

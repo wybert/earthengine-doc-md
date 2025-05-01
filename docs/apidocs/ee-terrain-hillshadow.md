@@ -1,8 +1,7 @@
  
 #  ee.Terrain.hillShadow 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Creates a shadow band, with output 1 where pixels are illumunated and 0 where they are shadowed. Takes as input an elevation band, azimuth and zenith of the light source in degrees, a neighborhood size, and whether or not to apply hysteresis when a shadow appears. Currently, this algorithm only works for Mercator projections, in which light rays are parallel. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a shadow band, with output 1 where pixels are illumunated and 0 where they are shadowed. Takes as input an elevation band, azimuth and zenith of the light source in degrees, a neighborhood size, and whether or not to apply hysteresis when a shadow appears. Currently, this algorithm only works for Mercator projections, in which light rays are parallel. Usage| Returns  
 ---|---  
 `ee.Terrain.hillShadow(image, azimuth, zenith,  _neighborhoodSize_, _hysteresis_)`| Image  
 Argument| Type| Details  

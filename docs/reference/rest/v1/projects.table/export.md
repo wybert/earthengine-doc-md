@@ -200,3 +200,4 @@ Fields
 `table` |  `string` Required. The BigQuery destination table reference in the following format: "projectId.dataset_id.table_id".If the referenced resource does not exist, new table will be created. This applies if "append" and "overwrite" parameters are both false as well.If the referenced resource does exist and has compatible schema, one of the "overwrite" and "append" parameters has to be true, otherwise the task will fail.If referenced resource exists and schema is not compatible with the existing one, task will also fail.  
 `overwrite` |  `boolean` Specifies if the table data should be overwritten if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
 `append` |  `boolean` Specifies if the table data should be appended if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
+Was this helpful?

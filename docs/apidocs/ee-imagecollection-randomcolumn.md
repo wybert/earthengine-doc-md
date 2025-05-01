@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.randomColumn 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Adds a column of deterministic pseudorandom numbers to a collection. The outputs are double-precision floating point numbers. When using the 'uniform' distribution (default), outputs are in the range of [0, 1). Using the 'normal' distribution, outputs have μ=0, σ=1, but have no explicit limits. 
 Usage| Returns  
 ---|---  

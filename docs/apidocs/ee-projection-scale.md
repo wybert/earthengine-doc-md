@@ -1,7 +1,8 @@
  
 #  ee.Projection.scale 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the projection scaled by the given amount in each axis. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Returns the projection scaled by the given amount in each axis. 
+Usage| Returns  
 ---|---  
 `Projection.scale(x, y)`| Projection  
 Argument| Type| Details  

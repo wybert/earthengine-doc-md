@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.circularVariance()`| Reducer  
 **No arguments.**
+Was this helpful?

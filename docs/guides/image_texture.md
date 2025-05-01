@@ -1,8 +1,8 @@
  
 #  Texture 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Earth Engine has several special methods for estimating spatial texture. When the image is discrete valued (not floating point), you can use `image.entropy()` to compute the [entropy](http://en.wikipedia.org/wiki/Entropy_\(information_theory\)) in a neighborhood:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_texture#code-editor-javascript-sample) More
 ```
 // Load a high-resolution NAIP image.
 varimage=ee.Image('USDA/NAIP/DOQQ/m_3712213_sw_10_1_20140613');
@@ -22,7 +22,7 @@ Map.addLayer(entropy,
 
 Note that the NIR band is scaled to 8-bits prior to calling `entropy()` since the entropy computation takes discrete valued inputs. The non-zero elements in the kernel specify the neighborhood.
 Another way to measure texture is with a gray-level co-occurrence matrix (GLCM). Using the image and kernel from the previous example, compute the GLCM-based contrast as follows: 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_texture#code-editor-javascript-sample) More
 ```
 // Compute the gray-level co-occurrence matrix (GLCM), get contrast.
 varglcm=nir.glcmTexture({size:4});
@@ -34,7 +34,7 @@ Map.addLayer(contrast,
 
 Many measures of texture are output by `image.glcm()`. For a complete reference on the outputs, see [Haralick et al. (1973)](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4309314&tag=1) and [Conners et al. (1984)](http://www.sciencedirect.com/science/article/pii/0734189X8490197X).
 Local measures of spatial association such as Geary’s C [ (Anselin 1995)](http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00338.x/abstract) can be computed in Earth Engine using `image.neighborhoodToBands()`. Using the image from the previous example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_texture#code-editor-javascript-sample) More
 ```
 // Create a list of weights for a 9x9 kernel.
 varrow=[1,1,1,1,1,1,1,1,1];

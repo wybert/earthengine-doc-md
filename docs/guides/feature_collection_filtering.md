@@ -1,6 +1,6 @@
  
 #  Filtering a FeatureCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Filtering a `FeatureCollection` is analogous to filtering an `ImageCollection`. (See the [Filtering an ImageCollection section](https://developers.google.com/earth-engine/guides/ic_filtering)). There are the `featureCollection.filterDate()`, and `featureCollection.filterBounds()` convenience methods and the `featureCollection.filter()` method for use with any applicable `ee.Filter`. For example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_filtering#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_filtering#colab-python-sample) More
 ```

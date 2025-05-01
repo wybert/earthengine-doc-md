@@ -45,4 +45,3 @@ col = ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA').filterBounds(
 print('Number of images', col.size().getInfo())
 ```
 
-Was this helpful?

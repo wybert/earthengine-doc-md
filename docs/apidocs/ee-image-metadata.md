@@ -1,7 +1,8 @@
  
 #  ee.Image.metadata 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Generates a constant image of type double from a metadata property. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Generates a constant image of type double from a metadata property. 
+Usage| Returns  
 ---|---  
 `Image.metadata(property,  _name_)`| Image  
 Argument| Type| Details  

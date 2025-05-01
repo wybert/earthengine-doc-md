@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.getIamPolicy 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/getIamPolicy#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/getIamPolicy#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/getIamPolicy#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/getIamPolicy#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/getIamPolicy#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1/{resource=projects/*/assets/**}:getIamPolicy`

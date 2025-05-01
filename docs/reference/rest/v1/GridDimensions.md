@@ -15,4 +15,3 @@ Fields
 ---  
 `width` |  `integer` The width of the grid, in pixels.  
 `height` |  `integer` The height of the grid, in pixels.  
-Was this helpful?

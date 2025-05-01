@@ -198,7 +198,7 @@ mp.add_child(folium.LayerControl())
 Now we have a series of 26 SAR images and, for whatever reason, would like to know where and when changes have taken place. A first reaction might be:
 _What's the problem? Just apply the bitemporal method we developed in Part 2 to each of the 25 time intervals._
 Well, one problem is the rate of false positives. If the bitemporal tests are statistically independent, then the probability of **not** getting a false positive over a series of length k is the product of not getting one in each of the k−1 intervals, i.e., (1−α)k−1 and the overall first kind error probability αT is its complement:
-(3.1)αT=1−(1−α)k−1.
+αT=1−(1−α)k−1.
 For our case, even with a small value of α=0.01, this gives a whopping 22.2% false positive rate:
 ```
 alpha = 0.01
@@ -211,23 +211,23 @@ alpha = 0.01
 ```
 
 Actually things are a bit worse. The bitemporal tests are manifestly not independent because consecutive tests have one image in common. The best one can say in this situation is
-(3.2)αT≤(k−1)α,
+αT≤(k−1)α,
 or αT≤25% for k=26 and α=0.01 . If we wish to set a false positive rate of at most, say, 1% for the entire series, then each bitemporal test must have a significance level of α=0.0004 and a correspondingly large false negative rate β. In other words many significant changes may be missed.
 How to proceed? Perhaps by being a bit less ambitious at first and asking the simpler question: _Were there any changes at all over the interval?_ If the answer is affirmative, we can worry about how many there were and when they occurred later. Let's formulate this question as ...
 ### An omnibus test for change
-We'll start again with the easier single polarization case. For the series of _VV_ intensity images acquired at times t1,t2,…tk, our null hypothesis is that, at a given pixel position, there has been no change in the signal strengths ai=⟨|Svvai|2⟩ over the entire period, i.e.,
+We'll start again with the easier single polarization case. For the series of _VV_ intensity images acquired at times t1,t2,…tk, our null hypothesis is that, at a given pixel position, there has been no change in the signal strengths ai=⟨|Saivv|2⟩ over the entire period, i.e.,
 H0:a1=a2=⋯=ak=a.
 The alternative hypothesis is that there was at least one change (and possibly many) over the interval. For the more mathematically inclined this can be written succinctly as
 H1:∃i,j:ai≠aj,
 which says: there exist indices i,j for which ai is not equal to aj.
 Again, the likelihood functions are products of gamma distributions:
-(3.3)L1(a1,…,ak)=∏i=1kp(si∣ai)=1Γ(m)k[∏iaim]−m[∏isi]m−1exp⁡(−m∑isiai)
-(3.4)L0(a)=∏i=1kp(si∣a)=1Γ(m)k[am]−mk[∏isi]m−1exp⁡(−ma∑isi)
-and L1 is maximized for a^i=si,i=1…k, while L0 is maximized for a^=1k∑isi. So with a bit of simple algebra our likelihood ratio test statistic is
-(3.5)Qk=L0(a^)L1(a^1,…,a^k)=[kk∏isi(∑isi)k]m
+L1(a1,…,ak)=k∏i=1p(si∣ai)=1Γ(m)k[∏iaim]−m[∏isi]m−1exp(−m∑isiai)
+L0(a)=k∏i=1p(si∣a)=1Γ(m)k[am]−mk[∏isi]m−1exp(−ma∑isi)
+and L1 is maximized for ˆai=si,i=1…k, while L0 is maximized for ˆa=1k∑isi. So with a bit of simple algebra our likelihood ratio test statistic is
+Qk=L0(ˆa)L1(ˆa1,…,ˆak)=[kk∏isi(∑isi)k]m
 and is called an _omnibus test statistic_. Note that, for k=2, we get the bitemporal LRT given by [Eq. (2.10)](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2#the_likelihood_ratio_test).
 We can't expect to find an analytical expression for the probability distribution of this LRT statistic, so we will again invoke Wilks' Theorem and work with
-(3.6)−2log⁡Qk=[klog⁡k+∑ilog⁡si−klog⁡∑isi](−2m)
+−2logQk=[klogk+∑ilogsi−klog∑isi](−2m)
 According to Wilks, it should be approximately chi square distributed with k−1 degrees of freedom under H0. (Why?)
 The input cell below evaluates the test statistic Eq. (3.6) for a list of single polarization images. We prefer from now on to use as default the equivalent number of looks 4.4 that we discussed at the end of [Part 1](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1#equivalent_number_of_looks) rather than the actual number of looks m=5, in the hope of getting a better agreement.
 ```
@@ -346,7 +346,7 @@ mp.add_child(folium.LayerControl())
 You will notice in the output cell above that the calculation at nominal scale (the blue pixels) now takes considerably longer to complete. Also some red pixels are not completely covered by blue ones. Those changes are a spurious result of the falsified number of looks. Nevertheless for quick previewing purposes we might prefer to do without the reprojection.
 ### A sequential omnibus test
 Recalling the last remark at the end of [Part 2](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2#oh_and_one_more_thing_), let's now guess the omnibus LRT for the dual polarization case. From Eq. (3.5), replacing si→|ci|, ∑si→|∑ci| and kk→k2k, we get
-(3.7)Qk=[k2k∏i|ci||∑ici|k]m.
+Qk=[k2k∏i|ci||∑ici|k]m.
 This is in fact a special case of a more general omnibus test statistic
 Qk=[kpk∏i|ci||∑ici|k]m
 which holds for p×p polarimetric covariance matrix images, for example for the full dual pol matrix [Eq. (1.5)](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1#single_look_complex_slc_sar_measurements) or for full 3×3 quad pol matrices (p=3), but also for diagonal 2×2 and 3×3 matrices.
@@ -359,7 +359,7 @@ R2=[22s1s2(s1+s2)2]m.
 Suppose we conclude no change, that is, a1=a2. Now we don't do just another bitemporal test on the second interval. Instead we test the hypothesis
 H0:a1=a2=a3(=a)againstH1:a1=a2(=a)≠a3.
 So the alternative hypothesis is: _There was no change in the first interval**and** there was a change in the second interval_. The LRT is easy to derive, but let's go through it anyway.
-FromEq.(3.4):L0(a)=1Γ(m)3[am]−3m[s1s2s3]m−1exp⁡(−ma(s1+s2+s3)a^=13(s1+s2+s3)=>L0(a^)=1Γ(m)3[s1+s2+s33m]−3m[s1s2s3]m−1exp⁡(−3m)FromEq.(3.3):L1(a1,a2,a3)=1Γ(m)3[a1a2a3m]−m[s1s2s3]m−1exp⁡(−m(s1/a1+s2/a2+s3/a3)a^1=a^2=12(s1+s2),a^3=s3=>L1(a^1,a^2,a^3)=1Γ(m)3[(s1+s2)2s322m]−m[s1s2s3]m−1exp⁡(−3m)
+FromEq.(3.4):L0(a)=1Γ(m)3[am]−3m[s1s2s3]m−1exp(−ma(s1+s2+s3)ˆa=13(s1+s2+s3)=>L0(ˆa)=1Γ(m)3[s1+s2+s33m]−3m[s1s2s3]m−1exp(−3m)FromEq.(3.3):L1(a1,a2,a3)=1Γ(m)3[a1a2a3m]−m[s1s2s3]m−1exp(−m(s1/a1+s2/a2+s3/a3)ˆa1=ˆa2=12(s1+s2),ˆa3=s3=>L1(ˆa1,ˆa2,ˆa3)=1Γ(m)3[(s1+s2)2s322m]−m[s1s2s3]m−1exp(−3m)
 And, taking the ratio L0/L1of the maximum likelihoods,
 R3=[3322(s1+s2)2s3(s1+s2+s3)3]m.
 Not too hard to guess that, if we accept H0 again, we go on to test
@@ -371,7 +371,7 @@ Now for the cool part (try it out yourself):
 R2×R3×R4×R5=Q5.
 So, generalizing to a series of length k:
 **The omnibus test statistic Qk may be factored into the product of LRT's Rj which test for homogeneity in the measured reflectance signal up to and including time tj, assuming homogeneity up to time tj−1:**
-(3.8)Qk=∏j=2kRj,Rj=[jj(j−1)j−1(s1+⋯+sj−1)j−1sj(s1+⋯+sj)j]m,j=2…k.
+Qk=k∏j=2Rj,Rj=[jj(j−1)j−1(s1+⋯+sj−1)j−1sj(s1+⋯+sj)j]m,j=2…k.
 Moreover the test statistics Rj are stochastically independent under H0. This can be shown analytically, see [Conradsen et al. (2016)](https://ieeexplore.ieee.org/document/7398022) or P. 405 in my [textbook](https://www.taylorfrancis.com/books/9780429464348), but we'll show it here empirically by sampling the test statistics Rj in the region _aoi_sub_ and examining the correlation matrix.
 ```
 defsample_vv_imgs(j):
@@ -409,12 +409,12 @@ print(np.corrcoef(samples.getInfo()))
 The off-diagonal elements are mostly small. The not-so-small values can be attributed to sampling error or to the presence of some change pixels in the samples.
 #### Dual polarization and an algorithm
 With our substitution trick, we can now write down the sequential test for the dual polarization (bivariate) image time series. From Eq. (3.8) we get
-(3.9)Qk=∏j=2kRj,Rj=[j2j(j−1)2(j−1)|c1+⋯+cj−1|j−1|cj||c1+⋯+cj|j]m,j=2…k.
+Qk=k∏j=2Rj,Rj=[j2j(j−1)2(j−1)|c1+⋯+cj−1|j−1|cj||c1+⋯+cj|j]m,j=2…k.
 And of course we have again to use Wilks' Theorem to get the _P_ values, so we work with
-(3.10a)−2log⁡Rj=−2m[2(jlog⁡j−(j−1)log⁡(j−1)+(j−1)log⁡|∑i=1j−1ci|+log⁡|cj|−jlog⁡|∑i=1jci|]
+−2logRj=−2m[2(jlogj−(j−1)log(j−1)+(j−1)log|j−1∑i=1ci|+log|cj|−jlog|j∑i=1ci|]
 and
-(3.10b)−2log⁡Qk=∑j=2k−2log⁡Rj.
-The statistic −2log⁡Rj is approximately chi square distributed with two degrees of freedom. Similarly −2log⁡Qk is approximately chi square distributed with 2(k−1) degrees of freedom. Readers should satisfy themselves that these numbers are indeed the correct, taking into account that each measurement ci has two free parameters |Svva|2 and |Svhb|2, see [Eq. (2.13)](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2#bivariate_change_detection).
+−2logQk=k∑j=2−2logRj.
+The statistic −2logRj is approximately chi square distributed with two degrees of freedom. Similarly −2logQk is approximately chi square distributed with 2(k−1) degrees of freedom. Readers should satisfy themselves that these numbers are indeed the correct, taking into account that each measurement ci has two free parameters |Savv|2 and |Sbvh|2, see [Eq. (2.13)](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2#bivariate_change_detection).
 Now for the algorithm:
 **The sequential omnibus change detection algorithm**
 With a time series of k SAR images (c1,c2,…,ck),
@@ -429,19 +429,19 @@ With a time series of k SAR images (c1,c2,…,ck),
 Table 3.1 |  |  |  |  |  |   
 ---|---|---|---|---|---|---  
 ℓ | c1 | c2 | c3 | c4 | c5 |   
-5 |  | R25 | R35 | R45 | R55 | Q5  
-4 |  |  | R24 | R34 | R44 | Q4  
-3 |  |  |  | R23 | R33 | Q3  
+5 |  | R52 | R53 | R54 | R55 | Q5  
+4 |  |  | R42 | R43 | R44 | Q4  
+3 |  |  |  | R32 | R33 | Q3  
 2 |  |  |  |  | R22 | Q2  
 Thus if a change is found, the series is truncated up to the point of change and the testing procedure is repeated for the rest of the series. Take for example a series of k=5 images. (See Table 3.1 where, to avoid ambiguity, we add superscript ℓ to each Rj test). Suppose there is one change in the second interval only. Then the test sequence is (the asterisk means H0 is rejected)
-Q5∗→R25→R35∗→Q3.
+Q∗5→R52→R5∗3→Q3.
 If there are changes in the second and last intervals,
-Q5∗→R25→R35∗→Q3∗→R23→R33∗,
+Q∗5→R52→R5∗3→Q∗3→R32→R3∗3,
 and if there are significant changes in all four intervals,
-Q5∗→R25∗→Q4∗→R24∗→Q3∗→R23∗→Q2∗.
+Q∗5→R5∗2→Q∗4→R4∗2→Q∗3→R3∗2→Q∗2.
 The approach taken in the coding of this algorithm is to pre-calculate _P_ values for all of the Qℓ/Rj tests and then, in a second pass, to filter them to determine the points of change.
 #### Pre-calculating the _P_ value array
-The following code cell performs map operations on the indices ℓ and j, returning an array of _P_ values for all possible LRT statistics. For example again for k=5, the code calculates the _P_ values for each Rj entry in Table 3.1 as a list of lists. Before calculating each row, the time series c1,c2,c3,c4,c5 is sliced from k−ℓ+1 to k. The last entry in each row is simply the product of the other entries, Qℓ=∏j=2ℓRj.
+The following code cell performs map operations on the indices ℓ and j, returning an array of _P_ values for all possible LRT statistics. For example again for k=5, the code calculates the _P_ values for each Rj entry in Table 3.1 as a list of lists. Before calculating each row, the time series c1,c2,c3,c4,c5 is sliced from k−ℓ+1 to k. The last entry in each row is simply the product of the other entries, Qℓ=∏ℓj=2Rj.
 The program actually operates on the logarithms of the test statistics, Equations (3.10).
 ```
 deflog_det_sum(im_list, j):
@@ -609,8 +609,8 @@ The above change maps are still difficult to interpret. But what about _bmap_ , 
 cj−cj−1,j=2,…,k,
 to get the change direction. But we can do better. Instead of subtracting the value for the preceding image, cj−1, we can subtract the average over all values up to and including time j−1 for which no change has been signalled. For example for k=5, suppose there are significant changes in the first and fourth (last) interval. Then to get their directions we examine the differences
 c2−c1andc5−(c2+c3+c4)/3.
-The running averages can be conveniently determined with the so-called _provisional means algorithm_. The average c¯i of the first i images is calculated recursively as
-c¯i=c¯i−1+(ci−c¯i−1)/ic¯1=c1.
+The running averages can be conveniently determined with the so-called _provisional means algorithm_. The average ˉci of the first i images is calculated recursively as
+ˉci=ˉci−1+(ci−ˉci−1)/iˉc1=c1.
 The function _dmap_iter_ below is iterated over the bands of _bmap_ , replacing the values for changed pixels with
   * 1 for positive definite differences,
   * 2 for negative definite differences,

@@ -107,3 +107,4 @@ m.add_layer(fc_merged, {'color': 'yellow'}, 'Protected areas merged')
 m
 ```
 
+Was this helpful?

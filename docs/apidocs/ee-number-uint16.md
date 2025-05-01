@@ -1,14 +1,19 @@
  
 #  ee.Number.uint16 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Casts the input value to an unsigned 16-bit integer. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-uint16#examples)
+
+
+Casts the input value to an unsigned 16-bit integer. 
+Usage| Returns  
 ---|---  
 `Number.uint16()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-uint16#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-uint16#colab-python-sample) More
 ```
 // Cast a number to unsigned 16-bit integer: [0, 65535].
 varnumber=ee.Number(100);
@@ -38,15 +43,12 @@ print('Less than uint16 min:',outOfRangeLo);
 varoutOfRangeLoToUint16=outOfRangeLo.uint16();
 print('Less than uint16 min cast to uint16 becomes uint16 min:',outOfRangeLoToUint16);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Cast a number to unsigned 16-bit integer: [0, 65535].
 number = ee.Number(100)
@@ -80,3 +82,4 @@ print('Less than uint16 min cast to uint16 becomes uint16 min:',
    out_of_range_lo_to_uint16.getInfo())
 ```
 
+Was this helpful?

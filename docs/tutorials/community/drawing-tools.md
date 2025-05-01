@@ -15,10 +15,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Bonus](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#bonus)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools/index.md)
-Author(s): [ sufyanAbbasi ](https://github.com/sufyanAbbasi)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools/index.md "View changes to this article over time.")
+Author(s): [ sufyanAbbasi ](https://github.com/sufyanAbbasi "View the profile for sufyanAbbasi on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 In this tutorial, we'll deep dive into some interesting uses of the new drawing tools API. 
   * We'll learn how to dynamically generate a grid and save it as a client-side geometry.

@@ -36,4 +36,3 @@ print('Min of power plant capacities (MW):',
    fc.aggregate_min('capacitymw').getInfo()) # 1.8
 ```
 
-Was this helpful?

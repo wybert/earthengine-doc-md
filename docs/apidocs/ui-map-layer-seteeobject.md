@@ -1,6 +1,6 @@
  
 #  ui.Map.Layer.setEeObject 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the layer's ee.Object. 
 Returns this map layer.
 Usage| Returns  

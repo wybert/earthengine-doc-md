@@ -1,10 +1,6 @@
  
 #  ee.FeatureCollection.style 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Draw a vector collection for visualization using a simple style language. 
 Usage| Returns  
 ---|---  
@@ -21,7 +17,7 @@ this: `collection`| FeatureCollection| The collection to draw.
 `neighborhood`| Integer, default: 5| If styleProperty is used and any feature has a pointSize or width larger than the defaults, tiling artifacts can occur. Specifies the maximum neighborhood (pointSize + width) needed for any feature.  
 `lineType`| String, default: "solid"| The default line style for lines and outlines of polygons and point shapes. Defaults to 'solid'. One of: solid, dotted, dashed.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-style#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
@@ -67,6 +63,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(
@@ -110,4 +108,3 @@ m.add_layer(fc_vis_custom, None, 'Feature-specific style')
 m
 ```
 
-Was this helpful?

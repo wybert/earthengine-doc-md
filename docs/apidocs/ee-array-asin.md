@@ -1,14 +1,19 @@
  
 #  ee.Array.asin 
-Stay organized with collections  Save and categorize content based on your preferences. 
-On an element-wise basis, computes the arcsine in radians of the input. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-asin#examples)
+
+
+On an element-wise basis, computes the arcsine in radians of the input. 
+Usage| Returns  
 ---|---  
 `Array.asin()`| Array  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Array| The input array.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-asin#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-asin#colab-python-sample) More
 ```
 print(ee.Array([-1]).asin());// [-π/2]
 print(ee.Array([0]).asin());// [0]
@@ -41,15 +46,12 @@ pointSize:0,
 });
 print(chart);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importmath
 importaltairasalt

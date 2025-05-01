@@ -1,10 +1,6 @@
  
 #  ee.FeatureCollection.reduceColumns 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Apply a reducer to each element of a collection, using the given selectors to determine the inputs. 
 Returns a dictionary of results, keyed with the output names.
 Usage| Returns  
@@ -17,7 +13,7 @@ this: `collection`| FeatureCollection| The collection to aggregate over.
 `selectors`| List| A selector for each input of the reducer.  
 `weightSelectors`| List, default: null| A selector for each weighted input of the reducer.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-reducecolumns#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
@@ -55,12 +51,15 @@ weightSelectors:['weight']
 });
 print('Weighted mean of a single property',weightedMean);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(

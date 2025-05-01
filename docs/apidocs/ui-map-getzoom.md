@@ -1,19 +1,14 @@
  
 #  ui.Map.getZoom 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-getzoom#examples)
-
-
-Returns the current zoom level of the map. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the current zoom level of the map. Usage| Returns  
 ---|---  
 `Map.getZoom()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-map-getzoom#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.

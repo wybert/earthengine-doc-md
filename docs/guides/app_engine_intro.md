@@ -1,6 +1,6 @@
  
 #  App Engine & Earth Engine Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Deploying App Engine apps with Earth Engine](https://developers.google.com/earth-engine/guides/app_engine_intro#deploying-app-engine-apps-with-earth-engine)
     * [ Enable the Earth Engine API on your Google Cloud project ](https://developers.google.com/earth-engine/guides/app_engine_intro#enable-the-earth-engine-api-on-your-google-cloud-project)

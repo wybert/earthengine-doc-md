@@ -1,6 +1,17 @@
  
 #  Service Accounts 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Create a service account](https://developers.google.com/earth-engine/guides/service_account#create-a-service-account)
+  * [Create a private key for the service account](https://developers.google.com/earth-engine/guides/service_account#create-a-private-key-for-the-service-account)
+    * [Keep your key file safe](https://developers.google.com/earth-engine/guides/service_account#keep-your-key-file-safe)
+  * [Register the service account to use Earth Engine](https://developers.google.com/earth-engine/guides/service_account#register-the-service-account-to-use-earth-engine)
+  * [Use a service account with a private key](https://developers.google.com/earth-engine/guides/service_account#use-a-service-account-with-a-private-key)
+    * [What do I do if I get an invalid_grant error?](https://developers.google.com/earth-engine/guides/service_account#what-do-i-do-if-i-get-an-invalid_grant-error)
+  * [Use a default service account](https://developers.google.com/earth-engine/guides/service_account#use-a-default-service-account)
+  * [Set up REST API access](https://developers.google.com/earth-engine/guides/service_account#set-up-rest-api-access)
+
+
 **Note:** You do not need a service account to use the Earth Engine Python API. See [these instructions](https://developers.google.com/earth-engine/guides/python_install) for setting up the Earth Engine Python client library. 
 A [service account](https://cloud.google.com/iam/docs/service-accounts) is an account associated with an application rather than an end user. You may need to use a service account to authenticate to Earth Engine if you are developing an app or using the REST API. [Learn more about authenticating with service accounts.](https://developers.google.com/identity/protocols/oauth2/service-account)
 ## Create a service account

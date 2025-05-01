@@ -1,10 +1,6 @@
  
 #  ee.Number.cbrt 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-cbrt#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the cubic root of the input. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-cbrt#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-cbrt#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('Cubic root of 27',ee.Number(27).cbrt());// 3
 ```
@@ -23,6 +19,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 print('Cubic root of 27:', ee.Number(27).cbrt().getInfo()) # 3
 ```

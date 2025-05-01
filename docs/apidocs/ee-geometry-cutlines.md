@@ -1,10 +1,6 @@
  
 #  ee.Geometry.cutLines 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-cutlines#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Converts LineString, MultiLineString, and LinearRing geometries into a MultiLineString by cutting them into parts no longer than the given distance along their length. All other geometry types will be converted to an empty MultiLineString. 
 Usage| Returns  
 ---|---  
@@ -16,7 +12,7 @@ this: `geometry`| Geometry| Cuts the lines of this geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| Projection of the result and distance measurements, or EPSG:4326 if unspecified.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-cutlines#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-cutlines#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Geometry object.
 vargeometry=ee.Geometry({
@@ -46,6 +42,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Geometry object.
 geometry = ee.Geometry({
@@ -71,4 +69,3 @@ m.add_layer(
 m
 ```
 
-Was this helpful?

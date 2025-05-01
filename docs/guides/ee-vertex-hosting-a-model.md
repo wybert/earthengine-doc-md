@@ -1,15 +1,6 @@
  
 #  Hosted Custom Model for Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Model Input](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#model_input)
-  * [Model Artifact](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#model_artifact)
-    * [TensorFlow](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#tensorflow)
-    * [PyTorch](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#pytorch)
-  * [Model Deployment to Vertex AI](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#model_deployment_to_vertex_ai)
-  * [Model Endpoint Management](https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model#model_endpoint_management)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Performing inference with a custom trained model using a machine learning framework such as TensorFlow or PyTorch requires saving and uploading the model to Vertex AI, creating a prediction endpoint and deploying the model to serve traffic at the created endpoint.
 ## Model Input
 Before you save and upload your model to Vertex AI you should ensure that the model accepts data in a payload format that Earth Engine supports. For more details see our [payload formats](https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats.md) page for more details.
@@ -71,4 +62,3 @@ gcloudaiendpointsdeploy-model{endpoint-id}\
 ```
 
 Once your model is deployed you are ready to connect to your model in Earth Engine to perform inferences.
-Was this helpful?

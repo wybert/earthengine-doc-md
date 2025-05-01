@@ -1,6 +1,6 @@
  
 #  Compositing, Masking, and Mosaicking 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 With the [Landsat 8 TOA reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC8_L1T_TOA) loaded into a variable called `l8`, you saw that the following code results in a recent-value composite:
 ### Code Editor (JavaScript)
 ```

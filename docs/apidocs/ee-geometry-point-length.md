@@ -1,6 +1,6 @@
  
 #  ee.Geometry.Point.length 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the length of the linear parts of the geometry. Polygonal parts are ignored. The length of multi geometries is the sum of the lengths of their components. Usage| Returns  
 ---|---  
 `Point.length( _maxError_, _proj_)`| Float  

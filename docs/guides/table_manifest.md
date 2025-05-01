@@ -1,17 +1,6 @@
  
 #  Table Manifest Upload 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [One-time setup](https://developers.google.com/earth-engine/guides/table_manifest#one-time-setup)
-  * [Asset IDs and names](https://developers.google.com/earth-engine/guides/table_manifest#asset-ids-and-names)
-  * [Using manifests](https://developers.google.com/earth-engine/guides/table_manifest#using-manifests)
-    * [Multiple sources](https://developers.google.com/earth-engine/guides/table_manifest#multiple-sources)
-  * [Start and end time](https://developers.google.com/earth-engine/guides/table_manifest#start-and-end-time)
-  * [Manifest structure reference](https://developers.google.com/earth-engine/guides/table_manifest#manifest-structure-reference)
-  * [Manifest field definitions](https://developers.google.com/earth-engine/guides/table_manifest#manifest-field-definitions)
-  * [Limitations](https://developers.google.com/earth-engine/guides/table_manifest#limitations)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 If you need more flexibility uploading tables into Google Earth Engine (EE) than the [Code Editor UI](https://developers.google.com/earth-engine/table_upload) or the `upload` command of the ['earthengine' command-line tool](https://developers.google.com/earth-engine/command_line#upload) provide, you can do so by describing a table upload using a JSON file known as a "manifest" and using the `upload table --manifest` command of the command-line tool.
 ## One-time setup
   1. Manifest uploads only work with files located in [Google Cloud Storage](https://cloud.google.com/storage/getting-started/). To start using Google Cloud Storage, [create a Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects), if you don't already have one. Note that setup requires specifying a credit card for billing. EE itself isn't charging anyone at this point, but transferring files to Google Cloud Storage before uploading them to EE will have [a small cost](https://cloud.google.com/storage/pricing). For typical upload data sizes (tens or hundreds of gigabytes), the cost will be quite low.

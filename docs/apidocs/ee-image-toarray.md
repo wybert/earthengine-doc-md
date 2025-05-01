@@ -1,6 +1,6 @@
  
 #  ee.Image.toArray 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-toarray#examples)
 
@@ -92,3 +92,4 @@ display('2D array image (pixel)', samp_arr_img(array_img_2_d))
 # [2]]
 ```
 
+Was this helpful?

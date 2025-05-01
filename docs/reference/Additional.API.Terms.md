@@ -1,6 +1,6 @@
  
 #  Additional API Terms 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Additional API Terms](https://developers.google.com/earth-engine/reference/Additional.API.Terms#additional-api-terms)
 

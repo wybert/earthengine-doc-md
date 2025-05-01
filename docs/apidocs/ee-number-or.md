@@ -30,4 +30,3 @@ print('Either 0 or 5 non-zero?', ee.Number(0).Or(ee.Number(5)).getInfo()) # 1
 print('Either 0 or 0 non-zero?', ee.Number(0).Or(ee.Number(0)).getInfo()) # 0
 ```
 
-Was this helpful?

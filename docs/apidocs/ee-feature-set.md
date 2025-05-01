@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `element`| Element| The Element instance.  
 `var_args`| VarArgs| Either a dictionary of properties, or a vararg sequence of properties, e.g. key1, value1, key2, value2, ...  
-Was this helpful?

@@ -1,10 +1,6 @@
  
 #  ee.Filter.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-filter-bounds#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a filter that passes if the object's geometry intersects the given geometry. **Caution:** providing a large or complex collection as the `geometry` argument can result in poor performance. Collating the geometry of collections does not scale well; use the smallest collection (or geometry) that is required to achieve the desired outcome.
 Returns the constructed filter.
 Usage| Returns  
@@ -15,7 +11,7 @@ Argument| Type| Details
 `geometry`| ComputedObject|FeatureCollection|Geometry| The geometry, feature or collection to intersect with.  
 `errorMargin`| ComputedObject|Number, optional| An optional error margin. If a number, interpreted as sphere surface meters.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-filter-bounds#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-filter-bounds#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // collection.filterBounds() is preferred.
 // A Sentinel-2 surface reflectance image collection for 3 months in 2021.
@@ -39,6 +35,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # collection.filterBounds() is preferred.
 # A Sentinel-2 surface reflectance image collection for 3 months in 2021.

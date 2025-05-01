@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.abstractlayer`| ui.Map.AbstractLayer| The ui.Map.AbstractLayer instance.  
 `opacity`| Number, optional| The layer's opacity represented as a number between 0 and 1.  
-Was this helpful?

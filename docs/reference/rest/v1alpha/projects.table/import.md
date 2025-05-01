@@ -1,16 +1,6 @@
  
 #  Method: projects.table.import 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#authorization-scopes)
-  * [TableManifest](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#tablemanifest)
-  * [TableSource](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/import#tablesource)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Imports a table.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/table:import`

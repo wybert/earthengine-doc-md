@@ -111,4 +111,3 @@ map_fractions.add_layer(fractions, None, 'unmixed')
 display(map_fractions)
 ```
 ![unmixed_sf](https://developers.google.com/static/earth-engine/images/Images_unmixing_sf.png) Figure 1. Landsat 5 imagery unmixed to urban (red), vegetation (green) and water (blue) fractions. San Francisco bay area, California, USA. 
-Was this helpful?

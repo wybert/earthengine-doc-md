@@ -1,12 +1,7 @@
  
 #  ee.Geometry.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-serialize#examples)
-
-
-Returns the serialized representation of this object. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the serialized representation of this object. Usage| Returns  
 ---|---  
 `Geometry.serialize( _legacy_)`| String  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `geometry`| Geometry| The Geometry instance.  
 `legacy`| Boolean, optional| Enables legacy format.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-serialize#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-serialize#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Geometry object.
 vargeometry=ee.Geometry({
@@ -35,12 +30,15 @@ Map.addLayer(geometry,
 {'color':'black'},
 'Geometry [black]: geometry');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Geometry object.
 geometry = ee.Geometry({
@@ -63,4 +61,3 @@ m.add_layer(geometry, {'color': 'black'}, 'Geometry [black]: geometry')
 m
 ```
 
-Was this helpful?

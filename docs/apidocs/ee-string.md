@@ -1,10 +1,6 @@
  
 #  ee.String 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string#examples)
-
-
 Constructs a new String. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 `string`| Object|String| A string or a computed object.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print(ee.String('I am a string'));// I am a string
 // Strings can use emoji.
@@ -29,6 +25,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 print(ee.String('I am a string').getInfo()) # I am a string
 # Strings can use emoji.

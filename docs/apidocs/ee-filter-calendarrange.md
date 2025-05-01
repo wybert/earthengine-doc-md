@@ -1,12 +1,7 @@
  
 #  ee.Filter.calendarRange 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-filter-calendarrange#examples)
-
-
-Returns a filter that passes if the object's timestamp falls within the given range of a calendar field. The `month`, `day_of_year`, `day_of_month`, and `day_of_week` are 1-based. Times are assumed to be in UTC. Weeks are assumed to begin on Monday as day 1. If `end` < `start` then this tests for `value` >= `start` OR `value` <= `end`, to allow for wrapping. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a filter that passes if the object's timestamp falls within the given range of a calendar field. The `month`, `day_of_year`, `day_of_month`, and `day_of_week` are 1-based. Times are assumed to be in UTC. Weeks are assumed to begin on Monday as day 1. If `end` < `start` then this tests for `value` >= `start` OR `value` <= `end`, to allow for wrapping. Usage| Returns  
 ---|---  
 `ee.Filter.calendarRange(start,  _end_, _field_)`| Filter  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ Argument| Type| Details
 `end`| Integer, default: null| The end of the desired calendar field, inclusive. Defaults to the same value as start.  
 `field`| String, default: "day_of_year"| The calendar field to filter over. Options are: `year`, `month`, `hour`, `minute`, `day_of_year`, `day_of_month`, and `day_of_week`.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-filter-calendarrange#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-filter-calendarrange#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image collection intersecting the peak of
 // Mount Shasta, California, USA.
@@ -41,12 +36,15 @@ print('start DOY =',startDoy,
 'Images for a day-of-year range',
 ic.filter(ee.Filter.calendarRange(startDoy,endDoy,'day_of_year')));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image collection intersecting the peak of
 # Mount Shasta, California, USA.

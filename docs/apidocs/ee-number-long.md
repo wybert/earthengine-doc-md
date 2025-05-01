@@ -56,4 +56,3 @@ float_to_long = float_number.long()
 print('Floating point value cast to long:', float_to_long.getInfo())
 ```
 
-Was this helpful?

@@ -1,29 +1,6 @@
  
 #  Earth Engine access 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Get access to Earth Engine](https://developers.google.com/earth-engine/guides/access#get_access_to_earth_engine)
-  * [Specify a project](https://developers.google.com/earth-engine/guides/access#specify_a_project)
-    * [Client libraries (Python, JavaScript)](https://developers.google.com/earth-engine/guides/access#client_libraries_python_javascript)
-    * [Code Editor](https://developers.google.com/earth-engine/guides/access#code_editor)
-    * [Earth Engine Apps](https://developers.google.com/earth-engine/guides/access#earth_engine_apps)
-    * [Command-line tool](https://developers.google.com/earth-engine/guides/access#command-line_tool)
-    * [REST API](https://developers.google.com/earth-engine/guides/access#rest_api)
-  * [Configure project access](https://developers.google.com/earth-engine/guides/access#configure_project_access)
-    * [Service accounts](https://developers.google.com/earth-engine/guides/access#service_accounts)
-    * [Google Accounts](https://developers.google.com/earth-engine/guides/access#google_accounts)
-    * [OAuth 2.0 Client ID](https://developers.google.com/earth-engine/guides/access#oauth_20_client_id)
-    * [Common scenarios](https://developers.google.com/earth-engine/guides/access#common_scenarios)
-  * [Earth Engine data deletion](https://developers.google.com/earth-engine/guides/access#earth_engine_data_deletion)
-    * [Account-level deletion](https://developers.google.com/earth-engine/guides/access#account-level_deletion)
-    * [Cloud projects](https://developers.google.com/earth-engine/guides/access#cloud_projects)
-    * [Assets](https://developers.google.com/earth-engine/guides/access#assets)
-    * [Code Editor scripts](https://developers.google.com/earth-engine/guides/access#code_editor_scripts)
-    * [Earth Engine Apps](https://developers.google.com/earth-engine/guides/access#earth_engine_apps_2)
-    * ["Get Link" references](https://developers.google.com/earth-engine/guides/access#get_link_references)
-  * [Terminating commercial access](https://developers.google.com/earth-engine/guides/access#terminating_commercial_access)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine runs on Google Cloud and requires Cloud projects for access and API management. All Earth Engine calls (whether from the Code Editor, client libraries, Apps, or REST API) are routed through a Cloud project, enabling access control, resource management, and usage monitoring in the Cloud Console.
 ## Get access to Earth Engine
 To use Earth Engine you'll need access to a Cloud project that:
@@ -32,11 +9,12 @@ To use Earth Engine you'll need access to a Cloud project that:
   * grants you (or the user) the [correct roles and permissions](https://developers.google.com/earth-engine/guides/access_control).
 
 
-[Create a project](https://developers.google.com/earth-engine/guides/access#create-a-project)[Use an existing project](https://developers.google.com/earth-engine/guides/access#use-an-existing-project) More
+### Create a project
 Visit the [ registration page](https://console.cloud.google.com/earth-engine) to create and register a new Cloud project or register an existing project. 
 Projects created during the registration process can be managed in the [ Google Cloud Console](https://console.cloud.google.com/cloud-resource-manager). You can activate or deactivate the Earth Engine API from the [ Earth Engine API page on the Cloud Console](https://console.cloud.google.com/apis/library/earthengine.googleapis.com). 
 **Note:** In some cases, your organization's IT policy may prevent you from creating Google Cloud projects. In that case, we recommend reaching out to your admins to grant you the correct permissions (or to create a project for you). 
-_Manual steps (automated by the registration page)_ The [ registration page](https://console.cloud.google.com/earth-engine) automates these steps and is recommended. 
+_Manual steps (automated by the registration page)_
+The [ registration page](https://console.cloud.google.com/earth-engine) automates these steps and is recommended. 
 #### Create a Cloud project
 If you haven't already, create a [ Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects). You can do so from the [projects page](https://console.cloud.google.com/project) of the Cloud Console or click the following button: 
 [ Create a Cloud project](https://console.cloud.google.com/projectcreate)
@@ -58,6 +36,7 @@ earthengine create folder projects/my-project/assets/
 
 You can also create an asset folder for a project in the Code Editor by [adding the project](https://developers.google.com/earth-engine/cloud/assets#add-a-project) in the Assets panel. 
 You don't need to create this folder unless you plan to store assets in the project. 
+### Use an existing project
 Check with your organization's IT staff about existing Cloud projects configured for Earth Engine. Ensure that the Google Account you'll use to access Earth Engine services is granted the [correct roles and permissions](https://developers.google.com/earth-engine/guides/access_control) on the project.
 ## Specify a project
 The following sections describe how to specify a project for the various interfaces to Earth Engine's services.
@@ -102,9 +81,9 @@ https://foo-ee-project.appspot.com/oauth2callback
 
 [Learn more about authenticating users with OAuth](https://developers.google.com/identity/protocols/OAuth2UserAgent).
 ### Common scenarios
-I'm teaching an educational class...
+#### I'm teaching an educational class...
 Great! If you register a noncommercial project, no billing configuration is required. Then, you can add your students to the project.
-I'm part of an operational team/commercial organization...
+#### I'm part of an operational team/commercial organization...
 Great! You're able to register a project for commercial use, and add your collaborators to it. Please also pay attention to the seat limit in the Earth Engine subscription that you select.
 ## Earth Engine data deletion
 ### Account-level deletion
@@ -116,27 +95,31 @@ When a [Cloud project is deleted](https://cloud.google.com/resource-manager/docs
 ### Assets
 The simplest method for deleting your assets is to use the "Assets" tab in the Code Editor to view and manually delete your Earth Engine assets.
 For programmatic asset deletion of an asset with ID `projects/{project-id}/assets/{asset-id}` (e.g., `projects/my-project/assets/my-asset`):
-[Python client](https://developers.google.com/earth-engine/guides/access#python-client)[JavaScript client](https://developers.google.com/earth-engine/guides/access#javascript-client)[Command-line tool](https://developers.google.com/earth-engine/guides/access#command-line-tool) More
+### Python client
 ```
 ee.data.deleteAsset('projects/my-project/assets/my-asset')
 
 ```
 
+### JavaScript client
 Note that the Code Editor's security sandbox prevents this call from working in that environment.
 ```
 ee.data.deleteAsset('projects/my-project/assets/my-asset')
 
 ```
 
+### Command-line tool
 Use the `rm` command:
 ```
 earthenginermprojects/my-project/assets/my-asset
 ```
+
 **Note:** for legacy user-owned assets, the path structure is `users/{user-id}/{asset-id}`.
 ### Code Editor scripts
 To delete your [Earth Engine Code Editor scripts](https://developers.google.com/earth-engine/guides/playground#script_manager_scripts_tab):
-[Code Editor](https://developers.google.com/earth-engine/guides/access#code-editor)[Using Git](https://developers.google.com/earth-engine/guides/access#using-git) More
+### Code Editor
 From the ["Scripts" tab in the Code Editor](https://developers.google.com/earth-engine/guides/playground#script_manager_scripts_tab), select a script or repository and delete it. Once a repository has been marked as deleted, it becomes unrecoverable within 30 days.
+### Using Git
 Advanced users can use Git to manage their scripts. See <https://earthengine.googlesource.com/> to list the repositories that you can view.
 ### Earth Engine Apps
 To delete your Earth Engine Apps, use the ["Apps" button in the Code Editor to manage your Apps](https://developers.google.com/earth-engine/guides/apps#publishing-your-app).

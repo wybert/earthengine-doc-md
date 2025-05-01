@@ -39,4 +39,3 @@ importgeemap.coreasgeemap
 # Use ee.Geometry.getInfo() instead.
 ```
 
-Was this helpful?

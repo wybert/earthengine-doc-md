@@ -1,14 +1,19 @@
  
 #  print 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Prints the arguments to the console. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/print#examples)
+
+
+Prints the arguments to the console. 
+Usage| Returns  
 ---|---  
 `print(var_args)`|   
 Argument| Type| Details  
 ---|---|---  
 `var_args`| VarArgs| The objects to print.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/print#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/print#colab-python-sample) More
 ```
 print(1);// 1
 print(ee.Number(1));// 1
@@ -17,15 +22,12 @@ print(ee.ImageCollection('AAFC/ACI').size());// 10
 print(ee.Image('AAFC/ACI/2009'));// Image AAFC/ACI/2009 (1 band)
 print(ee.FeatureCollection("NOAA/NHC/HURDAT2/pacific").size());// 28547
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 """There is no dedicated print function for the Earth Engine Python API.
 To print Earth Engine objects, use Python's built-in `print` function.
@@ -46,3 +48,4 @@ print(
 ) # 28547
 ```
 
+Was this helpful?

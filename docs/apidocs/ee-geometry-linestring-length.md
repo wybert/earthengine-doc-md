@@ -1,10 +1,6 @@
  
 #  ee.Geometry.LineString.length 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-length#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the length of the linear parts of the geometry. Polygonal parts are ignored. The length of multi geometries is the sum of the lengths of their components. 
 Usage| Returns  
 ---|---  
@@ -15,7 +11,7 @@ this: `geometry`| Geometry| The input geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in the units of the coordinate system of this projection. Otherwise it will be in meters.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-length#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-length#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a LineString object.
 varlineString=ee.Geometry.LineString([[-122.09,37.42],[-122.08,37.43]]);
@@ -35,6 +31,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a LineString object.
 linestring = ee.Geometry.LineString([[-122.09, 37.42], [-122.08, 37.43]])
@@ -49,4 +47,3 @@ m.add_layer(linestring, {'color': 'black'}, 'Geometry [black]: linestring')
 m
 ```
 
-Was this helpful?

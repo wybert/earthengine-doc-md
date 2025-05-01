@@ -120,3 +120,4 @@ Fields
 `sequenceData` |  `boolean` If true, each pixel is output as a SequenceExample mapping scalar bands to the context and array bands to the example’s sequences. The SequenceExamples are output in row-major order of pixels in each patch, and then by row-major order of area patches in the file sequence.  
 `collapseBands` |  `boolean` If true, all bands will be combined into a single 3D tensor, taking on the name of the first band in the image. All bands are promoted to bytes, int64s, then floats in that order depending on the type furthest in that sequence within all bands. Array bands are allowed as long as tensorDepths is specified.  
 `maxMaskedRatio` |  `number` Maximum allowed proportion of masked pixels in a patch. Patches which exceed this allowance will be dropped rather than written to files. If this field is set to anything but 1, the JSON sidecar will not be produced. Defaults to 1.  
+Was this helpful?

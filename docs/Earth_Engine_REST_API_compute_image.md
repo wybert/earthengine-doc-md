@@ -1,6 +1,6 @@
  
 #  Image computations with the Earth Engine REST API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Before you begin](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#before_you_begin)
   * [Authenticate to Google Cloud](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#authenticate_to_google_cloud)
@@ -149,3 +149,4 @@ Image(image_content)
 
 ```
 
+Was this helpful?

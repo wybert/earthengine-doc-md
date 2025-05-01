@@ -1,6 +1,6 @@
  
 #  Monitoring usage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 This page describes how to create charts to monitor Earth Engine compute and storage consumption using Cloud Monitoring.
 There are other ways to monitor Earth Engine usage from the Cloud Console, which are not the focus of the document but include:
   * The **APIs & Services > Metrics** [page](https://console.cloud.google.com/apis/api/earthengine.googleapis.com/metrics), which shows basic metrics including traffic (number of requests), errors and latency (per API method, response code or credentials).
@@ -26,8 +26,7 @@ configuration](https://developers.google.com/static/earth-engine/images/Monitori
 
 The [Cloud Monitoring documentation](https://cloud.google.com/monitoring/docs) provides more guides on using Cloud Monitoring. In particular, the [Select the metrics to chart](https://cloud.google.com/monitoring/charts/metrics-selector) page provides a detailed overview of different ways to build queries, and the [Filtering and aggregation](https://cloud.google.com/monitoring/api/v3/aggregation) page provides more information about configuring the time series.
 ### Available Metrics
-Earth Engine metrics are in preview and are subject to change. 
-Metric | Description | Available labels  
+Earth Engine metrics are in preview and are subject to change.  Metric | Description | Available labels  
 ---|---|---  
 Completed EECU-seconds |  Earth Engine compute usage of successful requests in [ EECU-seconds](https://developers.google.com/earth-engine/guides/computation_overview#eecus). Usage is reported when a request completes and is not reported for failed requests.  |  **`compute_type`**: The type of compute, based on the[ processing environment](https://developers.google.com/earth-engine/guides/processing_environments) of the request. One of [`online`, `batch`, `highvolume`]. **`client_type`**: The client type (if known), for example:`ee-js/latest` or `python/v0.1.300`. Client type is not set for batch compute. **`workload_tag`**: The workload tag (if supplied in the client), for example:`my-export1`. See the [ Workload tags ](https://developers.google.com/earth-engine/guides/monitoring_usage#workload-tags) section for how to set this label.   
 In-progress EECU-seconds |  Earth Engine compute usage of all requests in [ EECU-seconds](https://developers.google.com/earth-engine/guides/computation_overview#eecus). Usage is reported periodically as a request is running.  |  **`compute_type`**: The type of compute, based on the[ processing environment](https://developers.google.com/earth-engine/guides/processing_environments) of the request. One of [`online`, `batch`, `highvolume`]. **`client_type`**: The client type (if known), for example:`ee-js/latest` or `python/v0.1.300`. Client type is not set for batch compute. **`workload_tag`**: The workload tag (if supplied in the client), for example:`my-export1`. See the [ Workload tags ](https://developers.google.com/earth-engine/guides/monitoring_usage#workload-tags) section for how to set this label.   
@@ -54,6 +53,7 @@ Export.image.toAsset(composite);
 ee.data.resetWorkloadTag();// Reset to landsat-compositing
 ee.data.resetWorkloadTag(true);// Reset back to empty
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

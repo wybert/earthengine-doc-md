@@ -11,3 +11,4 @@ Argument| Type| Details
 `max`| Float| Maximum area in square meters (inclusive).  
 `maxError`| ErrorMargin, default: null| The maximum allowed error for computing the geometry's area.  
 `geometrySelector`| String, default: null| The name of the geometry property to use for filtering. Leave blank or use '.geo' to operate on the object's geometry.  
+Was this helpful?

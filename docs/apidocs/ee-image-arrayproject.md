@@ -1,12 +1,7 @@
  
 #  ee.Image.arrayProject 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayproject#examples)
-
-
-Projects the array in each pixel to a lower dimensional space by specifying the axes to retain. Dropped axes must be at most length 1. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Projects the array in each pixel to a lower dimensional space by specifying the axes to retain. Dropped axes must be at most length 1. Usage| Returns  
 ---|---  
 `Image.arrayProject(axes)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `input`| Image| Input image.  
 `axes`| List| The axes to retain. Other axes will be discarded and must be at most length 1.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayproject#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayproject#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -37,12 +32,15 @@ vararrayImg2Dto1D=arrayImg2D.arrayProject([0]);
 print('2D array image (pixel)',sampArrImg(arrayImg2Dto1D));
 // [0, 1, 2, 3, 4, 5]
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):
@@ -65,4 +63,3 @@ print('2D array image (pixel):', samp_arr_img(array_img_2d_to_1d).getInfo())
 # [0, 1, 2, 3, 4, 5]
 ```
 
-Was this helpful?

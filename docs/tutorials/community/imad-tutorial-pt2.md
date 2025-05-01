@@ -1,23 +1,7 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 2) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#context)
-  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#preliminaries)
-    * [Routines from Part 1](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#routines_from_part_1)
-  * [Iterative re-weighting](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#iterative_re-weighting)
-    * [The iMAD code](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#the_imad_code)
-    * [Run iMAD algorithm as export task](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#run_imad_algorithm_as_export_task)
-    * [Clustering](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#clustering)
-    * [Interpretation](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#interpretation)
-    * [Comparison with Dynamic World](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#comparison_with_dynamic_world)
-    * [Simple difference revisited](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#simple_difference_revisited)
-    * [Deforestation quantified](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#deforestation_quantified)
-  * [Summary](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#summary)
-  * [Exercises](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#exercises)
-
-
-Author(s): [ mortcanty ](https://github.com/mortcanty)
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb)  
 ---|---  
@@ -221,13 +205,13 @@ defmad_run(image1, image2, scale=20):
 
 ## Iterative re-weighting
 Let's consider two images of the same scene acquired at different times under similar conditions, similar to the Sentinel-2 images from Part 1, but for which no ground reflectance changes have occurred. In this case, the only differences between the images will be due to random effects such as instrument noise and atmospheric fluctuations. Therefore, we can expect that the histogram of any difference component we generate will be nearly Gaussian. Specifically, the MAD variates, which we have seen to be uncorrelated, should follow a multivariate, zero-mean normal distribution with a diagonal covariance matrix.
-ΣM=(σ2M10⋯00σ2M2⋯0⋮⋮⋯000⋯σ2MN).
+$$ \Sigma_M = \pmatrix{\sigma^2_{M_1} &0 &\cdots &0 \cr 0 & \sigma^2_{M_2} &\cdots &0 \cr \vdots &\vdots &\cdots &0 \cr 0 & 0 &\cdots &\sigma^2_{M_N}}. $$
 Change observations would deviate more or less strongly from such a distribution. We might therefore expect an improvement in the sensitivity of the MAD transformation _if we can establish a better background of no change against which to detect change._ This can be done in an iteration scheme ([Nielsen 2007](https://www2.imm.dtu.dk/pubdb/pubs/4695-full.html)) in which, when calculating the statistics for each successive iteration of the MAD transformation, observations are weighted in some appropriate fashion.
-Recall that the variable Z represents the sum of the squares of the standardized MAD variates,
-Z=N∑i=1(MiσMi)2,
-where σ2Mi is given by Equation (8) in the first Tutorial,
-σ2Mi=var(Ui−Vi)=2(1−ρi),i=1…N,
-and ρi=cov(Ui,Vi). Then, since the no-change observations are expected to be normally distributed and uncorrelated, basic statistical theory tells us that the values of Z corresponding to no-change observations should be _chi-square distributed_ with N degrees of freedom. Let's check to what extent this is true for the MAD variates that we have determined so far for the Landkreis Olpe scene.
+Recall that the variable \\(Z\\) represents the sum of the squares of the standardized MAD variates,
+$$ Z = \sum_{i=1}^N\left({M_i\over \sigma_{M_i}}\right)^2, $$
+where \\(\sigma^2_{M_i}\\) is given by Equation (8) in the first Tutorial,
+$$ \sigma_{M_i}^2={\rm var}(U_i-V_i) = 2(1-\rho_i),\quad i=1\dots N, $$
+and \\(\rho_i = {\rm cov}(U_i,V_i)\\). Then, since the no-change observations are expected to be normally distributed and uncorrelated, basic statistical theory tells us that the values of \\(Z\\) corresponding to no-change observations should be _chi-square distributed_ with \\(N\\) degrees of freedom. Let's check to what extent this is true for the MAD variates that we have determined so far for the Landkreis Olpe scene.
 ```
 # Landkreis Olpe.
 aoi = ee.FeatureCollection(
@@ -259,10 +243,10 @@ Thu Jun 16 10:46:56 2022
 
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/imad-tutorial-pt2/index_files/output_4be3d71f_2.png)
 Clearly not the case at all. Which is to be expected, since there are many change pixels in the scene and we have made no attempt to discriminate them.
-In fact, it is easy to show that Z is a _likelihood ratio test statistic_ for change, see the discussion of statistical hypothesis testing in the [SAR Tutorial](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2) and the discussion on pp.390-391 in [Canty (2019)](https://www.taylorfrancis.com/books/image-analysis-classification-change-detection-remote-sensing-morton-john-canty/10.1201/9780429464348). Under the hypothesis that no change has occurred, the test statistic Z will follow, as we said, a chi-square distribution. The so-called p-_value_ is a measure of the extent to which this is true. For an observation z of the test statistic, the p-value is the probability that any sample drawn from the chi-square distribution could be as large as z or larger. This is given by
-p(z)=1−Pχ2;N(z),0<p(z)<1,
-where Pχ2;N(z) is the cumulative chi-square probability distribution, i.e., the area under the chi-square distribution up to the value z, and p(z) is its complement. All p-values are equally likely if no change has occurred at that pixel location⋆, but **change will always be associated with small p-values**. Therefore in order to eliminate the change observations from the MAD transformation, the p-value itself can be used to weight each pixel before re-sampling the images to determine the statistics for the next iteration. (This was the motivation for coding a _weighted_ covariance matrix routine in Part 1 earlier). The influence of the change observations on the MAD transformation is thereby gradually reduced. Iteration continues until some stopping criterion is met, such as lack of significant change in the canonical correlations ρi. The whole procedure constitutes the _iMAD algorithm_. It is implemented in the GEE Python API in the following cell:
-⋆ Thus the p-value is _not_ a no-change probability, a common misapprehension! See again the [SAR Tutorial](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2).
+In fact, it is easy to show that \\(Z\\) is a _likelihood ratio test statistic_ for change, see the discussion of statistical hypothesis testing in the [SAR Tutorial](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2) and the discussion on pp.390-391 in [Canty (2019)](https://www.taylorfrancis.com/books/image-analysis-classification-change-detection-remote-sensing-morton-john-canty/10.1201/9780429464348). Under the hypothesis that no change has occurred, the test statistic \\(Z\\) will follow, as we said, a chi-square distribution. The so-called \\(p\\)-_value_ is a measure of the extent to which this is true. For an observation \\(z\\) of the test statistic, the \\(p\\)-value is the probability that any sample drawn from the chi-square distribution could be as large as \\(z\\) or larger. This is given by
+$$ p(z) = 1-P_{\chi^2;N}(z),\quad 0 < p(z) < 1, $$
+where \\(P_{\chi^2;N}(z)\\) is the cumulative chi-square probability distribution, i.e., the area under the chi-square distribution up to the value \\(z\\), and \\(p(z)\\) is its complement. All \\(p\\)-values are equally likely if no change has occurred at that pixel location\\(^\star\\), but **change will always be associated with small \\(p\\)-values**. Therefore in order to eliminate the change observations from the MAD transformation, the \\(p\\)-value itself can be used to weight each pixel before re-sampling the images to determine the statistics for the next iteration. (This was the motivation for coding a _weighted_ covariance matrix routine in Part 1 earlier). The influence of the change observations on the MAD transformation is thereby gradually reduced. Iteration continues until some stopping criterion is met, such as lack of significant change in the canonical correlations \\(\rho_i\\). The whole procedure constitutes the _iMAD algorithm_. It is implemented in the GEE Python API in the following cell:
+\\(\star\\) Thus the \\(p\\)-value is _not_ a no-change probability, a common misapprehension! See again the [SAR Tutorial](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2).
 ### The iMAD code
 Toggle code ```
 defchi2cdf(Z,df):
@@ -407,7 +391,7 @@ canonical correlations: [0.9981250148930833,0.9818308995435004,0.959447530738478
 
 ```
 
-We got convergence after 28 iterations, and the correlations are very close to one for the first canonical variates. It might now be interesting to check if the test statistic Z has the expected chi-square distribution when evaluated for the no change pixels. To to eliminate the changes at the 10% significance level we set a lower threshold of α=0.1 on the p-values (recall: small p-values signify change).
+We got convergence after 28 iterations, and the correlations are very close to one for the first canonical variates. It might now be interesting to check if the test statistic \\(Z\\) has the expected chi-square distribution when evaluated for the no change pixels. To to eliminate the changes at the 10% significance level we set a lower threshold of \\(\alpha = 0.1\\) on the \\(p\\)-values (recall: small p-values signify change).
 ```
 scale = 20
 # p-values image.
@@ -444,7 +428,7 @@ Gray pixels point to no change, while the wide range of color in the iMAD variat
 **Aside:** We are of course primarily interested in extracting the changes in the iMAD image, especially those which mark clear cutting, and we'll come back to them in a moment. However, now that what we think the no change pixels have been isolated, we could also perform a regression analysis on them to determine how well the radiometric parameters of the two Sentinel-2 acquisitions compare. If surface rather than top of atmosphere (TOA) reflectance images had been used for the example, we would expect a good match, i.e., a slope close to one and an intercept close to zero at all spectral wavelengths. In general, for uncalibrated images, this will not be the case. In that event, the regression coefficients can be applied to normalize one image (the target, say) to the other (the reference). This might be desirable for tracing features such as NDVI indices over a time series of acquisitions when the images have not been reduced to surface reflectances, see e.g., [Gan et al. (2021)](https://ieeexplore.ieee.org/document/9392311), or indeed for _harmonizing_ the data from two different sensors of the same family such as Landsat 7 with Landsat 8. These topics will be the subject of Part 3.
 But now let's look in more detail at the changes in the Landkreis Olpe scene.
 ### Clustering
-To better interpret the change image, we can attempt an unsupervised classification. We'll see if we can get away with an ordinary K-means clusterer and a simple Euclidean distance measure for the complete iMAD image. We choose the number of clusters as 4 and leave all 12(!) other input parameters of the _wekaKmeans()_ clusterer at their default values. We will also first standardize the iMAD image by dividing by the square root of the variances of the no-change pixels, σi=√2(1−ρi),i=1…6. This will favour a more compact no-change cluster.
+To better interpret the change image, we can attempt an unsupervised classification. We'll see if we can get away with an ordinary K-means clusterer and a simple Euclidean distance measure for the complete iMAD image. We choose the number of clusters as 4 and leave all 12(!) other input parameters of the _wekaKmeans()_ clusterer at their default values. We will also first standardize the iMAD image by dividing by the square root of the variances of the no-change pixels, \\(\sigma_i = \sqrt{2(1-\rho_i)},\ i=1\dots 6\\). This will favour a more compact no-change cluster.
 ```
 # Standardize to no change sigmas.
 sigma2s = ee.Image.constant([2*(1-x) for x in eval(rhos)])

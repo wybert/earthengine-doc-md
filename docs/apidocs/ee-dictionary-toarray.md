@@ -47,3 +47,4 @@ print('Values for all keys converted to ee.Array:',
    dic.toArray().getInfo())
 ```
 
+Was this helpful?

@@ -48,4 +48,3 @@ print('Global power plant data provider as ee.String:',
    ee.String(fc.get('provider')).getInfo())
 ```
 
-Was this helpful?

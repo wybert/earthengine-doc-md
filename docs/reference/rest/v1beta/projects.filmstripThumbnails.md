@@ -1,14 +1,6 @@
  
 #  REST Resource: projects.filmstripThumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: FilmstripThumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#resource:-filmstripthumbnail)
-    * [Orientation](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#orientation)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#create)
-    * [getPixels](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#getpixels)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: FilmstripThumbnail
 Information about a filmstrip thumbnail.
 JSON representation  

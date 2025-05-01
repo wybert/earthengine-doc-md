@@ -13,4 +13,3 @@ Argument| Type| Details
 `tolerance`| Float, default: 0.0001| Convergence tolerance.  
 `alpha`| Float, default: 0.03333333333333333| Regularization parameter for segmentation.  
 `nRuns`| Integer, default: 100| Maximum number of runs for convergence.  
-Was this helpful?

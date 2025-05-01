@@ -51,4 +51,3 @@ pprint(ee.Kernel.manhattan(**{'radius': 3}).getInfo())
 # [6, 5, 4, 3, 4, 5, 6]
 ```
 
-Was this helpful?

@@ -1,6 +1,22 @@
  
 #  Python Installation 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Python support](https://developers.google.com/earth-engine/guides/python_install#python-support)
+  * [Install options](https://developers.google.com/earth-engine/guides/python_install#install-options)
+  * [Package import](https://developers.google.com/earth-engine/guides/python_install#package-import)
+  * [Authentication and Initialization](https://developers.google.com/earth-engine/guides/python_install#authentication-and-initialization)
+  * [Hello world!](https://developers.google.com/earth-engine/guides/python_install#hello-world)
+  * [Syntax](https://developers.google.com/earth-engine/guides/python_install#syntax)
+  * [Date objects](https://developers.google.com/earth-engine/guides/python_install#date-objects)
+  * [Exporting data](https://developers.google.com/earth-engine/guides/python_install#exporting-data)
+  * [Printing objects](https://developers.google.com/earth-engine/guides/python_install#printing-objects)
+  * [UI objects](https://developers.google.com/earth-engine/guides/python_install#ui-objects)
+  * [Python in the Developer Guide](https://developers.google.com/earth-engine/guides/python_install#python-in-the-developer-guide)
+    * [Earth Engine setup](https://developers.google.com/earth-engine/guides/python_install#earth-engine-setup)
+    * [Interactive exploration with geemap](https://developers.google.com/earth-engine/guides/python_install#interactive-exploration-with-geemap)
+
+
 Keep your client library up to date by running the command for the package manager you used to install `earthengine-api`: 
   * [Conda Package Manager](https://developers.google.com/earth-engine/guides/python_install-conda#updating_the_api): `conda update -c conda-forge earthengine-api`
   * [Python Package Installer](https://developers.google.com/earth-engine/guides/python_install#pip): `pip install earthengine-api --upgrade`
@@ -266,3 +282,4 @@ m.add_layer(img, None, 'Random image')
 display(m)
 ```
 
+Was this helpful?
