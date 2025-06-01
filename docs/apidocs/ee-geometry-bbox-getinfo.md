@@ -27,6 +27,7 @@ Map.addLayer(bBox,
 {'color':'black'},
 'Geometry [black]: bBox');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

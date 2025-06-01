@@ -1,10 +1,6 @@
  
 #  ee.Image.getDownloadURL 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-getdownloadurl#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Get a download URL for small chunks of image data in GeoTIFF or NumPy format. Maximum request size is 32 MB, maximum grid dimension is 10000. 
 Use getThumbURL for RGB visualization formats PNG and JPG.
 Returns returns a download URL, or undefined if a callback was specified.
@@ -76,6 +72,7 @@ scale:20,
 format:'GEO_TIFF'
 }));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `timeoutKey`| Number| The key to the timeout or interval to clear.  
+Was this helpful?

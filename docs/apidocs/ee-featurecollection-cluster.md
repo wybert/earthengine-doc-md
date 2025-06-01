@@ -1,6 +1,6 @@
  
 #  ee.FeatureCollection.cluster 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Clusters each feature in a collection, adding a new column to each feature containing the cluster number to which it has been assigned. Usage| Returns  
 ---|---  
 `FeatureCollection.cluster(clusterer,  _outputName_)`| FeatureCollection  

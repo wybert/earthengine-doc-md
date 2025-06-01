@@ -9,3 +9,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `id`| DownloadId| A table download id and token.  
+Was this helpful?

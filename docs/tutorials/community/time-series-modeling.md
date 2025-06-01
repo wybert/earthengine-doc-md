@@ -174,9 +174,9 @@ Consider the following linear model, where et is random error, A is amplitude, �
 pt=β0+β1t+Acos(2πωt−ϕ)+et
 We can decompose our function into separate cosine and sine elements.
 pt=β0+β1t+β2cos(2πωt)+β3sin(2πωt)+et
-Note that β2=Acos(ϕ) and β3=Asin(ϕ), implying A = (\beta_2^2 + \beta_3^2)^½ and \phi = atan(\frac{\beta_3}{\beta_2})).
+Note that β2=Acos(ϕ) and β3=Asin(ϕ), implying A=(β22+β23)½ and ϕ=atan(β3β2)).
 In simpler terms, we are breaking up more complex curves into a set of simplified cosine waves with an additive term. Mark Jakubauskas has an informative [paper](https://www.isprs.org/proceedings/xxxiii/congress/part4/384_xxxiii-part4.pdf) that breaks down the process, and there are many resources that elaborate more on the math behind harmonic models. Building a harmonic model is used in remote sensing applications because of its flexibility in accounting for cyclicality with simple, reproducible shapes. If there is a seasonal trend in the data, the ordered nature of a cosine curve can likely approximate it.
-To fit this model to the time series, set \omega=1 (one cycle per unit time) and use ordinary least squares regression as the metric of error reduction.
+To fit this model to the time series, set ω=1 (one cycle per unit time) and use ordinary least squares regression as the metric of error reduction.
 First, add the harmonic variables (the third and fourth terms of equation 2) to the image collection.
 ```
 // Use these independent variables in the harmonic regression.

@@ -1,6 +1,6 @@
  
 #  ee.Geometry.MultiPoint 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs an ee.Geometry describing a MultiPoint. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating EPSG:4326 MultiPoints given an even number of arguments, e.g. ee.Geometry.MultiPoint(aLng, aLat, bLng, bLat, ...).
 Usage| Returns  

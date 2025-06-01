@@ -1,7 +1,12 @@
  
 #  ui.Thumbnail 
-Stay organized with collections  Save and categorize content based on your preferences. 
-A fixed-size thumbnail image generated asynchronously from an ee.Image. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-thumbnail#examples)
+
+
+A fixed-size thumbnail image generated asynchronously from an ee.Image. 
+Usage| Returns  
 ---|---  
 `ui.Thumbnail( _image_, _params_, _onClick_, _style_)`| ui.Thumbnail  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ Argument| Type| Details
 `onClick`| Function, optional| A callback fired when the thumbnail is clicked.  
 `style`| Object, optional| An object of allowed CSS styles with their values to be set for this label. Defaults to an empty object.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-thumbnail#code-editor-javascript-sample) More
 ```
 // The goal is to create a series of thumbnail images for an elevation dataset
 // with different backgrounds. The background layers and image visualization
@@ -65,3 +70,4 @@ print(ui.Thumbnail({
 image:imageWithWaterLandBg,params:parameters}));
 ```
 
+Was this helpful?

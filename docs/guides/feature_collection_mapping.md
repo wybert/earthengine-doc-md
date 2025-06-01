@@ -1,6 +1,6 @@
  
 #  Mapping over a FeatureCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 To apply the same operation to every `Feature` in a `FeatureCollection`, use `featureCollection.map()`. For example, to add another area attribute to every feature in a watersheds `FeatureCollection`, use:
 ### Code Editor (JavaScript)
 ```
@@ -15,6 +15,7 @@ varareaAdded=sheds.map(addArea);
 // Print the first feature from the collection with the added property.
 print('First feature:',areaAdded.first());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -54,6 +55,7 @@ varcentroids=sheds.map(getCentroid);
 // Display the results.
 Map.addLayer(centroids,{color:'FF0000'},'centroids');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

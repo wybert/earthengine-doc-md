@@ -49,4 +49,3 @@ display(ee.Array([-1], ee.PixelType.int8()).bitCount()) # [64]
 display(ee.Array([-2]).bitCount())            # [63]
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.aggregate_array 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Aggregates over a given property of the objects in a collection, calculating a list of all the values of the selected property. Usage| Returns  
 ---|---  
 `ImageCollection.aggregate_array(property)`| List  

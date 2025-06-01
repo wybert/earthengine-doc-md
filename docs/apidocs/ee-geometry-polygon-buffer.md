@@ -63,3 +63,4 @@ m.add_layer(polygon_buffer, {'color': 'red'}, 'Result [red]: polygon.buffer')
 m
 ```
 
+Was this helpful?

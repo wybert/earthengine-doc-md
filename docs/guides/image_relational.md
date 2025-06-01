@@ -173,4 +173,3 @@ map_replaced.add_layer(replaced, vis_params, 'clouds replaced')
 display(map_replaced)
 ```
 
-Was this helpful?

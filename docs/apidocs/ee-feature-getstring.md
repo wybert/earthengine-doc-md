@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `object`| Element| The feature to extract the property from.  
 `property`| String| The property to extract.  
+Was this helpful?

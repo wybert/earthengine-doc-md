@@ -1,6 +1,6 @@
  
 #  Image Collections 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Filtering image collections](https://developers.google.com/earth-engine/tutorials/tutorial_api_04#filtering-image-collections)
     * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_api_04#code-editor-javascript_2)

@@ -11,3 +11,4 @@ this: `collection`| FeatureCollection| The collection to draw.
 `color`| String| A hex string in the format RRGGBB specifying the color to use for drawing the features.  
 `pointRadius`| Integer, default: 3| The radius in pixels of the point markers.  
 `strokeWidth`| Integer, default: 2| The width in pixels of lines and polygon borders.  
+Was this helpful?

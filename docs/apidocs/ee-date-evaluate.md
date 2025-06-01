@@ -47,4 +47,3 @@ importgeemap.coreasgeemap
 # Use ee.Date.getInfo() instead.
 ```
 
-Was this helpful?

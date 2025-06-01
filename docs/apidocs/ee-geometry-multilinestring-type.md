@@ -1,14 +1,19 @@
  
 #  ee.Geometry.MultiLineString.type 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the GeoJSON type of the geometry. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-type#examples)
+
+
+Returns the GeoJSON type of the geometry. 
+Usage| Returns  
 ---|---  
 `MultiLineString.type()`| String  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-type#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-type#colab-python-sample) More
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -24,15 +29,12 @@ Map.addLayer(multiLineString,
 {'color':'black'},
 'Geometry [black]: multiLineString');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -52,3 +54,4 @@ m.add_layer(
 m
 ```
 
+Was this helpful?

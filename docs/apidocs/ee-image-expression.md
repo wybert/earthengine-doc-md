@@ -1,10 +1,6 @@
  
 #  ee.Image.expression 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-expression#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Evaluates an arithmetic expression on an image, possibly involving additional images. 
 The bands of the primary input image are available using the built-in function b(), as b(0) or b('band_name').
 Variables in the expression are interpreted as additional image parameters which must be supplied in opt_map. The bands of each such image can be accessed like image.band_name or image[0].
@@ -20,7 +16,7 @@ this: `image`| Image| The Image instance.
 `expression`| String| The expression to evaluate.  
 `map`| Dictionary, optional| A map of input images available by name.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-expression#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-expression#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // The following expressions calculate the normalized difference vegetation
 // index (NDVI): (NIR - Red) / (NIR + Red).
@@ -71,12 +67,15 @@ b:img.select('SR_B2')
 });
 Map.addLayer(jsMathImg,{min:5000,max:20000},'Hypotenuse',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # The following expressions calculate the normalized difference vegetation
 # index (NDVI): (NIR - Red) / (NIR + Red).
@@ -128,4 +127,3 @@ m.add_layer(js_math_img, {'min': 5000, 'max': 20000}, 'Hypotenuse', False)
 m
 ```
 
-Was this helpful?

@@ -1,10 +1,6 @@
  
 #  ee.ConfusionMatrix.accuracy 
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-accuracy#examples)
-
-
 Computes the overall accuracy of a confusion matrix defined as correct / total. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `confusionMatrix`| ConfusionMatrix|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-accuracy#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-accuracy#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Construct a confusion matrix from an array (rows are actual values,
 // columns are predicted values). We construct a confusion matrix here for
@@ -38,12 +34,15 @@ print("Producer's accuracy",confusionMatrix.producersAccuracy());
 // Calculate kappa statistic.
 print('Kappa statistic',confusionMatrix.kappa());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # Construct a confusion matrix from an array (rows are actual values,

@@ -1,8 +1,8 @@
  
 #  Reducing a FeatureCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 To aggregate data in the properties of a `FeatureCollection`, use `featureCollection.reduceColumns()`. For example, to check the area properties in the watersheds `FeatureCollection`, this code computes the Root Mean Square Error (RMSE) relative to the Earth Engine computed area:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load watersheds from a data table and filter to the continental US.
 varsheds=ee.FeatureCollection('USGS/WBD/2017/HUC06')
@@ -30,12 +30,15 @@ sheds.map(areaDiff)
 // Print the result.
 print('RMSE=',rmse);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load watersheds from a data table and filter to the continental US.
 sheds = ee.FeatureCollection('USGS/WBD/2017/HUC06').filterBounds(
@@ -67,7 +70,7 @@ display('RMSE=', rmse)
 
 In this example, note that the return value of `reduceColumns()` is a dictionary with key `‘mean’`. To get the mean, cast the result of `dictionary.get()` to a number with `ee.Number()` before trying to call `sqrt()` on it. For more information about ancillary data structures in Earth Engine, see [this tutorial](https://developers.google.com/earth-engine/tutorials/tutorial_js_01).
 To overlay features on imagery, use `featureCollection.reduceRegions()`. For example, to compute the volume of precipitation in continental US watersheds, use `reduceRegions()` followed by a `map()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/feature_collection_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/feature_collection_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load an image of daily precipitation in mm/day.
 varprecip=ee.Image(ee.ImageCollection('NASA/ORNL/DAYMET_V3').first());
@@ -96,12 +99,15 @@ varhighVolume=withPrecip
 // Print the resulting FeatureCollection.
 print(highVolume);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load an image of daily precipitation in mm/day.
 precip = ee.Image(ee.ImageCollection('NASA/ORNL/DAYMET_V3').first())

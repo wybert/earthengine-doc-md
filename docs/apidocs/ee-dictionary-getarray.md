@@ -43,4 +43,3 @@ print('The "Array" value as an ee.Array object:',
    dic.getArray('Array').getInfo())
 ```
 
-Was this helpful?

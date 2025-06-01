@@ -1,10 +1,6 @@
  
 #  ee.Kernel.plus 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-plus#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a plus-shaped boolean kernel. Usage| Returns  
 ---|---  
 `ee.Kernel.plus(radius,  _units_, _normalize_, _magnitude_)`| Kernel  

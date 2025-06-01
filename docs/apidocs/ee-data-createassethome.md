@@ -9,4 +9,3 @@ Argument|  Type| Details
 ---|---|---  
 `requestedId`| String| The requested ID of the home folder (e.g. "users/joe").  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

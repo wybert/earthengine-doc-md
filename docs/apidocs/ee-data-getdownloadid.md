@@ -1,6 +1,10 @@
  
 #  ee.data.getDownloadId 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-data-getdownloadid#examples)
+
+
 Get a Download ID. 
 Returns a download id and token, or null if a callback is specified.
 Usage| Returns  
@@ -33,7 +37,7 @@ If "GEO_TIFF" or "NPY", filePerBand and all band-level transformations will be i
 ` id: ` deprecated, use image parameter.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-data-getdownloadid#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-data-getdownloadid#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -79,15 +83,12 @@ format:'GEO_TIFF'
 print('Multi-band GeoTIFF file',
 ee.data.makeDownloadUrl(downloadId));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 """Demonstrates the ee.data.getDownloadId method."""
 importio
@@ -162,3 +163,4 @@ with open('multi_band.tif', 'wb') as fd:
  fd.write(response.content)
 ```
 
+Was this helpful?

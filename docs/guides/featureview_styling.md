@@ -199,4 +199,3 @@ _Polygon geometries_
 `polygonStrokeOpacity` | `Double` | Sets stroke opacity for polygon geometries. Must be a double between 0 and 1. | Yes  
 `polygonFillColor` | `String` | Sets fill color for polygon geometries. Must be a hex value or a CSS3 color. | Yes  
 `polygonFillOpacity` | `Double` | Sets fill opacity for polygon geometries. Must be a double between 0 and 1. | Yes  
-Was this helpful?

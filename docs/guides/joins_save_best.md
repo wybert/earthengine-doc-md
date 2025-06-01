@@ -1,8 +1,8 @@
  
 #  Save-Best Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 To save only the best match for each element in a collection, use an `ee.Join.saveBest()`. The `saveBest()` join functions in an equivalent way to the `saveAll()` join, except for each element in the `primary` collection, it saves the element from the `secondary` collection with the best match. Unmatched elements in the primary collection are dropped. Suppose the intention is to find a meteorological image closest in time to each Landsat image in the `primary` collection. To perform this join, the `ee.Filter` must be redefined for a single join condition (combined filters will not work with `saveBest()` since it is ambiguous how to combine ranks from multiple sub-Filters):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_save_best#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_save_best#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a primary collection: Landsat imagery.
 varprimary=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -26,12 +26,15 @@ varlandsatMet=saveBestJoin.apply(primary,gridmet,maxDiffFilter);
 // Print the result.
 print(landsatMet);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a primary collection: Landsat imagery.
 primary = (

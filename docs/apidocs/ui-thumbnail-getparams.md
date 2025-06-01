@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.thumbnail`| ui.Thumbnail| The ui.Thumbnail instance.  
-Was this helpful?

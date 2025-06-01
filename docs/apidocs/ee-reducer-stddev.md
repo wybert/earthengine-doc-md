@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.stdDev()`| Reducer  
 **No arguments.**
-Was this helpful?

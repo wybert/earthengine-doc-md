@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.layer`| ui.Map.Layer| The ui.Map.Layer instance.  
 `eeObject`| Collection|Feature|Image, optional| The object to add to the map. Defaults to an empty ee.Image.  
+Was this helpful?

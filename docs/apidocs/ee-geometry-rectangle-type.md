@@ -47,4 +47,3 @@ m.add_layer(rectangle, {'color': 'black'}, 'Geometry [black]: rectangle')
 m
 ```
 
-Was this helpful?

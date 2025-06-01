@@ -1,6 +1,6 @@
  
 #  Detecting Changes in Sentinel-1 Imagery (Part 4) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#preliminaries)
   * [GEE Sentinel-1 explorer widget](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#gee_sentinel-1_explorer_widget)
@@ -166,3 +166,4 @@ This concludes the community tutorial series on SAR change detection. For reader
 
 
 Thank you for your interest, and happy GEE-ing!
+Was this helpful?

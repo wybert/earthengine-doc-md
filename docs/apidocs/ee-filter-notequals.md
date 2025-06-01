@@ -169,3 +169,4 @@ grouped_plots = ee.Join.saveAll('site_plots').apply(sites_fc, fc, join_filter)
 display('List of plots in first site', grouped_plots.first().get('site_plots'))
 ```
 
+Was this helpful?

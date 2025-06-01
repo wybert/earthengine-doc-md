@@ -1,29 +1,10 @@
  
 #  Introduction to Soil Moisture Active Passive (SMAP) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Soil Moisture Active Passive (SMAP)](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#soil_moisture_active_passive_smap)
-    * [Mission objective](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#mission_objective)
-    * [Instrument description](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#instrument_description)
-    * [What does SMAP measure?](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#what_does_smap_measure)
-    * [How does SMAP measure soil moisture?](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#how_does_smap_measure_soil_moisture)
-  * [SMAP products in GEE](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#smap_products_in_gee)
-  * [Visualizing SMAP](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#visualizing_smap)
-    * [No coding required](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#no_coding_required)
-    * [New to GEE](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#new_to_gee)
-  * [Analysis and visualization of SMAP L3 product](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#analysis_and_visualization_of_smap_l3_product)
-    * [Intermediate](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#intermediate)
-  * [Plotting soil moisture over time with the SMAP L4 product](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#plotting_soil_moisture_over_time_with_the_smap_l4_product)
-    * [Intermediate](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#intermediate_2)
-  * [Drought monitoring with SMAP and Global Precipitation Mission (GPM) IMERG](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#drought_monitoring_with_smap_and_global_precipitation_mission_gpm_imerg)
-    * [Advanced](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#advanced)
-  * [Resources](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#resources)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/smap-soil-moisture/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/smap-soil-moisture/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/smap-soil-moisture/index.md)
-Author(s): [ purplekrayon ](https://github.com/purplekrayon)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/smap-soil-moisture/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/smap-soil-moisture/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/smap-soil-moisture/index.md "View changes to this article over time.")
+Author(s): [ purplekrayon ](https://github.com/purplekrayon "View the profile for purplekrayon on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ![Soil Moisture Active Passive](https://developers.google.com/static/earth-engine/tutorials/community/smap-soil-moisture/SMAP_header.png)
 The thematic focus is learning about the SMAP instrument for water resources management applications.
@@ -256,4 +237,3 @@ print(chart);
 ## Resources
 [SMAP website](https://smap.jpl.nasa.gov/)
 [NASA ARSET SMAP training](https://appliedsciences.nasa.gov/join-mission/training/english/arset-applications-remote-sensing-soil-moisture-and)
-Was this helpful?

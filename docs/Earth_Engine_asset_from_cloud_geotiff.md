@@ -1,9 +1,9 @@
  
 #  Cloud GeoTiff-Backed Earth Engine Assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/Earth_Engine_asset_from_cloud_geotiff.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/Earth_Engine_asset_from_cloud_geotiff.ipynb)  
 ---|---  
-This notebook demonstrates how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs). An advantage of COG-backed assets is that the spatial and metadata fields of the image will be indexed at asset creation time, making the image more performant in collections. The performance of COG-backed assets is comparable to that of ingested assets in typical use cases.
+Earth Engine supports assets backed by Cloud Optimized GeoTIFFs (COGs). An advantage of COG-backed assets is that the spatial and metadata fields of the image will be indexed at asset creation time, making the image more performant in collections. The performance of COG-backed assets is comparable to that of ingested assets in typical use cases.
 Note that a single asset can be backed by multiple COGs (for example, there can be one COG per band). However, using many COG tiles for a single band is not supported.
 (Alternatively, Earth Engine can directly load images from COGs in Google Cloud Storage ([learn more](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs)). However, an image loaded through `ee.Image.loadGeoTIFF` and added to an image collection will require a read of the GeoTiff for filtering operations on the collection.)
 To create a COG-backed asset,
@@ -71,12 +71,31 @@ The Cloud Storage bucket location must be one of:
   * The region US-CENTRAL1
 
 
-The metadata of the bucket must be accessible so that Earth Engine can determine its location. The calling user must have the `storage.buckets.get` permission on the bucket. That permission is provided by the role "Storage Legacy Bucket Reader", [among others](https://cloud.google.com/storage/docs/access-control/iam-roles).
-To assign this role: 1. Go to the bucket permission page: https://console.cloud.google.com/storage/browser/{MY-BUCKET};tab=permissions 2. Click "GRANT ACCESS" 3. Add all principals who should be granted access 4. Assign the "Storage Legacy Bucket Reader" role (or, create a new custom role with just the `storage.buckets.get` permission and assign that) 5. Save
 ### Storage class
 The [storage class](https://cloud.google.com/storage/docs/storage-classes#classes) of the bucket must be "Standard storage".
-### Permissions
-The ACLs of COG-backed Earth Engine assets and the underlying data are managed separately. If a COG-backed asset is shared in Earth Engine, it is the owner's responsibility to ensure that the data in GCS is shared with the same parties. If the data is not visible, Earth Engine will return an error of the form "Failed to load the GeoTIFF at `gs://my-bucket/my-object#123456`" (123456 is the generation of the object).
+### Permissions for sharing
+The ACLs of COG-backed Earth Engine assets and the underlying data are managed separately. When sharing COG-backed assets with collaborators for reading, **it is the owner's responsibility to ensure that read access is granted to both the Earth Engine asset and the underlying COG files.**
+#### 1. Grant Google Cloud Storage bucket permissions for reading
+For collaborators to read COG-backed assets, they must first have read access to the underlying COG files in the Google Cloud Storage bucket. Without these permissions, Earth Engine won't be able to retrieve the data for them. If the data in Google Cloud Storage is not visible to an Earth Engine user, Earth Engine will return an error of the form "Failed to load the GeoTIFF at `gs://my-bucket/my-object#123456`" (where 123456 is the generation of the object).
+Specifically, collaborators must have the following permissions:
+  * `storage.buckets.get` on the bucket (to retrieve bucket metadata and location, allowing Earth Engine to properly resolve the asset's source).
+  * `storage.objects.get` on the bucket (to read the actual COG-backed asset data).
+
+
+These permissions are provided by the roles **"Storage Legacy Bucket Reader"** and **"Storage Legacy Object Reader"** respectively, [among others](https://cloud.google.com/storage/docs/access-control/iam-roles).
+To assign these roles to collaborators:
+  1. Go to the bucket permission page: `https://console.cloud.google.com/storage/browser/{MY-BUCKET};tab=permissions`
+  2. Click "**GRANT ACCESS** "
+  3. Add all principals (e.g., users, groups, service accounts) who should be granted read access.
+  4. Assign the following roles: 
+     * **"Storage Legacy Bucket Reader"** (provides `storage.buckets.get` and other bucket-level read permissions).
+     * **"Storage Legacy Object Reader"** (provides `storage.objects.get`).
+     * (Alternatively, you could create a new custom role with just the `storage.buckets.get` and `storage.objects.get` permissions and assign that.)
+  5. Save
+
+
+#### 2. Share the Earth Engine asset for reading
+After ensuring your collaborators have the necessary permissions on the underlying GCS bucket and objects, you must also share the Earth Engine asset itself. For more information on setting Earth Engine asset permissions, refer to the [Earth Engine asset management guide](https://developers.google.com/earth-engine/guides/manage_assets#set_asset_permissions).
 ### Generations
 When a COG-backed asset is created, Earth Engine reads the metadata of TIFFs specified in the manifest and creates an asset store entry. Each URI associated with that entry can have a generation. See the [object versioning docs](https://cloud.google.com/storage/docs/object-versioning) for details on generations. If a generation is specified, for example `gs://foo/bar#123`, Earth Engine will store that URI verbatim. If a generation is not specified, Earth Engine will store that URI with the generation of the TIFF at the time `ImportExternalImage` was called.
 That means that if any TIFF comprising an external asset in GCS is updated (therefore changing its generation), Earth Engine will return a "Failed to load the GeoTIFF at `gs://my-bucket/my-object#123456`" error because the expected object no longer exists (unless the bucket enables multiple object versions). This policy is designed to keep metadata of the asset in sync with the metadata of the object.
@@ -115,9 +134,10 @@ It may be possible to reduce the output file size further by specifying a [predi
 For users with GDAL >= 3.11, the [COG driver](https://gdal.org/en/stable/drivers/raster/cog.html) can produce files without having to worry about creating and preserving overviews.
 ```
 gdal_translatein.tifout.tif\
+-ofCOG\
 -coOVERVIEWS=IGNORE_EXISTING\
 -coCOMPRESS=ZSTD\
--coZSTD_LEVEL=22\
+-coLEVEL=22\
 -coPREDICTOR=2\
 -coINTERLEAVE=BAND\
 -coNUM_THREADS=ALL_CPUS\

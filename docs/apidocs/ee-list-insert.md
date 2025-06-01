@@ -10,4 +10,3 @@ Argument| Type| Details
 this: `list`| List|   
 `index`| Integer|   
 `element`| Object|   
-Was this helpful?

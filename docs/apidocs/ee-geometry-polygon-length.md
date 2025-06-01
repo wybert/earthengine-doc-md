@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Polygon.length 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the length of the linear parts of the geometry. Polygonal parts are ignored. The length of multi geometries is the sum of the lengths of their components. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the length of the linear parts of the geometry. Polygonal parts are ignored. The length of multi geometries is the sum of the lengths of their components. Usage| Returns  
 ---|---  
 `Polygon.length( _maxError_, _proj_)`| Float  
 Argument| Type| Details  
@@ -29,6 +28,7 @@ Map.addLayer(polygon,
 {'color':'black'},
 'Geometry [black]: polygon');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

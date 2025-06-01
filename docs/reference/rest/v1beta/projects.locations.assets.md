@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.locations.assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: EarthEngineAsset
 Information about an Earth Engine asset.
 JSON representation  

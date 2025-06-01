@@ -61,3 +61,4 @@ img = img.addBands(new_bands)
 print('Image with added/modified bands:', img.getInfo())
 ```
 
+Was this helpful?

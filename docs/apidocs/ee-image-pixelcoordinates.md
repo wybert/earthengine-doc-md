@@ -1,6 +1,6 @@
  
 #  ee.Image.pixelCoordinates 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a two-band image containing the x and y coordinates of each pixel in the given projection. 
 Usage| Returns  
 ---|---  

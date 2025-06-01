@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.sampleStdDev()`| Reducer  
 **No arguments.**
-Was this helpful?

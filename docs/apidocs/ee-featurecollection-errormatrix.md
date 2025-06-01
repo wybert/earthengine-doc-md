@@ -1,7 +1,12 @@
  
 #  ee.FeatureCollection.errorMatrix 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes a 2D error matrix for a collection by comparing two columns of a collection: one containing the actual values, and one containing predicted values. The values are expected to be small contiguous integers, starting from 0. Axis 0 (the rows) of the matrix correspond to the actual values, and Axis 1 (the columns) to the predicted values. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-errormatrix#examples)
+
+
+Computes a 2D error matrix for a collection by comparing two columns of a collection: one containing the actual values, and one containing predicted values. The values are expected to be small contiguous integers, starting from 0. Axis 0 (the rows) of the matrix correspond to the actual values, and Axis 1 (the columns) to the predicted values. 
+Usage| Returns  
 ---|---  
 `FeatureCollection.errorMatrix(actual, predicted,  _order_)`| ConfusionMatrix  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `collection`| FeatureCollection| The input collection.
 `predicted`| String| The name of the property containing the predicted value.  
 `order`| List, default: null| A list of the expected values. If this argument is not specified, the values are assumed to be contiguous and span the range 0 to maxValue. If specified, only values matching this list are used, and the matrix will have dimensions and order matching this list.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-errormatrix#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-errormatrix#colab-python-sample) More
 ```
 /**
  * Classifies features in a FeatureCollection and computes an error matrix.
@@ -66,15 +71,12 @@ print("Consumer's accuracy",errorMatrix.consumersAccuracy());
 print("Producer's accuracy",errorMatrix.producersAccuracy());
 print("Kappa",errorMatrix.kappa());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 frompprintimport pprint
 # Classifies features in a FeatureCollection and computes an error matrix.
@@ -133,3 +135,4 @@ pprint(error_matrix.producersAccuracy().getInfo())
 print('Kappa:', error_matrix.kappa().getInfo())
 ```
 
+Was this helpful?

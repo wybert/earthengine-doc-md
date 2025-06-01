@@ -1,6 +1,6 @@
  
 #  Method: projects.table.import 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/import#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/import#path-parameters)
@@ -130,3 +130,4 @@ Fields
 `dateFormat` |  `string` A format with which to parse fields encoding dates. The format pattern must be as described at <http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html>. If left blank, dates will be imported as strings. For CSV/TFRecord sources only.  
 `csvDelimiter` |  `string` When ingesting CSV files, a single character used as a delimiter between column values in a row. If left blank, defaults to ','. For CSV sources only.  
 `csvQualifier` |  `string` When ingesting CSV files, a character that surrounds column values (a.k.a. "quote character"). If left blank, defaults to '"'. For CSV sources only.If a column value is not surrounded by qualifiers, leading and tailing whitespace is trimmed. For example: ..., test,... <== this value is not qualified becomes the string value: "test" <== whitespace is strippedwhere: ...," test",... <== this value IS qualified with quotes becomes the string value: " test" <== whitespace remains!  
+Was this helpful?

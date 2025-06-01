@@ -1,6 +1,6 @@
  
 #  ee.Number.aside 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Calls a function passing this object as the first argument, and returning itself. Convenient e.g. when debugging: 
 var c = ee.ImageCollection('foo').aside(print)
 .filterDate('2001-01-01', '2002-01-01').aside(print, 'In 2001')
@@ -22,6 +22,7 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
 // Print a message when constructing an ee.Number.
 vareeNum=ee.Number(10).aside(print,'An ee.Number was defined');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

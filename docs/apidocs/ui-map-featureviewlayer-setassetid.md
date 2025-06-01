@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.featureviewlayer`| ui.Map.FeatureViewLayer| The ui.Map.FeatureViewLayer instance.  
 `assetId`| String| The asset ID for the FeatureView backing this layer.  
+Was this helpful?

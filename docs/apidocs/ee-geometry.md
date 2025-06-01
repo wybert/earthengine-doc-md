@@ -106,3 +106,4 @@ print('Cast computed geometry objects to ee.Geometry class:',
    ee.Geometry(feature.get('geom')).bounds().getInfo())
 ```
 
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Earth Engine Code Editor 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [JavaScript editor](https://developers.google.com/earth-engine/guides/playground#javascript_editor)
   * [API reference (Docs tab)](https://developers.google.com/earth-engine/guides/playground#api_reference_docs_tab)

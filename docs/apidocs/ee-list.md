@@ -43,4 +43,3 @@ print(ee.List([ee.List([])]).getInfo()) # [[]]
 print(ee.List([[], [[]], [1, [], 'a']]).getInfo()) # [[], [[]], [1, [], 'a']]
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Simple Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 A simple join returns elements from the `primary` collection that match any element in the `secondary` collection according to the match condition in the filter. To perform a simple join, use an `ee.Join.simple()`. This might be useful for finding the common elements among different collections or filtering one collection by another. For example, consider two image collections which (might) have some matching elements, where “matching” is defined by the condition specified in a filter. For example, let matching mean the image IDs are equal. Since the matching images in both collections are the same, use a simple join to discover this set of matching images:
 ### Code Editor (JavaScript)
 ```

@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.abstractlayer`| ui.Map.AbstractLayer| The ui.Map.AbstractLayer instance.  
 `shown`| Boolean, optional| Whether the layer is shown.  
+Was this helpful?

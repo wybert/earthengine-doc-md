@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.getFilmstripThumbURL 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get the URL of a tiled thumbnail for this ImageCollection. 
 Returns a thumbnail URL, or undefined if a callback was specified.
 Usage| Returns  
@@ -14,3 +14,4 @@ this: `imagecollection`| ImageCollection| The ImageCollection instance.
 ` region ` (E,S,W,N or GeoJSON) Geospatial region of the image to render. By default, the whole image.  
 ` format ` (string) Encoding format. Only 'png' or 'jpg' are accepted.  
 `callback`| Function, optional| An optional callback which handles the resulting URL string. If not supplied, the call is made synchronously.  
+Was this helpful?

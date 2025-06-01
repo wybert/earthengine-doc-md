@@ -168,7 +168,10 @@ Notes  |  Your organization may not grant you the _Editor_ role, so the finer-gr
 The following permissions pertain to [registering projects for paid use](https://console.cloud.google.com/earth-engine).
 Permissions needed  
 ---  
-Billing account | If the billing account already has an Earth Engine plan, then **no billing account permissions are needed**. Otherwise: 
+Billing account | 
+  * `billing.subscriptions.list`
+
+In addition: 
   * `billing.accounts.get` (for creating a new Limited plan)
   * `billing.subscriptions.create` (for creating a new Basic or Professional plan)
 
@@ -181,8 +184,8 @@ Cloud project |
 
   
 Suggested roles  
-Billing account | If the billing account already has an Earth Engine plan, then **no billing account permissions are needed**. Otherwise: 
-  * _Billing Account User_ (`roles/billing.user`), for creating a new Limited plan 
+Billing account | 
+  * _Billing Account Viewer_ (`roles/billing.viewer`), for creating a new Limited plan 
   * _Billing Account Administrator_ (`roles/billing.admin`), for creating a new Basic or Professional plan 
 
   

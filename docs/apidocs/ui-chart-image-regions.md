@@ -1,6 +1,6 @@
  
 #  ui.Chart.image.regions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image. Extracts and plots the value of each band in one or more regions. 
 - X-axis = Band labeled by xProperty (default: band name).
 - Y-axis = Reducer output.

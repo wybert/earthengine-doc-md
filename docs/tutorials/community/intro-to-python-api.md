@@ -306,7 +306,7 @@ Image(url=url)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-7d2d3359e0ba65730f961fd1b6f6c451:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-1fca52b3dad36238d874ff64ba9d3cdb:getPixels
 Please wait while the thumbnail loads, it may take a moment...
 
 ```
@@ -409,7 +409,7 @@ print(link)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-432e0393b013421dacd8e85de047dde0:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-4ed9f70ad040a9e58a8892707e3198a1:getPixels
 
 ```
 **Note:** The above output contains an Earth Engine API link. Calls to the API can only be made by registered, authenticated users. If you want to create API links that work for you, click "Run in Colab" at the top of this page and run the notebook.

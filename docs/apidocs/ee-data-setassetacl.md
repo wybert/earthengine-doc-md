@@ -12,3 +12,4 @@ Argument|  Type| Details
 `assetId`| String| The ID of the asset to set the ACL on.  
 `aclUpdate`| AssetAclUpdate| The updated ACL.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously. The callback is passed an empty object.  
+Was this helpful?

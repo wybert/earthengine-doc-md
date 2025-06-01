@@ -1,8 +1,7 @@
  
 #  ee.Image.arrayDotProduct 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the dot product of each pair of 1-D arrays in the bands of the input images. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the dot product of each pair of 1-D arrays in the bands of the input images. Usage| Returns  
 ---|---  
 `Image.arrayDotProduct(image2)`| Image  
 Argument| Type| Details  
@@ -30,6 +29,7 @@ vartest=arrayImg1Da.arrayDotProduct(arrayImg1Db);
 print('A⋅B = 0(3) + 1(4) + 2(5) = ',sampArrImg(test));
 // 14
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

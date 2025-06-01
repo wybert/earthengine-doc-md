@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `image`| Image| The input image.  
 `neighborhood`| Integer, default: 256| Neighborhood size in pixels.  
 `units`| String, default: "pixels"| The units of the neighborhood, currently only 'pixels' are supported.  
+Was this helpful?

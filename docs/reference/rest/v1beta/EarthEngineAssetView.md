@@ -1,6 +1,6 @@
  
 #  EarthEngineAssetView 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A resource view for `EarthEngineAsset`.
 The view determines the maximum page size for API operations, with generally higher limits for more restrictive views: - 10000 for BASIC - 1000 otherwise
 Enums  

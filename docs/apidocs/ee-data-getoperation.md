@@ -25,4 +25,3 @@ Argument| Type| Details
 ---|---|---  
 `operationName`| List| Operation name(s).  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

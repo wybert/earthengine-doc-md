@@ -1,6 +1,6 @@
  
 #  Exporting Charts and Images 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine is a powerful analytical tool, but you may have need to export the results of your analysis in order to embed charts, images, maps, etc. into reports or publications. In this section, you will learn how to create charts and images that can be exported and viewed in other software. Recall that in the [previous section](https://developers.google.com/earth-engine/tutorials/tutorial_api_06), you used code like the following to add an NDVI band to every image in a collection, where the `l8` variable references the [Landsat 8 TOA reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC8_L1T_TOA):
 ### Code Editor (JavaScript)
 ```

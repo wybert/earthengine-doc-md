@@ -59,4 +59,3 @@ print('Specified name and order of the rows and columns:',
    cm_specified_order.order().getInfo())
 ```
 
-Was this helpful?

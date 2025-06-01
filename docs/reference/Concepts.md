@@ -1,13 +1,6 @@
  
 #  Concepts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Authentication](https://developers.google.com/earth-engine/reference/Concepts#authentication)
-  * [Assets](https://developers.google.com/earth-engine/reference/Concepts#assets)
-  * [Pixels and Map Projections](https://developers.google.com/earth-engine/reference/Concepts#pixels-and-map-projections)
-  * [Collections and Folders](https://developers.google.com/earth-engine/reference/Concepts#collections-and-folders)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 This API provides simple, uniform access to a wide variety geospatial image data. By _geospatial_ we mean that the data is associated with locations on the Earth's surface. By _image data_ we mean data that is structured as a uniform grid of pixel values, much like a traditional image.
 The most familiar example of this type of data is satellite imagery, much like users are accustomed to seeing in Google Maps and Earth. However, many other datasets have the same structure, including for example gridded weather and climate datasets, terrain and land cover datasets, and population density datasets.
 ## Authentication
@@ -35,4 +28,3 @@ Pixel coordinates are then typically related to the spatial coordinate reference
 ## Collections and Folders
 Images often come in large **collections** of data, such as a collection of all images acquired by a particular satellite, or a collection of global temperature estimates over time. Earth Engine builds metadata indexes that allow you to **filter** or **query** the images in collections based on their metadata, including filtering by location and time. Typically, all images within a single collection have the same structure, i.e. the same bands and the same metadata properties.
 Images and collections are themselves organized into a hierarchy of **folders**. A folder is much like an ordinary folder or directory in a traditional filesystem: it is a simple container for other assets, i.e. for images, collections, and other folders. Not all images are contained in collections: some datasets, such as a particular global terrain model, may consist of only a single image. Regardless, every asset is uniquely identified by a particular path that identifies its location in the Earth Engine data catalog.
-Was this helpful?

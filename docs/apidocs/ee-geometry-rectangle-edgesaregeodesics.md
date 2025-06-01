@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Rectangle.edgesAreGeodesics 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. Usage| Returns  
 ---|---  
 `Rectangle.edgesAreGeodesics()`| Boolean  
 Argument| Type| Details  
@@ -23,6 +22,7 @@ Map.addLayer(rectangle,
 {'color':'black'},
 'Geometry [black]: rectangle');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

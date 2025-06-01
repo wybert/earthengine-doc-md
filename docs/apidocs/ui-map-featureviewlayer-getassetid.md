@@ -1,6 +1,6 @@
  
 #  ui.Map.FeatureViewLayer.getAssetId 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the asset ID for the FeatureView asset backing this layer. 
 Usage| Returns  
 ---|---  
@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map.featureviewlayer`| ui.Map.FeatureViewLayer| The ui.Map.FeatureViewLayer instance.  
+Was this helpful?

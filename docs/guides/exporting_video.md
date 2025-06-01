@@ -1,6 +1,6 @@
  
 #  Exporting Video and Animations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 To export ordered image collections as video, where frames are defined by images in the collection, use `Export.video()`. You can configure the way the `ImageCollection` is turned into video by setting frame rate, scale and dimensions. The video will be encoded as an MP4.
 ## to Drive
 Export video to your Drive account with `Export.video.toDrive()`. For example, the following export makes a video from 20 years of Landsat imagery:

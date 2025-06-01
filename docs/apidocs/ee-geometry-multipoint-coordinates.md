@@ -1,8 +1,7 @@
  
 #  ee.Geometry.MultiPoint.coordinates 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a GeoJSON-style list of the geometry's coordinates. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a GeoJSON-style list of the geometry's coordinates. Usage| Returns  
 ---|---  
 `MultiPoint.coordinates()`| List  
 Argument| Type| Details  
@@ -23,6 +22,7 @@ Map.addLayer(multiPoint,
 {'color':'black'},
 'Geometry [black]: multiPoint');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

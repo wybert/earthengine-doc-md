@@ -1,19 +1,14 @@
  
 #  ee.Array.tan 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-tan#examples)
-
-
-On an element-wise basis, computes the tangent of the input in radians. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+On an element-wise basis, computes the tangent of the input in radians. Usage| Returns  
 ---|---  
 `Array.tan()`| Array  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Array| The input array.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-tan#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-tan#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varπ=Math.PI;
 print(ee.Array([-π/4]).tan());// [Almost -1]
@@ -47,12 +42,15 @@ pointSize:0,
 });
 print(chart);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 importmath
 importaltairasalt
@@ -73,4 +71,3 @@ alt.Chart(df).mark_line().encode(
 )
 ```
 
-Was this helpful?

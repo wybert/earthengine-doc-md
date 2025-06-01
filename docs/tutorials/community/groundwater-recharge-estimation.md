@@ -1,7 +1,17 @@
  
 #  Implementation of the Thornthwaite-Mather procedure to map groundwater recharge 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Author(s): [ guiattard ](https://github.com/guiattard "View the profile for guiattard on GitHub")
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Run me first](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#run_me_first)
+  * [From soil texture to hydraulic properties](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#from_soil_texture_to_hydraulic_properties)
+  * [Getting meteorological datasets](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#getting_meteorological_datasets)
+  * [Implementation of the TM procedure](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#implementation_of_the_tm_procedure)
+  * [Groundwater recharge map of France](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#groundwater_recharge_map_of_france)
+  * [Bibliography](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#bibliography)
+  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/groundwater-recharge-estimation#acknowledgements)
+
+
+Author(s): [ guiattard ](https://github.com/guiattard)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/groundwater-recharge-estimation/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/groundwater-recharge-estimation/index.ipynb)  
 ---|---  
@@ -74,20 +84,20 @@ Two hydraulic properties of soil are commonly used in the TM procedure:
   * the _field capacity_ represents the point after which water cannot be stored by soil any more. After that point, gravitational forces become too high and water starts to infiltrate the lower levels.
 
 
-Some equations given by Saxton & Rawls (2006) are used to link both parameters to the texture of the soil. The calculation of water content at wilting point \\(θ_{WP}\\) can be done as follows:
-$$ \theta_{WP}= \theta_{1500t} + (0.14 \theta_{1500t} - 0.002) $$
+Some equations given by Saxton & Rawls (2006) are used to link both parameters to the texture of the soil. The calculation of water content at wilting point θWP can be done as follows:
+θWP=θ1500t+(0.14θ1500t−0.002)
 with:
-$$ \theta_{1500t} = -0.024 S + 0.487 C + 0.006 OM + 0.005(S \times OM) - 0.013 (C \times OM) + 0.068 (S \times C) + 0.031 $$
+θ1500t=−0.024S+0.487C+0.006OM+0.005(S×OM)−0.013(C×OM)+0.068(S×C)+0.031
 where:
-  * \\(S\\): represents the sand content of the soil (mass percentage),
-  * \\(C\\): represents the clay content of the soil (mass percentage),
-  * \\(OM\\): represents the organic matter content of the soil (mass percentage).
+  * S: represents the sand content of the soil (mass percentage),
+  * C: represents the clay content of the soil (mass percentage),
+  * OM: represents the organic matter content of the soil (mass percentage).
 
 
-Similarly, the calculation of the water content at field capacity \\(θ_{FC}\\) can be done as follows:
-$$ \theta_{FC} = \theta_{33t} + (1.283 \theta_{33t}^{2} - 0.374 \theta_{33t}-0.15) $$
+Similarly, the calculation of the water content at field capacity θFC can be done as follows:
+θFC=θ33t+(1.283θ33t2−0.374θ33t−0.15)
 with:
-$$ \theta_{33t} = -0.251 S + 0.195 C + 0.011 OM + 0.006 (S \times OM) - 0.027 (C \times OM) + 0.452 (S \times C) + 0.299 $$
+θ33t=−0.251S+0.195C+0.011OM+0.006(S×OM)−0.027(C×OM)+0.452(S×C)+0.299
 #### Determination of soil texture and properties
 In the following, [OpenLandMap datasets](https://developers.google.com/earth-engine/datasets/tags/opengeohub) are used to describe clay, sand and organic carbon content of soil. A global dataset of soil water content at the field capacity with a resolution of 250 m has been made available by Hengl & Gupta (2019). However, up to now, there is no dataset dedicated to the water content of soil at the wilting point. Consequently, in the following, both parameters will be determined considering the previous equations and using the global datasets giving the sand, clay and organic matter contents of the soil. According to the [description](https://developers.google.com/earth-engine/datasets/catalog/OpenLandMap_SOL_SOL_CLAY-WFRACTION_USDA-3A1A1A_M_v02#description), these datasets are based on machine learning predictions from global compilation of soil profiles and samples. Processing steps are described in detail [here](https://gitlab.com/openlandmap/global-layers/tree/master/soil). The information (clay, sand content, etc.) is given at 6 standard depths (0, 10, 30, 60, 100 and 200 cm) at 250 m resolution. 
 These standard depths and associated bands are defined into a list as follows:
@@ -278,8 +288,8 @@ plt.show()
 
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/groundwater-recharge-estimation/index_files/output_4uB2QEIiEfuQ_0.png)
 #### Expression to calculate hydraulic properties
-Now that soil properties are described, the water content at the field capacity and at the wilting point can be calculated according to the equation defined at the beginning of this section. Please note that in the equation of Saxton & Rawls (2006), the wilting point and field capacity are calculated using the Organic Matter content (\\(OM\\)) and not the Organic Carbon content (\\(OC\\)). In the following, we convert \\(OC\\) into \\(OM\\) using the corrective factor known as the [Van Bemmelen factor](https://inspire.ec.europa.eu/codelist/SoilDerivedObjectParameterNameValue/organicCarbonContent):
-$$ 0M = 1.724 \times OC $$
+Now that soil properties are described, the water content at the field capacity and at the wilting point can be calculated according to the equation defined at the beginning of this section. Please note that in the equation of Saxton & Rawls (2006), the wilting point and field capacity are calculated using the Organic Matter content (OM) and not the Organic Carbon content (OC). In the following, we convert OC into OM using the corrective factor known as the [Van Bemmelen factor](https://inspire.ec.europa.eu/codelist/SoilDerivedObjectParameterNameValue/organicCarbonContent):
+0M=1.724×OC
 Several operators are available to perform basic [mathematical operations](https://developers.google.com/earth-engine/guides/image_math) on image bands: `add()`, `subtract()`, `multiply()` and `divide()`. Here, we multiply the organic content by the Van Bemmelen factor. It is done using the `ee.Image.multiply` method on the organic carbon content `ee.Image`.
 ```
 # Conversion of organic carbon content into organic matter content.
@@ -599,7 +609,7 @@ pprint.pprint(pr_m.getRegion(poi, scale).getInfo()[:5])
 
 ```
 
-For evapotranspiration, we have to be careful with the unit. The dataset gives us an 8-day sum and a scale factor of 10 is applied. Then, to get a homogeneous unit, we need to rescale by dividing by 8 and 10: \\(\frac{1}{10 \times 8} = 0.0125\\).
+For evapotranspiration, we have to be careful with the unit. The dataset gives us an 8-day sum and a scale factor of 10 is applied. Then, to get a homogeneous unit, we need to rescale by dividing by 8 and 10: 110×8=0.0125.
 ```
 # Apply the resampling function to the PET dataset.
 pet_m = sum_resampler(pet.select("PET"), 1, "month", 0.0125, "pet")
@@ -683,18 +693,18 @@ plt.show()
 ### Implementation of the TM procedure
 #### Description
 Some additional definitions are needed to formalize the Thornthwaite-Mather procedure. The following definitions are given in accordance with Allen et al. (1998) (the document can be downloaded [here](http://www.climasouth.eu/sites/default/files/FAO%2056.pdf)):
-$$ TAW = 1000 \times (\theta_{FC} − \theta_{WP})\times Z{r} $$
+TAW=1000×(θFC−θWP)×Zr
 where:
-  * \\(TAW\\): the total available soil water in the root zone [\\(mm\\)],
-  * \\(\theta_{FC}\\): the water content at the field capacity [\\(m^{3} m^{-3}\\)],
-  * \\(\theta_{WP}\\): the water content at wilting point [\\(m^{3} m^{-3}\\)],
-  * \\(Z_{r}\\): the rooting depth [\\(m\\)],
+  * TAW: the total available soil water in the root zone [mm],
+  * θFC: the water content at the field capacity [m3m−3],
+  * θWP: the water content at wilting point [m3m−3],
+  * Zr: the rooting depth [m],
 
 
-Typical values of \\(\theta_{FC}\\) and \\(\theta_{WP}\\) for different soil types are given in Table 19 of Allen et al. (1998).
-The readily available water (\\(RAW\\)) is given by \\(RAW = p \times TAW\\), where \\(p\\) is the average fraction of \\(TAW\\) that can be depleted from the root zone before moisture stress (ranging between 0 to 1). This quantity is also noted \\(ST_{FC}\\) which is the available water stored at field capacity in the root zone.
-Ranges of maximum effective rooting depth \\(Z_{r}\\), and soil water depletion fraction for no stress \\(p\\), for common crops are given in the Table 22 of Allen et al. (1998). In addition, a global effective plant rooting depth dataset is provided by Yang et al. (2016) with a resolution of 0.5° by 0.5° (see the paper [here](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016WR019392) and the dataset [here](https://data.csiro.au/collection/csiro:19813v1)). 
-According to this global dataset, the effective rooting depth around our region of interest (France) can reasonably assumed to \\(Z_{r} = 0.5\\). Additionally, the parameter \\(p\\) is also assumed constant and equal to and \\(p = 0.5\\) which is in line with common values described in Table 22 of Allen et al. (1998).
+Typical values of θFC and θWP for different soil types are given in Table 19 of Allen et al. (1998).
+The readily available water (RAW) is given by RAW=p×TAW, where p is the average fraction of TAW that can be depleted from the root zone before moisture stress (ranging between 0 to 1). This quantity is also noted STFC which is the available water stored at field capacity in the root zone.
+Ranges of maximum effective rooting depth Zr, and soil water depletion fraction for no stress p, for common crops are given in the Table 22 of Allen et al. (1998). In addition, a global effective plant rooting depth dataset is provided by Yang et al. (2016) with a resolution of 0.5° by 0.5° (see the paper [here](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016WR019392) and the dataset [here](https://data.csiro.au/collection/csiro:19813v1)). 
+According to this global dataset, the effective rooting depth around our region of interest (France) can reasonably assumed to Zr=0.5. Additionally, the parameter p is also assumed constant and equal to and p=0.5 which is in line with common values described in Table 22 of Allen et al. (1998).
 ```
 zr = ee.Image(0.5)
 p = ee.Image(0.5)
@@ -733,22 +743,23 @@ stfc = taw.multiply(p)
 
 ```
 
-The Thornthwaite-Mather procedure used to estimate groundwater recharge is explicitly described by Steenhuis and Van der Molen (1985). This procedure uses monthly sums of potential evaporation, cumulative precipitation, and the moisture status of the soil which is calculated iteratively. The moisture status of the soils depends on the accumulated potential water loss (\\(APWL\\)). This parameter is calculated depending on whether the potential evaporation is greater than or less than the cumulative precipitation. The procedure reads as follow:
+The Thornthwaite-Mather procedure used to estimate groundwater recharge is explicitly described by Steenhuis and Van der Molen (1985). This procedure uses monthly sums of potential evaporation, cumulative precipitation, and the moisture status of the soil which is calculated iteratively. The moisture status of the soils depends on the accumulated potential water loss (APWL). This parameter is calculated depending on whether the potential evaporation is greater than or less than the cumulative precipitation. The procedure reads as follow:
 **Case 1: potential evapotranspiration is higher than precipitation.**
-In that case, \\(PET>P\\) and \\(APWL_{m}\\) is incremented as follows: \\(APWL_{m} = APWL_{m - 1} + (PET_{m} - P_{m})\\) where:
-  * \\(APWL_{m}\\) (respectively \\(APWL_{m - 1}\\)) represents the accumulated potential water loss for the month \\(m\\) (respectively at the previous month \\(m - 1\\))
-  * \\(PET_{m}\\) the cumulative potential evapotranspiration at month \\(m\\),
-  * \\(P_{m}\\) the cumulative precipitation at month \\(m\\),
+In that case, PET>P and APWLm is incremented as follows: APWLm=APWLm−1+(PETm−Pm) where:
+  * APWLm (respectively APWLm−1) represents the accumulated potential water loss for the month m (respectively at the previous month m−1)
+  * PETm the cumulative potential evapotranspiration at month m,
+  * Pm the cumulative precipitation at month m,
 
 
-and the relationship between \\(APWL\\) and the amount of water stored in the root zone for the month \\(m\\) is expressed as: \\(ST_{m} = ST_{FC} \times [\textrm{exp}(-APWL_{m}/ST_{FC})]\\) where \\(ST_{m}\\) is the available water stored in the root zone for the month \\(m\\).
+and the relationship between APWL and the amount of water stored in the root zone for the month m is expressed as: STm=STFC×[exp(−APWLm/STFC)] where STm is the available water stored in the root zone for the month m.
 **Case 2: potential evapotranspiration is lower than precipitation.**
-In that case, \\(PET<P\\) and \\(ST_{m}\\) is incremented as follows: \\(ST_{m} = ST_{m-1} + (P_{m} - PET_{m})\\).
-**_Case 2.1: the storage \\(ST_{m}\\) is higher than the water stored at the field capacity._**
-If \\(ST_{m} > ST_{FC}\\) the recharge is calculated as: $$R_{m} = ST_{m} - ST_{FC} + P_{m} - PET_{m}$$ 
-In addition, the water stored at the end of the month \\(m\\) becomes equal to \\(ST_{FC}\\) and \\(APWL_{m}\\) is set equal to zero.
-**_Case 2.2: the storage \\(ST_{m}\\) is less than or equal to the water stored at the field capacity._**
-If \\(ST_{m} <= ST_{FC}\\), \\(APWL_{m}\\) is implemented as follows: \\(APWL_{m} = - ST_{FC} \times \textrm{ln}(ST_{m}/ST_{FC})\\), and no percolation occurs.
+In that case, PET<P and STm is incremented as follows: STm=STm−1+(Pm−PETm).
+**_Case 2.1: the storage STm is higher than the water stored at the field capacity._**
+If STm>STFC the recharge is calculated as: 
+Rm=STm−STFC+Pm−PETm
+In addition, the water stored at the end of the month m becomes equal to STFC and APWLm is set equal to zero.
+**_Case 2.2: the storage STm is less than or equal to the water stored at the field capacity._**
+If STm<=STFC, APWLm is implemented as follows: APWLm=−STFC×ln(STm/STFC), and no percolation occurs.
 #### Initialization
 The initial time of the calculation is defined according to the first date of the meteorological collection:
 ```
@@ -757,7 +768,7 @@ time0 = meteo.first().get("system:time_start")
 
 ```
 
-Then, we initialize the calculation with an `ee.Image` where all bands associated to the hydric state of the soil are set equal to `ee.Image(0)`, except for the initial storage which is considered to be equal to the water content at field capacity, meaning that \\(ST_{0} = ST_{FC}\\). 
+Then, we initialize the calculation with an `ee.Image` where all bands associated to the hydric state of the soil are set equal to `ee.Image(0)`, except for the initial storage which is considered to be equal to the water content at field capacity, meaning that ST0=STFC. 
 ```
 # Initialize all bands describing the hydric state of the soil.
 # Do not forget to cast the type of the data with a .float().
@@ -938,7 +949,7 @@ The mean annual recharge at our point of interest is 154 mm/an
 
 ```
 ```
-/tmpfs/tmp/ipykernel_8015/1140476268.py:2: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmpfs/tmp/ipykernel_33764/1140476268.py:2: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
  rdfy = rdf.resample("Y").sum()
 
 ```
@@ -975,7 +986,7 @@ rdf2y.head()
 
 ```
 ```
-/tmpfs/tmp/ipykernel_8015/891754906.py:9: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmpfs/tmp/ipykernel_33764/891754906.py:9: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
  rdf2y = rdf2.resample("Y").sum()
 
 ```
@@ -1149,3 +1160,4 @@ Please note the following points:
 **Yang, Y., Donohue, R. J., & McVicar, T. R. (2016).** Global estimation of effective plant rooting depth: Implications for hydrological modeling. _Water Resources Research_ , 52(10), 8260-8276.
 ### Acknowledgements
 Thanks to Susanne Benz for precious advice. 
+Was this helpful?

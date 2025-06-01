@@ -13,4 +13,3 @@ There is no persistent data associated with this resource.
 ---  
 ### `list[](https://developers.google.com/earth-engine/reference/rest/v1/projects.algorithms/list)`
 |  Gets the list of all the algorithms available for use in Expressions.  
-Was this helpful?

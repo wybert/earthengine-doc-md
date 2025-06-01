@@ -1,19 +1,6 @@
  
 #  Method: projects.image.import 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#authorization-scopes)
-  * [ImageManifest](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#imagemanifest)
-  * [TilesetBand](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#tilesetband)
-  * [TilesetMaskBand](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#tilesetmaskband)
-  * [PixelFootprint](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#pixelfootprint)
-  * [GridPoint](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/import#gridpoint)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Imports an image.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1beta/{project=projects/*}/image:import`
@@ -184,4 +171,3 @@ Fields
 ---  
 `x` |  `number` The x coordinate value.  
 `y` |  `number` The y coordinate value.  
-Was this helpful?

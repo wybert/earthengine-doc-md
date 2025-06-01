@@ -1,6 +1,6 @@
  
 #  Get started with Earth Engine in the Code Editor 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_javascript#before_you_begin)
   * [Welcome to the Code Editor](https://developers.google.com/earth-engine/guides/quickstart_javascript#welcome_to_the_code_editor)
@@ -94,4 +94,3 @@ print(chart);
   * Learn how to [export your computation results to BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery).
 
 
-Was this helpful?

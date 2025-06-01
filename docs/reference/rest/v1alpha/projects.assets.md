@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: EarthEngineAsset](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#resource:-earthengineasset)
     * [CloudStorageLocation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets#cloudstoragelocation)
@@ -533,3 +533,4 @@ Enums
 |  Sets the access control policy on the specified resource.  
 ### `testIamPermissions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/testIamPermissions)`
 |  Returns permissions that a caller has on the specified resource.  
+Was this helpful?

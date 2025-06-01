@@ -21,3 +21,4 @@ Argument| Type| Details
 `preserveOrder`| Boolean, default: false| Preserve order of instances.  
 `fast`| Boolean, default: false| Enables faster distance calculations, using cut-off values. Disables the calculation/output of squared errors/distances.  
 `seed`| Integer, default: 10| The randomization seed.  
+Was this helpful?

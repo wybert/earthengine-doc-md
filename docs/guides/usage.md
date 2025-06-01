@@ -1,25 +1,6 @@
  
 #  Earth Engine quotas 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Types of quota](https://developers.google.com/earth-engine/guides/usage#types_of_quota)
-  * [Adjustable quota limits](https://developers.google.com/earth-engine/guides/usage#adjustable_quota_limits)
-    * [Concurrent interactive requests](https://developers.google.com/earth-engine/guides/usage#concurrent_interactive_requests)
-    * [Rate of requests (QPS)](https://developers.google.com/earth-engine/guides/usage#rate_of_requests_qps)
-    * [Concurrent batch tasks](https://developers.google.com/earth-engine/guides/usage#concurrent_batch_tasks)
-    * [Asset storage quota](https://developers.google.com/earth-engine/guides/usage#asset_storage_quota)
-    * [User seats](https://developers.google.com/earth-engine/guides/usage#user_seats)
-  * [Fixed quota limits](https://developers.google.com/earth-engine/guides/usage#fixed_quota_limits)
-    * [Computation time](https://developers.google.com/earth-engine/guides/usage#computation_time)
-    * [Per-request memory footprint](https://developers.google.com/earth-engine/guides/usage#per-request_memory_footprint)
-    * [Aggregations](https://developers.google.com/earth-engine/guides/usage#aggregations)
-    * [Table import limits](https://developers.google.com/earth-engine/guides/usage#table_import_limits)
-    * [Request payload size](https://developers.google.com/earth-engine/guides/usage#request_payload_size)
-    * [Task queue length](https://developers.google.com/earth-engine/guides/usage#task_queue_length)
-  * [BigQuery raster functions quota limits](https://developers.google.com/earth-engine/guides/usage#bigquery_raster_functions_quota_limits)
-    * [BigQuery slot-time per day](https://developers.google.com/earth-engine/guides/usage#bigquery_slot-time_per_day)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Types of quota
 The Earth Engine platform has a number of quota limits in place to ensure that resources are distributed fairly across users. Since there are many different types of resources available in Earth Engine (computation, storage, etc.), there are many different types of quota limits.
 The primary distinction between different quota types is whether they're adjustable. For some types of quota, we're able to change the limits on a per-user or per-project basis, while other types are system-wide limits which can't be changed.
@@ -84,7 +65,7 @@ Quota type | Default value (per project)
 ---|---  
 BigQuery slot-time per day | 1,260,000 slot-seconds (350 slot-hours)  
 ### BigQuery slot-time per day
-The BigQuery slot-time per day quota is a custom quota that lets you limit the amount of slot-time that BigQuery raster functions are allowed to consume on Earth Engine on a given day for a given project. You can [view this quota in the Cloud Console](https://console.cloud.google.com/iam-admin/quotas?service=earthengine.googleapis.com&metric=earthengine.googleapis.com/bigquery_slot_usage_time) under the `earthengine.googleapis.com/bigquery_slot_usage_time` metric, and the value can be adjusted up or down by a Quota Administrator. To increase the value above the default value, [create a quota increase request](https://cloud.google.com/docs/quotas/view-manage#requesting_higher_quota), which will be automatically approved.
+The BigQuery slot-time per day quota is a custom quota that lets you limit the amount of slot-time that BigQuery raster functions are allowed to consume on Earth Engine on a given day for a given project. The daily quota accumulates the total time on all queries, even those that fail. You can view the quota in the [Cloud Console](https://console.cloud.google.com/iam-admin/quotas?service=earthengine.googleapis.com&metric=earthengine.googleapis.com/bigquery_slot_usage_time) under the `earthengine.googleapis.com/bigquery_slot_usage_time` metric, and the value can be adjusted up or down by a Quota Administrator. To increase the value above the default value, [create a quota increase request](https://cloud.google.com/docs/quotas/view-manage#requesting_higher_quota), which will be automatically approved. The change should take effect within 10 minutes.
 If you exceed this quota, BigQuery will return the following error message:
 > `From Earth Engine: Custom quota exceeded: Your usage exceeded the custom quota for 'earthengine.googleapis.com/bigquery_slot_usage_time', which is adjustable by your administrator in the Google Cloud console: https://console.cloud.google.com/quotas/?project=_.`
 Once the quota is exceeded, `ST_REGIONSTATS` calls will fail until the quota is reset the next day or the limit is increased by an administrator.

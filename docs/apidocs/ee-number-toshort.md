@@ -80,3 +80,4 @@ print('Less than short min cast to short becomes short min:',
    out_of_range_lo_to_short.getInfo())
 ```
 
+Was this helpful?

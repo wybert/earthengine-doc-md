@@ -1,6 +1,6 @@
  
 #  ui.Map.clear 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Clears the map by removing all layers, listeners, and widgets and restoring the options to their defaults. 
 Returns the map.
 Usage| Returns  
@@ -9,4 +9,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map`| ui.Map| The ui.Map instance.  
-Was this helpful?

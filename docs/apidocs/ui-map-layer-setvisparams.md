@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.layer`| ui.Map.Layer| The ui.Map.Layer instance.  
 `visParams`| FeatureVisualizationParameters|ImageVisualizationParameters, optional| The visualization parameters. See ee.data.getMapId() docs.  
-Was this helpful?

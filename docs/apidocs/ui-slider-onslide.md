@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.slider`| ui.Slider| The ui.Slider instance.  
 `callback`| Function| The callback to fire when the slider's state changes. The callback is passed the slider's current value.  
+Was this helpful?

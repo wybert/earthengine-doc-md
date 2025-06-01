@@ -11,3 +11,4 @@ this: `element`| Element| The element with array properties.
 `selectors`| List, default: null| The array properties for which descriptors will be created. Selected array properties must be square, floating point arrays. Defaults to all array properties.  
 `buckets`| Integer, default: 100| The number of HERS buckets. Defaults to 100.  
 `peakWidthScale`| Float, default: 1| The HERS peak width scale. Defaults to 1.0.  
+Was this helpful?

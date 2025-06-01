@@ -1,6 +1,15 @@
  
 #  Method: projects.classifier.export 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#authorization-scopes)
+  * [ClassifierAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#classifierassetexportoptions)
+
+
 Initiates a batch process that computes a classifier and saves it as an Earth Engine asset.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/classifier:export`
@@ -66,3 +75,4 @@ Fields
 ---  
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `earthEngineDestination` |  `object (`EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/EarthEngineDestination)`)` If specified, configures export to Earth Engine.  
+Was this helpful?

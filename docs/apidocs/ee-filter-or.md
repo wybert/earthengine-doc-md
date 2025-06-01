@@ -1,6 +1,6 @@
  
 #  ee.Filter.or 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Combine two or more filters using boolean OR. 
 Returns the constructed filter.
 Usage| Returns  

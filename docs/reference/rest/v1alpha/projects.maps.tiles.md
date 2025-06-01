@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.maps.tiles 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: HttpBody
 Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page.
 This message can be used both in streaming and non-streaming API methods in the request as well as the response.

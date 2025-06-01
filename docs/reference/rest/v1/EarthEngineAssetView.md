@@ -8,4 +8,3 @@ Enums
 `EARTH_ENGINE_ASSET_VIEW_UNSPECIFIED` | Not specified, equivalent to `FULL`.  
 `FULL` | All fields are set in each `EarthEngineAsset` returned in the response. The default value.  
 `BASIC` | Only the fields `type`, `name`, and `id` are set in each `EarthEngineAsset` returned in the response.  
-Was this helpful?

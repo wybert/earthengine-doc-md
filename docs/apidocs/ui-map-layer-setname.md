@@ -1,6 +1,6 @@
  
 #  ui.Map.Layer.setName 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the name of the layer. 
 Returns this map layer.
 Usage| Returns  

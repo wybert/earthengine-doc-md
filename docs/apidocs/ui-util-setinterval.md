@@ -1,6 +1,6 @@
  
 #  ui.util.setInterval 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Repeatedly calls a function with a fixed time delay between each call. 
 Returns a key that can be passed to ui.util.clearTimeout to remove the timeout.
 Usage| Returns  

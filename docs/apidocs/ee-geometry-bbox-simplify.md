@@ -54,4 +54,3 @@ m.add_layer(bbox_simplify, {'color': 'red'}, 'Result [red]: bbox.simplify')
 m
 ```
 
-Was this helpful?

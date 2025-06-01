@@ -47,4 +47,3 @@ all_keys_img = dic.toImage()
 print('All keys image band names:', all_keys_img.bandNames().getInfo())
 ```
 
-Was this helpful?

@@ -11,4 +11,3 @@ this: `image`| Image| The input image.
 `neighborhood`| Integer, default: 256| Neighborhood size in pixels.  
 `units`| String, default: "pixels"| The units of the neighborhood, currently only 'pixels' are supported.  
 `metric`| String, default: "squared_euclidean"| Distance metric to use: options are `squared_euclidean`, `manhattan` or `chebyshev`.  
-Was this helpful?

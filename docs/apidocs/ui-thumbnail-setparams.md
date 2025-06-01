@@ -1,6 +1,6 @@
  
 #  ui.Thumbnail.setParams 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the parameters used to generate the thumbnail. 
 Returns this thumbnail.
 Usage| Returns  
@@ -22,4 +22,3 @@ this: `ui.thumbnail`| ui.Thumbnail| The ui.Thumbnail instance.
 ` palette ` (comma-separated strings) List of CSS-style color strings (single-band previews only).  
 ` opacity ` (number) a number between 0 and 1 for opacity.  
 ` version ` (number) Version number of image (or latest).  
-Was this helpful?

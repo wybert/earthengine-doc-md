@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.button`| ui.Button| The ui.Button instance.  
 `callback`| Function| The callback to fire when the button is clicked. The callback is passed the button widget.  
+Was this helpful?

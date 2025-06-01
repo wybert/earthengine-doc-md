@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.splitpanel`| ui.SplitPanel| The ui.SplitPanel instance.  
+Was this helpful?

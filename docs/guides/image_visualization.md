@@ -1,19 +1,6 @@
  
 #  Image Visualization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [RGB composites](https://developers.google.com/earth-engine/guides/image_visualization#rgb-composites)
-  * [Color palettes](https://developers.google.com/earth-engine/guides/image_visualization#color-palettes)
-    * [Saving default color palettes](https://developers.google.com/earth-engine/guides/image_visualization#saving-default-color-palettes)
-  * [Masking](https://developers.google.com/earth-engine/guides/image_visualization#masking)
-  * [Visualization images](https://developers.google.com/earth-engine/guides/image_visualization#visualization-images)
-  * [Mosaicking](https://developers.google.com/earth-engine/guides/image_visualization#mosaicking)
-  * [Clipping](https://developers.google.com/earth-engine/guides/image_visualization#clipping)
-  * [Rendering categorical maps](https://developers.google.com/earth-engine/guides/image_visualization#rendering-categorical-maps)
-  * [Styled Layer Descriptors](https://developers.google.com/earth-engine/guides/image_visualization#styled-layer-descriptors)
-  * [Thumbnail images](https://developers.google.com/earth-engine/guides/image_visualization#thumbnail-images)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/image_visualization.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/image_visualization.ipynb)  
 ---|---  
 There are a number of `ee.Image` methods that produce RGB visual representations of image data, for example: `visualize()`, `getThumbURL()`, `getMap()`, `getMapId()` (used in Colab Folium map display) and, `Map.addLayer()` (used in Code Editor map display, not available for Python). By default these methods assign the first three bands to red, green and blue, respectively. The default stretch is based on the type of data in the bands (e.g. floats are stretched in [0, 1], 16-bit data are stretched to the full range of possible values), which may or may not be suitable. To achieve desired visualization effects, you can provide visualization parameters:
@@ -30,7 +17,7 @@ _opacity_ | The opacity of the layer (0.0 is fully transparent and 1.0 is fully 
 _format_ | Either "jpg" or "png" | string  
 ## RGB composites
 The following illustrates the use of parameters to style a Landsat 8 image as a false-color composite:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load an image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
@@ -45,12 +32,15 @@ gamma:[0.95,1.1,1]
 Map.setCenter(-122.1899,37.5010,10);// San Francisco Bay
 Map.addLayer(image,vizParams,'false color composite');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load an image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
@@ -72,7 +62,7 @@ In this example, band `'B5'` is assigned to red, `'B4'` is assigned to green, an
 ![false_color_sf](https://developers.google.com/static/earth-engine/images/Images_false_color_sf.png) Landsat 8 false color composite of San Francisco bay area, California, USA. 
 ## Color palettes
 To display a single band of an image in color, set the `palette` parameter with a color ramp represented by a list of CSS-style color strings. (See [this reference](http://en.wikipedia.org/wiki/Web_colors) for more information). The following example illustrates how to use colors from cyan (`'00FFFF'`) to blue (`'0000FF'`) to render a [ Normalized Difference Water Index (NDWI)](http://www.tandfonline.com/doi/abs/10.1080/01431169608948714) image:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load an image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
@@ -81,12 +71,15 @@ varndwi=image.normalizedDifference(['B3','B5']);
 varndwiViz={min:0.5,max:1,palette:['00FFFF','0000FF']};
 Map.addLayer(ndwi,ndwiViz,'NDWI',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load an image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
@@ -113,18 +106,21 @@ For example, if your image has a band named `'landcover'` with three values 0, 1
 See the [managing assets page](https://developers.google.com/earth-engine/guides/manage_assets#set_asset_metadata) to learn how to set asset metadata.
 ## Masking
 You can use `image.updateMask()` to set the opacity of individual pixels based on where pixels in a mask image are non-zero. Pixels equal to zero in the mask are excluded from computations and the opacity is set to 0 for display. The following example uses an NDWI threshold (see the [ Relational Operations section](https://developers.google.com/earth-engine/guides/image_relational) for information on thresholds) to update the mask on the NDWI layer created previously:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Mask the non-watery parts of the image, where NDWI < 0.4.
 varndwiMasked=ndwi.updateMask(ndwi.gte(0.4));
 Map.addLayer(ndwiMasked,ndwiViz,'NDWI masked');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Mask the non-watery parts of the image, where NDWI < 0.4.
 ndwi_masked = ndwi.updateMask(ndwi.gte(0.4))
@@ -137,7 +133,7 @@ display(map_ndwi_masked)
 
 ## Visualization images
 Use the `image.visualize()` method to convert an image into an 8-bit RGB image for display or export. For example, to convert the false-color composite and NDWI to 3-band display images, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Create visualization layers.
 varimageRGB=image.visualize({bands:['B5','B4','B3'],max:0.5});
@@ -147,12 +143,15 @@ max:1,
 palette:['00FFFF','0000FF']
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 image_rgb = image.visualize(bands=['B5', 'B4', 'B3'], max=0.5)
 ndwi_rgb = ndwi_masked.visualize(min=0.5, max=1, palette=['00FFFF', '0000FF'])
@@ -160,18 +159,21 @@ ndwi_rgb = ndwi_masked.visualize(min=0.5, max=1, palette=['00FFFF', '0000FF'])
 
 ## Mosaicking
 You can use masking and `imageCollection.mosaic()` (see the [Mosaicking section](https://developers.google.com/earth-engine/guides/ic_composite_mosaic) for information on mosaicking) to achieve various cartographic effects. The `mosaic()` method renders layers in the output image according to their order in the input collection. The following example uses `mosaic()` to combine the masked NDWI and the false color composite and obtain a new visualization:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Mosaic the visualization layers and display (or export).
 varmosaic=ee.ImageCollection([imageRGB,ndwiRGB]).mosaic();
 Map.addLayer(mosaic,{},'mosaic');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Mosaic the visualization layers and display (or export).
 mosaic = ee.ImageCollection([image_rgb, ndwi_rgb]).mosaic()
@@ -186,19 +188,22 @@ In this example, observe that a list of the two visualization images is provided
 ![mosaic_sf](https://developers.google.com/static/earth-engine/images/Images_mosaic_sf.png) Mosaic of a Landsat 8 false color composite and NDWI. San Francisco bay area, USA. 
 ## Clipping
 The `image.clip()` method is useful for achieving cartographic effects. The following example clips the mosaic created previously to an arbitrary buffer zone around the city of San Francisco:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a circle by drawing a 20000 meter buffer around a point.
 varroi=ee.Geometry.Point([-122.4481,37.7599]).buffer(20000);
 // Display a clipped version of the mosaic.
 Map.addLayer(mosaic.clip(roi),null,'mosaic clipped');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Create a circle by drawing a 20000 meter buffer around a point.
 roi = ee.Geometry.Point([-122.4481, 37.7599]).buffer(20000)
@@ -214,7 +219,7 @@ In the previous example, note that the coordinates are provided to the `Geometry
 ![clipped_sf](https://developers.google.com/static/earth-engine/images/Images_clip_SF_map.png) The mosaic shown above, clipped to a buffer around San Francisco, California, USA. 
 ## Rendering categorical maps
 Palettes are also useful for rendering discrete valued maps, for example a land cover map. In the case of multiple classes, use the palette to supply a different color for each class. (The `image.remap()` method may be useful in this context, to convert arbitrary labels to consecutive integers). The following example uses a palette to render land cover categories:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load 2012 MODIS land cover and select the IGBP classification.
 varcover=ee.Image('MODIS/051/MCD12Q1/2012_01_01')
@@ -238,12 +243,15 @@ Map.addLayer(cover,
 {min:0,max:17,palette:igbpPalette},
 'IGBP classification');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load 2012 MODIS land cover and select the IGBP classification.
 cover = ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1')
@@ -280,7 +288,7 @@ display(map_palette)
 ![landcover_palettized](https://developers.google.com/static/earth-engine/images/Images_landcover_palettized.png) MODIS 2012 land cover using the IGBP classification. 
 ## Styled Layer Descriptors
 You can use a Styled Layer Descriptor ([SLD](http://www.opengeospatial.org/standards/sld)) to render imagery for display. Provide `image.sldStyle()` with an XML description of the symbolization and coloring of the image, specifically the `RasterSymbolizer` element. Learn more about the `RasterSymbolizer` element [here](http://docs.geoserver.org/stable/en/user/styling/sld/reference/rastersymbolizer.html). For example, to render the land cover map described in the Rendering categorical maps section with an SLD, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varcover=ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1');
 // Define an SLD style of discrete intervals to apply to the image.
@@ -309,12 +317,15 @@ varsld_intervals=
 '</RasterSymbolizer>';
 Map.addLayer(cover.sldStyle(sld_intervals),{},'IGBP classification styled');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 cover = ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1')
 # Define an SLD style of discrete intervals to apply to the image.
@@ -351,7 +362,7 @@ display(map_sld_categorical)
 ```
 
 To create a visualization image with a color ramp, set the type of the `ColorMap` to 'ramp'. The following example compares the 'interval' and 'ramp' types for rendering a DEM:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load SRTM Digital Elevation Model data.
 varimage=ee.Image('CGIAR/SRTM90_V4');
@@ -387,12 +398,15 @@ Map.setCenter(-76.8054,42.0289,8);
 Map.addLayer(image.sldStyle(sld_intervals),{},'SLD intervals');
 Map.addLayer(image.sldStyle(sld_ramp),{},'SLD ramp');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load SRTM Digital Elevation Model data.
 image = ee.Image('CGIAR/SRTM90_V4')
@@ -431,7 +445,7 @@ display(map_sld_interval)
 ```
 
 SLDs are also useful for stretching pixel values to improve visualizations of continuous data. For example, the following code compares the results of an arbitrary linear stretch with a min-max 'Normalization' and a 'Histogram' equalization:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 raw image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318');
@@ -460,12 +474,15 @@ Map.addLayer(image,{bands:['B5','B4','B3'],min:0,max:15000},'Linear');
 Map.addLayer(image.sldStyle(equalize_sld),{},'Equalized');
 Map.addLayer(image.sldStyle(normalize_sld),{},'Normalized');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 raw image.
 image = ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318')
@@ -527,7 +544,7 @@ _format_ | Defines thumbnail format as either PNG or JPEG. The default PNG forma
 **Caution:** The `'WIDTHxHEIGHT'` _dimensions_ argument can alter the original aspect ratio of the data or region extent.
 A single-band image will default to grayscale unless a `palette` argument is supplied. A multi-band image will default to RGB visualization of the first three bands, unless a `bands` argument is supplied. If only two bands are provided, the first band will map to red, the second to blue, and the green channel will be zero filled. 
 The following are a series of examples demonstrating various combinations of `getThumbURL()` parameter arguments. Click on the URLs printed when you run this script to view the thumbnails.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Fetch a digital elevation model.
 varimage=ee.Image('CGIAR/SRTM90_V4');
@@ -559,12 +576,15 @@ varthumbnail3=image.getThumbURL({
 });
 print('Linear ring region and specified crs',thumbnail3);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Fetch a digital elevation model.
 image = ee.Image('CGIAR/SRTM90_V4')
@@ -615,4 +635,3 @@ thumbnail_3 = image.getThumbURL({
 print('Linear ring region and specified crs:', thumbnail_3)
 ```
 **Note:** Thumbnail images are also available as UI elements (Code Editor only), see: [ `ui.Thumbnail`](https://developers.google.com/earth-engine/guides/ui_widgets#ui.thumbnail). **Note:** `getThumbURL` is intended as a method for producing preview images you might include in presentations, websites, and social media posts. Its size limitation is 100,000,000 pixels and the browser can timeout for complicated requests. If you want a large image or have a complex process, see the [Exporting Data](https://developers.google.com/earth-engine/guides/exporting) page.
-Was this helpful?

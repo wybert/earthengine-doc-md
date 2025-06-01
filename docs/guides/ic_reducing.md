@@ -1,12 +1,8 @@
  
 #  Reducing an ImageCollection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Composites have no projection](https://developers.google.com/earth-engine/guides/ic_reducing#composites-have-no-projection)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 To composite images in an `ImageCollection`, use `imageCollection.reduce()`. This will composite all the images in the collection to a single image representing, for example, the min, max, mean or standard deviation of the images. (See the [Reducers section](https://developers.google.com/earth-engine/guides/reducers_image_collection) for more information about reducers). For example, to create a median value image from a collection:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 collection for a single path-row.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -18,12 +14,15 @@ varmedian=collection.median();
 Map.setCenter(-122.3578,37.7726,12);
 Map.addLayer(median,{bands:['B4','B3','B2'],max:0.3},'Median');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 collection for a single path-row.
 collection = (
@@ -41,7 +40,7 @@ m
 ```
 
 At each location in the output image, in each band, the pixel value is the median of all unmasked pixels in the input imagery (the images in the collection). In the previous example, `median()` is a convenience method for the following call:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Reduce the collection with a median reducer.
 varmedian=collection.reduce(ee.Reducer.median());
@@ -50,12 +49,15 @@ Map.addLayer(median,
 {bands:['B4_median','B3_median','B2_median'],max:0.3},
 'Also median');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Reduce the collection with a median reducer.
 median = collection.reduce(ee.Reducer.median())
@@ -70,7 +72,7 @@ m
 
 Note that the band names differ as a result of using `reduce()` instead of the convenience method. Specifically, the names of the reducer have been appended to the band names.
 More complex reductions are also possible using `reduce()`. For example, to compute the long term linear trend over a collection, use one of the linear regression reducers. The following code computes the linear trend of MODIS Enhanced Vegetation Index (EVI):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // This function adds a band representing the image timestamp.
 varaddTime=function(image){
@@ -95,12 +97,15 @@ trend,
 {min:0,max:[-100,100,10000],bands:['scale','scale','offset']},
 'EVI trend');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # This function adds a band representing the image timestamp.
 defadd_time(image):

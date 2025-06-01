@@ -30,4 +30,3 @@ print('5 less than 10?', ee.Number(5).lt(ee.Number(10)).getInfo()) # 1
 print('10 less than 5?', ee.Number(10).lt(ee.Number(5)).getInfo()) # 0
 ```
 
-Was this helpful?

@@ -1,14 +1,6 @@
  
 #  Method: projects.thumbnails.getPixels 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.thumbnails/getPixels#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.thumbnails/getPixels#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.thumbnails/getPixels#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.thumbnails/getPixels#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.thumbnails/getPixels#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes an image showing the result of a computation. The request includes values (an ID and authorisation token) from a previous `thumbnails.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/thumbnails/*}:getPixels`

@@ -1,7 +1,8 @@
  
 #  ee.Model.fromVertexAi 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns an ee.Model from a description of a Vertex AI model endpoint. (See https://cloud.google.com/vertex-ai). **Warning:** This method is in public preview and may undergo breaking changes. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Returns an ee.Model from a description of a Vertex AI model endpoint. (See https://cloud.google.com/vertex-ai). **Warning:** This method is in public preview and may undergo breaking changes.
+Usage| Returns  
 ---|---  
 `ee.Model.fromVertexAi(endpoint,  _inputProperties_, _inputTypeOverride_, _inputShapes_, _proj_, _fixInputProj_, _inputTileSize_, _inputOverlapSize_, _outputTileSize_, _outputBands_, _outputProperties_, _outputMultiplier_, _maxPayloadBytes_, _payloadFormat_)`| Model  
 Argument| Type| Details  

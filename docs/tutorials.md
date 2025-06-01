@@ -59,6 +59,7 @@ Earth Engine on YouTube
     * [ Google Developer Experts ](https://developers.google.com/community/experts)
     * [ Accelerators ](https://developers.google.com/community/accelerators)
     * [ Women Techmakers ](https://developers.google.com/womentechmakers)
+    * [ Google Cloud & NVIDIA ](https://developers.google.com/community/nvidia)
   * ### Developer consoles
     * [ Google API Console ](https://console.developers.google.com)
     * [ Google Cloud Platform Console ](https://console.cloud.google.com)
@@ -70,7 +71,7 @@ Earth Engine on YouTube
     * [ Google Home Developer Console ](https://console.home.google.com)
 
 
-[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
+[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/vce7dc8716edeb3714adfe4dd15b25490031be374149e3613a8b7fb0be9fc4a25/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
   * [ Android ](https://developer.android.com)
   * [ Chrome ](https://developer.chrome.com/home)
   * [ Firebase ](https://firebase.google.com)

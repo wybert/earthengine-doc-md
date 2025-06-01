@@ -1,6 +1,6 @@
  
 #  ee.Filter.gte 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Filter on metadata greater than or equal to the given value. 
 Returns the constructed filter.
 Usage| Returns  

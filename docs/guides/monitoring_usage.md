@@ -1,6 +1,6 @@
  
 #  Monitoring usage 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 This page describes how to create charts to monitor Earth Engine compute and storage consumption using Cloud Monitoring.
 There are other ways to monitor Earth Engine usage from the Cloud Console, which are not the focus of the document but include:
   * The **APIs & Services > Metrics** [page](https://console.cloud.google.com/apis/api/earthengine.googleapis.com/metrics), which shows basic metrics including traffic (number of requests), errors and latency (per API method, response code or credentials).

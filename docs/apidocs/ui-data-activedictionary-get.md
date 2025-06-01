@@ -1,8 +1,7 @@
  
 #  ui.data.ActiveDictionary.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns either a clone of this object or, if a key is provided, the value of the property with the passed-in key. Look at the constructor's parameters to see which properties are available. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns either a clone of this object or, if a key is provided, the value of the property with the passed-in key. Look at the constructor's parameters to see which properties are available. Usage| Returns  
 ---|---  
 `ActiveDictionary.get( _key_)`| Object  
 Argument| Type| Details  

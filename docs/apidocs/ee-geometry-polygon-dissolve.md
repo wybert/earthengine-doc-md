@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Polygon.dissolve 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. Usage| Returns  
 ---|---  
 `Polygon.dissolve( _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -32,6 +31,7 @@ Map.addLayer(polygonDissolve,
 {'color':'red'},
 'Result [red]: polygon.dissolve');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

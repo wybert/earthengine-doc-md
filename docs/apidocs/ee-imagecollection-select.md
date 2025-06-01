@@ -1,6 +1,10 @@
  
 #  ee.ImageCollection.select 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-select#examples)
+
+
 Select bands from each image in a collection. 
 Returns the image collection with selected bands.
 Usage| Returns  
@@ -12,7 +16,7 @@ this: `imagecollection`| ImageCollection| The ImageCollection instance.
 `selectors`| List| A list of names, regexes or numeric indices specifying the bands to select.  
 `names`| List, optional| A list of new names for the output bands. Must match the number of bands selected.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-select#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-select#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image collection.
 varcol=ee.ImageCollection('COPERNICUS/S2_SR')
@@ -46,15 +50,12 @@ col.select('B[1-9][1-2]').first().bandNames());
 print('Match "B" or "QA" each followed by any character, any number of times.',
 col.select('B.*|QA.*').first().bandNames());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image collection.
 col = ee.ImageCollection('COPERNICUS/S2_SR').filterBounds(

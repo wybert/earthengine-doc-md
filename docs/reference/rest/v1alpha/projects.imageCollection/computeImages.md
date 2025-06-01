@@ -1,14 +1,6 @@
  
 #  Method: projects.imageCollection.computeImages 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.imageCollection/computeImages#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes a set of features by applying an arbitrary computation to features in one or more tables. Results are returned as a list of images.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/imageCollection:computeImages`

@@ -263,9 +263,9 @@ for prop in pdsi_dict.keys():
 ```
 ```
 <class 'dict'> 
-millis: [1115272800000, 1115704800000, 1116136800000, '...']
-pdsi: [0.9976896117388457, 1.145109757293725, 1.3925674087567397, '...']
-system:index: ['20050505', '20050510', '20050515', '...']
+millis: [1117864800000, 1118296800000, 1118728800000, '...']
+pdsi: [2.7872934079060463, 2.9245755749257354, 3.0705552153986595, '...']
+system:index: ['20050604', '20050609', '20050614', '...']
 
 ```
 
@@ -460,11 +460,11 @@ lines = base.mark_line().encode(
 
 ```
 ```
-/tmpfs/tmp/ipykernel_22868/3208543205.py:1: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_39191/3208543205.py:1: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use 'selection_point()' or 'selection_interval()' instead.
 These functions also include more helpful docstrings.
  highlight = alt.selection(
-/tmpfs/tmp/ipykernel_22868/3208543205.py:9: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_39191/3208543205.py:9: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use add_params instead.
  points = base.mark_circle().encode(
 

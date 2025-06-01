@@ -1,10 +1,6 @@
  
 #  ee.String.aside 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-aside#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Calls a function passing this object as the first argument, and returning itself. Convenient e.g. when debugging: 
 var c = ee.ImageCollection('foo').aside(print)
 .filterDate('2001-01-01', '2002-01-01').aside(print, 'In 2001')
@@ -21,7 +17,7 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
 `func`| Function| The function to call.  
 `var_args`| VarArgs| Any extra arguments to pass to the function.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-aside#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-aside#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // aside with no var_args.
 // a
@@ -49,12 +45,15 @@ ee.String('a').aside(print,1,2);
 // ''
 ee.String('').aside(print);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 defprint_result(val, *params):
 """A print function to invoke with the aside method."""
@@ -89,4 +88,3 @@ ee.String('a').aside(print_result, 1, 2)
 ee.String('').aside(print_result)
 ```
 
-Was this helpful?

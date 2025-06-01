@@ -1,7 +1,12 @@
  
 #  ee.Image.distance 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the distance to the nearest non-zero pixel in each band, using the specified distance kernel. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-distance#examples)
+
+
+Computes the distance to the nearest non-zero pixel in each band, using the specified distance kernel. 
+Usage| Returns  
 ---|---  
 `Image.distance( _kernel_, _skipMasked_)`| Image  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `image`| Image| The input image.
 `kernel`| Kernel, default: null| The distance kernel. One of chebyshev, euclidean, or manhattan.  
 `skipMasked`| Boolean, default: true| Mask output pixels if the corresponding input pixel is masked.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-distance#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-distance#colab-python-sample) More
 ```
 // The objective is to determine the per-pixel distance to a target
 // feature (pixel value). In this example, the target feature is water in a
@@ -46,15 +51,12 @@ Map.addLayer(chebyshevDist,vis,'Chebyshev distance to target pixels',false);
 // Add the target layer to the map; water is blue, all else masked out.
 Map.addLayer(targetImg.mask(targetImg),{palette:'blue'},'Target pixels');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # The objective is to determine the per-pixel distance to a target
 # feature (pixel value). In this example, the target feature is water in a

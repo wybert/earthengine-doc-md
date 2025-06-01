@@ -1,6 +1,6 @@
  
 #  ee.DateRange.end 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-daterange-end#examples)
 
@@ -33,4 +33,3 @@ date_range = ee.DateRange('2017-06-24', '2017-07-24')
 display('The end of dateRange is', date_range.end())
 ```
 
-Was this helpful?

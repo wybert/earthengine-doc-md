@@ -6,3 +6,4 @@ Usage| Returns
 ---|---  
 `ee.Reducer.count()`| Reducer  
 **No arguments.**
+Was this helpful?

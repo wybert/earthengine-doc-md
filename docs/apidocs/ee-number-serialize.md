@@ -1,6 +1,6 @@
  
 #  ee.Number.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the serialized representation of this object. Usage| Returns  
 ---|---  
 `Number.serialize( _legacy_)`| String  
@@ -13,6 +13,7 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
 ```
 print('Serialized representation of ee.Number',ee.Number(10).serialize());
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

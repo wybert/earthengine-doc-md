@@ -1,19 +1,14 @@
  
 #  ee.Classifier.smileNaiveBayes 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilenaivebayes#examples)
-
-
-Creates an empty Naive Bayes classifier. This classifier assumes that the feature vector consists of positive integers, and negative inputs are discarded. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates an empty Naive Bayes classifier. This classifier assumes that the feature vector consists of positive integers, and negative inputs are discarded. Usage| Returns  
 ---|---  
 `ee.Classifier.smileNaiveBayes( _lambda_)`| Classifier  
 Argument| Type| Details  
 ---|---|---  
 `lambda`| Float, default: 0.000001| A smoothing lambda. Used to avoid assigning zero probability to classes not seen during training, instead using lambda / (lambda * nFeatures).  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilenaivebayes#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilenaivebayes#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image, reflectance bands selected,
 // serves as the source for training and prediction in this contrived example.
@@ -75,12 +70,15 @@ Map.addLayer(roi,{color:'white'},'ROI',false,0.5);
 Map.addLayer(trainingSample,{color:'black'},'Training sample',false);
 Map.addLayer(validationSample,{color:'white'},'Validation sample',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image, reflectance bands selected,
 # serves as the source for training and prediction in this contrived example.

@@ -1,6 +1,6 @@
  
 #  ee.Geometry.LinearRing.dissolve 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. Usage| Returns  
 ---|---  
 `LinearRing.dissolve( _maxError_, _proj_)`| Geometry  

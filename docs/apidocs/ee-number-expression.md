@@ -1,7 +1,12 @@
  
 #  ee.Number.expression 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes a numeric expression. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-expression#examples)
+
+
+Computes a numeric expression. 
+Usage| Returns  
 ---|---  
 `ee.Number.expression(expression,  _vars_)`| Number  
 Argument| Type| Details  
@@ -9,7 +14,7 @@ Argument| Type| Details
 `expression`| String| A mathematical expression string to be evaluated. In addition to the standard arithmetic, boolean and relational operators, expressions also support any function in Number, the '.' operator to extract child elements from the 'vars' dictionary, and mathematical constants Math.PI and Math.E.  
 `vars`| Dictionary, default: null| A dictionary of named values that can be used in the expression.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-expression#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-expression#colab-python-sample) More
 ```
 // A dictionary of variables to use in expression.
 varvariables={x:5,y:10};
@@ -66,15 +71,12 @@ ee.Number.expression('add(x, y)',variables));
 print('Use ee.Number add and subtract: subtract(add(x, y), 5)',
 ee.Number.expression('subtract(add(x, y), 5)',variables));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A dictionary of variables to use in expression.
 variables = {'x': 5, 'y': 10}
@@ -132,3 +134,4 @@ print('Use ee.Number add and subtract. subtract(add(x, y), 5):',
    ee.Number.expression('subtract(add(x, y), 5)', variables).getInfo())
 ```
 
+Was this helpful?

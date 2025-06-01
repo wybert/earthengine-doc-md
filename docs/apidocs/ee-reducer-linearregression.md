@@ -11,4 +11,3 @@ Argument| Type| Details
 ---|---|---  
 `numX`| Integer| The number of input dimensions.  
 `numY`| Integer, default: 1| The number of output dimensions.  
-Was this helpful?

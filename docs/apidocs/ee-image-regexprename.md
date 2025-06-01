@@ -11,4 +11,3 @@ this: `input`| Image| The image containing the bands to rename.
 `regex`| String| A regular expression to match in each band name.  
 `replacement`| String| The text with which to replace each match. Supports $n syntax for captured values.  
 `all`| Boolean, default: true| If true, all matches in a given string will be replaced. Otherwise, only the first match in each string will be replaced.  
-Was this helpful?

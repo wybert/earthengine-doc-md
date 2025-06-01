@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `blob`| Blob|   
-Was this helpful?

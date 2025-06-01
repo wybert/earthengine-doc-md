@@ -1,8 +1,7 @@
  
 #  ee.Reducer.setOutputs 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a Reducer with the same inputs as the given Reducer, but with outputs renamed and/or removed. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a Reducer with the same inputs as the given Reducer, but with outputs renamed and/or removed. Usage| Returns  
 ---|---  
 `Reducer.setOutputs(outputs)`| Reducer  
 Argument| Type| Details  

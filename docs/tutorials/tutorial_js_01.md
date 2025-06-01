@@ -1,6 +1,18 @@
  
 #  Introduction to JavaScript for Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Hello World!](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#hello-world)
+  * [Basic JavaScript data types](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#basic-javascript-data-types)
+    * [Strings](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#strings)
+    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#code-editor-javascript_2)
+    * [Numbers](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#numbers)
+    * [Lists](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#lists)
+    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#code-editor-javascript_5)
+    * [Objects](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#objects)
+  * [Functions](https://developers.google.com/earth-engine/tutorials/tutorial_js_01#functions)
+
+
 This tutorial covers just enough [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript) to get you started writing Earth Engine scripts. For more thorough JavaScript tutorials, see [these Mozilla developer resources](https://developer.mozilla.org/en-US/docs/Web/JavaScript). For an introduction to programming, with examples in JavaScript, see [Eloquent JavaScript](http://eloquentjavascript.net/). For suggestions on JavaScript coding style, see the [Google JavaScript Style Guide](http://google.github.io/styleguide/javascriptguide.xml). In this tutorial, you're going to write JavaScript in the Earth Engine [Code Editor](https://code.earthengine.google.com/). Before getting started, use [the Code Editor guide](https://developers.google.com/earth-engine/guides/playground) to get familiar with the Code Editor environment.
 ## Hello World!
 Time to write your first JavaScript for Earth Engine! In your Chrome browser, go to [code.earthengine.google.com](https://code.earthengine.google.com/) and copy the following into the [Code Editor](https://developers.google.com/earth-engine/guides/playground):

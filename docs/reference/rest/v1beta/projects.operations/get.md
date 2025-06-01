@@ -1,6 +1,14 @@
  
 #  Method: projects.operations.get 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/get#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/get#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/get#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/get#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/get#authorization-scopes)
+
+
 Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/operations/**}`

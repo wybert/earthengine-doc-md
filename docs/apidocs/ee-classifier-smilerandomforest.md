@@ -1,12 +1,7 @@
  
 #  ee.Classifier.smileRandomForest 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilerandomforest#examples)
-
-
-Creates an empty Random Forest classifier. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates an empty Random Forest classifier. Usage| Returns  
 ---|---  
 `ee.Classifier.smileRandomForest(numberOfTrees,  _variablesPerSplit_, _minLeafPopulation_, _bagFraction_, _maxNodes_, _seed_)`| Classifier  
 Argument| Type| Details  
@@ -18,7 +13,7 @@ Argument| Type| Details
 `maxNodes`| Integer, default: null| The maximum number of leaf nodes in each tree. If unspecified, defaults to no limit.  
 `seed`| Integer, default: 0| The randomization seed.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilerandomforest#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-classifier-smilerandomforest#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image, reflectance bands selected,
 // serves as the source for training and prediction in this contrived example.
@@ -80,12 +75,15 @@ Map.addLayer(roi,{color:'white'},'ROI',false,0.5);
 Map.addLayer(trainingSample,{color:'black'},'Training sample',false);
 Map.addLayer(validationSample,{color:'white'},'Validation sample',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image, reflectance bands selected,
 # serves as the source for training and prediction in this contrived example.

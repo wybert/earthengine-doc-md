@@ -30,4 +30,3 @@ print('1 equal to 1?', ee.Number(1).eq(ee.Number(1)).getInfo()) # 1
 print('1.001 equal to 1?', ee.Number(1.001).eq(ee.Number(1)).getInfo()) # 0
 ```
 
-Was this helpful?

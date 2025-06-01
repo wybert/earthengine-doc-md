@@ -1,24 +1,6 @@
  
 #  Vertex AI example workflows 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Costs](https://developers.google.com/earth-engine/guides/ml_examples#costs)
-  * [AutoML](https://developers.google.com/earth-engine/guides/ml_examples#automl)
-    * [Low-code Crop Classification](https://developers.google.com/earth-engine/guides/ml_examples#low-code-crop-classification)
-  * [PyTorch](https://developers.google.com/earth-engine/guides/ml_examples#pytorch)
-    * [Landcover Classification with a CNN](https://developers.google.com/earth-engine/guides/ml_examples#landcover-classification-with-a-cnn)
-  * [Tensorflow](https://developers.google.com/earth-engine/guides/ml_examples#tensorflow)
-    * [Multi-class prediction with a DNN from scratch](https://developers.google.com/earth-engine/guides/ml_examples#multi-class-prediction-with-a-dnn-from-scratch)
-    * [Multi-class prediction with a DNN hosted on Vertex AI](https://developers.google.com/earth-engine/guides/ml_examples#multi-class-prediction-with-a-dnn-hosted-on-vertex-ai)
-    * [Semantic segmentation with an FCNN trained and hosted on Vertex AI](https://developers.google.com/earth-engine/guides/ml_examples#semantic-segmentation-with-an-fcnn-trained-and-hosted-on-vertex-ai)
-    * [Host a Pre-trained Tree-crown Segmentation Model](https://developers.google.com/earth-engine/guides/ml_examples#host-a-pre-trained-tree-crown-segmentation-model)
-    * [Yggdrasil Decision Forests (YDF)](https://developers.google.com/earth-engine/guides/ml_examples#yggdrasil-decision-forests-ydf)
-  * [Deprecated](https://developers.google.com/earth-engine/guides/ml_examples#deprecated)
-    * [TensorFlow Decision Forests](https://developers.google.com/earth-engine/guides/ml_examples#tensorflow-decision-forests)
-    * [Regression with an FCNN](https://developers.google.com/earth-engine/guides/ml_examples#regression-with-an-fcnn)
-    * [Training on AI Platform](https://developers.google.com/earth-engine/guides/ml_examples#training-on-ai-platform)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The examples on this page demonstrate uses of Vertex AI with Earth Engine. See [the hosted models page](https://developers.google.com/earth-engine/guides/tensorflow-vertex) for details. These examples use the [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) running in [Colab Notebooks](https://colab.research.google.com/). 
 ## Costs
 **Warning!** These guides use billable components of Google Cloud including: 

@@ -1,6 +1,6 @@
  
 #  ee.Image.convolve 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Convolves each band of an image with the given kernel. Usage| Returns  
 ---|---  
 `Image.convolve(kernel)`| Image  

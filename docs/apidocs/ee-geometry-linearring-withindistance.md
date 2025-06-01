@@ -1,6 +1,6 @@
  
 #  ee.Geometry.LinearRing.withinDistance 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if and only if the geometries are within a specified distance. Usage| Returns  
 ---|---  
 `LinearRing.withinDistance(right, distance,  _maxError_, _proj_)`| Boolean  

@@ -1,7 +1,12 @@
  
 #  ee.Algorithms.If 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Selects one of its inputs based on a condition, similar to an if-then-else construct. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#examples)
+
+
+Selects one of its inputs based on a condition, similar to an if-then-else construct. 
+Usage| Returns  
 ---|---  
 `ee.Algorithms.If( _condition_, _trueCase_, _falseCase_)`| Object  
 Argument| Type| Details  
@@ -16,7 +21,7 @@ Argument| Type| Details
 `trueCase`| Object, default: null| The result to return if the condition is true.  
 `falseCase`| Object, default: null| The result to return if the condition is false.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#colab-python-sample) More
 ```
 print(ee.Algorithms.If(false,'*true*','*false*'));// The string "*false*"
 print(ee.Algorithms.If(true,'*true*','*false*'));// The string "*true*"
@@ -24,15 +29,12 @@ print(ee.Algorithms.If(true,'*true*','*false*'));// The string "*true*"
 print(ee.Algorithms.If(ee.String('Tree').compareTo('Tree'),0,1));
 print(ee.Algorithms.If(ee.String('NotTree').compareTo('Tree'),0,1));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # The string "*false*"
 print(ee.Algorithms.If(False, '*true*', '*false*').getInfo())

@@ -1,6 +1,6 @@
  
 #  ProjectConfig 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Information about a Cloud-based Earth Engine project. <https://developers.google.com/earth-engine/cloud/projects>.
 JSON representation  
 ---  

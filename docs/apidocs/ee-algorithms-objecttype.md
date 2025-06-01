@@ -61,4 +61,3 @@ print('int:', ee.Algorithms.ObjectType(feature.get('int')).getInfo())
 print('int8:', ee.Algorithms.ObjectType(feature.get('int8')).getInfo())
 ```
 
-Was this helpful?

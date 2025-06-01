@@ -1,7 +1,8 @@
  
 #  ee.Image.hersImage 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the Histogram Error Ring Statistic (HERS) for each pair of pixels in each band present in both images. Only the bands for which HERS could be computed are returned. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the Histogram Error Ring Statistic (HERS) for each pair of pixels in each band present in both images. Only the bands for which HERS could be computed are returned. 
+Usage| Returns  
 ---|---  
 `Image.hersImage(image2, radius,  _buckets_, _peakWidthScale_)`| Image  
 Argument| Type| Details  

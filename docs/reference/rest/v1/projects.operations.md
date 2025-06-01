@@ -57,4 +57,3 @@ Union field `result`. The operation result, which can be either an `error` or a 
 |  Lists operations that match the specified filter in the request.  
 ### `wait[](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/wait)`
 |  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state.  
-Was this helpful?

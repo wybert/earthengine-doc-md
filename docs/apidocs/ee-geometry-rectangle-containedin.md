@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Rectangle.containedIn 
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if and only if one geometry is contained in the other. 
-Usage| Returns  
+Returns true if and only if one geometry is contained in the other. Usage| Returns  
 ---|---  
 `Rectangle.containedIn(right,  _maxError_, _proj_)`| Boolean  
 Argument| Type| Details  

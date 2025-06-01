@@ -1,6 +1,6 @@
  
 #  Method: projects.operations.list 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*}/operations`

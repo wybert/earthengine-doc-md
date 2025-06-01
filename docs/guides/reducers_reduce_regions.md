@@ -1,6 +1,6 @@
  
 #  Statistics of Image Regions 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 To get image statistics in multiple regions stored in a `FeatureCollection`, you can use `image.reduceRegions()` to reduce multiple regions at once. The input to `reduceRegions()` is an `Image` and a `FeatureCollection`. The output is another `FeatureCollection` with the `reduceRegions()` output set as properties on each `Feature`. In this example, means of the Landsat 7 annual composite bands in each feature geometry will be added as properties to the input features:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_regions#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_regions#colab-python-sample) More
 ```

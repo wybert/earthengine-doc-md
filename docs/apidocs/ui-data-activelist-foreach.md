@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.data.activelist`| ui.data.ActiveList| The ui.data.ActiveList instance.  
 `callback`| Function|   
-Was this helpful?

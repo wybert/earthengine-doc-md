@@ -1,6 +1,6 @@
  
 #  ee.Date.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-serialize#examples)
 
@@ -30,3 +30,4 @@ date = ee.Date('2021-4-30')
 display('Serialized representation of ee.Date:', date.serialize())
 ```
 
+Was this helpful?

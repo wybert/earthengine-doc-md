@@ -1,8 +1,7 @@
  
 #  ee.Geometry.Point.buffer 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the input buffered by a given distance. If the distance is positive, the geometry is expanded, and if the distance is negative, the geometry is contracted. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the input buffered by a given distance. If the distance is positive, the geometry is expanded, and if the distance is negative, the geometry is contracted. Usage| Returns  
 ---|---  
 `Point.buffer(distance,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  

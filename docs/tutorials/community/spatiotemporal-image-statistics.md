@@ -11,10 +11,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Wide table](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#wide_table)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/spatiotemporal-image-statistics/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/spatiotemporal-image-statistics/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/spatiotemporal-image-statistics/index.md)
-Author(s): [ saumyatas ](https://github.com/saumyatas)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/spatiotemporal-image-statistics/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/spatiotemporal-image-statistics/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/spatiotemporal-image-statistics/index.md "View changes to this article over time.")
+Author(s): [ saumyatas ](https://github.com/saumyatas "View the profile for saumyatas on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 This tutorial demonstrates how to create a comma delimited table of zonal statistics of vegetation indices (NDVI or EVI) over a study area, for a given range of years. 
 ## Import datasets
@@ -131,3 +131,4 @@ description:'zonal_stats_wide',
 
 ```
 
+Was this helpful?

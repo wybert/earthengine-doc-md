@@ -1,10 +1,17 @@
  
 #  Synthetic Aperture Radar (SAR) Basics 
-Stay organized with collections  Save and categorize content based on your preferences. 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/sar-basics/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/sar-basics/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/sar-basics/index.md "View changes to this article over time.")
-Author(s): [ glemoine62 ](https://github.com/glemoine62 "View the profile for glemoine62 on GitHub")
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [SAR characteristics](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sar_characteristics)
+  * [Sentinel-1](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1)
+    * [Sentinel-1 coverage](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1_coverage)
+    * [Sentinel-1 orbits, modes, swaths and scenes](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1_orbits_modes_swaths_and_scenes)
+
+
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/sar-basics/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/sar-basics/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/sar-basics/index.md)
+Author(s): [ glemoine62 ](https://github.com/glemoine62)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 This tutorial introduces the basics of [Sentinel-1 Algorithms](https://developers.google.com/earth-engine/guides/sentinel1) in Earth Engine. It defines Synthetic Aperture Radar (SAR) terminology and demonstrates data coverage and selection. 
 We'll introduce more advanced concepts in a later tutorial.

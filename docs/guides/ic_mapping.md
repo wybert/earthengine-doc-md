@@ -87,3 +87,4 @@ display('Expand this to see the result', collection.map(conditional))
 ```
 
 Inspect the list of images in the output ImageCollection and note that when the condition evaluated by the `If()` algorithm is true, the output contains a constant image. Although this demonstrates a server-side conditional function ([learn more about client vs. server in Earth Engine](https://developers.google.com/earth-engine/guides/client_server)), avoid `If()` in general and use filters instead.
+Was this helpful?

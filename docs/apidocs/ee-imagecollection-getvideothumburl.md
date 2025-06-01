@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.getVideoThumbURL 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get the URL of an animated thumbnail for this ImageCollection. 
 Returns a thumbnail URL, or undefined if a callback was specified.
 Usage| Returns  

@@ -1,13 +1,6 @@
  
 #  Introduction to Dynamic World (Part 3) - Exploring Time Series 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Charting Class Probabilities Over Time](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#charting_class_probabilities_over_time)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#summary)
-  * [Change Detection using Probability Bands](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#change_detection_using_probability_bands)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#summary_2)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-3/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-3/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-3/index.md "View changes to this article over time.")
@@ -157,7 +150,6 @@ Map.addLayer(
 newUrban.selfMask().clip(geometry),changeVisParams,'New Urban (Masked)');
 
 ```
-
 Before Composite | After Composite | Detected New Urban Areas  
 ---|---|---  
 ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_before.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_after.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_new.png)  

@@ -10,4 +10,3 @@ Argument| Type| Details
 this: `geometry`| Geometry| The geometry to reproject.  
 `proj`| Projection, optional| The target projection. Defaults to EPSG:4326. If this has a geographic CRS, the edges of the geometry will be interpreted as geodesics. Otherwise they will be interpreted as straight lines in the projection.  
 `maxError`| ErrorMargin, default: null| The maximum projection error.  
-Was this helpful?

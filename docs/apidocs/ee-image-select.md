@@ -86,3 +86,4 @@ print('Match "B" or "QA" each followed by any character, any number of times.',
    img.select('B.*|QA.*').bandNames().getInfo())
 ```
 
+Was this helpful?

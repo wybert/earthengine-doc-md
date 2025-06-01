@@ -77,4 +77,3 @@ m.add_layer(geometry_union, {'color': 'red'}, 'Result [red]: geometry.union')
 m
 ```
 
-Was this helpful?

@@ -35,4 +35,3 @@ print('Serialized representation of ee.FeatureCollection:',
    fc.serialize())
 ```
 
-Was this helpful?

@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `list`| List|   
 `seed`| Object, default: null| A long integer to use as a seed for the randomization. If the boolean value of 'false' is passed, then a completely random and unreproducible order will be generated.  
+Was this helpful?

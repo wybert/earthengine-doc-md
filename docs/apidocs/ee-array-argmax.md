@@ -41,4 +41,3 @@ display(ee.Array([[3, 4, 2], [6, 5, 7]]).argmax()) # [1, 2]
 display(ee.Array([1, 1, 1, 9, 9, 9]).argmax()) # [3]
 ```
 
-Was this helpful?

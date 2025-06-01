@@ -1,6 +1,6 @@
  
 #  EarthEngineDestination 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Configuration for a destination in Earth Engine.
 JSON representation  
 ---  

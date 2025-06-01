@@ -1,8 +1,7 @@
  
 #  ee.Feature.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a feature containing the bounding box of the geometry of a given feature. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a feature containing the bounding box of the geometry of a given feature. Usage| Returns  
 ---|---  
 `Feature.bounds( _maxError_, _proj_)`| Feature  
 Argument| Type| Details  

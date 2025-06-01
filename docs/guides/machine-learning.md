@@ -1,6 +1,6 @@
  
 #  Machine Learning in Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Machine Learning APIs](https://developers.google.com/earth-engine/guides/machine-learning#machine-learning-apis)
   * [Training and Prediction outside Earth Engine](https://developers.google.com/earth-engine/guides/machine-learning#training-and-prediction-outside-earth-engine)
@@ -66,3 +66,4 @@ maxNodes:10000
 
 ```
 
+Was this helpful?

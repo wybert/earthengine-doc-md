@@ -1,6 +1,6 @@
  
 #  ImageCollection Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 An `ImageCollection` is a stack or sequence of images. An `ImageCollection` can be loaded by pasting an Earth Engine asset ID into the `ImageCollection` constructor. You can find `ImageCollection` IDs in the [data catalog](https://developers.google.com/earth-engine/datasets). For example, to load the [Sentinel-2 surface reflectance collection](https://developers.google.com/earth-engine/guides/datasets/catalog/COPERNICUS_S2_SR): 
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
 ```

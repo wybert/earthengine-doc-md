@@ -1,6 +1,6 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 2) 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb)  
@@ -31,6 +31,11 @@ importrandom,time
 importmatplotlib.pyplotasplt
 fromscipy.statsimport norm, chi2
 frompprintimport pprint # for pretty printing
+
+```
+```
+/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/geemap/conversion.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+ import pkg_resources
 
 ```
 

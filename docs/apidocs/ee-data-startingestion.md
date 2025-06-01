@@ -1,6 +1,6 @@
  
 #  ee.data.startIngestion 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Creates an image asset ingestion task. 
 See ee.data.startProcessing for details on task IDs and response format.
 Usage| Returns  

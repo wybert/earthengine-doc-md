@@ -1,8 +1,8 @@
  
 #  Array Sorting and Reducing 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Stay organized with collections  Save and categorize content based on your preferences. 
 Array sorting is useful for obtaining custom quality mosaics which involve reducing a subset of image bands according to the values in a different band. The following example sorts by NDVI, then gets the mean of a subset of observations in the collection with the highest NDVI values:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_sorting_reducing#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_sorting_reducing#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a function that scales and masks Landsat 8 surface reflectance images
 // and adds an NDVI band.
@@ -60,12 +60,15 @@ varmeanImage=mean.arrayProject([bandAxis]).arrayFlatten([bandNames]);
 Map.centerObject(roi,12);
 Map.addLayer(meanImage,{bands:['SR_B6','SR_B5','SR_B4'],min:0,max:0.4});
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a function that scales and masks Landsat 8 surface reflectance images
 # and adds an NDVI band.

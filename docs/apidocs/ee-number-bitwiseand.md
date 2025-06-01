@@ -43,4 +43,3 @@ Both digits 1?: 00010001
 print(ee.Number(25).bitwiseAnd(21).getInfo())
 ```
 
-Was this helpful?

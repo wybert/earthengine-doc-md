@@ -1,8 +1,7 @@
  
 #  ee.Feature.closestPoints 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a dictionary containing up to two entries representing a point on each input feature's geometry that is closest to the geometry of the other input. If either geometry is empty, an empty dictionary is returned. If both geometries are unbounded, the dictionary has an arbitrary point for both 'left' and 'right'. If one geometry is unbounded, the dictionary has an arbitrary point contained in the bounded geometry for both 'left' and 'right'. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a dictionary containing up to two entries representing a point on each input feature's geometry that is closest to the geometry of the other input. If either geometry is empty, an empty dictionary is returned. If both geometries are unbounded, the dictionary has an arbitrary point for both 'left' and 'right'. If one geometry is unbounded, the dictionary has an arbitrary point contained in the bounded geometry for both 'left' and 'right'. Usage| Returns  
 ---|---  
 `Feature.closestPoints(right,  _maxError_, _proj_)`| Object  
 Argument| Type| Details  

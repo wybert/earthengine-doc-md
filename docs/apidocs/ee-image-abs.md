@@ -1,6 +1,6 @@
  
 #  ee.Image.abs 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the absolute value of the input. 
 Usage| Returns  
 ---|---  

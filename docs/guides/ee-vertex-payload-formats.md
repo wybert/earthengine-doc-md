@@ -1,6 +1,6 @@
  
 #  Hosted Model Payload Formats Supported on Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Your custom trained model must be configured such that Earth Engine can send well-formed, interpretable inference requests to the model as it is hosted on Vertex AI.
 ## Supported Model Inputs
 Earth Engine constructs requests on your behalf when performing inference. Specify the payload format that EE will send requests with using the `payloadFormat` parameter when you instantiate the model connector with `ee.Model.fromVertexAi`.

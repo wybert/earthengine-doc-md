@@ -1,6 +1,10 @@
  
 #  ee.String.cat 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-cat#examples)
+
+
 Concatenates two strings. 
 Usage| Returns  
 ---|---  
@@ -10,7 +14,7 @@ Argument| Type| Details
 this: `string1`| String| The first string.  
 `string2`| String| The second string.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-cat#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-cat#colab-python-sample) More
 ```
 print(ee.String('cat').cat(' bird'));// 'cat bird'
 ```
@@ -20,9 +24,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 print(ee.String('cat').cat(' bird').getInfo()) # 'cat bird'
 ```
 
+Was this helpful?

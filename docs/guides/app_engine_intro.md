@@ -72,3 +72,4 @@ npm start
 ```
 
 Point your browser to <http://localhost:8080> to see the app running on a local server. Any changes you make (and save) will be automatically picked up when you refresh the page.
+Was this helpful?

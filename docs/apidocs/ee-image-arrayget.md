@@ -1,7 +1,12 @@
  
 #  ee.Image.arrayGet 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-For each band, an output band of the same name is created with the value at the given position extracted from the input multidimensional pixel in that band. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayget#examples)
+
+
+For each band, an output band of the same name is created with the value at the given position extracted from the input multidimensional pixel in that band. 
+Usage| Returns  
 ---|---  
 `Image.arrayGet(position)`| Image  
 Argument| Type| Details  
@@ -9,7 +14,7 @@ Argument| Type| Details
 this: `image`| Image| Array to get an element from.  
 `position`| Image| The coordinates of the element to get. There must be as many scalar bands as there are dimensions in the input image.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayget#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arrayget#colab-python-sample) More
 ```
 // A function to print the array for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -36,15 +41,12 @@ varselectedElement2D=arrayImg2D.arrayGet(position2D);
 print('Element at position [0, 2]',sampArrImg(selectedElement2D));
 // 2
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A function to print the array for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):
@@ -77,3 +79,4 @@ print(
 # 2
 ```
 
+Was this helpful?

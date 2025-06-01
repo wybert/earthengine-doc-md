@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.map.geometrylayer`| ui.Map.GeometryLayer| The ui.Map.GeometryLayer instance.  
+Was this helpful?

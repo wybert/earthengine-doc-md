@@ -1,6 +1,6 @@
  
 #  Method: projects.map.export 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a tiled map and writes the result to Google Cloud Storage.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1/{project=projects/*}/map:export`

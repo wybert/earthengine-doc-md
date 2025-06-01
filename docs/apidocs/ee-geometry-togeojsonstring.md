@@ -1,14 +1,19 @@
  
 #  ee.Geometry.toGeoJSONString 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a GeoJSON string representation of the geometry. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-togeojsonstring#examples)
+
+
+Returns a GeoJSON string representation of the geometry. 
+Usage| Returns  
 ---|---  
 `Geometry.toGeoJSONString()`| String  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry| The Geometry instance.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-togeojsonstring#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-togeojsonstring#colab-python-sample) More
 ```
 // Define a Geometry object.
 vargeometry=ee.Geometry({
@@ -29,15 +34,12 @@ Map.addLayer(geometry,
 {'color':'black'},
 'Geometry [black]: geometry');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a Geometry object.
 geometry = ee.Geometry({

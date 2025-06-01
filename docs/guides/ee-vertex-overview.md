@@ -1,17 +1,6 @@
  
 #  Predictions from Hosted Models 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [TensorFlow Models](https://developers.google.com/earth-engine/guides/ee-vertex-overview#tensorflow_models)
-  * [ee.Model](https://developers.google.com/earth-engine/guides/ee-vertex-overview#eemodel)
-    * [Hosted Models on Vertex AI](https://developers.google.com/earth-engine/guides/ee-vertex-overview#hosted_models_on_vertex_ai)
-    * [Input Formats](https://developers.google.com/earth-engine/guides/ee-vertex-overview#input_formats)
-    * [Endpoint IAM Permissions](https://developers.google.com/earth-engine/guides/ee-vertex-overview#endpoint_iam_permissions)
-    * [Regions](https://developers.google.com/earth-engine/guides/ee-vertex-overview#regions)
-    * [Costs](https://developers.google.com/earth-engine/guides/ee-vertex-overview#costs)
-    * [Further Reading](https://developers.google.com/earth-engine/guides/ee-vertex-overview#further_reading)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine provides `ee.Model` as a connector to models hosted on [Vertex AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform). Earth Engine will send image or table data as online prediction requests to a trained model deployed on a Vertex AI endpoint. The model outputs are then available as Earth Engine images or tables.
 ## TensorFlow Models
 [TensorFlow](https://www.tensorflow.org/) is an open source machine learning (ML) platform that supports advanced ML methods such as deep learning. The Earth Engine API provides methods for importing and or exporting imagery, training and testing data in TFRecord format. See the [ML examples page](https://developers.google.com/earth-engine/guides/ml_examples) for demonstrations that use TensorFlow with data from Earth Engine. See the [TFRecord page](https://developers.google.com/earth-engine/guides/tfrecord) for details about how Earth Engine writes data to TFRecord files.
@@ -30,7 +19,7 @@ If you are migrating from AI Platform, note that Vertex AI does not have a globa
 ### Costs
 **Warning:** These guides use billable components of Google Cloud.
 For detailed information on costs, see each product's associated pricing page.
-  * Vertex AI ([pricing](https://cloud.google.com/vertex-ai/pricing)
+  * Vertex AI ([pricing](https://cloud.google.com/vertex-ai/pricing))
   * Cloud Storage ([pricing](https://cloud.google.com/storage/pricing))
   * Earth Engine ([pricing (commercial)](https://earthengine.google.com/commercial))
 
@@ -38,4 +27,3 @@ For detailed information on costs, see each product's associated pricing page.
 You can use the [Pricing Calculator](https://cloud.google.com/products/calculator) to generate a cost estimate based on your projected usage.
 ### Further Reading
 For more details on how to use a hosted model with Earth Engine see our [Image Prediction page](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions) for image prediction, or our [Properties Prediction page](https://developers.google.com/earth-engine/guides/ee-vertex-property-predictions)
-Was this helpful?

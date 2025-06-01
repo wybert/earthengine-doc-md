@@ -1,6 +1,12 @@
  
 #  REST Resource: projects.featureViews.tiles 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: HttpBody](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews.tiles#resource:-httpbody)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews.tiles#methods)
+    * [get](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews.tiles#get)
+
+
 ## Resource: HttpBody
 Message that represents an arbitrary HTTP body. It should only be used for payload formats that can't be represented as JSON, such as raw binary or an HTML page.
 This message can be used both in streaming and non-streaming API methods in the request as well as the response.
@@ -59,3 +65,4 @@ Fields
 ---  
 ### `get[](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureViews.tiles/get)`
 |  Computes a map tile image showing a portion of a FeatureView.  
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  ui.Map.DrawingTools.getShown 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns whether the drawing tools are shown. 
 Usage| Returns  
 ---|---  

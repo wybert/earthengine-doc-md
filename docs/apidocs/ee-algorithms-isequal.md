@@ -9,4 +9,3 @@ Argument| Type| Details
 ---|---|---  
 `left`| Object, default: null|   
 `right`| Object, default: null|   
-Was this helpful?

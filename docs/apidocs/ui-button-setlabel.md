@@ -1,6 +1,6 @@
  
 #  ui.Button.setLabel 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the button's label. 
 Returns this button.
 Usage| Returns  

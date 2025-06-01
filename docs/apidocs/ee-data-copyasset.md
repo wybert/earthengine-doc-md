@@ -1,8 +1,7 @@
  
 #  ee.data.copyAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Copies the asset from sourceId into destinationId. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Copies the asset from sourceId into destinationId. Usage| Returns  
 ---|---  
 `ee.data.copyAsset(sourceId, destinationId,  _overwrite_, _callback_)`|   
 Argument|  Type| Details  

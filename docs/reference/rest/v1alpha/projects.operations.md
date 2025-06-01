@@ -1,6 +1,16 @@
  
 #  REST Resource: projects.operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: Operation](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#resource:-operation)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#methods)
+    * [cancel](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#cancel)
+    * [delete](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#delete)
+    * [get](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#get)
+    * [list](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#list)
+    * [wait](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations#wait)
+
+
 ## Resource: Operation
 This resource represents a long-running operation that is the result of a network API call.
 JSON representation  

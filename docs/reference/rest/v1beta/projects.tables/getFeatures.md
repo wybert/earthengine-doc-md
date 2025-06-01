@@ -1,14 +1,6 @@
  
 #  Method: projects.tables.getFeatures 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.tables/getFeatures#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.tables/getFeatures#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.tables/getFeatures#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.tables/getFeatures#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.tables/getFeatures#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Fetches `Table` features, the request includes the name of the Table to download from a previous `tables.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{name=projects/*/tables/*}:getFeatures`

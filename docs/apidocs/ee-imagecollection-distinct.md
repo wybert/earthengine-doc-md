@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.distinct 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Removes duplicates from a collection. Note that duplicates are determined using a strong hash over the serialized form of the selected properties. 
 Usage| Returns  
 ---|---  

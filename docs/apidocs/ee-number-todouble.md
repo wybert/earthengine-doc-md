@@ -1,6 +1,6 @@
  
 #  ee.Number.toDouble 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Casts the input value to a 64-bit float. Usage| Returns  
 ---|---  
 `Number.toDouble()`| Number  

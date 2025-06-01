@@ -1,14 +1,19 @@
  
 #  ee.Number.cos 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the cosine of the input in radians. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-cos#examples)
+
+
+Computes the cosine of the input in radians. 
+Usage| Returns  
 ---|---  
 `Number.cos()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-cos#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-cos#colab-python-sample) More
 ```
 // Input angle in radians.
 print('Cosine of 0',ee.Number(0).cos());// 1
@@ -19,15 +24,12 @@ vardegrees=45;
 varradians=degrees*(Math.PI/180);
 print('Cosine of 45 degrees',ee.Number(radians).cos());// 0.707106781
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importmath
 # Input angle in radians.

@@ -27,3 +27,4 @@ Though you can make requests for any purpose in any volume, you may want to para
 You can use threads to make concurrrent requests. This approach is demonstrated in the `getPixels` and `computePixels` example notebooks. 
 ### Apache Beam
 You can use [Apache Beam](https://beam.apache.org/) pipelines to parallelize requests. These pipelines can be run locally or as Google Dataflow jobs. For examples, see [this Geo for Good training](https://earthoutreachonair.withgoogle.com/events/geoforgood22?talk=day1-trackthree-talk2) or [this People, Planet and AI demonstration](https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/people-and-planet-ai/land-cover-classification). Alternatively, other parallelization libraries include [Dask](https://www.dask.org/) and [Apache Spark](https://spark.apache.org/). 
+Was this helpful?

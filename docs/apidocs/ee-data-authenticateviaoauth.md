@@ -16,3 +16,4 @@ Argument|  Type| Details
 `extraScopes`| List, optional| Extra OAuth scopes to request.  
 `onImmediateFailed`| Function, optional| The function to call if automatic behind-the-scenes authentication fails. Defaults to ee.data.authenticateViaPopup(), bound to the passed callbacks.  
 `suppressDefaultScopes`| Boolean, optional| When true, only scopes specified in opt_extraScopes are requested; the default scopes are not requested unless explicitly specified in opt_extraScopes.  
+Was this helpful?

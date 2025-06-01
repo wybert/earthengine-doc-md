@@ -113,4 +113,3 @@ display(means)
 ```
 
 Note that in this example, the `groupField` is the index of the band containing the zones by which to group the output. The first band is index 0, the second is index 1, etc.
-Was this helpful?

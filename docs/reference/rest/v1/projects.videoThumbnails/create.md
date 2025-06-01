@@ -1,6 +1,15 @@
  
 #  Method: projects.videoThumbnails.create 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#path-parameters)
+  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#query-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/create#authorization-scopes)
+
+
 Creates an ID that can be used to render an image containing an animation of multiple images from a collection.
 This is used in conjunction with `videoThumbnails.getPixels`. A call to `videoThumbnails.create` provides an expression and some output options. The result of `videoThumbnails.create` is an ID that represents an image that is the result of evaluating that expression and applying those options. Subsequently, calls to `videoThumbnails.getPixels` can be made to get an image showing all of the elements of an ImageCollection, animated from first to last. The ID will be valid for a moderate period (a few hours).
 The request is limited to 512*512*100 pixels in total, across all Images in the ImageCollection. Requests exceeding these limits will result in an error code of 400 (BAD_REQUEST).
@@ -31,3 +40,4 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

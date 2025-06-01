@@ -1,8 +1,7 @@
  
 #  ee.data.renameAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Renames the asset from sourceId to destinationId. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Renames the asset from sourceId to destinationId. Usage| Returns  
 ---|---  
 `ee.data.renameAsset(sourceId, destinationId,  _callback_)`|   
 Argument|  Type| Details  

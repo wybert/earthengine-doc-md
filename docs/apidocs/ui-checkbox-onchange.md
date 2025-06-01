@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.checkbox`| ui.Checkbox| The ui.Checkbox instance.  
 `callback`| Function| The callback to fire when the value of the checkbox changes. The callback is passed a boolean indicating whether the checkbox is now checked and the checkbox widget.  
+Was this helpful?

@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 `params`| FilmstripThumbnailOptions| Parameters to make the request with.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
-Was this helpful?

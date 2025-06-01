@@ -1,16 +1,10 @@
  
 #  Charting Yearly Forest Loss 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Calculating Yearly Forest Loss](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03a#calculating-yearly-forest-loss)
-  * [Making a chart](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03a#making-a-chart)
-    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03a#code-editor-javascript_2)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Calculating Yearly Forest Loss
 In the previous section you learned how to [calculate total forest area lost](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03#calculating-pixel-areas) in the given region of interest using the `reduceRegion` method. Instead of calculating the total loss, it would be helpful to compute the loss for each year. The way to achieve this in Earth Engine is using a [Grouped Reducer](https://developers.google.com/earth-engine/guides/reducers_grouping).
 To group output of `reduceRegion()`, you can specify a grouping band that defines groups by integer pixel values. In the following example, we slightly modify the previous code and add the `lossYear` band to the original image. Each pixel in the `lossYear` band contain values from 0 to 14 - indicating the year in which the loss occurred. We also change the reducer to a grouped reducer, specifying the band index of the grouping band (1) so the pixel areas will be summed and grouped according to the value in the `lossYear` band. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03a#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Load country boundaries from LSIB.
 varcountries=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
@@ -34,7 +28,7 @@ print(lossByYear);
 ```
 
 Once you run the above code, you will see the yearly forest loss area printed out in a nested list called `groups`. We can format the output a little to make the result a dictionary, with year as the key and loss area as the value. Notice that we are using the `format()` method to convert the year values from 0-14 to 2000-2014.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03a#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varstatsFormatted=ee.List(lossByYear.get('groups'))
 .map(function(el){
@@ -47,7 +41,6 @@ print(statsDictionary);
 
 ## Making a chart
 Now that we have yearly loss numbers, we are ready to prepare a chart. We will use the `ui.Chart.array.values()` method. This method takes an array (or list) of input values and an array (or list) of labels for the X-axis. 
-More
 ### Code Editor (JavaScript)
 ```
 varchart=ui.Chart.array.values({

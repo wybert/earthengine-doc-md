@@ -58,3 +58,4 @@ print('List items 3 ≤ 𝑥 ≤ 6:',
      ee.Filter.lte('item', 6))).getInfo())
 ```
 
+Was this helpful?

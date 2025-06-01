@@ -1,8 +1,7 @@
  
 #  ee.Feature.convexHull 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns the feature with the geometry replaced by the convex hull of the original geometry. The convex hull of a single point is the point itself, the convex hull of collinear points is a line, and the convex hull of everything else is a polygon. Note that a degenerate polygon with all vertices on the same line will result in a line segment. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the feature with the geometry replaced by the convex hull of the original geometry. The convex hull of a single point is the point itself, the convex hull of collinear points is a line, and the convex hull of everything else is a polygon. Note that a degenerate polygon with all vertices on the same line will result in a line segment. Usage| Returns  
 ---|---  
 `Feature.convexHull( _maxError_, _proj_)`| Feature  
 Argument| Type| Details  

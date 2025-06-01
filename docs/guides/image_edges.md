@@ -1,6 +1,6 @@
  
 #  Edge detection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [Edge detection](http://en.wikipedia.org/wiki/Edge_detection) is applicable to a wide range of image processing tasks. In addition to the edge detection kernels described in the [ convolutions section](https://developers.google.com/earth-engine/guides/image_convolutions), there are several specialized edge detection algorithms in Earth Engine. The Canny edge detection algorithm [(Canny 1986) ](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767851) uses four separate filters to identify the diagonal, vertical, and horizontal edges. The calculation extracts the first derivative value for the horizontal and vertical directions and computes the gradient magnitude. Gradients of smaller magnitude are suppressed. To eliminate high-frequency noise, optionally pre-filter the image with a Gaussian kernel. For example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_edges#code-editor-javascript-sample) More
 ```
@@ -53,4 +53,3 @@ Map.addLayer(zeroXings.selfMask(),{palette:'FF0000'},'zero crossings');
 
 The zero-crossings output for an area near the San Francisco, CA airport should look something like Figure 1.
 ![zero crossings SFO](https://developers.google.com/static/earth-engine/images/Images_zero_crossings.png) Figure 1. Zero-crossings output (red) with the Landsat 8 panchromatic band in the background for an area near the San Francisco, California airport (right). 
-Was this helpful?

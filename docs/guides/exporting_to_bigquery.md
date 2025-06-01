@@ -1,34 +1,6 @@
  
 #  Exporting to BigQuery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#overview)
-  * [BigQuery basics](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#bigquery_basics)
-    * [Dataset creation](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#dataset_creation)
-    * [Permissions](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#permissions)
-    * [Pricing](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#pricing)
-  * [Export configuration](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#export_configuration)
-    * [Syntax](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#syntax)
-    * [Automatic or manual schema specification](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#automatic_or_manual_schema_specification)
-    * [Property names](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#property_names)
-    * [Type conversion](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#type_conversion)
-    * [Arrays](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#arrays)
-    * [JSON values](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#json-values)
-    * [Geometry conversion](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#geometry_conversion)
-  * [Performance](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#performance)
-    * [Earth Engine performance](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#earth_engine_performance)
-    * [Performance in BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#performance_in_bigquery)
-    * [Demo: using reduceRegions](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#demo_using_reduceregions)
-    * [Task parallelization](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#task_parallelization)
-    * [Performance differences between append and overwrite parameters](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#performance_differences_between_append_and_overwrite_parameters)
-    * [High-performance alternatives](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#high-performance_alternatives)
-  * [Pricing](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#pricing_2)
-    * [Cloud billing accounts](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#cloud_billing_accounts)
-    * [Egress](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#egress)
-  * [Known issues](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#known_issues)
-    * [Orientation for large polygons](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#known_issue_orientation)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Overview
 Earth Engine's computational architecture is optimized for making image (pixel-based) computation fast and scalable. BigQuery is similarly optimized for scalable processing of tabular data (vectors), and it has many features which make it a nice complement to Earth Engine.
 Example workflows include:
@@ -73,26 +45,34 @@ BigQuery is a paid Google Cloud service, so you will incur [charges](https://dev
 For details on pricing for Earth Engine's BigQuery export feature, see the [pricing section](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#pricing) below.
 ## Export configuration
 ### Syntax
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#code-editor-javascript)[Python](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#python) More
+### Code Editor (JavaScript)
 ```
 Export.table.toBigQuery({
-'collection':myFeatureCollection,
-'table':'myproject.mydataset.mytable',
-'description':'put_my_data_in_bigquery',
-'append':true,
-'overwrite':false
+collection:features,
+table:'myproject.mydataset.mytable',
+description:'put_my_data_in_bigquery',
+append:true,
+overwrite:false
 });
-
 ```
-```
- task = ee.batch.Export.table.toBigQuery(
-   collection=myFeatureCollection,
-   table='myproject.mydataset.mytable',
-   description='put_my_data_in_bigquery',
-   append=True,
-   overwrite=False)
- task.start()
 
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+
+### Colab (Python)
+```
+task = ee.batch.Export.table.toBigQuery(
+  collection=features,
+  table='myproject.mydataset.mytable',
+  description='put_my_data_in_bigquery',
+  append=True,
+  overwrite=False,
+)
+task.start()
 ```
 
 ### Automatic or manual schema specification
@@ -115,9 +95,9 @@ Earth Engine (the values of `ee.Feature` properties) data are converted to an eq
 Other `ee.*` types  | not supported  | See the section on [JSON values](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#json-values)  
 ### Arrays
 Earth Engine exports any multi-dimensional `ee.Array` to `STRUCT<ARRAY<INT64> dimensions, ARRAY<INT64|FLOAT64> values>`, similar to the format used by BigQuery's [ML.DECODE_IMAGE](https://developers.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-decode-image) function.
-The first array in the struct, `dimensions`, contains the dimensions of the Earth Engine array, d1 through dn.
-The second array in the struct, `values`, contains all of the values in the multi-dimensional array, flattened into a single BigQuery array. The total number of values in the flattened array is ∑ni=1di, and the value at index (ii,…,in) in the original Earth Engine array corresponds to the value at the following index in the flattened array:
-n∑j=1(ij⋅n∏k=j+1dk)
+The first array in the struct, `dimensions`, contains the dimensions of the Earth Engine array, $d_1$ through $d_n$.
+The second array in the struct, `values`, contains all of the values in the multi-dimensional array, flattened into a single BigQuery array. The total number of values in the flattened array is $\sum_{i=1}^n d_i$, and the value at index $(i_i, \ldots, i_n)$ in the original Earth Engine array corresponds to the value at the following index in the flattened array:
+\\[ \sum_{j=1}^n \left( i_j \cdot \prod_{k=j+1}^n d_k \right) \\]
 For common cases, the indexing expression for the `values` array is as follows:
 **Array Size** | **Dimensions** | **Indexing Expression**  
 ---|---|---  
@@ -144,7 +124,7 @@ ee.Array([
 This array translates to a BigQuery `STRUCT` whose `dimensions` element is the array `[2, 3, 4]` and whose `values` element is the flattened array `[1, 2, 3, 4, 5, 6, 7, 8, ..., 21, 22, 23, 24]`. The indexes in the flattened array can be computed as `[(i1 * 12) + (i2 * 4) + i3]`.
 ### JSON values
 To support more richly structured data within a cell, it's possible to encode Earth Engine values as [JSON](https://json.org) objects. BigQuery supports [SQL operations over JSON-encoded data](https://developers.google.com/bigquery/docs/json-data), allowing for queries which "look inside" the encoded JSON values you produce in Earth Engine.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varstates=ee.FeatureCollection('TIGER/2018/States');
 varmod11a1=ee.ImageCollection('MODIS/061/MOD11A1');
@@ -165,12 +145,15 @@ returne.set('maxTemp',ee.String.encodeJSON(dict));
 });
 Export.table.toBigQuery(annotatedStates);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 states = ee.FeatureCollection('TIGER/2018/States')
 mod11a1 = ee.ImageCollection('MODIS/061/MOD11A1')
@@ -201,19 +184,22 @@ task.start()
 ### Geometry conversion
 BigQuery has [limited support for different projections](https://developers.google.com/bigquery/docs/geospatial-data), so all Earth Engine geometries are transformed to geodesic `EPSG:4326` using an error margin of 1 meter.
 To have finer control over this transformation process, you can manually map over the features and transform their geometries, e.g.:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 vartransformedCollection=originalCollection.map(functiontransformGeo(e){
 varmyErrorMargin=10*1000;// meters
 returne.setGeometry(e.geometry(myErrorMargin,'EPSG:4326',true));
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 deftransform_geo(e):
  my_error_margin = 10 * 1000 # meters
@@ -240,7 +226,7 @@ Adding clustering to an unclustered table also does not generally harm anything,
 Note that clustering settings only affect _new_ data written to the table.
 ### Demo: using `reduceRegions`
 In some cases, it's possible to use `reduceRegions` to get as much parallelism as possible from the Earth Engine processing infrastructure. This example demonstrates how to use a smaller number of `reduceRegions` calls (a few hundred) rather than tens of thousands of `reduceRegion` calls (the typical approach for mapping a function over a collection).
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 varlucas=ee.FeatureCollection('JRC/LUCAS_HARMO/COPERNICUS_POLYGONS/V1/2018');
 vars2=ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED');
@@ -279,12 +265,15 @@ collection:withSamples,
 description:'lucas_s2_annotated'
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 lucas = ee.FeatureCollection('JRC/LUCAS_HARMO/COPERNICUS_POLYGONS/V1/2018')
 s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')

@@ -1,8 +1,7 @@
  
 #  ee.Geometry.LineString.transform 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Transforms the geometry to a specific projection. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Transforms the geometry to a specific projection. Usage| Returns  
 ---|---  
 `LineString.transform( _proj_, _maxError_)`| Geometry  
 Argument| Type| Details  

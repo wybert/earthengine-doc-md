@@ -28,4 +28,3 @@ importgeemap.coreasgeemap
 print('Serialized representation of ee.String:', ee.String('earth').serialize())
 ```
 
-Was this helpful?

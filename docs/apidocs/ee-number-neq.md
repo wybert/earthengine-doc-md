@@ -30,3 +30,4 @@ print('5 is not equal to 10:', ee.Number(5).neq(ee.Number(10)).getInfo()) # 1
 print('5 is not equal to 5:', ee.Number(5).neq(ee.Number(5)).getInfo()) # 0
 ```
 
+Was this helpful?

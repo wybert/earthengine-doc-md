@@ -1,6 +1,6 @@
  
 #  Introduction 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Welcome to the Google Earth Engine tutorial for working with the global surface water (GSW) dataset. This dataset is described in the Nature letter [ High-resolution mapping of global surface water and its long-term changes](https://www.nature.com/articles/nature20584.epdf?author_access_token=C5JSvooRop4jWxyp_qRPLNRgN0jAjWel9jnR3ZoTv0MqBuzCNsmw_DFxRd7sX93nfPzcbm_xTiPLlZMl7XrUhadm6EiT9cGdDNgn1s6EWrPWH3IeadLUjApplBoaS6xH). This tutorial provides examples of how to use Earth Engine to visualize data layers available in the GSW dataset, and presents some typical visualizations and analyses. 
 The tutorial is broken up into sections. Within each section, code will be built up gradually with short code snippets and explanatory text. At the end of each section, the complete working script will be presented. 
 ## References

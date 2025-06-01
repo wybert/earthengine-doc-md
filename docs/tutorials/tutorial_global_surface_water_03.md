@@ -1,12 +1,6 @@
  
 #  Water Occurrence Change Intensity 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#visualization)
-  * [Summarizing Change within a Region of Interest](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#summarizing-change-within-a-region-of-interest)
-  * [Final Script](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#final-script)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The Water Occurrence Change Intensity data layer provides a measure of how surface water has changed between two epochs: 1984-1999 and 2000-2015. The layer averages the change across homologous pairs of months taken from the two epochs. See the [ Data Users Guide (v2) ](https://storage.googleapis.com/global-surface-water/downloads_ancillary/DataUsersGuidev2.pdf) for additional details on this layer.
 This section of the tutorial will:
   1. add a styled map layer for visualizing water occurrence change intensity, and 
@@ -15,13 +9,13 @@ This section of the tutorial will:
 
 ## Visualization
 Similar to the water occurrence layer, we will start by adding a basic visualization of occurrence change intensity to the map and then improve upon it. Occurrence change intensity is provided in two ways, both as absolute and normalized values. We will use the absolute values in this tutorial. Start by selecting the absolute occurrence change intensity layer from the GSW image:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varchange=gsw.select("change_abs");
 ```
 
 In the Constants section of the code, add a statement that creates a new variable that defines how the layer will be styled. This styling shows areas where the surface water occurrence has decreased/increased in red/green. Areas where surface water occurrence is relatively unchanged are shown in black.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varVIS_CHANGE={
 min:-50,
@@ -31,7 +25,7 @@ palette:['red','black','limegreen']
 ```
 
 At the end of the Map Layers section of code, add a statement that adds a new layer to the map.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.setCenter(-74.4557,-8.4289,11);// Ucayali River, Peru
 Map.addLayer({
@@ -46,7 +40,7 @@ In this section, we will summarize the amount of change within a specified regio
 Change the layer name to `roi` (for region-of-interest or ROI). We then can click on a series of points on the map to define a polygon region of interest.
 ![region of interest](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_03_roi.png) Figure 7. Screenshot of the Ucayali River near Pucallpa, Peru, with a region-of-interest created by using the polygon drawing tool. 
 Now that our region-of-interest is defined and stored in a variable, we can use it to calculate a histogram of the change intensity for the ROI. Add the following code to the Calculations section of the script.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Calculate a change intensity for the region of interest.
 varhistogram=change.reduceRegion({
@@ -61,7 +55,7 @@ print(histogram);
 The first statement calculates a histogram of occurrence change intensity values within the ROI, sampling at a 30m scale. The second prints the resulting object to the Code Editor Console Tab. You can expand out the object tree to view the values of the histogram buckets. The numeric data is there, but there are better ways to visualize the results.
 ![histogram values](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_03_histogram_values.png) Figure 8. Console tab results, showing histogram values of surface water change intensity. 
 To improve upon this, we can generate a histogram chart instead. Replace the statement that defines the histogram object with the following statements:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Generate a histogram object and print it to the console tab.
 varhistogram=ui.Chart.image.histogram({
@@ -80,7 +74,7 @@ These statements create a histogram chart object, which replaces the histogram o
 You can explore the chart values interactively by placing your cursor over the histogram bars.
 ## Final Script
 The entire script for this section is listed below. Note that the script includes statements for defining a polygon geometry (`roi`), which is comparable to the geometry that you created using the Code Editor's geometry tools.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 //////////////////////////////////////////////////////////////
 // Asset List

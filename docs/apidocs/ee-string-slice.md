@@ -45,3 +45,4 @@ print(s.slice(2, 3).getInfo()) # c
 print(s.slice(-4, 25).getInfo()) # wxy
 ```
 
+Was this helpful?

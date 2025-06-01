@@ -1,6 +1,6 @@
  
 #  Method: projects.image.import 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Imports an image.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/image:import`

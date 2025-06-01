@@ -36,4 +36,3 @@ print('Sample std. deviation of power plant capacities (MW):',
    fc.aggregate_sample_sd('capacitymw').getInfo()) # 466.480889231
 ```
 
-Was this helpful?

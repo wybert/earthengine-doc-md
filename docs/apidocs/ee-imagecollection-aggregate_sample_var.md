@@ -1,6 +1,6 @@
  
 #  ee.ImageCollection.aggregate_sample_var 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Aggregates over a given property of the objects in a collection, calculating the sample variance of the values of the selected property. Usage| Returns  
 ---|---  
 `ImageCollection.aggregate_sample_var(property)`| Number  

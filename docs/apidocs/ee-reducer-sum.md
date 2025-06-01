@@ -6,4 +6,3 @@ Usage| Returns
 ---|---  
 `ee.Reducer.sum()`| Reducer  
 **No arguments.**
-Was this helpful?

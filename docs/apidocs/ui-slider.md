@@ -15,4 +15,3 @@ Argument| Type| Details
 `direction`| String, optional| The direction of the slider. One of 'horizontal' or 'vertical'. Defaults to 'horizontal'.  
 `disabled`| Boolean, optional| Whether the slider is disabled. Defaults to false.  
 `style`| Object, optional| An object of allowed CSS styles with their values to be set for this widget. See style() documentation.  
-Was this helpful?

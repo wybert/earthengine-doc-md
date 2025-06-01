@@ -1,6 +1,6 @@
  
 #  ee.Date.format 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-format#examples)
 
@@ -137,4 +137,3 @@ display(datetime.format("YY 'yada' MM")) # 75 yada 07
 display(datetime.format("YY ''MM'' dd")) # 75 '07' 23
 ```
 
-Was this helpful?

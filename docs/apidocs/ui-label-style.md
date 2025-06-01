@@ -1,10 +1,6 @@
  
 #  ui.Label.style 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-label-style#examples)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the widget's style ActiveDictionary, which can be modified to update the widget's styles. 
 Properties which behave like their CSS counterparts:
 - height, maxHeight, minHeight (e.g. '100px')

@@ -30,6 +30,11 @@ ee.Authenticate()
 ee.Initialize(project='my-project')
 
 ```
+```
+/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/geemap/conversion.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+ import pkg_resources
+
+```
 
 ## Functions
 The following is code to generate the piecewise-linear function using the cumulative count histograms of each image.

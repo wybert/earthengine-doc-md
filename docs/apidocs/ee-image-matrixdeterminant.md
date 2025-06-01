@@ -1,8 +1,7 @@
  
 #  ee.Image.matrixDeterminant 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Computes the determinant of the matrix. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the determinant of the matrix. Usage| Returns  
 ---|---  
 `Image.matrixDeterminant()`| Image  
 Argument| Type| Details  

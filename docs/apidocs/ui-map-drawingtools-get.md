@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.data.activedictionary`| ui.data.ActiveDictionary| The ui.data.ActiveDictionary instance.  
 `key`| String, optional| The key of the property to retrieve.  
+Was this helpful?

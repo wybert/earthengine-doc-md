@@ -1,6 +1,6 @@
  
 #  ee.Date.aside 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-aside#examples)
 
@@ -41,3 +41,4 @@ defprint_date(ee_date, message):
 ee_date = ee.Date(datetime.now()).aside(print_date, "Today's date (UTC):")
 ```
 
+Was this helpful?

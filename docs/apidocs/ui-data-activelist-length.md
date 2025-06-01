@@ -8,3 +8,4 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `ui.data.activelist`| ui.data.ActiveList| The ui.data.ActiveList instance.  
+Was this helpful?

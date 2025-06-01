@@ -1,6 +1,6 @@
  
 #  Vector to Raster Conversion 
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Vector to raster conversion in Earth Engine is handled by the `featureCollection.reduceToImage()` method. This method assigns pixels under each feature the value of the specified property. This example uses the counties data to create an image representing the land area of each county:
 ### Code Editor (JavaScript)
 ```

@@ -1,7 +1,12 @@
  
 #  ee.String.match 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Matches a string against a regular expression. Returns a list of matching strings. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-match#examples)
+
+
+Matches a string against a regular expression. Returns a list of matching strings. 
+Usage| Returns  
 ---|---  
 `String.match(regex,  _flags_)`| List  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `input`| String| The string in which to search.
 `regex`| String| The regular expression to match.  
 `flags`| String, default: ""| A string specifying a combination of regular expression flags, specifically one or more of: 'g' (global match) or 'i' (ignore case).  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-match#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-match#colab-python-sample) More
 ```
 vars=ee.String('ABCabc123');
 print(s.match(''));// ""
@@ -22,15 +27,12 @@ print(s.match('\\d{2}'));// "12"
 // Use [^] to match any character except a digit.
 print(s.match('abc[^0-9]','i'));// ["ABCa"]
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 s = ee.String('ABCabc123')
 print(s.match('').getInfo()) # ""

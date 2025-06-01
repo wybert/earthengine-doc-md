@@ -12,4 +12,3 @@ this: `collection`| FeatureCollection| The collection to aggregate over.
 `reducer`| Reducer| The reducer to apply.  
 `selectors`| List| A selector for each input of the reducer.  
 `weightSelectors`| List, default: null| A selector for each weighted input of the reducer.  
-Was this helpful?

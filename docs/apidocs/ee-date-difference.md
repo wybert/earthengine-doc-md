@@ -1,6 +1,6 @@
  
 #  ee.Date.difference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the difference between two Dates in the specified units; the result is floating-point and based on the average length of the unit. Usage| Returns  
 ---|---  
 `Date.difference(start, unit)`| Float  

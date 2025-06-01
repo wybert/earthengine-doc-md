@@ -1,12 +1,7 @@
  
 #  Export.table.toDrive 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/export-table-todrive#examples)
-
-
-Creates a batch task to export a FeatureCollection as a table to Drive. Tasks can be started from the Tasks tab. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a batch task to export a FeatureCollection as a table to Drive. Tasks can be started from the Tasks tab. Usage| Returns  
 ---|---  
 `Export.table.toDrive(collection,  _description_, _folder_, _fileNamePrefix_, _fileFormat_, _selectors_, _maxVertices_, _priority_)`|   
 Argument|  Type| Details  
@@ -20,7 +15,7 @@ Argument|  Type| Details
 `maxVertices`| Number, optional| Max number of uncut vertices per geometry; geometries with more vertices will be cut into pieces smaller than this size.  
 `priority`| Number, optional| The priority of the task within the project. Higher priority tasks are scheduled sooner. Must be an integer between 0 and 9999. Defaults to 100.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/export-table-todrive#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/export-table-todrive#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -54,12 +49,15 @@ folder:'earth_engine_demos',
 fileFormat:'SHP'
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image.
 img = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')

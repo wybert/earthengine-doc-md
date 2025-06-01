@@ -15,3 +15,4 @@ Argument| Type| Details
 `xProperty`| String| Property to be used as the label for each feature on the x-axis.  
 `yProperty`| String| Property to be plotted on the y-axis.  
 `seriesProperty`| String| Property used to determine feature groups. Features with the same value of groupProperty will be plotted as a single series on the chart.  
+Was this helpful?

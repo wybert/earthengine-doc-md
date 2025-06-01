@@ -1,6 +1,6 @@
  
 #  ee.Filter.bounds 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a filter that passes if the object's geometry intersects the given geometry. **Caution:** providing a large or complex collection as the `geometry` argument can result in poor performance. Collating the geometry of collections does not scale well; use the smallest collection (or geometry) that is required to achieve the desired outcome.
 Returns the constructed filter.
 Usage| Returns  
@@ -29,6 +29,7 @@ ee.Feature(ee.Geometry.Point(-121.697,45.374),{mountain:'Mount Hood'})
 print('Images intersecting feature collection',
 ic.filter(ee.Filter.bounds(fc)));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

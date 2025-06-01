@@ -1,10 +1,6 @@
  
 #  ee.Terrain.products 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-terrain-products#examples)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Calculates slope, aspect, and a simple hillshade from a terrain DEM. 
 Expects an image containing either a single band of elevation, measured in meters, or if there's more than one band, one named 'elevation'. Adds output bands named 'slope' and 'aspect' measured in degrees plus an unsigned byte output band named 'hillshade' for visualization. All other bands and metadata are copied from the input image. The local gradient is computed using the 4-connected neighbors of each pixel, so missing values will occur around the edges of an image.
 Usage| Returns  
@@ -14,7 +10,7 @@ Argument| Type| Details
 ---|---|---  
 `input`| Image| An elevation image, in meters.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-terrain-products#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-terrain-products#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A digital elevation model.
 vardem=ee.Image('NASA/NASADEM_HGT/001').select('elevation');
@@ -33,12 +29,15 @@ varterrain=ee.Terrain.products(dem);
 print('ee.Terrain.products bands',terrain.bandNames());
 Map.addLayer(terrain.select('hillshade'),{min:0,max:255},'Hillshade');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A digital elevation model.
 dem = ee.Image('NASA/NASADEM_HGT/001').select('elevation')

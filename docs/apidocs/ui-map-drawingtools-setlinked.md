@@ -10,4 +10,3 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.drawingtools`| ui.Map.DrawingTools| The ui.Map.DrawingTools instance.  
 `linked`| Boolean| Whether the geometries should be linked to the imports panel. When false, all geometries are local to the map instance.  
-Was this helpful?

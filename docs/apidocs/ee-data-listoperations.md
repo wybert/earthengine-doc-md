@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 `limit`| Number, optional| Maximum number of results to return.  
 `callback`| Function, optional|   
+Was this helpful?

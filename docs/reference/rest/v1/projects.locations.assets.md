@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.locations.assets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: EarthEngineAsset](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.assets#resource:-earthengineasset)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.assets#methods)
@@ -73,4 +73,3 @@ Union field `location`. Information about where and how the raster tiles are sto
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.assets/create)`
 |  Creates an asset.  
-Was this helpful?

@@ -38,4 +38,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.maps/create)`
 |  Creates an ID that can be used to render map tiles showing the results of a computation.  
-Was this helpful?
