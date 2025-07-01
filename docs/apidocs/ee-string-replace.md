@@ -1,6 +1,6 @@
  
-#  ee.String.replace 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.String.replace
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-replace#examples)
 
@@ -38,3 +38,4 @@ print(ee.String('aBc-Abc').replace('abc', 'Z', 'i').getInfo()) # Z-Abc
 print(ee.String('aBc-Abc').replace('abc', 'Z', 'ig').getInfo()) # Z-Z
 ```
 
+Was this helpful?

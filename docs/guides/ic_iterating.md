@@ -1,5 +1,5 @@
  
-#  Iterating over an ImageCollection 
+#  Iterating over an ImageCollection
 Stay organized with collections  Save and categorize content based on your preferences. 
 Although `map()` applies a function to every image in a collection, the function visits every image in the collection independently. For example, suppose you want to compute a cumulative anomaly (_A t_) at time _t_ from a time series. To obtain a recursively defined series of the form _A t = f(Imaget, At-1)_, mapping won't work because the function (_f_) depends on the previous result (_A t-1_). For example, suppose you want to compute a series of cumulative Normalized Difference Vegetation Index (NDVI) anomaly images relative to a baseline. Let _A 0_ = 0 and _f(Image t, At-1)_ = _Image t + At-1_ where _A t-1_ is the cumulative anomaly up to time _t-1_ and _Image t_ is the anomaly at time _t_. Use `imageCollection.iterate()` to make this recursively defined `ImageCollection`. In the following example, the function `accumulate()` takes two parameters: an image in the collection, and a list of all the previous outputs. With each call to `iterate()`, the anomaly is added to the running sum and the result is added to the list. The final result is passed to the `ImageCollection` constructor to get a new sequence of images:
 ### Code Editor (JavaScript)

@@ -1,5 +1,5 @@
  
-#  ee.Number.gamma 
+#  ee.Number.gamma
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-gamma#examples)
@@ -37,4 +37,3 @@ print('Gamma for 100:', ee.Number(100).gamma().getInfo()) # 9.332621544e+155
 print('Gamma for 200:', ee.Number(200).gamma().getInfo()) # Infinity
 ```
 
-Was this helpful?

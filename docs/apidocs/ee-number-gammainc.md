@@ -1,5 +1,5 @@
  
-#  ee.Number.gammainc 
+#  ee.Number.gammainc
 Stay organized with collections  Save and categorize content based on your preferences. 
 Calculates the regularized lower incomplete Gamma function γ(x,a). Usage| Returns  
 ---|---  

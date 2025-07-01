@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.FMask.matchClouds 
+#  ee.Algorithms.FMask.matchClouds
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Runs the FMask cloud and shadow matching. Outputs a single band ('csm'), containing the computed cloud and shadow masks. 
 Usage| Returns  

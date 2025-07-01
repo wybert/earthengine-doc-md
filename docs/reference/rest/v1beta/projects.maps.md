@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.maps 
+#  REST Resource: projects.maps
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: EarthEngineMap](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.maps#resource:-earthenginemap)
@@ -38,3 +38,4 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.maps/create)`
 |  Creates an ID that can be used to render map tiles showing the results of a computation.  
+Was this helpful?

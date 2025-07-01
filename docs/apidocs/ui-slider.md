@@ -1,5 +1,5 @@
  
-#  ui.Slider 
+#  ui.Slider
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A draggable target that ranges linearly between two numeric values. The value of the slider is displayed as a label alongside it. 
 Usage| Returns  

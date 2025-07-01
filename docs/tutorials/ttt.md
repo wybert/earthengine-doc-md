@@ -1,6 +1,6 @@
  
-#  Earth Engine resources for workshops 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Earth Engine resources for workshops
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Prerequisites](https://developers.google.com/earth-engine/tutorials/ttt#prerequisites)
   * [Before the Workshop](https://developers.google.com/earth-engine/tutorials/ttt#before-the-workshop)
@@ -50,3 +50,4 @@ The following trainings were developed by [Pietro Ceccato](http://iri.columbia.e
 ### Deltares
 The following trainings were developed by Gennadii Donchyts of [Deltares](https://www.deltares.nl/en/) in support of workshops for water resource monitoring and research.
 _Please[ submit an issue](https://github.com/google/earthengine-community/issues/new) to the Earth Engine Community GitHub repository for questions or feedback regarding material on this page._
+Was this helpful?

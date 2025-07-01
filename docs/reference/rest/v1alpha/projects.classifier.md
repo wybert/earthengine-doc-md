@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.classifier 
+#  REST Resource: projects.classifier
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier#resource)
@@ -13,4 +13,3 @@ There is no persistent data associated with this resource.
 ---  
 ### `export[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export)`
 |  Initiates a batch process that computes a classifier and saves it as an Earth Engine asset.  
-Was this helpful?

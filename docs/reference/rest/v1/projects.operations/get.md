@@ -1,14 +1,6 @@
  
-#  Method: projects.operations.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/get#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/get#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/get#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/get#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations/get#authorization-scopes)
-
-
+#  Method: projects.operations.get
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/operations/**}`
@@ -28,4 +20,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

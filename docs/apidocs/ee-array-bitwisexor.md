@@ -1,5 +1,5 @@
  
-#  ee.Array.bitwiseXor 
+#  ee.Array.bitwiseXor
 Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, calculates the bitwise XOR of the input values. Usage| Returns  
 ---|---  

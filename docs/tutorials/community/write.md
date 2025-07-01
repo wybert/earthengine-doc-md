@@ -1,6 +1,6 @@
  
-#  Writing your first community tutorial 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Writing your first community tutorial
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 This space is dedicated to Earth Engine users who want to share their knowledge with the rest of the Earth Engine community. Created by Earth Engine users, for Earth Engine users, tutorials in this section are intended for all levels, from beginner to more advanced users.
 Tutorials may be submitted as plain text and code formatted using the Markdown markup language, or as Colab notebooks containing Markdown and executable Python code. Tutorials built using the Earth Engine JavaScript client libraries are generally written in Markdown, while Colab is recommended for tutorials based on the Earth Engine Python client libraries.
 ## Before you begin

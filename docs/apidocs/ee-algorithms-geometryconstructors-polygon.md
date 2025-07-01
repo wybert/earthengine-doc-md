@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.GeometryConstructors.Polygon 
+#  ee.Algorithms.GeometryConstructors.Polygon
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Constructs a Polygon from the given coordinates. 
 Usage| Returns  

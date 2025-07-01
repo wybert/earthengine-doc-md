@@ -1,5 +1,5 @@
  
-#  Earth Engine Data Converters 
+#  Earth Engine Data Converters
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Computed Earth Engine data](https://developers.google.com/earth-engine/tutorials/community/data-converters#computed_earth_engine_data)
@@ -69,7 +69,7 @@ monthly_precip.bandNames()
 
 ```
 ```
-<ee.ee_list.List at 0x7f019c0def10>
+<ee.ee_list.List at 0x7fd1c40e4610>
 
 ```
 
@@ -95,7 +95,7 @@ wa_basins.limit(5)
 
 ```
 ```
-<ee.featurecollection.FeatureCollection at 0x7f016830bbe0>
+<ee.featurecollection.FeatureCollection at 0x7fd1914dce50>
 
 ```
 
@@ -316,7 +316,7 @@ array([[ 1.29e+02, 1.33e+02, 1.26e+02, ..., 2.30e+01, 2.20e+01,
 
 ```
 ```
-<matplotlib.image.AxesImage at 0x7f0165011730>
+<matplotlib.image.AxesImage at 0x7fd18c44b910>
 
 ```
 

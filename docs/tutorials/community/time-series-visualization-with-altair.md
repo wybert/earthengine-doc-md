@@ -1,5 +1,5 @@
  
-#  Time Series Visualization with Altair 
+#  Time Series Visualization with Altair
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#context)
@@ -263,9 +263,9 @@ for prop in pdsi_dict.keys():
 ```
 ```
 <class 'dict'> 
-millis: [1117864800000, 1118296800000, 1118728800000, '...']
-pdsi: [2.7872934079060463, 2.9245755749257354, 3.0705552153986595, '...']
-system:index: ['20050604', '20050609', '20050614', '...']
+millis: [1120456800000, 1120888800000, 1121320800000, '...']
+pdsi: [3.481914694127672, 3.5399954982962543, 3.596467772275757, '...']
+system:index: ['20050704', '20050709', '20050714', '...']
 
 ```
 
@@ -460,11 +460,11 @@ lines = base.mark_line().encode(
 
 ```
 ```
-/tmpfs/tmp/ipykernel_39191/3208543205.py:1: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_26105/3208543205.py:1: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use 'selection_point()' or 'selection_interval()' instead.
 These functions also include more helpful docstrings.
  highlight = alt.selection(
-/tmpfs/tmp/ipykernel_39191/3208543205.py:9: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_26105/3208543205.py:9: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use add_params instead.
  points = base.mark_circle().encode(
 

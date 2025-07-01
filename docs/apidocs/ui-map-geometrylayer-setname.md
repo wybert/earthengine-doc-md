@@ -1,5 +1,5 @@
  
-#  ui.Map.GeometryLayer.setName 
+#  ui.Map.GeometryLayer.setName
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the name of the layer. 
 Returns this map layer.

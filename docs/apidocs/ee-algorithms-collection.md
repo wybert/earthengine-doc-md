@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.Collection 
+#  ee.Algorithms.Collection
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a Collection containing the specified features. 
 Usage| Returns  

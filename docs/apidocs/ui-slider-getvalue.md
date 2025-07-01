@@ -1,5 +1,5 @@
  
-#  ui.Slider.getValue 
+#  ui.Slider.getValue
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the current slider value. 
 Usage| Returns  

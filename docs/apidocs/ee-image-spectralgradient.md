@@ -1,5 +1,5 @@
  
-#  ee.Image.spectralGradient 
+#  ee.Image.spectralGradient
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the spectral gradient over all bands of an image (or the first band if the image is Array typed) by computing the per-pixel difference between the spectral erosion and dilation with a given structuring kernel and distance metric. See: Plaza, Antonio, et al. 'Spatial/spectral endmember extraction by multidimensional morphological operations.' IEEE transactions on geoscience and remote sensing 40.9 (2002): 2025-2041. 
 Usage| Returns  

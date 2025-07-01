@@ -1,7 +1,8 @@
  
-#  ee.Geometry.LinearRing.projection 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the projection of the geometry. Usage| Returns  
+#  ee.Geometry.LinearRing.projection
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the projection of the geometry. 
+Usage| Returns  
 ---|---  
 `LinearRing.projection()`| Projection  
 Argument| Type| Details  

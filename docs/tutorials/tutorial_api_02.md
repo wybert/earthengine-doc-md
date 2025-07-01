@@ -1,5 +1,5 @@
  
-#  Visualizing Images and Image Bands 
+#  Visualizing Images and Image Bands
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Now that you're ready to begin writing Earth Engine JavaScript, start by copying the following code into the Code Editor:
 ### Code Editor (JavaScript)

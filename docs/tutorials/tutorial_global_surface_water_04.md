@@ -1,6 +1,6 @@
  
-#  Water Class Transition 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Water Class Transition
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Basic Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#basic-visualization)
   * [Summarizing Area by Transition Class](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#summarizing-area-by-transition-class)

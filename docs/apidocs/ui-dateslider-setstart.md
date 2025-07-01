@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.setStart 
+#  ui.DateSlider.setStart
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the start date of the slider. 
 Returns this slider.

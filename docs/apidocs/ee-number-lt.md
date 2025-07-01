@@ -1,5 +1,5 @@
  
-#  ee.Number.lt 
+#  ee.Number.lt
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-lt#examples)
@@ -30,3 +30,4 @@ print('5 less than 10?', ee.Number(5).lt(ee.Number(10)).getInfo()) # 1
 print('10 less than 5?', ee.Number(10).lt(ee.Number(5)).getInfo()) # 0
 ```
 
+Was this helpful?

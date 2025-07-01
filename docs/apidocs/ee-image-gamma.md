@@ -1,5 +1,5 @@
  
-#  ee.Image.gamma 
+#  ee.Image.gamma
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the gamma function of the input. 
 Usage| Returns  

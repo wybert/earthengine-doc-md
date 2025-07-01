@@ -1,7 +1,8 @@
  
-#  Earth Engine release notes 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Earth Engine release notes
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
+  * [June 27, 2025](https://developers.google.com/earth-engine/docs/release-notes#June_27_2025)
   * [April 22, 2025](https://developers.google.com/earth-engine/docs/release-notes#April_22_2025)
   * [April 14, 2025](https://developers.google.com/earth-engine/docs/release-notes#April_14_2025)
   * [April 09, 2025](https://developers.google.com/earth-engine/docs/release-notes#April_09_2025)
@@ -317,6 +318,9 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 [![Latest Release](https://img.shields.io/github/v/tag/google/earthengine-api?logo=github&label=Latest%20client%20release)](https://github.com/google/earthengine-api/commits/master/)
 [Subscribe](https://developers.google.com/static/feeds/earthengine-release-notes.xml) to these release notes. [![Subscribe](https://developers.google.com/static/earth-engine/images/rss-icon.svg)](https://developers.google.com/static/feeds/earthengine-release-notes.xml)
 This page is updated with each notable change to Earth Engine. Specifically, it lists releases by date and includes any new features, bug fixes, and significant performance improvements. You can also browse and filter release notes for all Google Cloud products in the [Google Cloud console](https://console.cloud.google.com/release-notes). 
+## June 27, 2025
+**Earth Engine Server**
+All noncommercial projects created before April 15, 2025 must verify noncommercial eligibility to maintain access to Earth Engine. Learn more if you need to take action in the Earth Engine [Cloud Console](https://console.cloud.google.com/earth-engine/configuration).
 ## April 22, 2025
 **Earth Engine JavaScript Client Library**
 1.5.12
@@ -2875,3 +2879,4 @@ Deprecated `Image.normalized_difference()`. Use `Image.normalizedDifference()` w
 Fixed a bug that caused failing queries to raise `NameError` rather than `EEException`.
 **Earth Engine Server**
 Fixed `Collection.filter()` to no longer cause an Internal Server Error. It is now preferred over `FilterFeatureCollection()`.
+Was this helpful?

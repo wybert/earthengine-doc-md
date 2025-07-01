@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.operations 
+#  REST Resource: projects.operations
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: Operation](https://developers.google.com/earth-engine/reference/rest/v1/projects.operations#resource:-operation)

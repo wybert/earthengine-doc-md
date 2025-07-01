@@ -1,10 +1,30 @@
  
-#  Widgets 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Widgets
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [ui.Label](https://developers.google.com/earth-engine/guides/ui_widgets#ui.label)
+  * [ui.Button](https://developers.google.com/earth-engine/guides/ui_widgets#ui.button)
+  * [ui.Checkbox](https://developers.google.com/earth-engine/guides/ui_widgets#ui.checkbox)
+  * [ui.Slider](https://developers.google.com/earth-engine/guides/ui_widgets#ui.slider)
+  * [ui.DateSlider](https://developers.google.com/earth-engine/guides/ui_widgets#ui.dateslider)
+  * [ui.Textbox](https://developers.google.com/earth-engine/guides/ui_widgets#ui.textbox)
+  * [ui.Select](https://developers.google.com/earth-engine/guides/ui_widgets#ui.select)
+  * [ui.Chart](https://developers.google.com/earth-engine/guides/ui_widgets#ui.chart)
+  * [ui.Thumbnail](https://developers.google.com/earth-engine/guides/ui_widgets#ui.thumbnail)
+  * [ui.Map](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map)
+  * [ui.Map.Layer](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map.layer)
+  * [ui.Map.CloudStorageLayer](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map.cloudstoragelayer)
+  * [ui.Map.DrawingTools](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map.drawingtools)
+  * [ui.Map.GeometryLayer](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map.geometrylayer)
+  * [ui.Map.Linker](https://developers.google.com/earth-engine/guides/ui_widgets#ui.map.linker)
+  * [ui.SplitPanel](https://developers.google.com/earth-engine/guides/ui_widgets#ui.splitpanel)
+  * [Styling Widgets](https://developers.google.com/earth-engine/guides/ui_widgets#styling-widgets)
+
+
 There are a variety of widgets you can use to build your UIs. These widgets include buttons, checkboxes, sliders, textboxes and selection menus. Widgets can only be printed or added to a panel once. The following sections illustrate the basic functionality, look, and feel of the widgets. See the [Style section](https://developers.google.com/earth-engine/guides/ui_widgets#styling-widgets) for more information on styling your widgets. The following examples simply `print()` the widgets to the console. For details on adding widgets to panels, see the [Panels and Layouts page](https://developers.google.com/earth-engine/guides/ui_panels).
 ## ui.Label
 Labels are simply areas in which text is displayed. For example, the following code prints a label:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varlabel=ui.Label('Cool label!');
 print(label);
@@ -19,7 +39,7 @@ print(ui.Label('Here is a:\nnew line',{whiteSpace:'pre'}));
 
 ## ui.Button
 A button is an interactive UI widget that can be clicked. You can specify a function to be called (the "callback" function) when a user clicks the button. (For more information on event handling with callback functions, see the [Events page](https://developers.google.com/earth-engine/guides/ui_events)). The following example prints the map's current center when the button is clicked:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varbutton=ui.Button({
 label:'Get Map Center',
@@ -34,7 +54,7 @@ Which looks something like:
 ![ui_button.png](https://developers.google.com/static/earth-engine/images/ui_button.png)
 ## ui.Checkbox
 A checkbox is a widget that lets a user check (or uncheck) a box. When the checkbox's state changes, callbacks registered to the widget are passed a boolean value indicating whether the checkbox is now checked. For example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varcheckbox=ui.Checkbox('Show SRTM layer',true);
 checkbox.onChange(function(checked){
@@ -50,7 +70,7 @@ The printed checkbox should look something like:
 Note that checking the box turns on a layer displayed on the map. As with other UI components, the **Map** of the Code Editor can be manipulated programmatically. Learn more about the **Map** object on the [Panels and Layouts page](https://developers.google.com/earth-engine/guides/ui_panels).
 ## ui.Slider
 A slider is a widget that lets a user adjust a slider to get a number within the slider range. Configure the range using either the constructor or by setting properties of the slider. The following example uses the slider to set the opacity of the first layer on the **Map** :
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varslider=ui.Slider();
 slider.setValue(0.9);// Set a default value.
@@ -68,7 +88,7 @@ Note that the slider value is shown to the right of the slider.
 The `DateSlider` widget is like the `Slider` widget, but handles dates explicitly. A `DateSlider` configured to select a day from June 2018 looks like:
 ![DateSlider.png](https://developers.google.com/static/earth-engine/images/DateSlider.png)
 The `DateSlider` is useful for filtering collections, as shown in the following example, which builds an annual composite based on the `DateRange` set in the `DateSlider`:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Use a DateSlider to create annual composites of this collection.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1');
@@ -106,7 +126,7 @@ Map.setCenter(23.861,-27.144,6);
 
 ## ui.Textbox
 A textbox is a place to collect user-entered text. For example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 vartextbox=ui.Textbox({
 placeholder:'Enter text here...',
@@ -122,7 +142,7 @@ The textbox should look something like:
 Note that the callback only gets fired when the user has finished entering text (and pressed **return**), or the user clicks away from the textbox.
 ## ui.Select
 The select widget represents a drop-down menu of choices from which the user can choose one. The following example illustrates a drop-down menu to allow a user to select a location:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varplaces={
 MTV:[-122.0849,37.3887],
@@ -146,7 +166,7 @@ The select widget should look something like:
 The charts in the `ui.Chart` package behave similarly to charts in the `Chart` package. Specifically, a `ui.Chart` is a thin shell around an instance of the Google Visualization API's `ChartWrapper`. For more information on manipulating `ChartWrapper` objects, see [this reference](https://developers.google.com/chart/interactive/docs/reference#chartwrapper-class). For more information on the chart helper functions in Earth Engine, see the [Charts docs](https://developers.google.com/earth-engine/charts).
 ## ui.Thumbnail
 The thumbnail widget can be used to preview `ee.Image` and `ee.ImageCollection` objects. When given an `ee.Image`, the widget will display a static image; when provided an `ee.ImageCollection`, it will display an animation with one frame per image in the input. As with `ee.Image.getThumbURL()` and `ee.ImageCollection.getVideoThumbURL()`, you can specify parameters to control the format and dimensions of the resulting thumbnail:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Create a box around an area in the Brazilian Amazon.
 varbox=ee.Geometry.Polygon([[
@@ -174,7 +194,7 @@ The thumbnail should look something like:
 ![ui_thumbnail.png](https://developers.google.com/static/earth-engine/images/ui_thumbnail.png)
 ## ui.Map
 A `ui.Map` is a map widget. (In fact, the default Code Editor **Map** is an instance of this class). Like other widgets, you can print a map to the console. Manipulate the content of the map by clearing, getting or setting individual layers. The following example prints a map to the console that shows the bounds of the Code Editor **Map** :
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Make a little map.
 varmap=ui.Map();
@@ -199,7 +219,7 @@ In this example, the user needs to click the big map to get the inset to draw in
 You can also manipulate layers on the map by calling `layers()` on the map instance. The `layers()` returns a `ui.data.ActiveList`, an array-like object. When it is changed, the layers on the map change, too. Learn more in the [ui.Map.Layer section](https://developers.google.com/earth-engine/guides/ui_widgets#uimaplayer).
 ## ui.Map.Layer
 A layer is not a styleable widget like a `ui.Button`. It is just a data representation of the layer on the map. The following example demonstrates updating a map by creating a layer and updating the layer's properties based on user input:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varconsoleMap=ui.Map({
 lon:-2.0174,
@@ -243,13 +263,13 @@ When running a script that loads a Cloud Storage layer, you may see the warning 
 ![Cloud layer warning](https://developers.google.com/static/earth-engine/images/Cloud_layer_warning.png)
 ## ui.Map.DrawingTools
 There is a set of geometry drawing tools that is added by default to the `Map` in the Code Editor. You can change the behavior of these tools in the default `Map` by calling `Map.drawingTools()`. For example to hide the drawing tools:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 Map.drawingTools().setShown(false);
 ```
 
 Newly created maps do not get drawing tools by default, but can be enabled by calling the `drawingTools()` method on the map:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varmap=ui.Map();
 // Prints true since drawingTools() adds drawing tools to the map.
@@ -259,7 +279,7 @@ ui.root.widgets().reset([map]);
 ```
 
 The geometry layers drawn by the drawing tools are put into an `ui.data.ActiveList` which you can access by calling `Map.drawingTools().layers()`. The geometry layers list responds to events like other active lists, for example the list of layers on the `Map` returned by `Map.layers()`. The following example shows how you can set the visibility of the geometry layers drawn by the tools (which are shown by default):
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 Map.drawingTools().layers().forEach(function(layer){
 layer.setShown(false);
@@ -267,7 +287,7 @@ layer.setShown(false);
 ```
 
 To add a layer programmatically to the drawing tools, you can either call the `addLayer` method on the drawing tools or add a layer directly to the layer list: 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 vargeometries=[ee.Geometry.Point([0,0]),ee.Geometry.Rectangle([[0,0],[1,1]])];
 Map.drawingTools().addLayer(geometries,'my_geometry1','red');
@@ -279,7 +299,7 @@ The state of the drawing tools is also carried over when you publish an [App](ht
 ## ui.Map.GeometryLayer
 A `GeometryLayer` is a collection of geometries that acts as a single `Geometry`, `GeometryCollection`, or `FeatureCollection` that is added to the imports section at the top of your script and can be referenced in code.
 `GeometryLayer`s drawn by the drawing tools have a default behavior that you can override by providing new callback functions. For example, suppose you want interactive changes to the geometries to trigger an event. To implement a particular behavior, you can set the `onEdit()`, `onErase()`, or `onDraw()` method(s) on the tools in order to respond to user actions. The following example shows how to trigger a computation and update a label with the computation result when the user adds/edits/erases a geometry:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Load elevation data.
 varsrtm=ee.Image('USGS/SRTMGL1_003');
@@ -326,7 +346,7 @@ Note that `setLinked()` is used to toggle the connection between the geometry dr
 A geometry layer in the imports is associated with a `Geometry` or `GeometryCollection`, so it can only contain geometries with the same geodesic state because the GeoJSON format only allows a single geodesic state for the collection of geometries (see [Geodesic vs. Planar Geometries page](https://developers.google.com/earth-engine/guides/geometries_planar_geodesic) for more info). Converting the geometry layer to a `FeatureCollection` by pressing the gear icon next to the layer name will allow you to add geodesic and planar geometries to the same layer. However, converting it back to a `Geometry` will produce an error. To avoid that, either convert to a `FeatureCollection` or delete geometries until there is only one geodesic state in the layer. 
 ## ui.Map.Linker
 Like a layer, a linker is not a styleable widget. It is a behind-the-scenes utility that can be used to synchronize the movement of multiple `ui.Map` instances:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Add two maps to the screen.
 varleft=ui.Map();
@@ -341,7 +361,7 @@ ui.Map.Linker([left,right],'change-bounds');
 
 ## ui.SplitPanel
 A `ui.SplitPanel` is useful for comparing things side-by-side. The advantage of a `ui.SplitPanel` over two ordinary panels is that a handle can be used to achieve a wipe transition between the panels in a `ui.SplitPanel`. The following example uses a `ui.SplitPanel` to display the spectral differences of burn scars:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 // Load an image of the Santa Rosa, California 2017 fires.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_045033_20171011');
@@ -387,7 +407,7 @@ Note that the `wipe` parameter is set to **`true`**, in the`ui.SplitPanel` const
 ## Styling Widgets
 The style of a widget is controlled by the widget's dictionary of style properties. You can get access to the dictionary by calling `style()` on the widget. The object returned by `style()` is an instance of `ui.data.ActiveDictionary`. That means that setting properties of the style dictionary automatically updates the way the widget is displayed. The allowable keys for each widget's style dictionary are detailed in the widget's reference docs for the `style()` call.
 The styles of the widget can be set with the constructor, by calling `style().set()` or by calling `style()` with a dictionary argument. For example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ui_widgets#code-editor-javascript-sample) More
 ```
 varredLabel=ui.Label('Big, Red Label');
 redLabel.style().set('color','red');

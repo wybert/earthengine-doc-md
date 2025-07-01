@@ -1,5 +1,5 @@
  
-#  FeatureView Optimization 
+#  FeatureView Optimization
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Max features per tile](https://developers.google.com/earth-engine/guides/featureview_optimization#max_features_per_tile)

@@ -1,5 +1,5 @@
  
-#  ui.Chart.image.series 
+#  ui.Chart.image.series
 Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an ImageCollection. Plots derived values of each band in a region across images. Usually a time series. 
 - X-axis: Image, labeled by xProperty value.

@@ -1,5 +1,5 @@
  
-#  ee.Image.neighborhoodToArray 
+#  ee.Image.neighborhoodToArray
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Turns the neighborhood of each pixel in a scalar image into a 2D array. Axes 0 and 1 of the output array correspond to Y and X axes of the image, respectively. The output image will have as many bands as the input; each output band has the same mask as the corresponding input band. The footprint and metadata of the input image are preserved. 
 Usage| Returns  

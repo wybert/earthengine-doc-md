@@ -1,6 +1,6 @@
  
-#  ui.Chart.setSeriesNames 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.Chart.setSeriesNames
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a copy of this chart with updated series names. 
 Usage| Returns  
 ---|---  

@@ -1,6 +1,14 @@
  
-#  Method: projects.assets.delete 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Method: projects.assets.delete
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/delete#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/delete#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/delete#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/delete#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/delete#authorization-scopes)
+
+
 Deletes an asset.
 ### HTTP request
 `DELETE https://earthengine.googleapis.com/v1beta/{name=projects/*/assets/**}`

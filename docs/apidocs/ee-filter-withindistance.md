@@ -1,5 +1,5 @@
  
-#  ee.Filter.withinDistance 
+#  ee.Filter.withinDistance
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a unary or binary filter that passes if the left geometry is within a specified distance of the right geometry. If used as a join condition, this distance is used as a join measure. 
 Usage| Returns  

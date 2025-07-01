@@ -1,7 +1,8 @@
  
-#  ee.Geometry.MultiLineString.containedIn 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if and only if one geometry is contained in the other. Usage| Returns  
+#  ee.Geometry.MultiLineString.containedIn
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if and only if one geometry is contained in the other. 
+Usage| Returns  
 ---|---  
 `MultiLineString.containedIn(right,  _maxError_, _proj_)`| Boolean  
 Argument| Type| Details  

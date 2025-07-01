@@ -1,5 +1,5 @@
  
-#  ee.Filter.intersects 
+#  ee.Filter.intersects
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a unary or binary filter that passes if the left geometry intersects the right geometry. 
 Usage| Returns  
@@ -12,3 +12,4 @@ Argument| Type| Details
 `rightField`| String, default: null| A selector for the right operand. Should not be specified if rightValue is specified.  
 `leftValue`| Object, default: null| The value of the left operand. Should not be specified if leftField is specified.  
 `maxError`| ErrorMargin, optional| The maximum reprojection error allowed during filter application.  
+Was this helpful?

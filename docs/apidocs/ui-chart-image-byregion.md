@@ -1,6 +1,6 @@
  
-#  ui.Chart.image.byRegion 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Chart.image.byRegion
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Generates a Chart from an image. Extracts and plots band values in one or more regions in the image, with each band in a separate series. 
 - X-axis = Region labeled by xProperty (default: 'system:index')
 - Y-axis = Reducer output.

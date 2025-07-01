@@ -1,6 +1,6 @@
  
-#  ImageCollection Visualization 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ImageCollection Visualization
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Collection preparation](https://developers.google.com/earth-engine/guides/ic_visualization#collection_preparation)
     * [Filtering](https://developers.google.com/earth-engine/guides/ic_visualization#filtering)

@@ -1,5 +1,5 @@
  
-#  Authentication and Initialization 
+#  Authentication and Initialization
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Earth Engine Code Editor and JavaScript](https://developers.google.com/earth-engine/guides/auth#earth_engine_code_editor_and_javascript)

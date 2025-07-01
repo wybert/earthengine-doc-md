@@ -1,5 +1,5 @@
  
-#  ee.Array.tan 
+#  ee.Array.tan
 Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, computes the tangent of the input in radians. Usage| Returns  
 ---|---  

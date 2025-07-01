@@ -1,5 +1,5 @@
  
-#  ee.data.listImages 
+#  ee.data.listImages
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a list of the contents in an image collection, in an object that includes an `images` array and an optional `nextPageToken`. 
 Usage| Returns  

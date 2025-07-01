@@ -1,5 +1,5 @@
  
-#  ui.Map.FeatureViewLayer.getAssetId 
+#  ui.Map.FeatureViewLayer.getAssetId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the asset ID for the FeatureView asset backing this layer. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.TemporalSegmentation.Ccdc 
+#  ee.Algorithms.TemporalSegmentation.Ccdc
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Implements the Continuous Change Detection and Classification temporal breakpoint algorithm. This algorithm finds temporal breakpoints in an image collection by iteratively fitting harmonic functions to the data. Fit coefficients are produced for all input bands, but the bands used for breakpoint detection can be specified with the 'breakpointBands' argument. 
 For more details, see Zhu, Z. and Woodcock, C.E., 2014. Continuous change detection and classification of land cover using all available Landsat data. Remote sensing of Environment, 144, pp.152-171.
@@ -17,3 +17,4 @@ Argument| Type| Details
 `dateFormat`| Integer, default: 0| The time representation to use during fitting: 0 = jDays, 1 = fractional years, 2 = unix time in milliseconds. The start, end and break times for each temporal segment will be encoded this way.  
 `lambda`| Float, default: 20| Lambda for LASSO regression fitting. If set to 0, regular OLS is used instead of LASSO.  
 `maxIterations`| Integer, default: 25000| Maximum number of runs for LASSO regression convergence. If set to 0, regular OLS is used instead of LASSO.  
+Was this helpful?

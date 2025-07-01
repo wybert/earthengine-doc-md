@@ -1,10 +1,29 @@
  
-#  Introduction to Dynamic World (Part 1) - Visualization and Creating Composites 
-Stay organized with collections  Save and categorize content based on your preferences. 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-1/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "View changes to this article over time.")
-Author(s): [ spatialthoughts ](https://github.com/spatialthoughts "View the profile for spatialthoughts on GitHub")
+#  Introduction to Dynamic World (Part 1) - Visualization and Creating Composites
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#prerequisites)
+  * [Hello [Dynamic] World](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#hello_dynamic_world)
+    * [Using the NRT Image Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#using_the_nrt_image_collection)
+    * [Load a Sentinel-2 Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#load_a_sentinel-2_image)
+    * [Find the Matching Dynamic World Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#find_the_matching_dynamic_world_image)
+    * [Visualize the Classified Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_classified_image)
+    * [Create a Probability Hillshade Visualization](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_visualization)
+    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary)
+  * [Creating Multi-Temporal Composites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#creating_multi-temporal_composites)
+    * [Select a Region](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#select_a_region)
+    * [Filter the Dynamic World NRT Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#filter_the_dynamic_world_nrt_collection)
+    * [Create a Mode Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_mode_composite)
+    * [Visualize the Annual Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_annual_composite)
+    * [Create a Probability Hillshade Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_composite)
+    * [Export the Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#export_the_composite)
+    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary_2)
+
+
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-1/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-1/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-1/index.md)
+Author(s): [ spatialthoughts ](https://github.com/spatialthoughts)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 _This is part 1 of a 3-part tutorial, see also[part 2](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2) and [part 3](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3)._
 Welcome to the Google Earth Engine tutorial for working with the Dynamic World (DW) dataset. The dataset contains near real-time (NRT) land use land cover (LULC) predictions created from Sentinel-2 imagery for nine land use land cover (LULC) classes as described in the table below.
@@ -291,3 +310,4 @@ You now know how to create temporally aggregated products from the Dynamic World
 The full script for this section can be accessed from this Code Editor link: <https://code.earthengine.google.com/35657f5dc56c19e8d957cd729138a327>
 In [Part 2](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2) of this tutorial, we will learn how to calculate and summarize statistics of a region.
 The data described in this tutorial were produced by Google, in partnership with the World Resources Institute and National Geographic Society and are provided under a CC-BY-4.0 Attribution license.
+Was this helpful?

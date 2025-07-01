@@ -1,6 +1,6 @@
  
-#  Eigen Analysis 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Eigen Analysis
+Stay organized with collections  Save and categorize content based on your preferences. 
 The [principal components (PC) transform](http://en.wikipedia.org/wiki/Principal_component_analysis) (also known as the Karhunen-Loeve transform) is a spectral rotation that takes spectrally correlated image data and outputs uncorrelated data. The PC transform accomplishes this by diagonalizing the input band correlation matrix through Eigen-analysis. To do this in Earth Engine, use a covariance reducer on an array image and the `eigen()` command on the resultant covariance array. Consider the following function for that purpose (an example of it in application is available as a [Code Editor script](https://code.earthengine.google.com/30c0e509da3a644fc4fea031b7649f87) and a [Colab notebook](https://github.com/google/earthengine-community/blob/master/guides/linked/Earth_Engine_PCA.ipynb)).
 ### Code Editor (JavaScript)
 ```

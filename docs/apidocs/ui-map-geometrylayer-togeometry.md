@@ -1,5 +1,5 @@
  
-#  ui.Map.GeometryLayer.toGeometry 
+#  ui.Map.GeometryLayer.toGeometry
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the layer's geometries as a single ee.Geometry. 
 Usage| Returns  

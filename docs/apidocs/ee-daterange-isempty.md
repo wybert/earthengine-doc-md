@@ -1,5 +1,5 @@
  
-#  ee.DateRange.isEmpty 
+#  ee.DateRange.isEmpty
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if this DateRange contains no dates (i.e. start >= end). Usage| Returns  
 ---|---  

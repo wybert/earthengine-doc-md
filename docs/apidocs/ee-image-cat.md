@@ -1,5 +1,5 @@
  
-#  ee.Image.cat 
+#  ee.Image.cat
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Combines the given images into a single image which contains all bands from all of the images. 
 If two or more bands share a name, they are suffixed with an incrementing index.

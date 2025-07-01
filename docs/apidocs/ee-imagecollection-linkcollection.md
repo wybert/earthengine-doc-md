@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.linkCollection 
+#  ee.ImageCollection.linkCollection
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Links images in this collection to matching images from `imageCollection`. 
 For each source image in this collection, any specified bands or metadata will be added to the source image from the matching image found in
@@ -18,4 +18,3 @@ this: `imagecollection`| ImageCollection| The ImageCollection instance.
 `linkedBands`| List, optional| Optional list of band names to add or update from matching images.  
 `linkedProperties`| List, optional| Optional list of metadata properties to add or update from matching images.  
 `matchPropertyName`| String, optional| The metadata property name to use as a match criteria. Defaults to "system:index".  
-Was this helpful?

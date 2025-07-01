@@ -1,7 +1,12 @@
  
-#  ee.Geometry.Rectangle.bounds 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the bounding rectangle of the geometry. Usage| Returns  
+#  ee.Geometry.Rectangle.bounds
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-bounds#examples)
+
+
+Returns the bounding rectangle of the geometry. 
+Usage| Returns  
 ---|---  
 `Rectangle.bounds( _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -10,7 +15,7 @@ this: `geometry`| Geometry| Return the bounding box of this geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| If specified, the result will be in this projection. Otherwise it will be in EPSG:4326.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-bounds#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-bounds#colab-python-sample) More
 ```
 // Define a Rectangle object.
 varrectangle=ee.Geometry.Rectangle(-122.09,37.42,-122.08,37.43);
@@ -27,15 +32,12 @@ Map.addLayer(rectangleBounds,
 {'color':'red'},
 'Result [red]: rectangle.bounds');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a Rectangle object.
 rectangle = ee.Geometry.Rectangle(-122.09, 37.42, -122.08, 37.43)
@@ -53,3 +55,4 @@ m.add_layer(
 m
 ```
 
+Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Image.mask 
+#  ee.Image.mask
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-mask#examples)
@@ -68,3 +68,4 @@ m.add_layer(single_band_mask_img, None, 'Single-band mask image')
 m
 ```
 
+Was this helpful?

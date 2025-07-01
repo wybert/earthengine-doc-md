@@ -1,6 +1,12 @@
  
-#  Supervised Classification 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Supervised Classification
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [ Classifier output modes ](https://developers.google.com/earth-engine/guides/classification#classifier-output-modes)
+  * [ Accuracy Assessment ](https://developers.google.com/earth-engine/guides/classification#accuracy-assessment)
+  * [ Saving Classifiers ](https://developers.google.com/earth-engine/guides/classification#saving-classifiers)
+
+
 The `Classifier` package handles supervised classification by traditional ML algorithms running in Earth Engine. These classifiers include CART, RandomForest, NaiveBayes and SVM. The general workflow for classification is:
   1. Collect training data. Assemble features which have a property that stores the known class label and properties storing numeric values for the predictors.
   2. Instantiate a classifier. Set its parameters if necessary.
@@ -11,7 +17,7 @@ The `Classifier` package handles supervised classification by traditional ML alg
 
 The training data is a `FeatureCollection` with a property storing the class label and properties storing predictor variables. Class labels should be consecutive, integers starting from 0. If necessary, use `remap()` to convert class values to consecutive integers. The predictors should be numeric.
 Training and/or validation data can come from a variety of sources. To collect training data interactively in Earth Engine, you can use the geometry drawing tools (see the [geometry tools section of the Code Editor page](https://developers.google.com/earth-engine/guides/playground#geometry-tools)). Alternatively, you can import predefined training data from an Earth Engine table asset (see the [Importing Table Data page](https://developers.google.com/earth-engine/guides/table_upload) for details). Get a classifier from one of the constructors in `ee.Classifier`. Train the classifier using `classifier.train()`. Classify an `Image` or `FeatureCollection` using `classify()`. The following example uses a Classification and Regression Trees (CART) classifier ([Breiman et al. 1984](https://books.google.com/books?id=JwQx-WOmSyQC)) to predict three simple classes:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Define a function that scales and masks Landsat 8 surface reflectance images.
 functionprepSrL8(image){
@@ -64,15 +70,12 @@ Map.addLayer(classified,
 {min:0,max:2,palette:['orange','green','blue']},
 'classification');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a function that scales and masks Landsat 8 surface reflectance images.
 defprep_sr_l8(image):
@@ -132,7 +135,7 @@ m
 
 In this example, the training points in the table store only the class label. Note that the training property (`'landcover'`) stores consecutive integers starting at 0 (Use [`remap()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-remap) on your table to turn your class labels into consecutive integers starting at zero if necessary). Also note the use of `image.sampleRegions()` to get the predictors into the table and create a training dataset. To train the classifier, specify the name of the class label property and a list of properties in the training table which the classifier should use for predictors. The number and order of the bands in the image to be classified must exactly match the order of the properties list provided to `classifier.train()`. Use `image.select()` to ensure that the classifier schema matches the image.
 If the training data are polygons representing homogeneous regions, every pixel in each polygon is a training point. You can use polygons to train as illustrated in the following example:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Define a function that scales and masks Landsat 8 surface reflectance images.
 functionprepSrL8(image){
@@ -202,15 +205,12 @@ Map.addLayer(classified,
 {min:0,max:1,palette:['orange','green']},
 'deforestation');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a function that scales and masks Landsat 8 surface reflectance images.
 defprep_sr_l8(image):
@@ -309,7 +309,7 @@ ee.Classifier.libsvm ONE_CLASS | check_circle | close | close | close | close | 
 ee.Classifier.libsvm EPSILON_SVR | check_circle | close | close | close | close | close  
 ee.Classifier.libsvm NU_SVR | close | check_circle | close | close | close | close  
 Use `setOutputMode()` before training a classifier to define the output format. For example, you could configure the SVM classifier in the previous code block to output probability instead of the default classification labels: 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 varclassifier=ee.Classifier.libsvm({
 kernelType:'RBF',
@@ -318,15 +318,12 @@ cost:10
 }).setOutputMode('PROBABILITY');
 vartrained=classifier.train(training,'class',bands);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 classifier = ee.Classifier.libsvm(
   kernelType='RBF', gamma=0.5, cost=10
@@ -336,7 +333,7 @@ trained = classifier.train(training, 'class', bands)
 
 ##  Accuracy Assessment 
 To assess the accuracy of a classifier, use a `ConfusionMatrix` ([Stehman 1997](http://www.sciencedirect.com/science/article/pii/S0034425797000837)). The following example uses `sample()` to generate training and validation data from a MODIS reference image and compares confusion matrices representing training and validation accuracy:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Define a region of interest.
 varroi=ee.Geometry.BBox(-122.93,36.99,-121.20,38.16);
@@ -424,15 +421,12 @@ Map.addLayer(classified.clip(roi),
 {palette:igbpPalette,min:0,max:17},
 'classification');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a region of interest.
 roi = ee.Geometry.BBox(-122.93, 36.99, -121.20, 38.16)
@@ -532,7 +526,7 @@ m
 This example uses a random forest ([Breiman 2001](http://rd.springer.com/article/10.1023/A:1010933404324)) classifier with 10 trees to downscale MODIS data to Landsat resolution. The `sample()` method generates two random samples from the MODIS data: one for training and one for validation. The training sample is used to train the classifier. You can get resubstitution accuracy on the training data from `classifier.confusionMatrix()`. To get validation accuracy, classify the validation data. This adds a `classification` property to the validation `FeatureCollection`. Call `errorMatrix()` on the classified `FeatureCollection` to get a confusion matrix representing validation (expected) accuracy.
 Inspect the output to see that the overall accuracy estimated from the training data is much higher than the validation data. The accuracy estimated from training data is an overestimate because the random forest is “fit” to the training data. The expected accuracy on unknown data is lower, as indicated by the estimate from the validation data.
 You can also take a single sample and partition it with the [`randomColumn()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-randomcolumn) method on feature collections. Continuing the previous example: 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 varsample=input.addBands(modis).sample({
 region:roi,
@@ -546,15 +540,12 @@ varsplit=0.7;// Roughly 70% training, 30% testing.
 vartraining=sample.filter(ee.Filter.lt('random',split));
 varvalidation=sample.filter(ee.Filter.gte('random',split));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 sample = input_image.addBands(modis).sample(region=roi, numPixels=5000, seed=0)
 # The randomColumn() method will add a column of uniform random
@@ -566,7 +557,7 @@ validation = sample.filter(ee.Filter.gte('random', split))
 ```
 
 You may also want to ensure that the training samples are uncorrelated with the evaluation samples. This might result from spatial autocorrelation of the phenomenon being predicted. One way to exclude samples that might be correlated in this manner is to remove samples that are within some distance to any other sample(s). This can be accomplished with a spatial join: 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Sample the input imagery to get a FeatureCollection of training data.
 varsample=input.addBands(modis).sample({
@@ -595,15 +586,12 @@ varjoin=ee.Join.inverted();
 training=join.apply(training,validation,distFilter);
 print('Training size after spatial filtering:',training.size());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Sample the input imagery to get a FeatureCollection of training data.
 sample = input_image.addBands(modis).sample(
@@ -630,7 +618,7 @@ In the previous snippet, note that `geometries` is set to `true` in `sample()`. 
 ##  Saving Classifiers 
 Training a classifier on a large amount of input data may not be possible interactively because the input is too large (>99 MB) or because training takes too long (5 minutes). Use `Export.classifier.toAsset` to run the classifier training as a batch job, where it can run for longer with more memory. Expensive-to-train classifiers can be exported and reloaded to avoid the need to retrain. 
 **NOTE** : Currently the only `ee.Classifiers`(s) that can be exported are `ee.Classifier.smileRandomForest`, `ee.Classifier.smileCart`, `ee.Classifier.DecisionTree` and `ee.Classifier.DecisionTreeEnsemble`. 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Using the random forest classifier defined earlier, export the random
 // forest classifier as an Earth Engine asset.
@@ -641,15 +629,12 @@ classifier,
 classifierAssetId
 );
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Using the random forest classifier defined earlier, export the random
 # forest classifier as an Earth Engine asset.
@@ -663,7 +648,7 @@ task.start()
 ```
 
 To load the saved classifier, use the algorithm `ee.Classifier.load`, specify the exported classifier ID and use it just like any other trained classifier. 
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/classification#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/classification#colab-python-sample) More
 ```
 // Once the classifier export finishes, we can load our saved classifier.
 varsavedClassifier=ee.Classifier.load(classifierAssetId);
@@ -673,15 +658,12 @@ Map.addLayer(classified.clip(roi),
 {palette:igbpPalette,min:0,max:17},
 'classification');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Once the classifier export finishes, we can load our saved classifier.
 saved_classifier = ee.Classifier.load(classifier_asset_id)

@@ -1,5 +1,5 @@
  
-#  Importing Raster Data 
+#  Importing Raster Data
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Uploading image assets](https://developers.google.com/earth-engine/guides/image_upload#uploading-image-assets)

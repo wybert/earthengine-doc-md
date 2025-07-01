@@ -1,6 +1,6 @@
  
-#  ui.Panel.clear 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Panel.clear
+Stay organized with collections  Save and categorize content based on your preferences. 
 Removes all widgets from the panel. 
 Returns this panel.
 Usage| Returns  

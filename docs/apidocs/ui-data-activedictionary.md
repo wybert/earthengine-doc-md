@@ -1,5 +1,5 @@
  
-#  ui.data.ActiveDictionary 
+#  ui.data.ActiveDictionary
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A dictionary-like container for data for use in UI components. 
 When a property of a ui.data.ActiveDictionary (e.g. myButton.style()) is updated, the component it belongs to is automatically updated. For example, myButton.style().set('color', 'red') would change the color of button's text to red.

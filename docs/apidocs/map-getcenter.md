@@ -1,6 +1,6 @@
  
-#  Map.getCenter 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Map.getCenter
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the coordinates at the center of the map. Usage| Returns  
 ---|---  
 `Map.getCenter()`| Geometry.Point  

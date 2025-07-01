@@ -1,5 +1,5 @@
  
-#  ee.Feature.geometry 
+#  ee.Feature.geometry
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the geometry of a given feature in a given projection. 
 Usage| Returns  

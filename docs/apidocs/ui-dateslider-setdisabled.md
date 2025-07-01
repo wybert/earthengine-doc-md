@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.setDisabled 
+#  ui.DateSlider.setDisabled
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets whether the slider is disabled. 
 Returns this slider.

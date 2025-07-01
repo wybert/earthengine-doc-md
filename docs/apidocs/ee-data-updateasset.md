@@ -1,6 +1,6 @@
  
-#  ee.data.updateAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.data.updateAsset
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Updates an asset. 
 The authenticated user must be a writer or owner of the asset.
 Usage| Returns  

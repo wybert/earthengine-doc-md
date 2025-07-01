@@ -1,6 +1,6 @@
  
-#  ee.Image.mod 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Image.mod
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-mod#examples)
 
@@ -76,3 +76,4 @@ m.add_layer(exponent, {'min': 0, 'max': 2e10}, 'exponent')
 m
 ```
 
+Was this helpful?

@@ -1,15 +1,6 @@
  
-#  Method: projects.listAssets 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/listAssets#authorization-scopes)
-
-
+#  Method: projects.listAssets
+Stay organized with collections  Save and categorize content based on your preferences. 
 Lists any container asset, such as a folder or collection.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{parent=projects/*}:listAssets`
@@ -56,4 +47,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

@@ -1,6 +1,6 @@
  
-#  Get started with Earth Engine for Python 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Get started with Earth Engine for Python
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_python#before_you_begin)
   * [Notebook setup](https://developers.google.com/earth-engine/guides/quickstart_python#notebook_setup)
@@ -122,3 +122,4 @@ alt.Chart(city_climates_dataframe).mark_bar(size=100).encode(
   * Learn how to [export your computation results to BigQuery](https://developers.google.com/earth-engine/guides/exporting_to_bigquery).
 
 
+Was this helpful?

@@ -1,5 +1,5 @@
  
-#  Export.table.toFeatureView 
+#  Export.table.toFeatureView
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a batch task to export a FeatureCollection to a FeatureView asset. Tasks can be started from the Tasks tab. 
 Usage| Returns  

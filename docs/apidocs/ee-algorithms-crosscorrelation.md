@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.CrossCorrelation 
+#  ee.Algorithms.CrossCorrelation
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Gives information on the quality of image registration between two (theoretically) co-registered images. The input is two images with the same number of bands. This function outputs an image composed of four bands of information. The first three are distances: the deltaX, deltaY, and the Euclidean distance for each pixel in imageA to the pixel which has the highest corresponding correlation coefficient in imageB. The fourth band is the value of the correlation coefficient for that pixel [-1 : +1]. 
 Usage| Returns  

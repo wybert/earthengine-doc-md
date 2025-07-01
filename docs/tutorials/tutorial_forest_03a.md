@@ -1,6 +1,6 @@
  
-#  Charting Yearly Forest Loss 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Charting Yearly Forest Loss
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 ## Calculating Yearly Forest Loss
 In the previous section you learned how to [calculate total forest area lost](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03#calculating-pixel-areas) in the given region of interest using the `reduceRegion` method. Instead of calculating the total loss, it would be helpful to compute the loss for each year. The way to achieve this in Earth Engine is using a [Grouped Reducer](https://developers.google.com/earth-engine/guides/reducers_grouping).
 To group output of `reduceRegion()`, you can specify a grouping band that defines groups by integer pixel values. In the following example, we slightly modify the previous code and add the `lossYear` band to the original image. Each pixel in the `lossYear` band contain values from 0 to 14 - indicating the year in which the loss occurred. We also change the reducer to a grouped reducer, specifying the band index of the grouping band (1) so the pixel areas will be summed and grouped according to the value in the `lossYear` band. 

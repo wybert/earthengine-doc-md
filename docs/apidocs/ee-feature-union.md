@@ -1,5 +1,5 @@
  
-#  ee.Feature.union 
+#  ee.Feature.union
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a feature containing the union of the geometries of two features. Usage| Returns  
 ---|---  

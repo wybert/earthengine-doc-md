@@ -1,5 +1,5 @@
  
-#  ee.List.insert 
+#  ee.List.insert
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Inserts element at the specified position in list. A negative index counts backwards from the end of the list. 
 Usage| Returns  
@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `list`| List|   
 `index`| Integer|   
 `element`| Object|   
+Was this helpful?

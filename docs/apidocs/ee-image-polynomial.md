@@ -1,5 +1,5 @@
  
-#  ee.Image.polynomial 
+#  ee.Image.polynomial
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Compute a polynomial at each pixel using the given coefficients. 
 Usage| Returns  

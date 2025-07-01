@@ -1,6 +1,12 @@
  
-#  REST Resource: projects.maps 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  REST Resource: projects.maps
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Resource: EarthEngineMap](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps#resource:-earthenginemap)
+  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps#methods)
+    * [create](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps#create)
+
+
 ## Resource: EarthEngineMap
 Information about a map.
 JSON representation  
@@ -32,3 +38,4 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps/create)`
 |  Creates an ID that can be used to render map tiles showing the results of a computation.  
+Was this helpful?

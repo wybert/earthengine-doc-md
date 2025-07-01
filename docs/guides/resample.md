@@ -1,16 +1,10 @@
  
-#  Resampling and Reducing Resolution 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resampling](https://developers.google.com/earth-engine/guides/resample#resampling)
-  * [Reduce Resolution](https://developers.google.com/earth-engine/guides/resample#reduce_resolution)
-    * [Pixel weights for ReduceResolution](https://developers.google.com/earth-engine/guides/resample#pixel_weights_for_reduceresolution)
-
-
+#  Resampling and Reducing Resolution
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 As noted in the [Projections](https://developers.google.com/earth-engine/guides/projections) doc, Earth Engine performs nearest neighbor resampling by default during reprojection. You can change this behavior with the `resample()` or `reduceResolution()` methods. Specifically, when one of these methods is applied to an input image, any required reprojection of the input will be done using the indicated resampling or aggregation method.
 ## Resampling
 `resample()` causes the indicated resampling method (`'bilinear'` or `'bicubic'`) to be used at the next reprojection. Since inputs are requested in the output projection, an implicit reprojection may happen before any other operation on the input. For this reason, call `resample()` directly on the input image. Consider the following simple example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/resample#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/resample#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat image over San Francisco, California, UAS.
 varlandsat=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20160323');
@@ -25,12 +19,15 @@ varresampled=landsat.resample('bicubic');
 // Display the Landsat image using bicubic resampling.
 Map.addLayer(resampled,visParams,'resampled');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat image over San Francisco, California, UAS.
 landsat = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20160323')
@@ -55,7 +52,7 @@ The order of operations for this code sample is diagrammed in Figure 2. Specific
 **Figure 2.** Flow chart of operations when `resample()` is called on the input image prior to display in the Code Editor. Curved lines indicate the flow of information to the reprojection: specifically, the output projection, scale and resampling method to use.
 ## Reduce Resolution
 Suppose that instead of resampling during reprojection, your goal is to aggregate pixels to larger pixels in a different projection. This is useful when comparing image datasets at different scales, for example 30-meter pixels from a Landsat-based product to coarse pixels (higher scale) from a MODIS-based product. You can control this aggregation process with the `reduceResolution()` method. As with `resample()`, call `reduceResolution()` on the input, in order to affect the next reprojection of the image. The following example uses `reduceResolution()` to compare forest cover data at 30-meters resolution to a vegetation index at 500-meters resolution:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/resample#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/resample#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a MODIS EVI image.
 varmodis=ee.Image(ee.ImageCollection('MODIS/061/MOD13A1').first())
@@ -84,12 +81,15 @@ crs:modisProjection
 // Display the aggregated, reprojected forest cover data.
 Map.addLayer(forestMean,{max:80},'forest cover at MODIS scale');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a MODIS EVI image.
 modis = ee.Image(ee.ImageCollection('MODIS/006/MOD13A1').first()).select('EVI')
@@ -125,7 +125,7 @@ The weights of pixels used during the `reduceResolution()` aggregation process a
 ![Input and output pixels](https://developers.google.com/static/earth-engine/images/ReduceResolution_weights.png)
 **Figure 4.** Input pixels (black) and output pixel (blue) for `reduceResolution()`.
 The default behavior is that input pixel weights are computed as the fraction of the output pixel area covered by the input pixel. In the diagram, the output pixel has area `a`, the weight of the input pixel with intersection area `b` is computed as `b/a` and the weight of the input pixel with intersection area `c` is computed as `c/a`. This behavior can result in unexpected results when using a reducer other than the mean reducer. For example, to compute forested area per pixel, use the mean reducer to compute the fraction of a pixel covered, then multiply by area (instead of computing areas in the smaller pixels then adding them up with the sum reducer):
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/resample#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/resample#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Compute forest area per MODIS pixel.
 varforestArea=forest.gt(0)
@@ -144,12 +144,15 @@ crs:modisProjection
 });
 Map.addLayer(forestArea,{max:500*500},'forested area at MODIS scale');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Compute forest area per MODIS pixel.
 forest_area = (

@@ -1,5 +1,5 @@
  
-#  ee.Image.toDouble 
+#  ee.Image.toDouble
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Casts the input value to a 64-bit float. 
 Usage| Returns  

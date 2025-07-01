@@ -1,6 +1,15 @@
  
-#  Method: projects.locations.assets.create 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Method: projects.locations.assets.create
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#path-parameters)
+  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#query-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.assets/create#authorization-scopes)
+
+
 Creates an asset.
 The following asset types are createable: * `FOLDER`: No fields in `asset` may be specified. * `IMAGE`: To create a COG-backed asset, use `image.importExternal` instead. See <https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff> for more details. * `IMAGE_COLLECTION`: Only the fields `startTime`, `endTime`, and `properties` may be specified.
 ### HTTP request
@@ -29,3 +38,4 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

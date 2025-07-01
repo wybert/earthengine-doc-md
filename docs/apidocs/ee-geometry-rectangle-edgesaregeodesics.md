@@ -1,6 +1,6 @@
  
-#  ee.Geometry.Rectangle.edgesAreGeodesics 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.Rectangle.edgesAreGeodesics
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if the geometry edges, if any, are geodesics along a spherical model of the earth; if false, any edges are straight lines in the projection. Usage| Returns  
 ---|---  
 `Rectangle.edgesAreGeodesics()`| Boolean  

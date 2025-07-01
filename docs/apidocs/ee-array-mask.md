@@ -1,5 +1,5 @@
  
-#  ee.Array.mask 
+#  ee.Array.mask
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-mask#examples)
@@ -46,4 +46,3 @@ empty = ee.Array([], ee.PixelType.int8())
 display(empty.mask(empty)) # []
 ```
 
-Was this helpful?

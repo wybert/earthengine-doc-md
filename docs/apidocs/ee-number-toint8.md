@@ -1,6 +1,6 @@
  
-#  ee.Number.toInt8 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Number.toInt8
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-toint8#examples)
 
@@ -80,4 +80,3 @@ print('Less than int8 min cast to int8 becomes int8 min:',
    out_of_range_lo_to_int8.getInfo())
 ```
 
-Was this helpful?

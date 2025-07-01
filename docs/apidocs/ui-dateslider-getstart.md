@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.getStart 
+#  ui.DateSlider.getStart
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the slider's start date as a UTC timestamp. 
 Usage| Returns  

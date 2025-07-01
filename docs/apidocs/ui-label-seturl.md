@@ -1,6 +1,6 @@
  
-#  ui.Label.setUrl 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Label.setUrl
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the url of the label, which will cause it to render as a link. 
 Returns this label.
 Usage| Returns  

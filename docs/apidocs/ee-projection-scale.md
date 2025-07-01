@@ -1,5 +1,5 @@
  
-#  ee.Projection.scale 
+#  ee.Projection.scale
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the projection scaled by the given amount in each axis. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ee.Array.trigamma 
+#  ee.Array.trigamma
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 On an element-wise basis, computes the trigamma function of the input. 
 Usage| Returns  

@@ -1,6 +1,20 @@
  
-#  Method: projects.table.export 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Method: projects.table.export
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#authorization-scopes)
+  * [TableFileExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#tablefileexportoptions)
+  * [TableAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#tableassetexportoptions)
+  * [FeatureViewAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#featureviewassetexportoptions)
+  * [FeatureViewDestination](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#featureviewdestination)
+  * [BigQueryExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#bigqueryexportoptions)
+  * [BigQueryDestination](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/export#bigquerydestination)
+
+
 Initiates a batch process that computes a table and writes the result to one of several destinations.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/table:export`
@@ -190,3 +204,4 @@ Fields
 `table` |  `string` Required. The BigQuery destination table reference in the following format: "projectId.dataset_id.table_id".If the referenced resource does not exist, new table will be created. This applies if "append" and "overwrite" parameters are both false as well.If the referenced resource does exist and has compatible schema, one of the "overwrite" and "append" parameters has to be true, otherwise the task will fail.If referenced resource exists and schema is not compatible with the existing one, task will also fail.  
 `overwrite` |  `boolean` Specifies if the table data should be overwritten if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
 `append` |  `boolean` Specifies if the table data should be appended if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
+Was this helpful?

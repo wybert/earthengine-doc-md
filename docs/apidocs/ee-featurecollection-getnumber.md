@@ -1,6 +1,6 @@
  
-#  ee.FeatureCollection.getNumber 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.FeatureCollection.getNumber
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Extract a property from a feature. Usage| Returns  
 ---|---  
 `FeatureCollection.getNumber(property)`| Number  

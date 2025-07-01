@@ -1,7 +1,8 @@
  
-#  ee.Image.arrayReshape 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Converts array bands of an image with equally-shaped, possibly multidimensional pixels to an image of arrays with a new shape. Usage| Returns  
+#  ee.Image.arrayReshape
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Converts array bands of an image with equally-shaped, possibly multidimensional pixels to an image of arrays with a new shape. 
+Usage| Returns  
 ---|---  
 `Image.arrayReshape(lengths, dimensions)`| Image  
 Argument| Type| Details  
@@ -39,7 +40,6 @@ varflattened=reshape2x3.arrayReshape(ee.Image([-1]).toArray(),1);
 print('2D array flattened to 1D',sampArrImg(flattened));
 // [0, 1, 2, 3, 4, 5]
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

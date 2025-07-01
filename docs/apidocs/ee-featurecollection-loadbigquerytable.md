@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.loadBigQueryTable 
+#  ee.FeatureCollection.loadBigQueryTable
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Release Notes 
   * On this page
@@ -13,7 +13,7 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `table`| String| Path to BigQuery table in a `project.dataset.table` format.  
-`geometryColumn`| String, default: null| The name of the column to use as the main feature geometry. If not specified, all features will have null geometry.  
+`geometryColumn`| String, default: null| The name of the column to use as the main feature geometry. If not specified, the first column with GEOGRAPHY type will be used.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable#colab-python-sample) More
 ```

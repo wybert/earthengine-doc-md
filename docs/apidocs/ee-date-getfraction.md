@@ -1,5 +1,5 @@
  
-#  ee.Date.getFraction 
+#  ee.Date.getFraction
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-getfraction#examples)
@@ -12,7 +12,7 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `date`| Date|   
-`unit`| String| One of 'year', 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
+`unit`| String| One of 'year', 'month', 'week', 'day', 'hour', 'minute', or 'second'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-getfraction#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-getfraction#colab-python-sample) More

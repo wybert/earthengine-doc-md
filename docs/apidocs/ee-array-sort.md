@@ -1,5 +1,5 @@
  
-#  ee.Array.sort 
+#  ee.Array.sort
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sorts elements of the array along one axis. 
 Usage| Returns  

@@ -1,7 +1,8 @@
  
-#  ee.data.listAssets 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a list of the contents in an asset collection or folder, in an object that includes an `assets` array and an optional `nextPageToken`. Usage| Returns  
+#  ee.data.listAssets
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a list of the contents in an asset collection or folder, in an object that includes an `assets` array and an optional `nextPageToken`. 
+Usage| Returns  
 ---|---  
 `ee.data.listAssets(parent,  _params_, _callback_)`| api.ListAssetsResponse  
 Argument| Type| Details  

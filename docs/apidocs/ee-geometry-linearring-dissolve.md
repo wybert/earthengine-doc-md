@@ -1,7 +1,8 @@
  
-#  ee.Geometry.LinearRing.dissolve 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. Usage| Returns  
+#  ee.Geometry.LinearRing.dissolve
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. 
+Usage| Returns  
 ---|---  
 `LinearRing.dissolve( _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -30,7 +31,6 @@ Map.addLayer(linearRingDissolve,
 {'color':'red'},
 'Result [red]: linearRing.dissolve');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

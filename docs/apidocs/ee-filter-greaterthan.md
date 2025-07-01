@@ -1,10 +1,6 @@
  
-#  ee.Filter.greaterThan 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-filter-greaterthan#examples)
-
-
+#  ee.Filter.greaterThan
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a unary or binary filter that passes if the left operand is greater than the right operand. 
 Usage| Returns  
 ---|---  
@@ -16,7 +12,7 @@ Argument| Type| Details
 `rightField`| String, default: null| A selector for the right operand. Should not be specified if rightValue is specified.  
 `leftValue`| Object, default: null| The value of the left operand. Should not be specified if leftField is specified.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-filter-greaterthan#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-filter-greaterthan#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Field site vegetation characteristics from projects in western USA.
 varfc=ee.FeatureCollection('BLM/AIM/v1/TerrADat/TerrestrialAIM')
@@ -78,6 +74,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Field site vegetation characteristics from projects in western USA.
 fc = ee.FeatureCollection('BLM/AIM/v1/TerrADat/TerrestrialAIM').filter(
@@ -169,4 +167,3 @@ grouped_plots = ee.Join.saveAll('site_plots').apply(sites_fc, fc, join_filter)
 display('List of plots in first site', grouped_plots.first().get('site_plots'))
 ```
 
-Was this helpful?

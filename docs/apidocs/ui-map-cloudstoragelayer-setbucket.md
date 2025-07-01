@@ -1,5 +1,5 @@
  
-#  ui.Map.CloudStorageLayer.setBucket 
+#  ui.Map.CloudStorageLayer.setBucket
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the bucket for this layer. 
 Returns this map layer.

@@ -1,5 +1,5 @@
  
-#  ee.Image.cumulativeCost 
+#  ee.Image.cumulativeCost
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes a cumulative cost map based on an image containing costs to traverse each pixel and an image containing source locations. 
 Each output band represents the cumulative cost over the corresponding input cost band.

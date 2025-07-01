@@ -1,5 +1,5 @@
  
-#  ui.Map.CloudStorageLayer.getShown 
+#  ui.Map.CloudStorageLayer.getShown
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns whether the layer is shown. 
 Usage| Returns  

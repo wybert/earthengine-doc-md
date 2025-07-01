@@ -1,5 +1,5 @@
  
-#  Developer Resources 
+#  Developer Resources
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Extensions](https://developers.google.com/earth-engine/tutorials/community/developer-resources#extensions)
@@ -49,4 +49,3 @@ Sites that aggregate miscellaneous Earth Engine developer resources.
 ---|---  
 [**Earth Engine by Example**](https://gorelick.medium.com/) | A Medium blog series on applied Earth Engine examples.  
 [**Earth Engine with Amirhossein Ahrari**](https://www.youtube.com/@amirhosseinahrarigee) | A YouTube series with 50+ Earth Engine tutorials.  
-Was this helpful?

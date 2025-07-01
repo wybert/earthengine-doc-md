@@ -1,5 +1,5 @@
  
-#  ee.Model.fromVertexAi 
+#  ee.Model.fromVertexAi
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns an ee.Model from a description of a Vertex AI model endpoint. (See https://cloud.google.com/vertex-ai). **Warning:** This method is in public preview and may undergo breaking changes.
 Usage| Returns  
@@ -21,3 +21,4 @@ Argument| Type| Details
 `outputMultiplier`| Float, default: null| An approximation to the increase in data volume for the model outputs over the model inputs. If specified this must be >= 1. This is only needed if the model produces more data than it consumes, e.g., a model that takes 5 bands and produces 10 outputs per pixel.  
 `maxPayloadBytes`| Long, default: null| The prediction payload size limit in bytes. Defaults to 1.5MB (1500000 bytes.)  
 `payloadFormat`| String, default: null| The payload format of entries in prediction requests and responses. One of: ['SERIALIZED_TF_TENSORS, 'RAW_JSON', 'ND_ARRAYS', 'GRPC_TF_TENSORS', 'GRPC_SERIALIZED_TF_TENSORS', 'GRPC_TF_EXAMPLES']. Defaults to 'SERIALIZED_TF_TENSORS'.  
+Was this helpful?

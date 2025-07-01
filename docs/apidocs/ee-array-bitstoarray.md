@@ -1,5 +1,5 @@
  
-#  ee.Array.bitsToArray 
+#  ee.Array.bitsToArray
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-bitstoarray#examples)
@@ -37,4 +37,3 @@ display(ee.Array.bitsToArray(-1)) # Array of 64 "1" values
 display(ee.Array.bitsToArray(-1).toInt8()) # Array of 64 "1" values
 ```
 
-Was this helpful?

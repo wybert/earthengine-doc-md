@@ -1,6 +1,6 @@
  
-#  Morphological Operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Morphological Operations
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Earth Engine implements morphological operations as focal operations, specifically `focalMax()`, `focalMin()`, `focalMedian()`, and `focalMode()` instance methods in the `Image` class. (These are shortcuts for the more general `reduceNeighborhood()`, which can input the pixels in a kernel to any reducer with a numeric output. See [this page](https://developers.google.com/earth-engine/guides/reducers_reduce_neighborhood) for more information on reducing neighborhoods). The morphological operators are useful for performing operations such as erosion, dilation, opening and closing. For example, to perform an [opening operation](http://en.wikipedia.org/wiki/Opening_\(morphology\)), use `focalMin()` followed by `focalMax()`:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_morph#code-editor-javascript-sample) More
 ```
@@ -19,3 +19,4 @@ Map.addLayer(opened,{},'opened');
 ```
 
 Note that in the previous example, a kernel argument is provided to the morphological operator. The pixels covered by non-zero elements of the kernel are used in the computation. The iterations argument indicates how many times to apply the operator.
+Was this helpful?

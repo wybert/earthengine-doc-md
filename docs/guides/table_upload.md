@@ -1,6 +1,6 @@
  
-#  Importing Table Data 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Importing Table Data
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Uploading table assets
 You can use the [Asset Manager](https://developers.google.com/earth-engine/guides/asset_manager) or [command line interface (CLI)](https://developers.google.com/earth-engine/guides/command_line#upload) to upload datasets in the Shapefile or CSV format. (See [Importing Raster Data](https://developers.google.com/earth-engine/guides/image_upload) for details on importing rasters using the Code Editor or CLI.) Your uploaded assets are initially private, but can be shared as described in the [Sharing Assets Section](https://developers.google.com/earth-engine/guides/asset_manager#sharing-assets).
 **Warning:** All vector data in Earth Engine is stored in a spherical coordinate system (specifically, `EPSG:4326`). When data is uploaded, the resultant coordinate transformation may have unintended consequences that include change of geometry type (e.g. from polygon to linestring or point) or incorrect georeferencing. To minimize the possibility of unintended changes, first reproject vector data to `EPSG:4326` before uploading. 

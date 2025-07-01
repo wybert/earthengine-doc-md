@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.flatten 
+#  ee.FeatureCollection.flatten
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-flatten#examples)
@@ -70,4 +70,3 @@ print('Flattened FeatureCollection of FeatureCollections:',
    counties_climate.flatten().getInfo())
 ```
 
-Was this helpful?

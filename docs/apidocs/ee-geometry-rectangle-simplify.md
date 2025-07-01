@@ -1,6 +1,6 @@
  
-#  ee.Geometry.Rectangle.simplify 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.Rectangle.simplify
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Simplifies the geometry to within a given error margin. Note that this does not respect the error margin requested by the consumer of this algorithm, unless maxError is explicitly specified to be null. 
 This overrides the default Earth Engine policy for propagating error margins, so regardless of the geometry accuracy requested from the output, the inputs will be requested with the error margin specified in the arguments to this algorithm. This results in consistent rendering at all zoom levels of a rendered vector map, but at lower zoom levels (i.e. zoomed out), the geometry won't be simplified, which may harm performance.
 Usage| Returns  

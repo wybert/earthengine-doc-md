@@ -1,14 +1,6 @@
  
-#  Method: projects.tables.getFeatures 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.tables/getFeatures#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.tables/getFeatures#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.tables/getFeatures#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.tables/getFeatures#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.tables/getFeatures#authorization-scopes)
-
-
+#  Method: projects.tables.getFeatures
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Fetches `Table` features, the request includes the name of the Table to download from a previous `tables.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/tables/*}:getFeatures`
@@ -30,4 +22,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

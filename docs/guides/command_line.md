@@ -1,5 +1,5 @@
  
-#  Command Line Tool 
+#  Command Line Tool
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Service account credentials](https://developers.google.com/earth-engine/guides/command_line#service_account_credentials)

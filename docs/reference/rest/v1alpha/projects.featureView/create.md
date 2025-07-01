@@ -1,15 +1,6 @@
  
-#  Method: projects.featureView.create 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.featureView/create#authorization-scopes)
-
-
+#  Method: projects.featureView.create
+Stay organized with collections  Save and categorize content based on your preferences. 
 Create a FeatureView.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{parent=projects/*}/featureView`
@@ -35,4 +26,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Dictionary.fromLists 
+#  ee.Dictionary.fromLists
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-fromlists#examples)
@@ -36,3 +36,4 @@ print('Dictionary from lists of keys and values:',
    ee.Dictionary.fromLists(keys, values).getInfo())
 ```
 
+Was this helpful?

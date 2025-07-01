@@ -1,5 +1,5 @@
  
-#  ee.Image.fastDistanceTransform 
+#  ee.Image.fastDistanceTransform
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the distance, as determined by the specified distance metric, to the nearest non-zero valued pixel in the input. The output contains values for all pixels within the given neighborhood size, regardless of the input's mask. Note: the default distance metric returns squared distance. 
 Usage| Returns  

@@ -1,6 +1,6 @@
  
-#  REST Resource: projects.operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  REST Resource: projects.operations
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: Operation](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations#resource:-operation)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations#methods)
@@ -57,4 +57,3 @@ Union field `result`. The operation result, which can be either an `error` or a 
 |  Lists operations that match the specified filter in the request.  
 ### `wait[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.operations/wait)`
 |  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state.  
-Was this helpful?

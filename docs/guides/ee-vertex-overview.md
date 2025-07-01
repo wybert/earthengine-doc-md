@@ -1,5 +1,5 @@
  
-#  Predictions from Hosted Models 
+#  Predictions from Hosted Models
 Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine provides `ee.Model` as a connector to models hosted on [Vertex AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform). Earth Engine will send image or table data as online prediction requests to a trained model deployed on a Vertex AI endpoint. The model outputs are then available as Earth Engine images or tables.
 ## TensorFlow Models

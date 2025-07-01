@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPoint.dissolve 
+#  ee.Geometry.MultiPoint.dissolve
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the geometry. This leaves single geometries untouched, and unions multi geometries. Usage| Returns  
 ---|---  

@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.getEnd 
+#  ui.DateSlider.getEnd
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the slider's end date as a UTC timestamp. 
 Usage| Returns  

@@ -1,6 +1,6 @@
  
-#  ee.FeatureCollection.union 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.FeatureCollection.union
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-union#examples)
 
@@ -40,4 +40,3 @@ print('Original FeatureCollection:', fc.getInfo())
 print('All geometries merged into one:', fc.union(1).getInfo())
 ```
 
-Was this helpful?

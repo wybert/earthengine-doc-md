@@ -1,6 +1,6 @@
  
-#  Customizing Base Map Styles 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Customizing Base Map Styles
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [The default maps in Earth Engine](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#the_default_maps_in_earth_engine)
   * [Changing the basic map style](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#changing_the_basic_map_style)

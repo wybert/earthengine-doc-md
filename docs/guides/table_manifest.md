@@ -1,5 +1,5 @@
  
-#  Table Manifest Upload 
+#  Table Manifest Upload
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [One-time setup](https://developers.google.com/earth-engine/guides/table_manifest#one-time-setup)

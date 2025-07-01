@@ -1,6 +1,6 @@
  
-#  Chart Styling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Chart Styling
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Configuration options example](https://developers.google.com/earth-engine/guides/charts_style#configuration_options_example)
   * [How do I...](https://developers.google.com/earth-engine/guides/charts_style#how_do_i)

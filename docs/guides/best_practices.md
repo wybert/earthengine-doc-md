@@ -1,30 +1,6 @@
  
-#  Coding Best Practices 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Avoid mixing client functions and objects with server functions and objects](https://developers.google.com/earth-engine/guides/best_practices#avoid_mixing_client_functions_and_objects_with_server_functions_and_objects)
-  * [Avoid converting to list unnecessarily](https://developers.google.com/earth-engine/guides/best_practices#avoid_converting_to_list_unnecessarily)
-  * [Avoid ee.Algorithms.If()](https://developers.google.com/earth-engine/guides/best_practices#avoid_eealgorithmsif)
-  * [Avoid reproject()](https://developers.google.com/earth-engine/guides/best_practices#avoid_reproject)
-  * [Filter and select() first](https://developers.google.com/earth-engine/guides/best_practices#filter_and_select_first)
-  * [Use updateMask() instead of mask()](https://developers.google.com/earth-engine/guides/best_practices#use_updatemask_instead_of_mask)
-  * [Combine reducers](https://developers.google.com/earth-engine/guides/best_practices#combine_reducers)
-  * [Use Export](https://developers.google.com/earth-engine/guides/best_practices#use_export)
-  * [If you don't need to clip, don't use clip()](https://developers.google.com/earth-engine/guides/best_practices#if_you_dont_need_to_clip_dont_use_clip)
-  * [If you need to clip with a complex collection, use clipToCollection()](https://developers.google.com/earth-engine/guides/best_practices#if_you_need_to_clip_with_a_complex_collection_use_cliptocollection)
-  * [Don't use a complex collection as the region for a reducer](https://developers.google.com/earth-engine/guides/best_practices#dont_use_a_complex_collection_as_the_region_for_a_reducer)
-  * [Use a non-zero errorMargin](https://developers.google.com/earth-engine/guides/best_practices#use_a_non-zero_errormargin)
-  * [Don't use a ridiculously small scale with reduceToVectors()](https://developers.google.com/earth-engine/guides/best_practices#dont_use_a_ridiculously_small_scale_with_reducetovectors)
-  * [Don't use reduceToVectors() with reduceRegions()](https://developers.google.com/earth-engine/guides/best_practices#dont_use_reducetovectors_with_reduceregions)
-  * [Use fastDistanceTransform() for neighborhood operations](https://developers.google.com/earth-engine/guides/best_practices#use_fastdistancetransform_for_neighborhood_operations)
-  * [Use the optimizations in reduceNeighborhood()](https://developers.google.com/earth-engine/guides/best_practices#use_the_optimizations_in_reduceneighborhood)
-  * [Don't sample more data than you need](https://developers.google.com/earth-engine/guides/best_practices#dont_sample_more_data_than_you_need)
-  * [Export intermediate results](https://developers.google.com/earth-engine/guides/best_practices#export_intermediate_results)
-  * [Join vs. map-filter](https://developers.google.com/earth-engine/guides/best_practices#join_vs_map-filter)
-  * [reduceRegion() vs. reduceRegions() vs. for-loop](https://developers.google.com/earth-engine/guides/best_practices#reduceregion_vs_reduceregions_vs_for-loop)
-  * [Use forward differencing for neighbors in time](https://developers.google.com/earth-engine/guides/best_practices#use_forward_differencing_for_neighbors_in_time)
-
-
+#  Coding Best Practices
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 This doc describes coding practices that are intended to maximize the chance of success for complex or expensive Earth Engine computations. The methods described here are applicable to both interactive (e.g. Code Editor) and batch (`Export`) computations, though generally long running computations should be run in the batch system.
 ## Avoid mixing client functions and objects with server functions and objects
 Earth Engine server objects are objects with constructors that start with `ee` (e.g. `ee.Image`, `ee.Reducer`) and any methods on such objects are server functions. Any object not constructed in this manner is a client object. Client objects may come from the Code Editor (e.g. `Map`, `Chart`) or the JavaScript language (e.g. `Date`, `Math`, `[]`, `{}`).

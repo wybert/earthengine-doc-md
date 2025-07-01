@@ -1,5 +1,5 @@
  
-#  ee.Reducer.autoHistogram 
+#  ee.Reducer.autoHistogram
 Stay organized with collections  Save and categorize content based on your preferences. 
 Create a reducer that will compute a histogram of the inputs. The output is a Nx2 array of the lower bucket bounds and the counts (or cumulative counts) of each bucket and is suitable for use per-pixel. Usage| Returns  
 ---|---  

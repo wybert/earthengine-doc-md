@@ -1,5 +1,5 @@
  
-#  Arrays and Array Images 
+#  Arrays and Array Images
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Arrays in Earth Engine are constructed from lists of numbers and lists of lists. The degree of nesting determines the number of dimensions. To get started with a simple, motivated example, consider the following example of an `Array` created from Landsat 8 tasseled cap (TC) coefficients ([Baig et al., 2014](http://dx.doi.org/10.1080/2150704X.2014.915434)):
 ### Code Editor (JavaScript)

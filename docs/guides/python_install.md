@@ -1,6 +1,6 @@
  
-#  Python Installation 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Python Installation
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Keep your client library up to date by running the command for the package manager you used to install `earthengine-api`: 
   * [Conda Package Manager](https://developers.google.com/earth-engine/guides/python_install-conda#updating_the_api): `conda update -c conda-forge earthengine-api`
   * [Python Package Installer](https://developers.google.com/earth-engine/guides/python_install#pip): `pip install earthengine-api --upgrade`

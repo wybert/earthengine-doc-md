@@ -1,6 +1,6 @@
  
-#  ee.String.toLowerCase 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.String.toLowerCase
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-tolowercase#examples)
 
@@ -29,3 +29,4 @@ s = ee.String('AaBbCc123')
 print(s.toLowerCase().getInfo()) # aabbcc123
 ```
 
+Was this helpful?

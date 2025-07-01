@@ -1,5 +1,5 @@
  
-#  ee.Image.where 
+#  ee.Image.where
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Performs conditional replacement of values. 
 For each pixel in each band of 'input', if the corresponding pixel in 'test' is nonzero, output the corresponding pixel in value, otherwise output the input pixel.

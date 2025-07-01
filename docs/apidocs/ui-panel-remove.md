@@ -1,5 +1,5 @@
  
-#  ui.Panel.remove 
+#  ui.Panel.remove
 Stay organized with collections  Save and categorize content based on your preferences. 
 Removes the given widget from the panel, if it exists. 
 Returns whether the widget was successfully removed.

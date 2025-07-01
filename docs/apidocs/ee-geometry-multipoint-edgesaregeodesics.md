@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPoint.edgesAreGeodesics 
+#  ee.Geometry.MultiPoint.edgesAreGeodesics
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-edgesaregeodesics#examples)
@@ -47,4 +47,3 @@ m.add_layer(multipoint, {'color': 'black'}, 'Geometry [black]: multipoint')
 m
 ```
 
-Was this helpful?

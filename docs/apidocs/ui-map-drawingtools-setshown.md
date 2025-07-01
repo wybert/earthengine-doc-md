@@ -1,5 +1,5 @@
  
-#  ui.Map.DrawingTools.setShown 
+#  ui.Map.DrawingTools.setShown
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visibility of the shape selector and geometry layer list. 
 Returns this set of drawing tools.

@@ -1,14 +1,6 @@
  
-#  REST Resource: projects.locations.videoThumbnails 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#resource:-videothumbnail)
-    * [VideoOptions](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#videooptions)
-    * [VideoFileFormat](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#videofileformat)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#create)
-
-
+#  REST Resource: projects.locations.videoThumbnails
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: VideoThumbnail
 Information about a video thumbnail.
 JSON representation  
@@ -65,4 +57,3 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails/create)`
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Image.arrayLength 
+#  ee.Image.arrayLength
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the length of each pixel's array along the given axis. Usage| Returns  
 ---|---  

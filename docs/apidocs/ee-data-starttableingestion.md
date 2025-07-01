@@ -1,5 +1,5 @@
  
-#  ee.data.startTableIngestion 
+#  ee.data.startTableIngestion
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a table asset ingestion task. 
 See ee.data.startProcessing for details on task IDs and response format.

@@ -1,5 +1,5 @@
  
-#  ee.Image.getString 
+#  ee.Image.getString
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Extract a property from a feature. 
 Usage| Returns  

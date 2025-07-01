@@ -1,6 +1,6 @@
  
-#  ee.Image 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Image
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 An object to represent an Earth Engine image. This constructor accepts a variety of arguments: 
 - A string: an EarthEngine asset id,
 - A string and a number: an EarthEngine asset id and version,

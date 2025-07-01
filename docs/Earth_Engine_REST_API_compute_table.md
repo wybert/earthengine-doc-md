@@ -1,18 +1,6 @@
  
-#  Table computations with the Earth Engine REST API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#before_you_begin)
-  * [Authenticate to Google Cloud](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#authenticate_to_google_cloud)
-  * [Obtain a private key file for your service account](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#obtain_a_private_key_file_for_your_service_account)
-  * [Start an AuthorizedSession and test your credentials](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#start_an_authorizedsession_and_test_your_credentials)
-  * [Serialize a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#serialize_a_computation)
-    * [Authenticate to Earth Engine](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#authenticate_to_earth_engine)
-    * [Define a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#define_a_computation)
-    * [Serialize the expression graph](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#serialize_the_expression_graph)
-  * [Send the request](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#send_the_request)
-
-
+#  Table computations with the Earth Engine REST API
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_table.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_table.ipynb)  
 ---|---  
 **_Note:_** _The REST API contains new and advanced features that may not be suitable for all users. If you are new to Earth Engine, please get started with the[JavaScript guide](https://developers.google.com/earth-engine/guides/getstarted)._
@@ -118,4 +106,3 @@ pprint(json.loads(response.content))
 ```
 
 The response contains the resultant `FeatureCollection` as GeoJSON, which can be consumed by other apps or processes.
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Image.erfcInv 
+#  ee.Image.erfcInv
 Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the inverse complementary error function of the input. Usage| Returns  
 ---|---  

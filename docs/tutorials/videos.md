@@ -1,5 +1,5 @@
  
-#  Tutorials 
+#  Tutorials
 Stay organized with collections  Save and categorize content based on your preferences. 
 These video tutorials are from lectures or hands-on trainings conducted at Earth Engine User Summits and [Earth Outreach digital events](https://earthoutreachonair.withgoogle.com/). 
 ## Introduction to Earth Engine (condensed)

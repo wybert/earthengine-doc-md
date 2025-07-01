@@ -1,6 +1,6 @@
  
-#  Method: projects.locations.tables.create 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Method: projects.locations.tables.create
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables/create#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables/create#path-parameters)

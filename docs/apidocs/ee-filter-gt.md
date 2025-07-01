@@ -1,5 +1,5 @@
  
-#  ee.Filter.gt 
+#  ee.Filter.gt
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Filter on metadata greater than the given value. 
 Returns the constructed filter.

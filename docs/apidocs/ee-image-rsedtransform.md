@@ -1,5 +1,5 @@
  
-#  ee.Image.rsedTransform 
+#  ee.Image.rsedTransform
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Reverse Squared Euclidean Distance (RSED) computes the 2D maximal height surface created by placing an inverted parabola over each non-zero pixel of the input image, where the pixel's value is the height of the parabola. Viewed as a binary image (zero/not-zero) this is equivalent to buffering each non-zero input pixel by the square root of its value, in pixels. 
 Usage| Returns  

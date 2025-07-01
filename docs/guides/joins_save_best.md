@@ -1,5 +1,5 @@
  
-#  Save-Best Joins 
+#  Save-Best Joins
 Stay organized with collections  Save and categorize content based on your preferences. 
 To save only the best match for each element in a collection, use an `ee.Join.saveBest()`. The `saveBest()` join functions in an equivalent way to the `saveAll()` join, except for each element in the `primary` collection, it saves the element from the `secondary` collection with the best match. Unmatched elements in the primary collection are dropped. Suppose the intention is to find a meteorological image closest in time to each Landsat image in the `primary` collection. To perform this join, the `ee.Filter` must be redefined for a single join condition (combined filters will not work with `saveBest()` since it is ambiguous how to combine ranks from multiple sub-Filters):
 ### Code Editor (JavaScript)

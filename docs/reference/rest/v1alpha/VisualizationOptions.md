@@ -1,6 +1,6 @@
  
-#  VisualizationOptions 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  VisualizationOptions
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Describes how to produce an 8-bit RGB visualization of the requested data.
 JSON representation  
 ---  
@@ -25,3 +25,4 @@ Fields
 `paletteColors[]` |  `string` If present, specifies sequence of CSS-style RGB color identifiers to apply as a color palette. Only allowed when visualizing a single data band.  
 `gamma` |  `number` If present, specifies an overall gamma correction factor to apply to the image.  
 `opacity` |  `number` If present, specifies an overall opacity factor to apply to the image, in the range 0.0 to 1.0.  
+Was this helpful?

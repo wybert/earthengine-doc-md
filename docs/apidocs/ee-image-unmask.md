@@ -1,12 +1,7 @@
  
-#  ee.Image.unmask 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-unmask#examples)
-
-
-Replaces mask and value of the input image with the mask and value of another image at all positions where the input mask is zero. The output image retains the metadata of the input image. By default, the output image also retains the footprint of the input, but setting sameFootprint to false allows to extend the footprint. 
-Usage| Returns  
+#  ee.Image.unmask
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Replaces mask and value of the input image with the mask and value of another image at all positions where the input mask is zero. The output image retains the metadata of the input image. By default, the output image also retains the footprint of the input, but setting sameFootprint to false allows to extend the footprint. Usage| Returns  
 ---|---  
 `Image.unmask( _value_, _sameFootprint_)`| Image  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `input`| Image| Input image.
 `value`| Image, default: null| New value and mask for the masked pixels of the input image. If not specified, defaults to constant zero image which is valid everywhere.  
 `sameFootprint`| Boolean, default: true| If true (or unspecified), the output retains the footprint of the input image. If false, the footprint of the output is the union of the input footprint with the footprint of the value image.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-unmask#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-unmask#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Sentinel-2 surface reflectance image.
 varimg=ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG');
@@ -56,12 +51,15 @@ varimgFilled=imgMasked.unmask(fill);
 print('Image, filled',imgFilled);
 Map.addLayer(imgFilled,trueColorViz,'Image, filled');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image.
 img = ee.Image('COPERNICUS/S2_SR/20210109T185751_20210109T185931_T10SEG')
@@ -107,4 +105,3 @@ m.add_layer(img_filled, true_color_viz, 'Image, filled')
 m
 ```
 
-Was this helpful?

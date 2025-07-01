@@ -1,6 +1,6 @@
  
-#  ee.Terrain.hillshade 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Terrain.hillshade
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-terrain-hillshade#examples)
 
@@ -37,3 +37,4 @@ m.add_layer(hillshade, None, 'ETOPO1 Hillshade')
 m
 ```
 
+Was this helpful?

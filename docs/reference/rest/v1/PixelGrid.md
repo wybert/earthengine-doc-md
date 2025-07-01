@@ -1,5 +1,5 @@
  
-#  PixelGrid 
+#  PixelGrid
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Defines a pixel grid on the surface of the Earth, via a map projection. If the projection has a standard code, then `crsCode` will be set (non-empty). If the projection is non-standard, then `crsWkt` will be set. If the post-projection transformation is affine, then `affineTransform` will be set.
 JSON representation  

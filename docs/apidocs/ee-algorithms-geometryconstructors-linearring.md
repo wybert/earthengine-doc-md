@@ -1,8 +1,7 @@
  
-#  ee.Algorithms.GeometryConstructors.LinearRing 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Constructs a LinearRing from the given coordinates, automatically adding the first point at the end if the ring is not explicitly closed. 
-Usage| Returns  
+#  ee.Algorithms.GeometryConstructors.LinearRing
+Stay organized with collections  Save and categorize content based on your preferences. 
+Constructs a LinearRing from the given coordinates, automatically adding the first point at the end if the ring is not explicitly closed. Usage| Returns  
 ---|---  
 `ee.Algorithms.GeometryConstructors.LinearRing(coordinates,  _crs_, _geodesic_, _maxError_)`| Geometry  
 Argument| Type| Details  

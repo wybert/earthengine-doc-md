@@ -1,6 +1,6 @@
  
-#  ee.Algorithms.GeometryConstructors.BBox 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Algorithms.GeometryConstructors.BBox
+Stay organized with collections  Save and categorize content based on your preferences. 
 Constructs a rectangle whose edges are lines of latitude and longitude. 
 The result is a planar WGS84 rectangle.
 If (east - west) ≥ 360 then the longitude range will be normalized to -180 to +180; otherwise they will be treated as designating points on a circle (e.g., east may be numerically less than west).

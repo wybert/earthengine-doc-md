@@ -1,5 +1,5 @@
  
-#  ee.List.sort 
+#  ee.List.sort
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sorts the list into ascending order. If the 'keys' argument is provided, then it is sorted first, and the elements of 'list' are placed in the same order. 
 Usage| Returns  

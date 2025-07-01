@@ -1,6 +1,6 @@
  
-#  Earth Engine quotas 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Earth Engine quotas
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Types of quota
 The Earth Engine platform has a number of quota limits in place to ensure that resources are distributed fairly across users. Since there are many different types of resources available in Earth Engine (computation, storage, etc.), there are many different types of quota limits.
 The primary distinction between different quota types is whether they're adjustable. For some types of quota, we're able to change the limits on a per-user or per-project basis, while other types are system-wide limits which can't be changed.

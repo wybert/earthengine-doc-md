@@ -1,5 +1,5 @@
  
-#  ui.Map.widgets 
+#  ui.Map.widgets
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the list of widgets currently in the panel. 
 Usage| Returns  

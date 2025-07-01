@@ -1,5 +1,5 @@
  
-#  ee.Array.matrixTranspose 
+#  ee.Array.matrixTranspose
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Transposes two dimensions of an array. 
 Usage| Returns  

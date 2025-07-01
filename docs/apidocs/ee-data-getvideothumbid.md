@@ -1,5 +1,5 @@
  
-#  ee.data.getVideoThumbId 
+#  ee.data.getVideoThumbId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get a Video Thumbnail Id for a given asset. 
 Returns the thumb ID and optional token, or null if a callback is specified.

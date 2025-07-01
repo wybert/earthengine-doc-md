@@ -1,5 +1,5 @@
  
-#  Mathematical Operations 
+#  Mathematical Operations
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Operators](https://developers.google.com/earth-engine/guides/image_math#operators)

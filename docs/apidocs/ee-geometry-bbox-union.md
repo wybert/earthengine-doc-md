@@ -1,10 +1,6 @@
  
-#  ee.Geometry.BBox.union 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-union#examples)
-
-
+#  ee.Geometry.BBox.union
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the two geometries. 
 Usage| Returns  
 ---|---  
@@ -16,7 +12,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-union#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-bbox-union#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a BBox object.
 varbBox=ee.Geometry.BBox(-122.09,37.42,-122.08,37.43);
@@ -44,6 +40,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a BBox object.
 bbox = ee.Geometry.BBox(-122.09, 37.42, -122.08, 37.43)
@@ -62,4 +60,3 @@ m.add_layer(bbox_union, {'color': 'red'}, 'Result [red]: bbox.union')
 m
 ```
 
-Was this helpful?

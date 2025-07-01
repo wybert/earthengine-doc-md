@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Polygon.containedIn 
+#  ee.Geometry.Polygon.containedIn
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if and only if one geometry is contained in the other. Usage| Returns  
 ---|---  

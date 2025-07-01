@@ -1,5 +1,5 @@
  
-#  ee.Image.arraySlice 
+#  ee.Image.arraySlice
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arrayslice#examples)
@@ -130,3 +130,4 @@ print('2D array image all columns except last (pixel):',
 # [8, 9, 10]]
 ```
 
+Was this helpful?

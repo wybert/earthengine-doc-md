@@ -1,9 +1,9 @@
  
-#  Raster to Vector Conversion 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Raster to Vector Conversion
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 To convert from an `Image` (raster) to a `FeatureCollection` (vector) data type, use `image.reduceToVectors()`. This is the primary mechanism for vectorization in Earth Engine, and can be useful for generating regions for input to other types of reducer. The `reduceToVectors()` method creates polygon edges (optionally centroids or bounding boxes instead) at the boundary of homogeneous groups of connected pixels.
 For example, consider a 2012 nightlights image of Japan. Let the nightlights digital number serve as a proxy for development intensity. Define zones using arbitrary thresholds on the nightlights, combine the zones into a single-band image, vectorize the zones using `reduceToVectors()`:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_to_vectors#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_to_vectors#colab-python-sample) More
 ```
 // Load a Japan boundary from the Large Scale International Boundary dataset.
 varjapan=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
@@ -32,15 +32,12 @@ Map.addLayer(zones,{min:1,max:3,palette:['0000FF','00FF00','FF0000']},'raster');
 vardisplay=ee.Image(0).updateMask(0).paint(vectors,'000000',3);
 Map.addLayer(display,{palette:'000000'},'vectors');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Load a Japan boundary from the Large Scale International Boundary dataset.
 japan = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017').filter(

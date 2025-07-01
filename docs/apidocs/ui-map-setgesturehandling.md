@@ -1,6 +1,6 @@
  
-#  ui.Map.setGestureHandling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.Map.setGestureHandling
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Controls how gestures are handled on the map. 
 See https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions.gestureHandling.
 Usage| Returns  
@@ -16,4 +16,3 @@ this: `ui.map`| ui.Map| The ui.Map instance.
   * "auto": (default) Gesture handling is either cooperative or greedy, depending on whether the page is scrollable or in an iframe.
 
   
-Was this helpful?

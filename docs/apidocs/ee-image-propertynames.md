@@ -1,5 +1,5 @@
  
-#  ee.Image.propertyNames 
+#  ee.Image.propertyNames
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the names of properties on this element. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  Mapping over an ImageCollection 
+#  Mapping over an ImageCollection
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 To apply a function to every `Image` in an `ImageCollection` use `imageCollection.map()`. The only argument to `map()` is a function which takes one parameter: an `ee.Image`. For example, the following code adds a timestamp band to every image in the collection.
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_mapping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_mapping#colab-python-sample) More
@@ -87,4 +87,3 @@ display('Expand this to see the result', collection.map(conditional))
 ```
 
 Inspect the list of images in the output ImageCollection and note that when the condition evaluated by the `If()` algorithm is true, the output contains a constant image. Although this demonstrates a server-side conditional function ([learn more about client vs. server in Earth Engine](https://developers.google.com/earth-engine/guides/client_server)), avoid `If()` in general and use filters instead.
-Was this helpful?

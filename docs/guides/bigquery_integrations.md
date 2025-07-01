@@ -1,5 +1,5 @@
  
-#  BigQuery integrations 
+#  BigQuery integrations
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Query raster data within BigQuery](https://developers.google.com/earth-engine/guides/bigquery_integrations#query_raster_data_within_bigquery)

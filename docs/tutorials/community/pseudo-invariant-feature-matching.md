@@ -1,17 +1,6 @@
  
-#  Pseudo-Invariant Feature Matching 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Background](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#background)
-  * [Input Data](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#input_data)
-  * [Identifying Pseudo-Invariant Features](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#identifying_pseudo-invariant_features)
-    * [Measuring Spectral Distance](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#measuring_spectral_distance)
-    * [Selecting Stable Pixels](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#selecting_stable_pixels)
-  * [Applying the Transformation](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#applying_the_transformation)
-  * [Conclusion](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#conclusion)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/pseudo-invariant-feature-matching#references)
-
-
+#  Pseudo-Invariant Feature Matching
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/pseudo-invariant-feature-matching/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/pseudo-invariant-feature-matching/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/pseudo-invariant-feature-matching/index.md "View changes to this article over time.")
@@ -43,7 +32,6 @@ Map.addLayer(before,{min:1000,max:5000},'Before');
 Map.addLayer(after,{min:1000,max:5000},'After');
 
 ```
-
 _Before_ | _After_  
 ---|---  
 ![Before image](https://developers.google.com/static/earth-engine/tutorials/community/pseudo-invariant-feature-matching/pif_target.png) | ![After image](https://developers.google.com/static/earth-engine/tutorials/community/pseudo-invariant-feature-matching/pif_source.png)  
@@ -118,7 +106,6 @@ Map.addLayer(matched,{min:1000,max:5000},'After (Matched)');
 Map.addLayer(after,{min:1000,max:5000},'After (Original)');
 
 ```
-
 _Before_ | _After (Matched)_ | _After (Original)_  
 ---|---|---  
 ![Before image](https://developers.google.com/static/earth-engine/tutorials/community/pseudo-invariant-feature-matching/pif_target.png) | ![After - matched](https://developers.google.com/static/earth-engine/tutorials/community/pseudo-invariant-feature-matching/pif_matched.png) | ![After - original](https://developers.google.com/static/earth-engine/tutorials/community/pseudo-invariant-feature-matching/pif_source.png)  

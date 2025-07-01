@@ -1,10 +1,6 @@
  
-#  ee.FeatureCollection.first 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-first#examples)
-
-
+#  ee.FeatureCollection.first
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the first entry from a given collection. 
 Usage| Returns  
 ---|---  
@@ -33,4 +29,3 @@ print('The first feature (power plant) in the collection:')
 pprint(fc.first().getInfo())
 ```
 
-Was this helpful?

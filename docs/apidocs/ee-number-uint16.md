@@ -1,5 +1,5 @@
  
-#  ee.Number.uint16 
+#  ee.Number.uint16
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-uint16#examples)
@@ -82,4 +82,3 @@ print('Less than uint16 min cast to uint16 becomes uint16 min:',
    out_of_range_lo_to_uint16.getInfo())
 ```
 
-Was this helpful?

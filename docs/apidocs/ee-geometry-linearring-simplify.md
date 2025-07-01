@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LinearRing.simplify 
+#  ee.Geometry.LinearRing.simplify
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-simplify#examples)
@@ -61,3 +61,4 @@ m.add_layer(
 m
 ```
 
+Was this helpful?

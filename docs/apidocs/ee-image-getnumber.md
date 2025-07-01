@@ -1,8 +1,7 @@
  
-#  ee.Image.getNumber 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Extract a property from a feature. 
-Usage| Returns  
+#  ee.Image.getNumber
+Stay organized with collections  Save and categorize content based on your preferences. 
+Extract a property from a feature. Usage| Returns  
 ---|---  
 `Image.getNumber(property)`| Number  
 Argument| Type| Details  

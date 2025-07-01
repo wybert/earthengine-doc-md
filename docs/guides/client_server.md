@@ -1,5 +1,5 @@
  
-#  Client vs. Server 
+#  Client vs. Server
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Looping](https://developers.google.com/earth-engine/guides/client_server#looping)
@@ -225,4 +225,3 @@ print('Should be False:', server_conditional.getInfo()) # False!
 **Warning:** Use `ee.Algorithms.If()` with caution! The preferred way to accomplish conditional tests on the server is with filters. For example, see [Filtering an `ImageCollection`](https://developers.google.com/earth-engine/guides/ic_filtering) and [Filtering a `FeatureCollection`](https://developers.google.com/earth-engine/guides/feature_collection_filtering). 
 ## Client and Server Functions
 The previous sections describe several reasons why it is inefficient or illogical to mix client and server objects and functions. Which objects and functions are client-side and which are server-side? In general, anything initialized as `ee.Thing` is a server object and any method on that object, `ee.Thing.method()`, is a server function. Objects and functions that appear in the [Python](https://docs.python.org/3/reference/index.html) or [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Reference) reference are client-side. As noted previously, you can use client-side functionality to create an object, then wrap it by supplying the client-side object to an Earth Engine constructor, for example `ee.String()`.
-Was this helpful?

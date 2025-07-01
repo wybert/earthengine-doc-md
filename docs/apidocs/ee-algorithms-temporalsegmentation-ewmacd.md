@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.TemporalSegmentation.Ewmacd 
+#  ee.Algorithms.TemporalSegmentation.Ewmacd
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Exponentially Weighted Moving Average Change Detection. This algorithm computes a harmonic model for the 'training' portion of the input data and subtracts that from the original results. The residuals are then subjected to Shewhart X-bar charts and an exponentially weighted moving average. Disturbed pixels are indicated when the charts signal a deviation from the given control limits. 
 The output is a 5 band image containing the bands:

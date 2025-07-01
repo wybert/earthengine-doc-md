@@ -1,6 +1,10 @@
  
-#  ee.Array.add 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Array.add
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-add#examples)
+
+
 On an element-wise basis, adds the first value to the second. 
 Usage| Returns  
 ---|---  
@@ -10,7 +14,7 @@ Argument| Type| Details
 this: `left`| Array| The left-hand value.  
 `right`| Array| The right-hand value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-add#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-add#colab-python-sample) More
 ```
 varempty=ee.Array([],ee.PixelType.int8());
 print(empty.add(empty));// []
@@ -28,8 +32,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 empty = ee.Array([], ee.PixelType.int8())
 display(empty.add(empty)) # []

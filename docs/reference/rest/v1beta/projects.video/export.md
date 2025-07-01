@@ -1,5 +1,5 @@
  
-#  Method: projects.video.export 
+#  Method: projects.video.export
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.video/export#http-request)

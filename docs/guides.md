@@ -1,5 +1,5 @@
  
-#  About Google Earth Engine 
+#  About Google Earth Engine
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Key Features](https://developers.google.com/earth-engine/guides#key_features)
@@ -33,4 +33,3 @@ Earth Engine supports geospatial analysis from initial prototyping to final data
 [Machine learning tools](https://developers.google.com/earth-engine/guides/machine-learning) for regression, classification, image segmentation, and accuracy assessment are built into Earth Engine. Once trained, models can be saved and applied repeatedly. Classical ML workflows are streamlined within Earth Engine's integrated system. For more advanced options or externally trained models, integration with [Vertex AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform) is provided, allowing models to be brought to Earth Engine's data or enabling the construction of deep learning models and neural network-based analyses.
 ## Access and management
 Earth Engine is available for both [commercial](https://earthengine.google.com/commercial/) and [noncommercial](https://earthengine.google.com/noncommercial/) use. Noncommercial use is offered free of charge, while commercial use is subject to a [subscription fee and compute charges](https://cloud.google.com/earth-engine/pricing). All computation and private data are associated with Google Cloud projects, providing users with control over access, resource management, and usage monitoring through the Google Cloud Console. This integration allows for centralized project management, detailed billing information, and the application of Google Cloud's robust security and compliance features. Users can take advantage of Identity and Access Management (IAM) to [control permissions](https://developers.google.com/earth-engine/cloud/access-control) and can [log activities](https://developers.google.com/earth-engine/guides/audit_logging) and [monitor resource usage](https://developers.google.com/earth-engine/guides/monitoring_usage) with Cloud Monitoring and Cloud Logging.
-Was this helpful?

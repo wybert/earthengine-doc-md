@@ -1,5 +1,5 @@
  
-#  ee.data.getMapId 
+#  ee.data.getMapId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get a Map ID for a given asset 
 Returns the mapId call results, which may be passed to ee.data.getTileUrl or ui.Map.addLayer. Null if a callback is specified.

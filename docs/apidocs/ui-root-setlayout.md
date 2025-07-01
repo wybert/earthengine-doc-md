@@ -1,5 +1,5 @@
  
-#  ui.root.setLayout 
+#  ui.root.setLayout
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the ui.root panel's layout. 
 Returns the root panel.

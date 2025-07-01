@@ -1,5 +1,5 @@
  
-#  Get started with Earth Engine in the Code Editor 
+#  Get started with Earth Engine in the Code Editor
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_javascript#before_you_begin)

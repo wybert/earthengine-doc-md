@@ -1,7 +1,8 @@
  
-#  ee.Filter.serialize 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the serialized representation of this object. Usage| Returns  
+#  ee.Filter.serialize
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the serialized representation of this object. 
+Usage| Returns  
 ---|---  
 `Filter.serialize( _legacy_)`| String  
 Argument| Type| Details  

@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.videoThumbnails 
+#  REST Resource: projects.videoThumbnails
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails#resource:-videothumbnail)
@@ -41,4 +41,3 @@ Fields
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
 ### `getPixels[](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels)`
 |  Computes an image showing the result of a computation.  
-Was this helpful?

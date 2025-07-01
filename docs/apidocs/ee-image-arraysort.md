@@ -1,12 +1,7 @@
  
-#  ee.Image.arraySort 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-arraysort#examples)
-
-
-Sorts elements of each array pixel along one axis. 
-Usage| Returns  
+#  ee.Image.arraySort
+Stay organized with collections  Save and categorize content based on your preferences. 
+Sorts elements of each array pixel along one axis. Usage| Returns  
 ---|---  
 `Image.arraySort( _keys_)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `image`| Image| Array image to sort.  
 `keys`| Image, default: null| Optional keys to sort by. If not provided, the values are used as the keys. The keys can only have multiple elements along one axis, which determines the direction to sort in.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-arraysort#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-arraysort#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A function to print arrays for a selected pixel in the following examples.
 functionsampArrImg(arrImg){
@@ -70,12 +65,15 @@ print('2D array image sorted cols (pixel)',sampArrImg(arrayImg2DSortedCols));
 // [4, 7, 11, 1],
 // [0, 10, 6, 5]]
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A function to print arrays for a selected pixel in the following examples.
 defsamp_arr_img(arr_img):
@@ -136,4 +134,3 @@ print('2D array image sorted cols (pixel):',
 # [0, 10, 6, 5]]
 ```
 
-Was this helpful?

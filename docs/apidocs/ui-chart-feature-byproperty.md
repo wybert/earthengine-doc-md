@@ -1,5 +1,5 @@
  
-#  ui.Chart.feature.byProperty 
+#  ui.Chart.feature.byProperty
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Generates a Chart from a set of features. Plots property values of one or more features. 
 - X-axis = Property name, labeled by xProperties (default: all properties).

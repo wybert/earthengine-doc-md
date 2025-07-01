@@ -1,6 +1,6 @@
  
-#  ee.Geometry.MultiPoint.geometries 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.MultiPoint.geometries
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the list of geometries in a GeometryCollection, or a singleton list of the geometry for single geometries. Usage| Returns  
 ---|---  
 `MultiPoint.geometries()`| List  

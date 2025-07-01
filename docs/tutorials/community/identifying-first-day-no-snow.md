@@ -1,6 +1,6 @@
  
-#  Identifying Annual First Day of No Snow Cover 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Identifying Annual First Day of No Snow Cover
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#context)
   * [Identify first day of zero percent snow cover](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#identify_first_day_of_zero_percent_snow_cover)
@@ -17,10 +17,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [References](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#references)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/identifying-first-day-no-snow/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/identifying-first-day-no-snow/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/identifying-first-day-no-snow/index.md "View changes to this article over time.")
-Author(s): [ aharmstrong ](https://github.com/aharmstrong "View the profile for aharmstrong on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/identifying-first-day-no-snow/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/identifying-first-day-no-snow/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/identifying-first-day-no-snow/index.md)
+Author(s): [ aharmstrong ](https://github.com/aharmstrong)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 This tutorial demonstrates how to produce annual maps depicting the first day within a year where a given pixel reaches zero percent snow cover and provides suggestions for summarizing and visualizing the results over time and space. 
 ![arctic-first-doy-no-snow-polar-proj.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/arctic-first-doy-no-snow-polar-proj.jpg) _Patterns of snowmelt timing are represented here by the first day in 2018 where each pixel no longer contained snow, as detected by the MODIS daily snow cover product. The color grades from purple (earlier) to yellow (later) as the first day of the year with zero percent snow per pixel increases (Arctic Polar Stereographic projection)._
@@ -328,3 +328,4 @@ Amanda Armstrong devised and directed tutorial development. Justin Braaten assis
 [Rouse, W.R., Douglas, M.S., Hecky, R.E., Hershey, A.E., Kling, G.W., Lesack, L., Marsh, P., McDonald, M., Nicholson, B.J., Roulet, N.T. and Smol, J.P., 1997. Effects of climate change on the freshwaters of arctic and subarctic North America. Hydrological processes, 11(8), pp.873-902.](https://onlinelibrary.wiley.com/doi/abs/10.1002/\(SICI\)1099-1085\(19970630\)11:8%3C873::AID-HYP510%3E3.0.CO;2-6)
 [Salomonson, V.V. and Appel, I., 2004. Estimating fractional snow cover from MODIS using the normalized difference snow index. Remote sensing of environment, 89(3), pp.351-360.](https://www.sciencedirect.com/science/article/abs/pii/S0034425703002864)
 [Wang, L. and Derksen, C., 2007. Detection of Pan-Arctic Terrestrial Snowmelt Onset from QuikSCAT, 2000–2005. In Proceedings of the 64th Eastern Snow Conference (pp. 37-43).](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.503.5315&rep=rep1&type=pdf)
+Was this helpful?

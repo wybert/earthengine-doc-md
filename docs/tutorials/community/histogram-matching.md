@@ -1,5 +1,5 @@
  
-#  Histogram Matching 
+#  Histogram Matching
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Setup Earth Engine](https://developers.google.com/earth-engine/tutorials/community/histogram-matching#setup_earth_engine)
@@ -178,4 +178,3 @@ m
 ![png](https://developers.google.com/static/earth-engine/tutorials/community/histogram-matching/index_files/output_QJDqpNtDpUKO_1.png)
 ## Caveats
 If there's anything anomalous in your image that's not in the reference image (or vice versa), like clouds, the CDF can end up skewed, and the histogram matching results might not look that good. Additionally, a little mis-registration between the source and target images is usually ok, since it is using the statistics of the whole region and doesn't really rely on a pixel-to-pixel correspondence. 
-Was this helpful?

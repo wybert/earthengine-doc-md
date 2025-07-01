@@ -1,5 +1,5 @@
  
-#  ee.Image.getInfo 
+#  ee.Image.getInfo
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 An imperative function that returns information about this image via an AJAX call. 
 Returns a description of the image. Includes:

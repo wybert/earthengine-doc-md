@@ -1,7 +1,12 @@
  
-#  ee.Geometry.MultiLineString.cutLines 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Converts LineString, MultiLineString, and LinearRing geometries into a MultiLineString by cutting them into parts no longer than the given distance along their length. All other geometry types will be converted to an empty MultiLineString. Usage| Returns  
+#  ee.Geometry.MultiLineString.cutLines
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-cutlines#examples)
+
+
+Converts LineString, MultiLineString, and LinearRing geometries into a MultiLineString by cutting them into parts no longer than the given distance along their length. All other geometry types will be converted to an empty MultiLineString. 
+Usage| Returns  
 ---|---  
 `MultiLineString.cutLines(distances,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  
@@ -11,7 +16,7 @@ this: `geometry`| Geometry| Cuts the lines of this geometry.
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| Projection of the result and distance measurements, or EPSG:4326 if unspecified.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-cutlines#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-cutlines#colab-python-sample) More
 ```
 // Define a MultiLineString object.
 varmultiLineString=ee.Geometry.MultiLineString(
@@ -30,15 +35,12 @@ Map.addLayer(multiLineStringCutLines,
 {'color':'red'},
 'Result [red]: multiLineString.cutLines');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
@@ -65,3 +67,4 @@ m.add_layer(
 m
 ```
 
+Was this helpful?

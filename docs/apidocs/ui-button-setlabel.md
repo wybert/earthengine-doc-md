@@ -1,5 +1,5 @@
  
-#  ui.Button.setLabel 
+#  ui.Button.setLabel
 Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the button's label. 
 Returns this button.

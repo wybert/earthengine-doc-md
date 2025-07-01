@@ -1,5 +1,5 @@
  
-#  ui.Chart.image.doySeries 
+#  ui.Chart.image.doySeries
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Generates a Chart from an ImageCollection. Plots derived values of each band in a region for a each day of the year. 
 - X-axis: Day of year (startDay to endDay, defaults to 1 to 366).

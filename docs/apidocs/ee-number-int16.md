@@ -1,10 +1,6 @@
  
-#  ee.Number.int16 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-int16#examples)
-
-
+#  ee.Number.int16
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Casts the input value to a signed 16-bit integer. 
 Usage| Returns  
 ---|---  
@@ -13,7 +9,7 @@ Argument| Type| Details
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-int16#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-int16#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Cast a number to signed 16-bit integer: [-32768, 32767].
 varnumber=ee.Number(100);
@@ -49,6 +45,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Cast a number to signed 16-bit integer: [-32768, 32767].
 number = ee.Number(100)

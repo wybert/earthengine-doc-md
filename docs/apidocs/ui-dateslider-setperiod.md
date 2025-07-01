@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.setPeriod 
+#  ui.DateSlider.setPeriod
 Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the period interval of the slider. 
 Returns this slider.

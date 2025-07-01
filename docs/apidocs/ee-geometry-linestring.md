@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LineString 
+#  ee.Geometry.LineString
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Constructs an ee.Geometry describing a LineString. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating geodesic EPSG:4326 LineStrings given an even number of arguments, e.g. ee.Geometry.LineString(aLng, aLat, bLng, bLat, ...).

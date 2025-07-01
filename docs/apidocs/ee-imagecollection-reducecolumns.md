@@ -1,6 +1,6 @@
  
-#  ee.ImageCollection.reduceColumns 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.ImageCollection.reduceColumns
+Stay organized with collections  Save and categorize content based on your preferences. 
 Apply a reducer to each element of a collection, using the given selectors to determine the inputs. 
 Returns a dictionary of results, keyed with the output names.
 Usage| Returns  

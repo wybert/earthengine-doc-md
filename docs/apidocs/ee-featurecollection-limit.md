@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.limit 
+#  ee.FeatureCollection.limit
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-limit#examples)
@@ -44,3 +44,4 @@ print('Largest 5 power plants by capacity in descending order:',
          'opt_ascending': False}).getInfo())
 ```
 
+Was this helpful?

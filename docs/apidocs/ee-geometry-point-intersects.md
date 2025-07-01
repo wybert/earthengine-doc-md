@@ -1,6 +1,6 @@
  
-#  ee.Geometry.Point.intersects 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.Point.intersects
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if and only if the geometries intersect. Usage| Returns  
 ---|---  
 `Point.intersects(right,  _maxError_, _proj_)`| Boolean  

@@ -1,6 +1,6 @@
  
-#  ui.Chart.onClick 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.Chart.onClick
+Stay organized with collections  Save and categorize content based on your preferences. 
 Registers a callback that's fired when the chart is clicked. 
 Returns an ID which can be passed to unlisten() to unregister the callback.
 Usage| Returns  

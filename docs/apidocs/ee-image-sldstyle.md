@@ -1,6 +1,6 @@
  
-#  ee.Image.sldStyle 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Image.sldStyle
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Styles a raster input with the provided OGC SLD styling. 
 Points of note:
 * OGC SLD 1.0 and OGC SE 1.1 are supported.

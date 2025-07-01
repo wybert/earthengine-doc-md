@@ -1,5 +1,5 @@
  
-#  ui.Map.Layer.setShown 
+#  ui.Map.Layer.setShown
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visibility of the layer. 
 Returns this map layer.

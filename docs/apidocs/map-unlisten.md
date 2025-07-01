@@ -1,8 +1,7 @@
  
-#  Map.unlisten 
+#  Map.unlisten
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Deletes callbacks. 
-Usage| Returns  
+Deletes callbacks. Usage| Returns  
 ---|---  
 `Map.unlisten( _idOrType_)`|   
 Argument|  Type| Details  

@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPoint.area 
+#  ee.Geometry.MultiPoint.area
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the area of the geometry. Area of points and line strings is 0 and the area of multi geometries is the sum of the areas of their components (intersecting areas are counted multiple times). Usage| Returns  
 ---|---  

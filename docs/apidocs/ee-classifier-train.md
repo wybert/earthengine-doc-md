@@ -1,7 +1,12 @@
  
-#  ee.Classifier.train 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Trains the classifier on a collection of features, using the specified numeric properties of each feature as training data. The geometry of the features is ignored. Usage| Returns  
+#  ee.Classifier.train
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-train#examples)
+
+
+Trains the classifier on a collection of features, using the specified numeric properties of each feature as training data. The geometry of the features is ignored. 
+Usage| Returns  
 ---|---  
 `Classifier.train(features, classProperty,  _inputProperties_, _subsampling_, _subsamplingSeed_)`| Classifier  
 Argument| Type| Details  
@@ -13,7 +18,7 @@ this: `classifier`| Classifier| An input classifier.
 `subsampling`| Float, default: 1| An optional subsampling factor, within (0, 1].  
 `subsamplingSeed`| Integer, default: 0| A randomization seed to use for subsampling.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-classifier-train#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-classifier-train#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image, reflectance bands selected,
 // serves as the source for training and prediction in this contrived example.
@@ -75,15 +80,12 @@ Map.addLayer(roi,{color:'white'},'ROI',false,0.5);
 Map.addLayer(trainingSample,{color:'black'},'Training sample',false);
 Map.addLayer(validationSample,{color:'white'},'Validation sample',false);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image, reflectance bands selected,
 # serves as the source for training and prediction in this contrived example.

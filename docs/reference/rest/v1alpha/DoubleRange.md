@@ -1,5 +1,5 @@
  
-#  DoubleRange 
+#  DoubleRange
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A range of doubles.
 JSON representation  

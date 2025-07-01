@@ -1,10 +1,6 @@
  
-#  ee.ImageCollection.sort 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-sort#examples)
-
-
+#  ee.ImageCollection.sort
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sort a collection by the specified property. 
 Returns the sorted collection.
 Usage| Returns  
@@ -16,7 +12,7 @@ this: `collection`| Collection| The Collection instance.
 `property`| String| The property to sort by.  
 `ascending`| Boolean, optional| Whether to sort in ascending or descending order. The default is true (ascending).  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-sort#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-sort#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // A Landsat 8 TOA image collection (2 months of images at a specific point).
 varcol=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
@@ -40,12 +36,15 @@ print('Cloud cover descending',colCldSortDesc);
 // Display the image with the most cloud cover.
 Map.addLayer(colCldSortDesc.first(),visParams,'Most cloudy');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # A Landsat 8 TOA image collection (2 months of images at a specific point).
 col = (
@@ -70,4 +69,3 @@ m.add_layer(col_cld_sort_desc.first(), vis_params, 'Most cloudy')
 m
 ```
 
-Was this helpful?

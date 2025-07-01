@@ -1,5 +1,5 @@
  
-#  Method: projects.image.import 
+#  Method: projects.image.import
 Stay organized with collections  Save and categorize content based on your preferences. 
 Imports an image.
 ### HTTP request

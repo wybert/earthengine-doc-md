@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.toArrayPerBand 
+#  ee.ImageCollection.toArrayPerBand
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Concatenates multiple images into a single array image. The result will be masked if any input is masked. 
 Usage| Returns  

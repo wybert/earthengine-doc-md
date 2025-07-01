@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.classify 
+#  ee.FeatureCollection.classify
 Stay organized with collections  Save and categorize content based on your preferences. 
 Classifies each feature in a collection. Usage| Returns  
 ---|---  

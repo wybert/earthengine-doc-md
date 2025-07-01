@@ -1,5 +1,5 @@
  
-#  ee.Image.metadata 
+#  ee.Image.metadata
 Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a constant image of type double from a metadata property. Usage| Returns  
 ---|---  

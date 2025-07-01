@@ -1,5 +1,5 @@
  
-#  Monitoring Forest Vegetation Condition 
+#  Monitoring Forest Vegetation Condition
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#context)

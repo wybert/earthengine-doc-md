@@ -1,6 +1,6 @@
  
-#  ee.FeatureCollection.remap 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.FeatureCollection.remap
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-remap#examples)
 
@@ -46,4 +46,3 @@ trees = fc.remap(['NotTree', 'Tree'], [0, 1], 'isTree')
 print('Remapped trees:', trees.getInfo())
 ```
 
-Was this helpful?

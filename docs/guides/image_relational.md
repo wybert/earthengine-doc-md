@@ -1,6 +1,6 @@
  
-#  Relational, Conditional, and Boolean Operations 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Relational, Conditional, and Boolean Operations
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Relational and boolean operators](https://developers.google.com/earth-engine/guides/image_relational#relational-and-boolean-operators)
   * [Conditional operators](https://developers.google.com/earth-engine/guides/image_relational#conditional-operators)
@@ -13,11 +13,12 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 **Relational** methods include:
 `eq()`, `gt()`, `gte()`, `lt()`, and `lte()`
 **Boolean** methods include:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_relational#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_relational#colab-python-sample) More
+### Code Editor (JavaScript)
 `and()`,`or()`, and `not()`
+### Colab (Python)
 `And()`,`Or()`, and `Not()`
 To perform per-pixel comparisons between images, use relational operators. To extract urbanized areas in an image, this example uses relational operators to threshold spectral indices, combining the thresholds with the _and_ operator:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_relational#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_relational#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a Landsat 8 image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
@@ -37,6 +38,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a Landsat 8 image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
@@ -55,7 +58,7 @@ display(map_bare)
 As illustrated by this example, the output of relational and boolean operators is either true (1) or false (0). To mask the 0's, you can mask the resultant binary image with itself using `selfMask()`.
 ![relational_sf](https://developers.google.com/static/earth-engine/images/Images_relational_sf.png) Low NDVI and low NDWI (white) from Landsat 8, San Francisco, California, USA. 
 The binary images that are returned by relational and boolean operators can be used with mathematical operators. This example creates zones of urbanization in a nighttime lights image using relational operators and `add()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_relational#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_relational#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a 2012 nightlights image.
 varnl2012=ee.Image('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS/F182012');
@@ -73,6 +76,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a 2012 nightlights image.
 nl_2012 = ee.Image('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS/F182012')
@@ -91,7 +96,7 @@ display(map_zones)
 
 ## Conditional operators
 Note that the code in the previous example is equivalent to using a [ternary operator](http://en.wikipedia.org/wiki/%3F:) implemented by `expression()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_relational#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_relational#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Create zones using an expression, display.
 varzonesExp=nl2012.expression(
@@ -110,6 +115,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Create zones using an expression, display.
 zones_exp = nl_2012.expression(
@@ -130,7 +137,7 @@ display(map_zones_exp)
 Observe that in the previous expression example, the band of interest is referenced using the `b()` function, rather than a dictionary of variable names. Learn more about image expressions on [this page](https://developers.google.com/earth-engine/guides/image_math#expressions). Using either mathematical operators or an expression will produce the same result.
 ![conditional_paris](https://developers.google.com/static/earth-engine/images/Images_conditional_nightlights_paris.png) Arbitrary zones of 2012 nightlights imagery for Paris, France. 
 Another way to implement conditional operations on images is with the `where()` operator. Consider the need to replace masked pixels with some other data. In the following example, cloudy pixels are replaced by pixels from a cloud-free image using `where()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_relational#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_relational#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a cloudy Sentinel-2 image.
 varimage=ee.Image(
@@ -155,6 +162,8 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a cloudy Sentinel-2 image.
 image = ee.Image('COPERNICUS/S2_SR/20210114T185729_20210114T185730_T10SEG')

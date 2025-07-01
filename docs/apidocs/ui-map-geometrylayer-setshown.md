@@ -1,5 +1,5 @@
  
-#  ui.Map.GeometryLayer.setShown 
+#  ui.Map.GeometryLayer.setShown
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visibility of shapes in the layer. 
 Returns this map layer.

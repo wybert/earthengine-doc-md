@@ -1,6 +1,6 @@
  
-#  Feature and FeatureCollection Charts 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Feature and FeatureCollection Charts
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Chart functions](https://developers.google.com/earth-engine/guides/charts_feature#chart_functions)
   * [Example data](https://developers.google.com/earth-engine/guides/charts_feature#example_data)
@@ -593,3 +593,4 @@ legend:{position:'none'}
 print(chart);
 ```
 
+Was this helpful?

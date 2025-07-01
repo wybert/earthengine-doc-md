@@ -1,7 +1,8 @@
  
-#  ee.DateRange.intersects 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns true if the given DateRange has at least one point in common with this DateRange. Usage| Returns  
+#  ee.DateRange.intersects
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if the given DateRange has at least one point in common with this DateRange. 
+Usage| Returns  
 ---|---  
 `DateRange.intersects(other)`| Boolean  
 Argument| Type| Details  
@@ -9,7 +10,7 @@ Argument| Type| Details
 this: `dateRange`| DateRange|   
 `other`| DateRange|   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-intersects#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-intersects#colab-python-sample) More
 ```
 // A series of ee.DateRange objects.
 vardateRange1=ee.DateRange('2017-06-24','2017-07-24');
@@ -21,15 +22,12 @@ print('Does dateRange1 contain dateRange2?',dateRange1.intersects(dateRange2));
 print('Does dateRange1 contain dateRange3?',dateRange1.intersects(dateRange3));
 print('Does dateRange1 contain dateRange4?',dateRange1.intersects(dateRange4));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A series of ee.DateRange objects.
 date_range_1 = ee.DateRange('2017-06-24', '2017-07-24')

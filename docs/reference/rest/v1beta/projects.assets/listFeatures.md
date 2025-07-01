@@ -1,15 +1,6 @@
  
-#  Method: projects.assets.listFeatures 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/listFeatures#authorization-scopes)
-
-
+#  Method: projects.assets.listFeatures
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Lists the features in a table asset. This method allows the caller to apply spatiotemporal and property filters to a table. Results are returned as a list of GeoJSON feature objects.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{asset=projects/*/assets/**}:listFeatures`
@@ -61,4 +52,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

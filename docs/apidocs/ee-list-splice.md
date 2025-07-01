@@ -1,5 +1,5 @@
  
-#  ee.List.splice 
+#  ee.List.splice
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list-splice#examples)
@@ -65,4 +65,3 @@ print('Insert new elements:', ee_list.splice(2, 0, ['X', 'Y', 'Z']).getInfo())
 print('Replace elements:', ee_list.splice(2, 3, ['X', 'Y', 'Z']).getInfo())
 ```
 
-Was this helpful?

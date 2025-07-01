@@ -1,5 +1,5 @@
  
-#  Export.table.toAsset 
+#  Export.table.toAsset
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a batch task to export a feature collection to an Earth Engine table asset. Tasks can be started from the Tasks tab. 
 Usage| Returns  

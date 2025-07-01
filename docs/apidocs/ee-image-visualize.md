@@ -1,6 +1,6 @@
  
-#  ee.Image.visualize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Image.visualize
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Produces an RGB or grayscale visualization of an image. Each of the gain, bias, min, max and gamma arguments can take either a single value, which will be applied to all bands, or a list of values the same length as bands. 
 Usage| Returns  
 ---|---  
@@ -17,4 +17,3 @@ this: `image`| Image| The image to visualize.
 `opacity`| Number, default: null| The opacity scaling factor to use.  
 `palette`| Object, default: null| The color palette to use. List of CSS color identifiers or hexadecimal color strings (e.g., ['red', '00FF00', 'blueviolet']).  
 `forceRgbOutput`| Boolean, default: false| Whether to produce RGB output even for single-band inputs.  
-Was this helpful?

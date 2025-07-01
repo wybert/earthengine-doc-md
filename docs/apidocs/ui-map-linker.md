@@ -1,5 +1,5 @@
  
-#  ui.Map.Linker 
+#  ui.Map.Linker
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A utility for creating linked maps. 
 Usage| Returns  
@@ -14,4 +14,3 @@ Argument| Type| Details
   * change-zoom 
 
   
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPolygon.buffer 
+#  ee.Geometry.MultiPolygon.buffer
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the input buffered by a given distance. If the distance is positive, the geometry is expanded, and if the distance is negative, the geometry is contracted. Usage| Returns  
 ---|---  

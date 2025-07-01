@@ -1,5 +1,5 @@
  
-#  ee.List.equals 
+#  ee.List.equals
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns true if list contains the same elements as other, in the same order. 
 Usage| Returns  

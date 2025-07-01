@@ -1,5 +1,5 @@
  
-#  Removed Datasets 
+#  Removed Datasets
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Geoscience Australia Publisher Catalog](https://developers.google.com/earth-engine/datasets/reference/removed_datasets#geoscience_australia_publisher_catalog)

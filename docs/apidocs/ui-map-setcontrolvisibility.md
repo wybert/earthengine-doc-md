@@ -1,5 +1,5 @@
  
-#  ui.Map.setControlVisibility 
+#  ui.Map.setControlVisibility
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the visibility of the controls on the map. 
 Returns this ui.Map.

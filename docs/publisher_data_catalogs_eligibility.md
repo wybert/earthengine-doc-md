@@ -1,5 +1,5 @@
  
-#  Publisher Data Catalogs 
+#  Publisher Data Catalogs
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Eligibility](https://developers.google.com/earth-engine/publisher_data_catalogs_eligibility#eligibility)

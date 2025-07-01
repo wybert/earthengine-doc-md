@@ -1,5 +1,5 @@
  
-#  Extracting Raster Values for Points 
+#  Extracting Raster Values for Points
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#context)
@@ -21,10 +21,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [References](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#references)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md "Contribute to this article on GitHub.")
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md "View changes to this article over time.")
-Author(s): [ swinsem ](https://github.com/swinsem "View the profile for swinsem on GitHub")
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md)
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description)
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md)
+Author(s): [ swinsem ](https://github.com/swinsem)
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 _This tutorial uses the[Earth Engine Code Editor JavaScript API](https://developers.google.com/earth-engine/guides/playground)._
 Extracting raster values for points or plots is essential for many types of projects. This tutorial will show you how to use Earth Engine to get a full time series of image values for points or plots in your dataset. We will lay out the process and functions for how to extract raster values for points using any dataset and then apply them to a few examples.

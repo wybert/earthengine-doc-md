@@ -1,5 +1,5 @@
  
-#  Sentinel-1 Algorithms 
+#  Sentinel-1 Algorithms
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Metadata and Filtering](https://developers.google.com/earth-engine/guides/sentinel1#metadata-and-filtering)

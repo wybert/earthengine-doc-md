@@ -1,6 +1,6 @@
  
-#  Method: projects.table.computeFeatures 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Method: projects.table.computeFeatures
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/computeFeatures#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/computeFeatures#path-parameters)

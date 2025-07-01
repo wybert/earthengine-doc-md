@@ -1,6 +1,24 @@
  
-#  Vertex AI example workflows 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Vertex AI example workflows
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Costs](https://developers.google.com/earth-engine/guides/ml_examples#costs)
+  * [AutoML](https://developers.google.com/earth-engine/guides/ml_examples#automl)
+    * [Low-code Crop Classification](https://developers.google.com/earth-engine/guides/ml_examples#low-code-crop-classification)
+  * [PyTorch](https://developers.google.com/earth-engine/guides/ml_examples#pytorch)
+    * [Landcover Classification with a CNN](https://developers.google.com/earth-engine/guides/ml_examples#landcover-classification-with-a-cnn)
+  * [Tensorflow](https://developers.google.com/earth-engine/guides/ml_examples#tensorflow)
+    * [Multi-class prediction with a DNN from scratch](https://developers.google.com/earth-engine/guides/ml_examples#multi-class-prediction-with-a-dnn-from-scratch)
+    * [Multi-class prediction with a DNN hosted on Vertex AI](https://developers.google.com/earth-engine/guides/ml_examples#multi-class-prediction-with-a-dnn-hosted-on-vertex-ai)
+    * [Semantic segmentation with an FCNN trained and hosted on Vertex AI](https://developers.google.com/earth-engine/guides/ml_examples#semantic-segmentation-with-an-fcnn-trained-and-hosted-on-vertex-ai)
+    * [Host a Pre-trained Tree-crown Segmentation Model](https://developers.google.com/earth-engine/guides/ml_examples#host-a-pre-trained-tree-crown-segmentation-model)
+    * [Yggdrasil Decision Forests (YDF)](https://developers.google.com/earth-engine/guides/ml_examples#yggdrasil-decision-forests-ydf)
+  * [Deprecated](https://developers.google.com/earth-engine/guides/ml_examples#deprecated)
+    * [TensorFlow Decision Forests](https://developers.google.com/earth-engine/guides/ml_examples#tensorflow-decision-forests)
+    * [Regression with an FCNN](https://developers.google.com/earth-engine/guides/ml_examples#regression-with-an-fcnn)
+    * [Training on AI Platform](https://developers.google.com/earth-engine/guides/ml_examples#training-on-ai-platform)
+
+
 The examples on this page demonstrate uses of Vertex AI with Earth Engine. See [the hosted models page](https://developers.google.com/earth-engine/guides/tensorflow-vertex) for details. These examples use the [Earth Engine Python API](https://developers.google.com/earth-engine/guides/python_install) running in [Colab Notebooks](https://colab.research.google.com/). 
 ## Costs
 **Warning!** These guides use billable components of Google Cloud including: 
@@ -58,3 +76,4 @@ This Colab notebook demonstrates the use of the [UNET model](https://arxiv.org/a
 For relatively large models (like the FCNN example), the longevity of the free virtual machine on which Colab notebooks run may not be sufficient for a long-running training job. Specifically, if the expected prediction error is not minimized on the evaluation dataset, then more training iterations may be prudent. For performing large training jobs in the Cloud, this Colab notebook demonstrates how to [package your training code](https://cloud.google.com/ml-engine/docs/packaging-trainer), [start a training job](https://cloud.google.com/ml-engine/docs/training-jobs), prepare a [`SavedModel`](https://cloud.google.com/ml-engine/docs/tensorflow/exporting-for-prediction) with the `earthengine model prepare` command, and get predictions in Earth Engine interactively with `ee.Model.fromAiPlatformPredictor`. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/AI_platform_demo.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/AI_platform_demo.ipynb)  
 ---|---  
+Was this helpful?

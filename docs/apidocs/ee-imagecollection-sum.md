@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.sum 
+#  ee.ImageCollection.sum
 Stay organized with collections  Save and categorize content based on your preferences. 
 Reduces an image collection by calculating the sum of all values at each pixel across the stack of all matching bands. Bands are matched by name. Usage| Returns  
 ---|---  

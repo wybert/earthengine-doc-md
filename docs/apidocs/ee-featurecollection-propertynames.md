@@ -1,7 +1,8 @@
  
-#  ee.FeatureCollection.propertyNames 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the names of properties on this element. Usage| Returns  
+#  ee.FeatureCollection.propertyNames
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the names of properties on this element. 
+Usage| Returns  
 ---|---  
 `FeatureCollection.propertyNames()`| List  
 Argument| Type| Details  
@@ -15,7 +16,6 @@ varfc=ee.FeatureCollection('WRI/GPPD/power_plants');
 // View a list of FeatureCollection property names.
 print(fc.propertyNames());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

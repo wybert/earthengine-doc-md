@@ -1,7 +1,8 @@
  
-#  ee.Geometry.BBox.coveringGrid 
+#  ee.Geometry.BBox.coveringGrid
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a collection of features that cover this geometry, where each feature is a rectangle in the grid defined by the given projection. Usage| Returns  
+Returns a collection of features that cover this geometry, where each feature is a rectangle in the grid defined by the given projection. 
+Usage| Returns  
 ---|---  
 `BBox.coveringGrid(proj,  _scale_)`| FeatureCollection  
 Argument| Type| Details  

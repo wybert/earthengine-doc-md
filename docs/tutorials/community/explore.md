@@ -1,6 +1,11 @@
  
-#  Community Tutorials 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Community Tutorials
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [JavaScript Code Editor API tutorials](https://developers.google.com/earth-engine/tutorials/community/explore#javascript_code_editor_api_tutorials)
+  * [Python API tutorials](https://developers.google.com/earth-engine/tutorials/community/explore#python_api_tutorials)
+
+
 Content produced by the Earth Engine developer community is not part of the official Earth Engine product documentation. 
 Created by Earth Engine users, for Earth Engine users, tutorials in this section are intended for all levels, from beginner guides to walk throughs of more advanced techniques.
 If you are interested in contributing a tutorial, please visit the [Writing a Tutorial](https://developers.google.com/earth-engine/tutorials/community/write) page for instructions.

@@ -1,12 +1,17 @@
  
-#  Map.getZoom 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the current zoom level of the map. Usage| Returns  
+#  Map.getZoom
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/map-getzoom#examples)
+
+
+Returns the current zoom level of the map. 
+Usage| Returns  
 ---|---  
 `Map.getZoom()`| Number  
 **No arguments.**
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/map-getzoom#code-editor-javascript-sample) More
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.
@@ -38,3 +43,4 @@ print('defaultMap zoom level',defaultMap.getZoom());
 print('defaultMap approximate pixel scale',defaultMap.getScale());
 ```
 
+Was this helpful?

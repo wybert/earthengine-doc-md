@@ -1,5 +1,5 @@
  
-#  ee.Image.focalMean 
+#  ee.Image.focalMean
 Stay organized with collections  Save and categorize content based on your preferences. 
 Applies a morphological mean filter to each band of an image using a named or custom kernel. Usage| Returns  
 ---|---  

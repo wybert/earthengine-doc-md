@@ -1,6 +1,6 @@
  
-#  Access control 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Access control
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Set Earth Engine service usage](https://developers.google.com/earth-engine/guides/access_control#set_earth_engine_service_usage)
   * [Set asset permissions](https://developers.google.com/earth-engine/guides/access_control#set_asset_permissions)
@@ -246,3 +246,4 @@ Notes |
 Permissions needed | `iam.serviceAccounts.disable`  
 ---|---  
 Suggested roles |  _Earth Engine Apps Publisher_ (`roles/earthengine.appsPublisher`) OR _Service Account Admin_ (`roles/iam.serviceAccountAdmin`)   
+Was this helpful?

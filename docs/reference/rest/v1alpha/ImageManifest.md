@@ -1,6 +1,13 @@
  
-#  ImageManifest 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ImageManifest
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [TilesetBand](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest#tilesetband)
+  * [TilesetMaskBand](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest#tilesetmaskband)
+  * [PixelFootprint](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest#pixelfootprint)
+  * [GridPoint](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest#gridpoint)
+
+
 Describes how the EarthEngine service should compose an image from a set of files.
 JSON representation  
 ---  
@@ -129,3 +136,4 @@ Fields
 ---  
 `x` |  `number` The x coordinate value.  
 `y` |  `number` The y coordinate value.  
+Was this helpful?

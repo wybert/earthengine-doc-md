@@ -1,5 +1,5 @@
  
-#  ee.Feature.toArray 
+#  ee.Feature.toArray
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates an array from the given properties of an object, which must all be numbers. 
 Usage| Returns  

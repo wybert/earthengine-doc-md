@@ -1,6 +1,6 @@
  
-#  Map.setGestureHandling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Map.setGestureHandling
+Stay organized with collections  Save and categorize content based on your preferences. 
 Controls how gestures are handled on the map. 
 See https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions.gestureHandling.
 Usage| Returns  

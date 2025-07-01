@@ -1,5 +1,5 @@
  
-#  ee.data.authenticateViaPrivateKey 
+#  ee.data.authenticateViaPrivateKey
 Stay organized with collections  Save and categorize content based on your preferences. 
 Configures server-side authentication of EE API calls through the Google APIs Node.js Client. Private key authentication is strictly for server-side API calls: for browser-based applications, use ee.data.authenticateViaOauth(). No user interaction (e.g. authentication popup) is necessary when using server-side authentication. 
 This or another authentication method should be called before ee.initialize().

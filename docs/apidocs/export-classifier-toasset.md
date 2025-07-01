@@ -1,6 +1,6 @@
  
-#  Export.classifier.toAsset 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Export.classifier.toAsset
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/export-classifier-toasset#examples)
 
@@ -139,4 +139,3 @@ Map.addLayer(
   'Upsampled landcover, saved')
 ```
 
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ee.Number.atan2 
+#  ee.Number.atan2
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-atan2#examples)
@@ -40,4 +40,3 @@ print('Atan2 of point (-1,0):', ee.Number(-1).atan2(0).getInfo())
 print('Atan2 of point (0,-1):', ee.Number(0).atan2(-1).getInfo())
 ```
 
-Was this helpful?

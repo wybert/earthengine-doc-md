@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LinearRing 
+#  ee.Geometry.LinearRing
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Constructs an ee.Geometry describing a LinearRing. If the last point is not equal to the first, a duplicate of the first point will be added at the end. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating geodesic EPSG:4326 LinearRings given an even number of arguments, e.g. ee.Geometry.LinearRing(aLng, aLat, bLng, bLat, ..., aLng, aLat).

@@ -1,6 +1,6 @@
  
-#  Map.setControlVisibility 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Map.setControlVisibility
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visibility of the controls on the map. 
 Returns this ui.Map.
 Usage| Returns  
@@ -15,3 +15,4 @@ Argument| Type| Details
 `mapTypeControl`| Boolean, optional| Whether to show the control that allows the user to change the base map. Defaults to true.  
 `fullscreenControl`| Boolean, optional| Whether to show the control that allows the user to make the map full-screen. Defaults to true.  
 `drawingToolsControl`| Boolean, optional| Whether to show the control that allows the user to add or edit the geometry drawing tools. Defaults to true.  
+Was this helpful?

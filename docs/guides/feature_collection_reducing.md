@@ -1,5 +1,5 @@
  
-#  Reducing a FeatureCollection 
+#  Reducing a FeatureCollection
 Stay organized with collections  Save and categorize content based on your preferences. 
 To aggregate data in the properties of a `FeatureCollection`, use `featureCollection.reduceColumns()`. For example, to check the area properties in the watersheds `FeatureCollection`, this code computes the Root Mean Square Error (RMSE) relative to the Earth Engine computed area:
 ### Code Editor (JavaScript)

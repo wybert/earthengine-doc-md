@@ -1,5 +1,5 @@
  
-#  ee.Image.cast 
+#  ee.Image.cast
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Casts some or all bands of an image to the specified types. 
 Usage| Returns  

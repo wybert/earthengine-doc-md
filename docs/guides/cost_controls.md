@@ -1,15 +1,6 @@
  
-#  Cost controls 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Configure alerts](https://developers.google.com/earth-engine/guides/cost_controls#configure_alerts)
-    * [Recipe: Chat notification for workload_tag usage](https://developers.google.com/earth-engine/guides/cost_controls#recipe_chat_notification_for_workload_tag_usage)
-    * [Recipe: Get email alerts for total in-progress EECU-time](https://developers.google.com/earth-engine/guides/cost_controls#recipe_get_email_alerts_for_total_in-progress_eecu-time)
-    * [Alert latency and timing](https://developers.google.com/earth-engine/guides/cost_controls#alert_latency_and_timing)
-  * [Cancel resource-heavy tasks](https://developers.google.com/earth-engine/guides/cost_controls#cancel_resource-heavy_tasks)
-    * [Recipe: Run a snippet of code in a notebook or local Python shell](https://developers.google.com/earth-engine/guides/cost_controls#recipe_run_a_snippet_of_code_in_a_notebook_or_local_python_shell)
-
-
+#  Cost controls
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Configure alerts
 In order to control your Earth Engine resource usage and costs, you can configure alerts in Cloud Monitoring to warn you when a metric hits a certain threshold.
 The Cloud Monitoring alerting system is very flexible. We've collected a few of our favorite recipes here, but feel free to experiment with custom configurations that suit your needs.

@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.locations.filmstripThumbnails 
+#  REST Resource: projects.locations.filmstripThumbnails
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: FilmstripThumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.filmstripThumbnails#resource:-filmstripthumbnail)

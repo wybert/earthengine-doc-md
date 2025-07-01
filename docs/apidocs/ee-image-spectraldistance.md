@@ -1,5 +1,5 @@
  
-#  ee.Image.spectralDistance 
+#  ee.Image.spectralDistance
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the per-pixel spectral distance between two images. If the images are array based then only the first band of each image is used; otherwise all bands are involved in the distance computation. The two images are therefore expected to contain the same number of bands or have the same 1-dimensional array length. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ui.Map.CloudStorageLayer.setOpacity 
+#  ui.Map.CloudStorageLayer.setOpacity
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the opacity of the layer. 
 Returns this map layer.

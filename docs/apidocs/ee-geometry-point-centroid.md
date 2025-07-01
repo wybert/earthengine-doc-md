@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Point.centroid 
+#  ee.Geometry.Point.centroid
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a point at the center of the highest-dimension components of the geometry. Lower-dimensional components are ignored, so the centroid of a geometry containing two polygons, three lines and a point is equivalent to the centroid of a geometry containing just the two polygons. Usage| Returns  
 ---|---  

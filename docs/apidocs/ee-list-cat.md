@@ -1,6 +1,10 @@
  
-#  ee.List.cat 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.List.cat
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list-cat#examples)
+
+
 Concatenates the contents of other onto list. 
 Usage| Returns  
 ---|---  
@@ -10,7 +14,7 @@ Argument| Type| Details
 this: `list`| List|   
 `other`| List|   
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-cat#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-cat#colab-python-sample) More
 ```
 print(ee.List(['dog']).cat(['squirrel']));// ["dog","squirrel"]
 print(ee.List(['moose']).cat(['&','squirrel']));// ["moose","&","squirrel"]
@@ -25,8 +29,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 print(ee.List(['dog']).cat(['squirrel']).getInfo()) # ['dog', 'squirrel']
 # ['moose', '&', 'squirrel']

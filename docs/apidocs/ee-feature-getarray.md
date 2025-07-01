@@ -1,7 +1,8 @@
  
-#  ee.Feature.getArray 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Extract a property from a feature. Usage| Returns  
+#  ee.Feature.getArray
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Extract a property from a feature. 
+Usage| Returns  
 ---|---  
 `Feature.getArray(property)`| Array  
 Argument| Type| Details  

@@ -1,10 +1,6 @@
  
-#  ui.Chart.image.histogram 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-chart-image-histogram#examples)
-
-
+#  ui.Chart.image.histogram
+Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image. Computes and plots histograms of the values of the bands in the specified region of the image. 
 - X-axis: Histogram buckets (of band value).
 - Y-axis: Frequency (number of pixels with a band value in the bucket).
@@ -22,7 +18,7 @@ Argument| Type| Details
 `maxRaw`| Number, optional| The number of values to accumulate before building the initial histogram.  
 `maxPixels`| Number, optional| If specified, overrides the maximum number of pixels allowed in the histogram reduction. Defaults to 1e6.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-chart-image-histogram#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a MODIS surface reflectance composite.
 varmodisSr=ee.ImageCollection('MODIS/006/MOD09A1')
@@ -48,4 +44,3 @@ colors:['cf513e','1d6b99','f0af07']
 print(chart);
 ```
 
-Was this helpful?

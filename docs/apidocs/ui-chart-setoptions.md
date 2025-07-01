@@ -1,5 +1,5 @@
  
-#  ui.Chart.setOptions 
+#  ui.Chart.setOptions
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets options used to style this chart. 
 Returns this chart.

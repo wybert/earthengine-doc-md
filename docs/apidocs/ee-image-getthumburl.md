@@ -1,5 +1,5 @@
  
-#  ee.Image.getThumbURL 
+#  ee.Image.getThumbURL
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get a thumbnail URL for this image. 
 Returns a thumbnail URL, or undefined if a callback was specified.

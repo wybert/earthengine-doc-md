@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.featureView 
+#  REST Resource: projects.featureView
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: FeatureView](https://developers.google.com/earth-engine/reference/rest/v1/projects.featureView#resource:-featureview)

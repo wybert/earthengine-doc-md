@@ -1,6 +1,6 @@
  
-#  ee.FeatureCollection.filterBounds 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.FeatureCollection.filterBounds
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Shortcut to filter a collection by intersection with geometry. Items in the collection with a footprint that fails to intersect the given geometry will be excluded. 
 This is equivalent to this.filter(ee.Filter.bounds(...)).
 **Caution:** providing a large or complex collection as the `geometry` argument can result in poor performance. Collating the geometry of collections does not scale well; use the smallest collection (or geometry) that is required to achieve the desired outcome.

@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LineString.union 
+#  ee.Geometry.LineString.union
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the union of the two geometries. Usage| Returns  
 ---|---  

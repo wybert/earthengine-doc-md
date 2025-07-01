@@ -1,6 +1,6 @@
  
-#  ee.ImageCollection.reduceToImage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.ImageCollection.reduceToImage
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-reducetoimage#examples)
 
@@ -70,4 +70,3 @@ m.add_layer(mean_cloud_cover, {'min': 0, 'max': 50}, 'Cloud cover mean')
 m
 ```
 
-Was this helpful?

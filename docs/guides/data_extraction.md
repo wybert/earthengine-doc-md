@@ -1,15 +1,6 @@
  
-#  Image Data Extraction 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [ Getting image data from Earth Engine ](https://developers.google.com/earth-engine/guides/data_extraction#getting-image-data-from-earth-engine)
-  * [Getting image data from existing assets](https://developers.google.com/earth-engine/guides/data_extraction#getting-image-data-from-existing-assets)
-  * [Getting image data from computed images](https://developers.google.com/earth-engine/guides/data_extraction#getting-image-data-from-computed-images)
-  * [Manual parallelization of requests](https://developers.google.com/earth-engine/guides/data_extraction#manual-parallelization-of-requests)
-    * [Multi-threading](https://developers.google.com/earth-engine/guides/data_extraction#multi-threading)
-    * [Apache Beam](https://developers.google.com/earth-engine/guides/data_extraction#apache-beam)
-
-
+#  Image Data Extraction
+Stay organized with collections  Save and categorize content based on your preferences. 
 ##  Getting image data from Earth Engine 
 To get image data from Earth Engine to Google Drive, Cloud Storage, or an Earth Engine asset, you can use [`Export`](https://developers.google.com/earth-engine/guides/exporting) and the job is handled entirely by Earth Engine. If your export jobs have scaling issues (e.g. take longer than a day, return memory or timeout errors) or you're already familiar with a framework like [Apache Beam](https://beam.apache.org/), [Spark](https://spark.apache.org/) or [Dask](https://www.dask.org/), you may prefer the data extraction methods described here. Workflows implemented in these frameworks can be scaled using Google Cloud tools such as [Dataflow](https://cloud.google.com/dataflow) or [Dataproc](https://cloud.google.com/dataproc). 
 Specifically, this guide describes methods for manually making requests for image data using [`getPixels`](https://developers.google.com/earth-engine/apidocs/ee-data-getpixels) or [`computePixels`](https://developers.google.com/earth-engine/apidocs/ee-data-computepixels). Here, "image data" means multi-dimensional arrays of pixel values with consistent scale and projection. The region, scale, projection and/or dimensions are specified in the request. The [ImageFileFormat page](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat) lists possible output formats. Output destinations include Cloud Storage or any locally mounted directory. Manual requests add complexity, but can scale to larger workloads. 
@@ -27,4 +18,3 @@ Though you can make requests for any purpose in any volume, you may want to para
 You can use threads to make concurrrent requests. This approach is demonstrated in the `getPixels` and `computePixels` example notebooks. 
 ### Apache Beam
 You can use [Apache Beam](https://beam.apache.org/) pipelines to parallelize requests. These pipelines can be run locally or as Google Dataflow jobs. For examples, see [this Geo for Good training](https://earthoutreachonair.withgoogle.com/events/geoforgood22?talk=day1-trackthree-talk2) or [this People, Planet and AI demonstration](https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/people-and-planet-ai/land-cover-classification). Alternatively, other parallelization libraries include [Dask](https://www.dask.org/) and [Apache Spark](https://spark.apache.org/). 
-Was this helpful?

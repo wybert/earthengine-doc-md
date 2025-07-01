@@ -1,5 +1,5 @@
  
-#  ui.Panel.setLayout 
+#  ui.Panel.setLayout
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the panel's layout. 
 Returns this panel.

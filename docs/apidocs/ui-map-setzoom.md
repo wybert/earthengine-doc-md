@@ -1,5 +1,5 @@
  
-#  ui.Map.setZoom 
+#  ui.Map.setZoom
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the zoom level of the map. 
 Returns this ui.Map.

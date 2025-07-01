@@ -1,5 +1,5 @@
  
-#  ee.Image.remap 
+#  ee.Image.remap
 Stay organized with collections  Save and categorize content based on your preferences. 
 Maps from input values to output values, represented by two parallel lists. Any input values not included in the input list are either set to defaultValue if it is given or masked if it isn't. Note that inputs containing floating point values might sometimes fail to match due to floating point precision errors. Usage| Returns  
 ---|---  

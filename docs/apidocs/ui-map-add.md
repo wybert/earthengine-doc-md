@@ -1,6 +1,6 @@
  
-#  ui.Map.add 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.Map.add
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-add#examples)
 
@@ -15,7 +15,7 @@ Argument| Type| Details
 this: `ui.map`| ui.Map| The ui.Map instance.  
 `item`| Object| The item to add.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-map-add#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // The default map in the Code Editor is a built-in ui.Map object called "Map".
 // Let's refer to it as "defaultMap" for clarity.
@@ -42,4 +42,3 @@ defaultMap.add(geomLayer);
 defaultMap.centerObject(geom,18);
 ```
 
-Was this helpful?

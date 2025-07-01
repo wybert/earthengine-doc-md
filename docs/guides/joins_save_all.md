@@ -1,5 +1,5 @@
  
-#  Save-All Joins 
+#  Save-All Joins
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Saving joins are one way of representing one-to-many relationships in Earth Engine. Unlike an [inner join](https://developers.google.com/earth-engine/guides/joins_inner), a saving join stores matches from the `secondary` collection as a named property of the features in the `primary` collection. To save all such matches, use an `ee.Join.saveAll()`. If there is a one-to-many relationship, a `saveAll()` join stores all matching features as an `ee.List`. Unmatched elements in the `primary` collection are dropped. For example, suppose there is a need to get all MODIS imagery acquired within two days of each Landsat image in a collection. This example uses a `saveAll()` join for that purpose:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_save_all#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_save_all#colab-python-sample) More

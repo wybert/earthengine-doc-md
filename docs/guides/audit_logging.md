@@ -1,6 +1,6 @@
  
-#  Earth Engine audit logging 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Earth Engine audit logging
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Service name](https://developers.google.com/earth-engine/guides/audit_logging#service_name)
   * [Methods by permission type](https://developers.google.com/earth-engine/guides/audit_logging#permission-type)

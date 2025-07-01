@@ -1,14 +1,19 @@
  
-#  ee.Classifier.explain 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Describe the results of a trained classifier. Usage| Returns  
+#  ee.Classifier.explain
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-explain#examples)
+
+
+Describe the results of a trained classifier. 
+Usage| Returns  
 ---|---  
 `Classifier.explain()`| Dictionary  
 Argument| Type| Details  
 ---|---|---  
 this: `classifier`| Classifier| The classifier to describe.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-classifier-explain#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-classifier-explain#colab-python-sample) More
 ```
 // A Sentinel-2 surface reflectance image, reflectance bands selected,
 // serves as the source for training and prediction in this contrived example.
@@ -70,15 +75,12 @@ Map.addLayer(roi,{color:'white'},'ROI',false,0.5);
 Map.addLayer(trainingSample,{color:'black'},'Training sample',false);
 Map.addLayer(validationSample,{color:'white'},'Validation sample',false);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A Sentinel-2 surface reflectance image, reflectance bands selected,
 # serves as the source for training and prediction in this contrived example.

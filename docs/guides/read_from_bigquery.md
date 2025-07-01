@@ -1,26 +1,12 @@
  
-#  Read from BigQuery 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Release Notes 
-  * On this page
-  * [Load data from BigQuery](https://developers.google.com/earth-engine/guides/read_from_bigquery#load_data_from_bigquery)
-    * [Billing](https://developers.google.com/earth-engine/guides/read_from_bigquery#billing)
-  * [Query data from BigQuery](https://developers.google.com/earth-engine/guides/read_from_bigquery#query_data_from_bigquery)
-    * [BigQuery queries](https://developers.google.com/earth-engine/guides/read_from_bigquery#bigquery_queries)
-    * [Billing](https://developers.google.com/earth-engine/guides/read_from_bigquery#billing_2)
-  * [Prerequisites and permissions](https://developers.google.com/earth-engine/guides/read_from_bigquery#prerequisites_and_permissions)
-  * [Data filtering](https://developers.google.com/earth-engine/guides/read_from_bigquery#data_filtering)
-  * [Data indexing](https://developers.google.com/earth-engine/guides/read_from_bigquery#data_indexing)
-  * [Limitations](https://developers.google.com/earth-engine/guides/read_from_bigquery#limitations)
-  * [Caveats](https://developers.google.com/earth-engine/guides/read_from_bigquery#caveats)
-
-
+#  Read from BigQuery
+Stay organized with collections  Save and categorize content based on your preferences. 
 **Note:** The [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) and [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) functions are in [**Preview**](https://cloud.google.com/products#product-launch-stages). To request support or provide feedback for them, email bigquery-earthengine-preview-support@google.com.
 This page describes how to integrate BigQuery tables into Earth Engine workflows as `ee.FeatureCollection` objects, using the [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) and [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) methods.
 ## Load data from BigQuery
 **Preview:** The [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) function is in [**Preview**](https://cloud.google.com/products#product-launch-stages) and may change.
 The [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) function seamlessly reads a BigQuery table into an `ee.FeatureCollection` object. It connects to a specified table, converts all data types, [applies the necessary filters and selectors](https://developers.google.com/earth-engine/guides/read_from_bigquery#data_filtering), and adds indexing to the collection if necessary. The function uses Earth Engine's [interactive environment](https://developers.google.com/earth-engine/guides/processing_environments#interactive_environment), returning results directly to the client to be viewed or used as a component of a larger analysis.
-[JavaScript](https://developers.google.com/earth-engine/guides/read_from_bigquery#javascript)[Python](https://developers.google.com/earth-engine/guides/read_from_bigquery#python) More
+### JavaScript
 ```
 // Load the BigQuery table with a specified geometry column.
 varfeatures=ee.FeatureCollection.loadBigQueryTable({
@@ -31,6 +17,8 @@ geometryColumn:'geo'
 Map.addLayer(features);
 
 ```
+
+### Python
 ```
 # Load the BigQuery table with a specified geometry column.
 features = ee.FeatureCollection.loadBigQueryTable(
@@ -47,7 +35,7 @@ There are no additional BigQuery costs associated with transferring the data to 
 ## Query data from BigQuery
 **Preview:** The [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) function is in [**Preview**](https://cloud.google.com/products#product-launch-stages) and may change.
 The [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) method runs a BigQuery SQL query and returns the results as an `ee.FeatureCollection` object (see [Run a query doc](https://cloud.google.com/bigquery/docs/running-queries) to learn more about queries).
-[JavaScript](https://developers.google.com/earth-engine/guides/read_from_bigquery#javascript)[Python](https://developers.google.com/earth-engine/guides/read_from_bigquery#python) More
+### JavaScript
 ```
 // Construct a BigQuery query.
 varquery='SELECT * FROM my_project.my_dataset.my_table WHERE column > 1000';
@@ -57,6 +45,8 @@ varfeatures=ee.FeatureCollection.runBigQuery(query);
 print(features.first());
 
 ```
+
+### Python
 ```
 # Construct a BigQuery query.
 query = 'SELECT * FROM my_project.my_dataset.my_table WHERE column > 1000'
@@ -116,7 +106,7 @@ In such cases consider choosing more restrictive selectors to read-only necessar
 ## Caveats
   * The [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) does not support resources from [Linked Datasets](https://cloud.google.com/bigquery/docs/analytics-hub-introduction#linked_datasets). Trying to load data from such table results in "table not found" error.
 As a workaround, consider running [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) with a query specifying the requested table from the linked dataset. For example:
-[JavaScript](https://developers.google.com/earth-engine/guides/read_from_bigquery#javascript)[Python](https://developers.google.com/earth-engine/guides/read_from_bigquery#python) More
+### JavaScript
 ```
 varfeatures=ee.FeatureCollection.runBigQuery({
 query:'SELECT * FROM my_project.my_linked_dataset.my_table',
@@ -124,6 +114,8 @@ geometryColumn:'geo'
 });
 
 ```
+
+### Python
 ```
 features = ee.FeatureCollection.runBigQuery(
  query='SELECT * FROM my_project.my_linked_dataset.my_table',

@@ -1,12 +1,7 @@
  
-#  ee.ImageCollection.qualityMosaic 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic#examples)
-
-
-Composites all the images in a collection, using a quality band as a per-pixel ordering function. 
-Usage| Returns  
+#  ee.ImageCollection.qualityMosaic
+Stay organized with collections  Save and categorize content based on your preferences. 
+Composites all the images in a collection, using a quality band as a per-pixel ordering function. Usage| Returns  
 ---|---  
 `ImageCollection.qualityMosaic(qualityBand)`| Image  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `collection`| ImageCollection| The collection to mosaic.  
 `qualityBand`| String| The name of the quality band in the collection.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-qualitymosaic#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // The goal is to generate a best-pixel mosaic from a collection of
 // Sentinel-2 images where pixel quality is based on a cloud probability score.
@@ -52,12 +47,15 @@ Map.addLayer(img,visParams,'Best-pixel mosaic (by cloud score)');
 varimg=col.qualityMosaic('MSK_CLDPRB');
 Map.addLayer(img,visParams,'Worst-pixel mosaic (by cloud score)',false);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # The goal is to generate a best-pixel mosaic from a collection of
 # Sentinel-2 images where pixel quality is based on a cloud probability score.
@@ -96,4 +94,3 @@ m.add_layer(img, vis_params, 'Worst-pixel mosaic (by cloud score)', False)
 m
 ```
 
-Was this helpful?

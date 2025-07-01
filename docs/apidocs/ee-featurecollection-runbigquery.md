@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.runBigQuery 
+#  ee.FeatureCollection.runBigQuery
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Release Notes 
   * On this page
@@ -13,7 +13,7 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 `query`| String| GoogleSQL query to perform on the BigQuery resources.  
-`geometryColumn`| String, default: null| The name of the column to use as the main feature geometry. If not specified, all features will have null geometry.  
+`geometryColumn`| String, default: null| The name of the column to use as the main feature geometry. If not specified, the first geometry column will be used.  
 `maxBytesBilled`| Long, default: 100000000000| Maximum number of bytes billed while processing the query. Any BigQuery job that exceeds this limit will fail and won't be billed.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery#colab-python-sample) More

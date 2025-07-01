@@ -1,7 +1,8 @@
  
-#  ee.Feature.perimeter 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the length of the perimeter of the polygonal parts of the geometry of a given feature. The perimeter of multi geometries is the sum of the perimeters of their components. Usage| Returns  
+#  ee.Feature.perimeter
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the length of the perimeter of the polygonal parts of the geometry of a given feature. The perimeter of multi geometries is the sum of the perimeters of their components. 
+Usage| Returns  
 ---|---  
 `Feature.perimeter( _maxError_, _proj_)`| Float  
 Argument| Type| Details  

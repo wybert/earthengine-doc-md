@@ -1,5 +1,5 @@
  
-#  ee.List.repeat 
+#  ee.List.repeat
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a new list containing value repeated count times. 
 Usage| Returns  

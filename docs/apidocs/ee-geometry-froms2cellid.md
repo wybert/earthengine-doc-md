@@ -1,5 +1,5 @@
  
-#  ee.Geometry.fromS2CellId 
+#  ee.Geometry.fromS2CellId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Constructs the Polygon corresponding to an S2 cell id. 
 Usage| Returns  

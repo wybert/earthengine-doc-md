@@ -1,6 +1,6 @@
  
-#  An Intro to the Earth Engine Python API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  An Intro to the Earth Engine Python API
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Exploration of the Earth Engine Data Catalog](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#exploration_of_the_earth_engine_data_catalog)
   * [Run me first](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#run_me_first)
@@ -213,12 +213,12 @@ lst_df_urban.head()
 ```
 
 Now that we have our data in a good shape, we can easily make plots and compare the trends. As the area of Lyon, France experiences a semi-continental climate, we expect that LST has a seasonality influence and the sinusoidal trend described by [Stallman (1965)](https://doi.org/10.1029/JZ070i012p02821) reading as follow:
-LST(t)=LST0+ΔLST2sin(2πtτ+ϕ)
+$$ LST(t) = LST_{0} + \frac{\Delta _{LST}}{2}sin(\frac{2\pi t}{\tau} + \phi) $$
 where:
-  * LST0 represents the mean annual LST,
-  * ΔLST represents the amplitude between maximal and minimal LST,
-  * τ represents the period of oscillation of LST, and
-  * ϕ represents an offset needed to adjust the time when LST(t)=LST0
+  * \\(LST_{0}\\) represents the mean annual LST,
+  * \\(\Delta _{LST}\\) represents the amplitude between maximal and minimal LST,
+  * \\(\tau\\) represents the period of oscillation of LST, and
+  * \\(\phi\\) represents an offset needed to adjust the time when \\(LST(t) = LST_{0}\\)
 
 
 Consequently, on the top of the data scatter plot, we plot the fitting curve using the scipy library:
@@ -306,7 +306,7 @@ Image(url=url)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-1fca52b3dad36238d874ff64ba9d3cdb:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-20fc14f6a8ef0782331f5de68238da89:getPixels
 Please wait while the thumbnail loads, it may take a moment...
 
 ```
@@ -409,7 +409,7 @@ print(link)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-4ed9f70ad040a9e58a8892707e3198a1:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-7b8bb2de88cd764e81395a96f019e989:getPixels
 
 ```
 **Note:** The above output contains an Earth Engine API link. Calls to the API can only be made by registered, authenticated users. If you want to create API links that work for you, click "Run in Colab" at the top of this page and run the notebook.

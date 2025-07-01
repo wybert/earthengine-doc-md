@@ -1,5 +1,5 @@
  
-#  ee.Reducer.median 
+#  ee.Reducer.median
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Create a reducer that will compute the median of the inputs. For small numbers of inputs (up to maxRaw) the median will be computed directly; for larger numbers of inputs the median will be derived from a histogram. 
 Usage| Returns  

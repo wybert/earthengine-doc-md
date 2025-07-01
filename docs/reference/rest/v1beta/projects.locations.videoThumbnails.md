@@ -1,6 +1,6 @@
  
-#  REST Resource: projects.locations.videoThumbnails 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  REST Resource: projects.locations.videoThumbnails
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: VideoThumbnail
 Information about a video thumbnail.
 JSON representation  

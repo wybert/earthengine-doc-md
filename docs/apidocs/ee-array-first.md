@@ -1,5 +1,5 @@
  
-#  ee.Array.first 
+#  ee.Array.first
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, selects the value of the first value. Usage| Returns  
 ---|---  

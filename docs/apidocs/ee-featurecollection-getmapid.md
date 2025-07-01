@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.getMapId 
+#  ee.FeatureCollection.getMapId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 An imperative function that returns a map ID and optional token, suitable for generating a Map overlay. 
 Returns an object which may be passed to ee.data.getTileUrl or ui.Map.addLayer, including an additional 'image' field, containing a Collection.draw image wrapping a FeatureCollection containing this feature. Undefined if a callback was specified.

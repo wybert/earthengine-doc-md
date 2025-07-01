@@ -1,6 +1,6 @@
  
-#  ee.ImageCollection.filterDate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.ImageCollection.filterDate
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-filterdate#examples)
 
@@ -64,4 +64,3 @@ date_range = ee.DateRange('2020-07-01', '2020-07-10')
 print('ee.DateRange input', col.filterDate(date_range).getInfo())
 ```
 
-Was this helpful?

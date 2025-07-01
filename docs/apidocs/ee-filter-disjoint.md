@@ -1,5 +1,5 @@
  
-#  ee.Filter.disjoint 
+#  ee.Filter.disjoint
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a unary or binary filter that passes unless the left geometry intersects the right geometry. 
 Usage| Returns  

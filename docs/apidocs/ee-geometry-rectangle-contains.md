@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Rectangle.contains 
+#  ee.Geometry.Rectangle.contains
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if and only if one geometry contains the other. Usage| Returns  
 ---|---  

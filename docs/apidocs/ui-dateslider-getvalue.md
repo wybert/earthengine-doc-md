@@ -1,5 +1,5 @@
  
-#  ui.DateSlider.getValue 
+#  ui.DateSlider.getValue
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the slider's current value, and array with the start and end datetimes as epoch UTC timestamps. 
 Usage| Returns  

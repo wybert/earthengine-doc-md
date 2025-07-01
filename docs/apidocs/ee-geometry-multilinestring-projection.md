@@ -1,6 +1,6 @@
  
-#  ee.Geometry.MultiLineString.projection 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.MultiLineString.projection
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the projection of the geometry. Usage| Returns  
 ---|---  
 `MultiLineString.projection()`| Projection  

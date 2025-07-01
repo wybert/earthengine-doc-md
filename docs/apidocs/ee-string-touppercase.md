@@ -1,10 +1,6 @@
  
-#  ee.String.toUpperCase 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-touppercase#examples)
-
-
+#  ee.String.toUpperCase
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Converts all of the characters in a string to upper case. 
 Usage| Returns  
 ---|---  
@@ -29,4 +25,3 @@ s = ee.String('AaBbCc123')
 print(s.toUpperCase().getInfo()) # AABBCC123
 ```
 
-Was this helpful?

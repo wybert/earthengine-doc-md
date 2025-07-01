@@ -1,21 +1,13 @@
  
-#  TFRecord and Earth Engine 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [ Exporting data to TFRecord ](https://developers.google.com/earth-engine/guides/tfrecord#exporting-data-to-tfrecord)
-    * [ Exporting tables ](https://developers.google.com/earth-engine/guides/tfrecord#exporting-tables)
-    * [ Exporting images ](https://developers.google.com/earth-engine/guides/tfrecord#exporting-images)
-  * [ Uploading TFRecords to Earth Engine ](https://developers.google.com/earth-engine/guides/tfrecord#uploading-tfrecords-to-earth-engine)
-    * [ Uploading imagery ](https://developers.google.com/earth-engine/guides/tfrecord#uploading-imagery)
-
-
+#  TFRecord and Earth Engine
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord#tfrecords_format_details) is a binary format for efficiently encoding long sequences of [tf.Example protos](https://github.com/tensorflow/tensorflow/blob/r1.14/tensorflow/core/example/example.proto). TFRecord files are easily loaded by TensorFlow through the `tf.data` package as described [here](https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data) and [here](https://www.tensorflow.org/tutorials/load_data/tf_records#tfrecord_files_using_tfdata). This page describes how Earth Engine converts between `ee.FeatureCollection` or `ee.Image` and TFRecord format. 
 ##  Exporting data to TFRecord 
 You can export tables (`ee.FeatureCollection`) or images (`ee.Image`) to TFRecord files in Google Drive or Cloud Storage. Configuration of the export depends on what you are exporting as described below. All numbers exported from Earth Engine to TFRecord are coerced to float type. 
 ###  Exporting tables 
 When exporting an `ee.FeatureCollection` to a TFRecord file, there is a 1:1 correspondence between each [`ee.Feature`](https://developers.google.com/earth-engine/apidocs/ee-feature) in the table and each [`tf.train.Example`](https://www.tensorflow.org/api_docs/python/tf/train/Example) (i.e. each record) in the TFRecord file. Each property of the `ee.Feature` is encoded as a [`tf.train.Feature`](https://www.tensorflow.org/api_docs/python/tf/train/Feature) with a list of floats corresponding to the number or `ee.Array` stored in the property. If you export a table with arrays in the properties, you need to tell TensorFlow the shape of the array when it is read. A table exported to a TFRecord file will always be compressed with the GZIP compression type. You always get exactly one TFRecord file for each export.
 The following example demonstrates parsing data from an exported table of scalar properties ('B2',...,'B7', 'landcover'). Note that the dimension of the float lists is `[1]` and the type is `tf.float32`: 
-[Python](https://developers.google.com/earth-engine/guides/tfrecord#python) More
+### Python
 ```
 dataset = tf.data.TFRecordDataset(exportedFilePath)
 featuresDict = {

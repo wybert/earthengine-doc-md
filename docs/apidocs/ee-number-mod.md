@@ -1,7 +1,12 @@
  
-#  ee.Number.mod 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Calculates the remainder of the first value divided by the second. Usage| Returns  
+#  ee.Number.mod
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-mod#examples)
+
+
+Calculates the remainder of the first value divided by the second. 
+Usage| Returns  
 ---|---  
 `Number.mod(right)`| Number  
 Argument| Type| Details  
@@ -9,7 +14,7 @@ Argument| Type| Details
 this: `left`| Number| The left-hand value.  
 `right`| Number| The right-hand value.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-mod#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-mod#colab-python-sample) More
 ```
 // Remainder with positive dividend.
 print('Remainder of 12/5',ee.Number(12).mod(ee.Number(5)));// 2
@@ -22,15 +27,12 @@ print('Remainder of -12/5',ee.Number(-12).mod(ee.Number(5)));// -2
 print('Remainder of -1/2',ee.Number(-1).mod(ee.Number(2)));// -1
 print('Remainder of -4/2',ee.Number(-4).mod(ee.Number(2)));// 0
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Remainder with positive dividend.
 print('Remainder of 12/5:', ee.Number(12).mod(ee.Number(5)).getInfo()) # 2

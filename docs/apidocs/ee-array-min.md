@@ -1,5 +1,5 @@
  
-#  ee.Array.min 
+#  ee.Array.min
 Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, selects the minimum of the first and second values. Usage| Returns  
 ---|---  

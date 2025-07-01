@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.TemporalSegmentation.StructuralChangeBreakpoints 
+#  ee.Algorithms.TemporalSegmentation.StructuralChangeBreakpoints
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Runs breakpoint detection, similar to R's strucchange::breakpoints function. 
 Each pixel is fit by a piecewise linear/harmonic model, of the form

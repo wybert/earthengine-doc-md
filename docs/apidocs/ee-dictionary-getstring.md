@@ -1,5 +1,5 @@
  
-#  ee.Dictionary.getString 
+#  ee.Dictionary.getString
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#examples)
@@ -43,4 +43,3 @@ print('The "Region" value as an ee.String object:',
    dic.getString('Region').getInfo(), sep='\n')
 ```
 
-Was this helpful?

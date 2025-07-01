@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.aggregate_count_distinct 
+#  ee.FeatureCollection.aggregate_count_distinct
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-aggregate_count_distinct#examples)

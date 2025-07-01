@@ -1,5 +1,5 @@
  
-#  ee.List.map 
+#  ee.List.map
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Map an algorithm over a list. The algorithm is expected to take an Object and return an Object. 
 Usage| Returns  

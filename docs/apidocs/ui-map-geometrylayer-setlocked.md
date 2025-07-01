@@ -1,5 +1,5 @@
  
-#  ui.Map.GeometryLayer.setLocked 
+#  ui.Map.GeometryLayer.setLocked
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the locked state of the layer. A locked layer disallows adding, removing, or editing the geometries on the layer from the user interface. 
 Returns this map layer.

@@ -1,6 +1,12 @@
  
-#  Property Predictions 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Property Predictions
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Input and Outputs](https://developers.google.com/earth-engine/guides/ee-vertex-property-predictions#input_and_outputs)
+    * [inputProperties](https://developers.google.com/earth-engine/guides/ee-vertex-property-predictions#inputproperties)
+    * [outputProperties](https://developers.google.com/earth-engine/guides/ee-vertex-property-predictions#outputproperties)
+
+
 Use `model.predictProperties()` to make predictions on an `ee.FeatureCollection`. Each Feature is a data point, and each property is a model input feature The inputs and outputs can be scalar string values, scalar boolean values, or numeric values of any shape, from scalars to multidimensional arrays. The outputs of the model are represented as new properties in the output table.
 ## Input and Outputs
 To control the inputs and outputs of the model use the following arguments:

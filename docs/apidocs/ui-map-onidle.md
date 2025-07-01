@@ -1,5 +1,5 @@
  
-#  ui.Map.onIdle 
+#  ui.Map.onIdle
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Registers a callback that's fired when the map stops moving. 
 Returns an ID which can be passed to unlisten() to unregister the callback.

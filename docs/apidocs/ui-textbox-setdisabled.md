@@ -1,6 +1,6 @@
  
-#  ui.Textbox.setDisabled 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Textbox.setDisabled
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Sets whether the textbox is disabled. 
 Returns this textbox.
 Usage| Returns  

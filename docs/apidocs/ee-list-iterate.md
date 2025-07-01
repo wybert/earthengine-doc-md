@@ -1,6 +1,6 @@
  
-#  ee.List.iterate 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.List.iterate
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list-iterate#examples)
 
@@ -79,4 +79,3 @@ plt.scatter(range(len(quantity_list_client)), quantity_list_client)
 plt.show()
 ```
 
-Was this helpful?

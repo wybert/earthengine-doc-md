@@ -1,5 +1,5 @@
  
-#  ee.Blob.string 
+#  ee.Blob.string
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-blob-string#examples)
@@ -40,3 +40,4 @@ print(entry.getInfo()) # Point (1.00, 2.00)...
 print(entry.get('a_field').getInfo()) # "a demo field"
 ```
 
+Was this helpful?

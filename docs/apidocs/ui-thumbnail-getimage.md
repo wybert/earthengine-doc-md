@@ -1,5 +1,5 @@
  
-#  ui.Thumbnail.getImage 
+#  ui.Thumbnail.getImage
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the ee.Image for the thumbnail. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ee.Image.load 
+#  ee.Image.load
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the image given its ID. 
 Usage| Returns  

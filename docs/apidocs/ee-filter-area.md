@@ -1,5 +1,5 @@
  
-#  ee.Filter.area 
+#  ee.Filter.area
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a filter that passes if the specified geometry has an area within the given range (inclusive). 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ee.Filter.inList 
+#  ee.Filter.inList
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Filter on metadata contained in a list. 
 Returns the constructed filter.

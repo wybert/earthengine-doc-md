@@ -1,5 +1,5 @@
  
-#  ee.Number.erfInv 
+#  ee.Number.erfInv
 Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the inverse error function of the input. Usage| Returns  
 ---|---  

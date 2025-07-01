@@ -1,5 +1,5 @@
  
-#  ee.Image.translate 
+#  ee.Image.translate
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Translate the input image. 
 Usage| Returns  
@@ -12,4 +12,3 @@ this: `input`| Image|
 `y`| Float| The amount to translate the image in the y direction.  
 `units`| String, default: "meters"| The units for x and y; 'meters' or 'pixels'.  
 `proj`| Projection, default: null| The projection in which to translate the image; defaults to the projection of the first band.  
-Was this helpful?

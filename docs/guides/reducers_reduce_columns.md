@@ -1,5 +1,5 @@
  
-#  Statistics of FeatureCollection Columns 
+#  Statistics of FeatureCollection Columns
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 To reduce properties of features in a `FeatureCollection`, use `featureCollection.reduceColumns()`. Consider the following toy example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_reduce_columns#colab-python-sample) More

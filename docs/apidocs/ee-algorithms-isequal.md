@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.IsEqual 
+#  ee.Algorithms.IsEqual
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns whether two objects are equal. 
 Usage| Returns  
@@ -9,3 +9,4 @@ Argument| Type| Details
 ---|---|---  
 `left`| Object, default: null|   
 `right`| Object, default: null|   
+Was this helpful?

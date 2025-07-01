@@ -1,6 +1,6 @@
  
-#  API Reference 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  API Reference
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [ Client Libraries ](https://developers.google.com/earth-engine/apidocs#client-libraries)
   * [ Code Editor ](https://developers.google.com/earth-engine/apidocs#code-editor)

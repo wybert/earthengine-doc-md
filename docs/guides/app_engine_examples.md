@@ -1,19 +1,6 @@
  
-#  App Engine Example Apps 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Authentication with service accounts](https://developers.google.com/earth-engine/guides/app_engine_examples#authentication-with-service-accounts)
-    * [server-auth-python](https://developers.google.com/earth-engine/guides/app_engine_examples#server-auth-python)
-    * [server-auth-nodejs](https://developers.google.com/earth-engine/guides/app_engine_examples#server-auth-nodejs)
-    * [trendy-lights](https://developers.google.com/earth-engine/guides/app_engine_examples#trendy-lights)
-    * [cloud-functions](https://developers.google.com/earth-engine/guides/app_engine_examples#cloud-functions)
-  * [Authentication with OAuth2](https://developers.google.com/earth-engine/guides/app_engine_examples#authentication-with-oauth2)
-    * [client-auth](https://developers.google.com/earth-engine/guides/app_engine_examples#client-auth)
-    * [map-layer](https://developers.google.com/earth-engine/guides/app_engine_examples#map-layer)
-    * [polygon-drawing](https://developers.google.com/earth-engine/guides/app_engine_examples#polygon-drawing)
-    * [export-to-drive](https://developers.google.com/earth-engine/guides/app_engine_examples#export-to-drive)
-
-
+#  App Engine Example Apps
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 The following describes examples in the [Earth Engine demos directory on GitHub](https://github.com/google/earthengine-api/tree/master/demos). The title of each example is a link to the source on GitHub. The examples are organized by how they authenticate with Earth Engine. To learn more about authentication options and how to deploy these applications, see the [App Engine & Earth Engine Overview](https://developers.google.com/earth-engine/app_engine_intro). 
 ## Authentication with service accounts
 ### [server-auth-python](https://github.com/google/earthengine-api/tree/master/demos/server-auth-python)

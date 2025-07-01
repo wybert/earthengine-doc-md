@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.CannyEdgeDetector 
+#  ee.Algorithms.CannyEdgeDetector
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Applies the Canny edge detection algorithm to an image. The output is an image whose bands have the same names as the input bands, and in which non-zero values indicate edges, and the magnitude of the value is the gradient magnitude. 
 Usage| Returns  

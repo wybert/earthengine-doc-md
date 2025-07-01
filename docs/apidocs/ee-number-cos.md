@@ -1,5 +1,5 @@
  
-#  ee.Number.cos 
+#  ee.Number.cos
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-cos#examples)
@@ -43,3 +43,4 @@ radians = degrees * (math.pi/180)
 print('Cosine of 45 degrees:', ee.Number(radians).cos().getInfo())
 ```
 
+Was this helpful?

@@ -1,5 +1,5 @@
  
-#  Quantifying Forest Change 
+#  Quantifying Forest Change
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Quantifying Forest Change in a Region of Interest](https://developers.google.com/earth-engine/tutorials/tutorial_forest_03#quantifying-forest-change-in-a-region-of-interest)

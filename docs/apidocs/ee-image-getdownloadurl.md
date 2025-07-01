@@ -1,5 +1,5 @@
  
-#  ee.Image.getDownloadURL 
+#  ee.Image.getDownloadURL
 Stay organized with collections  Save and categorize content based on your preferences. 
 Get a download URL for small chunks of image data in GeoTIFF or NumPy format. Maximum request size is 32 MB, maximum grid dimension is 10000. 
 Use getThumbURL for RGB visualization formats PNG and JPG.

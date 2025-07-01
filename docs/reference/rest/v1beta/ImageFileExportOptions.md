@@ -1,5 +1,5 @@
  
-#  ImageFileExportOptions 
+#  ImageFileExportOptions
 Stay organized with collections  Save and categorize content based on your preferences. 
 Options for exporting images as files outside Earth Engine.
 JSON representation  

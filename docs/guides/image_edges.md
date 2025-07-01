@@ -1,6 +1,6 @@
  
-#  Edge detection 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Edge detection
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 [Edge detection](http://en.wikipedia.org/wiki/Edge_detection) is applicable to a wide range of image processing tasks. In addition to the edge detection kernels described in the [ convolutions section](https://developers.google.com/earth-engine/guides/image_convolutions), there are several specialized edge detection algorithms in Earth Engine. The Canny edge detection algorithm [(Canny 1986) ](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4767851) uses four separate filters to identify the diagonal, vertical, and horizontal edges. The calculation extracts the first derivative value for the horizontal and vertical directions and computes the gradient magnitude. Gradients of smaller magnitude are suppressed. To eliminate high-frequency noise, optionally pre-filter the image with a Gaussian kernel. For example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_edges#code-editor-javascript-sample) More
 ```

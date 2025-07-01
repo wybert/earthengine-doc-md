@@ -1,7 +1,16 @@
  
-#  ImageCollection Overview 
+#  ImageCollection Overview
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-An `ImageCollection` is a stack or sequence of images. An `ImageCollection` can be loaded by pasting an Earth Engine asset ID into the `ImageCollection` constructor. You can find `ImageCollection` IDs in the [data catalog](https://developers.google.com/earth-engine/datasets). For example, to load the [Sentinel-2 surface reflectance collection](https://developers.google.com/earth-engine/guides/datasets/catalog/COPERNICUS_S2_SR): 
+  * On this page
+  * [Construct from a collection ID](https://developers.google.com/earth-engine/guides/ic_creating#construct-from-a-collection-id)
+  * [Construct from an image list](https://developers.google.com/earth-engine/guides/ic_creating#construct-from-an-image-list)
+  * [Construct from a COG list](https://developers.google.com/earth-engine/guides/ic_creating#construct-from-a-cog-list)
+  * [Construct from a Zarr v2 array](https://developers.google.com/earth-engine/guides/ic_creating#construct-from-a-zarr-v2-array)
+
+
+An `ImageCollection` is a stack or sequence of images.
+## Construct from a collection ID
+An `ImageCollection` can be loaded by pasting an Earth Engine asset ID into the `ImageCollection` constructor. You can find `ImageCollection` IDs in the [data catalog](https://developers.google.com/earth-engine/datasets). For example, to load the [Sentinel-2 surface reflectance collection](https://developers.google.com/earth-engine/guides/datasets/catalog/COPERNICUS_S2_SR):
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
 ```
 varsentinelCollection=ee.ImageCollection('COPERNICUS/S2_SR');
@@ -16,8 +25,9 @@ importgeemap.coreasgeemap
 sentinel_collection = ee.ImageCollection('COPERNICUS/S2_SR')
 ```
 
-This collection contains every Sentinel-2 image in the public catalog. There are a lot. Usually you want to filter the collection as shown [here](https://developers.google.com/earth-engine/guides/ic_info) or [here](https://developers.google.com/earth-engine/guides/ic_filtering). 
-In addition to loading an `ImageCollection` using an Earth Engine collection ID, Earth Engine has methods to create image collections. The constructor `ee.ImageCollection()` or the convenience method `ee.ImageCollection.fromImages()` create image collections from lists of images. You can also create new image collections by merging existing collections. For example:
+This collection contains every Sentinel-2 image in the public catalog. There are a lot. Usually you want to filter the collection as shown [here](https://developers.google.com/earth-engine/guides/ic_info) or [here](https://developers.google.com/earth-engine/guides/ic_filtering).
+## Construct from an image list
+The constructor `ee.ImageCollection()` or the convenience method `ee.ImageCollection.fromImages()` create image collections from lists of images. You can also create new image collections by merging existing collections. For example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
 ```
 // Create arbitrary constant images.
@@ -77,7 +87,8 @@ display('Image collection:', images)
 ```
 
 Note that in this example an `ImageCollection` is created by mapping a function that returns an `Image` over a `FeatureCollection`. Learn more about mapping in the [Mapping over an ImageCollection section](https://developers.google.com/earth-engine/guides/ic_mapping). Learn more about feature collections from the [FeatureCollection section](https://developers.google.com/earth-engine/guides/feature_collections).
-You can also create an `ImageCollection` from GeoTiffs in Cloud Storage. For example: 
+## Construct from a COG list
+Create an `ImageCollection` from GeoTiffs in Cloud Storage. For example:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
 ```
 // All the GeoTiffs are in this folder.
@@ -128,4 +139,45 @@ m.add_layer(rgb, {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 20000}, 'rgb')
 m
 ```
 
-[Learn more about loading images from Cloud GeoTiffs](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs). 
+[Learn more about loading images from Cloud GeoTiffs](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs).
+## Construct from a Zarr v2 array
+Create an `ImageCollection` from a Zarr v2 array in Cloud Storage by taking image slices along a higher dimension. For example:
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_creating#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/ic_creating#colab-python-sample) More
+```
+vartimeStart=1000000;
+vartimeEnd=1000048;
+varzarrV2ArrayImages=ee.ImageCollection.loadZarrV2Array({
+uri:
+'gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3/evaporation/.zarray',
+proj:'EPSG:4326',
+axis:0,
+starts:[timeStart],
+ends:[timeEnd]
+});
+print(zarrV2ArrayImages);
+Map.addLayer(zarrV2ArrayImages,{min:-0.0001,max:0.00005},'Evaporation');
+```
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+```
+time_start = 1000000
+time_end = 1000048
+zarr_v2_array_images = ee.ImageCollection.loadZarrV2Array(
+  uri='gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3/evaporation/.zarray',
+  proj='EPSG:4326',
+  axis=0,
+  starts=[time_start],
+  ends=[time_end],
+)
+display(zarr_v2_array_images)
+m = geemap.Map()
+m.add_layer(
+  zarr_v2_array_images, {'min': -0.0001, 'max': 0.00005}, 'Evaporation'
+)
+m
+```
+

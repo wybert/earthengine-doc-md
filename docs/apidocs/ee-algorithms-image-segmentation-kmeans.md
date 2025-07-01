@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.Image.Segmentation.KMeans 
+#  ee.Algorithms.Image.Segmentation.KMeans
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Performs K-Means clustering on the input image. Outputs a 1-band image containing the ID of the cluster that each pixel belongs to. The algorithm can work either on a fixed grid of non-overlapping cells (gridSize, which can be smaller than a tile) or on tiles with overlap (neighborhoodSize). The default is to use tiles with no overlap. Clusters in one cell or tile are unrelated to clusters in another. Any cluster that spans a cell or tile boundary may receive two different labels in the two halves. Any input pixels with partial masks are fully masked in the output. 
 Usage| Returns  

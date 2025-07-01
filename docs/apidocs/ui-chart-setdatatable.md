@@ -1,6 +1,6 @@
  
-#  ui.Chart.setDataTable 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Chart.setDataTable
+Stay organized with collections  Save and categorize content based on your preferences. 
 Sets the DataTable containing data for this chart. 
 Returns this chart.
 Usage| Returns  

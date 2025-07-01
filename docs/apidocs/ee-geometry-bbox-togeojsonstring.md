@@ -1,6 +1,6 @@
  
-#  ee.Geometry.BBox.toGeoJSONString 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.BBox.toGeoJSONString
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a GeoJSON string representation of the geometry. Usage| Returns  
 ---|---  
 `BBox.toGeoJSONString()`| String  

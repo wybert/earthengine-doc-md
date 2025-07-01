@@ -1,6 +1,6 @@
  
-#  ui.Textbox.setPlaceholder 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Textbox.setPlaceholder
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the textbox's placeholder text, which is shown when no text is entered. 
 Returns this select.
 Usage| Returns  

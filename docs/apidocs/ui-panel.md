@@ -1,5 +1,5 @@
  
-#  ui.Panel 
+#  ui.Panel
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A widget that can hold other widgets. Use panels to construct complex combinations of nested widgets. 
 Panels can be added to ui.root but not printed to the console with print().

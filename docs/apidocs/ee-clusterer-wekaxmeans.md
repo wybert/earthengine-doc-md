@@ -1,6 +1,6 @@
  
-#  ee.Clusterer.wekaXMeans 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Clusterer.wekaXMeans
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 X-Means is K-Means with an efficient estimation of the number of clusters. For more information see: 
 Dan Pelleg, Andrew W. Moore: X-means: Extending K-means with Efficient Estimation of the Number of Clusters. In: Seventeenth International Conference on Machine Learning, 727-734, 2000.
 Usage| Returns  

@@ -1,6 +1,6 @@
  
-#  Inverted Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Inverted Joins
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Suppose that the purpose of the join is to retain all images in the `primary` collection that are not in the `secondary` collection. You can perform this type of inverted join using `ee.Join.inverted()`.
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_inverted#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_inverted#colab-python-sample) More
 ```

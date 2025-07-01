@@ -1,5 +1,5 @@
  
-#  ee.Clusterer.wekaLVQ 
+#  ee.Clusterer.wekaLVQ
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A Clusterer that implements the Learning Vector Quantization algorithm. For more details, see: 
 T. Kohonen, "Learning Vector Quantization", The Handbook of Brain Theory and Neural Networks, 2nd Edition, MIT Press, 2003, pp. 631-634.

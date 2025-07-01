@@ -1,5 +1,5 @@
  
-#  ui.Map.DrawingTools.onLayerSelect 
+#  ui.Map.DrawingTools.onLayerSelect
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Registers a callback that's fired when a layer is selected. 
 Returns an ID which can be passed to unlisten() to unregister the callback.

@@ -1,5 +1,5 @@
  
-#  ui.Chart.image.seriesByRegion 
+#  ui.Chart.image.seriesByRegion
 Stay organized with collections  Save and categorize content based on your preferences. 
 Generates a Chart from an image collection. Extracts and plots the value of the specified band in each region for each image in the collection. Usually a time series. 
 - X-axis = Image labeled by xProperty (default: 'system:time_start').

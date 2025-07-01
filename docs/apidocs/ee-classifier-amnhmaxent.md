@@ -1,5 +1,5 @@
  
-#  ee.Classifier.amnhMaxent 
+#  ee.Classifier.amnhMaxent
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-classifier-amnhmaxent#examples)
@@ -122,4 +122,3 @@ classifier = ee.Classifier.amnhMaxent().train(**{
 image_classified = image.classify(classifier)
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
-#  Exporting to BigQuery 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Exporting to BigQuery
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 ## Overview
 Earth Engine's computational architecture is optimized for making image (pixel-based) computation fast and scalable. BigQuery is similarly optimized for scalable processing of tabular data (vectors), and it has many features which make it a nice complement to Earth Engine.
 Example workflows include:

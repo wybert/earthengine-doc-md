@@ -1,5 +1,5 @@
  
-#  ee.Feature.contains 
+#  ee.Feature.contains
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns true if and only if the geometry of one feature contains the geometry of another. 
 Usage| Returns  

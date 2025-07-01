@@ -1,5 +1,5 @@
  
-#  ee.Feature.intersects 
+#  ee.Feature.intersects
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns true if and only if the feature geometries intersect. 
 Usage| Returns  

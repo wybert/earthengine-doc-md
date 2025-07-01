@@ -1,6 +1,6 @@
  
-#  Geometry Visualization and Information 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Geometry Visualization and Information
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Visualizing geometries
 To visualize a geometry, add it to the map. For example:
 ### Code Editor (JavaScript)

@@ -1,5 +1,5 @@
  
-#  Method: projects.image.export 
+#  Method: projects.image.export
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/export#http-request)
@@ -96,4 +96,3 @@ Fields
 `pyramidingPolicyOverrides` |  `map (key: string, value: enum (`PyramidingPolicy`))` Specific per-band pyramid policy overrides.An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `earthEngineDestination` |  `object (`EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/EarthEngineDestination)`)` If specified, configures export to Earth Engine.  
-Was this helpful?

@@ -1,6 +1,6 @@
  
-#  ee.FeatureCollection.size 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.FeatureCollection.size
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the number of elements in the collection. Usage| Returns  
 ---|---  
 `FeatureCollection.size()`| Integer  

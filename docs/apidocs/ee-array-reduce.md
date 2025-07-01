@@ -1,5 +1,5 @@
  
-#  ee.Array.reduce 
+#  ee.Array.reduce
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Apply a reducer to an array by collapsing all the input values along each specified axis into a single output value computed by the reducer. 
 The output always has the same dimensionality as the input, and the individual axes are affected as follows:

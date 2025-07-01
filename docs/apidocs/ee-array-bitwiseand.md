@@ -1,5 +1,5 @@
  
-#  ee.Array.bitwiseAnd 
+#  ee.Array.bitwiseAnd
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-bitwiseand#examples)
@@ -48,4 +48,3 @@ display(ee.Array(-1).bitwiseAnd(ee.Array(-2))) # -2
 display(ee.Array([6, 6]).bitwiseAnd(ee.Array([1, 11]))) # [0, 2]
 ```
 
-Was this helpful?

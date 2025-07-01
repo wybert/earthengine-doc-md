@@ -1,5 +1,5 @@
  
-#  ui.Select.setDisabled 
+#  ui.Select.setDisabled
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Sets whether the select is disabled. 
 Returns this select.

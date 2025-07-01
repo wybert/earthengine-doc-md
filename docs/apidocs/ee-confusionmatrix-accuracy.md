@@ -1,5 +1,5 @@
  
-#  ee.ConfusionMatrix.accuracy 
+#  ee.ConfusionMatrix.accuracy
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the overall accuracy of a confusion matrix defined as correct / total. 
 Usage| Returns  
@@ -34,7 +34,6 @@ print("Producer's accuracy",confusionMatrix.producersAccuracy());
 // Calculate kappa statistic.
 print('Kappa statistic',confusionMatrix.kappa());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

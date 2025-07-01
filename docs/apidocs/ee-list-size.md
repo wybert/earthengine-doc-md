@@ -1,5 +1,5 @@
  
-#  ee.List.size 
+#  ee.List.size
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the number of elements in list. 
 Usage| Returns  
@@ -8,4 +8,3 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `list`| List|   
-Was this helpful?

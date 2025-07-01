@@ -1,5 +1,5 @@
  
-#  ee.Algorithms.GeometryConstructors.Point 
+#  ee.Algorithms.GeometryConstructors.Point
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Constructs a new Point from the given x,y coordinates. 
 Usage| Returns  

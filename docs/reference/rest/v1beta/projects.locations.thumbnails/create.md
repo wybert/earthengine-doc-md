@@ -1,15 +1,6 @@
  
-#  Method: projects.locations.thumbnails.create 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#path-parameters)
-  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#query-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create#authorization-scopes)
-
-
+#  Method: projects.locations.thumbnails.create
+Stay organized with collections  Save and categorize content based on your preferences. 
 Creates an ID that can be used to render a "thumbnail" image.
 This is used in conjunction with `GetThumbnailPixels`. A call to `thumbnails.create` provides an expression and some output options. The result of `thumbnails.create` is an ID that represents an image that is the result of evaluating that expression and applying those options. Subsequently, calls to `GetThumbnailPixels` can be made to get the image data for the entire resulting image. The ID will be valid for a moderate period (a few hours).
 The most common use case for this pair of endpoints is to provide a complex expression via a POST to `thumbnails.create`, and then fetch the computed image via a GET to `GetThumbnailPixels`. This two-part process allows for use in more situations than `ComputePixels`. In particular: - the result of `ComputePixels` needs to be unwrapped to get the encoded image bytes. The result of `GetThumbnailPixels` can be displayed directly by a browser. - `ComputePixels` can only be called by an authorised user, using a properly-scoped OAuth token. `thumbnails.create` has the same restriction, but `GetThumbnailPixels` can be invoked with a URL containing an API key, so URLs invoking it can be used more broadly.
@@ -42,4 +33,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ui.Map.DrawingTools.onDraw 
+#  ui.Map.DrawingTools.onDraw
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Registers a callback that's fired when a shape is drawn. 
 Returns an ID which can be passed to unlisten() to unregister the callback.

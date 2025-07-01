@@ -1,5 +1,5 @@
  
-#  ee.Geometry.BBox.getInfo 
+#  ee.Geometry.BBox.getInfo
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Retrieves the value of this object from the server. 
 If no callback function is provided, the request is made synchronously. If a callback is provided, the request is made asynchronously.

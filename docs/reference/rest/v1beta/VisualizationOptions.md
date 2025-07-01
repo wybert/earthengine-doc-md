@@ -1,5 +1,5 @@
  
-#  VisualizationOptions 
+#  VisualizationOptions
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Describes how to produce an 8-bit RGB visualization of the requested data.
 JSON representation  

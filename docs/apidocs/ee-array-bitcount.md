@@ -1,5 +1,5 @@
  
-#  ee.Array.bitCount 
+#  ee.Array.bitCount
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-bitcount#examples)
@@ -49,3 +49,4 @@ display(ee.Array([-1], ee.PixelType.int8()).bitCount()) # [64]
 display(ee.Array([-2]).bitCount())            # [63]
 ```
 
+Was this helpful?

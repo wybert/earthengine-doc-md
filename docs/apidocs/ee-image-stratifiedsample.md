@@ -1,5 +1,5 @@
  
-#  ee.Image.stratifiedSample 
+#  ee.Image.stratifiedSample
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Extracts a stratified random sample of points from an image. Extracts the specified number of samples for each distinct value discovered within the 'classBand'. Returns a FeatureCollection of 1 Feature per extracted point, with each feature having 1 property per band in the input image. If there are less than the specified number of samples available for a given class value, then all of the points for that class will be included. Requires that the classBand contain integer values. 
 Usage| Returns  

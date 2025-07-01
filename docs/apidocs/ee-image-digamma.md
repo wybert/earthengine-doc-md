@@ -1,5 +1,5 @@
  
-#  ee.Image.digamma 
+#  ee.Image.digamma
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the digamma function of the input. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ui.SplitPanel.getSecondPanel 
+#  ui.SplitPanel.getSecondPanel
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the second panel in the split panel. 
 Usage| Returns  

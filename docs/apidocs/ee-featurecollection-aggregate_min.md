@@ -1,5 +1,5 @@
  
-#  ee.FeatureCollection.aggregate_min 
+#  ee.FeatureCollection.aggregate_min
 Stay organized with collections  Save and categorize content based on your preferences. 
 Aggregates over a given property of the objects in a collection, calculating the minimum of the values of the selected property. Usage| Returns  
 ---|---  

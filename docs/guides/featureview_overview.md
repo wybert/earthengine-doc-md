@@ -1,5 +1,5 @@
  
-#  FeatureView Overview 
+#  FeatureView Overview
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Creating a FeatureView](https://developers.google.com/earth-engine/guides/featureview_overview#creating_a_featureview)
@@ -219,4 +219,3 @@ embeddedMap.overlayMapTypes.setAt(0,overlay);
 A `FeatureViewLayer` layer added to the default Code Editor map can be inspected using the [Inspector tool](https://developers.google.com/earth-engine/guides/playground#inspector-tab). The functionality is the same as that of a `FeatureCollection`. Note that results returned for the clicked location only lists features that are visible at the current zoom level. Geometries are not shown for the inspected features since they are simplified as part of the `FeatureView` export process.
 ![](https://developers.google.com/static/earth-engine/images/Featureview_inspector.png)
 Figure 3. Inspecting a `FeatureViewLayer`. The inspector shows the layer, features, asset ID, and the visualization parameters.
-Was this helpful?

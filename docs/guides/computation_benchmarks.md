@@ -1,20 +1,6 @@
  
-#  Computation Benchmarks 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Methodology](https://developers.google.com/earth-engine/guides/computation_benchmarks#methodology)
-    * [Notebooks](https://developers.google.com/earth-engine/guides/computation_benchmarks#notebooks)
-    * [Operation](https://developers.google.com/earth-engine/guides/computation_benchmarks#operation)
-    * [Processing](https://developers.google.com/earth-engine/guides/computation_benchmarks#processing)
-    * [Region](https://developers.google.com/earth-engine/guides/computation_benchmarks#region)
-    * [Scale](https://developers.google.com/earth-engine/guides/computation_benchmarks#scale)
-    * [Timeframe](https://developers.google.com/earth-engine/guides/computation_benchmarks#timeframe)
-    * [Samples](https://developers.google.com/earth-engine/guides/computation_benchmarks#samples)
-  * [How to use these data](https://developers.google.com/earth-engine/guides/computation_benchmarks#how_to_use_these_data)
-    * [Caveats](https://developers.google.com/earth-engine/guides/computation_benchmarks#caveats)
-  * [Benchmark data](https://developers.google.com/earth-engine/guides/computation_benchmarks#benchmark_data)
-
-
+#  Computation Benchmarks
+Stay organized with collections  Save and categorize content based on your preferences. 
 To help model potential Earth Engine compute costs, we've run a number of benchmark operations and logged their corresponding compute footprint. These data may be useful for modeling compute costs for your own processing, based on similar criteria (see ["how to use these data"](https://developers.google.com/earth-engine/guides/computation_benchmarks#how_to_use_these_data)).
 ## Methodology
 ### Notebooks
@@ -70,51 +56,200 @@ Additionally, the level of activity from all users of the Earth Engine serving i
 ## Benchmark data
 These are real benchmarks (the actual cost to run as of 2024-03-08), but they provide no guarantee - actual compute costs can [vary significantly](https://developers.google.com/earth-engine/guides/computation_overview#stability_and_predictability).
 The cost of an EECU-hour of processing can have different costs (in USD or EUR, for example) depending on the specific [pricing plan](https://cloud.google.com/earth-engine/pricing) and currency conversion in Google Cloud Billing.
-Export image Export to BigQuery High-volume extraction
-Select one or more optionsOperation
-  * Export image
-  * Export to BigQuery
-  * High-volume extraction
-
-
-Sentinel-2 composite
-Select one or more optionsProcessing
-  * Sentinel-2 composite
-
-
-Bay Area Germany Nigeria
-Select one or more optionsLocation
-  * Bay Area
-  * Germany
-  * Nigeria
-
-
-10 meter 30 meter 120 meter
-Select one or more optionsProcessing scale
-  * 10 meter
-  * 30 meter
-  * 120 meter
-
-
-3 months 6 months 12 months
-Select one or more optionsTimeframe
-  * 3 months
-  * 6 months
-  * 12 months
-
-
-N/A 100 samples 500 samples 1000 samples
-Select one or more optionsSamples
-  * N/A
-  * 100 samples
-  * 500 samples
-  * 1000 samples
-
-
+Export image Export to BigQuery High-volume extraction Sentinel-2 composite Bay Area Germany Nigeria 10 meter 30 meter 120 meter 3 months 6 months 12 months N/A 100 samples 500 samples 1000 samples
 A note about Earth Engine benchmarks.
 Operation | Processing | Region | Scale | Timeframe | Samples | Compute benchmark  
 ---|---|---|---|---|---|---  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 1000 samples | 1.37 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 500 samples | 1.09 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 100 samples | 0.36 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 120 meters | 12 months | N/A | 1.15 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 1000 samples | 3.11 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 500 samples | 1.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 100 samples | 0.19 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 30 meters | 12 months | N/A | 14.44 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 1000 samples | 1.88 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 500 samples | 0.87 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 100 samples | 0.15 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 12 months | N/A | 105.09 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 1000 samples | 0.71 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 500 samples | 0.58 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 100 samples | 0.16 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 120 meters | 6 months | N/A | 0.80 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 1000 samples | 1.79 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 500 samples | 0.73 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 100 samples | 0.09 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 30 meters | 6 months | N/A | 10.97 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 1000 samples | 0.91 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 500 samples | 0.43 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 100 samples | 0.08 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 6 months | N/A | 41.53 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 1000 samples | 0.39 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 500 samples | 0.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 100 samples | 0.09 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 120 meters | 3 months | N/A | 0.43 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 1000 samples | 0.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 500 samples | 0.28 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 100 samples | 0.10 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 120 meters | 3 months | N/A | 0.26 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 1000 samples | 0.87 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 500 samples | 0.38 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 100 samples | 0.05 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Bay Area | 30 meters | 3 months | N/A | 3.21 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 1000 samples | 0.55 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 500 samples | 0.27 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 100 samples | 0.06 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
 Export image | Sentinel-2 composite | Bay Area | 10 meters | 3 months | N/A | 29.95 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
-Was this helpful?
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 12 months | 1000 samples | 6.65 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 12 months | 500 samples | 2.61 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 12 months | 100 samples | 0.44 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 120 meters | 12 months | N/A | 45.87 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 12 months | 1000 samples | 3.50 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 12 months | 500 samples | 1.72 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 12 months | 100 samples | 0.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 30 meters | 12 months | N/A | 622.11 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 12 months | 1000 samples | 3.45 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 12 months | 500 samples | 1.70 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 12 months | 100 samples | 0.31 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 10 meters | 12 months | N/A | 3349.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 6 months | 1000 samples | 3.18 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 6 months | 500 samples | 1.42 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 6 months | 100 samples | 0.26 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 120 meters | 6 months | N/A | 28.77 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 6 months | 1000 samples | 2.04 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 6 months | 500 samples | 1.06 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 6 months | 100 samples | 0.19 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 30 meters | 6 months | N/A | 329.75 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 6 months | 1000 samples | 1.91 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 6 months | 500 samples | 0.97 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 6 months | 100 samples | 0.19 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 10 meters | 6 months | N/A | 2616.90 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 3 months | 1000 samples | 1.56 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 3 months | 500 samples | 0.81 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 120 meters | 3 months | 100 samples | 0.14 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 120 meters | 3 months | N/A | 10.33 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 3 months | 1000 samples | 1.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 3 months | 500 samples | 0.65 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 30 meters | 3 months | 100 samples | 0.12 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 30 meters | 3 months | N/A | 129.37 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 3 months | 1000 samples | 1.30 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 3 months | 500 samples | 0.62 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Germany | 10 meters | 3 months | 100 samples | 0.13 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Germany | 10 meters | 3 months | N/A | 791.22 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 1000 samples | 3.44 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 500 samples | 1.56 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 100 samples | 0.26 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 120 meters | 12 months | N/A | 44.22 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 1000 samples | 2.51 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 500 samples | 1.30 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 100 samples | 0.25 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 30 meters | 12 months | N/A | 662.56 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 1000 samples | 2.60 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 500 samples | 1.27 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 100 samples | 0.25 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 10 meters | 12 months | N/A | 3539.28 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 1000 samples | 1.84 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 500 samples | 0.97 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 100 samples | 0.18 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 120 meters | 6 months | N/A | 26.35 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 1000 samples | 1.78 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 500 samples | 0.86 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 100 samples | 0.18 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 30 meters | 6 months | N/A | 374.71 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 1000 samples | 1.73 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 500 samples | 0.86 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 100 samples | 0.18 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 10 meters | 6 months | N/A | 1858.40 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 1000 samples | 1.40 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 500 samples | 0.67 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 100 samples | 0.14 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 120 meters | 3 months | N/A | 9.35 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 1000 samples | 1.31 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 500 samples | 0.66 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 100 samples | 0.14 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 30 meters | 3 months | N/A | 145.59 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 1000 samples | 1.33 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 500 samples | 0.68 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export to BigQuery | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 100 samples | 0.14 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+Export image | Sentinel-2 composite | Nigeria | 10 meters | 3 months | N/A | 1434.39 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 1000 samples | 4.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 100 samples | 0.45 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 3 months | 500 samples | 1.44 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 1000 samples | 5.08 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 100 samples | 0.48 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 3 months | 500 samples | 2.58 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 1000 samples | 4.80 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 100 samples | 0.46 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 3 months | 500 samples | 1.89 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 1000 samples | 6.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 100 samples | 0.62 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 6 months | 500 samples | 3.30 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 1000 samples | 7.23 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 100 samples | 0.79 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 6 months | 500 samples | 3.99 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 1000 samples | 7.24 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 100 samples | 0.67 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 6 months | 500 samples | 3.62 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 1000 samples | 10.67 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 100 samples | 1.03 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 10 meters | 12 months | 500 samples | 5.33 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 1000 samples | 13.36 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 100 samples | 1.29 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 120 meters | 12 months | 500 samples | 6.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 1000 samples | 11.78 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 100 samples | 1.11 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Bay Area | 30 meters | 12 months | 500 samples | 5.91 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 12 months | 1000 samples | 14.92 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 12 months | 100 samples | 1.60 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 12 months | 500 samples | 7.52 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 12 months | 1000 samples | 19.08 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 12 months | 100 samples | 1.94 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 12 months | 500 samples | 9.65 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 12 months | 1000 samples | 16.98 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 12 months | 100 samples | 1.72 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 12 months | 500 samples | 8.51 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 3 months | 1000 samples | 4.91 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 3 months | 100 samples | 0.51 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 3 months | 500 samples | 2.45 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 3 months | 1000 samples | 5.76 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 3 months | 100 samples | 0.59 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 3 months | 500 samples | 2.89 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 3 months | 1000 samples | 5.32 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 3 months | 100 samples | 0.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 3 months | 500 samples | 2.71 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 6 months | 1000 samples | 8.13 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 6 months | 100 samples | 0.86 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 10 meters | 6 months | 500 samples | 4.11 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 6 months | 1000 samples | 10.01 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 6 months | 100 samples | 1.05 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 120 meters | 6 months | 500 samples | 5.02 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 6 months | 1000 samples | 9.14 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 6 months | 100 samples | 0.93 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Germany | 30 meters | 6 months | 500 samples | 4.55 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 1000 samples | 9.87 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 100 samples | 0.93 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 12 months | 500 samples | 4.82 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 1000 samples | 12.11 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 100 samples | 1.13 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 12 months | 500 samples | 5.92 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 1000 samples | 11.26 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 100 samples | 1.06 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 12 months | 500 samples | 5.47 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 1000 samples | 4.23 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 100 samples | 0.40 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 3 months | 500 samples | 2.10 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 1000 samples | 4.78 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 100 samples | 0.47 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 3 months | 500 samples | 2.38 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 1000 samples | 4.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 100 samples | 0.45 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 3 months | 500 samples | 2.25 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 1000 samples | 5.98 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 100 samples | 0.58 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 10 meters | 6 months | 500 samples | 2.88 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 1000 samples | 6.94 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 100 samples | 0.68 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 120 meters | 6 months | 500 samples | 3.42 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 1000 samples | 6.54 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 100 samples | 0.63 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  
+High-volume extraction | Sentinel-2 composite | Nigeria | 30 meters | 6 months | 500 samples | 3.21 [EECU-hours](https://developers.google.com/earth-engine/guides/computation_overview#eecus)  

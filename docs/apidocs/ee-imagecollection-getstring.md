@@ -1,6 +1,6 @@
  
-#  ee.ImageCollection.getString 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.ImageCollection.getString
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-getstring#examples)
 
@@ -80,4 +80,3 @@ print('Project year (ee.Number):', col.getNumber('project_year').getInfo())
 print('Plot IDs (ee.Array):', col.getArray('plot_ids').getInfo())
 ```
 
-Was this helpful?

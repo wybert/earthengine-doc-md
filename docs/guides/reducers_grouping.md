@@ -1,6 +1,6 @@
  
-#  Grouped Reductions and Zonal Statistics 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Grouped Reductions and Zonal Statistics
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 You can get statistics in each zone of an `Image` or `FeatureCollection` by using `reducer.group()` to group the output of a reducer by the value of a specified input. For example, to compute the total population and number of housing units in each state, this example groups the output of a reduction of a census block `FeatureCollection` as follows:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/reducers_grouping#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/reducers_grouping#colab-python-sample) More
 ```

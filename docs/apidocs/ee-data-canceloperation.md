@@ -1,7 +1,8 @@
  
-#  ee.data.cancelOperation 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Cancels the given operation(s). Usage| Returns  
+#  ee.data.cancelOperation
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Cancels the given operation(s). 
+Usage| Returns  
 ---|---  
 `ee.data.cancelOperation(operationName,  _callback_)`|   
 Argument|  Type| Details  

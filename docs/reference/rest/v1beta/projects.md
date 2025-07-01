@@ -1,5 +1,5 @@
  
-#  REST Resource: projects 
+#  REST Resource: projects
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource](https://developers.google.com/earth-engine/reference/rest/v1beta/projects#resource)

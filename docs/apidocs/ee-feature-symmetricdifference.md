@@ -1,5 +1,5 @@
  
-#  ee.Feature.symmetricDifference 
+#  ee.Feature.symmetricDifference
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a feature containing the symmetric difference between geometries of two features. 
 Usage| Returns  

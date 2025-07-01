@@ -1,6 +1,6 @@
  
-#  ui.Map.FeatureViewLayer.setShown 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Map.FeatureViewLayer.setShown
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visibility of the layer. 
 Returns this map layer.
 Usage| Returns  
@@ -10,3 +10,4 @@ Argument| Type| Details
 ---|---|---  
 this: `ui.map.abstractlayer`| ui.Map.AbstractLayer| The ui.Map.AbstractLayer instance.  
 `shown`| Boolean, optional| Whether the layer is shown.  
+Was this helpful?

@@ -1,6 +1,6 @@
  
-#  ee.Number.float 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Number.float
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-float#examples)
 
@@ -37,4 +37,3 @@ float_number = number.float()
 print('ee.Number cast to float:', float_number.getInfo())
 ```
 
-Was this helpful?

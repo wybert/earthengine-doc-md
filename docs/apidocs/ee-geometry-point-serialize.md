@@ -1,6 +1,6 @@
  
-#  ee.Geometry.Point.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Geometry.Point.serialize
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-serialize#examples)
 
@@ -48,4 +48,3 @@ m.add_layer(point, {'color': 'black'}, 'Geometry [black]: point')
 m
 ```
 
-Was this helpful?

@@ -1,14 +1,6 @@
  
-#  Method: projects.value.compute 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.value/compute#authorization-scopes)
-
-
+#  Method: projects.value.compute
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Computes an arbitrary value. This will fail if the result of the Expression is not something that is expressible as a Value, or if its evaluation requires too many resources. While it is possible (and not an error) to compute any type of object here, in general any Expression producing results that are better suited to one of the other Compute* endpoints should use that endpoint instead (e.g., an Expression whose result is a set of features should use ComputeFeatures).
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/value:compute`
@@ -60,4 +52,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

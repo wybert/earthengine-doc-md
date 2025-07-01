@@ -1,5 +1,5 @@
  
-#  ui.Map.FeatureViewLayer.setAssetId 
+#  ui.Map.FeatureViewLayer.setAssetId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Changes the asset being displayed on this layer. 
 Returns this map layer.

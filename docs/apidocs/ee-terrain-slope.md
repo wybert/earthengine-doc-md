@@ -1,6 +1,10 @@
  
-#  ee.Terrain.slope 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Terrain.slope
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-terrain-slope#examples)
+
+
 Calculates slope in degrees from a terrain DEM. 
 The local gradient is computed using the 4-connected neighbors of each pixel, so missing values will occur around the edges of an image.
 Usage| Returns  
@@ -10,7 +14,7 @@ Argument| Type| Details
 ---|---|---  
 `input`| Image| An elevation image, in meters.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-terrain-slope#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-terrain-slope#colab-python-sample) More
 ```
 // A digital elevation model.
 vardem=ee.Image('NASA/NASADEM_HGT/001').select('elevation');
@@ -29,15 +33,12 @@ varterrain=ee.Terrain.products(dem);
 print('ee.Terrain.products bands',terrain.bandNames());
 Map.addLayer(terrain.select('hillshade'),{min:0,max:255},'Hillshade');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # A digital elevation model.
 dem = ee.Image('NASA/NASADEM_HGT/001').select('elevation')
@@ -59,3 +60,4 @@ m.add_layer(terrain.select('hillshade'), {'min': 0, 'max': 255}, 'Hillshade')
 m
 ```
 
+Was this helpful?

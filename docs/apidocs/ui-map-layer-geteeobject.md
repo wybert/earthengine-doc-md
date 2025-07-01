@@ -1,5 +1,5 @@
  
-#  ui.Map.Layer.getEeObject 
+#  ui.Map.Layer.getEeObject
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the layer's ee.Object. 
 Usage| Returns  

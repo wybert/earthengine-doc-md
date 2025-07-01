@@ -1,5 +1,5 @@
  
-#  ui.url.get 
+#  ui.url.get
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the value of the given key from the URL fragment. 
 Usage| Returns  

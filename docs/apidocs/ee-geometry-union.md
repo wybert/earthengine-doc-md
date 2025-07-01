@@ -1,5 +1,5 @@
  
-#  ee.Geometry.union 
+#  ee.Geometry.union
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-union#examples)
@@ -77,3 +77,4 @@ m.add_layer(geometry_union, {'color': 'red'}, 'Result [red]: geometry.union')
 m
 ```
 
+Was this helpful?

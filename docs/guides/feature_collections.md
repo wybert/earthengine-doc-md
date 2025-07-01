@@ -1,6 +1,6 @@
  
-#  FeatureCollection Overview 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  FeatureCollection Overview
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [The FeatureCollection constructor](https://developers.google.com/earth-engine/guides/feature_collections#the-featurecollection-constructor)
     * [Table Datasets](https://developers.google.com/earth-engine/guides/feature_collections#table-datasets)

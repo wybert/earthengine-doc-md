@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPoint.aside 
+#  ee.Geometry.MultiPoint.aside
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Calls a function passing this object as the first argument, and returning itself. Convenient e.g. when debugging: 
 var c = ee.ImageCollection('foo').aside(print)

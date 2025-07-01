@@ -1,6 +1,6 @@
  
-#  ui.Map.FeatureViewLayer.setVisParams 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Map.FeatureViewLayer.setVisParams
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the visualization parameters for this layer. 
 Returns this map layer.
 Usage| Returns  

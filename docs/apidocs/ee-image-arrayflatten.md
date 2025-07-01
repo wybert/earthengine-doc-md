@@ -1,5 +1,5 @@
  
-#  ee.Image.arrayFlatten 
+#  ee.Image.arrayFlatten
 Stay organized with collections  Save and categorize content based on your preferences. 
 Converts a single-band image of equal-shape multidimensional pixels to an image of scalar pixels, with one band for each element of the array. Usage| Returns  
 ---|---  

@@ -1,5 +1,5 @@
  
-#  ee.Filter.isContained 
+#  ee.Filter.isContained
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a unary or binary filter that passes if the right geometry contains the left geometry (empty geometries are not contained in anything). 
 Usage| Returns  

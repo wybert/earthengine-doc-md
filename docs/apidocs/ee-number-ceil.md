@@ -1,5 +1,5 @@
  
-#  ee.Number.ceil 
+#  ee.Number.ceil
 Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the smallest integer greater than or equal to the input. Usage| Returns  
 ---|---  

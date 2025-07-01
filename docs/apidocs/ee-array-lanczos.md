@@ -1,5 +1,5 @@
  
-#  ee.Array.lanczos 
+#  ee.Array.lanczos
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 On an element-wise basis, computes the Lanczos approximation of the input. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  Export.map.toCloudStorage 
+#  Export.map.toCloudStorage
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a batch task to export an Image as a rectangular pyramid of map tiles for use with web map viewers. The map tiles will be accompanied by a reference index.html file that displays them using the Google Maps API, and an earth.html file for opening the map on Google Earth. 
 Usage| Returns  

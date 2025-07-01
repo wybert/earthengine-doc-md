@@ -1,22 +1,10 @@
  
-#  Time Series Modeling 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#overview)
-  * [Background](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#background)
-    * [Limitations in remote sensing time series](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#limitations_in_remote_sensing_time_series)
-    * [Multi-temporal data in Earth Engine](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#multi-temporal_data_in_earth_engine)
-    * [Data preparation and preprocessing](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#data_preparation_and_preprocessing)
-    * [Linear modeling of time](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#linear_modeling_of_time)
-  * [Estimate seasonality with a harmonic model](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#estimate_seasonality_with_a_harmonic_model)
-    * [Complex time series modeling](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#complex_time_series_modeling)
-    * [Exporting data](https://developers.google.com/earth-engine/tutorials/community/time-series-modeling#exporting_data)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/time-series-modeling/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/time-series-modeling/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/time-series-modeling/index.md)
-Author(s): [ ghidora77 ](https://github.com/ghidora77)
+#  Time Series Modeling
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/time-series-modeling/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/time-series-modeling/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/time-series-modeling/index.md "View changes to this article over time.")
+Author(s): [ ghidora77 ](https://github.com/ghidora77 "View the profile for ghidora77 on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ## Overview
 The purpose of this tutorial is to establish a foundation for time series analysis on remotely sensed data. You will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes. At the completion of this tutorial, you will be able to build an explanatory model for temporal data which can be used in many different avenues of research.
@@ -43,7 +31,7 @@ Time series modeling aims to build an explanatory model of the data without over
 It is important to understand the characteristics of both your data and what you are trying to measure. Building a time series model to understand cyclical changes in vegetation can provide useful information in understanding crop yield, but if you do not account for issues in the data, you can end up building a time series model with erroneous results. Many time series modeling tools, such as [ARIMA modeling](https://otexts.com/fpp2/arima.html), are not directly applicable in certain settings due to missing data, non-standard collection periods and varying intensity due to atmospheric conditions. In this tutorial, we will focus on understanding linear trends and harmonic modeling.
 ### Multi-temporal data in Earth Engine
 Time series data in Earth Engine are represented as a series of images called '[Image Collections](https://developers.google.com/earth-engine/guides/ic_creating)'. As a result of the complicating factors in remote sensing discussed earlier, analyzing time series in Earth Engine is unlike time series modeling in traditional methods. From a programming sense, we will join data together to define temporal relationships between collection items and build functions to reduce this time.
-First, some very basic mathematical notation for time series. A time series is an array of the value being measured, sorted chronologically: pt=t0+t1...tN, where each t is the given value in the series.
+First, some very basic mathematical notation for time series. A time series is an array of the value being measured, sorted chronologically: \\(\textbf{p}{t} = t{0} + t{1}... t{N}\\), where each \\(t\\) is the given value in the series.
 ### Data preparation and preprocessing
 The first step in analysis of time series data is to import data of interest and plot the data around our region of interest, a deciduous forest near Blacksburg, VA, USA.
 We begin by loading in the Landsat 8 collection and provide a point at the region of interest. Additionally, we will create a time field.
@@ -126,8 +114,8 @@ print(l8Chart);
 You can click on the 'export' button next to the chart to view an interactive chart. Scroll over some of the data points and look at the relationships between the data. A line connecting two dots means that they are sequential data points (notice that there are relatively few sequential points). We can also see that there are relatively large jumps in the data, with an upward climb somewhere between March and late April, and a descent in late August. Each year is slightly different, but we can surmise that this is due to seasonal rains in the spring and leaves dying off in the fall. Finally, the general trend is downward, although the February 2021 datapoint might have significant leverage on the trend.
 ![Linear Trend](https://developers.google.com/static/earth-engine/tutorials/community/time-series-modeling/im_05_03.png)
 ### Linear modeling of time
-Lots of interesting analyses can be done to time series by harnessing the `linearRegression()` [reducer](https://developers.google.com/earth-engine/api_docs#eereducerlinearregression). To estimate linear trends over time, consider the following linear model, where ϵt is a random error:
-y=β0+β1X1+...+βnXn+ϵt
+Lots of interesting analyses can be done to time series by harnessing the `linearRegression()` [reducer](https://developers.google.com/earth-engine/api_docs#eereducerlinearregression). To estimate linear trends over time, consider the following linear model, where \\(\epsilon_t\\) is a random error:
+$$ y = \beta_0 + \beta_1X_1 + ... + \beta_nX_n + \epsilon_t \tag{1} $$
 This is the model behind the trendline added to the chart you just created. We can use this model to detrend our data (explain the upward or downward movement of the data by subtracting observed values from the fitted model values). For now, the goal is to discover the values of the beta coefficients.
 To fit this trend model to the Landsat-based NDVI series using Ordinary Least Squares ([OLS](https://setosa.io/ev/ordinary-least-squares-regression/)), use the `linearRegression()` reducer:
 ```
@@ -147,7 +135,7 @@ varcoefficients=trend.select('coefficients')
 
 ```
 
-The image added to the map is a two-band image in which each pixel contains values for β0 and β1. Click around the map with the inspector, and look at some of the values. We can see that most pixels around our region of interest have a negative trend—although darker values indicate a shallow negative trend, while bright red pixels indicate a steeper descent.
+The image added to the map is a two-band image in which each pixel contains values for \\(\beta_0\\) and \\(\beta_1\\). Click around the map with the inspector, and look at some of the values. We can see that most pixels around our region of interest have a negative trend—although darker values indicate a shallow negative trend, while bright red pixels indicate a steeper descent.
 Use the model to "detrend" the original NDVI time series. By detrend, we mean account for the slope of the chart and remove it from the original data.
 ```
 // Compute a detrended series.
@@ -170,13 +158,13 @@ print(detrendedChart);
 Compared to our earlier graph, the data looks similar—but now, the slight downward slope is accounted for with our linear model. Each fitted data point (data point on the linear model) is subtracted from each of the observed data points. Additionally, the Y-axis is now centered at 0, and the scale ranges from 0 to +/- 0.45 This allows us to focus on cyclical patterns in the data with long-term trends in the data removed.
 ![Detrended Data](https://developers.google.com/static/earth-engine/tutorials/community/time-series-modeling/im_05_04.png)
 ## Estimate seasonality with a harmonic model
-Consider the following linear model, where et is random error, A is amplitude, ω is frequency, and ϕ is phase:
-pt=β0+β1t+Acos(2πωt−ϕ)+et
+Consider the following linear model, where \\(e_t\\) is random error, \\(A\\) is amplitude, \\(\omega\\) is frequency, and \\(\phi\\) is phase:
+$$ p_t = \beta_0 + \beta_1t + Acos(2\pi\omega t - \phi) + e_t \tag{2} $$
 We can decompose our function into separate cosine and sine elements.
-pt=β0+β1t+β2cos(2πωt)+β3sin(2πωt)+et
-Note that β2=Acos(ϕ) and β3=Asin(ϕ), implying A=(β22+β23)½ and ϕ=atan(β3β2)).
+$$ p_t = \beta_0 + \beta_1t + \beta_2cos(2\pi\omega t) + \beta_3sin(2\pi\omega t) + e_t \tag{3} $$
+Note that \\(\beta_2 = Acos(\phi)\\) and \\(\beta_3 = Asin(\phi)\\), implying \\(A = (\beta_2^2 + \beta_3^2)^½\\) and \\(\phi = atan(\frac{\beta_3}{\beta_2})\\)).
 In simpler terms, we are breaking up more complex curves into a set of simplified cosine waves with an additive term. Mark Jakubauskas has an informative [paper](https://www.isprs.org/proceedings/xxxiii/congress/part4/384_xxxiii-part4.pdf) that breaks down the process, and there are many resources that elaborate more on the math behind harmonic models. Building a harmonic model is used in remote sensing applications because of its flexibility in accounting for cyclicality with simple, reproducible shapes. If there is a seasonal trend in the data, the ordered nature of a cosine curve can likely approximate it.
-To fit this model to the time series, set ω=1 (one cycle per unit time) and use ordinary least squares regression as the metric of error reduction.
+To fit this model to the time series, set \\(\omega\\)=1 (one cycle per unit time) and use ordinary least squares regression as the metric of error reduction.
 First, add the harmonic variables (the third and fourth terms of equation 2) to the image collection.
 ```
 // Use these independent variables in the harmonic regression.
@@ -258,4 +246,3 @@ More complex harmonic models might not be appropriate due to overfitting—in ot
 ### Exporting data
 Many of you might be more familiar with building statistical models in other languages or tools, such as Python, R or JMP. In that case, you might want to export the data for your own analysis. There are several ways to do it, but the simplest method is to click the 'expand into new tab' button next to the chart that contains the data you want to work with (likely the raw NDVI data). In the new tab, you can click 'Download .csv', which is a data table that you can use with whichever software you prefer.
 ![Exporting Data](https://developers.google.com/static/earth-engine/tutorials/community/time-series-modeling/im_05_06.png)
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  Beginner's Cookbook 
+#  Beginner's Cookbook
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Introduction](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook#introduction)
@@ -871,3 +871,4 @@ What can you do with Google Earth Engine?
   * [Example scripts from Prof. Dana Tomlin's handouts for his course on Geospatial Software Design](https://github.com/EEYale/example-scripts)
 
 
+Was this helpful?

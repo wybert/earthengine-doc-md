@@ -1,5 +1,5 @@
  
-#  ee.List 
+#  ee.List
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list#examples)
@@ -43,3 +43,4 @@ print(ee.List([ee.List([])]).getInfo()) # [[]]
 print(ee.List([[], [[]], [1, [], 'a']]).getInfo()) # [[], [[]], [1, [], 'a']]
 ```
 
+Was this helpful?

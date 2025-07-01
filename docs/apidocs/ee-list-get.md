@@ -1,12 +1,7 @@
  
-#  ee.List.get 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list-get#examples)
-
-
-Returns the element at the specified position in list. A negative index counts backwards from the end of the list. 
-Usage| Returns  
+#  ee.List.get
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the element at the specified position in list. A negative index counts backwards from the end of the list. Usage| Returns  
 ---|---  
 `List.get(index)`| Object  
 Argument| Type| Details  
@@ -14,7 +9,7 @@ Argument| Type| Details
 this: `list`| List|   
 `index`| Integer|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-list-get#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-list-get#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // An ee.List object.
 varlist=ee.List([5,10,15,20,25,30]);
@@ -31,12 +26,15 @@ print('Computed object index input',list.get(list.get(0)));
 // you must cast the .get() result as an ee.Number.
 print('Add fetched number to another number',ee.Number(list.get(1)).add(2));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # An ee.List object.
 ee_list = ee.List([5, 10, 15, 20, 25, 30])
@@ -55,4 +53,3 @@ print('Add fetched number to another number:',
    ee.Number(list.get(1)).add(2).getInfo())
 ```
 
-Was this helpful?

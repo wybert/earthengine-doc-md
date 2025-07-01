@@ -1,8 +1,8 @@
  
-#  Array Transformations 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Array Transformations
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Earth Engine supports array transformations such as transpose, inverse and pseudo-inverse. As an example, consider an ordinary least squares (OLS) regression of a time series of images. In the following example, an image with bands for predictors and a response is converted to an array image, then “solved” to obtain least squares coefficients estimates three ways. First, assemble the image data and convert to arrays:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_transformations#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_transformations#colab-python-sample) More
 ```
 // Scales and masks Landsat 8 surface reflectance images.
 functionprepSrL8(image){
@@ -59,15 +59,12 @@ array=array.updateMask(arrayLength.gt(4));
 varpredictors=array.arraySlice(bandAxis,0,4);
 varresponse=array.arraySlice(bandAxis,4);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importmath
 
@@ -135,22 +132,19 @@ response = array.arraySlice(band_axis, 4)
 ```
 
 Note that `arraySlice()` returns all the images in the time series for the range of indices specified along the `bandAxis` (the 1-axis). At this point, matrix algebra can be used to solve for the OLS coefficients:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_transformations#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_transformations#colab-python-sample) More
 ```
 // Compute coefficients the hard way.
 varcoefficients1=predictors.arrayTranspose().matrixMultiply(predictors)
 .matrixInverse().matrixMultiply(predictors.arrayTranspose())
 .matrixMultiply(response);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Compute coefficients the hard way.
 coefficients_1 = (
@@ -163,48 +157,42 @@ coefficients_1 = (
 ```
 
 Although this method works, it is inefficient and makes for difficult to read code. A better way is to use the `pseudoInverse()` method (`matrixPseudoInverse()` for an array image):
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_transformations#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_transformations#colab-python-sample) More
 ```
 // Compute coefficients the easy way.
 varcoefficients2=predictors.matrixPseudoInverse()
 .matrixMultiply(response);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Compute coefficients the easy way.
 coefficients_2 = predictors.matrixPseudoInverse().matrixMultiply(response)
 ```
 
 From a readability and computational efficiency perspective, the best way to get the OLS coefficients is `solve()` (`matrixSolve()` for an array image). The `solve()` function determines how to best solve the system from characteristics of the inputs, using the pseudo-inverse for overdetermined systems, the inverse for square matrices and special techniques for nearly singular matrices:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_transformations#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_transformations#colab-python-sample) More
 ```
 // Compute coefficients the easiest way.
 varcoefficients3=predictors.matrixSolve(response);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Compute coefficients the easiest way.
 coefficients_3 = predictors.matrixSolve(response)
 ```
 
 To get a multi-band image, project the array image into a lower dimensional space, then flatten it:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/arrays_transformations#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/arrays_transformations#colab-python-sample) More
 ```
 // Turn the results into a multi-band image.
 varcoefficientsImage=coefficients3
@@ -214,15 +202,12 @@ varcoefficientsImage=coefficients3
 ['constant','trend','sin','cos']
 ]);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Turn the results into a multi-band image.
 coefficients_image = (

@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LineString.disjoint 
+#  ee.Geometry.LineString.disjoint
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns true if and only if the geometries are disjoint. Usage| Returns  
 ---|---  

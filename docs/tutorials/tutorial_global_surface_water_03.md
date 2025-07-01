@@ -1,5 +1,5 @@
  
-#  Water Occurrence Change Intensity 
+#  Water Occurrence Change Intensity
 Stay organized with collections  Save and categorize content based on your preferences. 
 The Water Occurrence Change Intensity data layer provides a measure of how surface water has changed between two epochs: 1984-1999 and 2000-2015. The layer averages the change across homologous pairs of months taken from the two epochs. See the [ Data Users Guide (v2) ](https://storage.googleapis.com/global-surface-water/downloads_ancillary/DataUsersGuidev2.pdf) for additional details on this layer.
 This section of the tutorial will:

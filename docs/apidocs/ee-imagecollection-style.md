@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.style 
+#  ee.ImageCollection.style
 Stay organized with collections  Save and categorize content based on your preferences. 
 Draw a vector collection for visualization using a simple style language. Usage| Returns  
 ---|---  

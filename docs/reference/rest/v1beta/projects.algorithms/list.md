@@ -1,16 +1,6 @@
  
-#  Method: projects.algorithms.list 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#authorization-scopes)
-  * [Algorithm](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#algorithm)
-  * [AlgorithmArgument](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.algorithms/list#algorithmargument)
-
-
+#  Method: projects.algorithms.list
+Stay organized with collections  Save and categorize content based on your preferences. 
 Gets the list of all the algorithms available for use in Expressions.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{parent=projects/*}/algorithms`
@@ -105,4 +95,3 @@ Fields
 `description` |  `string` A human-readable description of the argument.  
 `optional` |  `boolean` Whether the argument is optional.  
 `defaultValue` |  `value (`Value[](https://protobuf.dev/reference/protobuf/google.protobuf/#value)` format)` The default value the argument takes if a value is not provided.  
-Was this helpful?

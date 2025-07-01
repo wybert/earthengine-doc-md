@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Rectangle.distance 
+#  ee.Geometry.Rectangle.distance
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-distance#examples)
@@ -15,7 +15,7 @@ this: `left`| Geometry| The geometry used as the left operand of the operation.
 `right`| Geometry| The geometry used as the right operand of the operation.  
 `maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
 `proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
-`spherical`| Boolean, default: false| When proj is not specified, if true the calculation will be done on the unit sphere. If false the calculation will be elliptical, taking earth flattening into account. Ignored if proj is specified. Default is false.  
+`spherical`| Boolean, default: false| If true, the calculation will be done on the unit sphere. If false, the calculation will be elliptical, taking earth flattening into account. Ignored if proj is specified. Default is false.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-distance#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-distance#colab-python-sample) More
 ```

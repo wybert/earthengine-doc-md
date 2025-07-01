@@ -1,5 +1,5 @@
  
-#  ee.Image.bandTypes 
+#  ee.Image.bandTypes
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns a dictionary of the image's band types. 
 Usage| Returns  

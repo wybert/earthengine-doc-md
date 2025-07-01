@@ -1,5 +1,5 @@
  
-#  ee.Classifier.decisionTreeEnsemble 
+#  ee.Classifier.decisionTreeEnsemble
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a classifier that applies the given decision trees. 
 Usage| Returns  

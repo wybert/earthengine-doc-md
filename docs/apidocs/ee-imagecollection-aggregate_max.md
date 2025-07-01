@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.aggregate_max 
+#  ee.ImageCollection.aggregate_max
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-aggregate_max#examples)

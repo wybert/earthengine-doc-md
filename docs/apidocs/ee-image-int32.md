@@ -1,5 +1,5 @@
  
-#  ee.Image.int32 
+#  ee.Image.int32
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Casts the input value to a signed 32-bit integer. 
 Usage| Returns  

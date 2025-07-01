@@ -1,5 +1,5 @@
  
-#  ee.Array.cosh 
+#  ee.Array.cosh
 Stay organized with collections  Save and categorize content based on your preferences. 
 On an element-wise basis, computes the hyperbolic cosine of the input. Usage| Returns  
 ---|---  

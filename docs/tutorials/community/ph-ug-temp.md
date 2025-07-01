@@ -1,5 +1,5 @@
  
-#  Land Surface Temperature in Uganda 
+#  Land Surface Temperature in Uganda
 Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/ph-ug-temp/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/ph-ug-temp/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")

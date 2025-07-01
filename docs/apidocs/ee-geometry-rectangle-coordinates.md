@@ -1,19 +1,14 @@
  
-#  ee.Geometry.Rectangle.coordinates 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-coordinates#examples)
-
-
-Returns a GeoJSON-style list of the geometry's coordinates. 
-Usage| Returns  
+#  ee.Geometry.Rectangle.coordinates
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a GeoJSON-style list of the geometry's coordinates. Usage| Returns  
 ---|---  
 `Rectangle.coordinates()`| List  
 Argument| Type| Details  
 ---|---|---  
 this: `geometry`| Geometry|   
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-coordinates#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-rectangle-coordinates#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a Rectangle object.
 varrectangle=ee.Geometry.Rectangle(-122.09,37.42,-122.08,37.43);
@@ -27,12 +22,15 @@ Map.addLayer(rectangle,
 {'color':'black'},
 'Geometry [black]: rectangle');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Define a Rectangle object.
 rectangle = ee.Geometry.Rectangle(-122.09, 37.42, -122.08, 37.43)

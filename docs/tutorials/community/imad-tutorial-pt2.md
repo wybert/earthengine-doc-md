@@ -1,6 +1,22 @@
  
-#  Change Detection in Google Earth Engine - The MAD Transformation (Part 2) 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Change Detection in Google Earth Engine - The MAD Transformation (Part 2)
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Context](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#context)
+  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#preliminaries)
+    * [Routines from Part 1](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#routines_from_part_1)
+  * [Iterative re-weighting](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#iterative_re-weighting)
+    * [The iMAD code](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#the_imad_code)
+    * [Run iMAD algorithm as export task](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#run_imad_algorithm_as_export_task)
+    * [Clustering](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#clustering)
+    * [Interpretation](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#interpretation)
+    * [Comparison with Dynamic World](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#comparison_with_dynamic_world)
+    * [Simple difference revisited](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#simple_difference_revisited)
+    * [Deforestation quantified](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#deforestation_quantified)
+  * [Summary](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#summary)
+  * [Exercises](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#exercises)
+
+
 Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb)  
@@ -533,7 +549,7 @@ print(ccA, 'hectare')
 
 ```
 ```
-3726.941522978584 hectare
+3726.941522981636 hectare
 
 ```
 

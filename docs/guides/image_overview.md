@@ -1,5 +1,5 @@
  
-#  Image Overview 
+#  Image Overview
 Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/image_overview.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/image_overview.ipynb)  
 ---|---  
@@ -93,6 +93,47 @@ display(cloud_image)
 ```
 
 Note that if you want to reload a Cloud Optimized GeoTIFF that you [export from Earth Engine to Cloud Storage](https://developers.google.com/earth-engine/guides/exporting#to-cloud-storage), when you do the export, set `cloudOptimized` to **true** as described [here](https://developers.google.com/earth-engine/guides/exporting#configuration-parameters). 
+##  Images from Zarr v2 arrays 
+You can use `ee.Image.loadZarrV2Array()` to load an image from a [Zarr v2 array](https://zarr-specs.readthedocs.io/en/latest/v2/v2.0.html) in [Google Cloud Storage](https://cloud.google.com/storage). For example, the public ERA5 dataset hosted in Google Cloud contains [this Zarr v2 array](https://console.cloud.google.com/storage/browser/_details/gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3/evaporation/.zarray), corresponding to meters of water that has evaporated from the Earth's surface. You can load this array from Cloud Storage using `ee.Image.loadZarrV2Array()`: 
+### Code Editor (JavaScript)
+```
+vartimeStart=1000000;
+vartimeEnd=1000010;
+varzarrV2ArrayImage=ee.Image.loadZarrV2Array({
+uri:
+'gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3/evaporation/.zarray',
+proj:'EPSG:4326',
+starts:[timeStart],
+ends:[timeEnd]
+});
+print(zarrV2ArrayImage);
+Map.addLayer(zarrV2ArrayImage,{min:-0.0001,max:0.00005},'Evaporation');
+```
+
+Python setup
+See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
+```
+importee
+importgeemap.coreasgeemap
+```
+
+### Colab (Python)
+```
+time_start = 1000000
+time_end = 1000010
+zarr_v2_array_image = ee.Image.loadZarrV2Array(
+  uri='gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3/evaporation/.zarray',
+  proj='EPSG:4326',
+  starts=[time_start],
+  ends=[time_end],
+)
+display(zarr_v2_array_image)
+m.add_layer(
+  zarr_v2_array_image, {'min': -0.0001, 'max': 0.00005}, 'Evaporation'
+)
+m
+```
+
 ##  Constant images 
 In addition to loading images by ID, you can also create images from constants, lists or other suitable Earth Engine objects. The following illustrates methods for creating images, getting band subsets, and manipulating bands:
 ### Code Editor (JavaScript)

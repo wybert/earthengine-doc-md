@@ -1,5 +1,5 @@
  
-#  Method: projects.assets.get 
+#  Method: projects.assets.get
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/get#http-request)

@@ -1,5 +1,5 @@
  
-#  ui.Map.Layer.getVisParams 
+#  ui.Map.Layer.getVisParams
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the layer's visualization parameters. 
 Usage| Returns  

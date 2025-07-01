@@ -1,5 +1,5 @@
  
-#  ee.List.add 
+#  ee.List.add
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-list-add#examples)
@@ -61,4 +61,3 @@ print(ee.List(['a']).add(ee.Image.constant(1)).getInfo())
 print(ee.List(['a']).add(ee.ImageCollection([])).getInfo())
 ```
 
-Was this helpful?

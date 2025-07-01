@@ -1,6 +1,6 @@
  
-#  ee.Geometry.BBox.toGeoJSON 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Geometry.BBox.toGeoJSON
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a GeoJSON representation of the geometry. Usage| Returns  
 ---|---  
 `BBox.toGeoJSON()`| GeoJSONGeometry  

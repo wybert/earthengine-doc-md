@@ -1,5 +1,5 @@
  
-#  ee.Geometry.geodesic 
+#  ee.Geometry.geodesic
 Stay organized with collections  Save and categorize content based on your preferences. 
 If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage| Returns  
 ---|---  

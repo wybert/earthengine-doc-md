@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.limit 
+#  ee.ImageCollection.limit
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Limit a collection to the specified number of elements, optionally sorting them by a specified property first. 
 Returns the limited collection.

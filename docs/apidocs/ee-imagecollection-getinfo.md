@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.getInfo 
+#  ee.ImageCollection.getInfo
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 An imperative function that returns all the known information about this collection via an AJAX call. 
 Returns a collection description whose fields include:
@@ -13,3 +13,4 @@ Argument| Type| Details
 ---|---|---  
 this: `imagecollection`| ImageCollection| The ImageCollection instance.  
 `callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously. If supplied, will be called with the first parameter if successful and the second if unsuccessful.  
+Was this helpful?

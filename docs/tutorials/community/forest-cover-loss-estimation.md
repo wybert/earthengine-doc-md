@@ -1,6 +1,17 @@
  
-#  Forest Cover and Loss Estimation 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Forest Cover and Loss Estimation
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Context](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#context)
+  * [Instructions](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#instructions)
+    * [Select a country and set parameters](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#select_a_country_and_set_parameters)
+    * [Tree cover](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#tree_cover)
+    * [Tree loss](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#tree_loss)
+    * [Subsequent tree cover](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#subsequent_tree_cover)
+  * [Land use categories](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#land_use_categories)
+  * [References](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#references)
+
+
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/forest-cover-loss-estimation/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/forest-cover-loss-estimation/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/forest-cover-loss-estimation/index.md "View changes to this article over time.")
@@ -137,6 +148,7 @@ print(
 lossSize.get('loss2001'));
 
 ```
+
 ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/allloss.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/losstreecover.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/lossmin.png)  
 ---|---|---  
 All tree loss (black), tree cover (green) | Loss inside tree cover (purple) | Loss inside tree cover & >= min tree area (red)  
@@ -178,6 +190,7 @@ print(
 forestSize01.get('treecover2000'));
 
 ```
+
 ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/treecover2000.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/treeloss2001.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-cover-loss-estimation/treecover2001.png)  
 ---|---|---  
 Tree cover 2000 (light green) | Tree loss 2001 (red) | Tree cover 2001 (dark green)  

@@ -1,6 +1,6 @@
  
-#  ui.Panel.Layout.flow 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.Panel.Layout.flow
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a layout that places its widgets in a flow, either horizontal or vertical. 
 By default, widgets take up their natural space within a flow layout panel. Set the "stretch" style property on an added widget to stretch it to fill available space in the relevant direction:
 - horizontal, vertical, both
@@ -12,4 +12,3 @@ Argument| Type| Details
 ---|---|---  
 `direction`| String, optional| The direction of the flow. One of 'horizontal' or 'vertical'. Defaults to 'vertical'.  
 `wrap`| Boolean, optional| Whether to wrap children in the layout if there are too many to show in one line. Defaults to false.  
-Was this helpful?

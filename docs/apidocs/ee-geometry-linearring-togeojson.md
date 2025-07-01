@@ -1,5 +1,5 @@
  
-#  ee.Geometry.LinearRing.toGeoJSON 
+#  ee.Geometry.LinearRing.toGeoJSON
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linearring-togeojson#examples)
@@ -52,4 +52,3 @@ m.add_layer(linearring, {'color': 'black'}, 'Geometry [black]: linearring')
 m
 ```
 
-Was this helpful?

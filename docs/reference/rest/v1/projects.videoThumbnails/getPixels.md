@@ -1,6 +1,6 @@
  
-#  Method: projects.videoThumbnails.getPixels 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Method: projects.videoThumbnails.getPixels
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#path-parameters)

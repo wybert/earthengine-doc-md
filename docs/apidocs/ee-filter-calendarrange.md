@@ -1,5 +1,5 @@
  
-#  ee.Filter.calendarRange 
+#  ee.Filter.calendarRange
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns a filter that passes if the object's timestamp falls within the given range of a calendar field. The `month`, `day_of_year`, `day_of_month`, and `day_of_week` are 1-based. Times are assumed to be in UTC. Weeks are assumed to begin on Monday as day 1. If `end` < `start` then this tests for `value` >= `start` OR `value` <= `end`, to allow for wrapping. Usage| Returns  
 ---|---  

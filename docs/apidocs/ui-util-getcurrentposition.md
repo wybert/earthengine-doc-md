@@ -1,7 +1,8 @@
  
-#  ui.util.getCurrentPosition 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Gets the user's current geographic position from the browser's geolocation service. Usage| Returns  
+#  ui.util.getCurrentPosition
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Gets the user's current geographic position from the browser's geolocation service. 
+Usage| Returns  
 ---|---  
 `ui.util.getCurrentPosition(success,  _error_)`|   
 Argument|  Type| Details  

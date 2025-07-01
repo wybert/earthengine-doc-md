@@ -1,6 +1,13 @@
  
-#  Introduction 
+#  Introduction
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [References](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_01#references)
+  * [Audience](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_01#audience)
+  * [License and Attribution](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_01#license-and-attribution)
+  * [Get access to Earth Engine](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_01#get-access-to-earth-engine)
+
+
 Welcome to the Google Earth Engine tutorial for working with the global surface water (GSW) dataset. This dataset is described in the Nature letter [ High-resolution mapping of global surface water and its long-term changes](https://www.nature.com/articles/nature20584.epdf?author_access_token=C5JSvooRop4jWxyp_qRPLNRgN0jAjWel9jnR3ZoTv0MqBuzCNsmw_DFxRd7sX93nfPzcbm_xTiPLlZMl7XrUhadm6EiT9cGdDNgn1s6EWrPWH3IeadLUjApplBoaS6xH). This tutorial provides examples of how to use Earth Engine to visualize data layers available in the GSW dataset, and presents some typical visualizations and analyses. 
 The tutorial is broken up into sections. Within each section, code will be built up gradually with short code snippets and explanatory text. At the end of each section, the complete working script will be presented. 
 ## References
@@ -19,3 +26,4 @@ If you are using the data as a layer in a published map, please include the foll
 ## Get access to Earth Engine
 Access to Earth Engine is free, but requires signup. To get access, please fill out our [Earth Engine signup form](https://earthengine.google.com/signup) to apply for an Evaluator account. Those granted access will receive an email within a few business days with further instructions. 
 Once you're familiar with the Code Editor, [ get started on the tutorial](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02)!
+Was this helpful?

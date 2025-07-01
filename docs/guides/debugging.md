@@ -1,5 +1,5 @@
  
-#  Debugging guide 
+#  Debugging guide
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Syntax errors](https://developers.google.com/earth-engine/guides/debugging#syntax-errors)

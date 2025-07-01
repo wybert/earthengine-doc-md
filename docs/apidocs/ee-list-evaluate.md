@@ -1,5 +1,5 @@
  
-#  ee.List.evaluate 
+#  ee.List.evaluate
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. 
 Usage| Returns  

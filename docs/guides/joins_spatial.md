@@ -1,8 +1,8 @@
  
-#  Spatial Joins 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Spatial Joins
+Stay organized with collections  Save and categorize content based on your preferences. 
 Collections can be joined by spatial location as well as by property values. To join based on spatial location, use a `withinDistance()` filter with `.geo` join fields specified. The `.geo` field indicates that the item's geometry is to be used to compute the distance metric. For example, consider the task of finding all [ power plants](https://developers.google.com/earth-engine/datasets/catalog/WRI_GPPD_power_plants) within 100 kilometers of Yosemite National Park, USA. For that purpose, use a filter on the geometry fields, with the maximum distance set to 100 kilometers using the `distance` parameter:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_spatial#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/joins_spatial#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a primary collection: protected areas (Yosemite National Park).
 varprimary=ee.FeatureCollection("WCMC/WDPA/current/polygons")
@@ -26,12 +26,15 @@ varspatialJoined=distSaveAll.apply(primary,powerPlants,distFilter);
 // Print the result.
 print(spatialJoined);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a primary collection: protected areas (Yosemite National Park).
 primary = ee.FeatureCollection('WCMC/WDPA/current/polygons').filter(
@@ -53,7 +56,7 @@ display(spatial_joined)
 
 Note that the previous example joins a `FeatureCollection` to another `FeatureCollection`. The `saveAll()` join sets a property (`points`) on each feature in the `primary` collection which stores a list of the points within 100 km of the feature. The distance of each point to the feature is stored in the `distance` property of each joined point.
 Spatial joins can also be used to identify which features in one collection intersect those in another. For example, consider two feature collections: a `primary` collection containing polygons representing the boundaries of US states, a `secondary` collection containing point locations representing power plants. Suppose there is need to determine the number intersecting each state. This can be accomplished with a spatial join as follows:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/joins_spatial#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Load the primary collection: US state boundaries.
 varstates=ee.FeatureCollection('TIGER/2018/States');

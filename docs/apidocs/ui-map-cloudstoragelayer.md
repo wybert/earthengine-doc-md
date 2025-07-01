@@ -1,5 +1,5 @@
  
-#  ui.Map.CloudStorageLayer 
+#  ui.Map.CloudStorageLayer
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A layer generated from Cloud Storage tiles for display on a ui.Map. 
 Usage| Returns  

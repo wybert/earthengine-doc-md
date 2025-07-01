@@ -1,5 +1,5 @@
  
-#  Export.table.toBigQuery 
+#  Export.table.toBigQuery
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a batch task to export a FeatureCollection to BigQuery. Tasks can be started from the Tasks tab. 
 Note that this feature is in Preview, and the API and behavior may change significantly. For more information, see https://developers.google.com/earth-engine/guides/export_to_bigquery

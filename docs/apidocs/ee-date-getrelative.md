@@ -1,5 +1,5 @@
  
-#  ee.Date.getRelative 
+#  ee.Date.getRelative
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the specified (0-based) unit of this date relative to a larger unit, e.g., getRelative('day', 'year') returns a value between 0 and 365. 
 Usage| Returns  
@@ -8,8 +8,8 @@ Usage| Returns
 Argument| Type| Details  
 ---|---|---  
 this: `date`| Date|   
-`unit`| String| One of 'month' 'week', 'day', 'hour', 'minute', or 'second'.  
-`inUnit`| String| One of 'year', 'month' 'week', 'day', 'hour', or 'minute'.  
+`unit`| String| One of 'month', 'week', 'day', 'hour', 'minute', or 'second'.  
+`inUnit`| String| One of 'year', 'month', 'week', 'day', 'hour', or 'minute'.  
 `timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
 ### Code Editor (JavaScript)
@@ -24,7 +24,6 @@ print('0-based second of minute',date.getRelative('second','minute'));
 // 0 is returned when unit argument is larger than inUnit argument.
 print('0-based year of month (bad form)',date.getRelative('year','month'));
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

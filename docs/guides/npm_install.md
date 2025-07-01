@@ -1,5 +1,5 @@
  
-#  NPM Installation 
+#  NPM Installation
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Installing the client library](https://developers.google.com/earth-engine/guides/npm_install#installing-the-client-library)
@@ -115,4 +115,3 @@ console.log(map);
 
 If everything is installed correctly, the metadata for an image should be printed.
 **Notice:** When using Earth Engine in a Node.js environment, some best practices differ from typical scripts. Synchronous API calls should be avoided — they prevent the app from handling other requests while waiting for a response from the Earth Engine API. Instead, use asynchronous requests with callback functions. When using the Earth Engine API in Google Cloud Functions, _synchronous requests are not supported._
-Was this helpful?

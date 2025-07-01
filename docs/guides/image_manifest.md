@@ -1,22 +1,6 @@
  
-#  Image Manifest Upload 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [One-time setup](https://developers.google.com/earth-engine/guides/image_manifest#one-time-setup)
-  * [Asset IDs and names](https://developers.google.com/earth-engine/guides/image_manifest#asset-ids-and-names)
-  * [Using manifests](https://developers.google.com/earth-engine/guides/image_manifest#using-manifests)
-  * [Tilesets](https://developers.google.com/earth-engine/guides/image_manifest#tilesets)
-  * [Bands](https://developers.google.com/earth-engine/guides/image_manifest#bands)
-  * [Mask bands](https://developers.google.com/earth-engine/guides/image_manifest#mask-bands)
-  * [Pyramiding policy](https://developers.google.com/earth-engine/guides/image_manifest#pyramiding-policy)
-  * [Start and end time](https://developers.google.com/earth-engine/guides/image_manifest#start-and-end-time)
-  * [Manifest structure reference](https://developers.google.com/earth-engine/guides/image_manifest#manifest-structure-reference)
-  * [Manifest field definitions](https://developers.google.com/earth-engine/guides/image_manifest#manifest-field-definitions)
-  * [Limitations](https://developers.google.com/earth-engine/guides/image_manifest#limitations)
-    * [JSON manifest size](https://developers.google.com/earth-engine/guides/image_manifest#json-manifest-size)
-    * [Image file format](https://developers.google.com/earth-engine/guides/image_manifest#image-file-format)
-
-
+#  Image Manifest Upload
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 If you need more flexibility uploading images into Google Earth Engine (EE) than the [Code Editor UI](https://developers.google.com/earth-engine/image_upload) or the `upload` command of the ['earthengine' command-line tool](https://developers.google.com/earth-engine/command_line#upload) provide, you can do so by describing an image upload using a JSON file known as a "manifest" and using the `upload image --manifest` command of the command-line tool.
 See a complete example in [this Colab notebook](https://github.com/google/earthengine-community/blob/master/guides/linked/Uploading_image_tiles_as_a_single_asset_using_a_manifest.ipynb) which demonstrates uploading image tiles as a single asset using a manifest. 
 ## One-time setup

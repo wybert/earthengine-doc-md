@@ -1,5 +1,5 @@
  
-#  ee.Clusterer.wekaCascadeKMeans 
+#  ee.Clusterer.wekaCascadeKMeans
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Cascade simple k-means selects the best k according to the Calinski-Harabasz criterion. For more information see: 
 Calinski, T. and J. Harabasz. 1974. A dendrite method for cluster analysis. Commun. Stat. 3: 1-27.

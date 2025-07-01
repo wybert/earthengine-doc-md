@@ -1,5 +1,5 @@
  
-#  ee.data.createAsset 
+#  ee.data.createAsset
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates an asset from a JSON value. To create an empty image collection or folder, pass in a "value" object with a "type" key whose value is one of ee.data.AssetType.* (i.e. "ImageCollection" or "Folder"). 
 Returns a description of the saved asset, including a generated ID, or null if a callback is specified.

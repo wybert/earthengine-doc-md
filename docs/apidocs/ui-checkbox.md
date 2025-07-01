@@ -1,5 +1,5 @@
  
-#  ui.Checkbox 
+#  ui.Checkbox
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 A checkbox with a label. 
 Usage| Returns  

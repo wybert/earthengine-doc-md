@@ -1,16 +1,6 @@
  
-#  Water Occurrence (1984-2015) 
+#  Water Occurrence (1984-2015)
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Creating a Basic Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#creating-a-basic-visualization)
-  * [Inspecting Values](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#inspecting-values)
-  * [Refactoring to Improve Your Code](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#refactoring-to-improve-your-code)
-  * [Adding Visualization Parameters](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#adding-visualization-parameters)
-  * [Creating a Threshold Layer](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#creating-a-threshold-layer)
-  * [Going to Interesting Parts of the World](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#going-to-interesting-parts-of-the-world)
-  * [Refactoring, again...](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#refactoring,-again...)
-
-
 The GSW dataset contains many data layers that present the surface water data in different ways. We will start by visualizing the water occurrence layer, which provides a summary of where and how often surface water occurred over the entire time-period between March 1984 and October 2015. 
 This section of the tutorial will:
   1. add a map layer for visualizing surface water occurrence,
@@ -23,7 +13,7 @@ This section of the tutorial will:
 
 ## Creating a Basic Visualization
 Start by copying the following statements into the Code Editor:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 vargsw=ee.Image('JRC/GSW1_0/GlobalSurfaceWater');
 varoccurrence=gsw.select('occurrence');
@@ -42,7 +32,7 @@ In the example above, the value of the layer named `value` is 98. The units are 
 Our script only contains two statements, but already we have an opportunity to refactor the code so that our final script will be easier to read and maintain over time. Currently, the `Map.addLayer()` statement passes a single argument `occurrence`, which is the Earth Engine image object that we want to display on the map. However, the `Map.addLayer()` method also allows for additional arguments to be passed to it. To quickly see what arguments are available, place your cursor after the opening parentheses and press the keyboard shortcut for "Show code suggestions" to bring up the help document for the `addLayer` method. (Keyboard shortcuts can be viewed by selecting the menu Help -> Shortcuts.)
 ![Map.addLayer arguments](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_02_addlayer_args.png) Figure 3. Screenshot showing the addLayer method's arguments. 
 The keyboard shortcuts show that there are five arguments that can be passed to `Map.addLayer`: `eeObject`, `visParams`, `name`, `shown`, and `opacity`. In our current script we are passing a single variable `occurrence` which is interpreted as the first argument, `eeObject`. To pass both the variable object and an additional argument that names the layer, we can refactor the code to use "named arguments" (`eeObject` and `name`) where are passed within to the method from within a [ JSON data structure ](http://www.w3schools.com/js/js_json_intro.asp) as shown below: 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.addLayer({eeObject:occurrence,name:'Water Occurrence (1984-2015)'});
 ```
@@ -50,7 +40,7 @@ Map.addLayer({eeObject:occurrence,name:'Water Occurrence (1984-2015)'});
 Run the code again to make sure it still works after the refactoring changes. The resulting map should remain unchanged.
 ## Adding Visualization Parameters
 Next, we will work on improving upon the default visualization parameters, which are making our water appear gray. Add a new statement that creates a variable `VIS_OCCURRENCE` and pass it as an additional argument to the addLayer method.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varVIS_OCCURRENCE={
 min:0,
@@ -59,7 +49,7 @@ palette:['red','blue']
 };
 ```
 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.addLayer({
 eeObject:occurrence.updateMask(occurrence.divide(100)),
@@ -75,7 +65,7 @@ The water areas are now blue! Progress!
 ## Creating a Threshold Layer
 The water occurrence image contains information on how often water is expected using a range of values from 0 to 100%. However, it is often useful to define a binary water layer (i.e. "water" vs. "non-water") based on a certain percentage of occurrence (i.e. a threshold value). We will use this simple binary layer as a clean background layer over which other GSW layers can be placed. Creating this threshold layer can be done using the following statements, which uses a threshold value of 90% to separate water and non-water. 
 First we define a new visualization variable `VIS_WATER_MASK` for holding styling information for the water mask:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varVIS_WATER_MASK={
 palette:['white','black']
@@ -83,7 +73,7 @@ palette:['white','black']
 ```
 
 Then we calculate a water mask layer using the greater than comparison operator `.gt(90)` and then set the previously masked areas to zero using the `.unmask()` method: 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Create a water mask layer, and set the image mask so that non-water areas
 // are opaque.
@@ -91,7 +81,7 @@ varwater_mask=occurrence.gt(90).unmask(0);
 ```
 
 And finally, add the layer to the map. In order to have this layer rendered under all other layers, place the following statement before any other `Map.addLayer` statements. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 Map.addLayer({
 eeObject:water_mask,
@@ -102,7 +92,7 @@ name:'90% occurrence water mask'
 ![90% water mask](https://developers.google.com/static/earth-engine/images/tutorial_global_surface_water_02_watermask.png) Figure 5. Screenshot of a 90% water mask for the Paraná Delta near Buenos Aires. 
 ## Going to Interesting Parts of the World
 It is fun to explore the world by panning and zooming around, but the world is large and sometimes it helps to jump directly to a particular location. Here is a series of statements that provide a small sample of interesting locations, in terms of surface water. Just uncomment one of the statements at a time, and your script will go to that location when it is run. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Uncomment one of the following statements to center the map.
 // Map.setCenter(-90.162, 29.8597, 10);  // New Orleans, USA
@@ -121,7 +111,7 @@ This is just a small sample of interesting locations. Feel free to add your own!
 ## Refactoring, again...
 Before we move on to the next layer of the GSW dataset, we are going to do a little more code refactoring. Specifically, we will group our similar statements together, and add some comments that will break up our code into sections for assets, constants, calculations, centering the map and adding map layers. 
 Here is the final refactored script:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 //////////////////////////////////////////////////////////////
 // Asset List

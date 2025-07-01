@@ -1,5 +1,5 @@
  
-#  require 
+#  require
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Retrieves the script found at a given path as a module. The module is used to access exposed members of the required script. 
 Returns returns an object that represents exported members from the required module.

@@ -1,19 +1,14 @@
  
-#  ee.Number.toInt16 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-toint16#examples)
-
-
-Casts the input value to a signed 16-bit integer. 
-Usage| Returns  
+#  ee.Number.toInt16
+Stay organized with collections  Save and categorize content based on your preferences. 
+Casts the input value to a signed 16-bit integer. Usage| Returns  
 ---|---  
 `Number.toInt16()`| Number  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Number| The input value.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-toint16#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-toint16#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Cast a number to signed 16-bit integer: [-32768, 32767].
 varnumber=ee.Number(100);
@@ -43,12 +38,15 @@ print('Less than int16 min:',outOfRangeLo);
 varoutOfRangeLoToInt16=outOfRangeLo.toInt16();
 print('Less than int16 min cast to int16 becomes int16 min:',outOfRangeLoToInt16);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Cast a number to signed 16-bit integer: [-32768, 32767].
 number = ee.Number(100)
@@ -80,4 +78,3 @@ print('Less than int16 min cast to int16 becomes int16 min:',
    out_of_range_lo_to_int16.getInfo())
 ```
 
-Was this helpful?

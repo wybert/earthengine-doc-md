@@ -1,5 +1,5 @@
  
-#  ee.List.replace 
+#  ee.List.replace
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Replaces the first occurrence of oldval in list with newval. 
 Usage| Returns  
@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `list`| List|   
 `oldval`| Object|   
 `newval`| Object|   
+Was this helpful?

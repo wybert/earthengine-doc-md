@@ -1,15 +1,11 @@
  
-#  Image Information and Metadata 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Getting metadata](https://developers.google.com/earth-engine/guides/image_info#getting-metadata)
-
-
+#  Image Information and Metadata
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/generated/image_info.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/generated/image_info.ipynb)  
 ---|---  
 Print image objects to explore band names, projection information, properties, and other metadata. The following examples demonstrate printing the entire set of image metadata as well as requesting specific metadata elements programmatically.
 ## Getting metadata
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_info#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_info#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load an image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318');
@@ -42,12 +38,15 @@ ee.Date(ee.Number(version).divide(1000)));// ee.Date
 vardate=ee.Date(image.get('system:time_start'));
 print('Timestamp:',date);// ee.Date
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load an image.
 image = ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318')
@@ -86,4 +85,3 @@ display('Timestamp:', ee_date) # ee.Date
 display('Datetime:', ee_date.format()) # ISO standard date string
 ```
 
-Was this helpful?

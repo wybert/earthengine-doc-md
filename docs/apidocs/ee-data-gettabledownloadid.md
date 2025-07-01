@@ -1,5 +1,5 @@
  
-#  ee.data.getTableDownloadId 
+#  ee.data.getTableDownloadId
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Get a download ID. 
 Returns a download id and token, or null if a callback is specified.

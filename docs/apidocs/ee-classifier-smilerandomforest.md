@@ -1,7 +1,8 @@
  
-#  ee.Classifier.smileRandomForest 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Creates an empty Random Forest classifier. Usage| Returns  
+#  ee.Classifier.smileRandomForest
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Creates an empty Random Forest classifier. 
+Usage| Returns  
 ---|---  
 `ee.Classifier.smileRandomForest(numberOfTrees,  _variablesPerSplit_, _minLeafPopulation_, _bagFraction_, _maxNodes_, _seed_)`| Classifier  
 Argument| Type| Details  
@@ -75,7 +76,6 @@ Map.addLayer(roi,{color:'white'},'ROI',false,0.5);
 Map.addLayer(trainingSample,{color:'black'},'Training sample',false);
 Map.addLayer(validationSample,{color:'white'},'Validation sample',false);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

@@ -1,5 +1,5 @@
  
-#  ee.Image.atan 
+#  ee.Image.atan
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the arctangent in radians of the input. 
 Usage| Returns  

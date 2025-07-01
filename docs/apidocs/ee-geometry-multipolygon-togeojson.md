@@ -1,7 +1,8 @@
  
-#  ee.Geometry.MultiPolygon.toGeoJSON 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns a GeoJSON representation of the geometry. Usage| Returns  
+#  ee.Geometry.MultiPolygon.toGeoJSON
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns a GeoJSON representation of the geometry. 
+Usage| Returns  
 ---|---  
 `MultiPolygon.toGeoJSON()`| GeoJSONGeometry  
 Argument| Type| Details  
@@ -29,7 +30,6 @@ Map.addLayer(multiPolygon,
 {'color':'black'},
 'Geometry [black]: multiPolygon');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

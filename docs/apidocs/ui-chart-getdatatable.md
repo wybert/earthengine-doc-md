@@ -1,5 +1,5 @@
  
-#  ui.Chart.getDataTable 
+#  ui.Chart.getDataTable
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the DataTable containing data for this chart. See: http://developers.google.com/chart/interactive/docs/reference#DataTable Usage| Returns  
 ---|---  

@@ -1,6 +1,6 @@
  
-#  ee.data.authenticateViaOauth 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.data.authenticateViaOauth
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Configures client-side authentication of EE API calls through the Google APIs Client Library for JavaScript. The library will be loaded automatically if it is not already loaded on the page. The user will be asked to grant the application identified by clientId access to their EE data if they have not done so previously. 
 This or another authentication method should be called before ee.initialize().
 Note that if the user has not previously granted access to the application identified by the client ID, by default this will try to pop up a dialog window prompting the user to grant the required permission. However, this popup can be blocked by the browser. To avoid this, specify the opt_onImmediateFailed callback, and in it render an in-page login button, then call ee.data.authenticateViaPopup() from the click event handler of this button. This stops the browser from blocking the popup, as it is now the direct result of a user action.
@@ -16,4 +16,3 @@ Argument|  Type| Details
 `extraScopes`| List, optional| Extra OAuth scopes to request.  
 `onImmediateFailed`| Function, optional| The function to call if automatic behind-the-scenes authentication fails. Defaults to ee.data.authenticateViaPopup(), bound to the passed callbacks.  
 `suppressDefaultScopes`| Boolean, optional| When true, only scopes specified in opt_extraScopes are requested; the default scopes are not requested unless explicitly specified in opt_extraScopes.  
-Was this helpful?

@@ -1,5 +1,5 @@
  
-#  ui.Select.onChange 
+#  ui.Select.onChange
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Registers a callback that's fired when an item is selected. 
 Returns an ID which can be passed to unlisten() to unregister the callback.

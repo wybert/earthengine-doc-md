@@ -1,5 +1,5 @@
  
-#  Detecting Changes in Sentinel-1 Imagery (Part 1) 
+#  Detecting Changes in Sentinel-1 Imagery (Part 1)
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-1#context)

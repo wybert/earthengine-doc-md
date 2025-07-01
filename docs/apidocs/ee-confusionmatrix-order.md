@@ -1,5 +1,5 @@
  
-#  ee.ConfusionMatrix.order 
+#  ee.ConfusionMatrix.order
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-confusionmatrix-order#examples)
@@ -59,3 +59,4 @@ print('Specified name and order of the rows and columns:',
    cm_specified_order.order().getInfo())
 ```
 
+Was this helpful?

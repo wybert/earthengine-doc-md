@@ -1,6 +1,10 @@
  
-#  ui.Map.setOptions 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Map.setOptions
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-map-setoptions#examples)
+
+
 Modifies the Google Maps basemap. Allows for: 1) Setting the current MapType. 2) Providing custom styles for the basemap (MapTypeStyles). 3) Setting the list of available mapTypesIds for the basemap. 
 If called with no parameters, resets the map type to the Google Maps default.
 Returns this ui.Map.
@@ -14,7 +18,7 @@ this: `ui.map`| ui.Map| The ui.Map instance.
 `styles`| Object, optional| A dictionary of custom MapTypeStyle objects keyed with a name that will appear in the map's Map Type Controls. See: https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyle  
 `types`| List, optional| A list of mapTypeIds to make available. If omitted, but opt_styles is specified, appends all of the style keys to the standard Google Maps API map types.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-map-setoptions#code-editor-javascript-sample) More
 ```
 // Set the map to terrain with a string.
 Map.setOptions('TERRAIN');

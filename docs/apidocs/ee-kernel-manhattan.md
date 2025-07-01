@@ -1,12 +1,7 @@
  
-#  ee.Kernel.manhattan 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-manhattan#examples)
-
-
-Generates a distance kernel based on rectilinear (city-block) distance. 
-Usage| Returns  
+#  ee.Kernel.manhattan
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Generates a distance kernel based on rectilinear (city-block) distance. Usage| Returns  
 ---|---  
 `ee.Kernel.manhattan(radius,  _units_, _normalize_, _magnitude_)`| Kernel  
 Argument| Type| Details  
@@ -16,7 +11,7 @@ Argument| Type| Details
 `normalize`| Boolean, default: false| Normalize the kernel values to sum to 1.  
 `magnitude`| Float, default: 1| Scale each value by this amount.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-manhattan#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-manhattan#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print('A Manhattan kernel',ee.Kernel.manhattan({radius:3}));
 /**
@@ -31,12 +26,15 @@ print('A Manhattan kernel',ee.Kernel.manhattan({radius:3}));
  * [6, 5, 4, 3, 4, 5, 6]
  */
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 print('A Manhattan kernel:')
@@ -51,4 +49,3 @@ pprint(ee.Kernel.manhattan(**{'radius': 3}).getInfo())
 # [6, 5, 4, 3, 4, 5, 6]
 ```
 
-Was this helpful?

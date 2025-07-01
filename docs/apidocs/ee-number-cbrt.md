@@ -1,5 +1,5 @@
  
-#  ee.Number.cbrt 
+#  ee.Number.cbrt
 Stay organized with collections  Save and categorize content based on your preferences. 
 Computes the cubic root of the input. Usage| Returns  
 ---|---  

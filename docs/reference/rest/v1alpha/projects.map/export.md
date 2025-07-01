@@ -1,5 +1,5 @@
  
-#  Method: projects.map.export 
+#  Method: projects.map.export
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.map/export#http-request)

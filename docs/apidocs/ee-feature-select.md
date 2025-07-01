@@ -1,7 +1,8 @@
  
-#  ee.Feature.select 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Selects properties from a feature by name or RE2-compatible regex and optionally renames them. Usage| Returns  
+#  ee.Feature.select
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Selects properties from a feature by name or RE2-compatible regex and optionally renames them. 
+Usage| Returns  
 ---|---  
 `Feature.select(propertySelectors,  _newProperties_, _retainGeometry_)`| Element  
 Argument| Type| Details  

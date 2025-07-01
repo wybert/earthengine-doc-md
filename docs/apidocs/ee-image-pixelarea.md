@@ -1,12 +1,17 @@
  
-#  ee.Image.pixelArea 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Generate an image in which the value of each pixel is the area of that pixel in square meters. The returned image has a single band called "area." Usage| Returns  
+#  ee.Image.pixelArea
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-pixelarea#examples)
+
+
+Generate an image in which the value of each pixel is the area of that pixel in square meters. The returned image has a single band called "area." 
+Usage| Returns  
 ---|---  
 `ee.Image.pixelArea()`| Image  
 **No arguments.**
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-image-pixelarea#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-image-pixelarea#colab-python-sample) More
 ```
 // Create a pixel area image. Pixel values are square meters based on
 // a given CRS and scale (or CRS transform).
@@ -53,15 +58,12 @@ varsquareKilometers=squareMeters.divide(1e6);
 print('Square meters above 2250m elevation',squareMeters);
 print('Square kilometers above 2250m elevation',squareKilometers);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 # Create a pixel area image. Pixel values are square meters based on
 # a given CRS and scale (or CRS transform).
@@ -113,3 +115,4 @@ display('Square meters above 2250m elevation', square_meters)
 display('Square kilometers above 2250m elevation', square_kilometers)
 ```
 
+Was this helpful?

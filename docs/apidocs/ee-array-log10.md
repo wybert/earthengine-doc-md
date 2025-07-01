@@ -1,14 +1,19 @@
  
-#  ee.Array.log10 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-On an element-wise basis, computes the base-10 logarithm of the input. Usage| Returns  
+#  ee.Array.log10
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-log10#examples)
+
+
+On an element-wise basis, computes the base-10 logarithm of the input. 
+Usage| Returns  
 ---|---  
 `Array.log10()`| Array  
 Argument| Type| Details  
 ---|---|---  
 this: `input`| Array| The input array.  
 ## Examples
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-log10#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-log10#colab-python-sample) More
 ```
 print(ee.Array([0.1,1,10,100]).log10());// [-1,0,1,2]
 varstart=0.1;
@@ -31,15 +36,12 @@ pointSize:0,
 });
 print(chart);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 importaltairasalt
 importpandasaspd

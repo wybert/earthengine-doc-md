@@ -1,6 +1,6 @@
  
-#  ui.Map.onChangeCenter 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.Map.onChangeCenter
+Stay organized with collections  Save and categorize content based on your preferences. 
 Registers a callback that's fired when the map center changes. This is fired during pan or when the map's center is changed programmatically. 
 Returns an ID which can be passed to unlisten() to unregister the callback.
 Usage| Returns  

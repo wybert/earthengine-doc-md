@@ -1,11 +1,11 @@
  
-#  ee.Date.unitRatio 
+#  ee.Date.unitRatio
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-unitratio#examples)
 
 
-Returns the ratio of the length of one unit to the length of another, e.g., unitRatio('day', 'minute') returns 1440. Valid units are 'year', 'month' 'week', 'day', 'hour', 'minute', and 'second'. 
+Returns the ratio of the length of one unit to the length of another, e.g., unitRatio('day', 'minute') returns 1440. Valid units are 'year', 'month', 'week', 'day', 'hour', 'minute', and 'second'. 
 Usage| Returns  
 ---|---  
 `ee.Date.unitRatio(numerator, denominator)`| Float  

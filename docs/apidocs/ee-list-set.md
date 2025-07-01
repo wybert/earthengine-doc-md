@@ -1,6 +1,6 @@
  
-#  ee.List.set 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.List.set
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Replaces the value at the specified position in list with element. A negative index counts backwards from the end of the list. 
 Usage| Returns  
 ---|---  
@@ -10,3 +10,4 @@ Argument| Type| Details
 this: `list`| List|   
 `index`| Integer|   
 `element`| Object|   
+Was this helpful?

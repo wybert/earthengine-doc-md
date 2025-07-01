@@ -1,5 +1,5 @@
  
-#  ee.Image.matrixTranspose 
+#  ee.Image.matrixTranspose
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Transposes two dimensions of each array pixel. 
 Usage| Returns  

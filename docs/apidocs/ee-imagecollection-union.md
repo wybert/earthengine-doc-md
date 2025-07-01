@@ -1,5 +1,5 @@
  
-#  ee.ImageCollection.union 
+#  ee.ImageCollection.union
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Merges all geometries in a given collection into one and returns a collection containing a single feature with only an ID of 'union_result' and a geometry. 
 Usage| Returns  

@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Point.type 
+#  ee.Geometry.Point.type
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the GeoJSON type of the geometry. Usage| Returns  
 ---|---  

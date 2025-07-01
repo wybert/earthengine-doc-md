@@ -1,5 +1,5 @@
  
-#  ee.Feature.toDictionary 
+#  ee.Feature.toDictionary
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Extract properties from a feature as a dictionary. 
 Usage| Returns  

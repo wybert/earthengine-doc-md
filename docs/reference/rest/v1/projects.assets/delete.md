@@ -1,6 +1,14 @@
  
-#  Method: projects.assets.delete 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Method: projects.assets.delete
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/delete#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/delete#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/delete#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/delete#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/delete#authorization-scopes)
+
+
 Deletes an asset.
 ### HTTP request
 `DELETE https://earthengine.googleapis.com/v1/{name=projects/*/assets/**}`
@@ -23,3 +31,4 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

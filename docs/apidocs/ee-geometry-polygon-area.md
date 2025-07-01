@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Polygon.area 
+#  ee.Geometry.Polygon.area
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-polygon-area#examples)
@@ -58,3 +58,4 @@ m.add_layer(polygon, {'color': 'black'}, 'Geometry [black]: polygon')
 m
 ```
 
+Was this helpful?

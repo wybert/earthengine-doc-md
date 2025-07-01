@@ -1,12 +1,7 @@
  
-#  ee.Kernel.add 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-add#examples)
-
-
-Adds two kernels (pointwise) after aligning their centers. 
-Usage| Returns  
+#  ee.Kernel.add
+Stay organized with collections  Save and categorize content based on your preferences. 
+Adds two kernels (pointwise) after aligning their centers. Usage| Returns  
 ---|---  
 `Kernel.add(kernel2,  _normalize_)`| Kernel  
 Argument| Type| Details  
@@ -15,7 +10,7 @@ this: `kernel1`| Kernel| The first kernel.
 `kernel2`| Kernel| The second kernel.  
 `normalize`| Boolean, default: false| Normalize the kernel.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-add#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-add#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Two kernels, they do not need to have the same dimensions.
 varkernelA=ee.Kernel.chebyshev({radius:3});
@@ -43,12 +38,15 @@ print('Pointwise addition of two kernels',kernelA.add(kernelB));
  * [3, 3,  3,  3,  3, 3, 3]
  */
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 frompprintimport pprint
 # Two kernels, they do not need to have the same dimensions.
@@ -79,4 +77,3 @@ pprint(kernel_a.add(kernel_b).getInfo())
 # [3, 3,  3,  3,  3, 3, 3]
 ```
 
-Was this helpful?

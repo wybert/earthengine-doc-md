@@ -1,8 +1,7 @@
  
-#  ee.Geometry.Rectangle.serialize 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the serialized representation of this object. 
-Usage| Returns  
+#  ee.Geometry.Rectangle.serialize
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the serialized representation of this object. Usage| Returns  
 ---|---  
 `Rectangle.serialize( _legacy_)`| String  
 Argument| Type| Details  
@@ -24,6 +23,7 @@ Map.addLayer(rectangle,
 {'color':'black'},
 'Geometry [black]: rectangle');
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

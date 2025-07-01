@@ -1,5 +1,5 @@
  
-#  ee.data.startProcessing 
+#  ee.data.startProcessing
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Create processing task that exports or pre-renders an image. 
 Return value is null if a callback is specified.

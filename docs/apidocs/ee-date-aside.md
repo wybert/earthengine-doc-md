@@ -1,10 +1,6 @@
  
-#  ee.Date.aside 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-aside#examples)
-
-
+#  ee.Date.aside
+Stay organized with collections  Save and categorize content based on your preferences. 
 Calls a function passing this object as the first argument, and returning itself. Convenient e.g. when debugging: 
 var c = ee.ImageCollection('foo').aside(print)
 .filterDate('2001-01-01', '2002-01-01').aside(print, 'In 2001')
@@ -21,17 +17,20 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
 `func`| Function| The function to call.  
 `var_args`| VarArgs| Any extra arguments to pass to the function.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-aside#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-aside#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Print a message when constructing the ee.Date.
 vareeDict=ee.Date(Date.now()).aside(print,"Today's date (UTC)");
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 fromdatetimeimport datetime
 defprint_date(ee_date, message):
@@ -41,4 +40,3 @@ defprint_date(ee_date, message):
 ee_date = ee.Date(datetime.now()).aside(print_date, "Today's date (UTC):")
 ```
 
-Was this helpful?

@@ -1,7 +1,8 @@
  
-#  ee.Geometry.MultiLineString.serialize 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the serialized representation of this object. Usage| Returns  
+#  ee.Geometry.MultiLineString.serialize
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the serialized representation of this object. 
+Usage| Returns  
 ---|---  
 `MultiLineString.serialize( _legacy_)`| String  
 Argument| Type| Details  

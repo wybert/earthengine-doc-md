@@ -1,14 +1,6 @@
  
-#  Method: projects.assets.getPixels 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/getPixels#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/getPixels#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/getPixels#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/getPixels#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/getPixels#authorization-scopes)
-
-
+#  Method: projects.assets.getPixels
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Fetches pixels from an image asset. This custom method allows the caller to request an arbitrary tile of pixels from an image, optionally specifying the bands and map projection. Masked or missing data will be encoded as zeroes.
 Requests are limited to 48MB in uncompressed data per request, computed as the product of the request dimensions in pixels, the number of image bands requested, and the number of bytes per pixel for each band. Requests are also limited to at most 32K pixels in either dimension and at most 1024 bands. Requests exceeding these limits will result in an error code of 400 (BAD_REQUEST).
 If successful, the response body contains the requested pixel data in the encoding specified in the `fileFormat` field of the request.
@@ -64,4 +56,3 @@ Requires one of the following OAuth scopes:
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

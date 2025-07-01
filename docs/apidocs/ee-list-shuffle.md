@@ -1,5 +1,5 @@
  
-#  ee.List.shuffle 
+#  ee.List.shuffle
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Randomly permute the specified list. Note that the permutation order will always be the same for any given seed, unless the value for seed is 'false'. 
 Usage| Returns  

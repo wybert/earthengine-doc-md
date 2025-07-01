@@ -1,6 +1,21 @@
  
-#  Species Distribution Modeling 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  Species Distribution Modeling
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Run me first](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#run_me_first)
+  * [A brief overview of Species Distribution Modeling](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#a_brief_overview_of_species_distribution_modeling)
+    * [What is Species Distribution Modeling?](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#what_is_species_distribution_modeling)
+    * [Data Required for SDM](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#data_required_for_sdm)
+    * [Workflow of SDM using GEE](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#workflow_of_sdm_using_gee)
+  * [Habitat Prediction and Analysis Using GEE](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#habitat_prediction_and_analysis_using_gee)
+    * [Collection and Preprocessing of Species Occurrence Data](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#collection_and_preprocessing_of_species_occurrence_data)
+    * [Definition of the Area of Interest](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#definition_of_the_area_of_interest)
+    * [Addition of GEE environmental variables](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#addition_of_gee_environmental_variables)
+    * [Generation of pseudo-absence data](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#generation_of_pseudo-absence_data)
+    * [Model fitting and prediction](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#model_fitting_and_prediction)
+    * [Variable importance and accuracy assessment](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#variable_importance_and_accuracy_assessment)
+
+
 Author(s): [ osgeokr ](https://github.com/osgeokr "View the profile for osgeokr on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/species-distribution-modeling/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/species-distribution-modeling/index.ipynb)  

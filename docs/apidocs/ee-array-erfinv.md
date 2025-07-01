@@ -1,5 +1,5 @@
  
-#  ee.Array.erfInv 
+#  ee.Array.erfInv
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-erfinv#examples)

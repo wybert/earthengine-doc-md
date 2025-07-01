@@ -1,7 +1,8 @@
  
-#  ee.Geometry.Point.difference 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the result of subtracting the 'right' geometry from the 'left' geometry. Usage| Returns  
+#  ee.Geometry.Point.difference
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the result of subtracting the 'right' geometry from the 'left' geometry. 
+Usage| Returns  
 ---|---  
 `Point.difference(right,  _maxError_, _proj_)`| Geometry  
 Argument| Type| Details  

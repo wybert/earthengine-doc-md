@@ -1,5 +1,5 @@
  
-#  ui.SplitPanel.setPanel 
+#  ui.SplitPanel.setPanel
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the requested panel in the split panel. Usage| Returns  
 ---|---  

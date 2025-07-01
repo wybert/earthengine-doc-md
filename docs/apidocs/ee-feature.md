@@ -1,6 +1,6 @@
  
-#  ee.Feature 
-Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Feature
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Features can be constructed from one of the following arguments plus an optional dictionary of properties: 
 - An ee.Geometry.
 - A GeoJSON Geometry.

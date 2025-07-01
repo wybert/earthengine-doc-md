@@ -1,5 +1,5 @@
  
-#  ui.Checkbox.style 
+#  ui.Checkbox.style
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ui-checkbox-style#examples)
@@ -12,6 +12,10 @@ Properties which behave like their CSS counterparts:
 - padding, margin (e.g. '4px 4px 4px 4px' or simply '4px')
 - color, backgroundColor (e.g. 'red' or '#FF0000')
 - border (e.g. '1px solid black')
+- borderColor (e.g. 'red black blue #FF0000')
+- borderRadius (e.g. '10px')
+- borderStyle (e.g. 'solid dashed none dotted')
+- borderWidth (e.g. '1px 0px 1px 0px')
 - fontSize (e.g. '24px')
 - fontStyle (e.g. 'italic')
 - fontWeight (e.g. 'bold' or '100')

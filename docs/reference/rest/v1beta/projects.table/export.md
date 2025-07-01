@@ -1,5 +1,5 @@
  
-#  Method: projects.table.export 
+#  Method: projects.table.export
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.table/export#http-request)

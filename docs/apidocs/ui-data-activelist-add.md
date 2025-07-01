@@ -1,6 +1,6 @@
  
-#  ui.data.ActiveList.add 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ui.data.ActiveList.add
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Appends an element to the list. 
 Returns this ui.data.ActiveList.
 Usage| Returns  

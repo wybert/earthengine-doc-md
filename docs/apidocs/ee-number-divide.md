@@ -1,6 +1,6 @@
  
-#  ee.Number.divide 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Number.divide
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-divide#examples)
 
@@ -42,4 +42,3 @@ print('0 / 10:', ee.Number(0).divide(ee.Number(10)).getInfo()) # 0
 print('10 / 0:', ee.Number(10).divide(ee.Number(0)).getInfo()) # 0
 ```
 
-Was this helpful?

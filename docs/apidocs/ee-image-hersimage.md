@@ -1,6 +1,6 @@
  
-#  ee.Image.hersImage 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  ee.Image.hersImage
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Computes the Histogram Error Ring Statistic (HERS) for each pair of pixels in each band present in both images. Only the bands for which HERS could be computed are returned. 
 Usage| Returns  
 ---|---  
@@ -12,3 +12,4 @@ this: `image`| Image| The input image.
 `radius`| Integer| The radius of the window.  
 `buckets`| Integer, default: 100| The number of HERS buckets.  
 `peakWidthScale`| Float, default: 1| The HERS peak width scale.  
+Was this helpful?

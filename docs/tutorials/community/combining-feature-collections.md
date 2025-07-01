@@ -1,6 +1,6 @@
  
-#  Combining FeatureCollections 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Combining FeatureCollections
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Create two ee.FeatureCollection objects](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#create_two_eefeaturecollection_objects)
   * [Combine the ee.FeatureCollection objects](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#combine_the_eefeaturecollection_objects)
@@ -63,3 +63,4 @@ print(newFeatures,moreNewFeatures,combinedFeatureCollection);
   * Try changing the layer label of `'More New Features'` to `'Red Points'`. Run the script again to see if it worked.
 
 
+Was this helpful?

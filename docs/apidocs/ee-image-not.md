@@ -1,5 +1,5 @@
  
-#  ee.Image.not 
+#  ee.Image.not
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-not#examples)
@@ -61,4 +61,3 @@ print('zeros:', zeros.sample(loc, 1).first().get('constant').getInfo())
 print('ones:', ones.sample(loc, 1).first().get('constant').getInfo())
 ```
 
-Was this helpful?

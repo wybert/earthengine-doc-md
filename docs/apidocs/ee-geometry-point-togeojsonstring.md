@@ -1,5 +1,5 @@
  
-#  ee.Geometry.Point.toGeoJSONString 
+#  ee.Geometry.Point.toGeoJSONString
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-togeojsonstring#examples)
@@ -47,4 +47,3 @@ m.add_layer(point, {'color': 'black'}, 'Geometry [black]: point')
 m
 ```
 
-Was this helpful?

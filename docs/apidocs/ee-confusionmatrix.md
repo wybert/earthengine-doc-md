@@ -1,5 +1,5 @@
  
-#  ee.ConfusionMatrix 
+#  ee.ConfusionMatrix
 Stay organized with collections  Save and categorize content based on your preferences. 
 Creates a confusion matrix. Axis 0 (the rows) of the matrix correspond to the actual values, and Axis 1 (the columns) to the predicted values. Usage| Returns  
 ---|---  

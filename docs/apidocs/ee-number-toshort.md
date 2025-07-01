@@ -1,6 +1,6 @@
  
-#  ee.Number.toShort 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ee.Number.toShort
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-toshort#examples)
 
@@ -80,4 +80,3 @@ print('Less than short min cast to short becomes short min:',
    out_of_range_lo_to_short.getInfo())
 ```
 
-Was this helpful?

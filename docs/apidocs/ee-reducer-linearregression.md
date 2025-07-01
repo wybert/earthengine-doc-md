@@ -1,5 +1,5 @@
  
-#  ee.Reducer.linearRegression 
+#  ee.Reducer.linearRegression
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Creates a reducer that computes a linear least squares regression with numX independent variables and numY dependent variables. 
 Each input tuple will have values for the independent variables followed by the dependent variables.
@@ -11,3 +11,4 @@ Argument| Type| Details
 ---|---|---  
 `numX`| Integer| The number of input dimensions.  
 `numY`| Integer, default: 1| The number of output dimensions.  
+Was this helpful?

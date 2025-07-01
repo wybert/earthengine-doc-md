@@ -1,5 +1,5 @@
  
-#  ee.Filter.lte 
+#  ee.Filter.lte
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Filter on metadata less than or equal to the given value. 
 Returns the constructed filter.

@@ -1,7 +1,8 @@
  
-#  ee.Image.arrayDotProduct 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the dot product of each pair of 1-D arrays in the bands of the input images. Usage| Returns  
+#  ee.Image.arrayDotProduct
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the dot product of each pair of 1-D arrays in the bands of the input images. 
+Usage| Returns  
 ---|---  
 `Image.arrayDotProduct(image2)`| Image  
 Argument| Type| Details  

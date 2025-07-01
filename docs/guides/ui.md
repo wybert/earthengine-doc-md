@@ -1,6 +1,6 @@
  
-#  Earth Engine User Interface API 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  Earth Engine User Interface API
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Hello, world!](https://developers.google.com/earth-engine/guides/ui#hello,-world)
   * [Mutability](https://developers.google.com/earth-engine/guides/ui#mutability)

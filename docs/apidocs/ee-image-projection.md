@@ -1,5 +1,5 @@
  
-#  ee.Image.projection 
+#  ee.Image.projection
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the default projection of an Image. Throws an error if the bands of the image don't all have the same projection. 
 Usage| Returns  

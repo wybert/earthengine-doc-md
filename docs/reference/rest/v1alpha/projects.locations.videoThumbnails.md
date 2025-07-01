@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.locations.videoThumbnails 
+#  REST Resource: projects.locations.videoThumbnails
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#resource:-videothumbnail)

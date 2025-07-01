@@ -1,5 +1,5 @@
  
-#  Chart Overview 
+#  Chart Overview
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [DataTable charts](https://developers.google.com/earth-engine/guides/charts_overview#datatable_charts)

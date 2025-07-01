@@ -1,5 +1,5 @@
  
-#  ui.data.ActiveDictionary.set 
+#  ui.data.ActiveDictionary.set
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets the value of a given property. Throws an error if the key provided is not supported by the object. Look at the constructor's parameters to see which properties can be set. 
 Returns this ui.data.ActiveDictionary.

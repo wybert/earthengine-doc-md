@@ -1,5 +1,5 @@
  
-#  ui.Map.GeometryLayer.fromGeometry 
+#  ui.Map.GeometryLayer.fromGeometry
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Resets the layer's geometries by parsing individual geometries from an ee.Geometry. 
 Returns this geometry layer.

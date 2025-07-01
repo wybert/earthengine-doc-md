@@ -1,5 +1,5 @@
  
-#  ImageFileFormat 
+#  ImageFileFormat
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Selects an image file format in which to return a block of pixel data.
 Enums  

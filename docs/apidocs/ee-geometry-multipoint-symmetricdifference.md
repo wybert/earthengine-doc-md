@@ -1,5 +1,5 @@
  
-#  ee.Geometry.MultiPoint.symmetricDifference 
+#  ee.Geometry.MultiPoint.symmetricDifference
 Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the symmetric difference between two geometries. Usage| Returns  
 ---|---  

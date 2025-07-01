@@ -1,6 +1,6 @@
  
-#  Computations using Images 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Computations using Images
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Image math](https://developers.google.com/earth-engine/tutorials/tutorial_api_03#image-math)
   * [Image statistics](https://developers.google.com/earth-engine/tutorials/tutorial_api_03#image-statistics)

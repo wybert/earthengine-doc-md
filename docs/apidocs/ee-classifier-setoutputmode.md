@@ -1,5 +1,5 @@
  
-#  ee.Classifier.setOutputMode 
+#  ee.Classifier.setOutputMode
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Sets a classifier's output format. 
 Refer to https://developers.google.com/earth-engine/guides/classification for a list of supported modes for each classifier.

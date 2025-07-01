@@ -1,8 +1,7 @@
  
-#  ee.Image.copyProperties 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Copies metadata properties from one element to another. 
-Usage| Returns  
+#  ee.Image.copyProperties
+Stay organized with collections  Save and categorize content based on your preferences. 
+Copies metadata properties from one element to another. Usage| Returns  
 ---|---  
 `Image.copyProperties( _source_, _properties_, _exclude_)`| Element  
 Argument| Type| Details  

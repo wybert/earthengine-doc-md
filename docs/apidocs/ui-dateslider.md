@@ -1,6 +1,6 @@
  
-#  ui.DateSlider 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+#  ui.DateSlider
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 A draggable target that ranges linearly between two dates. The date slider can be configured to display dates of various interval sizes, including day, 8-day, and year. The value of the slider is displayed as a label alongside it. 
 Usage| Returns  
 ---|---  
@@ -14,4 +14,3 @@ Argument| Type| Details
 `onChange`| Function, optional| A callback to fire when the slider's state changes. The callback is passed an ee.DateRange representing the slider's current value and the slider widget.  
 `disabled`| Boolean, optional| Whether the slider is disabled. Defaults to false.  
 `style`| Object, optional| An object of allowed CSS styles with their values to be set for this widget. Defaults to an empty object.  
-Was this helpful?

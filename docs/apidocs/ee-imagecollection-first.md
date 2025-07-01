@@ -1,8 +1,7 @@
  
-#  ee.ImageCollection.first 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the first entry from a given collection. 
-Usage| Returns  
+#  ee.ImageCollection.first
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the first entry from a given collection. Usage| Returns  
 ---|---  
 `ImageCollection.first()`| Image  
 Argument| Type| Details  
@@ -18,6 +17,7 @@ Map.addLayer(image,vis,'first of S2_SR');
 // Display the image metadata.
 print(image);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```

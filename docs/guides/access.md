@@ -1,6 +1,6 @@
  
-#  Earth Engine access 
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+#  Earth Engine access
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Get access to Earth Engine](https://developers.google.com/earth-engine/guides/access#get_access_to_earth_engine)
   * [Specify a project](https://developers.google.com/earth-engine/guides/access#specify_a_project)
@@ -160,3 +160,4 @@ https://code.earthengine.google.com/manage/plans?billing=YOUR_BILLING_ACCT_ID
     * Stored Earth Engine assets continue to drive costs even if the API is disabled. [Deleting your assets](https://developers.google.com/earth-engine/guides/access#assets) stops you from incurring further EE storage fees.
 
 
+Was this helpful?

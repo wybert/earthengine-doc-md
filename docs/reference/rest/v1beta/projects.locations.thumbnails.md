@@ -1,5 +1,5 @@
  
-#  REST Resource: projects.locations.thumbnails 
+#  REST Resource: projects.locations.thumbnails
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: Thumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails#resource:-thumbnail)
@@ -44,4 +44,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.thumbnails/create)`
 |  Creates an ID that can be used to render a "thumbnail" image.  
-Was this helpful?

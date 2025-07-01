@@ -1,5 +1,5 @@
  
-#  ee.Image.selfMask 
+#  ee.Image.selfMask
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-image-selfmask#examples)
@@ -65,3 +65,4 @@ m.add_layer(land_mask_masked, {'palette': ['gold']}, 'Land mask, masked')
 m
 ```
 
+Was this helpful?

@@ -1,7 +1,8 @@
  
-#  Export.video.toCloudStorage 
-Stay organized with collections  Save and categorize content based on your preferences. 
-Creates a batch task to export an ImageCollection as a video to Google Cloud Storage. The collection must only contain RGB images. Tasks can be started from the Tasks tab. "crsTransform", "scale", and "dimensions" are mutually exclusive. Usage| Returns  
+#  Export.video.toCloudStorage
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Creates a batch task to export an ImageCollection as a video to Google Cloud Storage. The collection must only contain RGB images. Tasks can be started from the Tasks tab. "crsTransform", "scale", and "dimensions" are mutually exclusive. 
+Usage| Returns  
 ---|---  
 `Export.video.toCloudStorage(collection,  _description_, _bucket_, _fileNamePrefix_, _framesPerSecond_, _dimensions_, _region_, _scale_, _crs_, _crsTransform_, _maxPixels_, _maxFrames_, _priority_)`|   
 Argument|  Type| Details  
