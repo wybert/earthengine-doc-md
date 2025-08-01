@@ -1,11 +1,10 @@
  
 #  ui.Panel.clear
-Stay organized with collections  Save and categorize content based on your preferences. 
-Removes all widgets from the panel. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns this panel.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Panel.clear()`| ui.Panel  
-Argument| Type| Details  
+`Panel.clear()` | ui.Panel  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.panel`| ui.Panel| The ui.Panel instance.  
+this: `ui.panel` | ui.Panel | The ui.Panel instance.  

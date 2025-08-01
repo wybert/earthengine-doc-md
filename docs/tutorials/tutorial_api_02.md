@@ -1,13 +1,15 @@
  
 #  Visualizing Images and Image Bands
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Now that you're ready to begin writing Earth Engine JavaScript, start by copying the following code into the Code Editor:
 ### Code Editor (JavaScript)
 ```
 // Instantiate an image with the Image constructor.
 varimage=ee.Image('CGIAR/SRTM90_V4');
+
 // Zoom to a location.
 Map.setCenter(-112.8598,36.2841,9);// Center on the Grand Canyon.
+
 // Display the image on the map.
 Map.addLayer(image);
 ```

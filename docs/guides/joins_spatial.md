@@ -7,8 +7,10 @@ Collections can be joined by spatial location as well as by property values. To 
 // Load a primary collection: protected areas (Yosemite National Park).
 varprimary=ee.FeatureCollection("WCMC/WDPA/current/polygons")
 .filter(ee.Filter.eq('NAME','Yosemite National Park'));
+
 // Load a secondary collection: power plants.
 varpowerPlants=ee.FeatureCollection('WRI/GPPD/power_plants');
+
 // Define a spatial filter, with distance 100 km.
 vardistFilter=ee.Filter.withinDistance({
 distance:100000,
@@ -16,13 +18,16 @@ leftField:'.geo',
 rightField:'.geo',
 maxError:10
 });
+
 // Define a saveAll join.
 vardistSaveAll=ee.Join.saveAll({
 matchesKey:'points',
 measureKey:'distance'
 });
+
 // Apply the join.
 varspatialJoined=distSaveAll.apply(primary,powerPlants,distFilter);
+
 // Print the result.
 print(spatialJoined);
 ```
@@ -38,18 +43,23 @@ importgeemap.coreasgeemap
 ```
 # Load a primary collection: protected areas (Yosemite National Park).
 primary = ee.FeatureCollection('WCMC/WDPA/current/polygons').filter(
-  ee.Filter.eq('NAME', 'Yosemite National Park')
+    ee.Filter.eq('NAME', 'Yosemite National Park')
 )
+
 # Load a secondary collection: power plants.
 power_plants = ee.FeatureCollection('WRI/GPPD/power_plants')
+
 # Define a spatial filter, with distance 100 km.
 dist_filter = ee.Filter.withinDistance(
-  distance=100000, leftField='.geo', rightField='.geo', maxError=10
+    distance=100000, leftField='.geo', rightField='.geo', maxError=10
 )
+
 # Define a saveAll join.
 dist_save_all = ee.Join.saveAll(matchesKey='points', measureKey='distance')
+
 # Apply the join.
 spatial_joined = dist_save_all.apply(primary, power_plants, dist_filter)
+
 # Print the result.
 display(spatial_joined)
 ```
@@ -60,20 +70,25 @@ Spatial joins can also be used to identify which features in one collection inte
 ```
 // Load the primary collection: US state boundaries.
 varstates=ee.FeatureCollection('TIGER/2018/States');
+
 // Load the secondary collection: power plants.
 varpowerPlants=ee.FeatureCollection('WRI/GPPD/power_plants');
+
 // Define a spatial filter as geometries that intersect.
 varspatialFilter=ee.Filter.intersects({
 leftField:'.geo',
 rightField:'.geo',
 maxError:10
 });
+
 // Define a save all join.
 varsaveAllJoin=ee.Join.saveAll({
 matchesKey:'power_plants',
 });
+
 // Apply the join.
 varintersectJoined=saveAllJoin.apply(states,powerPlants,spatialFilter);
+
 // Add power plant count per state as a property.
 intersectJoined=intersectJoined.map(function(state){
 // Get "power_plant" intersection list, count how many intersected this state.
@@ -81,6 +96,7 @@ varnPowerPlants=ee.List(state.get('power_plants')).size();
 // Return the state feature with a new property: power plant count.
 returnstate.set('n_power_plants',nPowerPlants);
 });
+
 // Make a bar chart for the number of power plants per state.
 varchart=ui.Chart.feature.byFeature(intersectJoined,'NAME','n_power_plants')
 .setChartType('ColumnChart')
@@ -89,6 +105,7 @@ varchart=ui.Chart.feature.byFeature(intersectJoined,'NAME','n_power_plants')
 title:'Power plants per state',
 hAxis:{title:'State'},
 vAxis:{title:'Frequency'}});
+
 // Print the chart to the console.
 print(chart);
 ```

@@ -1,14 +1,6 @@
  
 #  REST Resource: projects.table
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Resource](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table#resource)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table#methods)
-    * [computeFeatures](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table#computefeatures)
-    * [export](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table#export)
-    * [import](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table#import)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource
 There is no persistent data associated with this resource.
 ## Methods  

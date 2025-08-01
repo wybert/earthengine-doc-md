@@ -2,6 +2,8 @@
 #  Earth Engine release notes
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
+  * [July 21, 2025](https://developers.google.com/earth-engine/docs/release-notes#July_21_2025)
+  * [July 10, 2025](https://developers.google.com/earth-engine/docs/release-notes#July_10_2025)
   * [June 27, 2025](https://developers.google.com/earth-engine/docs/release-notes#June_27_2025)
   * [April 22, 2025](https://developers.google.com/earth-engine/docs/release-notes#April_22_2025)
   * [April 14, 2025](https://developers.google.com/earth-engine/docs/release-notes#April_14_2025)
@@ -318,6 +320,12 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
 [![Latest Release](https://img.shields.io/github/v/tag/google/earthengine-api?logo=github&label=Latest%20client%20release)](https://github.com/google/earthengine-api/commits/master/)
 [Subscribe](https://developers.google.com/static/feeds/earthengine-release-notes.xml) to these release notes. [![Subscribe](https://developers.google.com/static/earth-engine/images/rss-icon.svg)](https://developers.google.com/static/feeds/earthengine-release-notes.xml)
 This page is updated with each notable change to Earth Engine. Specifically, it lists releases by date and includes any new features, bug fixes, and significant performance improvements. You can also browse and filter release notes for all Google Cloud products in the [Google Cloud console](https://console.cloud.google.com/release-notes). 
+## July 21, 2025
+**Earth Engine Server**
+**BACKWARD INCOMPATIBLE** The [Google Drive main OAuth scope](https://developers.google.com/identity/protocols/oauth2/scopes#drive), `https://www.googleapis.com/auth/drive` has to be requested explicitly for Earth Engine requests that interact with Google Drive. Consider upgrading your client library to [v1.5.12](https://github.com/google/earthengine-api/releases/tag/v1.5.12) or newer, which includes this scope in the default list of scopes to use for authorization.
+## July 10, 2025
+**Earth Engine Server**
+Added the ability to set a daily limit on EECU-time usage for a Cloud project to help control usage and costs. See [Cost controls](https://developers.google.com/earth-engine/guides/cost_controls#daily-limits) for more information.
 ## June 27, 2025
 **Earth Engine Server**
 All noncommercial projects created before April 15, 2025 must verify noncommercial eligibility to maintain access to Earth Engine. Learn more if you need to take action in the Earth Engine [Cloud Console](https://console.cloud.google.com/earth-engine/configuration).
@@ -2879,4 +2887,3 @@ Deprecated `Image.normalized_difference()`. Use `Image.normalizedDifference()` w
 Fixed a bug that caused failing queries to raise `NameError` rather than `EEException`.
 **Earth Engine Server**
 Fixed `Collection.filter()` to no longer cause an Internal Server Error. It is now preferred over `FilterFeatureCollection()`.
-Was this helpful?

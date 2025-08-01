@@ -1,6 +1,6 @@
  
 #  FeatureView Optimization
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Max features per tile](https://developers.google.com/earth-engine/guides/featureview_optimization#max_features_per_tile)
   * [Thinning ranking](https://developers.google.com/earth-engine/guides/featureview_optimization#thinning_ranking)
@@ -40,6 +40,7 @@ Thinning ranking rules can be provided as either a string or a list of strings w
 ```
 // String input format for setting thinning ranking based on 3 rules.
 'my-property DESC, .geometryType ASC, .minZoomLevel ASC'
+
 // List of strings input format for setting thinning ranking based on 3 rules.
 ['my-property DESC','.geometryType ASC','.minZoomLevel ASC']
 
@@ -66,6 +67,7 @@ Z-order ranking rules can be provided as either a string or a list of strings wh
 ```
 // String input format for setting z-order ranking based on 3 rules.
 'my-property DESC, .geometryType ASC, .minZoomLevel ASC'
+
 // List of strings input format for setting z-order ranking based on 3 rules.
 ['my-property DESC','.geometryType ASC','.minZoomLevel ASC']
 

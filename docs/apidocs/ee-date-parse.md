@@ -5,15 +5,15 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-date-parse#examples)
 
 
-Parse a date string, given a string describing its format. 
-Usage| Returns  
+Parse a date string, given a string describing its format.
+Usage | Returns  
 ---|---  
-`ee.Date.parse(format, date,  _timeZone_)`| Date  
-Argument| Type| Details  
+`ee.Date.parse(format, date, _timeZone_)`|  Date  
+Argument | Type | Details  
 ---|---|---  
-`format`| String| A pattern, as described at http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html.  
-`date`| String| A string matching the given pattern.  
-`timeZone`| String, default: null| The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
+`format` | String | A pattern, as described at http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html.  
+`date` | String | A string matching the given pattern.  
+`timeZone` | String, default: null | The time zone (e.g., 'America/Los_Angeles'); defaults to UTC.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-date-parse#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-date-parse#colab-python-sample) More
 ```
@@ -39,4 +39,3 @@ display(ee.Date.parse('MMM. dd, YYYY', 'Apr. 30, 2021'))
 display(ee.Date.parse('YYYY-MM-dd HH:mm:ss', '2021-4-30 00:00:00'))
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Cloud GeoTiff-Backed Earth Engine Assets
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Sample image manifest with one Tileset](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#sample_image_manifest_with_one_tileset)
   * [More than one Tileset](https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff#more_than_one_tileset)
@@ -34,18 +34,19 @@ earthengine upload external_image --manifest my_manifest.json
 The simplest `ImageManifest` is one with a single `Tileset`. If no bands are specified, the resulting asset will contain all the bands of the GeoTIFF with the band names encoded in the GeoTIFF (in this case, "vis-red", "vis-green", and "vis-blue").
 ```
 request = {
- 'imageManifest': {
-  'name': f'projects/{ee_project}/assets/cogdemo1',
-  'tilesets': [
-   { 'id': '0', 'sources': [ { 'uris': ['gs://ee-docs-demos/COG_demo.tif'] } ] }
-  ],
-  'properties': {
-   'version': '1.1'
+  'imageManifest': {
+    'name': f'projects/{ee_project}/assets/cogdemo1',
+    'tilesets': [
+      { 'id': '0', 'sources': [ { 'uris': ['gs://ee-docs-demos/COG_demo.tif'] } ] }
+    ],
+    'properties': {
+      'version': '1.1'
+    },
+    'startTime': '2016-01-01T00:00:00.000000000Z',
+    'endTime': '2016-12-31T15:01:23.000000000Z',
   },
-  'startTime': '2016-01-01T00:00:00.000000000Z',
-  'endTime': '2016-12-31T15:01:23.000000000Z',
- },
 }
+
 pprint(request)
 
 ```
@@ -57,23 +58,24 @@ It is possible to specify an `ImageManifest` with more than one `Tileset` where 
 
 ```
 request = {
- 'imageManifest': {
-  'name': f'projects/{ee_project}/assets/cogdemo2',
-  'uriPrefix': 'gs://ee-docs-demos/external_image_demo/',
-  'tilesets': [
-   { 'id': '0', 'sources': [ { 'uris': ['b4b3b2.tif'] } ] },
-   { 'id': '1', 'sources': [ { 'uris': ['b5b6b7.tif'] } ] },
-  ],
-  'bands': [
-   { 'id': 'red', 'tilesetId': '0', 'tilesetBandIndex': 0 },
-   { 'id': 'rededge3', 'tilesetId': '1', 'tilesetBandIndex': 2 },
-   { 'id': 'rededge2', 'tilesetId': '1', 'tilesetBandIndex': 1 },
-   { 'id': 'green', 'tilesetId': '0', 'tilesetBandIndex': 1 },
-   { 'id': 'blue', 'tilesetId': '1', 'tilesetBandIndex': 0 },
-   { 'id': 'rededge1', 'tilesetId': '0', 'tilesetBandIndex': 2 },
-  ],
- },
+  'imageManifest': {
+    'name': f'projects/{ee_project}/assets/cogdemo2',
+    'uriPrefix': 'gs://ee-docs-demos/external_image_demo/',
+    'tilesets': [
+      { 'id': '0', 'sources': [ { 'uris': ['b4b3b2.tif'] } ] },
+      { 'id': '1', 'sources': [ { 'uris': ['b5b6b7.tif'] } ] },
+    ],
+    'bands': [
+      { 'id': 'red', 'tilesetId': '0', 'tilesetBandIndex': 0 },
+      { 'id': 'rededge3', 'tilesetId': '1', 'tilesetBandIndex': 2 },
+      { 'id': 'rededge2', 'tilesetId': '1', 'tilesetBandIndex': 1 },
+      { 'id': 'green', 'tilesetId': '0', 'tilesetBandIndex': 1 },
+      { 'id': 'blue', 'tilesetId': '1', 'tilesetBandIndex': 0 },
+      { 'id': 'rededge1', 'tilesetId': '0', 'tilesetBandIndex': 2 },
+    ],
+  },
 }
+
 pprint(request)
 
 ```
@@ -133,29 +135,29 @@ Depending on your intended use cases, the ['INTERLEAVE'](https://gdal.org/en/sta
 See [this page](https://cogeotiff.github.io/rio-cogeo/Advanced/#web-optimized-cog) for more details on an optimized configuration.
 The following `gdal_translate` command will convert a raster into a band-interleaved, zstd-compressed, Cloud Optimized GeoTIFF that will perform well in Earth Engine:
 ```
-gdal_translatein.tifout.tif\
--coCOPY_SRC_OVERVIEWS=YES\
--coTILED=YES\
--coBLOCKXSIZE=512\
--coBLOCKYSIZE=512\
--coCOMPRESS=ZSTD\
--coZSTD_LEVEL=22\
--coINTERLEAVE=BAND\
--coNUM_THREADS=ALL_CPUS
+gdal_translatein.tif\
+COPY_SRC_OVERVIEWS=YES\
+TILED=YES\
+BLOCKXSIZE=512\
+BLOCKYSIZE=512\
+COMPRESS=ZSTD\
+ZSTD_LEVEL=22\
+INTERLEAVE=BAND\
+NUM_THREADS=ALL_CPUS
 
 ```
 
 It may be possible to reduce the output file size further by specifying a [predictor](https://gdal.org/en/stable/drivers/raster/gtiff.html#creation-options) (`-co PREDICTOR=2` for integer data types and `-co PREDICTOR=3` for floating point data types).
 For users with GDAL >= 3.11, the [COG driver](https://gdal.org/en/stable/drivers/raster/cog.html) can produce files without having to worry about creating and preserving overviews.
 ```
-gdal_translatein.tifout.tif\
--ofCOG\
--coOVERVIEWS=IGNORE_EXISTING\
--coCOMPRESS=ZSTD\
--coLEVEL=22\
--coPREDICTOR=2\
--coINTERLEAVE=BAND\
--coNUM_THREADS=ALL_CPUS\
+gdal_translatein.tif\
+\
+OVERVIEWS=IGNORE_EXISTING\
+COMPRESS=ZSTD\
+LEVEL=22\
+PREDICTOR=2\
+INTERLEAVE=BAND\
+NUM_THREADS=ALL_CPUS\
 
 ```
 
@@ -169,11 +171,14 @@ importee
 importjson
 frompprintimport pprint
 fromgoogle.auth.transport.requestsimport AuthorizedSession
-ee.Authenticate() # or !earthengine authenticate --auth_mode=gcloud
+
+ee.Authenticate()  #  or !earthengine authenticate --auth_mode=gcloud
+
 # Specify the cloud project you want associated with Earth Engine requests.
 ee_project = 'your-project'
+
 session = AuthorizedSession(
-  ee.data.get_persistent_credentials().with_quota_project(ee_project)
+    ee.data.get_persistent_credentials().with_quota_project(ee_project)
 )
 
 ```
@@ -186,12 +191,13 @@ See [this doc](https://developers.google.com/earth-engine/exporting#configuratio
 Make the POST request to the Earth Engine [`projects.images.importExternal`](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.images/importExternal) endpoint.
 ```
 url = f'https://earthengine.googleapis.com/v1alpha/projects/{ee_project}/image:importExternal'
+
 response = session.post(
- url = url,
- data = json.dumps(request)
+  url = url,
+  data = json.dumps(request)
 )
+
 pprint(json.loads(response.content))
 
 ```
 
-Was this helpful?

@@ -4,8 +4,8 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * On this page
   * [Context](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#context)
   * [Functions](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#functions)
-    * [bufferPoints(radius, bounds) ⇒ Function](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#bufferpointsradius_bounds_⇒_function)
-    * [zonalStats(fc, params) ⇒ ee.FeatureCollection](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#zonalstatsfc_params_⇒_eefeaturecollection)
+    * [bufferPoints(radius, bounds) ⇒ Function](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#bufferpointsradius_bounds_%E2%87%92_function)
+    * [zonalStats(fc, params) ⇒ ee.FeatureCollection](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#zonalstatsfc_params_%E2%87%92_eefeaturecollection)
   * [Point collection import](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#point_collection_import)
   * [Neighborhood statistic examples](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#neighborhood_statistic_examples)
     * [Topographic variables](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#topographic_variables)
@@ -21,10 +21,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [References](https://developers.google.com/earth-engine/tutorials/community/extract-raster-values-for-points#references)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md)
-Author(s): [ swinsem ](https://github.com/swinsem)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/extract-raster-values-for-points/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/extract-raster-values-for-points/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/extract-raster-values-for-points/index.md "View changes to this article over time.")
+Author(s): [ swinsem ](https://github.com/swinsem "View the profile for swinsem on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 _This tutorial uses the[Earth Engine Code Editor JavaScript API](https://developers.google.com/earth-engine/guides/playground)._
 Extracting raster values for points or plots is essential for many types of projects. This tutorial will show you how to use Earth Engine to get a full time series of image values for points or plots in your dataset. We will lay out the process and functions for how to extract raster values for points using any dataset and then apply them to a few examples.
@@ -81,12 +81,14 @@ imgPropsRename:null,
 datetimeName:'datetime',
 datetimeFormat:'YYYY-MM-dd HH:mm:ss'
 };
+
 // Replace initialized params with provided params.
 if(params){
 for(varparaminparams){
 _params[param]=params[param]||_params[param];
 }
 }
+
 // Set default parameters based on an image representative.
 varimgRep=ic.first();
 varnonSystemImgProps=ee.Feature(null)
@@ -95,20 +97,24 @@ if(!_params.bands)_params.bands=imgRep.bandNames();
 if(!_params.bandsRename)_params.bandsRename=_params.bands;
 if(!_params.imgProps)_params.imgProps=nonSystemImgProps;
 if(!_params.imgPropsRename)_params.imgPropsRename=_params.imgProps;
+
 // Map the reduceRegions function over the image collection.
 varresults=ic.map(function(img){
 // Select bands (optionally rename), set a datetime & timestamp property.
 img=ee.Image(img.select(_params.bands,_params.bandsRename))
 .set(_params.datetimeName,img.date().format(_params.datetimeFormat))
 .set('timestamp',img.get('system:time_start'));
+
 // Define final image property dictionary to set in output features.
 varpropsFrom=ee.List(_params.imgProps)
 .cat(ee.List([_params.datetimeName,'timestamp']));
 varpropsTo=ee.List(_params.imgPropsRename)
 .cat(ee.List([_params.datetimeName,'timestamp']));
 varimgProps=img.toDictionary(propsFrom).rename(propsFrom,propsTo);
+
 // Subset points that intersect the given image.
 varfcSub=fc.filterBounds(img.geometry());
+
 // Reduce the image by regions.
 returnimg.reduceRegions({
 collection:fcSub,
@@ -121,6 +127,7 @@ crs:_params.crs
 returnf.set(imgProps);
 });
 }).flatten().filter(ee.Filter.notNull(_params.bandsRename));
+
 returnresults;
 }
 
@@ -172,13 +179,16 @@ Two important things to note about the `zonalStats` function that this example a
 ```
 // Import the MERIT global elevation dataset.
 varelev=ee.Image('MERIT/DEM/v1_0_3');
+
 // Calculate slope from the DEM.
 varslope=ee.Terrain.slope(elev);
+
 // Concatenate elevation and slope as two bands of an image.
 vartopo=ee.Image.cat(elev,slope)
 // Computed images do not have a 'system:time_start' property; add one based
 // on when the data were collected.
 .set('system:time_start',ee.Date('2000-01-01').millis());
+
 // Wrap the single image in an ImageCollection for use in the zonalStats function.
 vartopoCol=ee.ImageCollection([topo]);
 
@@ -191,6 +201,7 @@ varparams={
 bands:[0,1],
 bandsRename:['elevation','slope']
 };
+
 // Extract zonal statistics per point per image.
 varptsTopoStats=zonalStats(topoCol,ptsTopo,params);
 print(ptsTopoStats);
@@ -235,6 +246,7 @@ bandsRename:['modis_red','modis_nir','modis_swir'],
 datetimeName:'date',
 datetimeFormat:'YYYY-MM-dd'
 };
+
 // Extract zonal statistics per point per image.
 varptsModisStats=zonalStats(modisCol,ptsModis,params);
 print(ptsModisStats.limit(50));
@@ -265,6 +277,7 @@ returnimg.select(
 ['SR_B2','SR_B3','SR_B4','SR_B5','SR_B6','SR_B7'],
 ['Blue','Green','Red','NIR','SWIR1','SWIR2']);
 }
+
 // Selects and renames bands of interest for TM/ETM+.
 functionrenameEtm(img){
 returnimg.select(
@@ -282,6 +295,7 @@ img=scaleAndMask(img);
 img=renameOli(img);
 returnimg;
 }
+
 // Prepares (cloud masks and renames) TM/ETM+ images.
 functionprepEtm(img){
 img=scaleAndMask(img);
@@ -294,15 +308,19 @@ returnimg;
 Get the Landsat surface reflectance collections for OLI, ETM+, and TM sensors. Filter them by the bounds of the point feature collection and apply the relevant image preparation function.
 ```
 varptsLandsat=pts.map(bufferPoints(15,true));
+
 vardateRange=ee.DateRange('2005-01-01','2015-01-01');
+
 varoliCol=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
 .filterBounds(ptsLandsat)
 .filterDate(dateRange)
 .map(prepOli);
+
 varetmCol=ee.ImageCollection('LANDSAT/LE07/C02/T1_L2')
 .filterBounds(ptsLandsat)
 .filterDate(dateRange)
 .map(prepEtm);
+
 vartmCol=ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
 .filterBounds(ptsLandsat)
 .filterDate(dateRange)
@@ -331,6 +349,7 @@ imgPropsRename:['img_id','satellite'],
 datetimeName:'date',
 datetimeFormat:'YYYY-MM-dd'
 };
+
 // Extract zonal statistics per point per image.
 varptsLandsatStats=zonalStats(landsatCol,ptsLandsat,params);
 print(ptsLandsatStats.limit(50));
@@ -347,6 +366,7 @@ collection:your_feature_collection_goes_here,
 description:'your_summary_table_name_here',
 assetId:'path_to_your_summary_table_name_here'
 });
+
 Export.table.toDrive({
 collection:your_feature_collection_goes_here,
 folder:'your_gdrive_folder_name_here',
@@ -375,10 +395,13 @@ Derived computed images do not retain the properties of their source image, so b
 ```
 // Define a Landsat image.
 varimg=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2').first();
+
 // Print its properties.
 print(img.propertyNames());
+
 // Select the reflectance bands and unscale them.
 varcomputedImg=img.select('SR_B.').multiply(0.0000275).add(-0.2);
+
 // Print the unscaled image's properties.
 print(computedImg.propertyNames());
 
@@ -389,6 +412,7 @@ Notice how the computed image does not have the source image's properties and on
 // Select the reflectance bands and unscale them.
 varcomputedImg=img.select('SR_B.').multiply(0.0000275).add(-0.2)
 .copyProperties(img,img.propertyNames());
+
 // Print the unscaled image's properties.
 print(computedImg.propertyNames());
 
@@ -406,6 +430,7 @@ ee.Geometry.Polygon(
 [-118.6019835717645,37.07838698844939],
 [-118.60036351751951,37.07838698844939],
 [-118.60036351751951,37.079867782687884]]],null,false);
+
 // Import the MERIT global elevation dataset.
 varelev=ee.Image('MERIT/DEM/v1_0_3');
 print('Projection, crs, and crs_transform:',elev.projection());
@@ -421,7 +446,9 @@ geometry:geometry,
 scale:90,
 crs:'EPSG:5070'
 });
+
 print('n pixels',result.get('dem'));
+
 Map.addLayer(elev.reproject({crs:'EPSG:5070',scale:90}),
 {min:2500,max:3000,palette:['blue','white','red']});
 Map.addLayer(geometry,{color:'white'});

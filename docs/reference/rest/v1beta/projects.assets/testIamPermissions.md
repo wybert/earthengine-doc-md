@@ -1,14 +1,6 @@
  
 #  Method: projects.assets.testIamPermissions
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets/testIamPermissions#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 ### HTTP request
@@ -24,9 +16,9 @@ JSON representation
 ---  
 ```
 {
- "permissions": [
-  string
- ]
+  "permissions": [
+    string
+  ]
 }
 ```
   
@@ -38,10 +30,9 @@ If successful, the response body contains an instance of `TestIamPermissionsResp
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

@@ -1,14 +1,6 @@
  
 #  Method: projects.image.computePixels
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/computePixels#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/computePixels#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/computePixels#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/computePixels#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.image/computePixels#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes a tile of pixels by performing an arbitrary computation on image data.
 Requests are limited to 48MB in uncompressed data per request, computed as the product of the request dimensions in pixels, the number of image bands requested, and the number of bytes per pixel for each band. Requests are also limited to at most 32K pixels in either dimension and at most 1024 bands. Requests exceeding these limits will result in an error code of 400 (BAD_REQUEST).
 If successful, the response body contains the requested pixel data in the encoding specified in the `fileFormat` field of the request.
@@ -28,20 +20,20 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
- },
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
- },
- "workloadTag": string
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
+  },
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
+  },
+  "workloadTag": string
 }
 ```
   
@@ -58,9 +50,9 @@ If successful, the response is a generic HTTP response whose format is defined b
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

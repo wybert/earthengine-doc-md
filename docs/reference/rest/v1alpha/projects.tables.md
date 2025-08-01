@@ -14,15 +14,15 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#Table.TableFileFormat)),
- "selectors": [
-  string
- ],
- "filename": string
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#Table.TableFileFormat)),
+  "selectors": [
+    string
+  ],
+  "filename": string
 }
 ```
   

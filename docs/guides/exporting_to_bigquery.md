@@ -1,6 +1,6 @@
  
 #  Exporting to BigQuery
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Overview
 Earth Engine's computational architecture is optimized for making image (pixel-based) computation fast and scalable. BigQuery is similarly optimized for scalable processing of tabular data (vectors), and it has many features which make it a nice complement to Earth Engine.
 Example workflows include:
@@ -66,11 +66,11 @@ importgeemap.coreasgeemap
 ### Colab (Python)
 ```
 task = ee.batch.Export.table.toBigQuery(
-  collection=features,
-  table='myproject.mydataset.mytable',
-  description='put_my_data_in_bigquery',
-  append=True,
-  overwrite=False,
+    collection=features,
+    table='myproject.mydataset.mytable',
+    description='put_my_data_in_bigquery',
+    append=True,
+    overwrite=False,
 )
 task.start()
 ```
@@ -87,11 +87,11 @@ Earth Engine (the values of `ee.Feature` properties) data are converted to an eq
 **Earth Engine type** | **BigQuery type** | **Notes**  
 ---|---|---  
 `ee.String` | `STRING` |   
-`ee.Number` | `FLOAT` or `INTEGER` |   
+`ee.Number` |  `FLOAT` or `INTEGER` |   
 `ee.Geometry` | `GEOGRAPHY` |   
 `ee.Date` | `TIMESTAMP` |   
 `ee.ByteString` | `BYTES` |   
-`ee.Array` | `STRUCT<ARRAY<INT64>,` `ARRAY<INT64|FLOAT64>>` | See the section on [arrays](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#arrays)  
+`ee.Array` |  `STRUCT<ARRAY<INT64>,` `ARRAY<INT64|FLOAT64>>` | See the section on [arrays](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#arrays)  
 Other `ee.*` types  | not supported  | See the section on [JSON values](https://developers.google.com/earth-engine/guides/exporting_to_bigquery#json-values)  
 ### Arrays
 Earth Engine exports any multi-dimensional `ee.Array` to `STRUCT<ARRAY<INT64> dimensions, ARRAY<INT64|FLOAT64> values>`, similar to the format used by BigQuery's [ML.DECODE_IMAGE](https://developers.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-decode-image) function.
@@ -128,11 +128,13 @@ To support more richly structured data within a cell, it's possible to encode Ea
 ```
 varstates=ee.FeatureCollection('TIGER/2018/States');
 varmod11a1=ee.ImageCollection('MODIS/061/MOD11A1');
+
 // Find the max day and night temperatures per pixel for a given time.
 varmaxTemp=mod11a1
 .select(['LST_Day_1km','LST_Night_1km'])
 .filterDate('2023-05-15','2023-05-25')
 .max();
+
 // Annotate each state with its max day/night temperatures.
 varannotatedStates=states.map(function(e){
 vardict=maxTemp.reduceRegion({
@@ -143,6 +145,7 @@ scale:10*1000,// 10 km
 // Convert the dictionary to JSON and add it as a property.
 returne.set('maxTemp',ee.String.encodeJSON(dict));
 });
+
 Export.table.toBigQuery(annotatedStates);
 ```
 
@@ -157,26 +160,30 @@ importgeemap.coreasgeemap
 ```
 states = ee.FeatureCollection('TIGER/2018/States')
 mod11a1 = ee.ImageCollection('MODIS/061/MOD11A1')
+
 # Find the max day and night temperatures per pixel for a given time.
 max_temp = (
-  mod11a1.select(['LST_Day_1km', 'LST_Night_1km'])
-  .filterDate('2023-05-15', '2023-05-25')
-  .max()
+    mod11a1.select(['LST_Day_1km', 'LST_Night_1km'])
+    .filterDate('2023-05-15', '2023-05-25')
+    .max()
 )
 
+
 defget_max_temp_for_state(e):
- max_temp_dict = max_temp.reduceRegion(
-   reducer=ee.Reducer.max(),
-   geometry=e.geometry(),
-   scale=10 * 1000, # 10 km
- )
- # Convert the dictionary to JSON and add it as a property.
- return e.set('maxTemp', ee.String.encodeJSON(max_temp_dict))
+  max_temp_dict = max_temp.reduceRegion(
+      reducer=ee.Reducer.max(),
+      geometry=e.geometry(),
+      scale=10 * 1000,  # 10 km
+  )
+  # Convert the dictionary to JSON and add it as a property.
+  return e.set('maxTemp', ee.String.encodeJSON(max_temp_dict))
+
 
 # Annotate each state with its max day/night temperatures.
 annotated_states = states.map(get_max_temp_for_state)
+
 task = ee.batch.Export.table.toBigQuery(
-  collection=annotated_states, table='myproject.mydataset.mytable'
+    collection=annotated_states, table='myproject.mydataset.mytable'
 )
 task.start()
 ```
@@ -202,8 +209,9 @@ importgeemap.coreasgeemap
 ### Colab (Python)
 ```
 deftransform_geo(e):
- my_error_margin = 10 * 1000 # meters
- return e.setGeometry(e.geometry(my_error_margin, 'EPSG:4326', True))
+  my_error_margin = 10 * 1000  # meters
+  return e.setGeometry(e.geometry(my_error_margin, 'EPSG:4326', True))
+
 
 transformed_collection = original_collection.map(transform_geo)
 ```
@@ -214,11 +222,11 @@ Earth Engine computation is often the bottleneck for `Export` operations. To thi
 ### Performance in BigQuery
 Correctly structuring and [clustering](https://developers.google.com/bigquery/docs/clustered-tables) data is the best way to ensure that queries can be made efficient in BigQuery. If there isn't a table already present in BigQuery, tables exported from Earth Engine are clustered on the features' geometry (if it's present). Clustering by the geography field is very common for geospatial data. It improves performance and reduces cost for queries that use spatial filters, most commonly for BigQuery operations like:
 ```
-WHEREST_DWithin(<table_column>,<constant_geography>,<distance>)
+WHEREST_DWithin(<table_column>,constant_geography>,distance>)
 
 ```
 ```
-WHEREST_Intersects(<table_column>,<constant_geography>)
+WHEREST_Intersects(<table_column>,constant_geography>)
 
 ```
 
@@ -230,12 +238,14 @@ In some cases, it's possible to use `reduceRegions` to get as much parallelism a
 ```
 varlucas=ee.FeatureCollection('JRC/LUCAS_HARMO/COPERNICUS_POLYGONS/V1/2018');
 vars2=ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED');
+
 // Fetch the unique date values from the dataset.
 vardates=lucas.aggregate_array('survey_date')
 .distinct()
 .map(function(date){
 returnee.Date.parse('dd/MM/yy',date);
 });
+
 // For each date, annotate the LUCAS samples with the Sentinel-2 band values for
 // a two-week window.
 functiongetLucasSamplesForDate(date){
@@ -256,10 +266,12 @@ tileScale:8,
 });
 returnsample;
 }
+
 // Flatten the collection.
 varwithSamples=
 ee.FeatureCollection(dates.map(getLucasSamplesForDate))
 .flatten();
+
 Export.table.toBigQuery({
 collection:withSamples,
 description:'lucas_s2_annotated'
@@ -277,40 +289,44 @@ importgeemap.coreasgeemap
 ```
 lucas = ee.FeatureCollection('JRC/LUCAS_HARMO/COPERNICUS_POLYGONS/V1/2018')
 s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+
 # Fetch the unique date values from the dataset.
 dates = (
-  lucas.aggregate_array('survey_date')
-  .distinct()
-  .map(lambda date: ee.Date.parse('dd/MM/yy', date))
+    lucas.aggregate_array('survey_date')
+    .distinct()
+    .map(lambda date: ee.Date.parse('dd/MM/yy', date))
 )
+
 
 # For each date, annotate the LUCAS samples with the Sentinel-2 band values for
 # a two-week window.
 defget_lucas_samples_for_date(date):
- date = ee.Date(date)
- image_for_date = s2.filterDate(
-   date.advance(-1, 'week'), date.advance(1, 'week')
- ).select('B.*')
- median = image_for_date.median()
- lucas_for_date = lucas.filter(
-   ee.Filter.equals('survey_date', date.format('dd/MM/yy'))
- )
- sample = median.reduceRegions(
-   collection=lucas_for_date,
-   reducer=ee.Reducer.mean(),
-   scale=10,
-   tileScale=8,
- )
- return sample
+  date = ee.Date(date)
+  image_for_date = s2.filterDate(
+      date.advance(-1, 'week'), date.advance(1, 'week')
+  ).select('B.*')
+  median = image_for_date.median()
+  lucas_for_date = lucas.filter(
+      ee.Filter.equals('survey_date', date.format('dd/MM/yy'))
+  )
+  sample = median.reduceRegions(
+      collection=lucas_for_date,
+      reducer=ee.Reducer.mean(),
+      scale=10,
+      tileScale=8,
+  )
+  return sample
+
 
 # Flatten the collection.
 with_samples = ee.FeatureCollection(
-  dates.map(get_lucas_samples_for_date)
+    dates.map(get_lucas_samples_for_date)
 ).flatten()
+
 task = ee.batch.Export.table.toBigQuery(
-  collection=with_samples,
-  table='myproject.mydataset.mytable',
-  description='lucas_s2_annotated',
+    collection=with_samples,
+    table='myproject.mydataset.mytable',
+    description='lucas_s2_annotated',
 )
 task.start()
 ```

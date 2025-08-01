@@ -1,9 +1,10 @@
  
 #  ui.Chart.getDownloadable
-Stay organized with collections  Save and categorize content based on your preferences. 
-Returns whether the chart can be downloaded as CSV, SVG, and PNG. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Usage | Returns  
 ---|---  
-`Chart.getDownloadable()`| Boolean  
-Argument| Type| Details  
+`Chart.getDownloadable()` | Boolean  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.chart`| ui.Chart| The ui.Chart instance.  
+this: `ui.chart` | ui.Chart | The ui.Chart instance.  
+Was this helpful?

@@ -1,18 +1,18 @@
  
 #  ee.Blob.string
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-blob-string#examples)
 
 
-Returns the contents of the blob as a String. 
-Usage| Returns  
+Returns the contents of the blob as a String.
+Usage | Returns  
 ---|---  
-`Blob.string( _encoding_)`| String  
-Argument| Type| Details  
+`Blob.string(_encoding_)`|  String  
+Argument | Type | Details  
 ---|---|---  
-this: `blob`| Blob|   
-`encoding`| String, default: null| The character set encoding to use when decoding the blob. Options include, but are not limited to, 'US-ASCII', 'UTF-8', and 'UTF-16'.  
+this: `blob` | Blob |   
+`encoding` | String, default: null | The character set encoding to use when decoding the blob. Options include, but are not limited to, 'US-ASCII', 'UTF-8', and 'UTF-16'.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-blob-string#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-blob-string#colab-python-sample) More
 ```
@@ -36,8 +36,7 @@ importgeemap.coreasgeemap
 url = 'gs://ee-docs-demos/vector/geojson/point.json'
 blob = ee.Blob(url)
 entry = ee.Dictionary(blob.string().decodeJSON())
-print(entry.getInfo()) # Point (1.00, 2.00)...
-print(entry.get('a_field').getInfo()) # "a demo field"
+print(entry.getInfo())  # Point (1.00, 2.00)...
+print(entry.get('a_field').getInfo())  # "a demo field"
 ```
 
-Was this helpful?

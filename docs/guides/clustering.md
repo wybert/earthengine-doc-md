@@ -16,24 +16,30 @@ Here is a simple example of building and using an `ee.Clusterer`:
 ```
 // Define a region in which to generate a segmented map.
 varregion=ee.Geometry.Rectangle(29.7,30,32.5,31.7);
+
 // Load a Landsat composite for input.
 varinput=ee.ImageCollection('LANDSAT/COMPOSITES/C02/T1_L2_32DAY')
 .filterDate('2001-05','2001-06')
 .first()
 .clip(region);
+
 // Display the sample region.
 Map.setCenter(31.5,31.0,8);
 Map.addLayer(ee.Image().paint(region,0,2),{},'region');
+
 // Make the training dataset.
 vartraining=input.sample({
 region:region,
 scale:30,
 numPixels:5000
 });
+
 // Instantiate the clusterer and train it.
 varclusterer=ee.Clusterer.wekaKMeans(15).train(training);
+
 // Cluster the input using the trained clusterer.
 varresult=input.cluster(clusterer);
+
 // Display the clusters with random colors.
 Map.addLayer(result.randomVisualizer(),{},'clusters');
 ```
@@ -46,23 +52,29 @@ importgeemap.coreasgeemap
 ```
 # Define a region in which to generate a segmented map.
 region = ee.Geometry.Rectangle(29.7, 30, 32.5, 31.7)
+
 # Load a Landsat composite for input.
 input = (
-  ee.ImageCollection('LANDSAT/COMPOSITES/C02/T1_L2_32DAY')
-  .filterDate('2001-05', '2001-06')
-  .first()
-  .clip(region)
+    ee.ImageCollection('LANDSAT/COMPOSITES/C02/T1_L2_32DAY')
+    .filterDate('2001-05', '2001-06')
+    .first()
+    .clip(region)
 )
+
 # Display the sample region.
 m = geemap.Map()
 m.set_center(31.5, 31.0, 8)
 m.add_layer(ee.Image().paint(region, 0, 2), {}, 'region')
+
 # Make the training dataset.
 training = input.sample(region=region, scale=30, numPixels=5000)
+
 # Instantiate the clusterer and train it.
 clusterer = ee.Clusterer.wekaKMeans(15).train(training)
+
 # Cluster the input using the trained clusterer.
 result = input.cluster(clusterer)
+
 # Display the clusters with random colors.
 m.add_layer(result.randomVisualizer(), {}, 'clusters')
 m
@@ -75,4 +87,3 @@ Please note:
   * The output clusters and their IDs are dependent on the algorithm and inputs.
 
 
-Was this helpful?

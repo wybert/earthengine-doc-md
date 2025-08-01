@@ -1,12 +1,12 @@
  
 #  ee.Image.constant
 Stay organized with collections  Save and categorize content based on your preferences. 
-Generates an image containing a constant value everywhere. Usage| Returns  
+Generates an image containing a constant value everywhere. Usage | Returns  
 ---|---  
-`ee.Image.constant(value)`| Image  
-Argument| Type| Details  
+`ee.Image.constant(value)` | Image  
+Argument | Type | Details  
 ---|---|---  
-`value`| Object| The value of the pixels in the constant image. Must be a number or an Array or a list of numbers or Arrays.  
+`value` | Object | The value of the pixels in the constant image. Must be a number or an Array or a list of numbers or Arrays.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
@@ -18,6 +18,7 @@ Map.addLayer(image1,null,'1');
 // bands: List (1 element)
 // 0: "constant", int ∈ [1, 1], EPSG:4326
 print(image1);
+
 varimage2=ee.Image(2);
 Map.addLayer(image2,null,'2');
 // Image (1 band)
@@ -25,6 +26,7 @@ Map.addLayer(image2,null,'2');
 // bands: List (1 element)
 // 0: "constant", int ∈ [2, 2], EPSG:4326
 print(image2);
+
 varπ=ee.Image(Math.PI);
 Map.addLayer(π,null,'π');
 // Image (1 band)
@@ -36,6 +38,7 @@ Map.addLayer(π,null,'π');
 // crs_transform: [1,0,0,0,1,0]
 // data_type: double ∈ [3.141592653589793, 3.141592653589793]
 print(π);
+
 // Create a multi-band image from a list of constant double integers.
 vardoubleIntImage=ee.Image.constant([-1.2,4]);
 Map.addLayer(doubleIntImage,null,'double int');
@@ -45,6 +48,7 @@ Map.addLayer(doubleIntImage,null,'double int');
 // 0: "constant_0", double ∈ [-1.2, -1.2], EPSG:4326
 // 1: "constant_1", int ∈ [4, 4], EPSG:4326
 print(doubleIntImage);
+
 // Create a multi-band image from a list of constants, using hexadecimal
 // notation.
 varmultiband=ee.Image([0xff,0x88,0x00]);

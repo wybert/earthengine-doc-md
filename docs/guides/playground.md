@@ -1,28 +1,6 @@
  
 #  Earth Engine Code Editor
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [JavaScript editor](https://developers.google.com/earth-engine/guides/playground#javascript_editor)
-  * [API reference (Docs tab)](https://developers.google.com/earth-engine/guides/playground#api_reference_docs_tab)
-  * [Script Manager (Scripts tab)](https://developers.google.com/earth-engine/guides/playground#script_manager_scripts_tab)
-  * [Script modules](https://developers.google.com/earth-engine/guides/playground#script_modules)
-  * [Asset Manager (Assets tab)](https://developers.google.com/earth-engine/guides/playground#asset_manager_assets_tab)
-  * [Script links](https://developers.google.com/earth-engine/guides/playground#script_links)
-    * [Get link](https://developers.google.com/earth-engine/guides/playground#get_link)
-    * [Script link management](https://developers.google.com/earth-engine/guides/playground#script_link_management)
-    * [Script link URL parameters](https://developers.google.com/earth-engine/guides/playground#script_link_url_parameters)
-  * [Search tool](https://developers.google.com/earth-engine/guides/playground#search_tool)
-  * [Imports](https://developers.google.com/earth-engine/guides/playground#imports)
-  * [Map](https://developers.google.com/earth-engine/guides/playground#map)
-  * [Layer Manager](https://developers.google.com/earth-engine/guides/playground#layer_manager)
-  * [Inspector tab](https://developers.google.com/earth-engine/guides/playground#inspector_tab)
-  * [Console Tab](https://developers.google.com/earth-engine/guides/playground#console_tab)
-  * [Tasks tab](https://developers.google.com/earth-engine/guides/playground#tasks_tab)
-  * [Profiler](https://developers.google.com/earth-engine/guides/playground#profiler)
-  * [Geometry tools](https://developers.google.com/earth-engine/guides/playground#geometry_tools)
-  * [Help!](https://developers.google.com/earth-engine/guides/playground#help)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The Earth Engine (EE) Code Editor at [code.earthengine.google.com](https://code.earthengine.google.com) is a web-based IDE for the Earth Engine JavaScript API. Code Editor features are designed to make developing complex geospatial workflows fast and easy. The Code Editor has the following elements (illustrated in Figure 1):
   * JavaScript code editor
   * Map display for visualizing geospatial datasets
@@ -59,7 +37,7 @@ All scripts and repositories maintain full version history. Click on the history
 Repositories can be accessed using [Git](http://git-scm.com/), so you can manage and edit your scripts outside the Code Editor, or sync them with an external system like GitHub. (Learn more about Git from [this tutorial](https://try.github.io/)). Click on the settings icon next to the repository name for instructions on cloning the repository. Note that you can browse the repositories to which you have access by going to [earthengine.googlesource.com](https://earthengine.googlesource.com). For some Git operations, you may need to create authentication credentials by going to the "Generate Password" link at the top of the [earthengine.googlesource.com](https://earthengine.googlesource.com) page.
 ## Script modules
 It's good practice to write modular, reusable code that can be shared between scripts without extensive copying and pasting. To enable modular development, Earth Engine provides the ability to share code between scripts. For example, suppose you write a [function](https://developers.google.com/earth-engine/guides/tutorial_js_01#functions) that performs a useful set of operations. Rather than copy the code of the function into a new script, it's easier for the new script to load the function directly. To make a function or object available to other scripts, you add it to a special object called `exports`. To use the code in another script, use the `require` function to load the exports from another script. For example, suppose you define the following module in a file named `FooModule.js` which is in a folder named `Modules`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/playground#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 /**
  * The Foo module is a demonstration of script modules.
@@ -67,14 +45,16 @@ It's good practice to write modular, reusable code that can be shared between sc
  * It also contains a bar object representing the current date.
  * @module Modules/FooModule
  */
+
 /**
  * Returns a greeting string.
  * @param {ee.String} arg The name to which the greeting should be addressed
  * @return {ee.String} The complete greeting.
  */
 exports.foo=function(arg){
-return'Hello, '+arg+'! And a good day to you!';
+return'Hello, '+arg+'!  And a good day to you!';
 };
+
 /**
  * An ee.Date object containing the time at which the object was created.
  */
@@ -82,11 +62,14 @@ exports.bar=ee.Date(Date.now());
 ```
 
 Note the use of the `exports` keyword in the form of `exports.objectToExport`. You can make use of this module in another script by using the `require` function. For example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/playground#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 varFoo=require('users/username/default:Modules/FooModule.js');
+
 print(Foo.doc);
+
 print(Foo.foo('world'));
+
 print('Time now:',Foo.bar);
 ```
 

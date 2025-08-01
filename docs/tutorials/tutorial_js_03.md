@@ -11,12 +11,14 @@ The example below illustrates how you would take a list of numbers and create an
 ```
 // This generates a list of numbers from 1 to 10.
 varmyList=ee.List.sequence(1,10);
+
 // The map() operation takes a function that works on each element independently
 // and returns a value. You define a function that can be applied to the input.
 varcomputeSquares=function(number){
 // We define the operation using the EE API.
 returnee.Number(number).pow(2);
 };
+
 // Apply your function to each item in the list by using the map() function.
 varsquares=myList.map(computeSquares);
 print(squares);// [1, 4, 9, 16, 25, 36, 49, 64, 81]
@@ -27,18 +29,21 @@ Another common problem faced by new users who are used to procedural programming
 Say you want to solve a variant of the above example, where the task is to compute squares of only odd numbers. A functional approach to solving this without if/else conditions, is demonstrated below:
 ### Code Editor (JavaScript)
 ```
-// The following function determines if a number is even or odd. The mod(2)
+// The following function determines if a number is even or odd.  The mod(2)
 // function returns 0 if the number is even and 1 if it is odd (the remainder
-// after dividing by 2). The input is multiplied by this remainder so even
+// after dividing by 2).  The input is multiplied by this remainder so even
 // numbers get set to 0 and odd numbers are left unchanged.
 vargetOddNumbers=function(number){
 number=ee.Number(number);// Cast the input to a Number so we can use mod.
 varremainder=number.mod(2);
 returnnumber.multiply(remainder);
 };
+
 varnewList=myList.map(getOddNumbers);
+
 // Remove the 0 values.
 varoddNumbers=newList.removeAll([0]);
+
 varsquares=oddNumbers.map(computeSquares);
 print(squares);// [1, 9, 25, 49, 81]
 ```
@@ -49,15 +54,18 @@ This paradigm is especially applicable when working with collections. If you wan
 // Import Landsat 8 TOA collection and filter to 2018 images.
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
 .filterDate('2018-01-01','2019-01-01');
+
 // Divide the collection into 2 subsets and apply a different algorithm on them.
 varsubset1=collection.filter(ee.Filter.lt('SUN_ELEVATION',40));
 varsubset2=collection.filter(ee.Filter.gte('SUN_ELEVATION',40));
+
 // Multiply all images in subset1 collection by 2;
 // do nothing to subset2 collection.
 varprocessed1=subset1.map(function(image){
 returnimage.multiply(2);
 });
 varprocessed2=subset2;
+
 // Merge the collections to get a single collection.
 varfinal=processed1.merge(processed2);
 print('Original collection size',collection.size());
@@ -75,6 +83,7 @@ varn1=ee.Number(previous.get(-1));
 varn2=ee.Number(previous.get(-2));
 returnprevious.add(n1.add(n2));
 };
+
 // Compute 10 iterations.
 varnumIteration=ee.List.repeat(1,10);
 varstart=[0,1];

@@ -1,11 +1,10 @@
  
 #  ee.Filter.or
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Combine two or more filters using boolean OR. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the constructed filter.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`ee.Filter.or(var_args)`| Filter  
-Argument| Type| Details  
+`ee.Filter.or(var_args)` | Filter  
+Argument | Type | Details  
 ---|---|---  
-`var_args`| VarArgs| The filters to combine.  
+`var_args` | VarArgs<Filter> | The filters to combine.  

@@ -1,10 +1,4 @@
  
-  * On this page
-  * [Tutorials](https://developers.google.com/earth-engine/tutorials#tutorials)
-  * [Educational resources](https://developers.google.com/earth-engine/tutorials#educational-resources)
-  * [Developer resources](https://developers.google.com/earth-engine/tutorials#developer-resources)
-
-
 ![](https://developers.google.com/static/earth-engine/images/community.jpg)
 ###  Earth Engine Community Content 
 This space is dedicated to our prolific and talented users who want to share their own educational materials and developer resources with the rest of the Earth Engine community. 
@@ -55,11 +49,13 @@ Earth Engine on YouTube
 
   * ### Connect
     * [ Blog ](https://googledevelopers.blogspot.com)
+    * [ Bluesky ](https://goo.gle/3FReQXN)
     * [ Instagram ](https://www.instagram.com/googlefordevs/)
     * [ LinkedIn ](https://www.linkedin.com/showcase/googledevelopers/)
     * [ X (Twitter) ](https://twitter.com/googledevs)
     * [ YouTube ](https://www.youtube.com/user/GoogleDevelopers)
   * ### Programs
+    * [ Google Developer Program ](https://developers.google.com/program)
     * [ Google Developer Groups ](https://developers.google.com/community)
     * [ Google Developer Experts ](https://developers.google.com/community/experts)
     * [ Accelerators ](https://developers.google.com/community/accelerators)
@@ -76,7 +72,7 @@ Earth Engine on YouTube
     * [ Google Home Developer Console ](https://console.home.google.com)
 
 
-[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/v18c0c2eee8563a4b6cc1af57fb933ddf1b6767fab13f530923a6c204c8d00f83/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
+[ ![Google Developers](https://www.gstatic.com/devrel-devsite/prod/vfbd11e784c22f4aaa184963b528a22b42504e1842229d6f6f6b59838a38023ff/developers/images/lockup-google-for-developers.svg) ](https://developers.google.com/)
   * [ Android ](https://developer.android.com)
   * [ Chrome ](https://developer.chrome.com/home)
   * [ Firebase ](https://firebase.google.com)
@@ -91,16 +87,16 @@ Earth Engine on YouTube
   * Sign up for the Google for Developers newsletter [ Subscribe ](https://developers.google.com/newsletter/subscribe)
 
 
-  * [English](https://developers.google.com/earth-engine/tutorials)
-  * [Deutsch](https://developers.google.com/earth-engine/tutorials?hl=de)
-  * [Español](https://developers.google.com/earth-engine/tutorials?hl=es)
-  * [Français](https://developers.google.com/earth-engine/tutorials?hl=fr)
-  * [Indonesia](https://developers.google.com/earth-engine/tutorials?hl=id)
-  * [Português – Brasil](https://developers.google.com/earth-engine/tutorials?hl=pt-br)
-  * [Русский](https://developers.google.com/earth-engine/tutorials?hl=ru)
-  * [中文 – 简体](https://developers.google.com/earth-engine/tutorials?hl=zh-cn)
-  * [日本語](https://developers.google.com/earth-engine/tutorials?hl=ja)
-  * [한국어](https://developers.google.com/earth-engine/tutorials?hl=ko)
+  * English
+  * Deutsch
+  * Español
+  * Français
+  * Indonesia
+  * Português – Brasil
+  * Русский
+  * 中文 – 简体
+  * 日本語
+  * 한국어
 
 
 Info 

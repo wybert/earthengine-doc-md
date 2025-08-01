@@ -1,22 +1,6 @@
  
 #  An Intro to the Earth Engine Python API
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Exploration of the Earth Engine Data Catalog](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#exploration_of_the_earth_engine_data_catalog)
-  * [Run me first](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#run_me_first)
-  * [Getting started with Collections](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#getting_started_with_collections)
-  * [Get a time series](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#get_a_time_series)
-  * [Static mapping of land surface temperature and ground elevation](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#static_mapping_of_land_surface_temperature_and_ground_elevation)
-    * [Get a static map](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#get_a_static_map)
-    * [Clip an image by a region of interest](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#clip_an_image_by_a_region_of_interest)
-  * [Export a GeoTIFF file](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#export_a_geotiff_file)
-    * [Save a GeoTIFF file in your Google Drive](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#save_a_geotiff_file_in_your_google_drive)
-    * [Get a link to download your GeoTIFF](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#get_a_link_to_download_your_geotiff)
-  * [Interactive mapping using folium](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#interactive_mapping_using_folium)
-  * [Documentation](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#documentation)
-  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api#acknowledgements)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ guiattard ](https://github.com/guiattard "View the profile for guiattard on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb)  
@@ -43,8 +27,10 @@ Of course the resolution, frequency, spatial and temporal extent, as well as dat
 First of all, run the following cell to initialize the API. The output will contain instructions on how to grant this notebook access to Earth Engine using your account.
 ```
 importee
+
 # Trigger the authentication flow.
 ee.Authenticate()
+
 # Initialize the library.
 ee.Initialize(project='my-project')
 
@@ -63,23 +49,29 @@ Now, to import the LC, LST and ELV collections, we can copy and paste the Earth 
 ```
 # Import the MODIS land cover collection.
 lc = ee.ImageCollection('MODIS/006/MCD12Q1')
+
 # Import the MODIS land surface temperature collection.
 lst = ee.ImageCollection('MODIS/006/MOD11A1')
+
 # Import the USGS ground elevation image.
 elv = ee.Image('USGS/SRTMGL1_003')
 
 ```
 ```
-/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:207: DeprecationWarning: 
+/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:209: DeprecationWarning: 
+
 Attention required for MODIS/006/MCD12Q1! You are using a deprecated asset.
 To make sure your code keeps working, please update it.
 Learn more: https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MCD12Q1
- warnings.warn(warning, category=DeprecationWarning)
-/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:207: DeprecationWarning: 
+
+  warnings.warn(warning, category=DeprecationWarning)
+/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:209: DeprecationWarning: 
+
 Attention required for MODIS/006/MOD11A1! You are using a deprecated asset.
 To make sure your code keeps working, please update it.
 Learn more: https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD11A1
- warnings.warn(warning, category=DeprecationWarning)
+
+  warnings.warn(warning, category=DeprecationWarning)
 
 ```
 
@@ -96,8 +88,10 @@ Then, we have to filter the collection on the period of time we want. We can do 
 ```
 # Initial date of interest (inclusive).
 i_date = '2017-01-01'
+
 # Final date of interest (exclusive).
 f_date = '2020-01-01'
+
 # Selection of appropriate bands and dates for LST.
 lst = lst.select('LST_Day_1km', 'QC_Day').filterDate(i_date, f_date)
 
@@ -112,6 +106,7 @@ Now, we can either upload existing shape files or define some points with longit
 u_lon = 4.8148
 u_lat = 45.7758
 u_poi = ee.Geometry.Point(u_lon, u_lat)
+
 # Define the rural location of interest as a point away from the city.
 r_lon = 5.175964
 r_lat = 45.574064
@@ -128,13 +123,16 @@ We can easily get information about our region/point of interest using the follo
 
 Then we can query the ground elevation and LST around our point of interest using the following commands. Please be careful when evaluating LST. According to the [dataset description](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD11A1), the value should be corrected by a factor of 0.02 to get units of Kelvin (do not forget the conversion). To get the mean multi-annual daytime LST, we use the `mean()` collection reduction method on the LST `ee.ImageCollection`. (The following run might take about 15-20 seconds)
 ```
-scale = 1000 # scale in meters
+scale = 1000  # scale in meters
+
 # Print the elevation near Lyon, France.
 elv_urban_point = elv.sample(u_poi, scale).first().get('elevation').getInfo()
 print('Ground elevation at urban point:', elv_urban_point, 'm')
+
 # Calculate and print the mean value of the LST collection at the point.
 lst_urban_point = lst.mean().sample(u_poi, scale).first().get('LST_Day_1km').getInfo()
 print('Average daytime LST at urban point:', round(lst_urban_point*0.02 -273.15, 2), '°C')
+
 # Print the land cover type at the point.
 lc_urban_point = lc.first().sample(u_poi, scale).first().get('LC_Type1').getInfo()
 print('Land cover value at urban point is:', lc_urban_point)
@@ -153,8 +151,10 @@ Now that you see we can get geospatial information about a place of interest pre
 ```
 # Get the data for the pixel intersecting the point in urban area.
 lst_u_poi = lst.getRegion(u_poi, scale).getInfo()
+
 # Get the data for the pixel intersecting the point in rural area.
 lst_r_poi = lst.getRegion(r_poi, scale).getInfo()
+
 # Preview the result.
 lst_u_poi[:5]
 
@@ -165,11 +165,11 @@ lst_u_poi[:5]
  ['2017_01_02', 4.810478346460038, 45.77365530231022, 1483315200000, None, 2],
  ['2017_01_03', 4.810478346460038, 45.77365530231022, 1483401600000, None, 2],
  ['2017_01_04',
- 4.810478346460038,
- 45.77365530231022,
- 1483488000000,
- 13808,
- 17]]
+  4.810478346460038,
+  45.77365530231022,
+  1483488000000,
+  13808,
+  17]]
 
 ```
 
@@ -177,37 +177,48 @@ Printing the first 5 lines of the result shows that we now have arrays full of d
 We now define a function to transform this array into a pandas Dataframe which is much more convenient to manipulate.
 ```
 importpandasaspd
+
 defee_array_to_df(arr, list_of_bands):
 """Transforms client-side ee.Image.getRegion array to pandas.DataFrame."""
-  df = pd.DataFrame(arr)
-  # Rearrange the header.
-  headers = df.iloc[0]
-  df = pd.DataFrame(df.values[1:], columns=headers)
-  # Remove rows without data inside.
-  df = df[['longitude', 'latitude', 'time', *list_of_bands]].dropna()
-  # Convert the data to numeric values.
-  for band in list_of_bands:
-    df[band] = pd.to_numeric(df[band], errors='coerce')
-  # Convert the time field into a datetime.
-  df['datetime'] = pd.to_datetime(df['time'], unit='ms')
-  # Keep the columns of interest.
-  df = df[['time','datetime', *list_of_bands]]
-  return df
+    df = pd.DataFrame(arr)
+
+    # Rearrange the header.
+    headers = df.iloc[0]
+    df = pd.DataFrame(df.values[1:], columns=headers)
+
+    # Remove rows without data inside.
+    df = df[['longitude', 'latitude', 'time', *list_of_bands]].dropna()
+
+    # Convert the data to numeric values.
+    for band in list_of_bands:
+        df[band] = pd.to_numeric(df[band], errors='coerce')
+
+    # Convert the time field into a datetime.
+    df['datetime'] = pd.to_datetime(df['time'], unit='ms')
+
+    # Keep the columns of interest.
+    df = df[['time','datetime',  *list_of_bands]]
+
+    return df
 
 ```
 
 We apply this function to get the two time series we want (and print one).
 ```
 lst_df_urban = ee_array_to_df(lst_u_poi,['LST_Day_1km'])
+
 deft_modis_to_celsius(t_modis):
 """Converts MODIS LST units to degrees Celsius."""
-  t_celsius = 0.02*t_modis - 273.15
-  return t_celsius
+    t_celsius =  0.02*t_modis - 273.15
+    return t_celsius
+
 # Apply the function to get temperature in celsius.
 lst_df_urban['LST_Day_1km'] = lst_df_urban['LST_Day_1km'].apply(t_modis_to_celsius)
+
 # Do the same for the rural point.
 lst_df_rural = ee_array_to_df(lst_r_poi,['LST_Day_1km'])
 lst_df_rural['LST_Day_1km'] = lst_df_rural['LST_Day_1km'].apply(t_modis_to_celsius)
+
 lst_df_urban.head()
 
 ```
@@ -227,39 +238,48 @@ importmatplotlib.pyplotasplt
 importnumpyasnp
 fromscipyimport optimize
 %matplotlib inline
+
 # Fitting curves.
 ## First, extract x values (times) from the dfs.
-x_data_u = np.asanyarray(lst_df_urban['time'].apply(float)) # urban
-x_data_r = np.asanyarray(lst_df_rural['time'].apply(float)) # rural
+x_data_u = np.asanyarray(lst_df_urban['time'].apply(float))  # urban
+x_data_r = np.asanyarray(lst_df_rural['time'].apply(float))  # rural
+
 ## Secondly, extract y values (LST) from the dfs.
-y_data_u = np.asanyarray(lst_df_urban['LST_Day_1km'].apply(float)) # urban
-y_data_r = np.asanyarray(lst_df_rural['LST_Day_1km'].apply(float)) # rural
+y_data_u = np.asanyarray(lst_df_urban['LST_Day_1km'].apply(float))  # urban
+y_data_r = np.asanyarray(lst_df_rural['LST_Day_1km'].apply(float))  # rural
+
 ## Then, define the fitting function with parameters.
 deffit_func(t, lst0, delta_lst, tau, phi):
-  return lst0 + (delta_lst/2)*np.sin(2*np.pi*t/tau + phi)
+    return lst0 + (delta_lst/2)*np.sin(2*np.pi*t/tau + phi)
+
 ## Optimize the parameters using a good start p0.
 lst0 = 20
 delta_lst = 40
-tau = 365*24*3600*1000  # milliseconds in a year
-phi = 2*np.pi*4*30.5*3600*1000/tau # offset regarding when we expect LST(t)=LST0
+tau = 365*24*3600*1000   # milliseconds in a year
+phi = 2*np.pi*4*30.5*3600*1000/tau  # offset regarding when we expect LST(t)=LST0
+
 params_u, params_covariance_u = optimize.curve_fit(
-  fit_func, x_data_u, y_data_u, p0=[lst0, delta_lst, tau, phi])
+    fit_func, x_data_u, y_data_u, p0=[lst0, delta_lst, tau, phi])
 params_r, params_covariance_r = optimize.curve_fit(
-  fit_func, x_data_r, y_data_r, p0=[lst0, delta_lst, tau, phi])
+    fit_func, x_data_r, y_data_r, p0=[lst0, delta_lst, tau, phi])
+
 # Subplots.
 fig, ax = plt.subplots(figsize=(14, 6))
+
 # Add scatter plots.
 ax.scatter(lst_df_urban['datetime'], lst_df_urban['LST_Day_1km'],
-      c='black', alpha=0.2, label='Urban (data)')
+           c='black', alpha=0.2, label='Urban (data)')
 ax.scatter(lst_df_rural['datetime'], lst_df_rural['LST_Day_1km'],
-      c='green', alpha=0.35, label='Rural (data)')
+           c='green', alpha=0.35, label='Rural (data)')
+
 # Add fitting curves.
 ax.plot(lst_df_urban['datetime'],
-    fit_func(x_data_u, params_u[0], params_u[1], params_u[2], params_u[3]),
-    label='Urban (fitted)', color='black', lw=2.5)
+        fit_func(x_data_u, params_u[0], params_u[1], params_u[2], params_u[3]),
+        label='Urban (fitted)', color='black', lw=2.5)
 ax.plot(lst_df_rural['datetime'],
-    fit_func(x_data_r, params_r[0], params_r[1], params_r[2], params_r[3]),
-    label='Rural (fitted)', color='green', lw=2.5)
+        fit_func(x_data_r, params_r[0], params_r[1], params_r[2], params_r[3]),
+        label='Rural (fitted)', color='green', lw=2.5)
+
 # Add some parameters.
 ax.set_title('Daytime Land Surface Temperature Near Lyon', fontsize=16)
 ax.set_xlabel('Date', fontsize=14)
@@ -267,6 +287,7 @@ ax.set_ylabel('Temperature [C]', fontsize=14)
 ax.set_ylim(-0, 40)
 ax.grid(lw=0.2)
 ax.legend(fontsize=14, loc='lower right')
+
 plt.show()
 
 ```
@@ -285,8 +306,10 @@ Also, we have to convert the LST `ee.ImageCollection` into an `ee.Image`, for ex
 ```
 # Reduce the LST collection by mean.
 lst_img = lst.mean()
+
 # Adjust for scale factor.
 lst_img = lst_img.select('LST_Day_1km').multiply(0.02)
+
 # Convert Kelvin to Celsius.
 lst_img = lst_img.select('LST_Day_1km').add(-273.15)
 
@@ -295,18 +318,21 @@ lst_img = lst_img.select('LST_Day_1km').add(-273.15)
 Then, we use the `getThumbUrl()` method to get a URL and we can use the IPython library to display the mean daytime LST map for the region of interest. Blue represents the coldest areas (< 10°C) and red represents the warmest areas (> 30°C) (note that it may take a moment for the image to load after the cell completes execution).
 ```
 fromIPython.displayimport Image
+
 # Create a URL to the styled image for a region around France.
 url = lst_img.getThumbUrl({
-  'min': 10, 'max': 30, 'dimensions': 512, 'region': roi,
-  'palette': ['blue', 'yellow', 'orange', 'red']})
+    'min': 10, 'max': 30, 'dimensions': 512, 'region': roi,
+    'palette': ['blue', 'yellow', 'orange', 'red']})
 print(url)
+
 # Display the thumbnail land surface temperature in France.
 print('\nPlease wait while the thumbnail loads, it may take a moment...')
 Image(url=url)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-20fc14f6a8ef0782331f5de68238da89:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/3bc4413e4552eae1fc382b446c52ce06-fdb6bdc9b575b08a841acdfca49576b2:getPixels
+
 Please wait while the thumbnail loads, it may take a moment...
 
 ```
@@ -317,10 +343,11 @@ We do the same for ground elevation:
 ```
 # Make pixels with elevation below sea level transparent.
 elv_img = elv.updateMask(elv.gt(0))
+
 # Display the thumbnail of styled elevation in France.
 Image(url=elv_img.getThumbURL({
-  'min': 0, 'max': 2000, 'dimensions': 512, 'region': roi,
-  'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']}))
+    'min': 0, 'max': 2000, 'dimensions': 512, 'region': roi,
+    'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']}))
 
 ```
 
@@ -328,10 +355,11 @@ Image(url=elv_img.getThumbURL({
 Of course you may want to have a closer look around a specific part of the map. So let's define another region (a buffer zone around Lyon), adjust the min/max scale and display:
 ```
 # Create a buffer zone of 10 km around Lyon.
-lyon = u_poi.buffer(10000) # meters
+lyon = u_poi.buffer(10000)  # meters
+
 url = elv_img.getThumbUrl({
-  'min': 150, 'max': 350, 'region': lyon, 'dimensions': 512,
-  'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']})
+    'min': 150, 'max': 350, 'region': lyon, 'dimensions': 512,
+    'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']})
 Image(url=url)
 
 ```
@@ -342,14 +370,18 @@ In case you want to display an image over a given region (and not outside), we c
 ```
 # Get a feature collection of administrative boundaries.
 countries = ee.FeatureCollection('FAO/GAUL/2015/level0').select('ADM0_NAME')
+
 # Filter the feature collection to subset France.
 france = countries.filter(ee.Filter.eq('ADM0_NAME', 'France'))
+
 # Clip the image by France.
 elv_fr = elv_img.clip(france)
+
 # Create the URL associated with the styled image data.
 url = elv_fr.getThumbUrl({
-  'min': 0, 'max': 2500, 'region': roi, 'dimensions': 512,
-  'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']})
+    'min': 0, 'max': 2500, 'region': roi, 'dimensions': 512,
+    'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']})
+
 # Display a thumbnail of elevation in France.
 Image(url=url)
 
@@ -366,12 +398,12 @@ After manipulating Earth Engine datasets, you may need to export a resulting `ee
 To export the `ee.Image` to Google Drive, we have to define a task and start it. We have to specify the size of pixels (here 30 m), the projection (here EPSG:4326), the file format (here GeoTIFF), the region of interest (here the area of Lyon defined before), and the file will be exported to the Google Drive directory head and named according to the `fileNamePrefix` we choose.
 ```
 task = ee.batch.Export.image.toDrive(image=elv_img,
-                   description='elevation_near_lyon_france',
-                   scale=30,
-                   region=lyon,
-                   fileNamePrefix='my_export_lyon',
-                   crs='EPSG:4326',
-                   fileFormat='GeoTIFF')
+                                     description='elevation_near_lyon_france',
+                                     scale=30,
+                                     region=lyon,
+                                     fileNamePrefix='my_export_lyon',
+                                     crs='EPSG:4326',
+                                     fileFormat='GeoTIFF')
 task.start()
 
 ```
@@ -401,15 +433,15 @@ Similarly, we can use the `getDownloadUrl()` method and click on the provided li
 
 ```
 link = lst_img.getDownloadURL({
-  'scale': 30,
-  'crs': 'EPSG:4326',
-  'fileFormat': 'GeoTIFF',
-  'region': lyon})
+    'scale': 30,
+    'crs': 'EPSG:4326',
+    'fileFormat': 'GeoTIFF',
+    'region': lyon})
 print(link)
 
 ```
 ```
-https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-7b8bb2de88cd764e81395a96f019e989:getPixels
+https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56be60a3910586fa7b35913fa6cfe3c-e139cc5ab58518efe388ea113a403ea5:getPixels
 
 ```
 **Note:** The above output contains an Earth Engine API link. Calls to the API can only be made by registered, authenticated users. If you want to create API links that work for you, click "Run in Colab" at the top of this page and run the notebook.
@@ -417,8 +449,10 @@ https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/c56
 To display these GEE datasets on an interactive map, let me introduce you to [folium](https://python-visualization.github.io/folium/). Folium is a python library based on [leaflet.js](https://leafletjs.com/) (open-source JavaScript library for mobile-friendly interactive maps) that you can use to make interactive maps. Folium supports WMS, GeoJSON layers, vector layers, and tile layers which make it very convenient and straightforward to visualize the data we manipulate with python. We create our first interactive map with one line of code, specifying the location where we want to center the map, the zoom level, and the main dimensions of the map:
 ```
 importfolium
+
 # Define the center of our map.
 lat, lon = 45.77, 4.855
+
 my_map = folium.Map(location=[lat, lon], zoom_start=10)
 my_map
 
@@ -429,14 +463,15 @@ On top of this map, we now want to add the GEE layers we studied before: land co
 ```
 defadd_ee_layer(self, ee_image_object, vis_params, name):
 """Adds a method for displaying Earth Engine image tiles to folium map."""
-  map_id_dict = ee.Image(ee_image_object).getMapId(vis_params)
-  folium.raster_layers.TileLayer(
-    tiles=map_id_dict['tile_fetcher'].url_format,
-    attr='Map Data &copy; <a href="https://earthengine.google.com/">Google Earth Engine</a>',
-    name=name,
-    overlay=True,
-    control=True
-  ).add_to(self)
+    map_id_dict = ee.Image(ee_image_object).getMapId(vis_params)
+    folium.raster_layers.TileLayer(
+        tiles=map_id_dict['tile_fetcher'].url_format,
+        attr='Map Data &copy; <a href="https://earthengine.google.com/">Google Earth Engine</a>',
+        name=name,
+        overlay=True,
+        control=True
+    ).add_to(self)
+
 # Add Earth Engine drawing method to folium.
 folium.Map.add_ee_layer = add_ee_layer
 
@@ -446,20 +481,25 @@ We want to respect the common LC classes defined in the table of the previous se
 ```
 # Select a specific band and dates for land cover.
 lc_img = lc.select('LC_Type1').filterDate(i_date).first()
+
 # Set visualization parameters for land cover.
 lc_vis_params = {
-  'min': 1,'max': 17,
-  'palette': ['05450a','086a10', '54a708', '78d203', '009900', 'c6b044',
-        'dcd159', 'dade48', 'fbff13', 'b6ff05', '27ff87', 'c24f44',
-        'a5a5a5', 'ff6d4c', '69fff8', 'f9ffa4', '1c0dff']
+    'min': 1,'max': 17,
+    'palette': ['05450a','086a10', '54a708', '78d203', '009900', 'c6b044',
+                'dcd159', 'dade48', 'fbff13', 'b6ff05', '27ff87', 'c24f44',
+                'a5a5a5', 'ff6d4c', '69fff8', 'f9ffa4', '1c0dff']
 }
+
 # Create a map.
 lat, lon = 45.77, 4.855
 my_map = folium.Map(location=[lat, lon], zoom_start=7)
+
 # Add the land cover to the map object.
 my_map.add_ee_layer(lc_img, lc_vis_params, 'Land Cover')
+
 # Add a layer control panel to the map.
 my_map.add_child(folium.LayerControl())
+
 # Display the map.
 display(my_map)
 
@@ -476,25 +516,33 @@ Of course we can add other datasets similarly, by defining some visualization pa
 ```
 # Set visualization parameters for ground elevation.
 elv_vis_params = {
-  'min': 0, 'max': 4000,
-  'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']}
+    'min': 0, 'max': 4000,
+    'palette': ['006633', 'E5FFCC', '662A00', 'D8D8D8', 'F5F5F5']}
+
 # Set visualization parameters for land surface temperature.
 lst_vis_params = {
-  'min': 0, 'max': 40,
-  'palette': ['white', 'blue', 'green', 'yellow', 'orange', 'red']}
+    'min': 0, 'max': 40,
+    'palette': ['white', 'blue', 'green', 'yellow', 'orange', 'red']}
+
 # Arrange layers inside a list (elevation, LST and land cover).
 ee_tiles = [elv_img, lst_img, lc_img]
+
 # Arrange visualization parameters inside a list.
 ee_vis_params = [elv_vis_params, lst_vis_params, lc_vis_params]
+
 # Arrange layer names inside a list.
 ee_tiles_names = ['Elevation', 'Land Surface Temperature', 'Land Cover']
+
 # Create a new map.
 lat, lon = 45.77, 4.855
 my_map = folium.Map(location=[lat, lon], zoom_start=5)
+
 # Add layers to the map using a loop.
 for tile, vis_param, name in zip(ee_tiles, ee_vis_params, ee_tiles_names):
-  my_map.add_ee_layer(tile, vis_param, name)
+    my_map.add_ee_layer(tile, vis_param, name)
+
 folium.LayerControl(collapsed = False).add_to(my_map)
+
 my_map
 
 ```

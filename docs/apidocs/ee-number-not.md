@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-not#examples)
 
 
-Returns 0 if the input is non-zero, and 1 otherwise. 
-Usage| Returns  
+Returns 0 if the input is non-zero, and 1 otherwise.
+Usage | Returns  
 ---|---  
-`Number.not()`| Number  
-Argument| Type| Details  
+`Number.not()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-not#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-not#colab-python-sample) More
 ```
@@ -25,8 +25,8 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print('Value is not 0:', ee.Number(5).Not().getInfo()) # 0
-print('Value is 0:', ee.Number(0).Not().getInfo()) # 1
+print('Value is not 0:', ee.Number(5).Not().getInfo())  # 0
+print('Value is 0:', ee.Number(0).Not().getInfo())  # 1
 ```
 
 Was this helpful?

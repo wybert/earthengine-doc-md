@@ -1,12 +1,11 @@
  
 #  ui.Checkbox.setLabel
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Sets the checkbox's label. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns this checkbox.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Checkbox.setLabel(value)`| ui.Checkbox  
-Argument| Type| Details  
+`Checkbox.setLabel(value)` | ui.Checkbox  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.checkbox`| ui.Checkbox| The ui.Checkbox instance.  
-`value`| String| The new label for the checkbox.  
+this: `ui.checkbox` | ui.Checkbox | The ui.Checkbox instance.  
+`value` | String | The new label for the checkbox.  

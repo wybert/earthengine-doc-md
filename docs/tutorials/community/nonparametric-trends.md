@@ -1,22 +1,12 @@
  
 #  Non-Parametric Trend Analysis
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Time series data](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#time_series_data)
-  * [Join the time series to itself](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#join_the_time_series_to_itself)
-  * [Mann-Kendall trend test](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#mann-kendall_trend_test)
-  * [Sen's slope](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#sens_slope)
-  * [Variance of the Mann-Kendall statistic](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#variance_of_the_mann-kendall_statistic)
-  * [Significance testing](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#significance_testing)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/nonparametric-trends#references)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/nonparametric-trends/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/nonparametric-trends/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/nonparametric-trends/index.md)
-Author(s): [ n-clinton ](https://github.com/n-clinton)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/nonparametric-trends/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/nonparametric-trends/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/nonparametric-trends/index.md "View changes to this article over time.")
+Author(s): [ n-clinton ](https://github.com/n-clinton "View the profile for n-clinton on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-Trend analysis is finding places where something of interest is increasing or decreasing and by how much. More specifically, this tutorial demonstrates detecting monotonic trends in imagery using the non-parametric Mann-Kendall test for the presence of an increasing or decreasing trend and Sen's slope to quantify the magnitude of the trend (if one exists). The tutorial also shows estimating the variance of the Mann-Kendall test statistic, a Z-statistic for the test of presence of any trend, and a P-value of the statistic (assuming a normal distribution). 
+Trend analysis is finding places where something of interest is increasing or decreasing and by how much. More specifically, this tutorial demonstrates detecting monotonic trends in imagery using the non-parametric Mann-Kendall test for the presence of an increasing or decreasing trend and Sen's slope to quantify the magnitude of the trend (if one exists). The tutorial also shows estimating the variance of the Mann-Kendall test statistic, a Z-statistic for the test of presence of any trend, and a P-value of the statistic (assuming a normal distribution).
 **Important: the methods presented here are suitable for assessing _monotonic trends_ (i.e. data without seasonality) in _discrete data_ (i.e. not floating point). Additionally, if you apply the methods in this tutorial to new data (i.e. region, time frame, source) you may need to adjust the `min` and `max` visualization parameters to suit the particular results.**
 ## Time series data
 We will use a time series of MODIS Enhanced Vegetation Index (EVI) from the [MOD13A1](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13A1) dataset. Each pixel of this image collection contains a time series and we will compute the stats in each pixel. Assume that filtering the collection to one season is sufficient to obtain time series with monotonic trends. To check the validity of that assumption for your area of interest, add the collection to the map and using the inspector, click some points and view the series chart presented in the console. Adjust the filter as necessary.
@@ -38,6 +28,7 @@ varafterFilter=ee.Filter.lessThan({
 leftField:'system:time_start',
 rightField:'system:time_start'
 });
+
 varjoined=ee.ImageCollection(ee.Join.saveAll('after').apply({
 primary:coll,
 secondary:coll,
@@ -53,16 +44,18 @@ varsign=function(i,j){// i and j are images
 returnee.Image(j).neq(i)// Zero case
 .multiply(ee.Image(j).subtract(i).clamp(-1,1)).int();
 };
+
 varkendall=ee.ImageCollection(joined.map(function(current){
 varafterCollection=ee.ImageCollection.fromImages(current.get('after'));
 returnafterCollection.map(function(image){
 // The unmask is to prevent accumulation of masked pixels that
 // result from the undefined case of when either current or image
-// is masked. It won't affect the sum, since it's unmasked to zero.
+// is masked.  It won't affect the sum, since it's unmasked to zero.
 returnee.Image(sign(current,image)).unmask(0);
 });
 // Set parallelScale to avoid User memory limit exceeded.
 }).flatten()).reduce('sum',2);
+
 varpalette=['red','white','green'];
 // Set min and max stretch visualization parameters as necessary.
 Map.addLayer(kendall,{palette:palette,min:-2800,max:2800},'kendall');
@@ -81,12 +74,14 @@ returnee.Image(j).subtract(i)
 .rename('slope')
 .float();
 };
+
 varslopes=ee.ImageCollection(joined.map(function(current){
 varafterCollection=ee.ImageCollection.fromImages(current.get('after'));
 returnafterCollection.map(function(image){
 returnee.Image(slope(current,image));
 });
 }).flatten());
+
 varsensSlope=slopes.reduce(ee.Reducer.median(),2);// Set parallelScale.
 Map.addLayer(sensSlope,{palette:palette,min:-1,max:1},'sensSlope');
 
@@ -109,17 +104,18 @@ The previous examples are only to demonstrate the computation. If you need Sen's
 ## Variance of the Mann-Kendall statistic
 Computing the variance of the Mann-Kendall statistic is complicated by the possible presence of ties in the data (i.e. `sign(i, j)` equals zero). Counting those ties can get a little dicey, requiring an array-based forward differencing. Note that you can comment `.subtract(groupFactorSum)` in the computation of `kendallVariance` if you don't care about ties and want to disregard that correction.
 ```
-// Values that are in a group (ties). Set all else to zero.
+// Values that are in a group (ties).  Set all else to zero.
 vargroups=coll.map(function(i){
 varmatches=coll.map(function(j){
 returni.eq(j);// i and j are images.
 }).sum();
 returni.multiply(matches.gt(1));
 });
-// Compute tie group sizes in a sequence. The first group is discarded.
+
+// Compute tie group sizes in a sequence.  The first group is discarded.
 vargroup=function(array){
 varlength=array.arrayLength(0);
-// Array of indices. These are 1-indexed.
+// Array of indices.  These are 1-indexed.
 varindices=ee.Image([1])
 .arrayRepeat(0,length)
 .arrayAccum(0,ee.Reducer.sum())
@@ -137,15 +133,19 @@ vargroupSizes=runIndices.arraySlice(0,1)
 .subtract(runIndices.arraySlice(0,0,-1));
 returngroupSizes;
 };
+
 // See equation 2.6 in Sen (1968).
 varfactors=function(image){
 returnimage.expression('b() * (b() - 1) * (b() * 2 + 5)');
 };
+
 vargroupSizes=group(groups.toArray());
 vargroupFactors=factors(groupSizes);
 vargroupFactorSum=groupFactors.arrayReduce('sum',[0])
 .arrayGet([0,0]);
+
 varcount=joined.count();
+
 varkendallVariance=factors(count)
 .subtract(groupFactorSum)
 .divide(18)
@@ -162,22 +162,27 @@ The standard normal distribution function can be computed in Earth Engine from t
 varzero=kendall.multiply(kendall.eq(0));
 varpos=kendall.multiply(kendall.gt(0)).subtract(1);
 varneg=kendall.multiply(kendall.lt(0)).add(1);
+
 varz=zero
 .add(pos.divide(kendallVariance.sqrt()))
 .add(neg.divide(kendallVariance.sqrt()));
 Map.addLayer(z,{min:-2,max:2},'z');
+
 // https://en.wikipedia.org/wiki/Error_function#Cumulative_distribution_function
 functioneeCdf(z){
 returnee.Image(0.5)
 .multiply(ee.Image(1).add(ee.Image(z).divide(ee.Image(2).sqrt()).erf()));
 }
+
 functioninvCdf(p){
 returnee.Image(2).sqrt()
 .multiply(ee.Image(p).multiply(2).subtract(1).erfInv());
 }
+
 // Compute P-values.
 varp=ee.Image(1).subtract(eeCdf(z.abs()));
 Map.addLayer(p,{min:0,max:1},'p');
+
 // Pixels that can have the null hypothesis (there is no trend) rejected.
 // Specifically, if the true trend is zero, there would be less than 5%
 // chance of randomly obtaining the observed result (that there is a trend).

@@ -1,7 +1,6 @@
  
 #  ui.Chart.style
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the widget's style ActiveDictionary, which can be modified to update the widget's styles. 
 Properties which behave like their CSS counterparts:
 - height, maxHeight, minHeight (e.g. '100px')
 - width, maxWidth, minWidth (e.g. '100px')
@@ -23,26 +22,30 @@ Properties which behave like their CSS counterparts:
 Supported custom layout properties (see ui.Panel.Layout documentation):
 - stretch ('horizontal', 'vertical', 'both')
 - position ('top-right', 'top-center', 'top-left', 'bottom-right', ...)
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Chart.style()`| ui.data.ActiveDictionary  
-Argument| Type| Details  
+`Chart.style()` | ui.data.ActiveDictionary  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.widget`| ui.Widget| The ui.Widget instance.  
+this: `ui.widget` | ui.Widget | The ui.Widget instance.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
 // Define a UI widget and add it to the map.
 varwidget=ui.Chart([['x','y'],[0,0],[100,100]]);
 Map.add(widget);
+
 // View the UI widget's style properties; an ActiveDictionary.
 print(widget.style());
+
 // ActiveDictionaries are mutable; set a style property.
 widget.style().set('width','400px');
 print(widget.style());
+
 // Define the UI widget's style ActiveDictionary as a variable.
 varwidgetStyle=widget.style();
 print(widgetStyle);
+
 // Set the UI widget's style properties from the ActiveDictionary variable.
 widgetStyle.set({border:'5px solid darkgray'});
 print(widgetStyle);

@@ -1,15 +1,6 @@
  
 #  Developer Resources
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Extensions](https://developers.google.com/earth-engine/tutorials/community/developer-resources#extensions)
-  * [Modules](https://developers.google.com/earth-engine/tutorials/community/developer-resources#modules)
-    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/community/developer-resources#code_editor_javascript)
-    * [Python](https://developers.google.com/earth-engine/tutorials/community/developer-resources#python)
-  * [Datasets](https://developers.google.com/earth-engine/tutorials/community/developer-resources#datasets)
-  * [Other resources](https://developers.google.com/earth-engine/tutorials/community/developer-resources#other_resources)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Content produced by the Earth Engine developer community is not part of the official Earth Engine product documentation. 
 This page contains a collection of resources produced by the Earth Engine developer community. You'll find libraries and modules that extend Earth Engine to new environments, enhance operability, and streamline workflows, as well as tutorials, scripts, blogs, and community-hosted datasets.
 ## Extensions

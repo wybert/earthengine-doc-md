@@ -1,6 +1,6 @@
  
 #  TFRecord and Earth Engine
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord#tfrecords_format_details) is a binary format for efficiently encoding long sequences of [tf.Example protos](https://github.com/tensorflow/tensorflow/blob/r1.14/tensorflow/core/example/example.proto). TFRecord files are easily loaded by TensorFlow through the `tf.data` package as described [here](https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data) and [here](https://www.tensorflow.org/tutorials/load_data/tf_records#tfrecord_files_using_tfdata). This page describes how Earth Engine converts between `ee.FeatureCollection` or `ee.Image` and TFRecord format. 
 ##  Exporting data to TFRecord 
 You can export tables (`ee.FeatureCollection`) or images (`ee.Image`) to TFRecord files in Google Drive or Cloud Storage. Configuration of the export depends on what you are exporting as described below. All numbers exported from Earth Engine to TFRecord are coerced to float type. 
@@ -10,17 +10,19 @@ The following example demonstrates parsing data from an exported table of scalar
 ### Python
 ```
 dataset = tf.data.TFRecordDataset(exportedFilePath)
+
 featuresDict = {
- 'B2': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'B3': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'B4': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'B5': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'B6': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'B7': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
- 'landcover': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32)
+  'B2': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'B3': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'B4': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'B5': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'B6': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'B7': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32),
+  'landcover': tf.io.FixedLenFeature(shape=[1], dtype=tf.float32)
 }
+
 parsedDataset = dataset.map(lambda example: tf.io.parse_single_example(example, featuresDict))
-    
+        
 ```
 
 Note that this example illustrates reading scalar features (i.e. `shape=[1]`). If you are exporting 2D or 3D arrays (e.g. image patches), then you would specify the shape of your patches at parse time, for example `shape=[16, 16]` for a 16x16 pixel patch. 
@@ -29,14 +31,14 @@ When you export an image, the data are ordered as channels, height, width (CHW).
 To help reduce edge effects, the exported patches can overlap. Specifically, you can specify a `kernelSize` which will result in tiles of size:
 ```
 [patchSize[0] + kernelSize[0], patchSize[1] + kernelSize[1]]
-  
+    
 ```
 
 Each tile overlaps adjacent tiles by `[kernelSize[0]/2, kernelSize[1]/2]`. As a result, a kernel of size `kernelSize` centered on an edge pixel of a patch of size `patchSize` contains entirely valid data. The spatial arrangement of the patches in space is illustrated by Figure 1, where Padding Dimension corresponds to the part of the kernel that overlaps the adjacent image: 
 ![TFRecord image diagram](https://developers.google.com/static/earth-engine/images/TFRecord_diagram.png) Figure 1. How image patches are exported. The Padding Dimension is `kernelSize/2`. 
 ####  `formatOptions`
 The `patchSize`, `maxFileSize`, and `kernelSize` parameters are passed to the `ee.Export` (JavaScript) or `ee.batch.Export` (Python) call through a `formatOptions` dictionary, where keys are the names of additional parameters passed to `Export`. Possible `formatOptions` for an image exported to TFRecord format are:
-Property| Description| Type  
+Property | Description | Type  
 ---|---|---  
 `patchDimensions` | Dimensions tiled over the export area, covering every pixel in the bounding box exactly once (except when the patch dimensions do not evenly divide the bounding box in which case border tiles along the greatest x/y edges will be dropped). Dimensions must be > 0. | Array<int>[2].  
 `kernelSize` | If specified, tiles will be buffered by the margin dimensions both positively and negatively, resulting in overlap between neighboring patches. If specified, two dimensions must be provided (X and Y, respectively).  | Array<int>[2]. Default: [1, 1]  

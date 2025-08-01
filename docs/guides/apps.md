@@ -1,15 +1,6 @@
  
 #  Earth Engine Apps
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Introduction](https://developers.google.com/earth-engine/guides/apps#introduction)
-  * [Build Your App](https://developers.google.com/earth-engine/guides/apps#build-your-app)
-  * [Publishing Your App](https://developers.google.com/earth-engine/guides/apps#publishing-your-app)
-  * [Managing Your Apps](https://developers.google.com/earth-engine/guides/apps#managing-your-apps)
-  * [Collaborate with others on Project-owned Apps](https://developers.google.com/earth-engine/guides/apps#collaborate-with-others-on-project-owned-apps)
-  * [FAQ](https://developers.google.com/earth-engine/guides/apps#faq)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Introduction
 Earth Engine Apps are dynamic, shareable user interfaces for Earth Engine analyses. With Apps, experts can use simple UI elements to leverage Earth Engine's data catalog and analytical power, for experts and non-experts alike to use. 
 Apps published from Earth Engine are accessible from the application-specific URL generated at time of publishing. No Earth Engine account is required to view or interact with a published App. Apps selected as featured by their creator are also available at a user-specific App Gallery (e.g., USERNAME.users.earthengine.app). 
@@ -67,4 +58,3 @@ How can I understand my apps usage and quota better?
 If the quota is exceeded, Earth Engine may return `HTTP 429: Too Many Requests` errors. Generally, these errors are handled by the Earth Engine client library, which wraps requests in exponential backoff, retrying the query until it succeeds. The Earth Engine client library will retry the request five times.
 If your app becomes so popular that many users get quota exceeded errors, users will see a warning message, and Earth Engine may have to (temporarily) restrict access to the app. 
 To help avoid receiving 429 errors, you may want to enable caching for your application, such as by storing cacheable aggregate statistics as Earth Engine table assets, rather than computing them on the fly.
-Was this helpful?

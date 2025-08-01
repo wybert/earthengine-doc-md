@@ -1,46 +1,7 @@
  
 #  Time Series Visualization with Altair
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#context)
-  * [Materials](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#materials)
-    * [Datasets](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#datasets)
-    * [Region of interest](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#region_of_interest)
-  * [General workflow](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#general_workflow)
-  * [Python setup](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#python_setup)
-    * [Earth Engine API](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#earth_engine_api)
-    * [Other libraries](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#other_libraries)
-  * [Region reduction function](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#region_reduction_function)
-    * [Formatting](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#formatting)
-  * [Drought severity](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#drought_severity)
-    * [Import data](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#import_data)
-    * [Reduce data](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#reduce_data)
-    * [Optional export](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#optional_export)
-    * [Server to client transfer](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#server_to_client_transfer)
-    * [Add date columns](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#add_date_columns)
-    * [Rename and drop columns](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#rename_and_drop_columns)
-    * [Calendar heatmap](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#calendar_heatmap)
-    * [Bar chart](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#bar_chart)
-  * [Vegetation productivity](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#vegetation_productivity)
-    * [Import and reduce](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#import_and_reduce)
-    * [Prepare DataFrame](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#prepare_dataframe)
-    * [DOY line chart](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#doy_line_chart)
-  * [Dought and productivity relationship](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#dought_and_productivity_relationship)
-    * [Prepare DataFrames](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#prepare_dataframes)
-    * [Scatter plot](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#scatter_plot)
-  * [Patch-level vegetation mortality](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#patch-level_vegetation_mortality)
-    * [Find a point of interest](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#find_a_point_of_interest)
-    * [Prepare Landsat collection](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#prepare_landsat_collection)
-    * [Prepare DataFrame](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#prepare_dataframe_2)
-    * [Line chart](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#line_chart)
-  * [Past and future climate](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#past_and_future_climate)
-    * [Future climate](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#future_climate)
-    * [Past climate](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#past_climate)
-    * [Combine DataFrames](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#combine_dataframes)
-    * [Charts](https://developers.google.com/earth-engine/tutorials/community/time-series-visualization-with-altair#charts)
-
-
-Author(s): [ jdbcode ](https://github.com/jdbcode)
+Stay organized with collections  Save and categorize content based on your preferences. 
+Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/time-series-visualization-with-altair/index.ipynb)  
 ---|---  
@@ -116,62 +77,70 @@ Reduction of pixels intersecting the region of interest to a statistic will be p
 **Note** : most of the reduction operations in this tutorial use a large pixel scale so that operations complete quickly. In your own application, set the scale and other parameter arguments as you wish.
 ```
 defcreate_reduce_region_function(geometry,
-                 reducer=ee.Reducer.mean(),
-                 scale=1000,
-                 crs='EPSG:4326',
-                 bestEffort=True,
-                 maxPixels=1e13,
-                 tileScale=4):
+                                  reducer=ee.Reducer.mean(),
+                                  scale=1000,
+                                  crs='EPSG:4326',
+                                  bestEffort=True,
+                                  maxPixels=1e13,
+                                  tileScale=4):
 """Creates a region reduction function.
- Creates a region reduction function intended to be used as the input function
- to ee.ImageCollection.map() for reducing pixels intersecting a provided region
- to a statistic for each image in a collection. See ee.Image.reduceRegion()
- documentation for more details.
- Args:
-  geometry:
-   An ee.Geometry that defines the region over which to reduce data.
-  reducer:
-   Optional; An ee.Reducer that defines the reduction method.
-  scale:
-   Optional; A number that defines the nominal scale in meters of the
-   projection to work in.
-  crs:
-   Optional; An ee.Projection or EPSG string ('EPSG:5070') that defines
-   the projection to work in.
-  bestEffort:
-   Optional; A Boolean indicator for whether to use a larger scale if the
-   geometry contains too many pixels at the given scale for the operation
-   to succeed.
-  maxPixels:
-   Optional; A number specifying the maximum number of pixels to reduce.
-  tileScale:
-   Optional; A number representing the scaling factor used to reduce
-   aggregation tile size; using a larger tileScale (e.g. 2 or 4) may enable
-   computations that run out of memory with the default.
- Returns:
-  A function that accepts an ee.Image and reduces it by region, according to
-  the provided arguments.
- """
- defreduce_region_function(img):
-"""Applies the ee.Image.reduceRegion() method.
+
+  Creates a region reduction function intended to be used as the input function
+  to ee.ImageCollection.map() for reducing pixels intersecting a provided region
+  to a statistic for each image in a collection. See ee.Image.reduceRegion()
+  documentation for more details.
+
   Args:
-   img:
-    An ee.Image to reduce to a statistic by region.
+    geometry:
+      An ee.Geometry that defines the region over which to reduce data.
+    reducer:
+      Optional; An ee.Reducer that defines the reduction method.
+    scale:
+      Optional; A number that defines the nominal scale in meters of the
+      projection to work in.
+    crs:
+      Optional; An ee.Projection or EPSG string ('EPSG:5070') that defines
+      the projection to work in.
+    bestEffort:
+      Optional; A Boolean indicator for whether to use a larger scale if the
+      geometry contains too many pixels at the given scale for the operation
+      to succeed.
+    maxPixels:
+      Optional; A number specifying the maximum number of pixels to reduce.
+    tileScale:
+      Optional; A number representing the scaling factor used to reduce
+      aggregation tile size; using a larger tileScale (e.g. 2 or 4) may enable
+      computations that run out of memory with the default.
+
   Returns:
-   An ee.Feature that contains properties representing the image region
-   reduction results per band and the image timestamp formatted as
-   milliseconds from Unix epoch (included to enable time series plotting).
+    A function that accepts an ee.Image and reduces it by region, according to
+    the provided arguments.
   """
-  stat = img.reduceRegion(
-    reducer=reducer,
-    geometry=geometry,
-    scale=scale,
-    crs=crs,
-    bestEffort=bestEffort,
-    maxPixels=maxPixels,
-    tileScale=tileScale)
-  return ee.Feature(geometry, stat).set({'millis': img.date().millis()})
- return reduce_region_function
+
+  defreduce_region_function(img):
+"""Applies the ee.Image.reduceRegion() method.
+
+    Args:
+      img:
+        An ee.Image to reduce to a statistic by region.
+
+    Returns:
+      An ee.Feature that contains properties representing the image region
+      reduction results per band and the image timestamp formatted as
+      milliseconds from Unix epoch (included to enable time series plotting).
+    """
+
+    stat = img.reduceRegion(
+        reducer=reducer,
+        geometry=geometry,
+        scale=scale,
+        crs=crs,
+        bestEffort=bestEffort,
+        maxPixels=maxPixels,
+        tileScale=tileScale)
+
+    return ee.Feature(geometry, stat).set({'millis': img.date().millis()})
+  return reduce_region_function
 
 ```
 
@@ -186,11 +155,12 @@ The returned `ee.Dictionary` is essentially a table, where keys define columns a
 ```
 # Define a function to transfer feature properties to a dictionary.
 deffc_to_dict(fc):
- prop_names = fc.first().propertyNames()
- prop_lists = fc.reduceColumns(
-   reducer=ee.Reducer.toList().repeat(prop_names.size()),
-   selectors=prop_names).get('list')
- return ee.Dictionary.fromLists(prop_names, prop_lists)
+  prop_names = fc.first().propertyNames()
+  prop_lists = fc.reduceColumns(
+      reducer=ee.Reducer.toList().repeat(prop_names.size()),
+      selectors=prop_names).get('list')
+
+  return ee.Dictionary.fromLists(prop_names, prop_lists)
 
 ```
 
@@ -205,7 +175,7 @@ today = ee.Date(pd.to_datetime('today'))
 date_range = ee.DateRange(today.advance(-20, 'years'), today)
 pdsi = ee.ImageCollection('GRIDMET/DROUGHT').filterDate(date_range).select('pdsi')
 aoi = ee.FeatureCollection('EPA/Ecoregions/2013/L3').filter(
-  ee.Filter.eq('na_l3name', 'Sierra Nevada')).geometry()
+    ee.Filter.eq('na_l3name', 'Sierra Nevada')).geometry()
 
 ```
 
@@ -217,21 +187,24 @@ aoi = ee.FeatureCollection('EPA/Ecoregions/2013/L3').filter(
 
 ```
 reduce_pdsi = create_reduce_region_function(
-  geometry=aoi, reducer=ee.Reducer.mean(), scale=5000, crs='EPSG:3310')
+    geometry=aoi, reducer=ee.Reducer.mean(), scale=5000, crs='EPSG:3310')
+
 pdsi_stat_fc = ee.FeatureCollection(pdsi.map(reduce_pdsi)).filter(
-  ee.Filter.notNull(pdsi.first().bandNames()))
+    ee.Filter.notNull(pdsi.first().bandNames()))
 
 ```
 
+* * *
 **STOP** :
 ### _Optional export_
 _If your process is long-running_ , you'll want to export the `pdsi_stat_fc` variable as an asset using a batch task. Wait until the task finishes, import the asset, and continue on. Please see the Developer Guide section on [exporting with the Python API](https://developers.google.com/earth-engine/python_install#exporting-data).
 Export to asset:
 ```
 task = ee.batch.Export.table.toAsset(
-  collection=pdsi_stat_fc,
-  description='pdsi_stat_fc export',
-  assetId='users/YOUR_USER_NAME/pdsi_stat_fc_ts_vis_with_altair')
+    collection=pdsi_stat_fc,
+    description='pdsi_stat_fc export',
+    assetId='users/YOUR_USER_NAME/pdsi_stat_fc_ts_vis_with_altair')
+
 # task.start()
 
 ```
@@ -243,6 +216,7 @@ Import the asset after the export completes:
 ```
 
 _* Remove comments (#) to run the above cells._
+* * *
 **CONTINUE** :
 ### Server to client transfer
 The `ee.FeatureCollection` needs to be converted to a dictionary and transferred to the Python kernel.
@@ -258,14 +232,15 @@ The result is a Python dictionary. Print a small part to see how it is formatted
 ```
 print(type(pdsi_dict), '\n')
 for prop in pdsi_dict.keys():
-  print(prop + ':', pdsi_dict[prop][0:3] + ['...'])
+    print(prop + ':', pdsi_dict[prop][0:3] + ['...'])
 
 ```
 ```
 <class 'dict'> 
-millis: [1120456800000, 1120888800000, 1121320800000, '...']
-pdsi: [3.481914694127672, 3.5399954982962543, 3.596467772275757, '...']
-system:index: ['20050704', '20050709', '20050714', '...']
+
+millis: [1123048800000, 1123480800000, 1123912800000, '...']
+pdsi: [3.516818137842582, 3.4590449090482895, 3.4069218823607024, '...']
+system:index: ['20050803', '20050808', '20050813', '...']
 
 ```
 
@@ -282,9 +257,9 @@ print(pdsi_df.dtypes)
 
 ```
 ```
-millis      int64
-pdsi      float64
-system:index   object
+millis            int64
+pdsi            float64
+system:index     object
 dtype: object
 
 ```
@@ -295,12 +270,12 @@ Define a function to add date variables to the DataFrame: year, month, day, and 
 ```
 # Function to add date variables to DataFrame.
 defadd_date_info(df):
- df['Timestamp'] = pd.to_datetime(df['millis'], unit='ms')
- df['Year'] = pd.DatetimeIndex(df['Timestamp']).year
- df['Month'] = pd.DatetimeIndex(df['Timestamp']).month
- df['Day'] = pd.DatetimeIndex(df['Timestamp']).day
- df['DOY'] = pd.DatetimeIndex(df['Timestamp']).dayofyear
- return df
+  df['Timestamp'] = pd.to_datetime(df['millis'], unit='ms')
+  df['Year'] = pd.DatetimeIndex(df['Timestamp']).year
+  df['Month'] = pd.DatetimeIndex(df['Timestamp']).month
+  df['Day'] = pd.DatetimeIndex(df['Timestamp']).day
+  df['DOY'] = pd.DatetimeIndex(df['Timestamp']).dayofyear
+  return df
 
 ```
 
@@ -316,7 +291,7 @@ pdsi_df.head(5)
 Often it is desirable to rename columns and/or remove unnecessary columns. Do both here and preview the DataFrame.
 ```
 pdsi_df = pdsi_df.rename(columns={
-  'pdsi': 'PDSI'
+    'pdsi': 'PDSI'
 }).drop(columns=['millis', 'system:index'])
 pdsi_df.head(5)
 
@@ -328,12 +303,12 @@ pdsi_df.dtypes
 
 ```
 ```
-PDSI        float64
-Timestamp  datetime64[ns]
-Year         int32
-Month         int32
-Day          int32
-DOY          int32
+PDSI                float64
+Timestamp    datetime64[ns]
+Year                  int32
+Month                 int32
+Day                   int32
+DOY                   int32
 dtype: object
 
 ```
@@ -345,15 +320,15 @@ Note that Altair features a convenient [method for aggregating values within gro
 Also note that a tooltip has been added to the chart; hovering over cells reveals the values of the selected variables.
 ```
 alt.Chart(pdsi_df).mark_rect().encode(
-  x='Year:O',
-  y='Month:O',
-  color=alt.Color(
-    'mean(PDSI):Q', scale=alt.Scale(scheme='redblue', domain=(-5, 5))),
-  tooltip=[
-    alt.Tooltip('Year:O', title='Year'),
-    alt.Tooltip('Month:O', title='Month'),
-    alt.Tooltip('mean(PDSI):Q', title='PDSI')
-  ]).properties(width=600, height=300)
+    x='Year:O',
+    y='Month:O',
+    color=alt.Color(
+        'mean(PDSI):Q', scale=alt.Scale(scheme='redblue', domain=(-5, 5))),
+    tooltip=[
+        alt.Tooltip('Year:O', title='Year'),
+        alt.Tooltip('Month:O', title='Month'),
+        alt.Tooltip('mean(PDSI):Q', title='PDSI')
+    ]).properties(width=600, height=300)
 
 ```
 
@@ -362,14 +337,14 @@ The calendar heat map is good for interpretation of relative intra- and inter-an
 Chart PDSI time series as a bar chart to more easily interpret absolute values and compare them over time. Here, the observation timestamp is represented on the x-axis and PDSI is represented by both the y-axis and color. Since each PDSI observation has a unique timestamp that can be plotted to the x-axis, there is no need to aggregate PDSI values as in the above chart. A tooltip is added to the chart; hover over the bars to reveal the values for each variable.
 ```
 alt.Chart(pdsi_df).mark_bar(size=1).encode(
-  x='Timestamp:T',
-  y='PDSI:Q',
-  color=alt.Color(
-    'PDSI:Q', scale=alt.Scale(scheme='redblue', domain=(-5, 5))),
-  tooltip=[
-    alt.Tooltip('Timestamp:T', title='Date'),
-    alt.Tooltip('PDSI:Q', title='PDSI')
-  ]).properties(width=600, height=300)
+    x='Timestamp:T',
+    y='PDSI:Q',
+    color=alt.Color(
+        'PDSI:Q', scale=alt.Scale(scheme='redblue', domain=(-5, 5))),
+    tooltip=[
+        alt.Tooltip('Timestamp:T', title='Date'),
+        alt.Tooltip('PDSI:Q', title='PDSI')
+    ]).properties(width=600, height=300)
 
 ```
 
@@ -386,25 +361,31 @@ MODIS provides an analysis-ready 16-day NDVI composite that is well suited for r
 
 ```
 ndvi = ee.ImageCollection('MODIS/006/MOD13A2').filterDate(date_range).select('NDVI')
+
 reduce_ndvi = create_reduce_region_function(
-  geometry=aoi, reducer=ee.Reducer.mean(), scale=1000, crs='EPSG:3310')
+    geometry=aoi, reducer=ee.Reducer.mean(), scale=1000, crs='EPSG:3310')
+
 ndvi_stat_fc = ee.FeatureCollection(ndvi.map(reduce_ndvi)).filter(
-  ee.Filter.notNull(ndvi.first().bandNames()))
+    ee.Filter.notNull(ndvi.first().bandNames()))
 
 ```
 ```
-/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:207: DeprecationWarning: 
+/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/ee/deprecation.py:209: DeprecationWarning: 
+
 Attention required for MODIS/006/MOD13A2! You are using a deprecated asset.
 To make sure your code keeps working, please update it.
 Learn more: https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13A2
- warnings.warn(warning, category=DeprecationWarning)
+
+  warnings.warn(warning, category=DeprecationWarning)
 
 ```
 
+* * *
 **STOP** :
 _If your process is long-running_ , you'll want to export the `ndvi_stat_fc` variable as an asset using a batch task. Wait until the task finishes, import the asset, and continue on.
 Please see the above **_Optional export_** section for more details.
 **CONTINUE** :
+* * *
 ### Prepare DataFrame
   1. Transfer data from the server to the client.
   2. Convert the Python dictionary to a pandas DataFrame.
@@ -418,9 +399,9 @@ print(ndvi_df.dtypes)
 
 ```
 ```
-NDVI      float64
-millis      int64
-system:index   object
+NDVI            float64
+millis            int64
+system:index     object
 dtype: object
 
 ```
@@ -442,31 +423,35 @@ Make a day of year (DOY) line chart where each line represents a year of observa
 Day of year is represented on the x-axis and NDVI on the y-axis. Each line represents a year and is distinguished by color. Note that this plot includes a tooltip and has been made interactive so that the axes can be zoomed and panned.
 ```
 highlight = alt.selection(
-  type='single', on='mouseover', fields=['Year'], nearest=True)
+    type='single', on='mouseover', fields=['Year'], nearest=True)
+
 base = alt.Chart(ndvi_df).encode(
-  x=alt.X('DOY:Q', scale=alt.Scale(domain=[0, 353], clamp=True)),
-  y=alt.Y('NDVI:Q', scale=alt.Scale(domain=[0.1, 0.6])),
-  color=alt.Color('Year:O', scale=alt.Scale(scheme='magma')))
+    x=alt.X('DOY:Q', scale=alt.Scale(domain=[0, 353], clamp=True)),
+    y=alt.Y('NDVI:Q', scale=alt.Scale(domain=[0.1, 0.6])),
+    color=alt.Color('Year:O', scale=alt.Scale(scheme='magma')))
+
 points = base.mark_circle().encode(
-  opacity=alt.value(0),
-  tooltip=[
-    alt.Tooltip('Year:O', title='Year'),
-    alt.Tooltip('DOY:Q', title='DOY'),
-    alt.Tooltip('NDVI:Q', title='NDVI')
-  ]).add_selection(highlight)
+    opacity=alt.value(0),
+    tooltip=[
+        alt.Tooltip('Year:O', title='Year'),
+        alt.Tooltip('DOY:Q', title='DOY'),
+        alt.Tooltip('NDVI:Q', title='NDVI')
+    ]).add_selection(highlight)
+
 lines = base.mark_line().encode(
-  size=alt.condition(~highlight, alt.value(1), alt.value(3)))
+    size=alt.condition(~highlight, alt.value(1), alt.value(3)))
+
 (points + lines).properties(width=600, height=350).interactive()
 
 ```
 ```
-/tmpfs/tmp/ipykernel_26105/3208543205.py:1: AltairDeprecationWarning: 
+/tmpfs/tmp/ipykernel_41149/3208543205.py:1: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use 'selection_point()' or 'selection_interval()' instead.
 These functions also include more helpful docstrings.
- highlight = alt.selection(
-/tmpfs/tmp/ipykernel_26105/3208543205.py:9: AltairDeprecationWarning: 
+  highlight = alt.selection(
+/tmpfs/tmp/ipykernel_41149/3208543205.py:9: AltairDeprecationWarning: 
 Deprecated since `altair=5.0.0`. Use add_params instead.
- points = base.mark_circle().encode(
+  points = base.mark_circle().encode(
 
 ```
 
@@ -479,11 +464,14 @@ Another way to view these data is to plot the distribution of NDVI by DOY repres
 
 ```
 base = alt.Chart(ndvi_df).encode(
-  x=alt.X('DOY:Q', scale=alt.Scale(domain=(150, 340))))
+    x=alt.X('DOY:Q', scale=alt.Scale(domain=(150, 340))))
+
 line = base.mark_line().encode(
-  y=alt.Y('median(NDVI):Q', scale=alt.Scale(domain=(0.47, 0.53))))
+    y=alt.Y('median(NDVI):Q', scale=alt.Scale(domain=(0.47, 0.53))))
+
 band = base.mark_errorband(extent='iqr').encode(
-  y='NDVI:Q')
+    y='NDVI:Q')
+
 (line + band).properties(width=600, height=300).interactive()
 
 ```
@@ -498,8 +486,10 @@ Before they can be merged, each variable must be reduced to a common temporal ob
 
 ```
 ndvi_doy_range = [224, 272]
+
 ndvi_df_sub = ndvi_df[(ndvi_df['DOY'] >= ndvi_doy_range[0])
-           & (ndvi_df['DOY'] <= ndvi_doy_range[1])]
+                      & (ndvi_df['DOY'] <= ndvi_doy_range[1])]
+
 ndvi_df_sub = ndvi_df_sub.groupby('Year').min(numeric_only=True)
 
 ```
@@ -510,8 +500,10 @@ ndvi_df_sub = ndvi_df_sub.groupby('Year').min(numeric_only=True)
 
 ```
 pdsi_doy_range = [1, 272]
+
 pdsi_df_sub = pdsi_df[(pdsi_df['DOY'] >= pdsi_doy_range[0])
-           & (pdsi_df['DOY'] <= pdsi_doy_range[1])]
+                      & (pdsi_df['DOY'] <= pdsi_doy_range[1])]
+
 pdsi_df_sub = pdsi_df_sub.groupby('Year').mean(numeric_only=True)
 
 ```
@@ -523,8 +515,10 @@ pdsi_df_sub = pdsi_df_sub.groupby('Year').mean(numeric_only=True)
 
 ```
 ndvi_pdsi_df = pd.merge(
-  ndvi_df_sub, pdsi_df_sub, how='left', on='Year').reset_index()
+    ndvi_df_sub, pdsi_df_sub, how='left', on='Year').reset_index()
+
 ndvi_pdsi_df = ndvi_pdsi_df[['Year', 'NDVI', 'PDSI']]
+
 ndvi_pdsi_df.head(5)
 
 ```
@@ -535,8 +529,9 @@ Including a line of best fit can be a helpful visual aid. Here, a 1D polynomial 
 
 ```
 ndvi_pdsi_df['Fit'] = np.poly1d(
-  np.polyfit(ndvi_pdsi_df['PDSI'], ndvi_pdsi_df['NDVI'], 1))(
-    ndvi_pdsi_df['PDSI'])
+    np.polyfit(ndvi_pdsi_df['PDSI'], ndvi_pdsi_df['NDVI'], 1))(
+        ndvi_pdsi_df['PDSI'])
+
 ndvi_pdsi_df.head(5)
 
 ```
@@ -545,18 +540,21 @@ ndvi_pdsi_df.head(5)
 The DataFrame is ready for plotting. Since this chart is to include points and a line of best fit, two charts need to be created, one for the points and one for the line. The results are combined into the final plot.
 ```
 base = alt.Chart(ndvi_pdsi_df).encode(
-  x=alt.X('PDSI:Q', scale=alt.Scale(domain=(-5, 5))))
+    x=alt.X('PDSI:Q', scale=alt.Scale(domain=(-5, 5))))
+
 points = base.mark_circle(size=60).encode(
-  y=alt.Y('NDVI:Q', scale=alt.Scale(domain=(0.4, 0.6))),
-  color=alt.Color('Year:O', scale=alt.Scale(scheme='magma')),
-  tooltip=[
-    alt.Tooltip('Year:O', title='Year'),
-    alt.Tooltip('PDSI:Q', title='PDSI'),
-    alt.Tooltip('NDVI:Q', title='NDVI')
-  ])
+    y=alt.Y('NDVI:Q', scale=alt.Scale(domain=(0.4, 0.6))),
+    color=alt.Color('Year:O', scale=alt.Scale(scheme='magma')),
+    tooltip=[
+        alt.Tooltip('Year:O', title='Year'),
+        alt.Tooltip('PDSI:Q', title='PDSI'),
+        alt.Tooltip('NDVI:Q', title='NDVI')
+    ])
+
 fit = base.mark_line().encode(
-  y=alt.Y('Fit:Q'),
-  color=alt.value('#808080'))
+    y=alt.Y('Fit:Q'),
+    color=alt.value('#808080'))
+
 (points + fit).properties(width=600, height=300).interactive()
 
 ```
@@ -573,37 +571,44 @@ Use [aerial imagery](https://developers.google.com/earth-engine/datasets/catalog
 ```
 # Define a method for displaying Earth Engine image tiles to folium map.
 defadd_ee_layer(self, ee_image_object, vis_params, name):
- map_id_dict = ee.Image(ee_image_object).getMapId(vis_params)
- folium.raster_layers.TileLayer(
-   tiles=map_id_dict['tile_fetcher'].url_format,
-   attr='Map Data &copy; <a href="https://earthengine.google.com/">Google Earth Engine, USDA National Agriculture Imagery Program</a>',
-   name=name,
-   overlay=True,
-   control=True).add_to(self)
+  map_id_dict = ee.Image(ee_image_object).getMapId(vis_params)
+  folium.raster_layers.TileLayer(
+      tiles=map_id_dict['tile_fetcher'].url_format,
+      attr='Map Data &copy; <a href="https://earthengine.google.com/">Google Earth Engine, USDA National Agriculture Imagery Program</a>',
+      name=name,
+      overlay=True,
+      control=True).add_to(self)
+
 # Add an Earth Engine layer drawing method to folium.
 folium.Map.add_ee_layer = add_ee_layer
+
 # Import a NAIP image for the area and date of interest.
 naip_img = ee.ImageCollection('USDA/NAIP/DOQQ').filterDate(
-  '2016-01-01',
-  '2017-01-01').filterBounds(ee.Geometry.Point([-118.6407, 35.9665])).first()
+    '2016-01-01',
+    '2017-01-01').filterBounds(ee.Geometry.Point([-118.6407, 35.9665])).first()
+
 # Display the NAIP image to the folium map.
 m = folium.Map(location=[35.9665, -118.6407], tiles='OpenStreetMap', zoom_start=16)
 m.add_ee_layer(naip_img, None, 'NAIP image, 2016')
+
 # Add the point of interest to the map.
 folium.Circle(
-  radius=15,
-  location=[35.9665, -118.6407],
-  color='yellow',
-  fill=False,
+    radius=15,
+    location=[35.9665, -118.6407],
+    color='yellow',
+    fill=False,
 ).add_to(m)
+
 # Add the AOI to the map.
 folium.GeoJson(
- aoi.getInfo(),
- name='geojson',
- style_function=lambda x: {'fillColor': '#00000000', 'color': '#000000'},
+  aoi.getInfo(),
+  name='geojson',
+  style_function=lambda x: {'fillColor': '#00000000', 'color': '#000000'},
 ).add_to(m)
+
 # Add a lat lon popup.
 folium.LatLngPopup().add_to(m)
+
 # Display the map.
 display(m)
 
@@ -617,6 +622,7 @@ Landsat surface reflectance data need to be prepared before being reduced. The s
 ```
 start_day = 224
 end_day = 272
+
 latitude = 35.9665
 longitude = -118.6407
 
@@ -634,74 +640,92 @@ longitude = -118.6407
 ```
 # Make lat. and long. vars an `ee.Geometry.Point`.
 point = ee.Geometry.Point([longitude, latitude])
+
 # Define a function to get and rename bands of interest from OLI.
 defrename_oli(img):
- return (img.select(
-   ee.List(['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7']),
-   ee.List(['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2'])))
+  return (img.select(
+      ee.List(['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7']),
+      ee.List(['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2'])))
+
 # Define a function to get and rename bands of interest from ETM+.
 defrename_etm(img):
- return (img.select(
-   ee.List(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7']),
-   ee.List(['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2'])))
+  return (img.select(
+      ee.List(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7']),
+      ee.List(['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2'])))
+
 # Define a function to scale images and mask out clouds and cloud shadows.
 defscale_and_mask(img):
-  qa_mask = img.select('QA_PIXEL').bitwiseAnd(int('11111', 2)).eq(0)
-  scaled = img.select('SR_B.').multiply(0.0000275).add(-0.2)
-  return scaled.updateMask(qa_mask)
+    qa_mask = img.select('QA_PIXEL').bitwiseAnd(int('11111', 2)).eq(0)
+    scaled = img.select('SR_B.').multiply(0.0000275).add(-0.2)
+    return scaled.updateMask(qa_mask)
+
 # Define a function to add year as an image property.
 defset_year(img):
- year = ee.Image(img).date().get('year')
- return img.set('Year', year)
+  year = ee.Image(img).date().get('year')
+  return img.set('Year', year)
+
 # Define a function to calculate NBR.
 defcalc_nbr(img):
- return img.normalizedDifference(ee.List(['NIR', 'SWIR2'])).rename('NBR')
+  return img.normalizedDifference(ee.List(['NIR', 'SWIR2'])).rename('NBR')
+
 # Define a function to prepare OLI images.
 defprep_oli(img):
- orig = img
- img = scale_and_mask(img)
- img = rename_oli(img)
- img = calc_nbr(img)
- img = img.copyProperties(orig, orig.propertyNames())
- return set_year(img)
+  orig = img
+  img = scale_and_mask(img)
+  img = rename_oli(img)
+  img = calc_nbr(img)
+  img = img.copyProperties(orig, orig.propertyNames())
+  return set_year(img)
+
 # Define a function to prepare TM/ETM+ images.
 defprep_etm(img):
- orig = img
- img = scale_and_mask(img)
- img = rename_etm(img)
- img = calc_nbr(img)
- img = img.copyProperties(orig, orig.propertyNames())
- return set_year(img)
+  orig = img
+  img = scale_and_mask(img)
+  img = rename_etm(img)
+  img = calc_nbr(img)
+  img = img.copyProperties(orig, orig.propertyNames())
+  return set_year(img)
+
 # Import image collections for each Landsat sensor (surface reflectance).
 tm_col = ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
 etm_col = ee.ImageCollection('LANDSAT/LE07/C02/T1_L2')
 oli_col = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+
 # Filter collections and prepare them for merging.
 oli_col = oli_col.filterBounds(point).filter(
-  ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_oli)
+    ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_oli)
+
 etm_col = etm_col.filterBounds(point).filter(
-  ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_etm)
+    ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_etm)
+
 tm_col = tm_col.filterBounds(point).filter(
-  ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_etm)
+    ee.Filter.calendarRange(start_day, end_day, 'day_of_year')).map(prep_etm)
+
 # Merge the collections.
 landsat_col = oli_col.merge(etm_col).merge(tm_col)
+
 # Get a distinct year collection.
 distinct_year_col = landsat_col.distinct('Year')
+
 # Define a filter that identifies which images from the complete collection
 # match the year from the distinct year collection.
 join_filter = ee.Filter.equals(leftField='Year', rightField='Year')
+
 # Define a join.
 join = ee.Join.saveAll('year_matches')
+
 # Apply the join and convert the resulting FeatureCollection to an
 # ImageCollection.
 join_col = ee.ImageCollection(
-  join.apply(distinct_year_col, landsat_col, join_filter))
+    join.apply(distinct_year_col, landsat_col, join_filter))
+
 # Define a function to apply mean reduction among matching year collections.
 defreduce_by_join(img):
- year_col = ee.ImageCollection.fromImages(ee.Image(img).get('year_matches'))
- return year_col.reduce(ee.Reducer.mean()).rename('NBR').set(
-   'system:time_start',
-   ee.Image(img).date().update(month=8, day=1).millis())
+  year_col = ee.ImageCollection.fromImages(ee.Image(img).get('year_matches'))
+  return year_col.reduce(ee.Reducer.mean()).rename('NBR').set(
+      'system:time_start',
+      ee.Image(img).date().update(month=8, day=1).millis())
+
 # Apply the `reduce_by_join` function to the list of annual images in the
 # properties of the join collection.
 landsat_col = join_col.map(reduce_by_join)
@@ -716,13 +740,15 @@ The result of the above code block is an image collection with as many images as
 
 ```
 reduce_landsat = create_reduce_region_function(
-  geometry=point, reducer=ee.Reducer.first(), scale=30, crs='EPSG:3310')
+    geometry=point, reducer=ee.Reducer.first(), scale=30, crs='EPSG:3310')
+
 nbr_stat_fc = ee.FeatureCollection(landsat_col.map(reduce_landsat)).filter(
-  ee.Filter.notNull(landsat_col.first().bandNames()))
+    ee.Filter.notNull(landsat_col.first().bandNames()))
 
 ```
 
-  1. Transfer data from the server to the client. _Note: if the process times out, you'll need to export/import the`nbr_stat_fc` feature collection as described in the **Optional export** section_.
+  1. Transfer data from the server to the client.  
+_Note: if the process times out, you'll need to export/import the`nbr_stat_fc` feature collection as described in the **Optional export** section_.
   2. Convert the Python dictionary to a pandas DataFrame.
   3. Preview the DataFrame and check data types.
 
@@ -734,9 +760,9 @@ print(nbr_df.dtypes)
 
 ```
 ```
-NBR       float64
-millis      int64
-system:index   object
+NBR             float64
+millis            int64
+system:index     object
 dtype: object
 
 ```
@@ -754,12 +780,12 @@ nbr_df.head(5)
 Display the Landsat NBR time series for the point of interest as a line plot.
 ```
 alt.Chart(nbr_df).mark_line().encode(
-  x=alt.X('Timestamp:T', title='Date'),
-  y='NBR:Q',
-  tooltip=[
-       alt.Tooltip('Timestamp:T', title='Date'),
-       alt.Tooltip('NBR:Q')
-       ]).properties(width=600, height=300).interactive()
+    x=alt.X('Timestamp:T', title='Date'),
+    y='NBR:Q',
+    tooltip=[
+             alt.Tooltip('Timestamp:T', title='Date'),
+             alt.Tooltip('NBR:Q')
+             ]).properties(width=600, height=300).interactive()
 
 ```
 
@@ -776,17 +802,19 @@ NEX-DCP30 data contain 33 climate models projected to the year 2100 using severa
 
 ```
 dcp_col = (ee.ImageCollection('NASA/NEX-DCP30_ENSEMBLE_STATS')
-      .select(['tasmax_median', 'tasmin_median', 'pr_median'])
-      .filter(
-        ee.Filter.And(ee.Filter.eq('scenario', 'rcp85'),
-               ee.Filter.date('2019-01-01', '2070-01-01'))))
+           .select(['tasmax_median', 'tasmin_median', 'pr_median'])
+           .filter(
+               ee.Filter.And(ee.Filter.eq('scenario', 'rcp85'),
+                             ee.Filter.date('2019-01-01', '2070-01-01'))))
+
 defcalc_mean_temp(img):
- return (img.select('tasmax_median')
-     .add(img.select('tasmin_median'))
-     .divide(ee.Image.constant(2.0))
-     .addBands(img.select('pr_median'))
-     .rename(['Temp-mean', 'Precip-rate'])
-     .copyProperties(img, img.propertyNames()))
+  return (img.select('tasmax_median')
+          .add(img.select('tasmin_median'))
+          .divide(ee.Image.constant(2.0))
+          .addBands(img.select('pr_median'))
+          .rename(['Temp-mean', 'Precip-rate'])
+          .copyProperties(img, img.propertyNames()))
+
 dcp_col = dcp_col.map(calc_mean_temp)
 
 ```
@@ -798,9 +826,10 @@ dcp_col = dcp_col.map(calc_mean_temp)
 
 ```
 reduce_dcp30 = create_reduce_region_function(
-  geometry=point, reducer=ee.Reducer.first(), scale=5000, crs='EPSG:3310')
+    geometry=point, reducer=ee.Reducer.first(), scale=5000, crs='EPSG:3310')
+
 dcp_stat_fc = ee.FeatureCollection(dcp_col.map(reduce_dcp30)).filter(
-  ee.Filter.notNull(dcp_col.first().bandNames()))
+    ee.Filter.notNull(dcp_col.first().bandNames()))
 
 ```
 
@@ -816,10 +845,10 @@ print(dcp_df.dtypes)
 
 ```
 ```
-Precip-rate   float64
-Temp-mean    float64
-millis      int64
-system:index   object
+Precip-rate     float64
+Temp-mean       float64
+millis            int64
+system:index     object
 dtype: object
 
 ```
@@ -852,29 +881,34 @@ PRISM data are climate datasets for the conterminous United States. Grid cells a
 #### Reduce collection and prepare DataFrame
   1. Import the collection and filter by date.
   2. Reduce the collection images by region and filter null computed values.
-  3. Convert the feature collection to a dictionary and transfer it client-side. _Note: if the process times out, you'll need to export/import the`prism_stat_fc` feature collection as described in the **Optional export** section_.
+  3. Convert the feature collection to a dictionary and transfer it client-side.  
+_Note: if the process times out, you'll need to export/import the`prism_stat_fc` feature collection as described in the **Optional export** section_.
   4. Convert the dictionary to a DataFrame.
   5. Preview the DataFrame.
 
 ```
 prism_col = (ee.ImageCollection('OREGONSTATE/PRISM/AN81m')
-       .select(['ppt', 'tmean'])
-       .filter(ee.Filter.date('1979-01-01', '2019-12-31')))
+             .select(['ppt', 'tmean'])
+             .filter(ee.Filter.date('1979-01-01', '2019-12-31')))
+
 reduce_prism = create_reduce_region_function(
-  geometry=point, reducer=ee.Reducer.first(), scale=5000, crs='EPSG:3310')
+    geometry=point, reducer=ee.Reducer.first(), scale=5000, crs='EPSG:3310')
+
 prism_stat_fc = (ee.FeatureCollection(prism_col.map(reduce_prism))
-         .filter(ee.Filter.notNull(prism_col.first().bandNames())))
+                 .filter(ee.Filter.notNull(prism_col.first().bandNames())))
+
 prism_dict = fc_to_dict(prism_stat_fc).getInfo()
 prism_df = pd.DataFrame(prism_dict)
+
 display(prism_df)
 print(prism_df.dtypes)
 
 ```
 ```
-millis      int64
-ppt       float64
-system:index   object
-tmean      float64
+millis            int64
+ppt             float64
+system:index     object
+tmean           float64
 dtype: object
 
 ```
@@ -905,12 +939,15 @@ Chart the past and future precipitation and temperature together to get a sense 
 #### Precipitation
 ```
 base = alt.Chart(climate_df).encode(
-  x='Year:O',
-  color='Model')
+    x='Year:O',
+    color='Model')
+
 line = base.mark_line().encode(
-  y=alt.Y('median(Precip-mm):Q', title='Precipitation (mm/month)'))
+    y=alt.Y('median(Precip-mm):Q', title='Precipitation (mm/month)'))
+
 band = base.mark_errorband(extent='iqr').encode(
-  y=alt.Y('Precip-mm:Q', title='Precipitation (mm/month)'))
+    y=alt.Y('Precip-mm:Q', title='Precipitation (mm/month)'))
+
 (band + line).properties(width=600, height=300)
 
 ```
@@ -918,15 +955,16 @@ band = base.mark_errorband(extent='iqr').encode(
 #### Temperature
 ```
 line = alt.Chart(climate_df).mark_line().encode(
-  x='Year:O',
-  y='median(Temp-mean):Q',
-  color='Model')
+    x='Year:O',
+    y='median(Temp-mean):Q',
+    color='Model')
+
 band = alt.Chart(climate_df).mark_errorband(extent='iqr').encode(
-  x='Year:O',
-  y=alt.Y('Temp-mean:Q', title='Temperature (°C)'), color='Model')
+    x='Year:O',
+    y=alt.Y('Temp-mean:Q', title='Temperature (°C)'), color='Model')
+
 (band + line).properties(width=600, height=300)
 
 ```
 
 Future climate projections suggest that precipitation will decrease and temperature will increase for the selected point of interest. We can hypothesize, given the RCP 8.5 trajectory, that future conditions will more regularly resemble the 2012-2016 drought, which could lead to the same vegetation reduction response documented here and that more frequent drought events could lead to development of plant communities that are better adapted to low precipitation, high temperature conditions. 
-Was this helpful?

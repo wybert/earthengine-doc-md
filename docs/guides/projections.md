@@ -1,17 +1,17 @@
  
 #  Projections
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Earth Engine is designed so that you rarely have to worry about map projections when doing computations. As with scale, the projection in which computations take place is determined on a "pull" basis. Specifically, inputs are requested in the output projection. The output may be determined from a function parameter (e.g. `crs`), Code Editor and geemap map objects (which have a [maps mercator (EPSG:3857)](http://epsg.io/3857) projection), or with a `reproject()` call. When you display images in the Code Editor or geemap, inputs are requested in [maps mercator](http://epsg.io/3857). Consider the following simple operation on a MODIS image, which has a [sinusoidal](http://spatialreference.org/ref/sr-org/6974/) projection:
 ### Code Editor (JavaScript)
 ```
 // The input image has a SR-ORG:6974 (sinusoidal) projection.
 varimage=ee.Image('MODIS/061/MOD13A1/2014_05_09').select(0);
+
 // Normalize the image and add it to the map.
 varrescaled=image.unitScale(-2000,10000);
 varvisParams={min:0.15,max:0.7};
 Map.addLayer(rescaled,visParams,'Rescaled');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -23,6 +23,7 @@ importgeemap.coreasgeemap
 ```
 # The input image has a SR-ORG:6974 (sinusoidal) projection.
 image = ee.Image('MODIS/061/MOD13A1/2014_05_09').select(0)
+
 # Normalize the image and add it to the map.
 rescaled = image.unitScale(-2000, 10000)
 vis_params = {'min': 0.15, 'max': 0.7}
@@ -40,7 +41,6 @@ varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318').select(0);
 print('Projection, crs, and crs_transform:',image.projection());
 print('Scale in meters:',image.projection().nominalScale());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -65,7 +65,6 @@ varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA');
 varmosaic=collection.filterDate('2018-01-01','2019-01-01').mosaic();
 print(mosaic.projection());
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -94,7 +93,6 @@ You can force operations to be performed in a specific projection with the `repr
 varproj=ee.Projection(...);
 varoutput=collection.reduce(...).reproject(proj);
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -120,14 +118,14 @@ If the eventual output is in a different projection from that specified in the `
 ```
 // The input image has a SR-ORG:6974 (sinusoidal) projection.
 varimage=ee.Image('MODIS/061/MOD13A1/2014_05_09').select(0);
+
 // Operations *before* the reproject call will be done in the projection
-// specified by reproject(). The output results in another reprojection.
+// specified by reproject().  The output results in another reprojection.
 varreprojected=image
 .unitScale(-2000,10000)
 .reproject('EPSG:4326',null,500);
 Map.addLayer(reprojected,{min:0.15,max:0.7},'Reprojected');
 ```
-
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -139,6 +137,7 @@ importgeemap.coreasgeemap
 ```
 # The input image has a SR-ORG:6974 (sinusoidal) projection.
 image = ee.Image('MODIS/061/MOD13A1/2014_05_09').select(0)
+
 # Operations *before* the reproject call will be done in the projection
 # specified by reproject(). The output results in another reprojection.
 reprojected = image.unitScale(-2000, 10000).reproject('EPSG:4326', None, 500)

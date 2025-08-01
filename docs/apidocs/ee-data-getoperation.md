@@ -1,7 +1,6 @@
  
 #  ee.data.getOperation
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Gets information on an operation or list of operations. 
 See more details on Operations here: https://cloud.google.com/apis/design/design_patterns#long_running_operations
 Returns operation status, or a map from operation names to status. Each Operation contains:
 - name: operation name in the format projects/X/operations/Y
@@ -18,11 +17,11 @@ Returns operation status, or a map from operation names to status. Each Operatio
 + attempt: Number of retries of this task, starting at 1.
 + destination_uris: Resources output by this operation.
 + batch_eecu_usage_seconds: CPU used by this operation.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`ee.data.getOperation(operationName,  _callback_)`| Dictionary |api.Operation  
-Argument| Type| Details  
+`ee.data.getOperation(operationName, _callback_)`|  Dictionary<api.Operation>|api.Operation  
+Argument | Type | Details  
 ---|---|---  
-`operationName`| List| Operation name(s).  
-`callback`| Function, optional| An optional callback. If not supplied, the call is made synchronously.  
+`operationName` | List<String>|String | Operation name(s).  
+`callback` | Function, optional | An optional callback. If not supplied, the call is made synchronously.  
 Was this helpful?

@@ -5,14 +5,14 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#examples)
 
 
-Extracts a named string value from a dictionary. 
-Usage| Returns  
+Extracts a named string value from a dictionary.
+Usage | Returns  
 ---|---  
-`Dictionary.getString(key)`| String  
-Argument| Type| Details  
+`Dictionary.getString(key)` | String  
+Argument | Type | Details  
 ---|---|---  
-this: `dictionary`| Dictionary|   
-`key`| String|   
+this: `dictionary` | Dictionary |   
+`key` | String |   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-dictionary-getstring#colab-python-sample) More
 ```
@@ -23,6 +23,7 @@ B2:219,
 B3:443,
 Region:'The Forest of Nisene Marks State Park'
 });
+
 print('The "Region" value as an ee.String object',dict.getString('Region'));
 ```
 Python setup
@@ -34,12 +35,14 @@ importgeemap.coreasgeemap
 ```
 # A dictionary (e.g. results of ee.Image.reduceRegion of an S2 image).
 dic = ee.Dictionary({
-  'B1': 182,
-  'B2': 219,
-  'B3': 443,
-  'Region': 'The Forest of Nisene Marks State Park'
+    'B1': 182,
+    'B2': 219,
+    'B3': 443,
+    'Region': 'The Forest of Nisene Marks State Park'
 })
+
 print('The "Region" value as an ee.String object:',
-   dic.getString('Region').getInfo(), sep='\n')
+      dic.getString('Region').getInfo(), sep='\n')
 ```
 
+Was this helpful?

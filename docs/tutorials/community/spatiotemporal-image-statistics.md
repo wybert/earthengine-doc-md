@@ -11,12 +11,12 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Wide table](https://developers.google.com/earth-engine/tutorials/community/spatiotemporal-image-statistics#wide_table)
 
 
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/spatiotemporal-image-statistics/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/spatiotemporal-image-statistics/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/spatiotemporal-image-statistics/index.md)
-Author(s): [ saumyatas ](https://github.com/saumyatas)
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/spatiotemporal-image-statistics/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/spatiotemporal-image-statistics/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/spatiotemporal-image-statistics/index.md "View changes to this article over time.")
+Author(s): [ saumyatas ](https://github.com/saumyatas "View the profile for saumyatas on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-This tutorial demonstrates how to create a comma delimited table of zonal statistics of vegetation indices (NDVI or EVI) over a study area, for a given range of years. 
+This tutorial demonstrates how to create a comma delimited table of zonal statistics of vegetation indices (NDVI or EVI) over a study area, for a given range of years.
 ## Import datasets
 ### Vegetation index
 Google Earth Engine has a range data products that provide time series of vegetation indices. Here, we use the MODIS [Terra Vegetation Indices for 16-days Global 250m](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD13Q1) product (also available at 500m and 1km resolution). After importing, we select the 'EVI' band.
@@ -44,6 +44,7 @@ varinterval=1;// time window length
 varintervalUnit='year';// unit of time e.g. 'year', 'month', 'day'
 varintervalCount=3;// number of time windows in the series
 vartemporalReducer=ee.Reducer.mean();// how to reduce images in time window
+
 // Defines mean, standard deviation, and variance as the zonal statistics.
 varspatialReducers=ee.Reducer.mean().combine({
 reducer2:ee.Reducer.stdDev(),
@@ -62,6 +63,7 @@ The long table format will have one row per unique combination of region and tim
 ```
 // Get time window index sequence.
 varintervals=ee.List.sequence(0,intervalCount-1,interval);
+
 // Map reductions over index sequence to calculate statistics for each interval.
 varzonalStatsL=intervals.map(function(i){
 // Calculate temporal composite.
@@ -69,6 +71,7 @@ varstartRangeL=ee.Date(startDate).advance(i,intervalUnit);
 varendRangeL=startRangeL.advance(interval,intervalUnit);
 vartemporalStat=dataset.filterDate(startRangeL,endRangeL)
 .reduce(temporalReducer);
+
 // Calculate zonal statistics.
 varstatsL=temporalStat.reduceRegions({
 collection:regions,
@@ -76,6 +79,7 @@ reducer:spatialReducers,
 scale:dataset.first().projection().nominalScale(),
 crs:dataset.first().projection()
 });
+
 // Set start date as a feature property.
 returnstatsL.map(function(feature){
 returnfeature.set({
@@ -83,8 +87,11 @@ composite_start:startRangeL.format('YYYY'),// or 'YYYY-MM-dd'
 });
 });
 });
+
 zonalStatsL=ee.FeatureCollection(zonalStatsL).flatten();
+
 print('Spatiotemporal statistics (long)',zonalStatsL);
+
 Export.table.toDrive({
 collection:zonalStatsL,
 description:'zonal_stats_long',
@@ -105,16 +112,20 @@ geometry:feature.geometry(),
 scale:dataset.first().projection().nominalScale(),
 crs:dataset.first().projection()
 });
+
 // Append date to the statistic label.
 varkeys=ee.Dictionary(statsW).keys();
 varnewKeys=keys.map(function(key){
 returnee.String(key).cat('_')
 .cat(startRangeW.format('YYYY'));// or 'YYYY-MM-dd'
 });
+
 // Add the statistic properties to the feature.
 returnfeature.set(statsW.rename(keys,newKeys));
 };
+
 varzonalStatsW=regions;// make a copy of the regions FeatureCollection
+
 // Loop through sequence of intervals to calculate statistics for each.
 for(vari=0;i < intervalCount;i++){
 varstartRangeW=ee.Date(startDate).advance(i,intervalUnit);
@@ -123,7 +134,9 @@ temporalStatW=dataset.filterDate(startRangeW,endRangeW).mean()
 .reduce(temporalReducer);
 zonalStatsW=zonalStatsW.map(reduce);
 }
+
 print('Spatiotemporal statistics (wide)',zonalStatsW);
+
 Export.table.toDrive({
 collection:zonalStatsW,
 description:'zonal_stats_wide',
@@ -131,4 +144,3 @@ description:'zonal_stats_wide',
 
 ```
 
-Was this helpful?

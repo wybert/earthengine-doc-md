@@ -1,19 +1,12 @@
  
 #  Synthetic Aperture Radar (SAR) Basics
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [SAR characteristics](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sar_characteristics)
-  * [Sentinel-1](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1)
-    * [Sentinel-1 coverage](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1_coverage)
-    * [Sentinel-1 orbits, modes, swaths and scenes](https://developers.google.com/earth-engine/tutorials/community/sar-basics#sentinel-1_orbits_modes_swaths_and_scenes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/sar-basics/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/sar-basics/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/sar-basics/index.md "View changes to this article over time.")
 Author(s): [ glemoine62 ](https://github.com/glemoine62 "View the profile for glemoine62 on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-This tutorial introduces the basics of [Sentinel-1 Algorithms](https://developers.google.com/earth-engine/guides/sentinel1) in Earth Engine. It defines Synthetic Aperture Radar (SAR) terminology and demonstrates data coverage and selection. 
+This tutorial introduces the basics of [Sentinel-1 Algorithms](https://developers.google.com/earth-engine/guides/sentinel1) in Earth Engine. It defines Synthetic Aperture Radar (SAR) terminology and demonstrates data coverage and selection.
 We'll introduce more advanced concepts in a later tutorial.
 ## SAR characteristics
 A good introduction to Synthetic Aperture Radar (SAR) basics is [A Tutorial on Synthetic Aperture Radar](https://elib.dlr.de/82313/), created by a group of experts at DLR led by Dr. A. Moreira. The essentials are in part I and II. Advanced polarimetry and interferometry, or combined POLINSAR, (part III _ff_) is currently outside the scope of what is possible in Earth Engine.
@@ -48,6 +41,7 @@ Sentinel-1 consists of two identical sensors ("A" and "B") which have a 12-day r
 For a more precise estimate, you can use Earth Engine as follows:
 ```
 varcountries=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Comment/uncomment the lists of countries to highlight differences in regional S1 revisit
 varaoi=ee.Feature(countries.filter(ee.Filter.inList('country_na',
 ['Germany','Poland','Czechia','Slovakia','Austria','Hungary']// European
@@ -55,28 +49,36 @@ varaoi=ee.Feature(countries.filter(ee.Filter.inList('country_na',
 // ['India'] // 12 days revisit, mostly
 )).union().first()).geometry().bounds();// get bounds to simplify geometry
 
+
 // Define time period
 varstartDate='2020-06-01';
 varendDate='2020-06-16';
+
 // Select S1 IW images in area of interest and time period
 vars1=ee.ImageCollection('COPERNICUS/S1_GRD').
 filterMetadata('instrumentMode','equals','IW').
 filterBounds(aoi).
 filterDate(startDate,endDate);
 
+
 varcnt=ee.FeatureCollection(s1).
 // uncomment next line if you want to be specific
 // filterMetadata('orbitProperties_pass', 'equals', 'ASCENDING').
 reduceToImage(['system:index'],ee.Reducer.count());
+
 varupper=cnt.reduceRegion(
 {reducer:ee.Reducer.max(),geometry:aoi,scale:1000,bestEffort:true}
 );
+
 print('Max count:',upper.get('count'));
+
 // Define red to green pseudo color palette
 varred2green=['a50026','d73027','f46d43','fdae61','fee08b','ffffbf',
 'd9ef8b','a6d96a','66bd63','1a9850','006837'];
+
 Map.addLayer(cnt.updateMask(cnt.gt(0)).clip(aoi),
 {min:1,max:upper.get('count').getInfo(),palette:red2green},'All');
+
 Map.centerObject(aoi,5);
 
 ```
@@ -93,16 +95,19 @@ We now have almost all relevant parameters to understand how Sentinel-1 views an
 ```
 // The area of interest can also be defined by drawing a shape in the Code Editor map
 // We hardcode one here.
+
 vargeometry=ee.Geometry.Polygon(
 [[[5.83,52.74],
 [5.83,52.69],
 [5.91,52.69],
 [5.91,52.74]]],null,false);
+
 // Get Sentinel-1 data for an arbitrary 12 day period
 vars1=ee.ImageCollection('COPERNICUS/S1_GRD').
 filterDate('2020-05-01','2020-05-13').
 filterMetadata('instrumentMode','equals','IW').
 filterBounds(geometry);
+
 // Compose an ancillary property to categorize the images in this selection
 s1=s1.map(function(f){
 returnf.set('platform_relorbit',
@@ -110,10 +115,14 @@ ee.String(f.get('platform_number')).cat('_').
 cat(ee.Number(f.get('relativeOrbitNumber_start')).format('%.0f')).
 cat('_').cat(f.get('orbitProperties_pass')));
 });
+
 // Check which sensor/relative orbit combinations we have
 varorbits=ee.Dictionary(s1.aggregate_histogram('platform_relorbit'));
+
 print(orbits);// Check in console
+
 varkeys=orbits.getInfo();// Needed to loop
+
 for(varkinkeys){
 varcolor='blue';
 if(k.charAt(0)==='B'){
@@ -123,10 +132,12 @@ Map.addLayer(ee.Image().paint(ee.FeatureCollection(s1).
 filterMetadata('platform_relorbit','equals',k),0,1),
 {palette:[color]},'Footprint: '+k,false);
 }
+
 for(varkinkeys){
 Map.addLayer(s1.filterMetadata('platform_relorbit','equals',k).first(),
 {bands:['angle'],min:30,max:45},'Incidence angle: '+k,false);
 }
+
 Map.addLayer(ee.Image().paint(geometry,0,1),{palette:['red']},'AOI',false);
 Map.centerObject(geometry,6);
 

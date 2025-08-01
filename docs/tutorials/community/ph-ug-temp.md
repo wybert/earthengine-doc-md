@@ -26,11 +26,14 @@ In the following code snippet, you will create a new variable called "region". C
 ```
 // Import country boundaries feature collection.
 vardataset=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Apply filter where country name equals Uganda.
 varugandaBorder=dataset.filter(ee.Filter.eq('country_na','Uganda'));
+
 // Print new "ugandaBorder" object and explorer features and properties.
 // There should only be one feature representing Uganda.
 print(ugandaBorder);
+
 // Add Uganda outline to the Map as a layer.
 Map.centerObject(ugandaBorder,6);
 Map.addLayer(ugandaBorder);
@@ -42,13 +45,16 @@ Next, you need to import land surface temperature data. It is organized as an `I
 ```
 // Import LST image collection.
 varmodis=ee.ImageCollection('MODIS/MOD11A2');
+
 // Define a date range of interest; here, a start date is defined and the end
 // date is determined by advancing 1 year from the start date.
 varstart=ee.Date('2015-01-01');
 vardateRange=ee.DateRange(start,start.advance(1,'year'));
+
 // Filter the LST collection to include only images intersecting the desired
 // date range.
 varmod11a2=modis.filterDate(dateRange);
+
 // Select only the 1km day LST data band.
 varmodLSTday=mod11a2.select('LST_Day_1km');
 
@@ -92,6 +98,7 @@ The previous step generated a descriptive time series chart. In addition, you ma
 ```
 // Calculate 8-day mean temperature for Uganda in 2015.
 varclippedLSTc=modLSTc.mean().clip(ugandaBorder);
+
 // Add clipped image layer to the map.
 Map.addLayer(clippedLSTc,{
 min:20,max:40,

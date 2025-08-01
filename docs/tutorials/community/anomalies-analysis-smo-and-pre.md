@@ -1,24 +1,12 @@
  
 #  Anomalies Analysis of Soil Moisture and Precipitation Over a River Basin
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [1. Importing Mosul river basin boundary](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#1_importing_mosul_river_basin_boundary)
-  * [2. Importing soil moisture and precipitation datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#2_importing_soil_moisture_and_precipitation_datasets)
-  * [3. Define study period and functions](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#3_define_study_period_and_functions)
-  * [4. Processing soil moisture datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#4_processing_soil_moisture_datasets)
-  * [5. Processing precipitation datasets](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#5_processing_precipitation_datasets)
-  * [6. Plot anomalies time series for both soil moisture and precipitation](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#6_plot_anomalies_time_series_for_both_soil_moisture_and_precipitation)
-  * [7. Plot spatial distribution of soil moisture and precipitation anomalies](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#7_plot_spatial_distribution_of_soil_moisture_and_precipitation_anomalies)
-  * [8. Remarks](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#8_remarks)
-  * [9. References](https://developers.google.com/earth-engine/tutorials/community/anomalies-analysis-smo-and-pre#9_references)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/anomalies-analysis-smo-and-pre/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/anomalies-analysis-smo-and-pre/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/anomalies-analysis-smo-and-pre/index.md "View changes to this article over time.")
 Author(s): [ nasa-gsfc-soilmoisture ](https://github.com/nasa-gsfc-soilmoisture "View the profile for nasa-gsfc-soilmoisture on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-We demonstrate the value of NASA's Earth observation in detecting prolonged droughts over the Mosul River basin in the Middle East where in-situ measurements are not available or are inaccessible. We use anomalies of soil moisture (surface and subsurface) as well as precipitation to highlight drought periods during 2020–2021 where negative anomalies were observed persistently for months. 
+We demonstrate the value of NASA's Earth observation in detecting prolonged droughts over the Mosul River basin in the Middle East where in-situ measurements are not available or are inaccessible. We use anomalies of soil moisture (surface and subsurface) as well as precipitation to highlight drought periods during 2020–2021 where negative anomalies were observed persistently for months.
 This tutorial presents a simple yet effective method for analyzing water budget dynamics in areas with limited ground data by using Earth observation data in Google Earth Engine.
 Link to Google Earth Engine code: https://code.earthengine.google.com/13c8776e7d2370cbe8a5ff953c89fe75
 ## 1. Importing Mosul river basin boundary
@@ -26,6 +14,7 @@ The Mosul Dam is a large water reservoir located on the Tigris River, which orig
 ```
 varbasin_boundary=ee.FeatureCollection(
 'projects/ee-nasagsfcsoils/assets/mosul_dissolve');
+
 // Add basin boundary in the map.
 Map.addLayer(basin_boundary,{},'Area of interest');
 Map.centerObject(basin_boundary,7);
@@ -38,6 +27,7 @@ Global Precipitation Mission (GPM) is a satellite mission that observes rain and
 ```
 // Enhanced soil moisture datasets.
 varnasa_usda_smap=ee.ImageCollection('NASA_USDA/HSL/SMAP10KM_soil_moisture');
+
 // Precipitation datasets.
 vargpm_imerg=ee.ImageCollection('NASA/GPM_L3/IMERG_MONTHLY_V06');
 
@@ -50,15 +40,18 @@ varstartYear=2001;
 varendYear=2022;
 varstartMonth=1;
 varendMonth=12;
+
 varstartDate=ee.Date.fromYMD(startYear,startMonth,1);
 varendDate=ee.Date.fromYMD(endYear,endMonth,31);
 varyears=ee.List.sequence(startYear,endYear);
 varmonths=ee.List.sequence(1,12);
+
 // Define a function to convert GPM IMERG from mm/hr to mm/day.
 vargpmScale=function(image){
 returnimage.multiply(24)
 .copyProperties(image,['system:time_start']);
 };
+
 // Define a function to compute the anomaly for a given month.
 varcomputeAnomalyPrecipitation=function(image){
 // Get the month of the image.
@@ -74,6 +67,7 @@ varanomalyImage=ee.Algorithms.If(
 hasBands,
 image.subtract(referenceImage),
 image);
+
 returnee.Image(anomalyImage).set(
 'system:time_start',ee.Date.fromYMD(year,month,1).millis());
 };
@@ -88,6 +82,7 @@ varssSusMa=nasa_usda_smap
 .filterDate(startDate,endDate)
 .sort('system:time_start',true)// sort a collection in ascending order
 .select(['ssma','susma']);// surface and subsurface soil moisture bands
+
 // Compute monthly anomalies surface and subsurface soil moisture.
 varmonthlySsSusMa=ee.ImageCollection.fromImages(
 years.map(function(y){
@@ -113,6 +108,7 @@ gpm_imerg
 .filterDate(startDate,endDate)
 .sort('system:time_start',true)
 .map(gpmScale);// convert rainfall unit from mm/hr to mm/d
+
 // Make sure monthly precipitation has same duration as soil moisture.
 varmonthlyPrecipitation=ee.ImageCollection.fromImages(
 years.map(function(y){
@@ -128,6 +124,7 @@ returnfiltered.set({
 });
 }).flatten()
 );
+
 // Compute climatological monthly precipitation.
 varmeanMonthlyPrecipitation=ee.ImageCollection.fromImages(
 ee.List.sequence(1,12).map(function(m){
@@ -135,6 +132,7 @@ varfiltered=monthlyPrecipitation.filter(ee.Filter.eq('month',m)).mean();
 returnfiltered.set('month',m);
 })
 );
+
 // Map the function over the monthly precipitation collection to compute
 // the anomaly precipitation for each month.
 varmonthlyPrecipitationAnomalies=monthlyPrecipitation.map(
@@ -150,6 +148,7 @@ This anomalies time series analysis presents the overlap period between these tw
 // Combine two image collections into one collection.
 varsmpreDatasets=monthlySsSusMa.combine(monthlyPrecipitationAnomalies);
 print('soil moisture and precipitation',smpreDatasets);
+
 varchart=
 ui.Chart.image.series({
 imageCollection:smpreDatasets,
@@ -193,6 +192,7 @@ viewWindow:{min:-2.5,max:2.5}
 },
 curveType:'function'
 });
+
 print(chart);
 
 ```
@@ -222,6 +222,7 @@ varthisSsSusMa=monthlySsSusMa.filterDate(
 // Filter precipitation to May 2021, subset first image, and clip to AOI.
 varthisPre=monthlyPrecipitationAnomalies.filterDate(
 '2021-05-01','2021-05-31').first().clip(basin_boundary);
+
 // Display the images on the map.
 Map.addLayer(thisSsSusMa.select('ssma'),smVis,'Surface Soil Moisture');
 Map.addLayer(thisSsSusMa.select('susma'),smVis,'Subsurface Soil Moisture');

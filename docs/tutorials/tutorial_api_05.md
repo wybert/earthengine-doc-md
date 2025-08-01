@@ -1,6 +1,6 @@
  
 #  Compositing, Masking, and Mosaicking
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 With the [Landsat 8 TOA reflectance collection](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC8_L1T_TOA) loaded into a variable called `l8`, you saw that the following code results in a recent-value composite:
 ### Code Editor (JavaScript)
 ```
@@ -17,8 +17,10 @@ Merely adding the collection to the map results in selecting the most recent pix
 ```
 // Get the median over time, in each band, in each pixel.
 varmedian=l8.filterDate('2016-01-01','2016-12-31').median();
+
 // Make a handy variable of visualization parameters.
 varvisParams={bands:['B4','B3','B2'],max:0.3};
+
 // Display the median composite.
 Map.addLayer(median,visParams,'median');
 ```
@@ -34,10 +36,13 @@ For example, suppose you would like to mask all the water pixels in the median c
 ```
 // Load or import the Hansen et al. forest change dataset.
 varhansenImage=ee.Image('UMD/hansen/global_forest_change_2015');
+
 // Select the land/water mask.
 vardatamask=hansenImage.select('datamask');
+
 // Create a binary mask.
 varmask=datamask.eq(1);
+
 // Update the composite mask with the water mask.
 varmaskedComposite=median.updateMask(mask);
 Map.addLayer(maskedComposite,visParams,'masked');
@@ -51,13 +56,16 @@ By combining the concepts of image collections, logical operators, masking and c
 ```
 // Make a water image out of the mask.
 varwater=mask.not();
+
 // Mask water with itself to mask all the zeros (non-water).
 water=water.mask(water);
+
 // Make an image collection of visualization images.
 varmosaic=ee.ImageCollection([
 median.visualize(visParams),
 water.visualize({palette:'000044'}),
 ]).mosaic();
+
 // Display the mosaic.
 Map.addLayer(mosaic,{},'custom mosaic');
 ```

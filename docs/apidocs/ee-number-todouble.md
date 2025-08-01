@@ -1,19 +1,19 @@
  
 #  ee.Number.toDouble
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Casts the input value to a 64-bit float. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Casts the input value to a 64-bit float. Usage | Returns  
 ---|---  
-`Number.toDouble()`| Number  
-Argument| Type| Details  
+`Number.toDouble()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
 // Declare an ee.Number.
 varnumber=ee.Number(100);
 print('ee.Number:',number);
+
 // Cast a number to signed 64-bit floating point.
 vardoubleNumber=number.toDouble();
 print('ee.Number cast to double:',doubleNumber);
@@ -31,6 +31,7 @@ importgeemap.coreasgeemap
 # Declare an ee.Number.
 number = ee.Number(100)
 print('ee.Number:', number.getInfo())
+
 # Cast a number to signed 64-bit floating point.
 double_number = number.toDouble()
 print('ee.Number cast to double:', double_number.getInfo())

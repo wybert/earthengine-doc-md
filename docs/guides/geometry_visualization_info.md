@@ -9,8 +9,10 @@ To visualize a geometry, add it to the map. For example:
 varpolygon=ee.Geometry.Polygon([
 [[-5,40],[65,40],[65,60],[-5,60],[-5,60]]
 ]);
+
 // Create a planar polygon.
 varplanarPolygon=ee.Geometry(polygon,null,false);
+
 // Display the polygons by adding them to the map.
 Map.centerObject(polygon);
 Map.addLayer(polygon,{color:'FF0000'},'geodesic polygon');
@@ -23,16 +25,22 @@ To view information about a geometry, print it. To access the information progra
 ### Code Editor (JavaScript)
 ```
 print('Polygon printout: ',polygon);
+
 // Print polygon area in square kilometers.
 print('Polygon area: ',polygon.area().divide(1000*1000));
+
 // Print polygon perimeter length in kilometers.
 print('Polygon perimeter: ',polygon.perimeter().divide(1000));
+
 // Print the geometry as a GeoJSON string.
 print('Polygon GeoJSON: ',polygon.toGeoJSONString());
+
 // Print the GeoJSON 'type'.
 print('Geometry type: ',polygon.type());
+
 // Print the coordinates as lists.
 print('Polygon coordinates: ',polygon.coordinates());
+
 // Print whether the geometry is geodesic.
 print('Geodesic? ',polygon.geodesic());
 ```

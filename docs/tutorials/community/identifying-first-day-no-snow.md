@@ -1,29 +1,14 @@
  
 #  Identifying Annual First Day of No Snow Cover
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#context)
-  * [Identify first day of zero percent snow cover](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#identify_first_day_of_zero_percent_snow_cover)
-    * [1. Define date range](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#1_define_date_range)
-    * [2. Define date bands](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#2_define_date_bands)
-    * [3. Define an analysis mask](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#3_define_an_analysis_mask)
-    * [4. Identify the first day of the year without snow per pixel, per year](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#4_identify_the_first_day_of_the_year_without_snow_per_pixel_per_year)
-  * [Data summary and visualization](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#data_summary_and_visualization)
-    * [Single-year map](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#single-year_map)
-    * [Year-to-year difference map](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#year-to-year_difference_map)
-    * [Trend analysis map](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#trend_analysis_map)
-    * [Time series chart](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#time_series_chart)
-  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#acknowledgements)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/identifying-first-day-no-snow#references)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/identifying-first-day-no-snow/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/identifying-first-day-no-snow/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/identifying-first-day-no-snow/index.md)
-Author(s): [ aharmstrong ](https://github.com/aharmstrong)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/identifying-first-day-no-snow/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/identifying-first-day-no-snow/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/identifying-first-day-no-snow/index.md "View changes to this article over time.")
+Author(s): [ aharmstrong ](https://github.com/aharmstrong "View the profile for aharmstrong on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-This tutorial demonstrates how to produce annual maps depicting the first day within a year where a given pixel reaches zero percent snow cover and provides suggestions for summarizing and visualizing the results over time and space. 
-![arctic-first-doy-no-snow-polar-proj.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/arctic-first-doy-no-snow-polar-proj.jpg) _Patterns of snowmelt timing are represented here by the first day in 2018 where each pixel no longer contained snow, as detected by the MODIS daily snow cover product. The color grades from purple (earlier) to yellow (later) as the first day of the year with zero percent snow per pixel increases (Arctic Polar Stereographic projection)._
+This tutorial demonstrates how to produce annual maps depicting the first day within a year where a given pixel reaches zero percent snow cover and provides suggestions for summarizing and visualizing the results over time and space.
+![arctic-first-doy-no-snow-polar-proj.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/arctic-first-doy-no-snow-polar-proj.jpg)  
+_Patterns of snowmelt timing are represented here by the first day in 2018 where each pixel no longer contained snow, as detected by the MODIS daily snow cover product. The color grades from purple (earlier) to yellow (later) as the first day of the year with zero percent snow per pixel increases (Arctic Polar Stereographic projection)._
 ## Context
 The timing of annual seasonal snowmelt and any potential change in that timing has broad ecological implications and thus impacts human livelihoods, particularly in and around high latitude and mountainous systems.
 One of the most important phases of the hydrologic cycle within these regions, the annual melting of accumulated winter snowfall provides the dominant source of water for streamflow and groundwater recharge for approximately one sixth of the global population (Musselman et al., 2017; Barnhart et al., 2016; Bengtsson, 1976).
@@ -70,6 +55,7 @@ Note that two global variables are initialized (`startDate` and `startYear`) tha
 ```
 varstartDate;
 varstartYear;
+
 functionaddDateBands(img){
 // Get image date.
 vardate=img.date();
@@ -117,6 +103,7 @@ returnimg.gte(10);
 })
 .sum()
 .gte(14);
+
 // Pixels must not be 10% snow covered more than 124 days in 2018.
 varsnowCoverConst=completeCol.filterDate('2018-01-01','2019-01-01')
 .map(function(img){
@@ -187,6 +174,7 @@ varnoSnowImg=yearCol
 .updateMask(analysisMask)
 // Set the year as a property for filtering by later.
 .set('year',year);
+
 // Mask by minimum snow fraction - only include pixels that reach 0
 // percent cover. Return the resulting image.
 returnnoSnowImg.updateMask(noSnowImg.select('snowCover').eq(0));
@@ -213,6 +201,7 @@ Filter a single year (2018 in the example below) from the collection and display
 ```
 // Define a year to visualize.
 varthisYear=2018;
+
 // Define visualization arguments.
 varvisArgs={
 bands:['calDoy'],
@@ -220,8 +209,10 @@ min:150,
 max:200,
 palette:[
 '0D0887','5B02A3','9A179B','CB4678','EB7852','FBB32F','F0F921']};
+
 // Subset the year of interest.
 varfirstDayNoSnowYear=annualCol.filter(ee.Filter.eq('year',thisYear)).first();
+
 // Map it.
 Map.setCenter(-95.78,59.451,5);
 Map.addLayer(firstDayNoSnowYear,visArgs,'First day of no snow, 2018');
@@ -231,24 +222,28 @@ Map.addLayer(firstDayNoSnowYear,visArgs,'First day of no snow, 2018');
 Running this code produces something similar to Figure 2. Color represents day-of-year when zero percent snow cover was first experienced (blue is early, yellow is late). One can notice a number of interesting patterns. Frozen lakes have been shown to decrease air temperatures in adjacent pixels, resulting in delayed snow melt (Rouse et al., 1997; Salomonson and Appel, 2004; Wang and Derksen, 2007).
 Additionally, the protected estuaries of the Northwest Passages have earlier dates of no snow compared to the landscapes exposed to the currents and winds of the Northern Atlantic. Latitude, elevation and proximity to ocean currents are the strongest determinants in this region.
 **Note** : pixels representing glaciers that did not get removed by the analysis mask can produce anomalies in the data. Since glaciers are generally snow covered, the day-of-year with the least snow cover (according to the MODIS snow cover product) is presented in the map. In the image below, this is evident in the abrupt transition from yellow to blue in alpine areas of Baffin island (blue pixels are glaciers in this case).
-![first-doy-no-snow-2018-map.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/first-doy-no-snow-2018-map.jpg) _Figure 2. Thematic map representing the first day-of-year with zero percent snow cover. Color grades from blue to yellow as day-of-year increases._
+![first-doy-no-snow-2018-map.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/first-doy-no-snow-2018-map.jpg)  
+_Figure 2. Thematic map representing the first day-of-year with zero percent snow cover. Color grades from blue to yellow as day-of-year increases._
 ### Year-to-year difference map
 Compare year-to-year difference in melt timing by selecting two years of interest from the collection and subtracting them. Here, we’re calculating the difference in melt timing between 2015 and 2005.
 ```
 // Define the years to difference.
 varfirstYear=2005;
 varsecondYear=2015;
+
 // Calculate difference image.
 varfirstImg=annualCol.filter(ee.Filter.eq('year',firstYear))
 .first().select('calDoy');
 varsecondImg=annualCol.filter(ee.Filter.eq('year',secondYear))
 .first().select('calDoy');
 vardif=secondImg.subtract(firstImg);
+
 // Define visualization arguments.
 varvisArgs={
 min:-15,
 max:15,
 palette:['b2182b','ef8a62','fddbc7','f7f7f7','d1e5f0','67a9cf','2166ac']};
+
 // Map it.
 Map.setCenter(-95.78,59.451,5);
 Map.addLayer(dif,visArgs,'2015-2005 first day no snow dif');
@@ -256,19 +251,22 @@ Map.addLayer(dif,visArgs,'2015-2005 first day no snow dif');
 ```
 
 Running this code produces something similar to Figure 3. Color represents the difference between the 2015 and 2005 day-of-year when zero percent snow cover was first experienced (red is a negative change/an earlier no snow date in 2015, blue is a positive change/a later no snow date in 2015, white is no change/negligible change in no snow date in 2015).
-![himalayan-mountains.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/himalayan-mountains.jpg) _Figure 3. Year-to-year (2015 - 2005) difference map of the Himalayan Mountains on the Nepal-China border. Color grades from red to blue, with red indicating an earlier date of no snow in 2015 and blue indicating a later date of no snow in 2015. White areas indicate little or no change._
+![himalayan-mountains.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/himalayan-mountains.jpg)  
+_Figure 3. Year-to-year (2015 - 2005) difference map of the Himalayan Mountains on the Nepal-China border. Color grades from red to blue, with red indicating an earlier date of no snow in 2015 and blue indicating a later date of no snow in 2015. White areas indicate little or no change._
 ### Trend analysis map
 It is also possible to identify trends in the shifting first DOY with no snow by calculating the slope through a pixel’s time series points. Here, the slope for each pixel is calculated with year as the x variable and y as first DOY with no snow.
 ```
 // Calculate slope image.
 varslope=annualCol.sort('year').select(['year','calDoy'])
 .reduce(ee.Reducer.linearFit()).select('scale');
+
 // Define visualization arguments.
 varvisArgs={
 min:-1,
 max:1,
 palette:['b2182b','ef8a62','fddbc7','f7f7f7',
 'd1e5f0','67a9cf','2166ac']};
+
 // Map it.
 Map.setCenter(-95.78,59.451,5);
 Map.addLayer(slope,visArgs,'2000-2019 first day no snow slope');
@@ -277,13 +275,15 @@ Map.addLayer(slope,visArgs,'2000-2019 first day no snow slope');
 
 The result is a map where red is a negative slope (progressively earlier first DOY with no snow), white is 0, and blue is positive (progressively later first DOY with no snow). In southern Norway and Sweden, the trend in first DOY with no snow between 2002 and 2019 appears to be influenced by various factors. Coastal areas exhibit progressively earlier first DOY of no snow than inland areas; however, high variability in slopes can be observed around fjords and in mountainous regions. This map reveals the complexity of seasonal snow dynamics in these areas.
 **Note** that the goodness of fit is not measured here, nor is significance considered. Slope may indicate regional trends, but local trends should be investigated using a time series chart (see the next section). Inter-annual variability can be influenced by masked pixels, as described above.
-![per-pixel-time-series-slope-map.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/per-pixel-time-series-slope-map.jpg) _Figure 4. Map representing the slope of first DOY with no snow cover between 2000 and 2019. The slope represents the overall trend. Color grades from red to blue as the slope in DOY increases. White indicates areas of little to no change._
+![per-pixel-time-series-slope-map.jpg](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/per-pixel-time-series-slope-map.jpg)  
+_Figure 4. Map representing the slope of first DOY with no snow cover between 2000 and 2019. The slope represents the overall trend. Color grades from red to blue as the slope in DOY increases. White indicates areas of little to no change._
 ### Time series chart
 To visually understand the temporal patterns of the first date of no snow through time, we can display our results in a time series chart. In this case, we’ve defined a 500m radius circle around a point of interest and calculated the annual mean first DOY with no snow for pixels within the region.
 ```
 // Define an AOI.
 varaoi=ee.Geometry.Point(-94.242,65.79).buffer(1e4);
 Map.addLayer(aoi,null,'Area of interest');
+
 // Calculate annual mean DOY of AOI.
 varannualAoiMean=annualCol.select('calDoy').map(function(img){
 varsummary=img.reduceRegion({
@@ -296,6 +296,7 @@ tileScale:4,
 });
 returnee.Feature(null,summary).set('year',img.get('year'));
 });
+
 // Print chart to console.
 varchart=ui.Chart.feature.byFeature(annualAoiMean,'year','calDoy')
 .setOptions({
@@ -311,7 +312,8 @@ print(chart);
 ```
 
 As is evident by the displayed results, the first day of no snow was mostly stable from 2000 to 2012. Following this, the day has become more erratic.
-![point-doy-time-series-chart.png](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/point-doy-time-series-chart.png) _Figure 5. Regional annual mean first DOY with no snow time series._
+![point-doy-time-series-chart.png](https://developers.google.com/static/earth-engine/tutorials/community/identifying-first-day-no-snow/point-doy-time-series-chart.png)  
+_Figure 5. Regional annual mean first DOY with no snow time series._
 ## Acknowledgements
 Amanda Armstrong devised and directed tutorial development. Justin Braaten assisted in method implementation. Morgan Shelby asked the initial question that led to the development of the dataset and subsequent tutorial. All contributors provided text, code and analysis examples.
 ## References
@@ -328,4 +330,3 @@ Amanda Armstrong devised and directed tutorial development. Justin Braaten assis
 [Rouse, W.R., Douglas, M.S., Hecky, R.E., Hershey, A.E., Kling, G.W., Lesack, L., Marsh, P., McDonald, M., Nicholson, B.J., Roulet, N.T. and Smol, J.P., 1997. Effects of climate change on the freshwaters of arctic and subarctic North America. Hydrological processes, 11(8), pp.873-902.](https://onlinelibrary.wiley.com/doi/abs/10.1002/\(SICI\)1099-1085\(19970630\)11:8%3C873::AID-HYP510%3E3.0.CO;2-6)
 [Salomonson, V.V. and Appel, I., 2004. Estimating fractional snow cover from MODIS using the normalized difference snow index. Remote sensing of environment, 89(3), pp.351-360.](https://www.sciencedirect.com/science/article/abs/pii/S0034425703002864)
 [Wang, L. and Derksen, C., 2007. Detection of Pan-Arctic Terrestrial Snowmelt Onset from QuikSCAT, 2000–2005. In Proceedings of the 64th Eastern Snow Conference (pp. 37-43).](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.503.5315&rep=rep1&type=pdf)
-Was this helpful?

@@ -1,20 +1,6 @@
  
 #  FeatureView Styling
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Style object](https://developers.google.com/earth-engine/guides/featureview_styling#style_object)
-    * [Broad rules](https://developers.google.com/earth-engine/guides/featureview_styling#broad_rules)
-    * [Specific rules](https://developers.google.com/earth-engine/guides/featureview_styling#specific_rules)
-  * [Setting style](https://developers.google.com/earth-engine/guides/featureview_styling#setting_style)
-    * [FeatureViewLayer declaration](https://developers.google.com/earth-engine/guides/featureview_styling#featureviewlayer_declaration)
-    * [Existing FeatureViewLayer](https://developers.google.com/earth-engine/guides/featureview_styling#existing_featureviewlayer)
-  * [Symbology](https://developers.google.com/earth-engine/guides/featureview_styling#symbology)
-    * [Constant](https://developers.google.com/earth-engine/guides/featureview_styling#constant)
-    * [Categorical](https://developers.google.com/earth-engine/guides/featureview_styling#categorical)
-    * [Interpolated](https://developers.google.com/earth-engine/guides/featureview_styling#interpolated)
-  * [All style properties](https://developers.google.com/earth-engine/guides/featureview_styling#all_style_properties)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 The style of features in a `FeatureView` asset are specified using rules defined in a JavaScript object. Style can be set during initial definition of a `FeatureViewLayer` or anytime after. The styling system allows you to set broad style rules that apply to large groups of features, as well as more specific rules for particular features. Feature style can be defined by constant values or data driven, based on feature characteristics.
 ## Style object
 The basic structure of a style object is shown below. There are two types of rules: broad rules and specific rules. Broad rules affect all features in a `FeatureView` asset, while specific rules affect a subset of features.
@@ -23,6 +9,7 @@ The basic structure of a style object is shown below. There are two types of rul
 // Broad style rules.
 opacity:…,
 polygonFillColor:…,
+
 // Specific style rules.
 rules:[
 {…},
@@ -62,7 +49,7 @@ polygonFillColor:'blue'
 
 ## Setting style
 Feature style can be set when a `FeatureViewLayer` is declared or anytime after.
-### `FeatureViewLayer` declaration
+###  `FeatureViewLayer` declaration
 To set the visualization parameters when declaring a `FeatureViewLayer`, use the `visParams` parameter.
 ```
 varvisParams={
@@ -70,10 +57,12 @@ opacity:0.5,
 lineWidth:10,
 polygonFillColor:'purple'
 };
+
 varlayer=ui.Map.FeatureViewLayer({
 assetId:'WCMC/WDPA/current/polygons_FeatureView',
 visParams:visParams
 });
+
 Map.add(layer);
 
 ```
@@ -83,6 +72,7 @@ To set the visualization parameters for an existing `FeatureViewLayer`, use the 
 ```
 varlayer=ui.Map.FeatureViewLayer('WCMC/WDPA/current/polygons_FeatureView');
 Map.add(layer);
+
 layer.setVisParams({
 opacity:0.5,
 lineWidth:10,
@@ -155,7 +145,7 @@ max:1000
 
 #### Interval
 Interval interpolation mode sets a feature style property by mapping input values to class breaks and then applying a class-specific symbology. Input values from the selected feature property are assigned to the nearest class break value by rounding down. The `palette` property is formatted as a list of lists, where each inner list contains a class break value followed by a style property value. Features whose property value are less than the minimum class break value maintain their default style property setting.
-In the following example, feature fill opacity is set according to graduated classes of the "REP_AREA" property. Class definition and style symbology are provided in the `palette` property as a list of lists. It indicates that there should be 4 classes with breaks at value 0, 80, 2000, and 5000, with respective feature opacities of 0.5, 0.35, 0.22, and 0.15. In other words, features with "REP_AREA" values in the interval 0≤x<80 will have a fill opacity of 0.5, values in the interval 80≤x<2000 will have fill opacity of 0.35, and so on.
+In the following example, feature fill opacity is set according to graduated classes of the "REP_AREA" property. Class definition and style symbology are provided in the `palette` property as a list of lists. It indicates that there should be 4 classes with breaks at value 0, 80, 2000, and 5000, with respective feature opacities of 0.5, 0.35, 0.22, and 0.15. In other words, features with "REP_AREA" values in the interval $ 0 \le x < 80 $ will have a fill opacity of 0.5, values in the interval $ 80 \le x < 2000 $ will have fill opacity of 0.35, and so on.
 ```
 varvisParams={
 fillOpacity:{

@@ -27,9 +27,10 @@ If successful, the response body contains an instance of `EarthEngineAsset[](htt
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Exporting Charts and Images
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Charting](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#charting)
   * [Digression: Simple Cloud Masking for Landsat](https://developers.google.com/earth-engine/tutorials/tutorial_api_07#digression:-simple-cloud-masking-for-landsat)
@@ -12,6 +12,7 @@ Earth Engine is a powerful analytical tool, but you may have need to export the 
 ```
 // Import the Landsat 8 TOA image collection.
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA');
+
 // Map a function over the Landsat 8 TOA collection to add an NDVI band.
 varwithNDVI=l8.map(function(image){
 varndvi=image.normalizedDifference(['B5','B4']).rename('NDVI');
@@ -31,6 +32,7 @@ region:roi,
 reducer:ee.Reducer.first(),
 scale:30
 }).setOptions({title:'NDVI over time'});
+
 // Display the chart in the console.
 print(chart);
 ```
@@ -44,13 +46,17 @@ Something you may have noticed about this chart is that the time series of NDVI 
 varcloudlessNDVI=l8.map(function(image){
 // Get a cloud score in [0, 100].
 varcloud=ee.Algorithms.Landsat.simpleCloudScore(image).select('cloud');
+
 // Create a mask of cloudy pixels from an arbitrary threshold.
 varmask=cloud.lte(20);
+
 // Compute NDVI.
 varndvi=image.normalizedDifference(['B5','B4']).rename('NDVI');
+
 // Return the masked image with an NDVI band.
 returnimage.addBands(ndvi).updateMask(mask);
 });
+
 print(ui.Chart.image.series({
 imageCollection:cloudlessNDVI.select('NDVI'),
 region:roi,
@@ -76,6 +82,7 @@ varvisualization=greenest.visualize({
 bands:['B5','B4','B3'],
 max:0.4
 });
+
 // Create a task that you can launch from the Tasks tab.
 Export.image.toDrive({
 image:visualization,

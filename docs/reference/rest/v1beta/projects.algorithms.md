@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.algorithms
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource
 There is no persistent data associated with this resource.
 ## Methods  

@@ -1,12 +1,10 @@
  
 #  ee.List.containsAll
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Returns true if list contains all of the elements of other, regardless of order. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns true if list contains all of the elements of other, regardless of order. Usage | Returns  
 ---|---  
-`List.containsAll(other)`| Boolean  
-Argument| Type| Details  
+`List.containsAll(other)` | Boolean  
+Argument | Type | Details  
 ---|---|---  
-this: `list`| List|   
-`other`| List|   
-Was this helpful?
+this: `list` | List |   
+`other` | List |   

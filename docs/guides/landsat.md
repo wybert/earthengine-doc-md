@@ -55,11 +55,14 @@ The "raw" scenes in Earth Engine contain imagery with digital numbers (DNs) that
 varraw=ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318');
 Map.centerObject(raw,10);
 Map.addLayer(raw,{bands:['B4','B3','B2'],min:6000,max:12000},'raw');
+
 // Convert the raw data to radiance.
 varradiance=ee.Algorithms.Landsat.calibratedRadiance(raw);
 Map.addLayer(radiance,{bands:['B4','B3','B2'],max:90},'radiance');
+
 // Convert the raw data to top-of-atmosphere reflectance.
 vartoa=ee.Algorithms.Landsat.TOA(raw);
+
 Map.addLayer(toa,{bands:['B4','B3','B2'],max:0.2},'toa reflectance');
 ```
 Python setup
@@ -74,13 +77,16 @@ raw = ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318')
 m = geemap.Map()
 m.center_object(raw, 10)
 m.add_layer(
-  raw, {'bands': ['B4', 'B3', 'B2'], 'min': 6000, 'max': 12000}, 'raw'
+    raw, {'bands': ['B4', 'B3', 'B2'], 'min': 6000, 'max': 12000}, 'raw'
 )
+
 # Convert the raw data to radiance.
 radiance = ee.Algorithms.Landsat.calibratedRadiance(raw)
 m.add_layer(radiance, {'bands': ['B4', 'B3', 'B2'], 'max': 90}, 'radiance')
+
 # Convert the raw data to top-of-atmosphere reflectance.
 toa = ee.Algorithms.Landsat.TOA(raw)
+
 m.add_layer(toa, {'bands': ['B4', 'B3', 'B2'], 'max': 0.2}, 'toa reflectance')
 m
 ```
@@ -133,10 +139,13 @@ For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a
 varcloudy_scene=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140926');
 Map.centerObject(cloudy_scene);
 Map.addLayer(cloudy_scene,{bands:['B4','B3','B2'],max:0.4},'TOA',false);
-// Add a cloud score band. It is automatically called 'cloud'.
+
+// Add a cloud score band.  It is automatically called 'cloud'.
 varscored=ee.Algorithms.Landsat.simpleCloudScore(cloudy_scene);
+
 // Create a mask from the cloud score and combine it with the image mask.
 varmask=scored.select(['cloud']).lte(20);
+
 // Apply the mask to the image and display the result.
 varmasked=cloudy_scene.updateMask(mask);
 Map.addLayer(masked,{bands:['B4','B3','B2'],max:0.4},'masked');
@@ -153,12 +162,15 @@ cloudy_scene = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140926')
 m = geemap.Map()
 m.center_object(cloudy_scene)
 m.add_layer(
-  cloudy_scene, {'bands': ['B4', 'B3', 'B2'], 'max': 0.4}, 'TOA', False
+    cloudy_scene, {'bands': ['B4', 'B3', 'B2'], 'max': 0.4}, 'TOA', False
 )
-# Add a cloud score band. It is automatically called 'cloud'.
+
+# Add a cloud score band.  It is automatically called 'cloud'.
 scored = ee.Algorithms.Landsat.simpleCloudScore(cloudy_scene)
+
 # Create a mask from the cloud score and combine it with the image mask.
 mask = scored.select(['cloud']).lte(20)
+
 # Apply the mask to the image and display the result.
 masked = cloudy_scene.updateMask(mask)
 m.add_layer(masked, {'bands': ['B4', 'B3', 'B2'], 'max': 0.4}, 'masked')
@@ -172,6 +184,7 @@ If you run this example in the Code Editor, try toggling the visibility of the T
 varmosaic=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
 .filterDate('2019-06-01','2019-06-16').mosaic()
 .set('SENSOR_ID','OLI_TIRS');
+
 // Cloud score the mosaic and display the result.
 varscored_mosaic=ee.Algorithms.Landsat.simpleCloudScore(mosaic);
 Map.addLayer(scored_mosaic,{bands:['B4','B3','B2'],max:0.4},
@@ -186,18 +199,19 @@ importgeemap.coreasgeemap
 ```
 # Load a Landsat 8 TOA collection, make 15-day mosaic, set SENSOR_ID property.
 mosaic = (
-  ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
-  .filterDate('2019-06-01', '2019-06-16')
-  .mosaic()
-  .set('SENSOR_ID', 'OLI_TIRS')
+    ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
+    .filterDate('2019-06-01', '2019-06-16')
+    .mosaic()
+    .set('SENSOR_ID', 'OLI_TIRS')
 )
+
 # Cloud score the mosaic and display the result.
 scored_mosaic = ee.Algorithms.Landsat.simpleCloudScore(mosaic)
 m = geemap.Map()
 m.add_layer(
-  scored_mosaic,
-  {'bands': ['B4', 'B3', 'B2'], 'max': 0.4},
-  'TOA mosaic',
+    scored_mosaic,
+    {'bands': ['B4', 'B3', 'B2'], 'max': 0.4},
+    'TOA mosaic',
 )
 m
 ```
@@ -210,8 +224,10 @@ For creating simple cloud-free Landsat composites, Earth Engine provides the `ee
 // Load a raw Landsat 5 ImageCollection for a single year.
 varcollection=ee.ImageCollection('LANDSAT/LT05/C02/T1')
 .filterDate('2010-01-01','2010-12-31');
+
 // Create a cloud-free composite with default parameters.
 varcomposite=ee.Algorithms.Landsat.simpleComposite(collection);
+
 // Create a cloud-free composite with custom parameters for
 // cloud score threshold and percentile.
 varcustomComposite=ee.Algorithms.Landsat.simpleComposite({
@@ -219,6 +235,7 @@ collection:collection,
 percentile:75,
 cloudScoreRange:5
 });
+
 // Display the composites.
 Map.setCenter(-122.3578,37.7726,10);
 Map.addLayer(composite,{bands:['B4','B3','B2'],max:128},'TOA composite');
@@ -234,25 +251,28 @@ importgeemap.coreasgeemap
 ```
 # Load a raw Landsat 5 ImageCollection for a single year.
 collection = ee.ImageCollection('LANDSAT/LT05/C02/T1').filterDate(
-  '2010-01-01', '2010-12-31'
+    '2010-01-01', '2010-12-31'
 )
+
 # Create a cloud-free composite with default parameters.
 composite = ee.Algorithms.Landsat.simpleComposite(collection)
+
 # Create a cloud-free composite with custom parameters for
 # cloud score threshold and percentile.
 custom_composite = ee.Algorithms.Landsat.simpleComposite(
-  collection=collection, percentile=75, cloudScoreRange=5
+    collection=collection, percentile=75, cloudScoreRange=5
 )
+
 # Display the composites.
 m = geemap.Map()
 m.set_center(-122.3578, 37.7726, 10)
 m.add_layer(
-  composite, {'bands': ['B4', 'B3', 'B2'], 'max': 128}, 'TOA composite'
+    composite, {'bands': ['B4', 'B3', 'B2'], 'max': 128}, 'TOA composite'
 )
 m.add_layer(
-  custom_composite,
-  {'bands': ['B4', 'B3', 'B2'], 'max': 128},
-  'Custom TOA composite',
+    custom_composite,
+    {'bands': ['B4', 'B3', 'B2'], 'max': 128},
+    'Custom TOA composite',
 )
 m
 ```

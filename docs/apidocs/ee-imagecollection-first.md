@@ -1,12 +1,12 @@
  
 #  ee.ImageCollection.first
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the first entry from a given collection. Usage| Returns  
+Usage | Returns  
 ---|---  
-`ImageCollection.first()`| Image  
-Argument| Type| Details  
+`ImageCollection.first()` | Image  
+Argument | Type | Details  
 ---|---|---  
-this: `imagecollection`| ImageCollection| The ImageCollection instance.  
+this: `imagecollection` | ImageCollection | The ImageCollection instance.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
@@ -14,6 +14,7 @@ varimage=ee.ImageCollection('COPERNICUS/S2_SR').first();
 Map.centerObject(image,8);
 varvis={bands:['B4','B3','B2'],min:0,max:5000};
 Map.addLayer(image,vis,'first of S2_SR');
+
 // Display the image metadata.
 print(image);
 ```
@@ -33,6 +34,7 @@ m.center_object(image, 8)
 vis = {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 5000}
 m.add_layer(image, vis, 'first of S2_SR')
 display(m)
+
 # Display the image metadata.
 display(image)
 ```

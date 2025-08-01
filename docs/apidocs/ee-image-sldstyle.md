@@ -1,7 +1,7 @@
  
 #  ee.Image.sldStyle
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Styles a raster input with the provided OGC SLD styling. 
+Stay organized with collections  Save and categorize content based on your preferences. 
+Styles a raster input with the provided OGC SLD styling.
 Points of note:
 * OGC SLD 1.0 and OGC SE 1.1 are supported.
 * The XML document passed in can be complete, or just the SldRasterSymbolizer element and down.
@@ -15,10 +15,10 @@ Points of note:
 * The ImageOutline mechanism is not currently supported.
 * The Geometry element is ignored.
 The output image will have histogram_bandname metadata if histogram equalization or normalization is requested.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Image.sldStyle(sldXml)`| Image  
-Argument| Type| Details  
+`Image.sldStyle(sldXml)` | Image  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Image| The image to rendering using the SLD.  
-`sldXml`| String| The OGC SLD 1.0 or 1.1 document (or fragment).  
+this: `input` | Image | The image to rendering using the SLD.  
+`sldXml` | String | The OGC SLD 1.0 or 1.1 document (or fragment).  

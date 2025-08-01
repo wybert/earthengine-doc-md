@@ -1,18 +1,18 @@
  
 #  ee.Number.gt
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-gt#examples)
 
 
-Returns 1 if and only if the first value is greater than the second. 
-Usage| Returns  
+Returns 1 if and only if the first value is greater than the second.
+Usage | Returns  
 ---|---  
-`Number.gt(right)`| Number  
-Argument| Type| Details  
+`Number.gt(right)` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `left`| Number| The left-hand value.  
-`right`| Number| The right-hand value.  
+this: `left` | Number | The left-hand value.  
+`right` | Number | The right-hand value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-gt#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-gt#colab-python-sample) More
 ```
@@ -26,8 +26,7 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print('5 greater than 10?', ee.Number(5).gt(ee.Number(10)).getInfo()) # 0
-print('10 greater than 5?', ee.Number(10).gt(ee.Number(5)).getInfo()) # 1
+print('5 greater than 10?', ee.Number(5).gt(ee.Number(10)).getInfo())  # 0
+print('10 greater than 5?', ee.Number(10).gt(ee.Number(5)).getInfo())  # 1
 ```
 
-Was this helpful?

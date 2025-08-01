@@ -1,16 +1,6 @@
  
 #  Get started with Earth Engine in the Code Editor
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/guides/quickstart_javascript#before_you_begin)
-  * [Welcome to the Code Editor](https://developers.google.com/earth-engine/guides/quickstart_javascript#welcome_to_the_code_editor)
-  * [Get started](https://developers.google.com/earth-engine/guides/quickstart_javascript#get_started)
-  * [Add raster data to a map](https://developers.google.com/earth-engine/guides/quickstart_javascript#add_raster_data_to_a_map)
-  * [Add vector data to a map](https://developers.google.com/earth-engine/guides/quickstart_javascript#add_vector_data_to_a_map)
-  * [Extract and chart data](https://developers.google.com/earth-engine/guides/quickstart_javascript#extract_and_chart_data)
-  * [What's next](https://developers.google.com/earth-engine/guides/quickstart_javascript#whats_next)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 This quickstart will give you an interactive introduction to visualizing and analyzing geospatial data with the Earth Engine Code Editor.
 ## Before you begin
 [Register or create](https://console.cloud.google.com/earth-engine) a Google Cloud Project; you'll be prompted to complete the following steps. If you already have a project registered for Earth Engine access, skip to the next section. 
@@ -18,7 +8,8 @@ This quickstart will give you an interactive introduction to visualizing and ana
   * If the purpose is noncommercial, select a project type.
   * Create a new Google Cloud project or select an existing project.
   * If the purpose is commercial, verify or set up billing for your project.
-  * Confirm your project information. 
+  * Confirm your project information.  
+
 **Note:** If you don't plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can [delete the project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#shutting_down_projects), removing all resources owned by the project. 
 
 
@@ -35,6 +26,7 @@ The Earth Engine Code Editor is a web-based interactive development environment 
 varjan2023Climate=ee.ImageCollection('ECMWF/ERA5_LAND/MONTHLY_AGGR')
 .filterDate('2023-01-01','2023-02-01')
 .first();
+
 print('jan2023Climate',jan2023Climate);
 ```
 
@@ -46,6 +38,7 @@ min:229,
 max:304,
 palette:['#000004','#410967','#932567','#f16e43','#fcffa4']
 };
+
 Map.addLayer(jan2023Climate,visParams,'Temperature (K)');
 Map.setCenter(0,40,2);
 ```
@@ -58,6 +51,7 @@ ee.Feature(ee.Geometry.Point(10.75,59.91),{'city':'Oslo'}),
 ee.Feature(ee.Geometry.Point(-118.24,34.05),{'city':'Los Angeles'}),
 ee.Feature(ee.Geometry.Point(103.83,1.33),{'city':'Singapore'}),
 ]);
+
 print('cities',cities);
 ```
 
@@ -70,6 +64,7 @@ Map.addLayer(cities,null,'Cities');
 **1.** Extract the climate data for the three cities; results are added to the input FeatureCollection. 
 ```
 varcityClimates=jan2023Climate.reduceRegions(cities,ee.Reducer.first());
+
 print('cityClimates',cityClimates);
 ```
 
@@ -83,6 +78,7 @@ hAxis:{title:'City'},
 vAxis:{title:'Temperature (K)'},
 legend:{position:'none'}
 });
+
 print(chart);
 ```
 

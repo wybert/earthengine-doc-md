@@ -1,6 +1,6 @@
  
 #  Image Visualization
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [RGB composites](https://developers.google.com/earth-engine/guides/image_visualization#rgb-composites)
   * [Color palettes](https://developers.google.com/earth-engine/guides/image_visualization#color-palettes)
@@ -34,6 +34,7 @@ The following illustrates the use of parameters to style a Landsat 8 image as a 
 ```
 // Load an image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
+
 // Define the visualization parameters.
 varvizParams={
 bands:['B5','B4','B3'],
@@ -41,6 +42,7 @@ min:0,
 max:0.5,
 gamma:[0.95,1.1,1]
 };
+
 // Center the map and display the image.
 Map.setCenter(-122.1899,37.5010,10);// San Francisco Bay
 Map.addLayer(image,vizParams,'false color composite');
@@ -54,15 +56,18 @@ importgeemap.coreasgeemap
 ```
 # Load an image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
+
 # Define the visualization parameters.
 image_viz_params = {
-  'bands': ['B5', 'B4', 'B3'],
-  'min': 0,
-  'max': 0.5,
-  'gamma': [0.95, 1.1, 1],
+    'bands': ['B5', 'B4', 'B3'],
+    'min': 0,
+    'max': 0.5,
+    'gamma': [0.95, 1.1, 1],
 }
+
 # Define a map centered on San Francisco Bay.
 map_l8 = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layer to the map and display it.
 map_l8.add_layer(image, image_viz_params, 'false color composite')
 display(map_l8)
@@ -76,6 +81,7 @@ To display a single band of an image in color, set the `palette` parameter with 
 ```
 // Load an image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
+
 // Create an NDWI image, define visualization parameters and display.
 varndwi=image.normalizedDifference(['B3','B5']);
 varndwiViz={min:0.5,max:1,palette:['00FFFF','0000FF']};
@@ -90,11 +96,14 @@ importgeemap.coreasgeemap
 ```
 # Load an image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
+
 # Create an NDWI image, define visualization parameters and display.
 ndwi = image.normalizedDifference(['B3', 'B5'])
 ndwi_viz = {'min': 0.5, 'max': 1, 'palette': ['00FFFF', '0000FF']}
+
 # Define a map centered on San Francisco Bay.
 map_ndwi = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layer to the map and display it.
 map_ndwi.add_layer(ndwi, ndwi_viz, 'NDWI')
 display(map_ndwi)
@@ -128,8 +137,10 @@ importgeemap.coreasgeemap
 ```
 # Mask the non-watery parts of the image, where NDWI < 0.4.
 ndwi_masked = ndwi.updateMask(ndwi.gte(0.4))
+
 # Define a map centered on San Francisco Bay.
 map_ndwi_masked = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layer to the map and display it.
 map_ndwi_masked.add_layer(ndwi_masked, ndwi_viz, 'NDWI masked')
 display(map_ndwi_masked)
@@ -175,8 +186,10 @@ importgeemap.coreasgeemap
 ```
 # Mosaic the visualization layers and display (or export).
 mosaic = ee.ImageCollection([image_rgb, ndwi_rgb]).mosaic()
+
 # Define a map centered on San Francisco Bay.
 map_mosaic = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layer to the map and display it.
 map_mosaic.add_layer(mosaic, None, 'mosaic')
 display(map_mosaic)
@@ -190,6 +203,7 @@ The `image.clip()` method is useful for achieving cartographic effects. The foll
 ```
 // Create a circle by drawing a 20000 meter buffer around a point.
 varroi=ee.Geometry.Point([-122.4481,37.7599]).buffer(20000);
+
 // Display a clipped version of the mosaic.
 Map.addLayer(mosaic.clip(roi),null,'mosaic clipped');
 ```
@@ -203,8 +217,10 @@ importgeemap.coreasgeemap
 # Create a circle by drawing a 20000 meter buffer around a point.
 roi = ee.Geometry.Point([-122.4481, 37.7599]).buffer(20000)
 mosaic_clipped = mosaic.clip(roi)
+
 # Define a map centered on San Francisco.
 map_mosaic_clipped = geemap.Map(center=[37.7599, -122.4481], zoom=10)
+
 # Add the image layer to the map and display it.
 map_mosaic_clipped.add_layer(mosaic_clipped, None, 'mosaic clipped')
 display(map_mosaic_clipped)
@@ -219,6 +235,7 @@ Palettes are also useful for rendering discrete valued maps, for example a land 
 // Load 2012 MODIS land cover and select the IGBP classification.
 varcover=ee.Image('MODIS/051/MCD12Q1/2012_01_01')
 .select('Land_Cover_Type_1');
+
 // Define a palette for the 18 distinct land cover classes.
 varigbpPalette=[
 'aec3d4',// water
@@ -232,6 +249,7 @@ varigbpPalette=[
 'f7e084',// barren
 '6f6f6f'// tundra
 ];
+
 // Specify the min and max labels and the color palette matching the labels.
 Map.setCenter(-99.229,40.413,5);
 Map.addLayer(cover,
@@ -247,33 +265,36 @@ importgeemap.coreasgeemap
 ```
 # Load 2012 MODIS land cover and select the IGBP classification.
 cover = ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1')
+
 # Define a palette for the 18 distinct land cover classes.
 igbp_palette = [
-  'aec3d4', # water
-  '152106',
-  '225129',
-  '369b47',
-  '30eb5b',
-  '387242', # forest
-  '6a2325',
-  'c3aa69',
-  'b76031',
-  'd9903d',
-  '91af40', # shrub, grass
-  '111149', # wetlands
-  'cdb33b', # croplands
-  'cc0013', # urban
-  '33280d', # crop mosaic
-  'd7cdcc', # snow and ice
-  'f7e084', # barren
-  '6f6f6f', # tundra
+    'aec3d4',  # water
+    '152106',
+    '225129',
+    '369b47',
+    '30eb5b',
+    '387242',  # forest
+    '6a2325',
+    'c3aa69',
+    'b76031',
+    'd9903d',
+    '91af40',  # shrub, grass
+    '111149',  # wetlands
+    'cdb33b',  # croplands
+    'cc0013',  # urban
+    '33280d',  # crop mosaic
+    'd7cdcc',  # snow and ice
+    'f7e084',  # barren
+    '6f6f6f',  # tundra
 ]
+
 # Define a map centered on the United States.
 map_palette = geemap.Map(center=[40.413, -99.229], zoom=5)
+
 # Add the image layer to the map and display it. Specify the min and max labels
 # and the color palette matching the labels.
 map_palette.add_layer(
-  cover, {'min': 0, 'max': 17, 'palette': igbp_palette}, 'IGBP classes'
+    cover, {'min': 0, 'max': 17, 'palette': igbp_palette}, 'IGBP classes'
 )
 display(map_palette)
 ```
@@ -283,6 +304,7 @@ You can use a Styled Layer Descriptor ([SLD](http://www.opengeospatial.org/stand
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/image_visualization#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/image_visualization#colab-python-sample) More
 ```
 varcover=ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1');
+
 // Define an SLD style of discrete intervals to apply to the image.
 varsld_intervals=
 '<RasterSymbolizer>'+
@@ -317,34 +339,38 @@ importgeemap.coreasgeemap
 ```
 ```
 cover = ee.Image('MODIS/051/MCD12Q1/2012_01_01').select('Land_Cover_Type_1')
+
 # Define an SLD style of discrete intervals to apply to the image.
 sld_intervals = """
 <RasterSymbolizer>
- <ColorMap type="intervals" extended="false" >
-  <ColorMapEntry color="#aec3d4" quantity="0" label="Water"/>
-  <ColorMapEntry color="#152106" quantity="1" label="Evergreen Needleleaf Forest"/>
-  <ColorMapEntry color="#225129" quantity="2" label="Evergreen Broadleaf Forest"/>
-  <ColorMapEntry color="#369b47" quantity="3" label="Deciduous Needleleaf Forest"/>
-  <ColorMapEntry color="#30eb5b" quantity="4" label="Deciduous Broadleaf Forest"/>
-  <ColorMapEntry color="#387242" quantity="5" label="Mixed Deciduous Forest"/>
-  <ColorMapEntry color="#6a2325" quantity="6" label="Closed Shrubland"/>
-  <ColorMapEntry color="#c3aa69" quantity="7" label="Open Shrubland"/>
-  <ColorMapEntry color="#b76031" quantity="8" label="Woody Savanna"/>
-  <ColorMapEntry color="#d9903d" quantity="9" label="Savanna"/>
-  <ColorMapEntry color="#91af40" quantity="10" label="Grassland"/>
-  <ColorMapEntry color="#111149" quantity="11" label="Permanent Wetland"/>
-  <ColorMapEntry color="#cdb33b" quantity="12" label="Cropland"/>
-  <ColorMapEntry color="#cc0013" quantity="13" label="Urban"/>
-  <ColorMapEntry color="#33280d" quantity="14" label="Crop, Natural Veg. Mosaic"/>
-  <ColorMapEntry color="#d7cdcc" quantity="15" label="Permanent Snow, Ice"/>
-  <ColorMapEntry color="#f7e084" quantity="16" label="Barren, Desert"/>
-  <ColorMapEntry color="#6f6f6f" quantity="17" label="Tundra"/>
- </ColorMap>
+  <ColorMap  type="intervals" extended="false" >
+    <ColorMapEntry color="#aec3d4" quantity="0" label="Water"/>
+    <ColorMapEntry color="#152106" quantity="1" label="Evergreen Needleleaf Forest"/>
+    <ColorMapEntry color="#225129" quantity="2" label="Evergreen Broadleaf Forest"/>
+    <ColorMapEntry color="#369b47" quantity="3" label="Deciduous Needleleaf Forest"/>
+    <ColorMapEntry color="#30eb5b" quantity="4" label="Deciduous Broadleaf Forest"/>
+    <ColorMapEntry color="#387242" quantity="5" label="Mixed Deciduous Forest"/>
+    <ColorMapEntry color="#6a2325" quantity="6" label="Closed Shrubland"/>
+    <ColorMapEntry color="#c3aa69" quantity="7" label="Open Shrubland"/>
+    <ColorMapEntry color="#b76031" quantity="8" label="Woody Savanna"/>
+    <ColorMapEntry color="#d9903d" quantity="9" label="Savanna"/>
+    <ColorMapEntry color="#91af40" quantity="10" label="Grassland"/>
+    <ColorMapEntry color="#111149" quantity="11" label="Permanent Wetland"/>
+    <ColorMapEntry color="#cdb33b" quantity="12" label="Cropland"/>
+    <ColorMapEntry color="#cc0013" quantity="13" label="Urban"/>
+    <ColorMapEntry color="#33280d" quantity="14" label="Crop, Natural Veg. Mosaic"/>
+    <ColorMapEntry color="#d7cdcc" quantity="15" label="Permanent Snow, Ice"/>
+    <ColorMapEntry color="#f7e084" quantity="16" label="Barren, Desert"/>
+    <ColorMapEntry color="#6f6f6f" quantity="17" label="Tundra"/>
+  </ColorMap>
 </RasterSymbolizer>"""
+
 # Apply the SLD style to the image.
 cover_sld = cover.sldStyle(sld_intervals)
+
 # Define a map centered on the United States.
 map_sld_categorical = geemap.Map(center=[40.413, -99.229], zoom=5)
+
 # Add the image layer to the map and display it.
 map_sld_categorical.add_layer(cover_sld, None, 'IGBP classes styled')
 display(map_sld_categorical)
@@ -355,6 +381,7 @@ To create a visualization image with a color ramp, set the type of the `ColorMap
 ```
 // Load SRTM Digital Elevation Model data.
 varimage=ee.Image('CGIAR/SRTM90_V4');
+
 // Define an SLD style of discrete intervals to apply to the image. Use the
 // opacity keyword to set pixels less than 0 as completely transparent. Pixels
 // with values greater than or equal to the final entry quantity are set to
@@ -370,6 +397,7 @@ varsld_intervals=
 '<ColorMapEntry color="#ffff00" quantity="900" label="400 ≤ x ﹤ 900" />'+
 '</ColorMap>'+
 '</RasterSymbolizer>';
+
 // Define an sld style color ramp to apply to the image.
 varsld_ramp=
 '<RasterSymbolizer>'+
@@ -382,6 +410,7 @@ varsld_ramp=
 '<ColorMapEntry color="#ffff00" quantity="500" label="500" />'+
 '</ColorMap>'+
 '</RasterSymbolizer>';
+
 // Add the image to the map using both the color ramp and interval schemes.
 Map.setCenter(-76.8054,42.0289,8);
 Map.addLayer(image.sldStyle(sld_intervals),{},'SLD intervals');
@@ -396,35 +425,39 @@ importgeemap.coreasgeemap
 ```
 # Load SRTM Digital Elevation Model data.
 image = ee.Image('CGIAR/SRTM90_V4')
+
 # Define an SLD style of discrete intervals to apply to the image.
 sld_intervals = """
-  <RasterSymbolizer>
-   <ColorMap type="intervals" extended="false" >
-    <ColorMapEntry color="#0000ff" quantity="0" label="0"/>
-    <ColorMapEntry color="#00ff00" quantity="100" label="1-100" />
-    <ColorMapEntry color="#007f30" quantity="200" label="110-200" />
-    <ColorMapEntry color="#30b855" quantity="300" label="210-300" />
-    <ColorMapEntry color="#ff0000" quantity="400" label="310-400" />
-    <ColorMapEntry color="#ffff00" quantity="1000" label="410-1000" />
-   </ColorMap>
-  </RasterSymbolizer>"""
+    <RasterSymbolizer>
+      <ColorMap type="intervals" extended="false" >
+        <ColorMapEntry color="#0000ff" quantity="0" label="0"/>
+        <ColorMapEntry color="#00ff00" quantity="100" label="1-100" />
+        <ColorMapEntry color="#007f30" quantity="200" label="110-200" />
+        <ColorMapEntry color="#30b855" quantity="300" label="210-300" />
+        <ColorMapEntry color="#ff0000" quantity="400" label="310-400" />
+        <ColorMapEntry color="#ffff00" quantity="1000" label="410-1000" />
+      </ColorMap>
+    </RasterSymbolizer>"""
+
 # Define an sld style color ramp to apply to the image.
 sld_ramp = """
-  <RasterSymbolizer>
-   <ColorMap type="ramp" extended="false" >
-    <ColorMapEntry color="#0000ff" quantity="0" label="0"/>
-    <ColorMapEntry color="#00ff00" quantity="100" label="100" />
-    <ColorMapEntry color="#007f30" quantity="200" label="200" />
-    <ColorMapEntry color="#30b855" quantity="300" label="300" />
-    <ColorMapEntry color="#ff0000" quantity="400" label="400" />
-    <ColorMapEntry color="#ffff00" quantity="500" label="500" />
-   </ColorMap>
-  </RasterSymbolizer>"""
+    <RasterSymbolizer>
+      <ColorMap type="ramp" extended="false" >
+        <ColorMapEntry color="#0000ff" quantity="0" label="0"/>
+        <ColorMapEntry color="#00ff00" quantity="100" label="100" />
+        <ColorMapEntry color="#007f30" quantity="200" label="200" />
+        <ColorMapEntry color="#30b855" quantity="300" label="300" />
+        <ColorMapEntry color="#ff0000" quantity="400" label="400" />
+        <ColorMapEntry color="#ffff00" quantity="500" label="500" />
+      </ColorMap>
+    </RasterSymbolizer>"""
+
 # Define a map centered on the United States.
 map_sld_interval = geemap.Map(center=[40.413, -99.229], zoom=5)
+
 # Add the image layers to the map and display it.
 map_sld_interval.add_layer(
-  image.sldStyle(sld_intervals), None, 'SLD intervals'
+    image.sldStyle(sld_intervals), None, 'SLD intervals'
 )
 map_sld_interval.add_layer(image.sldStyle(sld_ramp), None, 'SLD ramp')
 display(map_sld_interval)
@@ -435,6 +468,7 @@ SLDs are also useful for stretching pixel values to improve visualizations of co
 ```
 // Load a Landsat 8 raw image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318');
+
 // Define a RasterSymbolizer element with '_enhance_' for a placeholder.
 vartemplate_sld=
 '<RasterSymbolizer>'+
@@ -451,9 +485,11 @@ vartemplate_sld=
 '</BlueChannel>'+
 '</ChannelSelection>'+
 '</RasterSymbolizer>';
+
 // Get SLDs with different enhancements.
 varequalize_sld=template_sld.replace('_enhance_','Histogram');
 varnormalize_sld=template_sld.replace('_enhance_','Normalize');
+
 // Display the results.
 Map.centerObject(image,10);
 Map.addLayer(image,{bands:['B5','B4','B3'],min:0,max:15000},'Linear');
@@ -469,34 +505,38 @@ importgeemap.coreasgeemap
 ```
 # Load a Landsat 8 raw image.
 image = ee.Image('LANDSAT/LC08/C02/T1/LC08_044034_20140318')
+
 # Define a RasterSymbolizer element with '_enhance_' for a placeholder.
 template_sld = """
 <RasterSymbolizer>
- <ContrastEnhancement><_enhance_/></ContrastEnhancement>
- <ChannelSelection>
-  <RedChannel>
-   <SourceChannelName>B5</SourceChannelName>
-  </RedChannel>
-  <GreenChannel>
-   <SourceChannelName>B4</SourceChannelName>
-  </GreenChannel>
-  <BlueChannel>
-   <SourceChannelName>B3</SourceChannelName>
-  </BlueChannel>
- </ChannelSelection>
+  <ContrastEnhancement><_enhance_/></ContrastEnhancement>
+  <ChannelSelection>
+    <RedChannel>
+      <SourceChannelName>B5</SourceChannelName>
+    </RedChannel>
+    <GreenChannel>
+      <SourceChannelName>B4</SourceChannelName>
+    </GreenChannel>
+    <BlueChannel>
+      <SourceChannelName>B3</SourceChannelName>
+    </BlueChannel>
+  </ChannelSelection>
 </RasterSymbolizer>"""
+
 # Get SLDs with different enhancements.
 equalize_sld = template_sld.replace('_enhance_', 'Histogram')
 normalize_sld = template_sld.replace('_enhance_', 'Normalize')
+
 # Define a map centered on San Francisco Bay.
 map_sld_continuous = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layers to the map and display it.
 map_sld_continuous.add_layer(
-  image, {'bands': ['B5', 'B4', 'B3'], 'min': 0, 'max': 15000}, 'Linear'
+    image, {'bands': ['B5', 'B4', 'B3'], 'min': 0, 'max': 15000}, 'Linear'
 )
 map_sld_continuous.add_layer(image.sldStyle(equalize_sld), None, 'Equalized')
 map_sld_continuous.add_layer(
-  image.sldStyle(normalize_sld), None, 'Normalized'
+    image.sldStyle(normalize_sld), None, 'Normalized'
 )
 display(map_sld_continuous)
 ```
@@ -531,6 +571,7 @@ The following are a series of examples demonstrating various combinations of `ge
 ```
 // Fetch a digital elevation model.
 varimage=ee.Image('CGIAR/SRTM90_V4');
+
 // Request a default thumbnail of the DEM with defined linear stretch.
 // Set masked pixels (ocean) to 1000 so they map as gray.
 varthumbnail1=image.unmask(1000).getThumbURL({
@@ -539,6 +580,7 @@ varthumbnail1=image.unmask(1000).getThumbURL({
 'dimensions':500,
 });
 print('Default extent:',thumbnail1);
+
 // Specify region by rectangle, define palette, set larger aspect dimension size.
 varthumbnail2=image.getThumbURL({
 'min':0,
@@ -548,6 +590,7 @@ varthumbnail2=image.getThumbURL({
 'region':ee.Geometry.Rectangle([-84.6,-55.9,-32.9,15.7]),
 });
 print('Rectangle region and palette:',thumbnail2);
+
 // Specify region by a linear ring and set display CRS as Web Mercator.
 varthumbnail3=image.getThumbURL({
 'min':0,
@@ -568,49 +611,52 @@ importgeemap.coreasgeemap
 ```
 # Fetch a digital elevation model.
 image = ee.Image('CGIAR/SRTM90_V4')
+
 # Request a default thumbnail of the DEM with defined linear stretch.
 # Set masked pixels (ocean) to 1000 so they map as gray.
 thumbnail_1 = image.unmask(1000).getThumbURL({
-  'min': 0,
-  'max': 3000,
-  'dimensions': 500,
+    'min': 0,
+    'max': 3000,
+    'dimensions': 500,
 })
 print('Default extent:', thumbnail_1)
+
 # Specify region by rectangle, define palette, set larger aspect dimension size.
 thumbnail_2 = image.getThumbURL({
-  'min': 0,
-  'max': 3000,
-  'palette': [
-    '00A600',
-    '63C600',
-    'E6E600',
-    'E9BD3A',
-    'ECB176',
-    'EFC2B3',
-    'F2F2F2',
-  ],
-  'dimensions': 500,
-  'region': ee.Geometry.Rectangle([-84.6, -55.9, -32.9, 15.7]),
+    'min': 0,
+    'max': 3000,
+    'palette': [
+        '00A600',
+        '63C600',
+        'E6E600',
+        'E9BD3A',
+        'ECB176',
+        'EFC2B3',
+        'F2F2F2',
+    ],
+    'dimensions': 500,
+    'region': ee.Geometry.Rectangle([-84.6, -55.9, -32.9, 15.7]),
 })
 print('Rectangle region and palette:', thumbnail_2)
+
 # Specify region by a linear ring and set display CRS as Web Mercator.
 thumbnail_3 = image.getThumbURL({
-  'min': 0,
-  'max': 3000,
-  'palette': [
-    '00A600',
-    '63C600',
-    'E6E600',
-    'E9BD3A',
-    'ECB176',
-    'EFC2B3',
-    'F2F2F2',
-  ],
-  'region': ee.Geometry.LinearRing(
-    [[-84.6, 15.7], [-84.6, -55.9], [-32.9, -55.9]]
-  ),
-  'dimensions': 500,
-  'crs': 'EPSG:3857',
+    'min': 0,
+    'max': 3000,
+    'palette': [
+        '00A600',
+        '63C600',
+        'E6E600',
+        'E9BD3A',
+        'ECB176',
+        'EFC2B3',
+        'F2F2F2',
+    ],
+    'region': ee.Geometry.LinearRing(
+        [[-84.6, 15.7], [-84.6, -55.9], [-32.9, -55.9]]
+    ),
+    'dimensions': 500,
+    'crs': 'EPSG:3857',
 })
 print('Linear ring region and specified crs:', thumbnail_3)
 ```

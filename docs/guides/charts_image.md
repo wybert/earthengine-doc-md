@@ -1,6 +1,27 @@
  
 #  Image Charts
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [Chart functions](https://developers.google.com/earth-engine/guides/charts_image#chart_functions)
+  * [Example data](https://developers.google.com/earth-engine/guides/charts_image#example_data)
+  * [ui.Chart.image.byRegion](https://developers.google.com/earth-engine/guides/charts_image#uichartimagebyregion)
+    * [Column chart](https://developers.google.com/earth-engine/guides/charts_image#column_chart)
+    * [Bar chart](https://developers.google.com/earth-engine/guides/charts_image#bar_chart)
+    * [Stacked column chart](https://developers.google.com/earth-engine/guides/charts_image#stacked_column_chart)
+    * [Scatter chart](https://developers.google.com/earth-engine/guides/charts_image#scatter_chart)
+    * [Combo chart](https://developers.google.com/earth-engine/guides/charts_image#combo_chart)
+  * [ui.Chart.image.regions](https://developers.google.com/earth-engine/guides/charts_image#uichartimageregions)
+    * [Example setup](https://developers.google.com/earth-engine/guides/charts_image#example_setup)
+    * [Column chart](https://developers.google.com/earth-engine/guides/charts_image#column_chart_2)
+    * [Line chart](https://developers.google.com/earth-engine/guides/charts_image#line_chart)
+    * [Area chart](https://developers.google.com/earth-engine/guides/charts_image#area_chart)
+    * [Pie chart](https://developers.google.com/earth-engine/guides/charts_image#pie_chart)
+    * [Donut chart](https://developers.google.com/earth-engine/guides/charts_image#donut_chart)
+  * [ui.Chart.image.byClass](https://developers.google.com/earth-engine/guides/charts_image#uichartimagebyclass)
+    * [Line chart](https://developers.google.com/earth-engine/guides/charts_image#line_chart_2)
+  * [ui.Chart.image.histogram](https://developers.google.com/earth-engine/guides/charts_image#uichartimagehistogram)
+
+
 The `ui.Chart.image` module contains a set of functions for reducing `Image` objects by region(s) and rendering charts from the results. The choice of function dictates the arrangement of data in the chart, i.e., what defines x- and y-axis values and what defines the series. Use the following function descriptions and examples to determine the best function and chart type for your purpose.
 ## Chart functions
 Use the following plot diagrams as a visual guide to understand how each function arranges image region reduction results in a chart; i.e., what elements define x values, y values, and series.
@@ -25,12 +46,14 @@ The following examples rely on a `FeatureCollection` composed of three ecoregion
 ### Column chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_01.svg)
 In this example, image bands representing average monthly temperature are reduced to the mean among pixels intersecting each of three ecoregions. The results are plotted as columns per month by ecoregion, where column height indicates the respective mean monthly temperature.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load PRISM climate normals image collection; convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -100,12 +123,14 @@ The `isStacked` chart option specifies whether chart columns are stacked or not.
 #### Absolute
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_03.svg)
 An absolute stacked bar chart relates the total of a numeric variable by increments of a contributing categorical variable series. For instance, in this example, total precipitation is plotted as the accumulation of monthly precipitation over a year, by ecoregion. Monthly precipitation totals are derived from image bands, where each band represents a grid of average total precipitation for a given month, reduced to the mean of the pixels intersecting each of three ecoregions. The `isStacked` chart option is set to `'absolute'` to format the results as absolute values.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load PRISM climate normals image collection; convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -175,18 +200,22 @@ colors:[
 ### Scatter chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_05.svg)
 Mean January and July temperatures for a random sample of locations in the state of Colorado are plotted as a function of elevation. A DEM is sampled using the `sample` function which returns a `FeatureCollection` with a geometry and elevation property. The resulting `FeatureCollection` is then used as the argument to the `regions` parameter of the `ui.Chart.image.byRegion` function. Series are defined by selected bands of the input climate normals image.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Load SRTM elevation data.
 varelev=ee.Image('CGIAR/SRTM90_V4').select('elevation');
+
 // Subset Colorado from the TIGER States feature collection.
 varcolorado=ee.FeatureCollection('TIGER/2018/States')
 .filter(ee.Filter.eq('NAME','Colorado'));
+
 // Draw a random sample of elevation points from within Colorado.
 varsamp=elev.sample(
 {region:colorado,scale:30,numPixels:500,geometries:true});
+
 // Load PRISM climate normals image collection; convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .byRegion({
@@ -218,12 +247,14 @@ print(chart);
 ### Combo chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_06.svg)
 For three ecoregions in a `ee.FeatureCollection`, the respective mean temperature and precipitation for June are plotted. The results are derived from the region reduction of an image where each band is a grid of climate normals describing monthly precipitation and temperature; bands representing June temperature and precipitation are subset. Since precipitation and temperature are in different units, [two y-axes](https://developers.google.com/chart/interactive/docs/gallery/columnchart#dual-y-charts) are used by setting `series` and `vAxes` options. Note the use of the `series.targetAxisIndex` option to define which variable is plotted to the right and left y-axis. Series-specific symbols (points and columns) are used to more easily distinguish the two variables as having different units.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load PRISM climate normals image collection; convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -272,15 +303,17 @@ The `ui.Chart.image.regions` function accepts a list that allows you to control 
 ### Column chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_07.svg)
 This chart shows total average precipitation per month for three ecoregions. The results are derived from the region reduction of an image where each band is a grid of average total precipitation for a given month. Bands are plotted along the x-axis and regions define the series. Note the client-side operations used to define inputs for the `xLabels` and `ticks` chart options for custom arrangement of the x-axis; client operations are required because options provided to the `setOptions` function must be client-side objects (see [Client vs. Server](https://developers.google.com/earth-engine/guides/client_server) to understand the distinction). To convert to a bar chart, use `'BarChart'` as the `.setChartType()` input.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load PRISM climate normals image collection, convert images to bands, and
 // subset precipitation bands.
 varprecip=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m')
 .toBands()
 .select('[0-9][0-9]_ppt');
+
 // Define a dictionary that associates band names with values and labels.
 varprecipInfo={
 '01_ppt':{v:1,f:'Jan'},
@@ -296,6 +329,7 @@ varprecipInfo={
 '11_ppt':{v:11,f:'Nov'},
 '12_ppt':{v:12,f:'Dec'}
 };
+
 // Organize precipitation information into objects for defining x values and
 // their tick labels. Note that chart options provided to the .setOptions()
 // function must be client-side objects, which is why a client-side for
@@ -306,6 +340,7 @@ for(varkeyinprecipInfo){
 xPropVals.push(precipInfo[key].v);
 xPropLabels.push(precipInfo[key]);
 }
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .regions({
@@ -396,18 +431,21 @@ lineSize:5
 ### Pie chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_10.svg)
 Average monthly precipitation is displayed as a proportion of the average total annual precipitation for a forest ecoregion. Image bands representing monthly precipitation are subset from a climate normals dataset and reduced to the mean of pixels intersecting the ecoregion.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection, subset the forest ecoregion.
 varforest=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Forest'));
+
 // Load PRISM climate normals image collection, convert images to bands.
 varnormClim=ee.ImageCollection('OREGONSTATE/PRISM/Norm81m').toBands();
+
 // Define x-axis labels to replace default band names.
 varmonthNames=[
 'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov',
 'Dec'
 ];
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .regions({
@@ -457,25 +495,30 @@ colors:[
 ### Line chart
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_12.svg)
 The `ui.Chart.image.byClass` function plots band value statistics for pixels within classified regions of a "class band". In this example, it is used to display the spectral profile of three ecoregions. Ecoregion features are rasterized and added as a band to a MODIS surface reflectance (SR) image. For each ecoregion class and reflectance band, the respective pixel mean is calculated and plotted to the y-axis. The central wavelengths of the MODIS SR bands define the x-axis ticks and labels. Note that the [`curveType`](https://developers.google.com/chart/interactive/docs/gallery/linechart#curving-the-lines) line chart option is set as `'function'` to smooth the lines.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Convert ecoregion feature collection to a classified image.
 varregionsBand=
 ecoregions
 .reduceToImage({properties:['value'],reducer:ee.Reducer.first()})
 .rename('class');
+
 // Define a MODIS surface reflectance composite.
 varmodisSr=ee.ImageCollection('MODIS/006/MOD09A1')
 .filter(ee.Filter.date('2018-06-01','2018-09-01'))
 .select('sur_refl_b0[0-7]')
 .mean();
+
 // Reorder reflectance bands by ascending wavelength and
 // add the classified ecoregions image as a band to the SR collection and
 varmodisSrClass=modisSr.select([2,3,0,1,4,5,6]).addBands(regionsBand);
+
 // Define a list of MODIS SR wavelengths for x-axis labels.
 varwavelengths=[469,555,655,858,1240,1640,2130];
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .byClass({
@@ -510,15 +553,17 @@ print(chart);
 ## `ui.Chart.image.histogram`
 ![](https://developers.google.com/static/earth-engine/images/Charts_image_13.svg)
 A histogram of pixel values within a region surrounding Salt Lake City, Utah, USA are displayed for three MODIS surface reflectance bands.
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/charts_image#code-editor-javascript-sample) More
 ```
 // Define a MODIS surface reflectance composite.
 varmodisSr=ee.ImageCollection('MODIS/006/MOD09A1')
 .filter(ee.Filter.date('2018-06-01','2018-09-01'))
 .select(['sur_refl_b01','sur_refl_b02','sur_refl_b06'])
 .mean();
+
 // Define a region to calculate histogram for.
 varhistRegion=ee.Geometry.Rectangle([-112.60,40.60,-111.18,41.22]);
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image.histogram({image:modisSr,region:histRegion,scale:500})

@@ -1,23 +1,23 @@
  
 #  REST Resource: projects.locations.maps
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: EarthEngineMap
 Information about a map.
 JSON representation  
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
+  }
 }
 ```
   

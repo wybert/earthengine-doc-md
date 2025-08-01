@@ -1,14 +1,6 @@
  
 #  Water Class Transition
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Basic Visualization](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#basic-visualization)
-  * [Summarizing Area by Transition Class](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#summarizing-area-by-transition-class)
-  * [Creating a Summary Chart](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#creating-a-summary-chart)
-    * [Code Editor (JavaScript)](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#code-editor-javascript_6)
-  * [Final Script](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_04#final-script)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 The water transition layer captures changes between three classes of water occurrence (not water, seasonal water, and permanent water) along with two additional classes for ephemeral water (ephemeral permanent and ephemeral seasonal).
 This section of the tutorial will: 
   1. add a map layer for visualizing water transition, 
@@ -93,6 +85,7 @@ In order to make use of the [ charting functions of the Code Editor](https://dev
 //////////////////////////////////////////////////////////////
 // Calculations
 //////////////////////////////////////////////////////////////
+
 // Create a dictionary for looking up names of transition classes.
 varlookup_names=ee.Dictionary.fromLists(
 ee.List(gsw.get('transition_class_values')).map(numToString),
@@ -113,6 +106,7 @@ More
 //////////////////////////////////////////////////////////////
 // Helper functions
 //////////////////////////////////////////////////////////////
+
 // Create a feature for a transition class that includes the area covered.
 functioncreateFeature(transition_class_stats){
 transition_class_stats=ee.Dictionary(transition_class_stats);
@@ -125,6 +119,7 @@ area_m2:transition_class_stats.get('sum')
 };
 returnee.Feature(null,result);// Creates a feature without a geometry.
 }
+
 // Create a JSON dictionary that defines piechart colors based on the
 // transition class palette.
 // https://developers.google.com/chart/interactive/docs/gallery/piechart
@@ -132,6 +127,7 @@ functioncreatePieChartSliceDictionary(fc){
 returnee.List(fc.aggregate_array("transition_class_palette"))
 .map(function(p){return{'color':p};}).getInfo();
 }
+
 // Convert a number to a string. Used for constructing dictionary key lists
 // from computed number objects.
 functionnumToString(num){
@@ -174,6 +170,7 @@ The entire script for this section is:
 //////////////////////////////////////////////////////////////
 // Asset List
 //////////////////////////////////////////////////////////////
+
 vargsw=ee.Image('JRC/GSW1_0/GlobalSurfaceWater');
 varoccurrence=gsw.select('occurrence');
 varchange=gsw.select("change_abs");
@@ -186,6 +183,7 @@ varroi=ee.Geometry.Polygon(
 //////////////////////////////////////////////////////////////
 // Constants
 //////////////////////////////////////////////////////////////
+
 varVIS_OCCURRENCE={
 min:0,
 max:100,
@@ -199,9 +197,11 @@ palette:['red','black','limegreen']
 varVIS_WATER_MASK={
 palette:['white','black']
 };
+
 //////////////////////////////////////////////////////////////
 // Helper functions
 //////////////////////////////////////////////////////////////
+
 // Create a feature for a transition class that includes the area covered.
 functioncreateFeature(transition_class_stats){
 transition_class_stats=ee.Dictionary(transition_class_stats);
@@ -214,6 +214,7 @@ area_m2:transition_class_stats.get('sum')
 };
 returnee.Feature(null,result);// Creates a feature without a geometry.
 }
+
 // Create a JSON dictionary that defines piechart colors based on the
 // transition class palette.
 // https://developers.google.com/chart/interactive/docs/gallery/piechart
@@ -221,14 +222,17 @@ functioncreatePieChartSliceDictionary(fc){
 returnee.List(fc.aggregate_array("transition_class_palette"))
 .map(function(p){return{'color':p};}).getInfo();
 }
+
 // Convert a number to a string. Used for constructing dictionary key lists
 // from computed number objects.
 functionnumToString(num){
 returnee.Number(num).format();
 }
+
 //////////////////////////////////////////////////////////////
 // Calculations
 //////////////////////////////////////////////////////////////
+
 // Create a dictionary for looking up names of transition classes.
 varlookup_names=ee.Dictionary.fromLists(
 ee.List(gsw.get('transition_class_values')).map(numToString),
@@ -239,9 +243,11 @@ varlookup_palette=ee.Dictionary.fromLists(
 ee.List(gsw.get('transition_class_values')).map(numToString),
 gsw.get('transition_class_palette')
 );
+
 // Create a water mask layer, and set the image mask so that non-water areas
 // are transparent.
 varwater_mask=occurrence.gt(90).mask(1);
+
 // Generate a histogram object and print it to the console tab.
 varhistogram=ui.Chart.image.histogram({
 image:change,
@@ -253,6 +259,7 @@ histogram.setOptions({
 title:'Histogram of surface water change intensity.'
 });
 print(histogram);
+
 // Summarize transition classes in a region of interest.
 vararea_image_with_transition_class=ee.Image.pixelArea().addBands(transition);
 varreduction_results=area_image_with_transition_class.reduceRegion({
@@ -265,9 +272,12 @@ scale:30,
 bestEffort:true,
 });
 print('reduction_results',reduction_results);
+
 varroi_stats=ee.List(reduction_results.get('groups'));
+
 vartransition_fc=ee.FeatureCollection(roi_stats.map(createFeature));
 print('transition_fc',transition_fc);
+
 // Add a summary chart.
 vartransition_summary_chart=ui.Chart.feature.byFeature({
 features:transition_fc,
@@ -281,24 +291,28 @@ slices:createPieChartSliceDictionary(transition_fc),
 sliceVisibilityThreshold:0// Don't group small slices.
 });
 print(transition_summary_chart);
+
 //////////////////////////////////////////////////////////////
 // Initialize Map Location
 //////////////////////////////////////////////////////////////
+
 // Uncomment one of the following statements to center the map on
 // a particular location.
-// Map.setCenter(-90.162, 29.8597, 10);  // New Orleans, USA
+// Map.setCenter(-90.162, 29.8597, 10);   // New Orleans, USA
 // Map.setCenter(-114.9774, 31.9254, 10); // Mouth of the Colorado River, Mexico
 // Map.setCenter(-111.1871, 37.0963, 11); // Lake Powell, USA
-// Map.setCenter(149.412, -35.0789, 11); // Lake George, Australia
+// Map.setCenter(149.412, -35.0789, 11);  // Lake George, Australia
 Map.setCenter(105.26,11.2134,9);// Mekong River Basin, SouthEast Asia
-// Map.setCenter(90.6743, 22.7382, 10);  // Meghna River, Bangladesh
-// Map.setCenter(81.2714, 16.5079, 11);  // Godavari River Basin Irrigation Project, India
-// Map.setCenter(14.7035, 52.0985, 12);  // River Oder, Germany & Poland
-// Map.setCenter(-59.1696, -33.8111, 9); // Buenos Aires, Argentina
-// Map.setCenter(-74.4557, -8.4289, 11); // Ucayali River, Peru
+// Map.setCenter(90.6743, 22.7382, 10);   // Meghna River, Bangladesh
+// Map.setCenter(81.2714, 16.5079, 11);   // Godavari River Basin Irrigation Project, India
+// Map.setCenter(14.7035, 52.0985, 12);   // River Oder, Germany & Poland
+// Map.setCenter(-59.1696, -33.8111, 9);  // Buenos Aires, Argentina
+// Map.setCenter(-74.4557, -8.4289, 11);  // Ucayali River, Peru
+
 //////////////////////////////////////////////////////////////
 // Map Layers
 //////////////////////////////////////////////////////////////
+
 Map.addLayer({
 eeObject:water_mask,
 visParams:VIS_WATER_MASK,

@@ -14,17 +14,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
+  }
 }
 ```
   
@@ -41,3 +41,4 @@ Fields
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
 ### `getPixels[](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels)`
 |  Computes an image showing the result of a computation.  
+Was this helpful?

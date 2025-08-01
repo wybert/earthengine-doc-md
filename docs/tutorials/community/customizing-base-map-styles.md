@@ -1,13 +1,6 @@
  
 #  Customizing Base Map Styles
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [The default maps in Earth Engine](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#the_default_maps_in_earth_engine)
-  * [Changing the basic map style](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#changing_the_basic_map_style)
-  * [Changing map elements](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#changing_map_elements)
-  * [Cheat codes](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles#cheat_codes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/customizing-base-map-styles/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/customizing-base-map-styles/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/customizing-base-map-styles/index.md "View changes to this article over time.")
@@ -27,6 +20,7 @@ Earth Engine's base maps are those in Google's Map API. The default options incl
 We can start by changing the style of the base map. One easy fix is to invert the lightness to get a darker background, like so:
 ```
 varbaseChange=[{featureType:'all',stylers:[{invert_lightness:true}]}];
+
 Map.setOptions('baseChange',{'baseChange':baseChange});
 
 ```
@@ -93,6 +87,7 @@ elementType:'geometry.stroke',
 stylers:[{visibility:'off'}]
 }
 ];
+
 // Enhanced road network visualization.
 varroadNetwork=[
 {stylers:[{saturation:-100}]},{
@@ -116,6 +111,7 @@ elementType:'geometry',
 stylers:[{color:'#00FF55'},{weight:1.5}]
 }
 ];
+
 Map.setOptions(
 'roadNetwork',{iconChange:iconChange,roadNetwork:roadNetwork});
 
@@ -186,6 +182,7 @@ elementType:'all',
 stylers:[{color:'#434343'},{visibility:'on'}]
 }
 ];
+
 varsnazzyColor=[
 {elementType:'labels',stylers:[{visibility:'off'}]},{
 featureType:'road',
@@ -233,6 +230,7 @@ elementType:'geometry.fill',
 stylers:[{saturation:-100}]
 }
 ];
+
 Map.setOptions(
 'snazzyBlack',{snazzyBlack:snazzyBlack,snazzyColor:snazzyColor});
 
@@ -389,6 +387,7 @@ elementType:'labels.text.fill',
 stylers:[{color:'#92998d'}]
 }
 ];
+
 Map.setOptions('mapStyle',{mapStyle:mapStyle});
 
 ```

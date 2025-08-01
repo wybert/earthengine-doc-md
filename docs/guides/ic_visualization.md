@@ -1,26 +1,14 @@
  
 #  ImageCollection Visualization
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Collection preparation](https://developers.google.com/earth-engine/guides/ic_visualization#collection_preparation)
-    * [Filtering](https://developers.google.com/earth-engine/guides/ic_visualization#filtering)
-    * [Compositing](https://developers.google.com/earth-engine/guides/ic_visualization#compositing)
-    * [Sorting](https://developers.google.com/earth-engine/guides/ic_visualization#sorting)
-    * [Image visualization](https://developers.google.com/earth-engine/guides/ic_visualization#image_visualization)
-  * [Video thumb](https://developers.google.com/earth-engine/guides/ic_visualization#video_thumb)
-  * [Filmstrip](https://developers.google.com/earth-engine/guides/ic_visualization#filmstrip)
-  * [Advanced techniques](https://developers.google.com/earth-engine/guides/ic_visualization#advanced_techniques)
-    * [Overlays](https://developers.google.com/earth-engine/guides/ic_visualization#overlays)
-    * [Transitions](https://developers.google.com/earth-engine/guides/ic_visualization#transitions)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Images composing an `ImageCollection` can be visualized as either an animation or a series of thumbnails referred to as a “filmstrip”. These methods provide a quick assessment of the contents of an `ImageCollection` and an effective medium for witnessing spatiotemporal change (Figure 1).
   * [`getVideoThumbURL()`](https://developers.google.com/earth-engine/guides/ic_visualization#video_thumb) produces an animated image series
   * [`getFilmstripThumbURL()`](https://developers.google.com/earth-engine/guides/ic_visualization#filmstrip) produces a thumbnail image series
 
 
 The following sections describe how to prepare an `ImageCollection` for visualization, provide example code for each collection visualization method, and cover several advanced animation techniques.
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_hurricanes.gif) Figure 1. Animation showing a three-day progression of Atlantic hurricanes in September, 2017.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_hurricanes.gif)  
+Figure 1. Animation showing a three-day progression of Atlantic hurricanes in September, 2017.
 ## Collection preparation
 Filter, composite, sort, and style images within a collection to display only those of interest or emphasize a phenomenon. Any `ImageCollection` can be provided as input to the visualization functions, but a curated collection with consideration of inter- and intra-annual date ranges, observation interval, regional extent, quality and representation can achieve better results.
 ### Filtering
@@ -78,18 +66,22 @@ Visualization of the above collection shows considerable noise in the forested r
 ```
 // Make a day-of-year sequence from 1 to 365 with a 16-day step.
 vardoyList=ee.List.sequence(1,365,16);
+
 // Import a MODIS NDVI collection.
 varndviCol=ee.ImageCollection('MODIS/006/MOD13A2').select('NDVI');
+
 // Map over the list of days to build a list of image composites.
 varndviCompList=doyList.map(function(startDoy){
 // Ensure that startDoy is a number.
 startDoy=ee.Number(startDoy);
+
 // Filter images by date range; starting with the current startDate and
 // ending 15 days later. Reduce the resulting image collection by median.
 returnndviCol
 .filter(ee.Filter.calendarRange(startDoy,startDoy.add(15),'day_of_year'))
 .reduce(ee.Reducer.median());
 });
+
 // Convert the image List to an ImageCollection.
 varndviCompCol=ee.ImageCollection.fromImages(ndviCompList);
 ```
@@ -112,6 +104,7 @@ varlsCol=ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
 returnimg.set('year',ee.Image(img).date().get('year'));
 });
 
+
 // Define a function to scale the data and mask unwanted pixels.
 functionmaskL457sr(image){
 // Bit 0 - Fill
@@ -121,17 +114,21 @@ functionmaskL457sr(image){
 // Bit 4 - Cloud Shadow
 varqaMask=image.select('QA_PIXEL').bitwiseAnd(parseInt('11111',2)).eq(0);
 varsaturationMask=image.select('QA_RADSAT').eq(0);
+
 // Apply the scaling factors to the appropriate bands.
 varopticalBands=image.select('SR_B.').multiply(0.0000275).add(-0.2);
 varthermalBand=image.select('ST_B6').multiply(0.00341802).add(149.0);
+
 // Replace the original bands with the scaled ones and apply the masks.
 returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBand,null,true)
 .updateMask(qaMask)
 .updateMask(saturationMask);
 }
+
 // Define a list of unique observation years from the image collection.
 varyears=ee.List(lsCol.aggregate_array('year')).distinct().sort();
+
 // Map over the list of years to build a list of annual image composites.
 varlsCompList=years.map(function(year){
 returnlsCol
@@ -144,6 +141,7 @@ returnlsCol
 // Set composite year as an image property.
 .set('year',year);
 });
+
 // Convert the image List to an ImageCollection.
 varlsCompCol=ee.ImageCollection.fromImages(lsCompList);
 ```
@@ -161,16 +159,21 @@ varlsCol=ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
 .map(function(img){
 returnimg.set('year',ee.Image(img).date().get('year'));
 });
+
 // Make a distinct year collection; one image representative per year.
 vardistinctYears=lsCol.distinct('year').sort('year');
+
 // Define a join filter; one-to-many join on ‘year’ property.
 varfilter=ee.Filter.equals({leftField:'year',rightField:'year'});
+
 // Define a join.
 varjoin=ee.Join.saveAll('year_match');
+
 // Apply the join; results in 'year_match' property being added to each distinct
 // year representative image. The list includes all images in the collection
 // belonging to the respective year.
 varjoinCol=join.apply(distinctYears,lsCol,filter);
+
 // Define a function to scale the data and mask unwanted pixels.
 functionmaskL457sr(image){
 // Bit 0 - Fill
@@ -180,15 +183,18 @@ functionmaskL457sr(image){
 // Bit 4 - Cloud Shadow
 varqaMask=image.select('QA_PIXEL').bitwiseAnd(parseInt('11111',2)).eq(0);
 varsaturationMask=image.select('QA_RADSAT').eq(0);
+
 // Apply the scaling factors to the appropriate bands.
 varopticalBands=image.select('SR_B.').multiply(0.0000275).add(-0.2);
 varthermalBand=image.select('ST_B6').multiply(0.00341802).add(149.0);
+
 // Replace the original bands with the scaled ones and apply the masks.
 returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBand,null,true)
 .updateMask(qaMask)
 .updateMask(saturationMask);
 }
+
 // Map over the distinct years collection to build a list of annual image
 // composites.
 varlsCompList=joinCol.map(function(img){
@@ -201,6 +207,7 @@ returnee.ImageCollection.fromImages(img.get('year_match'))
 // Set composite year as an image property.
 .copyProperties(img,['year']);
 });
+
 // Convert the image List to an ImageCollection.
 varlsCompCol=ee.ImageCollection(lsCompList);
 ```
@@ -216,10 +223,12 @@ varlsCol=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
 vardate=img.date().format('yyyy-MM-dd');
 returnimg.set('date',date);
 });
+
 vardistinctDates=lsCol.distinct('date').sort('date');
 varfilter=ee.Filter.equals({leftField:'date',rightField:'date'});
 varjoin=ee.Join.saveAll('date_match');
 varjoinCol=join.apply(distinctDates,lsCol,filter);
+
 varlsColMos=ee.ImageCollection(joinCol.map(function(col){
 returnee.ImageCollection.fromImages(col.get('date_match')).mosaic();
 }));
@@ -247,6 +256,7 @@ Order can also be defined by a derived property, such as mean regional NDVI. Her
 ```
 // Define an area of interest geometry.
 varaoi=ee.Geometry.Point(-122.1,37.2).buffer(1e4);
+
 // Filter MODIS NDVI image collection by a date range.
 varndviCol=ee.ImageCollection('MODIS/061/MOD13A1')
 .filterDate('2018-01-01','2019-01-01')
@@ -286,6 +296,7 @@ Data range scaling is an important consideration when visualizing images. By def
 ```
 // Import SRTM global elevation model.
 vardemImg=ee.Image('USGS/SRTMGL1_003');
+
 // Define a rectangular area of interest.
 varaoi=ee.Geometry.Polygon(
 [[
@@ -295,6 +306,7 @@ varaoi=ee.Geometry.Polygon(
 [-85.64817145619054,49.083004219142886]
 ]],
 null,false);
+
 // Calculate the 2nd and 98th percentile elevation values from rescaled (to
 // 500m) pixels intersecting the area of interest. A Dictionary is returned.
 varpercentClip=demImg.reduceRegion({
@@ -303,6 +315,7 @@ geometry:aoi,
 scale:500,
 maxPixels:3e7
 });
+
 // Print the regional 2nd and 98th percentile elevation values. Get the
 // dictionary keys and use them to get the values for each percentile summary.
 varkeys=percentClip.keys();
@@ -311,7 +324,10 @@ print('Set vis max to:',ee.Number(percentClip.get(keys.get(1))).round());
 ```
 
 The `palette` parameter defines the colors to represent the 8-bit visualization image. It applies only to single-band representations; specifying it with a multi-band image results in an error. If the data are single-band or you would like to visualize a single band from a multi-band image, set the `forceRgbOutput` parameter to `true` (unnecessary if the `palette` argument is provided). Use the `min` and `max` parameters to define the range of values to linearly scale between 0 and 255.
-**Note:** - You cannot provide both `gain/bias` and `min/max` arguments. - The `opacity` visualization parameter has no effect on animations, but is respected for filmstrip visualization. - Visualizations resulting from `getVideoThumbURL` and `getFilmstripThumbURL` will appear black where collection images are masked out.
+**Note:**  
+- You cannot provide both `gain/bias` and `min/max` arguments.  
+- The `opacity` visualization parameter has no effect on animations, but is respected for filmstrip visualization.  
+- Visualizations resulting from `getVideoThumbURL` and `getFilmstripThumbURL` will appear black where collection images are masked out.
 An example of mapping a visualization function over a single-band image collection follows. A MODIS NDVI collection is imported, visualization arguments for the `visualization` method are set, and a function that transforms values into RGB image representations is mapped over the NDVI collection.
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
 ```
@@ -319,6 +335,7 @@ An example of mapping a visualization function over a single-band image collecti
 varndviCol=ee.ImageCollection('MODIS/061/MOD13A1')
 .filterDate('2018-01-01','2019-01-01')
 .select('NDVI');
+
 // Define visualization arguments.
 varvisArgs={
 min:0,
@@ -329,11 +346,13 @@ palette:[
 '012E01','011D01','011301'
 ]
 };
+
 // Define a function to convert an image to an RGB visualization image and copy
 // properties from the original image to the RGB image.
 varvisFun=function(img){
 returnimg.visualize(visArgs).copyProperties(img,img.propertyNames());
 };
+
 // Map over the image collection to convert each image to an RGB visualization
 // using the previously defined visualization function.
 varndviColVis=ndviCol.map(visFun);
@@ -347,13 +366,16 @@ Here is an example of mapping a visualization function over a multi-band image c
 vars2col=ee.ImageCollection('COPERNICUS/S2_SR')
 .filterBounds(ee.Geometry.Point(-96.9037,48.0395))
 .filterDate('2019-06-01','2019-10-01');
+
 // Define visualization arguments.
 varvisArgs={bands:['B11','B8','B3'],min:300,max:3500};
+
 // Define a function to convert an image to an RGB visualization image and copy
 // properties from the original image to the RGB image.
 varvisFun=function(img){
 returnimg.visualize(visArgs).copyProperties(img,img.propertyNames());
 };
+
 // Map over the image collection to convert each image to an RGB visualization
 // using the previously defined visualization function.
 vars2colVis=s2col.map(visFun);
@@ -376,6 +398,7 @@ The following example illustrates generating an animation depicting global tempe
 varaoi=ee.Geometry.Polygon(
 [[[-179.0,78.0],[-179.0,-58.0],[179.0,-58.0],[179.0,78.0]]],null,
 false);
+
 // Import hourly predicted temperature image collection for northern winter
 // solstice. Note that predictions extend for 384 hours; limit the collection
 // to the first 24 hours.
@@ -383,6 +406,7 @@ vartempCol=ee.ImageCollection('NOAA/GFS0P25')
 .filterDate('2018-12-22','2018-12-23')
 .limit(24)
 .select('temperature_2m_above_ground');
+
 // Define arguments for animation function parameters.
 varvideoArgs={
 dimensions:768,
@@ -393,16 +417,21 @@ min:-40.0,
 max:35.0,
 palette:['blue','purple','cyan','green','yellow','red']
 };
+
 // Print the animation to the console as a ui.Thumbnail using the above defined
 // arguments. Note that ui.Thumbnail produces an animation when the first input
 // is an ee.ImageCollection instead of an ee.Image.
 print(ui.Thumbnail(tempCol,videoArgs));
+
 // Alternatively, print a URL that will produce the animation when accessed.
 print(tempCol.getVideoThumbURL(videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp.gif) Figure 3. Hourly surface temperature for the northern winter solstice represented as an animated GIF image.
-**Note:** - The maximum number of pixels allowed in an animation is 6,553,600 (e.g., 256 x 256 x 100). - The authorization token to process the thumbnail lasts 2 hours. Until it expires, anyone with the authorization token can generate the image.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp.gif)  
+Figure 3. Hourly surface temperature for the northern winter solstice represented as an animated GIF image.
+**Note:**  
+- The maximum number of pixels allowed in an animation is 6,553,600 (e.g., 256 x 256 x 100).  
+- The authorization token to process the thumbnail lasts 2 hours. Until it expires, anyone with the authorization token can generate the image.
 ## Filmstrip
 The `getFilmstripThumbUrl` function generates a single static image representing the concatenation of all images in an `ImageCollection` into a north-south series. The sequence of filmstrip frames follow the natural order of the collection.
 The result of `getFilmstripThumbUrl` is a URL. Print the URL to the console and click it to start Earth Engine servers generating the image on-the-fly in a new browser tab. Upon rendering, the image is available for downloading by right clicking on it and selecting appropriate options from its context menu.
@@ -413,6 +442,7 @@ The following code snippet uses the same collection as the video thumb example a
 varaoi=ee.Geometry.Polygon(
 [[[-179.0,78.0],[-179.0,-58.0],[179.0,-58.0],[179.0,78.0]]],null,
 false);
+
 // Import hourly predicted temperature image collection for northern winter
 // solstice. Note that predictions extend for 384 hours; limit the collection
 // to the first 24 hours.
@@ -420,6 +450,7 @@ vartempCol=ee.ImageCollection('NOAA/GFS0P25')
 .filterDate('2018-12-22','2018-12-23')
 .limit(24)
 .select('temperature_2m_above_ground');
+
 // Define arguments for the getFilmstripThumbURL function parameters.
 varfilmArgs={
 dimensions:128,
@@ -429,11 +460,13 @@ min:-40.0,
 max:35.0,
 palette:['blue','purple','cyan','green','yellow','red']
 };
+
 // Print a URL that will produce the filmstrip when accessed.
 print(tempCol.getFilmstripThumbURL(filmArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_filmstrip_transparent_bg.png) Figure 4. Hourly surface temperature for the northern winter solstice represented as a filmstrip PNG image. Note that the filmstrip has been divided into four sections for display; the result of `getFilmstripThumbURL` is a single series of collection images joined north-south.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_filmstrip_transparent_bg.png)  
+Figure 4. Hourly surface temperature for the northern winter solstice represented as a filmstrip PNG image. Note that the filmstrip has been divided into four sections for display; the result of `getFilmstripThumbURL` is a single series of collection images joined north-south.
 **Note:** The authorization token to process the thumbnail lasts 2 hours. Until it expires, anyone with the authorization token can generate the image.
 ## Advanced techniques
 The following sections describe how to use clipping, opacity, and layer compositing to enhance visualizations by adding polygon borders, emphasizing regions of interest, and comparing images within a collection.
@@ -447,6 +480,7 @@ vartempCol=ee.ImageCollection('NOAA/GFS0P25')
 .filterDate('2018-12-22','2018-12-23')
 .limit(24)
 .select('temperature_2m_above_ground');
+
 // Define visualization arguments to control the stretch and color gradient
 // of the data.
 varvisArgs={
@@ -454,14 +488,17 @@ min:-40.0,
 max:35.0,
 palette:['blue','purple','cyan','green','yellow','red']
 };
+
 // Convert each image to an RGB visualization image by mapping the visualize
 // function over the image collection using the arguments defined previously.
 vartempColVis=tempCol.map(function(img){
 returnimg.visualize(visArgs);
 });
+
 // Import country features and filter to South American countries.
 varsouthAmCol=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
 .filterMetadata('wld_rgn','equals','South America');
+
 // Define animation region (South America with buffer).
 varsouthAmAoi=ee.Geometry.Rectangle({
 coords:[-103.6,-58.8,-18.4,17.4],geodesic:false});
@@ -477,16 +514,19 @@ The following example demonstrates painting South American country borders to a 
 ```
 // Define an empty image to paint features to.
 varempty=ee.Image().byte();
+
 // Paint country feature edges to the empty image.
 varsouthAmOutline=empty
 .paint({featureCollection:southAmCol,color:1,width:1})
 // Convert to an RGB visualization image; set line color to black.
 .visualize({palette:'000000'});
+
 // Map a blend operation over the temperature collection to overlay the country
 // border outline image on all collection images.
 vartempColOutline=tempColVis.map(function(img){
 returnimg.blend(southAmOutline);
 });
+
 // Define animation arguments.
 varvideoArgs={
 dimensions:768,
@@ -494,31 +534,37 @@ region:southAmAoi,
 framesPerSecond:7,
 crs:'EPSG:3857'
 };
+
 // Display the animation.
 print(ui.Thumbnail(tempColOutline,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_border.gif) Figure 5. Add vector overlays to images in a collection to provide spatial context.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_border.gif)  
+Figure 5. Add vector overlays to images in a collection to provide spatial context.
 #### Image overlay
 Several images can be overlaid to achieve a desired style. Suppose you want to emphasize a region of interest. You can create a muted copy of an image visualization as a base layer and then overlay a clipped version of the original visualization. Building on the previous example, the following script produces Figure 6.
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
 ```
 // Define an empty image to paint features to.
 varempty=ee.Image().byte();
+
 // Paint country feature edges to the empty image.
 varsouthAmOutline=empty
 .paint({featureCollection:southAmCol,color:1,width:1})
 // Convert to an RGB visualization image; set line color to black.
 .visualize({palette:'000000'});
+
 // Map a blend operation over the temperature collection to overlay the country
 // border outline image on all collection images.
 vartempColOutline=tempColVis.map(function(img){
 returnimg.blend(southAmOutline);
 });
+
 // Define a partially opaque grey RGB image to dull the underlying image when
 // blended as an overlay.
 vardullLayer=ee.Image.constant(175).visualize({
 opacity:0.6,min:0,max:255,forceRgbOutput:true});
+
 // Map a two-part blending operation over the country outline temperature
 // collection for final styling.
 varfinalVisCol=tempColOutline.map(function(img){
@@ -529,6 +575,7 @@ returnimg
 // dulled background image.
 .blend(img.clipToCollection(southAmCol));
 });
+
 // Define animation arguments.
 varvideoArgs={
 dimensions:768,
@@ -536,11 +583,13 @@ region:southAmAoi,
 framesPerSecond:7,
 crs:'EPSG:3857'
 };
+
 // Display the animation.
 print(ui.Thumbnail(finalVisCol,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_foreground.gif) Figure 6. Emphasize an area of interest by clipping the image and overlaying it on a muted copy.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_foreground.gif)  
+Figure 6. Emphasize an area of interest by clipping the image and overlaying it on a muted copy.
 You can also blend image data with a hillshade base layer to indicate terrain and give the visualization some depth (Figure 7).
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
 ```
@@ -551,12 +600,14 @@ varhillshade=ee.Terrain.hillshade(ee.Image('USGS/SRTMGL1_003')
 // Clip the DEM by South American boundary to clean boundary between
 // land and ocean.
 .clipToCollection(southAmCol);
+
 // Map a blend operation over the temperature collection to overlay a partially
 // opaque temperature layer on the hillshade layer.
 varfinalVisCol=tempColVis.map(function(img){
 returnhillshade
 .blend(img.clipToCollection(southAmCol).visualize({opacity:0.6}));
 });
+
 // Define animation arguments.
 varvideoArgs={
 dimensions:768,
@@ -564,11 +615,13 @@ region:southAmAoi,
 framesPerSecond:7,
 crs:'EPSG:3857'
 };
+
 // Display the animation.
 print(ui.Thumbnail(finalVisCol,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_hillshade.gif) Figure 7. Show terrain by overlaying partially transparent image data on a hillshade layer.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_south_am_hillshade.gif)  
+Figure 7. Show terrain by overlaying partially transparent image data on a hillshade layer.
 ### Transitions
 Customize an image collection to produce animations that reveal differences between two images within a collection using fade, flicker, and slide transitions. Each of the following examples use the same base visualization generated by the following script:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
@@ -577,33 +630,40 @@ Customize an image collection to produce animations that reveal differences betw
 varaoi=ee.Geometry.Polygon(
 [[[-179.0,78.0],[-179.0,-58.0],[179.0,-58.0],[179.0,78.0]]],null,
 false);
+
 // Import hourly predicted temperature image collection.
 vartemp=ee.ImageCollection('NOAA/GFS0P25')
+
 // Define a northern summer solstice temperature image.
 varsummerSolTemp=temp
 .filterDate('2018-06-21','2018-06-22')
 .filterMetadata('forecast_hours','equals',12)
 .first()
 .select('temperature_2m_above_ground');
+
 // Define a northern winter solstice temperature image.
 varwinterSolTemp=temp
 .filterDate('2018-12-22','2018-12-23')
 .filterMetadata('forecast_hours','equals',12)
 .first()
 .select('temperature_2m_above_ground');
+
 // Combine the solstice images into a collection.
 vartempCol=ee.ImageCollection([
 summerSolTemp.set('season','summer'),
 winterSolTemp.set('season','winter')
 ]);
+
 // Import international boundaries feature collection.
 varcountries=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Define visualization arguments.
 varvisArgs={
 min:-40.0,
 max:35.0,
 palette:['blue','purple','cyan','green','yellow','red']
 };
+
 // Convert the image data to RGB visualization images.
 // The clip and unmask combination sets ocean pixels to black.
 vartempColVis=tempCol.map(function(img){
@@ -626,11 +686,13 @@ region:aoi,
 framesPerSecond:2,
 crs:'EPSG:3857'
 };
+
 // Display animation to the Code Editor console.
 print(ui.Thumbnail(tempColVis,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_flicker.gif) Figure 8. Example of flickering between 12pm GMT surface temperature for northern and winter solstice.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_flicker.gif)  
+Figure 8. Example of flickering between 12pm GMT surface temperature for northern and winter solstice.
 #### Fade
 A fade transition between two layers is achieved by simultaneously decreasing the opacity of one layer while increasing the opacity of the other over a sequence of opacity increments from near 0 to 1 (Figure 9).
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
@@ -640,10 +702,12 @@ A fade transition between two layers is achieved by simultaneously decreasing th
 // calculated in a following step that can result in 0 if 1 is an element of the
 // list.
 varopacityList=ee.List.sequence({start:0.99999,end:0.00001,count:20});
+
 // Filter the summer and winter solstice images from the collection and set as
 // image objects.
 varsummerImg=tempColVis.filter(ee.Filter.eq('season','summer')).first();
 varwinterImg=tempColVis.filter(ee.Filter.eq('season','winter')).first();
+
 // Map over the list of opacity increments to iteratively adjust the opacity of
 // the two solstice images. Returns a list of images.
 varimgList=opacityList.map(function(opacity){
@@ -652,13 +716,17 @@ varwinterImgFade=winterImg.visualize({opacity:opacity});
 varsummerImgFade=summerImg.visualize({opacity:opacityCompliment});
 returnsummerImgFade.blend(winterImgFade).set('opacity',opacity);
 });
+
 // Convert the image list to an image collection; the forward phase.
 varfadeForward=ee.ImageCollection.fromImages(imgList);
+
 // Make a copy of the collection that is sorted by ascending opacity to
 // represent the reverse phase.
 varfadeBackward=fadeForward.sort({property:'opacity'});
+
 // Merge the forward and reverse phase frame collections.
 varfadeCol=fadeForward.merge(fadeBackward);
+
 // Define animation arguments.
 varvideoArgs={
 dimensions:768,
@@ -666,11 +734,13 @@ region:aoi,
 framesPerSecond:25,
 crs:'EPSG:3857'
 };
+
 // Display the animation.
 print(ui.Thumbnail(fadeCol,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_fader.gif) Figure 9. Example of fading between 12pm GMT surface temperature for summer and winter solstice.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_fader.gif)  
+Figure 9. Example of fading between 12pm GMT surface temperature for summer and winter solstice.
 #### Slider
 A slider transition progressively shows and hides the underlying image layer. It is achieved by iteratively adjusting the opacity of the overlying image across a range of longitudes (Figure 10).
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/ic_visualization#code-editor-javascript-sample) More
@@ -679,12 +749,15 @@ A slider transition progressively shows and hides the underlying image layer. It
 // min and max longitude of the feature to be provided to the region parameter
 // of the animation arguments dictionary.
 varlonSeq=ee.List.sequence({start:-179,end:179,count:20});
+
 // Define a longitude image.
 varlongitude=ee.Image.pixelLonLat().select('longitude');
+
 // Filter the summer and winter solstice images from the collection and set as
 // image objects.
 varsummerImg=tempColVis.filter(ee.Filter.eq('season','summer')).first();
 varwinterImg=tempColVis.filter(ee.Filter.eq('season','winter')).first();
+
 // Map over the list of longitude increments to iteratively adjust the mask
 // (opacity) of the overlying image layer. Returns a list of images.
 varimgList=lonSeq.map(function(lon){
@@ -692,14 +765,18 @@ lon=ee.Number(lon);
 varmask=longitude.gt(lon);
 returnsummerImg.blend(winterImg.updateMask(mask)).set('lon',lon);
 });
+
 // Convert the image list to an image collection; concealing phase.
 varsliderColForward=ee.ImageCollection.fromImages(imgList);
+
 // Make a copy of the collection that is sorted by descending longitude to
 // represent the revealing phase.
 varsliderColbackward=sliderColForward
 .sort({property:'lon',ascending:false});
+
 // Merge the forward and backward phase frame collections.
 varsliderCol=sliderColForward.merge(sliderColbackward);
+
 // Define animation arguments.
 varvideoArgs={
 dimensions:768,
@@ -707,8 +784,10 @@ region:aoi,
 framesPerSecond:25,
 crs:'EPSG:3857'
 };
+
 // Display the animation.
 print(ui.Thumbnail(sliderCol,videoArgs));
 ```
 
-![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_slider.gif) Figure 10. Example of a sliding transition between 12pm GMT surface temperature for summer and winter solstice.
+![](https://developers.google.com/static/earth-engine/images/ImageCollection_video_global_temp_slider.gif)  
+Figure 10. Example of a sliding transition between 12pm GMT surface temperature for summer and winter solstice.

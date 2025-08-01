@@ -1,11 +1,11 @@
  
 #  ui.Select.items
-Stay organized with collections  Save and categorize content based on your preferences. 
-See ui.data.ActiveList. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns the list of items in the selection menu.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Select.items()`| ui.data.ActiveList  
-Argument| Type| Details  
+`Select.items()` | ui.data.ActiveList  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.select`| ui.Select| The ui.Select instance.  
+this: `ui.select` | ui.Select | The ui.Select instance.  
+Was this helpful?

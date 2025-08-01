@@ -1,59 +1,54 @@
  
 #  Exporting Images
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Example Setup](https://developers.google.com/earth-engine/guides/exporting_images#example_setup)
-    * [Setting scale](https://developers.google.com/earth-engine/guides/exporting_images#setting_scale)
-  * [to Drive](https://developers.google.com/earth-engine/guides/exporting_images#to_drive)
-  * [to Cloud Storage](https://developers.google.com/earth-engine/guides/exporting_images#to_cloud_storage)
-  * [to Asset](https://developers.google.com/earth-engine/guides/exporting_images#to_asset)
-  * [Configuration parameters](https://developers.google.com/earth-engine/guides/exporting_images#configuration_parameters)
-    * [formatOptions parameter](https://developers.google.com/earth-engine/guides/exporting_images#formatoptions_parameter)
-  * [maxPixels](https://developers.google.com/earth-engine/guides/exporting_images#maxpixels)
-  * [Large file exports](https://developers.google.com/earth-engine/guides/exporting_images#large_file_exports)
-  * [Exporting images as they appear in the Code Editor](https://developers.google.com/earth-engine/guides/exporting_images#exporting_images_as_they_appear_in_the_code_editor)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 You can export images from Earth Engine in [GeoTIFF](https://github.com/OSGeo/libgeotiff) or [TFRecord format](https://www.tensorflow.org/api_guides/python/python_io#TFRecords_Format_Details). See [Configuration Parameters](https://developers.google.com/earth-engine/guides/exporting#configuration_parameters) for more output options.
 ## Example Setup
 Start by defining the image data that will be exported:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load a landsat image and select three bands.
 varlandsat=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_123032_20140515')
 .select(['B4','B3','B2']);
+
 // Create a geometry representing an export region.
 vargeometry=ee.Geometry.Rectangle([116.2621,39.8412,116.4849,40.01236]);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load a landsat image and select three bands.
 landsat = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_123032_20140515').select(
-  ['B4', 'B3', 'B2']
+    ['B4', 'B3', 'B2']
 )
+
 # Create a geometry representing an export region.
 geometry = ee.Geometry.Rectangle([116.2621, 39.8412, 116.4849, 40.01236])
 ```
 
-Next define the [projection](https://developers.google.com/earth-engine/guides/projections) parameters that will be used in the following exports. We use the `crs` parameter to specify the coordinate system, and the `crsTransform` parameter to precisely specify the pixel grid. The `crsTransform` parameter is a list of parameters from an affine transformation matrix in row-major order `[xScale, xShearing, xTranslation, yShearing, yScale,     yTranslation]`. An image's origin is defined by the `xTranslation` and `yTranslation` values, and the image's pixel size is defined by the `xScale` and `yScale` values. See [examples of affine matrices](https://en.wikipedia.org/wiki/Affine_transformation#Image_transformation).
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+Next define the [projection](https://developers.google.com/earth-engine/guides/projections) parameters that will be used in the following exports. We use the `crs` parameter to specify the coordinate system, and the `crsTransform` parameter to precisely specify the pixel grid. The `crsTransform` parameter is a list of parameters from an affine transformation matrix in row-major order `[xScale, xShearing, xTranslation, yShearing, yScale,         yTranslation]`. An image's origin is defined by the `xTranslation` and `yTranslation` values, and the image's pixel size is defined by the `xScale` and `yScale` values. See [examples of affine matrices](https://en.wikipedia.org/wiki/Affine_transformation#Image_transformation).
+### Code Editor (JavaScript)
 ```
 // Retrieve the projection information from a band of the original image.
 // Call getInfo() on the projection to request a client-side object containing
 // the crs and transform information needed for the client-side Export function.
 varprojection=landsat.select('B2').projection().getInfo();
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Retrieve the projection information from a band of the original image.
 # Call getInfo() on the projection to request a client-side object containing
@@ -67,7 +62,7 @@ The reason for the potential shift is that the `scale` parameter is used to popu
 To sum up, if you need to match the exported image's pixels to a specific image, make sure to use the `crs` and `crsTransform` parameters for full control of the grid.
 ## to Drive
 To export an image to your Drive account, use `Export.image.toDrive()`. For example, to export portions of a Landsat image, define a region to export, then call `Export.image.toDrive()`:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Export the image, specifying the CRS, transform, and region.
 Export.image.toDrive({
@@ -78,20 +73,23 @@ crsTransform:projection.transform,
 region:geometry
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Export the image, specifying the CRS, transform, and region.
 task = ee.batch.Export.image.toDrive(
-  image=landsat,
-  description='imageToDriveExample_transform',
-  crs=projection['crs'],
-  crsTransform=projection['transform'],
-  region=geometry,
+    image=landsat,
+    description='imageToDriveExample_transform',
+    crs=projection['crs'],
+    crsTransform=projection['transform'],
+    region=geometry,
 )
 task.start()
 ```
@@ -99,7 +97,7 @@ task.start()
 When this code is run, an export task will be created in the Code Editor **Tasks** tab. Click the **Run** button next to the task to start it. (Learn more about the Task Manager from the [Code Editor section](https://developers.google.com/earth-engine/guides/playground#tasks-tab)). The image will be created in your Drive account with the specified `fileFormat`.
 ## to Cloud Storage
 To export an image to a Google Cloud Storage bucket, use `Export.image.toCloudStorage()`. To export the Landsat image in the previous example to Cloud Storage instead of Drive, use:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Export the image to Cloud Storage.
 Export.image.toCloudStorage({
@@ -112,22 +110,25 @@ crsTransform:projection.transform,
 region:geometry
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Export the image to Cloud Storage.
 task = ee.batch.Export.image.toCloudStorage(
-  image=landsat,
-  description='imageToCloudExample',
-  bucket='your-bucket-name',
-  fileNamePrefix='exampleExport',
-  crs=projection['crs'],
-  crsTransform=projection['transform'],
-  region=geometry,
+    image=landsat,
+    description='imageToCloudExample',
+    bucket='your-bucket-name',
+    fileNamePrefix='exampleExport',
+    crs=projection['crs'],
+    crsTransform=projection['transform'],
+    region=geometry,
 )
 task.start()
 ```
@@ -135,12 +136,13 @@ task.start()
 As with exports to Drive, start the export from the **Tasks** tab. The Cloud Storage bucket location can affect performance and storage costs, see the [FAQ entry on location considerations](https://developers.google.com/earth-engine/faq#what_cloud_storage_bucket_location_should_i_use_to_store_cog_assets) for more information.
 ## to Asset
 To export an image to an asset in your Earth Engine assets folder, use `Export.image.toAsset()`. To manage your Earth Engine assets, or check how much of your storage quota is in use, use the [Asset Manager](https://developers.google.com/earth-engine/guides/asset_manager). The following example illustrates exporting portions of a Landsat image using different pyramiding policies for the same band. The pyramiding policy indicates how Earth Engine computes lower-resolution versions of the asset. Learn more about how Earth Engine handles multiple resolutions in the [scale doc](https://developers.google.com/earth-engine/guides/scale).
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Get band 4 from the Landsat image, copy it.
 varband4=landsat.select('B4').rename('b4_mean')
 .addBands(landsat.select('B4').rename('b4_sample'))
 .addBands(landsat.select('B4').rename('b4_max'));
+
 // Export the image to an Earth Engine asset.
 Export.image.toAsset({
 image:band4,
@@ -156,33 +158,37 @@ pyramidingPolicy:{
 }
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Get band 4 from the Landsat image, copy it.
 band_4 = (
-  landsat.select('B4')
-  .rename('b4_mean')
-  .addBands(landsat.select('B4').rename('b4_sample'))
-  .addBands(landsat.select('B4').rename('b4_max'))
+    landsat.select('B4')
+    .rename('b4_mean')
+    .addBands(landsat.select('B4').rename('b4_sample'))
+    .addBands(landsat.select('B4').rename('b4_max'))
 )
+
 # Export the image to an Earth Engine asset.
 task = ee.batch.Export.image.toAsset(
-  image=band_4,
-  description='imageToAssetExample',
-  assetId='projects/your-project/assets/exampleExport',
-  crs=projection['crs'],
-  crsTransform=projection['transform'],
-  region=geometry,
-  pyramidingPolicy={
-    'b4_mean': 'mean',
-    'b4_sample': 'sample',
-    'b4_max': 'max',
-  },
+    image=band_4,
+    description='imageToAssetExample',
+    assetId='projects/your-project/assets/exampleExport',
+    crs=projection['crs'],
+    crsTransform=projection['transform'],
+    region=geometry,
+    pyramidingPolicy={
+        'b4_mean': 'mean',
+        'b4_sample': 'sample',
+        'b4_max': 'max',
+    },
 )
 task.start()
 ```
@@ -192,12 +198,12 @@ You can provide a default pyramiding policy for every band that isn't explicitly
 Observe that the dictionary of configuration parameters passed to `Export.image` includes `scale` (in meters) and the export region as an `ee.Geometry`. The exported image will cover the specified region with pixels at the specified scale. If not explicitly specified, the CRS of the output will be taken from the first band of the image to be exported.
 You may also specify the `dimensions`, `crs` and/or `crsTransform` of the exported image. See [the glossary](https://developers.google.com/earth-engine/glossary) for more information on `crs` and `crsTransform`. For example, to get a block of pixels precisely aligned to another data source, specify `dimensions`, `crs` and `crsTransform`. To get a block of pixels of predefined size (for example a 256x256 thumbnail image) that covers a region, specify `dimensions` and `region`.
 You can specify image output format (if the destination is not `toAsset()`) with the `fileFormat` parameter (`'GeoTIFF'` by default).
-### `formatOptions` parameter
+###  `formatOptions` parameter
 Other configuration options are set with the `formatOptions` parameter, which should be a dictionary keyed by other format options, specific to each `fileFormat` as described below.
 #### GeoTIFF
 ##### Cloud optimized GeoTIFF
 To export a [cloud optimized GeoTIFF](http://www.cogeo.org/), pass a JavaScript literal for `formatOptions` in which the `cloudOptimized` key is set to **true**. Continuing the previous example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Export a cloud-optimized GeoTIFF.
 Export.image.toDrive({
@@ -212,22 +218,25 @@ cloudOptimized:true
 }
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Export a cloud-optimized GeoTIFF.
 task = ee.batch.Export.image.toDrive(
-  image=landsat,
-  description='imageToCOGeoTiffExample',
-  crs=projection['crs'],
-  crsTransform=projection['transform'],
-  region=geometry,
-  fileFormat='GeoTIFF',
-  formatOptions={'cloudOptimized': True},
+    image=landsat,
+    description='imageToCOGeoTiffExample',
+    crs=projection['crs'],
+    crsTransform=projection['transform'],
+    region=geometry,
+    fileFormat='GeoTIFF',
+    formatOptions={'cloudOptimized': True},
 )
 task.start()
 ```
@@ -235,11 +244,12 @@ task.start()
 Cloud optimized GeoTIFFs can be reloaded from Cloud Storage into an `Image`. See [the `Image` overview docs](https://developers.google.com/earth-engine/guides/image_overview#images-from-cloud-geotiffs) for details.
 ##### Nodata
 Specify the GeoTIFF nodata value using the `noData` key within the `formatOptions` parameter. For example:
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_images#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_images#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Set a nodata value and replace masked pixels around the image edge with it.
 varnoDataVal=-9999;
 landsat=landsat.unmask(noDataVal);
+
 Export.image.toDrive({
 image:landsat,
 description:'imageNoDataExample',
@@ -252,24 +262,28 @@ noData:noDataVal,
 }
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Set a nodata value and replace masked pixels around the image edge with it.
 no_data_val = -9999
 landsat = landsat.unmask(no_data_val)
+
 task = ee.batch.Export.image.toDrive(
-  image=landsat,
-  description='imageNoDataExample',
-  crs=projection['crs'],
-  scale=2000, # large scale for minimal demo
-  region=landsat.geometry(), # full image bounds
-  fileFormat='GeoTIFF',
-  formatOptions={'noData': no_data_val},
+    image=landsat,
+    description='imageNoDataExample',
+    crs=projection['crs'],
+    scale=2000,  # large scale for minimal demo
+    region=landsat.geometry(),  # full image bounds
+    fileFormat='GeoTIFF',
+    formatOptions={'noData': no_data_val},
 )
 task.start()
 ```

@@ -1,17 +1,6 @@
  
 #  Forest Cover and Loss Estimation
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#context)
-  * [Instructions](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#instructions)
-    * [Select a country and set parameters](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#select_a_country_and_set_parameters)
-    * [Tree cover](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#tree_cover)
-    * [Tree loss](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#tree_loss)
-    * [Subsequent tree cover](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#subsequent_tree_cover)
-  * [Land use categories](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#land_use_categories)
-  * [References](https://developers.google.com/earth-engine/tutorials/community/forest-cover-loss-estimation#references)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/forest-cover-loss-estimation/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/forest-cover-loss-estimation/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/forest-cover-loss-estimation/index.md "View changes to this article over time.")
@@ -34,6 +23,7 @@ varcc=ee.Number(10);
 varpixels=ee.Number(6);
 // Minimum mapping area for tree loss (usually same as the minimum forest area).
 varlossPixels=ee.Number(6);
+
 // Load country features from Large Scale International Boundary (LSIB) dataset.
 varcountries=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
 varselected=countries.filter(ee.Filter.eq('country_na',ee.String(country)));

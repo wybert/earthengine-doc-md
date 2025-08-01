@@ -14,15 +14,15 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables#Table.TableFileFormat)),
- "selectors": [
-  string
- ],
- "filename": string
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables#Table.TableFileFormat)),
+  "selectors": [
+    string
+  ],
+  "filename": string
 }
 ```
   
@@ -48,4 +48,3 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables/create)`
 |  Creates an ID that can be used to render "table" data.  
-Was this helpful?

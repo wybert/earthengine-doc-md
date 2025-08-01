@@ -1,18 +1,19 @@
  
 #  ee.FeatureCollection.getNumber
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Extract a property from a feature. Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Extract a property from a feature. Usage | Returns  
 ---|---  
-`FeatureCollection.getNumber(property)`| Number  
-Argument| Type| Details  
+`FeatureCollection.getNumber(property)` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `object`| Element| The feature to extract the property from.  
-`property`| String| The property to extract.  
+this: `object` | Element | The feature to extract the property from.  
+`property` | String | The property to extract.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
 // A FeatureCollection with a number property value.
 varfc=ee.FeatureCollection([]).set('number_property',1.5);
+
 // Fetch the number property value as an ee.Number object.
 print('Number property value as ee.Number',fc.getNumber('number_property'));
 ```
@@ -28,8 +29,9 @@ importgeemap.coreasgeemap
 ```
 # A FeatureCollection with a number property value.
 fc = ee.FeatureCollection([]).set('number_property', 1.5)
+
 # Fetch the number property value as an ee.Number object.
 print('Number property value as ee.Number:',
-   fc.getNumber('number_property').getInfo())
+      fc.getNumber('number_property').getInfo())
 ```
 

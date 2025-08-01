@@ -1,6 +1,6 @@
  
 #  Geometric Operations
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine supports a wide variety of operations on `Geometry` objects. These include operations on individual geometries such as computing a buffer, centroid, bounding box, perimeter, convex hull, etc. For example:
 ### Code Editor (JavaScript)
 ```
@@ -8,8 +8,10 @@ Earth Engine supports a wide variety of operations on `Geometry` objects. These 
 varpolygon=ee.Geometry.Polygon([
 [[-5,40],[65,40],[65,60],[-5,60],[-5,60]]
 ]);
+
 // Compute a buffer of the polygon.
 varbuffer=polygon.buffer(1000000);
+
 // Compute the centroid of the polygon.
 varcentroid=polygon.centroid();
 Map.addLayer(buffer,{},'buffer');
@@ -28,13 +30,16 @@ coords:[
 ],
 evenOdd:false
 });
+
 // Create an even-odd version of the polygon.
 varevenOddPoly=ee.Geometry({
 geoJson:holePoly,
 evenOdd:true
 });
+
 // Create a point to test the insideness of the polygon.
 varpt=ee.Geometry.Point([1.5,1.5]);
+
 // Check insideness with a contains operator.
 print(holePoly.contains(pt));// false
 print(evenOddPoly.contains(pt));// true
@@ -47,19 +52,24 @@ The following example computes and visualizes derived geometries based on the re
 // Create two circular geometries.
 varpoly1=ee.Geometry.Point([-50,30]).buffer(1e6);
 varpoly2=ee.Geometry.Point([-40,30]).buffer(1e6);
+
 // Display polygon 1 in red and polygon 2 in blue.
 Map.setCenter(-45,30);
 Map.addLayer(poly1,{color:'FF0000'},'poly1');
 Map.addLayer(poly2,{color:'0000FF'},'poly2');
+
 // Compute the intersection, display it in green.
 varintersection=poly1.intersection(poly2,ee.ErrorMargin(1));
 Map.addLayer(intersection,{color:'00FF00'},'intersection');
+
 // Compute the union, display it in magenta.
 varunion=poly1.union(poly2,ee.ErrorMargin(1));
 Map.addLayer(union,{color:'FF00FF'},'union');
+
 // Compute the difference, display in yellow.
 vardiff1=poly1.difference(poly2,ee.ErrorMargin(1));
 Map.addLayer(diff1,{color:'FFFF00'},'diff1');
+
 // Compute symmetric difference, display in black.
 varsymDiff=poly1.symmetricDifference(poly2,ee.ErrorMargin(1));
 Map.addLayer(symDiff,{color:'000000'},'symmetric difference');

@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.listFeatures
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Lists the features in a table asset. This method allows the caller to apply spatiotemporal and property filters to a table. Results are returned as a list of GeoJSON feature objects.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1beta/{asset=projects/*/assets/**}:listFeatures`
@@ -28,13 +28,13 @@ JSON representation
 ---  
 ```
 {
- "type": string,
- "features": [
-  {
-   object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1beta/Feature))
-  }
- ],
- "nextPageToken": string
+  "type": string,
+  "features": [
+    {
+      object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1beta/Feature))
+    }
+  ],
+  "nextPageToken": string
 }
 ```
   
@@ -46,9 +46,9 @@ Fields
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

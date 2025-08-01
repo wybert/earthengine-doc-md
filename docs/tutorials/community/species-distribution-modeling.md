@@ -1,21 +1,6 @@
  
 #  Species Distribution Modeling
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Run me first](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#run_me_first)
-  * [A brief overview of Species Distribution Modeling](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#a_brief_overview_of_species_distribution_modeling)
-    * [What is Species Distribution Modeling?](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#what_is_species_distribution_modeling)
-    * [Data Required for SDM](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#data_required_for_sdm)
-    * [Workflow of SDM using GEE](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#workflow_of_sdm_using_gee)
-  * [Habitat Prediction and Analysis Using GEE](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#habitat_prediction_and_analysis_using_gee)
-    * [Collection and Preprocessing of Species Occurrence Data](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#collection_and_preprocessing_of_species_occurrence_data)
-    * [Definition of the Area of Interest](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#definition_of_the_area_of_interest)
-    * [Addition of GEE environmental variables](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#addition_of_gee_environmental_variables)
-    * [Generation of pseudo-absence data](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#generation_of_pseudo-absence_data)
-    * [Model fitting and prediction](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#model_fitting_and_prediction)
-    * [Variable importance and accuracy assessment](https://developers.google.com/earth-engine/tutorials/community/species-distribution-modeling#variable_importance_and_accuracy_assessment)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ osgeokr ](https://github.com/osgeokr "View the profile for osgeokr on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/species-distribution-modeling/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/species-distribution-modeling/index.ipynb)  
@@ -25,8 +10,10 @@ In this tutorial, the methodology of Species Distribution Modeling using Google 
 Run the following cell to initialize the API. The output will contain instructions on how to grant this notebook access to Earth Engine using your account.
 ```
 importee
+
 # Trigger the authentication flow.
 ee.Authenticate()
+
 # Initialize the library.
 ee.Initialize(project='my-project')
 
@@ -63,10 +50,12 @@ First, the Python libraries are imported.The `import` statement brings in the en
 ```
 # Import libraries
 importgeemap
+
 importgeemap.colormapsascm
 importpandasaspd,geopandasasgpd
 importnumpyasnp,matplotlib.pyplotasplt
 importos,requests,math,random
+
 fromipyleafletimport TileLayer
 fromstatsmodels.stats.outliers_influenceimport variance_inflation_factor
 
@@ -84,35 +73,39 @@ In the code below, the `species_name` variable is assigned the scientific name o
 ```
 defget_gbif_species_data(species_name, country_code):
 """
-  Retrieves observational data for a specific species using the GBIF API and returns it as a pandas DataFrame.
-  Parameters:
-  species_name (str): The scientific name of the species to query.
-  country_code (str): The country code of the where the observation data will be queried.
-  Returns:
-  pd.DataFrame: A pandas DataFrame containing the observational data.
-  """
-  base_url = "https://api.gbif.org/v1/occurrence/search"
-  params = {
-    "scientificName": species_name,
-    "country": country_code,
-    "hasCoordinate": "true",
-    "basisOfRecord": "HUMAN_OBSERVATION",
-    "limit": 10000,
-  }
-  try:
-    response = requests.get(base_url, params=params)
-    response.raise_for_status() # Raises an exception for a response error.
-    data = response.json()
-    occurrences = data.get("results", [])
-    if occurrences: # If data is present
-      df = pd.json_normalize(occurrences)
-      return df
-    else:
-      print("No data found for the given species and country code.")
-      return pd.DataFrame() # Returns an empty DataFrame
-  except requests.RequestException as e:
-    print(f"Request failed: {e}")
-    return pd.DataFrame() # Returns an empty DataFrame in case of an exception
+    Retrieves observational data for a specific species using the GBIF API and returns it as a pandas DataFrame.
+
+    Parameters:
+    species_name (str): The scientific name of the species to query.
+    country_code (str): The country code of the where the observation data will be queried.
+
+    Returns:
+    pd.DataFrame: A pandas DataFrame containing the observational data.
+    """
+    base_url = "https://api.gbif.org/v1/occurrence/search"
+    params = {
+        "scientificName": species_name,
+        "country": country_code,
+        "hasCoordinate": "true",
+        "basisOfRecord": "HUMAN_OBSERVATION",
+        "limit": 10000,
+    }
+
+    try:
+        response = requests.get(base_url, params=params)
+        response.raise_for_status()  # Raises an exception for a response error.
+        data = response.json()
+        occurrences = data.get("results", [])
+
+        if occurrences:  # If data is present
+            df = pd.json_normalize(occurrences)
+            return df
+        else:
+            print("No data found for the given species and country code.")
+            return pd.DataFrame()  # Returns an empty DataFrame
+    except requests.RequestException as e:
+        print(f"Request failed: {e}")
+        return pd.DataFrame()  # Returns an empty DataFrame in case of an exception
 
 ```
 
@@ -125,7 +118,7 @@ df = get_gbif_species_data("Pitta nympha", "KR")
 df.to_csv("pitta_nympha_data.csv", index=False)
 df = pd.read_csv("pitta_nympha_data.csv")
 """
-df.head(1) # Display the first row of the DataFrame
+df.head(1)  # Display the first row of the DataFrame
 
 ```
 
@@ -133,10 +126,10 @@ Next, we convert the DataFrame into a GeoDataFrame that includes a column for ge
 ```
 # Convert DataFrame to GeoDataFrame
 gdf = gpd.GeoDataFrame(
-  df,
-  geometry=gpd.points_from_xy(df.decimalLongitude,
-                df.decimalLatitude),
-  crs="EPSG:4326"
+    df,
+    geometry=gpd.points_from_xy(df.decimalLongitude,
+                                df.decimalLatitude),
+    crs="EPSG:4326"
 )[["species", "year", "month", "geometry"]]
 """
 # Convert GeoDataFrame to GeoPackage (requires pycrs module)
@@ -144,7 +137,7 @@ gdf = gpd.GeoDataFrame(
 gdf.to_file("pitta_nympha_data.gpkg", driver="GPKG")
 gdf = gpd.read_file("pitta_nympha_data.gpkg")
 """
-gdf.head(1) # Display the first row of the GeoDataFrame
+gdf.head(1)  # Display the first row of the GeoDataFrame
 
 ```
 
@@ -152,27 +145,31 @@ This time, we have created a function to visualize the distribution of data by y
 ```
 # Yearly and monthly data distribution heatmap
 defplot_heatmap(gdf, h_size=8):
-  statistics = gdf.groupby(["month", "year"]).size().unstack(fill_value=0)
-  # Heatmap
-  plt.figure(figsize=(h_size, h_size - 6))
-  heatmap = plt.imshow(
-    statistics.values, cmap="YlOrBr", origin="upper", aspect="auto"
-  )
-  # Display values above each pixel
-  for i in range(len(statistics.index)):
-    for j in range(len(statistics.columns)):
-      plt.text(
-        j, i, statistics.values[i, j], ha="center", va="center", color="black"
-      )
-  plt.colorbar(heatmap, label="Count")
-  plt.title("Monthly Species Count by Year")
-  plt.xlabel("Year")
-  plt.ylabel("Month")
-  plt.xticks(range(len(statistics.columns)), statistics.columns)
-  plt.yticks(range(len(statistics.index)), statistics.index)
-  plt.tight_layout()
-  plt.savefig("heatmap_plot.png")
-  plt.show()
+
+    statistics = gdf.groupby(["month", "year"]).size().unstack(fill_value=0)
+
+    # Heatmap
+    plt.figure(figsize=(h_size, h_size - 6))
+    heatmap = plt.imshow(
+        statistics.values, cmap="YlOrBr", origin="upper", aspect="auto"
+    )
+
+    # Display values above each pixel
+    for i in range(len(statistics.index)):
+        for j in range(len(statistics.columns)):
+            plt.text(
+                j, i, statistics.values[i, j], ha="center", va="center", color="black"
+            )
+
+    plt.colorbar(heatmap, label="Count")
+    plt.title("Monthly Species Count by Year")
+    plt.xlabel("Year")
+    plt.ylabel("Month")
+    plt.xticks(range(len(statistics.columns)), statistics.columns)
+    plt.yticks(range(len(statistics.index)), statistics.index)
+    plt.tight_layout()
+    plt.savefig("heatmap_plot.png")
+    plt.show()
 
 ```
 ```
@@ -185,8 +182,8 @@ However, it's important to note that excluding data may enhance the model's gene
 ```
 # Filtering data by year and month
 filtered_gdf = gdf[
-  (~gdf['year'].eq(1995)) &
-  (~gdf['month'].between(8, 9))
+    (~gdf['year'].eq(1995)) &
+    (~gdf['month'].between(8, 9))
 ]
 
 ```
@@ -209,14 +206,16 @@ When multiple occurrence points are present within the same 1km resolution raste
 In other words, we need to limit the potential impact of geographic sampling bias. To achieve this, we will retain only one location within each 1km pixel and remove all others, allowing the model to more objectively reflect the environmental conditions.
 ```
 defremove_duplicates(data, grain_size):
-  # Select one occurrence record per pixel at the chosen spatial resolution
-  random_raster = ee.Image.random().reproject("EPSG:4326", None, grain_size)
-  rand_point_vals = random_raster.sampleRegions(
-    collection=ee.FeatureCollection(data), geometries=True
-  )
-  return rand_point_vals.distinct("random")
+    # Select one occurrence record per pixel at the chosen spatial resolution
+    random_raster = ee.Image.random().reproject("EPSG:4326", None, grain_size)
+    rand_point_vals = random_raster.sampleRegions(
+        collection=ee.FeatureCollection(data), geometries=True
+    )
+    return rand_point_vals.distinct("random")
+
 
 data = remove_duplicates(data_raw, grain_size)
+
 # Before selection and after selection
 print("Original data size:", data_raw.size().getInfo())
 print("Final data size:", data.size().getInfo())
@@ -227,17 +226,21 @@ The visualization comparing geographic sampling bias before preprocessing (in bl
 ```
 # Visualization of geographic sampling bias before (blue) and after (red) preprocessing
 Map = geemap.Map(layout={"height": "400px", "width": "800px"})
+
 # Add the random raster layer
 random_raster = ee.Image.random().reproject("EPSG:4326", None, grain_size)
 Map.addLayer(
-  random_raster,
-  {"min": 0, "max": 1, "palette": ["black", "white"], "opacity": 0.5},
-  "Random Raster",
+    random_raster,
+    {"min": 0, "max": 1, "palette": ["black", "white"], "opacity": 0.5},
+    "Random Raster",
 )
+
 # Add the original data layer in blue
 Map.addLayer(data_raw, {"color": "blue"}, "Original data")
+
 # Add the final data layer in red
 Map.addLayer(data, {"color": "red"}, "Final data")
+
 # Set the center of the map to the coordinates
 Map.setCenter(126.712, 33.516, 14)
 Map
@@ -250,9 +253,11 @@ In this context, we obtained the bounding box of the occurrence point layer geom
 ```
 # Define the AOI
 aoi = data.geometry().bounds().buffer(distance=50000, maxError=1000)
+
 # Add the AOI to the map
 outline = ee.Image().byte().paint(
-  featureCollection=aoi, color=1, width=3)
+    featureCollection=aoi, color=1, width=3)
+
 Map.remove_layer("Random Raster")
 Map.addLayer(outline, {'palette': 'FF0000'}, "AOI")
 Map.centerObject(aoi, 6)
@@ -282,9 +287,9 @@ terrain = ee.Algorithms.Terrain(ee.Image("USGS/SRTMGL1_003"))
 # Global Forest Cover Change (GFCC) Tree Cover Multi-Year Global 30m
 tcc = ee.ImageCollection("NASA/MEASURES/GFCC/TC/v3")
 median_tcc = (
-  tcc.filterDate("2000-01-01", "2015-12-31")
-  .select(["tree_canopy_cover"], ["TCC"])
-  .median()
+    tcc.filterDate("2000-01-01", "2015-12-31")
+    .select(["tree_canopy_cover"], ["TCC"])
+    .median()
 )
 
 ```
@@ -293,8 +298,10 @@ median_tcc = (
 ```
 # Combine bands into a multi-band image
 predictors = bio.addBands(terrain).addBands(median_tcc)
+
 # Create a water mask
 watermask = terrain.select('elevation').gt(0)
+
 # Mask out ocean pixels and clip to the area of interest
 predictors = predictors.updateMask(watermask).clip(aoi)
 
@@ -305,6 +312,7 @@ First, we will generate 5,000 random points and then extract the predictor varia
 ```
 # Generate 5,000 random points
 data_cor = predictors.sample(scale=grain_size, numPixels=5000, geometries=True)
+
 # Extract predictor variable values
 pvals = predictors.sampleRegions(collection=data_cor, scale=grain_size)
 
@@ -327,24 +335,27 @@ print(columns)
 Calculating Spearman correlation coefficients between the given predictor variables and visualizing them in a heatmap.
 ```
 defplot_correlation_heatmap(dataframe, h_size=10, show_labels=False):
-  # Calculate Spearman correlation coefficients
-  correlation_matrix = dataframe.corr(method="spearman")
-  # Create a heatmap
-  plt.figure(figsize=(h_size, h_size-2))
-  plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
-  # Optionally display values on the heatmap
-  if show_labels:
-    for i in range(correlation_matrix.shape[0]):
-      for j in range(correlation_matrix.shape[1]):
-        plt.text(j, i, f"{correlation_matrix.iloc[i,j]:.2f}",
-             ha='center', va='center', color='white', fontsize=8)
-  columns = dataframe.columns.tolist()
-  plt.xticks(range(len(columns)), columns, rotation=90)
-  plt.yticks(range(len(columns)), columns)
-  plt.title("Variables Correlation Matrix")
-  plt.colorbar(label="Spearman Correlation")
-  plt.savefig('correlation_heatmap_plot.png')
-  plt.show()
+    # Calculate Spearman correlation coefficients
+    correlation_matrix = dataframe.corr(method="spearman")
+
+    # Create a heatmap
+    plt.figure(figsize=(h_size, h_size-2))
+    plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
+
+    # Optionally display values on the heatmap
+    if show_labels:
+        for i in range(correlation_matrix.shape[0]):
+            for j in range(correlation_matrix.shape[1]):
+                plt.text(j, i, f"{correlation_matrix.iloc[i,j]:.2f}",
+                         ha='center', va='center', color='white', fontsize=8)
+
+    columns = dataframe.columns.tolist()
+    plt.xticks(range(len(columns)), columns, rotation=90)
+    plt.yticks(range(len(columns)), columns)
+    plt.title("Variables Correlation Matrix")
+    plt.colorbar(label="Spearman Correlation")
+    plt.savefig('correlation_heatmap_plot.png')
+    plt.show()
 
 ```
 ```
@@ -359,24 +370,32 @@ Typically, when VIF values exceed 5 or 10, it suggests that the variable has a s
 ```
 # Filter variables based on Variance Inflation Factor (VIF)
 deffilter_variables_by_vif(dataframe, threshold=10):
-  original_columns = dataframe.columns.tolist()
-  remaining_columns = original_columns[:]
-  while True:
-    vif_data = dataframe[remaining_columns]
-    vif_values = [
-      variance_inflation_factor(vif_data.values, i)
-      for i in range(vif_data.shape[1])
-    ]
-    max_vif_index = vif_values.index(max(vif_values))
-    max_vif = max(vif_values)
-    if max_vif < threshold:
-      break
-    print(f"Removing '{remaining_columns[max_vif_index]}' with VIF {max_vif:.2f}")
-    del remaining_columns[max_vif_index]
-  filtered_data = dataframe[remaining_columns]
-  bands = filtered_data.columns.tolist()
-  print("Bands:", bands)
-  return filtered_data, bands
+
+    original_columns = dataframe.columns.tolist()
+    remaining_columns = original_columns[:]
+
+    while True:
+        vif_data = dataframe[remaining_columns]
+        vif_values = [
+            variance_inflation_factor(vif_data.values, i)
+            for i in range(vif_data.shape[1])
+        ]
+
+        max_vif_index = vif_values.index(max(vif_values))
+        max_vif = max(vif_values)
+
+        if max_vif < threshold:
+            break
+
+        print(f"Removing '{remaining_columns[max_vif_index]}' with VIF {max_vif:.2f}")
+
+        del remaining_columns[max_vif_index]
+
+    filtered_data = dataframe[remaining_columns]
+    bands = filtered_data.columns.tolist()
+    print("Bands:", bands)
+
+    return filtered_data, bands
 
 ```
 ```
@@ -386,6 +405,7 @@ filtered_pvals_df, bands = filter_variables_by_vif(pvals_df)
 ```
 # Variable Selection Based on VIF
 predictors = predictors.select(bands)
+
 # Plot the correlation heatmap of variables
 plot_correlation_heatmap(filtered_pvals_df, h_size=6, show_labels=True)
 
@@ -400,6 +420,7 @@ cm.plot_colormap('terrain', width=8.0, height=0.2, orientation='horizontal')
 ```
 # Elevation layer
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'})
+
 vis_params = {'bands':['elevation'], 'min': 0, 'max': 1800, 'palette': cm.palettes.terrain}
 Map.addLayer(predictors, vis_params, 'elevation')
 Map.add_colorbar(vis_params, label="Elevation (m)", orientation="vertical", layer_name="elevation")
@@ -410,24 +431,26 @@ Map
 ```
 # Calculate the minimum and maximum values for bio09
 min_max_val = (
-  predictors.select("bio09")
-  .multiply(0.1)
-  .reduceRegion(reducer=ee.Reducer.minMax(), scale=1000)
-  .getInfo()
+    predictors.select("bio09")
+    .multiply(0.1)
+    .reduceRegion(reducer=ee.Reducer.minMax(), scale=1000)
+    .getInfo()
 )
+
 # bio09 (Mean temperature of driest quarter) layer
 Map = geemap.Map(layout={"height": "400px", "width": "800px"})
+
 vis_params = {
-  "min": math.floor(min_max_val["bio09_min"]),
-  "max": math.ceil(min_max_val["bio09_max"]),
-  "palette": cm.palettes.hot,
+    "min": math.floor(min_max_val["bio09_min"]),
+    "max": math.ceil(min_max_val["bio09_max"]),
+    "palette": cm.palettes.hot,
 }
 Map.addLayer(predictors.select("bio09").multiply(0.1), vis_params, "bio09")
 Map.add_colorbar(
-  vis_params,
-  label="Mean temperature of driest quarter (℃)",
-  orientation="vertical",
-  layer_name="bio09",
+    vis_params,
+    label="Mean temperature of driest quarter (℃)",
+    orientation="vertical",
+    layer_name="bio09",
 )
 Map.centerObject(aoi, 6)
 Map
@@ -436,6 +459,7 @@ Map
 ```
 # Slope layer
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'})
+
 vis_params = {'bands':['slope'], 'min': 0, 'max': 25, 'palette': cm.palettes.RdYlGn_r}
 Map.addLayer(predictors, vis_params, 'slope')
 Map.add_colorbar(vis_params, label="Slope", orientation="vertical", layer_name="slope")
@@ -446,6 +470,7 @@ Map
 ```
 # Aspect layer
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'})
+
 vis_params = {'bands':['aspect'], 'min': 0, 'max': 360, 'palette': cm.palettes.rainbow}
 Map.addLayer(predictors, vis_params, 'aspect')
 Map.add_colorbar(vis_params, label="Aspect", orientation="vertical", layer_name="aspect")
@@ -456,24 +481,26 @@ Map
 ```
 # Calculate the minimum and maximum values for bio14
 min_max_val = (
-  predictors.select("bio14")
-  .reduceRegion(reducer=ee.Reducer.minMax(), scale=1000)
-  .getInfo()
+    predictors.select("bio14")
+    .reduceRegion(reducer=ee.Reducer.minMax(), scale=1000)
+    .getInfo()
 )
+
 # bio14 (Precipitation of driest month) layer
 Map = geemap.Map(layout={"height": "400px", "width": "800px"})
+
 vis_params = {
-  "bands": ["bio14"],
-  "min": math.floor(min_max_val["bio14_min"]),
-  "max": math.ceil(min_max_val["bio14_max"]),
-  "palette": cm.palettes.Blues,
+    "bands": ["bio14"],
+    "min": math.floor(min_max_val["bio14_min"]),
+    "max": math.ceil(min_max_val["bio14_max"]),
+    "palette": cm.palettes.Blues,
 }
 Map.addLayer(predictors, vis_params, "bio14")
 Map.add_colorbar(
-  vis_params,
-  label="Precipitation of driest month (mm)",
-  orientation="vertical",
-  layer_name="bio14",
+    vis_params,
+    label="Precipitation of driest month (mm)",
+    orientation="vertical",
+    layer_name="bio14",
 )
 Map.centerObject(aoi, 6)
 Map
@@ -482,15 +509,16 @@ Map
 ```
 # TCC layer
 Map = geemap.Map(layout={"height": "400px", "width": "800px"})
+
 vis_params = {
-  "bands": ["TCC"],
-  "min": 0,
-  "max": 100,
-  "palette": ["ffffff", "afce56", "5f9c00", "0e6a00", "003800"],
+    "bands": ["TCC"],
+    "min": 0,
+    "max": 100,
+    "palette": ["ffffff", "afce56", "5f9c00", "0e6a00", "003800"],
 }
 Map.addLayer(predictors, vis_params, "TCC")
 Map.add_colorbar(
-  vis_params, label="Tree Canopy Cover (%)", orientation="vertical", layer_name="TCC"
+    vis_params, label="Tree Canopy Cover (%)", orientation="vertical", layer_name="TCC"
 )
 Map.centerObject(aoi, 6)
 Map
@@ -512,22 +540,26 @@ The generation of pseudo-absence data will be done through the "environmental pr
 ```
 # Randomly select 100 locations for occurrence
 pvals = predictors.sampleRegions(
-  collection=data.randomColumn().sort('random').limit(100),
-  properties=[],
-  scale=grain_size
+    collection=data.randomColumn().sort('random').limit(100),
+    properties=[],
+    scale=grain_size
 )
+
 # Perform k-means clustering
 clusterer = ee.Clusterer.wekaKMeans(
-  nClusters=2,
-  distanceFunction="Euclidean"
+    nClusters=2,
+    distanceFunction="Euclidean"
 ).train(pvals)
+
 cl_result = predictors.cluster(clusterer)
+
 # Get cluster ID for locations similar to occurrence
 cl_id = cl_result.sampleRegions(
-  collection=data.randomColumn().sort('random').limit(200),
-  properties=[],
-  scale=grain_size
+    collection=data.randomColumn().sort('random').limit(200),
+    properties=[],
+    scale=grain_size
 )
+
 # Define non-occurrence areas in dissimilar clusters
 cl_id = ee.FeatureCollection(cl_id).reduceColumns(ee.Reducer.mode(),['cluster'])
 cl_id = ee.Number(cl_id.get('mode')).subtract(1).abs()
@@ -539,9 +571,11 @@ cl_mask = cl_result.select(['cluster']).eq(cl_id)
 presence_mask = data.reduceToImage(properties=['random'],
 reducer=ee.Reducer.first()
 ).reproject('EPSG:4326', None,
-      grain_size).mask().neq(1).selfMask()
+            grain_size).mask().neq(1).selfMask()
+
 # Masking presence locations in non-occurrence areas and clipping to AOI
 area_for_pa = presence_mask.updateMask(cl_mask).clip(aoi)
+
 # Area for Pseudo-absence
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'})
 Map.addLayer(area_for_pa, {'palette': 'black'}, 'AreaForPA')
@@ -563,8 +597,9 @@ The specific procedure is as follows:
 ```
 Scale = 50000
 grid = watermask.reduceRegions(
-  collection=aoi.coveringGrid(scale=Scale, proj='EPSG:4326'),
-  reducer=ee.Reducer.mean()).filter(ee.Filter.neq('mean', None))
+    collection=aoi.coveringGrid(scale=Scale, proj='EPSG:4326'),
+    reducer=ee.Reducer.mean()).filter(ee.Filter.neq('mean', None))
+
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'})
 Map.addLayer(grid, {}, "Grid for spatial block cross validation")
 Map.addLayer(outline, {'palette': 'FF0000'}, "Study Area")
@@ -577,84 +612,93 @@ Now we can fit the model. Fitting a model involves understanding the patterns in
 We will use the **Random Forest** algorithm.
 ```
 defsdm(x):
-  seed = ee.Number(x)
-  # Random block division for training and validation
-  rand_blk = ee.FeatureCollection(grid).randomColumn(seed=seed).sort("random")
-  training_grid = rand_blk.filter(ee.Filter.lt("random", split)) # Grid for training
-  testing_grid = rand_blk.filter(ee.Filter.gte("random", split)) # Grid for testing
-  # Presence points
-  presence_points = ee.FeatureCollection(data)
-  presence_points = presence_points.map(lambda feature: feature.set("PresAbs", 1))
-  tr_presence_points = presence_points.filter(
-    ee.Filter.bounds(training_grid)
-  ) # Presence points for training
-  te_presence_points = presence_points.filter(
-    ee.Filter.bounds(testing_grid)
-  ) # Presence points for testing
-  # Pseudo-absence points for training
-  tr_pseudo_abs_points = area_for_pa.sample(
-    region=training_grid,
-    scale=grain_size,
-    numPixels=tr_presence_points.size().add(300),
-    seed=seed,
-    geometries=True,
-  )
-  # Same number of pseudo-absence points as presence points for training
-  tr_pseudo_abs_points = (
-    tr_pseudo_abs_points.randomColumn()
-    .sort("random")
-    .limit(ee.Number(tr_presence_points.size()))
-  )
-  tr_pseudo_abs_points = tr_pseudo_abs_points.map(lambda feature: feature.set("PresAbs", 0))
-  te_pseudo_abs_points = area_for_pa.sample(
-    region=testing_grid,
-    scale=grain_size,
-    numPixels=te_presence_points.size().add(100),
-    seed=seed,
-    geometries=True,
-  )
-  # Same number of pseudo-absence points as presence points for testing
-  te_pseudo_abs_points = (
-    te_pseudo_abs_points.randomColumn()
-    .sort("random")
-    .limit(ee.Number(te_presence_points.size()))
-  )
-  te_pseudo_abs_points = te_pseudo_abs_points.map(lambda feature: feature.set("PresAbs", 0))
-  # Merge training and pseudo-absence points
-  training_partition = tr_presence_points.merge(tr_pseudo_abs_points)
-  testing_partition = te_presence_points.merge(te_pseudo_abs_points)
-  # Extract predictor variable values at training points
-  train_pvals = predictors.sampleRegions(
-    collection=training_partition,
-    properties=["PresAbs"],
-    scale=grain_size,
-    geometries=True,
-  )
-  # Random Forest classifier
-  classifier = ee.Classifier.smileRandomForest(
-    numberOfTrees=500,
-    variablesPerSplit=None,
-    minLeafPopulation=10,
-    bagFraction=0.5,
-    maxNodes=None,
-    seed=seed,
-  )
-  # Presence probability: Habitat suitability map
-  classifier_pr = classifier.setOutputMode("PROBABILITY").train(
-    train_pvals, "PresAbs", bands
-  )
-  classified_img_pr = predictors.select(bands).classify(classifier_pr)
-  # Binary presence/absence map: Potential distribution map
-  classifier_bin = classifier.setOutputMode("CLASSIFICATION").train(
-    train_pvals, "PresAbs", bands
-  )
-  classified_img_bin = predictors.select(bands).classify(classifier_bin)
-  return [
-    classified_img_pr,
-    classified_img_bin,
-    training_partition,
-    testing_partition,
-  ], classifier_pr
+    seed = ee.Number(x)
+
+    # Random block division for training and validation
+    rand_blk = ee.FeatureCollection(grid).randomColumn(seed=seed).sort("random")
+    training_grid = rand_blk.filter(ee.Filter.lt("random", split))  # Grid for training
+    testing_grid = rand_blk.filter(ee.Filter.gte("random", split))  # Grid for testing
+
+    # Presence points
+    presence_points = ee.FeatureCollection(data)
+    presence_points = presence_points.map(lambda feature: feature.set("PresAbs", 1))
+    tr_presence_points = presence_points.filter(
+        ee.Filter.bounds(training_grid)
+    )  # Presence points for training
+    te_presence_points = presence_points.filter(
+        ee.Filter.bounds(testing_grid)
+    )  # Presence points for testing
+
+    # Pseudo-absence points for training
+    tr_pseudo_abs_points = area_for_pa.sample(
+        region=training_grid,
+        scale=grain_size,
+        numPixels=tr_presence_points.size().add(300),
+        seed=seed,
+        geometries=True,
+    )
+    # Same number of pseudo-absence points as presence points for training
+    tr_pseudo_abs_points = (
+        tr_pseudo_abs_points.randomColumn()
+        .sort("random")
+        .limit(ee.Number(tr_presence_points.size()))
+    )
+    tr_pseudo_abs_points = tr_pseudo_abs_points.map(lambda feature: feature.set("PresAbs", 0))
+
+    te_pseudo_abs_points = area_for_pa.sample(
+        region=testing_grid,
+        scale=grain_size,
+        numPixels=te_presence_points.size().add(100),
+        seed=seed,
+        geometries=True,
+    )
+    # Same number of pseudo-absence points as presence points for testing
+    te_pseudo_abs_points = (
+        te_pseudo_abs_points.randomColumn()
+        .sort("random")
+        .limit(ee.Number(te_presence_points.size()))
+    )
+    te_pseudo_abs_points = te_pseudo_abs_points.map(lambda feature: feature.set("PresAbs", 0))
+
+    # Merge training and pseudo-absence points
+    training_partition = tr_presence_points.merge(tr_pseudo_abs_points)
+    testing_partition = te_presence_points.merge(te_pseudo_abs_points)
+
+    # Extract predictor variable values at training points
+    train_pvals = predictors.sampleRegions(
+        collection=training_partition,
+        properties=["PresAbs"],
+        scale=grain_size,
+        geometries=True,
+    )
+
+    # Random Forest classifier
+    classifier = ee.Classifier.smileRandomForest(
+        numberOfTrees=500,
+        variablesPerSplit=None,
+        minLeafPopulation=10,
+        bagFraction=0.5,
+        maxNodes=None,
+        seed=seed,
+    )
+    # Presence probability: Habitat suitability map
+    classifier_pr = classifier.setOutputMode("PROBABILITY").train(
+        train_pvals, "PresAbs", bands
+    )
+    classified_img_pr = predictors.select(bands).classify(classifier_pr)
+
+    # Binary presence/absence map: Potential distribution map
+    classifier_bin = classifier.setOutputMode("CLASSIFICATION").train(
+        train_pvals, "PresAbs", bands
+    )
+    classified_img_bin = predictors.select(bands).classify(classifier_bin)
+
+    return [
+        classified_img_pr,
+        classified_img_bin,
+        training_partition,
+        testing_partition,
+    ], classifier_pr
 
 ```
 
@@ -662,9 +706,11 @@ Spatial blocks are divided into 70% for model training and 30% for model testing
 ```
 split = 0.7
 numiter = 10
+
 # Random Seed
 runif = lambda length: [random.randint(1, 1000) for _ in range(length)]
 items = runif(numiter)
+
 # Fixed seed
 # items = [287, 288, 553, 226, 151, 255, 902, 267, 419, 538]
 
@@ -672,13 +718,16 @@ items = runif(numiter)
 ```
 results_list = [] # Initialize SDM results list
 importances_list = [] # Initialize variable importance list
+
 for item in items:
-  result, trained = sdm(item)
-  # Accumulate SDM results into the list
-  results_list.extend(result)
-  # Accumulate variable importance into the list
-  importance = ee.Dictionary(trained.explain()).get('importance')
-  importances_list.extend(importance.getInfo().items())
+    result, trained = sdm(item)
+    # Accumulate SDM results into the list
+    results_list.extend(result)
+
+    # Accumulate variable importance into the list
+    importance = ee.Dictionary(trained.explain()).get('importance')
+    importances_list.extend(importance.getInfo().items())
+
 # Flatten the SDM results list
 results = ee.List(results_list).flatten()
 
@@ -689,18 +738,20 @@ Now we can visualize the **habitat suitability map** and **potential distributio
 ```
 # Habitat suitability map
 images = ee.List.sequence(
-  0, ee.Number(numiter).multiply(4).subtract(1), 4).map(
-  lambda x: results.get(x))
+    0, ee.Number(numiter).multiply(4).subtract(1), 4).map(
+    lambda x: results.get(x))
 model_average = ee.ImageCollection.fromImages(images).mean()
+
 Map = geemap.Map(layout={'height':'400px', 'width':'800px'}, basemap='Esri.WorldImagery')
+
 vis_params = {
-  'min': 0,
-  'max': 1,
-  'palette': cm.palettes.viridis_r}
+    'min': 0,
+    'max': 1,
+    'palette': cm.palettes.viridis_r}
 Map.addLayer(model_average, vis_params, 'Habitat suitability')
 Map.add_colorbar(vis_params, label="Habitat suitability",
-         orientation="horizontal",
-         layer_name="Habitat suitability")
+                 orientation="horizontal",
+                 layer_name="Habitat suitability")
 Map.addLayer(data, {'color':'red'}, 'Presence')
 Map.centerObject(aoi, 6)
 Map
@@ -709,21 +760,23 @@ Map
 ```
 # Potential distribution map
 images2 = ee.List.sequence(1, ee.Number(numiter).multiply(4).subtract(1), 4).map(
-  lambda x: results.get(x)
+    lambda x: results.get(x)
 )
 distribution_map = ee.ImageCollection.fromImages(images2).mode()
+
 Map = geemap.Map(
-  layout={"height": "400px", "width": "800px"}, basemap="Esri.WorldImagery"
+    layout={"height": "400px", "width": "800px"}, basemap="Esri.WorldImagery"
 )
+
 vis_params = {"min": 0, "max": 1, "palette": ["white", "green"]}
 Map.addLayer(distribution_map, vis_params, "Potential distribution")
 Map.addLayer(data, {"color": "red"}, "Presence")
 Map.add_colorbar(
-  vis_params,
-  label="Potential distribution",
-  discrete=True,
-  orientation="horizontal",
-  layer_name="Potential distribution",
+    vis_params,
+    label="Potential distribution",
+    discrete=True,
+    orientation="horizontal",
+    layer_name="Potential distribution",
 )
 Map.centerObject(data.geometry(), 6)
 Map
@@ -735,35 +788,42 @@ Random Forest (`ee.Classifier.smileRandomForest`) is one of the ensemble learnin
 Variable importance is a measure that evaluates the impact of each variable on the predictions within the Random Forest model. We will use the previously defined `importances_list` to calculate and print the average variable importance.
 ```
 defplot_variable_importance(importances_list):
-  # Extract each variable importance value into a list
-  variables = [item[0] for item in importances_list]
-  importances = [item[1] for item in importances_list]
-  # Calculate the average importance for each variable
-  average_importances = {}
-  for variable in set(variables):
-    indices = [i for i, var in enumerate(variables) if var == variable]
-    average_importance = np.mean([importances[i] for i in indices])
-    average_importances[variable] = average_importance
-  # Sort the importances in descending order of importance
-  sorted_importances = sorted(average_importances.items(),
-                key=lambda x: x[1], reverse=False)
-  variables = [item[0] for item in sorted_importances]
-  avg_importances = [item[1] for item in sorted_importances]
-  # Adjust the graph size
-  plt.figure(figsize=(8, 4))
-  # Plot the average importance as a horizontal bar chart
-  plt.barh(variables, avg_importances)
-  plt.xlabel('Importance')
-  plt.ylabel('Variables')
-  plt.title('Average Variable Importance')
-  # Display values above the bars
-  for i, v in enumerate(avg_importances):
-    plt.text(v + 0.02, i, f"{v:.2f}", va='center')
-  # Adjust the x-axis range
-  plt.xlim(0, max(avg_importances) + 5) # Adjust to the desired range
-  plt.tight_layout()
-  plt.savefig('variable_importance.png')
-  plt.show()
+    # Extract each variable importance value into a list
+    variables = [item[0] for item in importances_list]
+    importances = [item[1] for item in importances_list]
+
+    # Calculate the average importance for each variable
+    average_importances = {}
+    for variable in set(variables):
+        indices = [i for i, var in enumerate(variables) if var == variable]
+        average_importance = np.mean([importances[i] for i in indices])
+        average_importances[variable] = average_importance
+
+    # Sort the importances in descending order of importance
+    sorted_importances = sorted(average_importances.items(),
+                                key=lambda x: x[1], reverse=False)
+    variables = [item[0] for item in sorted_importances]
+    avg_importances = [item[1] for item in sorted_importances]
+
+    # Adjust the graph size
+    plt.figure(figsize=(8, 4))
+
+    # Plot the average importance as a horizontal bar chart
+    plt.barh(variables, avg_importances)
+    plt.xlabel('Importance')
+    plt.ylabel('Variables')
+    plt.title('Average Variable Importance')
+
+    # Display values above the bars
+    for i, v in enumerate(avg_importances):
+        plt.text(v + 0.02, i, f"{v:.2f}", va='center')
+
+    # Adjust the x-axis range
+    plt.xlim(0, max(avg_importances) + 5)  # Adjust to the desired range
+
+    plt.tight_layout()
+    plt.savefig('variable_importance.png')
+    plt.show()
 
 ```
 ```
@@ -777,125 +837,148 @@ Using the Testing Datasets, we calculate AUC-ROC and AUC-PR for each run. Then, 
 > **Note:** It's important to ensure that each run has a sufficient number of points for model validation. The final number of points may vary due to the random partitioning of spatial blocks, so it's crucial to verify if there are enough presence and pseudo-absence points for model validation. In the case of endangered or rare species, there might be a shortage of occurrence data, leading to an insufficient test dataset. In such cases, alternatives may include additional data collection based on expert knowledge and experience or utilizing relevant alternative data sources.
 ```
 defprint_pres_abs_sizes(TestingDatasets, numiter):
-  # Check and print the sizes of presence and pseudo-absence coordinates
-  defget_pres_abs_size(x):
-    fc = ee.FeatureCollection(TestingDatasets.get(x))
-    presence_size = fc.filter(ee.Filter.eq("PresAbs", 1)).size()
-    pseudo_absence_size = fc.filter(ee.Filter.eq("PresAbs", 0)).size()
-    return ee.List([presence_size, pseudo_absence_size])
-  sizes_info = (
-    ee.List.sequence(0, ee.Number(numiter).subtract(1), 1)
-    .map(get_pres_abs_size)
-    .getInfo()
-  )
-  for i, sizes in enumerate(sizes_info):
-    presence_size = sizes[0]
-    pseudo_absence_size = sizes[1]
-    print(
-      f"Iteration {i+1}: Presence Size = {presence_size}, Pseudo-absence Size = {pseudo_absence_size}"
+    # Check and print the sizes of presence and pseudo-absence coordinates
+    defget_pres_abs_size(x):
+        fc = ee.FeatureCollection(TestingDatasets.get(x))
+        presence_size = fc.filter(ee.Filter.eq("PresAbs", 1)).size()
+        pseudo_absence_size = fc.filter(ee.Filter.eq("PresAbs", 0)).size()
+        return ee.List([presence_size, pseudo_absence_size])
+
+    sizes_info = (
+        ee.List.sequence(0, ee.Number(numiter).subtract(1), 1)
+        .map(get_pres_abs_size)
+        .getInfo()
     )
+
+    for i, sizes in enumerate(sizes_info):
+        presence_size = sizes[0]
+        pseudo_absence_size = sizes[1]
+        print(
+            f"Iteration {i+1}: Presence Size = {presence_size}, Pseudo-absence Size = {pseudo_absence_size}"
+        )
 
 ```
 ```
 # Extracting the Testing Datasets
 testing_datasets = ee.List.sequence(
-  3, ee.Number(numiter).multiply(4).subtract(1), 4
+    3, ee.Number(numiter).multiply(4).subtract(1), 4
 ).map(lambda x: results.get(x))
+
 print_pres_abs_sizes(testing_datasets, numiter)
 
 ```
 ```
 defget_acc(hsm, t_data, grain_size):
-  pr_prob_vals = hsm.sampleRegions(
-    collection=t_data, properties=["PresAbs"], scale=grain_size
-  )
-  seq = ee.List.sequence(start=0, end=1, count=25) # Divide 0 to 1 into 25 intervals
-  defcalculate_metrics(cutoff):
-    # Each element of the seq list is passed as cutoff(threshold value)
-    # Observed present = TP + FN
-    pres = pr_prob_vals.filterMetadata("PresAbs", "equals", 1)
-    # TP (True Positive)
-    tp = ee.Number(
-      pres.filterMetadata("classification", "greater_than", cutoff).size()
+    pr_prob_vals = hsm.sampleRegions(
+        collection=t_data, properties=["PresAbs"], scale=grain_size
     )
-    # TPR (True Positive Rate) = Recall = Sensitivity = TP / (TP + FN) = TP / Observed present
-    tpr = tp.divide(pres.size())
-    # Observed absent = FP + TN
-    abs = pr_prob_vals.filterMetadata("PresAbs", "equals", 0)
-    # FN (False Negative)
-    fn = ee.Number(
-      pres.filterMetadata("classification", "less_than", cutoff).size()
-    )
-    # TNR (True Negative Rate) = Specificity = TN / (FP + TN) = TN / Observed absent
-    tn = ee.Number(abs.filterMetadata("classification", "less_than", cutoff).size())
-    tnr = tn.divide(abs.size())
-    # FP (False Positive)
-    fp = ee.Number(
-      abs.filterMetadata("classification", "greater_than", cutoff).size()
-    )
-    # FPR (False Positive Rate) = FP / (FP + TN) = FP / Observed absent
-    fpr = fp.divide(abs.size())
-    # Precision = TP / (TP + FP) = TP / Predicted present
-    precision = tp.divide(tp.add(fp))
-    # SUMSS = SUM of Sensitivity and Specificity
-    sumss = tpr.add(tnr)
-    return ee.Feature(
-      None,
-      {
-        "cutoff": cutoff,
-        "TP": tp,
-        "TN": tn,
-        "FP": fp,
-        "FN": fn,
-        "TPR": tpr,
-        "TNR": tnr,
-        "FPR": fpr,
-        "Precision": precision,
-        "SUMSS": sumss,
-      },
-    )
-  return ee.FeatureCollection(seq.map(calculate_metrics))
+    seq = ee.List.sequence(start=0, end=1, count=25)  # Divide 0 to 1 into 25 intervals
+
+    defcalculate_metrics(cutoff):
+        # Each element of the seq list is passed as cutoff(threshold value)
+
+        # Observed present = TP + FN
+        pres = pr_prob_vals.filterMetadata("PresAbs", "equals", 1)
+
+        # TP (True Positive)
+        tp = ee.Number(
+            pres.filterMetadata("classification", "greater_than", cutoff).size()
+        )
+
+        # TPR (True Positive Rate) = Recall = Sensitivity = TP / (TP + FN) = TP / Observed present
+        tpr = tp.divide(pres.size())
+
+        # Observed absent = FP + TN
+        abs = pr_prob_vals.filterMetadata("PresAbs", "equals", 0)
+
+        # FN (False Negative)
+        fn = ee.Number(
+            pres.filterMetadata("classification", "less_than", cutoff).size()
+        )
+
+        # TNR (True Negative Rate) = Specificity = TN  / (FP + TN) = TN / Observed absent
+        tn = ee.Number(abs.filterMetadata("classification", "less_than", cutoff).size())
+        tnr = tn.divide(abs.size())
+
+        # FP (False Positive)
+        fp = ee.Number(
+            abs.filterMetadata("classification", "greater_than", cutoff).size()
+        )
+
+        # FPR (False Positive Rate) = FP / (FP + TN) = FP / Observed absent
+        fpr = fp.divide(abs.size())
+
+        # Precision = TP / (TP + FP) = TP / Predicted present
+        precision = tp.divide(tp.add(fp))
+
+        # SUMSS = SUM of Sensitivity and Specificity
+        sumss = tpr.add(tnr)
+
+        return ee.Feature(
+            None,
+            {
+                "cutoff": cutoff,
+                "TP": tp,
+                "TN": tn,
+                "FP": fp,
+                "FN": fn,
+                "TPR": tpr,
+                "TNR": tnr,
+                "FPR": fpr,
+                "Precision": precision,
+                "SUMSS": sumss,
+            },
+        )
+
+    return ee.FeatureCollection(seq.map(calculate_metrics))
 
 ```
 ```
 defcalculate_and_print_auc_metrics(images, testing_datasets, grain_size, numiter):
-  # Calculate AUC-ROC and AUC-PR
-  defcalculate_auc_metrics(x):
-    hsm = ee.Image(images.get(x))
-    t_data = ee.FeatureCollection(testing_datasets.get(x))
-    acc = get_acc(hsm, t_data, grain_size)
-    # Calculate AUC-ROC
-    x = ee.Array(acc.aggregate_array("FPR"))
-    y = ee.Array(acc.aggregate_array("TPR"))
-    x1 = x.slice(0, 1).subtract(x.slice(0, 0, -1))
-    y1 = y.slice(0, 1).add(y.slice(0, 0, -1))
-    auc_roc = x1.multiply(y1).multiply(0.5).reduce("sum", [0]).abs().toList().get(0)
-    # Calculate AUC-PR
-    x = ee.Array(acc.aggregate_array("TPR"))
-    y = ee.Array(acc.aggregate_array("Precision"))
-    x1 = x.slice(0, 1).subtract(x.slice(0, 0, -1))
-    y1 = y.slice(0, 1).add(y.slice(0, 0, -1))
-    auc_pr = x1.multiply(y1).multiply(0.5).reduce("sum", [0]).abs().toList().get(0)
-    return (auc_roc, auc_pr)
-  auc_metrics = (
-    ee.List.sequence(0, ee.Number(numiter).subtract(1), 1)
-    .map(calculate_auc_metrics)
-    .getInfo()
-  )
-  # Print AUC-ROC and AUC-PR for each iteration
-  df = pd.DataFrame(auc_metrics, columns=["AUC-ROC", "AUC-PR"])
-  df.index = [f"Iteration {i+1}" for i in range(len(df))]
-  df.to_csv("auc_metrics.csv", index_label="Iteration")
-  print(df)
-  # Calculate mean and standard deviation of AUC-ROC and AUC-PR
-  mean_auc_roc, std_auc_roc = df["AUC-ROC"].mean(), df["AUC-ROC"].std()
-  mean_auc_pr, std_auc_pr = df["AUC-PR"].mean(), df["AUC-PR"].std()
-  print(f"Mean AUC-ROC = {mean_auc_roc:.4f} ± {std_auc_roc:.4f}")
-  print(f"Mean AUC-PR = {mean_auc_pr:.4f} ± {std_auc_pr:.4f}")
+    # Calculate AUC-ROC and AUC-PR
+    defcalculate_auc_metrics(x):
+        hsm = ee.Image(images.get(x))
+        t_data = ee.FeatureCollection(testing_datasets.get(x))
+        acc = get_acc(hsm, t_data, grain_size)
+
+        # Calculate AUC-ROC
+        x = ee.Array(acc.aggregate_array("FPR"))
+        y = ee.Array(acc.aggregate_array("TPR"))
+        x1 = x.slice(0, 1).subtract(x.slice(0, 0, -1))
+        y1 = y.slice(0, 1).add(y.slice(0, 0, -1))
+        auc_roc = x1.multiply(y1).multiply(0.5).reduce("sum", [0]).abs().toList().get(0)
+
+        # Calculate AUC-PR
+        x = ee.Array(acc.aggregate_array("TPR"))
+        y = ee.Array(acc.aggregate_array("Precision"))
+        x1 = x.slice(0, 1).subtract(x.slice(0, 0, -1))
+        y1 = y.slice(0, 1).add(y.slice(0, 0, -1))
+        auc_pr = x1.multiply(y1).multiply(0.5).reduce("sum", [0]).abs().toList().get(0)
+
+        return (auc_roc, auc_pr)
+
+    auc_metrics = (
+        ee.List.sequence(0, ee.Number(numiter).subtract(1), 1)
+        .map(calculate_auc_metrics)
+        .getInfo()
+    )
+
+    # Print AUC-ROC and AUC-PR for each iteration
+    df = pd.DataFrame(auc_metrics, columns=["AUC-ROC", "AUC-PR"])
+    df.index = [f"Iteration {i+1}" for i in range(len(df))]
+    df.to_csv("auc_metrics.csv", index_label="Iteration")
+    print(df)
+
+    # Calculate mean and standard deviation of AUC-ROC and AUC-PR
+    mean_auc_roc, std_auc_roc = df["AUC-ROC"].mean(), df["AUC-ROC"].std()
+    mean_auc_pr, std_auc_pr = df["AUC-PR"].mean(), df["AUC-PR"].std()
+    print(f"Mean AUC-ROC = {mean_auc_roc:.4f} ± {std_auc_roc:.4f}")
+    print(f"Mean AUC-PR = {mean_auc_pr:.4f} ± {std_auc_pr:.4f}")
 
 ```
 ```
 %%time
+
 # Calculate AUC-ROC and AUC-PR
 calculate_and_print_auc_metrics(images, testing_datasets, grain_size, numiter)
 

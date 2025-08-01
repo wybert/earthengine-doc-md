@@ -1,11 +1,6 @@
  
 #  ui.Slider.style
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ui-slider-style#examples)
-
-
-Returns the widget's style ActiveDictionary, which can be modified to update the widget's styles. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Properties which behave like their CSS counterparts:
 - height, maxHeight, minHeight (e.g. '100px')
 - width, maxWidth, minWidth (e.g. '100px')
@@ -27,26 +22,30 @@ Properties which behave like their CSS counterparts:
 Supported custom layout properties (see ui.Panel.Layout documentation):
 - stretch ('horizontal', 'vertical', 'both')
 - position ('top-right', 'top-center', 'top-left', 'bottom-right', ...)
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Slider.style()`| ui.data.ActiveDictionary  
-Argument| Type| Details  
+`Slider.style()` | ui.data.ActiveDictionary  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.widget`| ui.Widget| The ui.Widget instance.  
+this: `ui.widget` | ui.Widget | The ui.Widget instance.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ui-slider-style#code-editor-javascript-sample) More
+### Code Editor (JavaScript)
 ```
 // Define a UI widget and add it to the map.
 varwidget=ui.Slider({style:{width:'400px'}});
 Map.add(widget);
+
 // View the UI widget's style properties; an ActiveDictionary.
 print(widget.style());
+
 // ActiveDictionaries are mutable; set a style property.
 widget.style().set('backgroundColor','E0E0E0');
 print(widget.style());
+
 // Define the UI widget's style ActiveDictionary as a variable.
 varwidgetStyle=widget.style();
 print(widgetStyle);
+
 // Set the UI widget's style properties from the ActiveDictionary variable.
 widgetStyle.set({border:'5px solid darkgray'});
 print(widgetStyle);

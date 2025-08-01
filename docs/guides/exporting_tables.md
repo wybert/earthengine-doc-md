@@ -1,6 +1,6 @@
  
 #  Exporting Table and Vector Data
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [to Cloud Storage](https://developers.google.com/earth-engine/guides/exporting_tables#to_cloud_storage)
   * [to Asset](https://developers.google.com/earth-engine/guides/exporting_tables#to_asset)
@@ -25,6 +25,7 @@ ee.Feature(ee.Geometry.Point(30.41,59.933),{name:'Voronoi'}),
 ee.Feature(ee.Geometry.Point(-73.96,40.781),{name:'Thiessen'}),
 ee.Feature(ee.Geometry.Point(6.4806,50.8012),{name:'Dirichlet'})
 ]);
+
 // Export a KML file to Cloud Storage.
 Export.table.toCloudStorage({
 collection:features,
@@ -43,17 +44,18 @@ importgeemap.coreasgeemap
 ```
 # Make a collection of points.
 features = ee.FeatureCollection([
-  ee.Feature(ee.Geometry.Point(30.41, 59.933), {'name': 'Voronoi'}),
-  ee.Feature(ee.Geometry.Point(-73.96, 40.781), {'name': 'Thiessen'}),
-  ee.Feature(ee.Geometry.Point(6.4806, 50.8012), {'name': 'Dirichlet'}),
+    ee.Feature(ee.Geometry.Point(30.41, 59.933), {'name': 'Voronoi'}),
+    ee.Feature(ee.Geometry.Point(-73.96, 40.781), {'name': 'Thiessen'}),
+    ee.Feature(ee.Geometry.Point(6.4806, 50.8012), {'name': 'Dirichlet'}),
 ])
+
 # Export a KML file to Cloud Storage.
 task = ee.batch.Export.table.toCloudStorage(
-  collection=features,
-  description='vectorsToCloudStorageExample',
-  bucket='your-bucket-name',
-  fileNamePrefix='exampleTableExport',
-  fileFormat='KML',
+    collection=features,
+    description='vectorsToCloudStorageExample',
+    bucket='your-bucket-name',
+    fileNamePrefix='exampleTableExport',
+    fileFormat='KML',
 )
 task.start()
 ```
@@ -78,9 +80,9 @@ importgeemap.coreasgeemap
 ```
 # Export an ee.FeatureCollection as an Earth Engine asset.
 task = ee.batch.Export.table.toAsset(
-  collection=features,
-  description='exportToTableAssetExample',
-  assetId='projects/your-project/assets/exampleAssetId',
+    collection=features,
+    description='exportToTableAssetExample',
+    assetId='projects/your-project/assets/exampleAssetId',
 )
 task.start()
 ```
@@ -112,11 +114,11 @@ importgeemap.coreasgeemap
 ```
 ```
 task = ee.batch.Export.table.toBigQuery(
-  collection=features,
-  table='myproject.mydataset.mytable',
-  description='put_my_data_in_bigquery',
-  append=True,
-  overwrite=False,
+    collection=features,
+    table='myproject.mydataset.mytable',
+    description='put_my_data_in_bigquery',
+    append=True,
+    overwrite=False,
 )
 task.start()
 ```
@@ -141,7 +143,7 @@ importgeemap.coreasgeemap
 ```
 # Export the FeatureCollection to a KML file.
 task = ee.batch.Export.table.toDrive(
-  collection=features, description='vectorsToDriveExample', fileFormat='KML'
+    collection=features, description='vectorsToDriveExample', fileFormat='KML'
 )
 task.start()
 ```
@@ -152,8 +154,10 @@ Note that the output format is specified as KML to handle geographic data (SHP w
 // Load a Landsat image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
 varprojection=image.select('B2').projection().getInfo();
+
 // Create an arbitrary rectangle.
 varregion=ee.Geometry.Rectangle(-122.2806,37.1209,-122.0554,37.2413);
+
 // Get a dictionary of means in the region.
 varmeans=image.reduceRegion({
 reducer:ee.Reducer.mean(),
@@ -161,10 +165,13 @@ geometry:region,
 crs:projection.crs,
 crsTransform:projection.transform,
 });
+
 // Make a feature without geometry and set the properties to the dictionary of means.
 varfeature=ee.Feature(null,means);
+
 // Wrap the Feature in a FeatureCollection for export.
 varfeatureCollection=ee.FeatureCollection([feature]);
+
 // Export the FeatureCollection.
 Export.table.toDrive({
 collection:featureCollection,
@@ -182,28 +189,32 @@ importgeemap.coreasgeemap
 # Load a Landsat image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
 projection = image.select('B2').projection().getInfo()
+
 # Create an arbitrary rectangle.
 region = ee.Geometry.Rectangle(-122.2806, 37.1209, -122.0554, 37.2413)
+
 # Get a dictionary of means in the region.
 means = image.reduceRegion(
-  reducer=ee.Reducer.mean(),
-  geometry=region,
-  crs=projection['crs'],
-  crsTransform=projection['transform'],
+    reducer=ee.Reducer.mean(),
+    geometry=region,
+    crs=projection['crs'],
+    crsTransform=projection['transform'],
 )
+
 # Make a feature without geometry and set the properties to the dictionary of means.
 feature = ee.Feature(None, means)
+
 # Wrap the Feature in a FeatureCollection for export.
 feature_collection = ee.FeatureCollection([feature])
+
 # Export the FeatureCollection.
 task = ee.batch.Export.table.toDrive(
-  collection=feature_collection,
-  description='exportTableExample',
-  fileFormat='CSV',
+    collection=feature_collection,
+    description='exportTableExample',
+    fileFormat='CSV',
 )
 task.start()
 ```
 
 Note that the format is set to 'CSV' in this example since there is no geometry in the output.
 **Caution:** Depending on your Google Drive settings, CSV tables that you export from Earth Engine can be converted to XSLX files with unintended effects, such as data type conversions. The behavior can be modified with [Google Drive settings](https://developers.google.com/earth-engine/faq#tables_exported_to_drive_as_csv_format_are_converted_to_xslx_format).
-Was this helpful?

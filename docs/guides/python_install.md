@@ -1,7 +1,24 @@
  
 #  Python Installation
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Keep your client library up to date by running the command for the package manager you used to install `earthengine-api`: 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Python support](https://developers.google.com/earth-engine/guides/python_install#python-support)
+  * [Install options](https://developers.google.com/earth-engine/guides/python_install#install-options)
+  * [Package import](https://developers.google.com/earth-engine/guides/python_install#package-import)
+  * [Authentication and Initialization](https://developers.google.com/earth-engine/guides/python_install#authentication-and-initialization)
+  * [Hello world!](https://developers.google.com/earth-engine/guides/python_install#hello-world)
+  * [Syntax](https://developers.google.com/earth-engine/guides/python_install#syntax)
+  * [Date objects](https://developers.google.com/earth-engine/guides/python_install#date-objects)
+  * [Exporting data](https://developers.google.com/earth-engine/guides/python_install#exporting-data)
+  * [Printing objects](https://developers.google.com/earth-engine/guides/python_install#printing-objects)
+  * [UI objects](https://developers.google.com/earth-engine/guides/python_install#ui-objects)
+  * [Python in the Developer Guide](https://developers.google.com/earth-engine/guides/python_install#python-in-the-developer-guide)
+    * [Earth Engine setup](https://developers.google.com/earth-engine/guides/python_install#earth-engine-setup)
+    * [Interactive exploration with geemap](https://developers.google.com/earth-engine/guides/python_install#interactive-exploration-with-geemap)
+
+
+Keep your client library up to date by running the command for the package manager you used to install `earthengine-api`:  
+
   * [Conda Package Manager](https://developers.google.com/earth-engine/guides/python_install-conda#updating_the_api): `conda update -c conda-forge earthengine-api`
   * [Python Package Installer](https://developers.google.com/earth-engine/guides/python_install#pip): `pip install earthengine-api --upgrade`
 
@@ -13,7 +30,9 @@ If you are using **Google Colab** , the latest version of the Earth Engine Pytho
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/ee-api-colab-setup.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/ee-api-colab-setup.ipynb)  
 ---|---  
 If you don't use Colab, the Earth Engine client library can be manually installed and updated on your system using **conda** (recommended) or **pip** : 
-[ Install with **conda** ](https://developers.google.com/earth-engine/guides/python_install-conda)
+[ Install with **conda** ](https://developers.google.com/earth-engine/guides/python_install-conda)  
+
+  
 Install with **pip** expand_more [](https://developers.google.com/earth-engine/guides/pip-install)
 **Install** the API to an arbitrary Python environment using [pip](https://pypi.org/project/pip/). From a terminal or command prompt:
 ```
@@ -61,13 +80,14 @@ Function definition |  ```
 functionmyFun(arg){
 returnarg;
 }
+
 varmyFun=function(arg){
 returnarg;
 };
 ```
 |  ```
 defmy_fun(arg):
- return arg
+  return arg
 ```
   
 Anonymous function mapping |  ```
@@ -104,8 +124,8 @@ varfoo=my.really()
 ```
 |  ```
 foo = (my.really()
-    .reallyLong()
-    .methodChain())
+       .reallyLong()
+       .methodChain())
 ```
   
 Dictionary keys |  ```
@@ -189,13 +209,13 @@ ee_date = ee.Date(py_date)
 Exporting data with the Python API requires the use of the `ee.batch` module, which provides an interface to the [`Export`](https://developers.google.com/earth-engine/guides/exporting) functions. Pass parameter arguments as you would with the JavaScript API, minding the differences noted in the [syntax table](https://developers.google.com/earth-engine/guides/python_install#syntax) above. Export tasks must be started by calling the `start()` method on a defined task. Query a task's status by calling the `status()` method on it. The following example demonstrates exporting an `ee.Image` object.
 #### Create an export task:
 ```
-task = ee.batch.Export.image.toDrive(image=my_image, # an ee.Image object.
-                   region=my_geometry, # an ee.Geometry object.
-                   description='mock_export',
-                   folder='gdrive_folder',
-                   fileNamePrefix='mock_export',
-                   scale=1000,
-                   crs='EPSG:4326')
+task = ee.batch.Export.image.toDrive(image=my_image,  # an ee.Image object.
+                                     region=my_geometry,  # an ee.Geometry object.
+                                     description='mock_export',
+                                     folder='gdrive_folder',
+                                     fileNamePrefix='mock_export',
+                                     scale=1000,
+                                     crs='EPSG:4326')
 ```
 
 #### Start an export task:
@@ -211,14 +231,14 @@ task.status()
 The result of `task.status()` is a dictionary containing information such as the state of the task and its ID. 
 ```
 {
- 'state': 'READY',
- 'description': 'my_export_task',
- 'creation_timestamp_ms': 1647567508236,
- 'update_timestamp_ms': 1647567508236,
- 'start_timestamp_ms': 0,
- 'task_type': 'EXPORT_IMAGE',
- 'id': '56TVJIZABUMTD5CJ5YHTMYK4',
- 'name': 'projects/earthengine-legacy/operations/56TVJIZABUMTX5CJ5HHTMYK4'
+  'state': 'READY',
+  'description': 'my_export_task',
+  'creation_timestamp_ms': 1647567508236,
+  'update_timestamp_ms': 1647567508236,
+  'start_timestamp_ms': 0,
+  'task_type': 'EXPORT_IMAGE',
+  'id': '56TVJIZABUMTD5CJ5YHTMYK4',
+  'name': 'projects/earthengine-legacy/operations/56TVJIZABUMTX5CJ5HHTMYK4'
 }
 ```
 
@@ -230,8 +250,10 @@ Call `getInfo()` on Earth Engine objects to get the desired object from the serv
 ```
 # Load a Landsat image.
 img = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_034033_20000913')
+
 # Print image object WITHOUT call to getInfo(); prints serialized request instructions.
 print(img)
+
 # Print image object WITH call to getInfo(); prints image metadata.
 print(img.getInfo())
 ```
@@ -258,10 +280,13 @@ Geographic Earth Engine data classes, such as `ee.Image` and `ee.FeatureCollecti
 ```
 # Initialize a map object.
 m = geemap.Map()
+
 # Define an example image.
 img = ee.Image.random()
+
 # Add the image to the map.
 m.add_layer(img, None, 'Random image')
+
 # Display the map (you can call the object directly if it is the final line).
 display(m)
 ```

@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-digamma#examples)
 
 
-Computes the digamma function of the input. 
-Usage| Returns  
+Computes the digamma function of the input.
+Usage | Returns  
 ---|---  
-`Number.digamma()`| Number  
-Argument| Type| Details  
+`Number.digamma()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-digamma#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-digamma#colab-python-sample) More
 ```
@@ -30,13 +30,12 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print('Digamma for -1.5:', ee.Number(-1.5).digamma().getInfo()) # 0.703156637
-print('Digamma for -1:', ee.Number(-1).digamma().getInfo()) # -Infinity
-print('Digamma for 0:', ee.Number(0).digamma().getInfo()) # -Infinity
-print('Digamma for 0.5:', ee.Number(0.5).digamma().getInfo()) # -1.963510028
-print('Digamma for 1:', ee.Number(1).digamma().getInfo()) # -0.577215667
-print('Digamma for 100:', ee.Number(100).digamma().getInfo()) # 4.600161852
-print('Digamma for 1e13:', ee.Number(1e13).digamma().getInfo()) # 29.933606208
+print('Digamma for -1.5:', ee.Number(-1.5).digamma().getInfo())  # 0.703156637
+print('Digamma for -1:', ee.Number(-1).digamma().getInfo())  # -Infinity
+print('Digamma for 0:', ee.Number(0).digamma().getInfo())  # -Infinity
+print('Digamma for 0.5:', ee.Number(0.5).digamma().getInfo())  # -1.963510028
+print('Digamma for 1:', ee.Number(1).digamma().getInfo())  # -0.577215667
+print('Digamma for 100:', ee.Number(100).digamma().getInfo())  # 4.600161852
+print('Digamma for 1e13:', ee.Number(1e13).digamma().getInfo())  # 29.933606208
 ```
 
-Was this helpful?

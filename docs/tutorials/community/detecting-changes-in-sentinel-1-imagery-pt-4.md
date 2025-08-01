@@ -1,21 +1,10 @@
  
 #  Detecting Changes in Sentinel-1 Imagery (Part 4)
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#preliminaries)
-  * [GEE Sentinel-1 explorer widget](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#gee_sentinel-1_explorer_widget)
-    * [How to use the interface](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#how_to_use_the_interface)
-  * [Some examples](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#some_examples)
-    * [Surveillance](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#surveillance)
-    * [Inundation](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#inundation)
-    * [Vegetation](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#vegetation)
-  * [The end](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-4#the_end)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md)
-Author(s): [ mortcanty ](https://github.com/mortcanty)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/detecting-changes-in-sentinel-1-imagery-pt-4/index.md "View changes to this article over time.")
+Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/mortcanty/eesarseq/blob/main/src/Tutorial_pt_4.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/mortcanty/eesarseq/blob/main/src/Tutorial_pt_4.ipynb)  
 ---|---  
@@ -166,4 +155,3 @@ This concludes the community tutorial series on SAR change detection. For reader
 
 
 Thank you for your interest, and happy GEE-ing!
-Was this helpful?

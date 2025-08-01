@@ -1,31 +1,6 @@
  
 #  Chart Styling
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Configuration options example](https://developers.google.com/earth-engine/guides/charts_style#configuration_options_example)
-  * [How do I...](https://developers.google.com/earth-engine/guides/charts_style#how_do_i)
-    * [set the chart title?](https://developers.google.com/earth-engine/guides/charts_style#set_the_chart_title)
-    * [hide the chart title?](https://developers.google.com/earth-engine/guides/charts_style#hide_the_chart_title)
-    * [hide the legend?](https://developers.google.com/earth-engine/guides/charts_style#hide_the_legend)
-    * [define the axis limits?](https://developers.google.com/earth-engine/guides/charts_style#define_the_axis_limits)
-    * [set symbol size and color?](https://developers.google.com/earth-engine/guides/charts_style#set_symbol_size_and_color)
-    * [hide a series from the legend?](https://developers.google.com/earth-engine/guides/charts_style#hide_a_series_from_the_legend)
-    * [show points on a line chart?](https://developers.google.com/earth-engine/guides/charts_style#show_points_on_a_line_chart)
-    * [show lines on a point chart?](https://developers.google.com/earth-engine/guides/charts_style#show_lines_on_a_point_chart)
-    * [apply log scale to an axis?](https://developers.google.com/earth-engine/guides/charts_style#apply_log_scale_to_an_axis)
-    * [apply a smoothing function to a line?](https://developers.google.com/earth-engine/guides/charts_style#apply_a_smoothing_function_to_a_line)
-    * [zoom and pan chart axes?](https://developers.google.com/earth-engine/guides/charts_style#zoom_and_pan_chart_axes)
-    * [set point symbol opacity?](https://developers.google.com/earth-engine/guides/charts_style#set_point_symbol_opacity)
-    * [rotate axes?](https://developers.google.com/earth-engine/guides/charts_style#rotate_axes)
-    * [set text style?](https://developers.google.com/earth-engine/guides/charts_style#set_text_style)
-    * [set chart background color?](https://developers.google.com/earth-engine/guides/charts_style#set_chart_background_color)
-    * [set chart grid line color?](https://developers.google.com/earth-engine/guides/charts_style#set_chart_grid_line_color)
-    * [remove grid lines?](https://developers.google.com/earth-engine/guides/charts_style#remove_grid_lines)
-    * [format axis value labels?](https://developers.google.com/earth-engine/guides/charts_style#format_axis_value_labels)
-    * [interpolate null y-axis values?](https://developers.google.com/earth-engine/guides/charts_style#interpolate_null_y-axis_values)
-    * [add a trend line?](https://developers.google.com/earth-engine/guides/charts_style#add_a_trend_line)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Charts produced by the `ui.Chart` module in the Earth Engine Code Editor can be styled using the `.setOptions()` method. The method takes a client-side JavaScript object of configuration options as an input. Configuration options for each chart type are provided in the respective Google Charts documentation under the _Configuration Options_ section, for example: [Line Chart](https://developers.google.com/chart/interactive/docs/gallery/linechart#configuration-options).
 ## Configuration options example
 ![](https://developers.google.com/static/earth-engine/images/Charts_style_01.svg)
@@ -34,10 +9,12 @@ Here, custom chart styling is applied to the [`ui.Chart.image.doySeries` example
 // Import the example feature collection and subset the glassland feature.
 vargrassland=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Grassland'));
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/006/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 **// Set chart style properties.
 varchartStyle={
 title:'Average Vegetation Index Value by Day of Year for Grassland',
@@ -59,6 +36,7 @@ series:{
 },
 chartArea:{backgroundColor:'EBEBEB'}
 };**
+
 // Define the chart.
 varchart=
 ui.Chart.image
@@ -72,8 +50,10 @@ startDay:1,
 endDay:365
 })
 .setSeriesNames(['EVI','NDVI']);
+
 **// Apply custom style properties to the chart.
 chart.setOptions(chartStyle);**
+
 // Print the chart to the console.
 print(chart);
 ```

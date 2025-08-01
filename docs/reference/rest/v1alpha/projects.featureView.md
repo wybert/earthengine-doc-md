@@ -1,19 +1,20 @@
  
 #  REST Resource: projects.featureView
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: FeatureView
 Information about a FeatureView map.
 JSON representation  
 ---  
 ```
 {
- "name": string,
- "visualizationExpression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- // Union field source can be only one of the following:
- "asset": string
- // End of list of possible types for union field source.
+  "name": string,
+  "visualizationExpression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+
+  // Union field source can be only one of the following:
+  "asset": string
+  // End of list of possible types for union field source.
 }
 ```
   

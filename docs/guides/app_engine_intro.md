@@ -1,14 +1,6 @@
  
 #  App Engine & Earth Engine Overview
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Deploying App Engine apps with Earth Engine](https://developers.google.com/earth-engine/guides/app_engine_intro#deploying-app-engine-apps-with-earth-engine)
-    * [ Enable the Earth Engine API on your Google Cloud project ](https://developers.google.com/earth-engine/guides/app_engine_intro#enable-the-earth-engine-api-on-your-google-cloud-project)
-    * [Set up credentials](https://developers.google.com/earth-engine/guides/app_engine_intro#set-up-credentials)
-    * [Set up the local development environment](https://developers.google.com/earth-engine/guides/app_engine_intro#set-up-the-local-development-environment)
-    * [Run locally](https://developers.google.com/earth-engine/guides/app_engine_intro#run-locally)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [Google App Engine](https://cloud.google.com/appengine) lets you build and run your own custom applications on Google’s servers. App Engine applications are easy to create, maintain, and scale as your traffic and data storage needs change. You simply upload your application source code and it’s ready to go. If you're new to developing for App Engine, be sure to check out the App Engine [Python](https://cloud.google.com/appengine/docs/standard/python/quickstart) or [Node.js](https://cloud.google.com/appengine/docs/flexible/nodejs/quickstart) quickstart before proceeding.
 Earth Engine and App Engine can be used together to build scalable geospatial applications. Typically, your App Engine code includes the [Earth Engine Python client library](https://github.com/google/earthengine-api/tree/master/python) and makes requests to the Earth Engine backend using a [service account](https://developers.google.com/earth-engine/guides/service_account). This is advantageous because it allows anyone to use your app without logging in or being a registered Earth Engine user. Note that the standard Earth Engine [usage limits](https://developers.google.com/earth-engine/guides/usage) apply to each service account.
 Another development approach is to use [ client-side authentication](https://github.com/google/earthengine-api/tree/master/demos/client-auth) instead of a service account. With this approach, visitors to your application must be registered for Earth Engine and log in. The benefit of this approach is that requests to Earth Engine are made using the end user's credentials, so you are less likely to hit usage limits. The challenge is that your users must signup for Earth Engine and log in before using the application.
@@ -72,4 +64,3 @@ npm start
 ```
 
 Point your browser to <http://localhost:8080> to see the app running on a local server. Any changes you make (and save) will be automatically picked up when you refresh the page.
-Was this helpful?

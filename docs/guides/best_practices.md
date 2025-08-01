@@ -1,6 +1,6 @@
  
 #  Coding Best Practices
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 This doc describes coding practices that are intended to maximize the chance of success for complex or expensive Earth Engine computations. The methods described here are applicable to both interactive (e.g. Code Editor) and batch (`Export`) computations, though generally long running computations should be run in the batch system.
 ## Avoid mixing client functions and objects with server functions and objects
 Earth Engine server objects are objects with constructors that start with `ee` (e.g. `ee.Image`, `ee.Reducer`) and any methods on such objects are server functions. Any object not constructed in this manner is a client object. Client objects may come from the Code Editor (e.g. `Map`, `Chart`) or the JavaScript language (e.g. `Date`, `Math`, `[]`, `{}`).
@@ -8,6 +8,7 @@ To avoid unintended behavior, do not mix client and server functions in your scr
 Error — this code doesn't work!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Won't work.
 for(vari=0;i<table.size();i++){
 print('No!');
@@ -31,6 +32,7 @@ Conversely, `map()` is a server function and client functionality won't work ins
 Error — this code doesn't work!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Error:
 varfoobar=table.map(function(f){
 print(f);// Can't use a client function here.
@@ -44,6 +46,7 @@ Use `map()` and `set()`!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
 print(table.first());
+
 // Do something to every element of a collection.
 varwithMoreProperties=table.map(function(f){
 // Set a property.
@@ -59,6 +62,7 @@ Collections in Earth Engine are processed using optimizations that are broken by
 Don't convert to list unnecessarily!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Do NOT do this!!
 varlist=table.toList(table.size());
 print(list.get(13));// User memory limit exceeded.
@@ -78,6 +82,7 @@ Do not use `ee.Algorithms.If()` to implement branching logic, especially in a ma
 Don't use `If()`!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
 // Do NOT do this!
 varveryBad=table.map(function(f){
 returnee.Algorithms.If({
@@ -87,6 +92,7 @@ falseCase:null// Do something else.
 });
 },true);
 print(veryBad);// User memory limit exceeded.
+
 // If() may evaluate both the true and false cases.
 
 ```
@@ -105,18 +111,23 @@ Don't use reproject unless absolutely necessary. One reason you might want to us
 varl8sr=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
 varsf=ee.Geometry.Point([-122.405,37.786]);
 Map.centerObject(sf,13);
+
 // A reason to reproject - counting pixels and exploring interactively.
 varimage=l8sr.filterBounds(sf)
 .filterDate('2019-06-01','2019-12-31')
 .first();
+
 image=image.multiply(0.00341802).add(149);// Apply scale factors.
 Map.addLayer(image,{bands:['ST_B10'],min:280,max:317},'image');
+
 varhotspots=image.select('ST_B10').gt(317)
 .selfMask()
 .rename('hotspots');
 varobjectSize=hotspots.connectedPixelCount(256);
+
 Map.addLayer(objectSize,{min:1,max:256},'Size No Reproject',false);
-// Beware of reproject! Don't zoom out on reprojected data.
+
+// Beware of reproject!  Don't zoom out on reprojected data.
 varreprojected=objectSize.reproject(hotspots.projection());
 Map.addLayer(reprojected,{min:1,max:256},'Size Reproject',false);
 
@@ -128,6 +139,7 @@ In general, filter input collections by time, location and/or metadata prior to 
 ```
 varimages=ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED');
 varsf=ee.Geometry.Point([-122.463,37.768]);
+
 // Expensive function to reduce the neighborhood of an image.
 varreduceFunction=function(image){
 returnimage.reduceNeighborhood({
@@ -135,6 +147,7 @@ reducer:ee.Reducer.mean(),
 kernel:ee.Kernel.square(4)
 });
 };
+
 varbands=['B4','B3','B2'];
 // Select and filter first!
 varreasonableComputation=images
@@ -157,18 +170,24 @@ The difference between `updateMask()` and `mask()` is that the former does a log
 varl8sr=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
 varsf=ee.Geometry.Point([-122.40554461769182,37.786807309873716]);
 varaw3d30=ee.Image('JAXA/ALOS/AW3D30_V1_1');
+
 Map.centerObject(sf,7);
+
 varimage=l8sr.filterBounds(sf)
 .filterDate('2019-06-01','2019-12-31')
 .first();
+
 image=image.multiply(0.0000275).subtract(0.2);// Apply scale factors.
 varvis={bands:['SR_B4','SR_B3','SR_B2'],min:0,max:0.3};
 Map.addLayer(image,vis,'image',false);
+
 varmask=aw3d30.select('AVE').gt(300);
 Map.addLayer(mask,{},'mask',false);
-// NO! Don't do this!
+
+// NO!  Don't do this!
 varbadMask=image.mask(mask);
 Map.addLayer(badMask,vis,'badMask');
+
 vargoodMask=image.updateMask(mask);
 Map.addLayer(goodMask,vis,'goodMask',false);
 
@@ -179,6 +198,7 @@ If you need multiple statistics (e.g. mean and standard deviation) from a single
 ```
 varimage=ee.Image(
 'COPERNICUS/S2_HARMONIZED/20150821T111616_20160314T094808_T30UWU');
+
 // Get mean and SD in every band by combining reducers.
 varstats=image.reduceRegion({
 reducer:ee.Reducer.mean().combine({
@@ -189,7 +209,9 @@ geometry:ee.Geometry.Rectangle([-2.15,48.55,-1.83,48.72]),
 scale:10,
 bestEffort:true// Use maxPixels if you care about scale.
 });
+
 print(stats);
+
 // Extract means and SDs to images.
 varmeansImage=stats.toImage().select('.*_mean');
 varsdsImage=stats.toImage().select('.*_stdDev');
@@ -217,7 +239,9 @@ Don't clip inputs unnecessarily!
 ```
 vartable=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
 varl8sr=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
+
 varbelgium=table.filter(ee.Filter.eq('country_na','Belgium')).first();
+
 // Do NOT clip unless you need to.
 varunnecessaryClip=l8sr
 .select('SR_B4')// Good.
@@ -261,10 +285,12 @@ If you really need to clip something, and the geometries you want to use for cli
 ```
 varecoregions=ee.FeatureCollection('RESOLVE/ECOREGIONS/2017');
 varimage=ee.Image('JAXA/ALOS/AW3D30_V1_1');
+
 varcomplexCollection=ecoregions
 .filter(ee.Filter.eq('BIOME_NAME',
 'Tropical & Subtropical Moist Broadleaf Forests'));
 Map.addLayer(complexCollection,{},'complexCollection');
+
 varclippedTheRightWay=image.select('AVE')
 .clipToCollection(complexCollection);
 Map.addLayer(clippedTheRightWay,{},'clippedTheRightWay',false);
@@ -277,11 +303,14 @@ If you need to do a spatial reduction such that the reducer pools inputs from mu
 ```
 varecoregions=ee.FeatureCollection('RESOLVE/ECOREGIONS/2017');
 varimage=ee.Image('JAXA/ALOS/AW3D30_V1_1');
+
 varcomplexCollection=ecoregions
 .filter(ee.Filter.eq('BIOME_NAME','Tropical & Subtropical Moist Broadleaf Forests'));
+
 varclippedTheRightWay=image.select('AVE')
 .clipToCollection(complexCollection);
 Map.addLayer(clippedTheRightWay,{},'clippedTheRightWay');
+
 varreduction=clippedTheRightWay.reduceRegion({
 reducer:ee.Reducer.mean(),
 geometry:ee.Geometry.Rectangle({
@@ -299,9 +328,11 @@ print(reduction);// If this times out, export it.
 For possibly expensive geometry operations, use the largest error margin possible given the required precision of the computation. The error margin specifies the maximum allowable error (in meters) permitted during operations on geometries (e.g. during reprojection). Specifying a small error margin can result in the need to densify geometries (with coordinates), which can be memory intensive. It's good practice to specify as large an error margin as possible for your computation:
 ```
 varecoregions=ee.FeatureCollection('RESOLVE/ECOREGIONS/2017');
+
 varcomplexCollection=ecoregions.limit(10);
 Map.centerObject(complexCollection);
 Map.addLayer(complexCollection);
+
 varexpensiveOps=complexCollection.map(function(f){
 returnf.buffer(10000,200).bounds(200);
 });
@@ -313,14 +344,17 @@ Map.addLayer(expensiveOps,{},'expensiveOps');
 If you want to convert a raster to a vector, use an appropriate scale. Specifying a very small scale can substantially increase computation cost. Set scale as high as possible give the required precision. For example, to get polygons representing global land masses:
 ```
 varetopo=ee.Image('NOAA/NGDC/ETOPO1');
+
 // Approximate land boundary.
 varbounds=etopo.select(0).gt(-100);
+
 // Non-geodesic polygon.
 varalmostGlobal=ee.Geometry.Polygon({
 coords:[[-180,-80],[180,-80],[180,80],[-180,80],[-180,-80]],
 geodesic:false
 });
 Map.addLayer(almostGlobal,{},'almostGlobal');
+
 varvectors=bounds.selfMask().reduceToVectors({
 reducer:ee.Reducer.countEvery(),
 geometry:almostGlobal,
@@ -338,14 +372,18 @@ Don't use a `FeatureCollection` returned by `reduceToVectors()` as an input to `
 ```
 varetopo=ee.Image('NOAA/NGDC/ETOPO1');
 varmod11a1=ee.ImageCollection('MODIS/006/MOD11A1');
+
 // Approximate land boundary.
 varbounds=etopo.select(0).gt(-100);
+
 // Non-geodesic polygon.
 varalmostGlobal=ee.Geometry.Polygon({
 coords:[[-180,-80],[180,-80],[180,80],[-180,80],[-180,-80]],
 geodesic:false
 });
+
 varlst=mod11a1.first().select(0);
+
 varmeans=bounds.selfMask().addBands(lst).reduceToVectors({
 reducer:ee.Reducer.mean(),
 geometry:almostGlobal,
@@ -361,15 +399,18 @@ Note that other ways of reducing pixels of one image within zones of another inc
 For some convolution operations, `fastDistanceTransform()` may be more efficient than `reduceNeighborhood()` or `convolve()`. For example, to do erosion and/or dilation of binary inputs:
 ```
 varaw3d30=ee.Image('JAXA/ALOS/AW3D30_V1_1');
+
 // Make a simple binary layer from a threshold on elevation.
 varmask=aw3d30.select('AVE').gt(300);
 Map.setCenter(-122.0703,37.3872,11);
 Map.addLayer(mask,{},'mask');
+
 // Distance in pixel units.
 vardistance=mask.fastDistanceTransform().sqrt();
 // Threshold on distance (three pixels) for a dilation.
 vardilation=distance.lt(3);
 Map.addLayer(dilation,{},'dilation');
+
 // Do the reverse for an erosion.
 varnotDistance=mask.not().fastDistanceTransform().sqrt();
 varerosion=notDistance.gt(3);
@@ -382,12 +423,15 @@ If you need to perform a convolution and can't use `fastDistanceTransform()`, us
 ```
 varl8raw=ee.ImageCollection('LANDSAT/LC08/C02/T1_RT');
 varcomposite=ee.Algorithms.Landsat.simpleComposite(l8raw);
+
 varbands=['B4','B3','B2'];
+
 varoptimizedConvolution=composite.select(bands).reduceNeighborhood({
 reducer:ee.Reducer.mean(),
 kernel:ee.Kernel.square(3),
 optimization:'boxcar'// Suitable optimization for mean.
 }).rename(bands);
+
 varviz={bands:bands,min:0,max:72};
 Map.setCenter(-122.0703,37.3872,11);
 Map.addLayer(composite,viz,'composite');
@@ -402,14 +446,18 @@ Don't sample too much data!
 varl8raw=ee.ImageCollection('LANDSAT/LC08/C02/T1_RT');
 varcomposite=ee.Algorithms.Landsat.simpleComposite(l8raw);
 varlabels=ee.FeatureCollection('projects/google/demo_landcover_labels');
-// No! Not necessary. Don't do this:
+
+// No!  Not necessary.  Don't do this:
 labels=labels.map(function(f){returnf.buffer(100000,1000);});
+
 varbands=['B2','B3','B4','B5','B6','B7'];
+
 vartraining=composite.select(bands).sampleRegions({
 collection:labels,
 properties:['landcover'],
 scale:30
 });
+
 varclassifier=ee.Classifier.smileCart().train({
 features:training,
 classProperty:'landcover',
@@ -425,21 +473,28 @@ Tune hyperparameters!
 varl8raw=ee.ImageCollection('LANDSAT/LC08/C02/T1_RT');
 varcomposite=ee.Algorithms.Landsat.simpleComposite(l8raw);
 varlabels=ee.FeatureCollection('projects/google/demo_landcover_labels');
+
 // Increase the data a little bit, possibly introducing noise.
 labels=labels.map(function(f){returnf.buffer(100,10);});
+
 varbands=['B2','B3','B4','B5','B6','B7'];
+
 vardata=composite.select(bands).sampleRegions({
 collection:labels,
 properties:['landcover'],
 scale:30
 });
+
 // Add a column of uniform random numbers called 'random'.
 data=data.randomColumn();
+
 // Partition into training and testing.
 vartraining=data.filter(ee.Filter.lt('random',0.5));
 vartesting=data.filter(ee.Filter.gte('random',0.5));
+
 // Tune the minLeafPopulation parameter.
 varminLeafPops=ee.List.sequence(1,10);
+
 varaccuracies=minLeafPops.map(function(p){
 varclassifier=ee.Classifier.smileCart({minLeafPopulation:p})
 .train({
@@ -447,11 +502,13 @@ features:training,
 classProperty:'landcover',
 inputProperties:bands
 });
+
 returntesting
 .classify(classifier)
 .errorMatrix('landcover','classification')
 .accuracy();
 });
+
 print(ui.Chart.array.values({
 array:ee.Array(accuracies),
 axis:0,
@@ -461,7 +518,7 @@ xLabels:minLeafPops
 ```
 
 In this example, the classifier is already very accurate, so there's not much tuning to do. You might want to choose the smallest tree possible (i.e. largest `minLeafPopulation`) that still has the required accuracy.
-## `Export` intermediate results
+##  `Export` intermediate results
 Suppose your objective is to take samples from a relatively complex computed image. It is often more efficient to `Export` the image `toAsset()`, load the exported image, then sample. For example:
 ```
 varimage=ee.Image('UMD/hansen/global_forest_change_2018_v1_6');
@@ -475,9 +532,11 @@ vartestRegion=ee.Geometry.Polygon(
 [-48.86726050085349,-3.9248707849303295],
 [-47.46101050085349,-3.9248707849303295],
 [-47.46101050085349,-3.0475996402515717]]],null,false);
+
 // Forest loss in 2016, to stratify a sample.
 varloss=image.select('lossyear');
 varloss16=loss.eq(16).rename('loss16');
+
 // Scales and masks Landsat 8 surface reflectance images.
 functionprepSrL8(image){
 varqaMask=image.select('QA_PIXEL').bitwiseAnd(parseInt('11111',2)).eq(0);
@@ -487,30 +546,36 @@ returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBands,null,true)
 .updateMask(qaMask);
 }
+
 varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
 .map(prepSrL8);
+
 // Create two annual cloud-free composites.
 varcomposite1=collection.filterDate('2015-01-01','2015-12-31').median();
 varcomposite2=collection.filterDate('2017-01-01','2017-12-31').median();
+
 // We want a strtatified sample of this stack.
 varstack=composite1.addBands(composite2)
 .float();// Export the smallest size possible.
-// Export the image. This block is commented because the export is complete.
+
+// Export the image.  This block is commented because the export is complete.
 /*
 var link = '0b8023b0af6c1b0ac7b5be649b54db06'
 var desc = 'Logistic_regression_stack_' + link;
 Export.image.toAsset({
- image: stack,
- description: desc,
- assetId: desc,
- region: geometry,
- scale: 30,
- maxPixels: 1e10
+  image: stack,
+  description: desc,
+  assetId: desc,
+  region: geometry,
+  scale: 30,
+  maxPixels: 1e10
 })
 */
+
 // Load the exported image.
 varexportedStack=ee.Image(
 'projects/google/Logistic_regression_stack_0b8023b0af6c1b0ac7b5be649b54db06');
+
 // Take a very small sample first, to debug.
 vartestSample=exportedStack.addBands(loss16).stratifiedSample({
 numPoints:1,
@@ -520,6 +585,7 @@ scale:30,
 geometries:true
 });
 print(testSample);// Check this in the console.
+
 // Take a large sample.
 varsample=exportedStack.addBands(loss16).stratifiedSample({
 numPoints:10000,
@@ -527,6 +593,7 @@ classBand:'loss16',
 region:geometry,
 scale:30,
 });
+
 // Export the large sample...
 
 ```
@@ -538,7 +605,9 @@ Suppose you want to join collections based on time, location or some metadata pr
 ```
 vars2=ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
 .filterBounds(ee.Geometry.Point([-2.0205,48.647]));
+
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
+
 varjoined=ee.Join.saveAll('landsat').apply({
 primary:s2,
 secondary:l8,
@@ -562,7 +631,9 @@ Although you should try a join first (`Export` if needed), occasionally a `filte
 ```
 vars2=ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
 .filterBounds(ee.Geometry.Point([-2.0205,48.647]));
+
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
+
 varmappedFilter=s2.map(function(image){
 vardate=image.date();
 varlandsat=l8
@@ -578,7 +649,7 @@ print(mappedFilter);
 
 ```
 
-## `reduceRegion()` vs. `reduceRegions()` vs. for-loop
+##  `reduceRegion()` vs. `reduceRegions()` vs. for-loop
 Calling `reduceRegions()` with a very large or complex `FeatureCollection` as input may result in the dreaded "Computed value is too large" error. One potential solution is to map `reduceRegion()` over the `FeatureCollection` instead. Another potential solution is to use a (gasp) for-loop. Although this is strongly discouraged in Earth Engine as described [here](https://developers.google.com/earth-engine/guides/getstarted#mapping-what-to-do-instead-of-a-for-loop), [here](https://developers.google.com/earth-engine/guides/tutorial_js_03#for-loops) and [here](https://developers.google.com/earth-engine/guides/client_server#looping), `reduceRegion()` can be implemented in a for-loop to perform large reductions.
 Suppose your objective is to obtain the mean of pixels (or any statistic) in each feature in a `FeatureCollection` for each image in an `ImageCollection`. The following example compares the three approaches previously described:
 ```
@@ -586,9 +657,11 @@ Suppose your objective is to obtain the mean of pixels (or any statistic) in eac
 varcountriesTable=ee.FeatureCollection("USDOS/LSIB_SIMPLE/2017");
 // Time series of images.
 varmod13a1=ee.ImageCollection("MODIS/006/MOD13A1");
+
 // MODIS vegetation indices (always use the most recent version).
 varband='NDVI';
 varimagery=mod13a1.select(band);
+
 // Option 1: reduceRegions()
 vartestTable=countriesTable.limit(1);// Do this outside map()s and loops.
 vardata=imagery.map(function(image){
@@ -604,6 +677,7 @@ date:image.date().format()
 });
 }).flatten();
 print(data.first());
+
 // Option 2: mapped reduceRegion()
 vardata=countriesTable.map(function(feature){
 returnimagery.map(function(image){
@@ -619,6 +693,7 @@ date:image.date().format()
 });
 }).flatten();
 print(data.first());
+
 // Option 3: for-loop (WATCH OUT!)
 varsize=countriesTable.size();
 // print(size); // 312
@@ -653,6 +728,7 @@ varsf=ee.Geometry.Point([-122.47555371521855,37.76884708376152]);
 vars2=sentinel2
 .filterBounds(sf)
 .filterDate('2018-01-01','2019-12-31');
+
 varwithDoys=s2.map(function(image){
 varndvi=image.normalizedDifference(['B4','B8']).rename('ndvi');
 vardate=image.date();
@@ -664,9 +740,11 @@ vardoyImage=ee.Image(doy)
 returnndvi.addBands(doyImage).addBands(time)
 .clip(image.geometry());// Appropriate use of clip.
 });
+
 vararray=withDoys.toArray();
 vartimeAxis=0;
 varbandAxis=1;
+
 vardedupe=function(array){
 vartime=array.arraySlice(bandAxis,-1);
 varsorted=array.arraySort(time);
@@ -677,7 +755,9 @@ varmask=ee.Image(ee.Array([[1]]))
 .arrayCat(left.neq(right),timeAxis);
 returnarray.arrayMask(mask);
 };
+
 vardeduped=dedupe(array);
+
 // Inspect these outputs to confirm that duplicates have been removed.
 print(array.reduceRegion('first',sf,10));
 print(deduped.reduceRegion('first',sf,10));

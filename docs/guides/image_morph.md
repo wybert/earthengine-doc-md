@@ -9,8 +9,10 @@ varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
 .select(4).gt(0.2);
 Map.setCenter(-122.1899,37.5010,13);
 Map.addLayer(image,{},'NIR threshold');
+
 // Define a kernel.
 varkernel=ee.Kernel.circle({radius:1});
+
 // Perform an erosion followed by a dilation, display.
 varopened=image
 .focalMin({kernel:kernel,iterations:2})
@@ -19,4 +21,3 @@ Map.addLayer(opened,{},'opened');
 ```
 
 Note that in the previous example, a kernel argument is provided to the morphological operator. The pixels covered by non-zero elements of the kernel are used in the computation. The iterations argument indicates how many times to apply the operator.
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Mathematical Operations
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Operators](https://developers.google.com/earth-engine/guides/image_math#operators)
   * [Expressions](https://developers.google.com/earth-engine/guides/image_math#expressions)
@@ -17,6 +17,7 @@ As a basic example, consider the task of calculating the Normalized Difference V
 // Load a VIIRS 8-day surface reflectance composite for May 2024.
 varviirs202405=ee.ImageCollection('NASA/VIIRS/002/VNP09H1').filter(
 ee.Filter.date('2024-05-01','2024-05-16')).first();
+
 // Compute NDVI.
 varndvi202405=viirs202405.select('SurfReflect_I2')
 .subtract(viirs202405.select('SurfReflect_I1'))
@@ -32,19 +33,20 @@ importgeemap.coreasgeemap
 ```
 # Load a VIIRS 8-day surface reflectance composite for May 2024.
 viirs202405 = (
-  ee.ImageCollection('NASA/VIIRS/002/VNP09H1')
-  .filter(ee.Filter.date('2024-05-01', '2024-05-16'))
-  .first()
+    ee.ImageCollection('NASA/VIIRS/002/VNP09H1')
+    .filter(ee.Filter.date('2024-05-01', '2024-05-16'))
+    .first()
 )
+
 # Compute NDVI.
 ndvi202405 = (
-  viirs202405.select('SurfReflect_I2')
-  .subtract(viirs202405.select('SurfReflect_I1'))
-  .divide(
-    viirs202405.select('SurfReflect_I2').add(
-      viirs202405.select('SurfReflect_I1')
+    viirs202405.select('SurfReflect_I2')
+    .subtract(viirs202405.select('SurfReflect_I1'))
+    .divide(
+        viirs202405.select('SurfReflect_I2').add(
+            viirs202405.select('SurfReflect_I1')
+        )
     )
-  )
 )
 ```
 **Note:** the normalized difference operation is available as a shortcut method: [`normalizedDifference()`](https://developers.google.com/earth-engine/apidocs/ee-image-normalizeddifference). 
@@ -55,6 +57,7 @@ The following example of multi-band image subtraction demonstrates how bands are
 // Load a VIIRS 8-day surface reflectance composite for September 2024.
 varviirs202409=ee.ImageCollection('NASA/VIIRS/002/VNP09H1').filter(
 ee.Filter.date('2024-09-01','2024-09-16')).first();
+
 // Compute multi-band difference between the September composite and the
 // previously loaded May composite.
 vardiff=viirs202409.subtract(ndvi202405);
@@ -63,6 +66,7 @@ bands:['SurfReflect_I1','SurfReflect_I2','SurfReflect_I3'],
 min:-1,
 max:1
 },'difference');
+
 // Compute the squared difference in each band.
 varsquaredDifference=diff.pow(2);
 Map.addLayer(squaredDifference,{
@@ -80,33 +84,37 @@ importgeemap.coreasgeemap
 ```
 # Load a VIIRS 8-day surface reflectance composite for September 2024.
 viirs202409 = (
-  ee.ImageCollection('NASA/VIIRS/002/VNP09H1')
-  .filter(ee.Filter.date('2024-09-01', '2024-09-16'))
-  .first()
+    ee.ImageCollection('NASA/VIIRS/002/VNP09H1')
+    .filter(ee.Filter.date('2024-09-01', '2024-09-16'))
+    .first()
 )
+
 # Compute multi-band difference between the September composite and the
 # previously loaded May composite.
 diff = viirs202409.subtract(ndvi202405)
+
 m = geemap.Map()
 m.add_layer(
-  diff,
-  {
-    'bands': ['SurfReflect_I1', 'SurfReflect_I2', 'SurfReflect_I3'],
-    'min': -1,
-    'max': 1,
-  },
-  'difference',
+    diff,
+    {
+        'bands': ['SurfReflect_I1', 'SurfReflect_I2', 'SurfReflect_I3'],
+        'min': -1,
+        'max': 1,
+    },
+    'difference',
 )
+
 # Compute the squared difference in each band.
 squared_difference = diff.pow(2)
+
 m.add_layer(
-  squared_difference,
-  {
-    'bands': ['SurfReflect_I1', 'SurfReflect_I2', 'SurfReflect_I3'],
-    'min': 0,
-    'max': 0.7,
-  },
-  'squared diff.',
+    squared_difference,
+    {
+        'bands': ['SurfReflect_I1', 'SurfReflect_I2', 'SurfReflect_I3'],
+        'min': 0,
+        'max': 0.7,
+    },
+    'squared diff.',
 )
 display(m)
 ```
@@ -118,6 +126,7 @@ To implement more complex mathematical expressions, consider using `image.expres
 ```
 // Load a Landsat 8 image.
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318');
+
 // Compute the EVI using an expression.
 varevi=image.expression(
 '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))',{
@@ -125,6 +134,7 @@ varevi=image.expression(
 'RED':image.select('B4'),
 'BLUE':image.select('B2')
 });
+
 Map.centerObject(image,9);
 Map.addLayer(evi,{min:-1,max:1,palette:['a6611a','f5f5f5','4dac26']});
 ```
@@ -137,20 +147,23 @@ importgeemap.coreasgeemap
 ```
 # Load a Landsat 8 image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
+
 # Compute the EVI using an expression.
 evi = image.expression(
-  '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))',
-  {
-    'NIR': image.select('B5'),
-    'RED': image.select('B4'),
-    'BLUE': image.select('B2'),
-  },
+    '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))',
+    {
+        'NIR': image.select('B5'),
+        'RED': image.select('B4'),
+        'BLUE': image.select('B2'),
+    },
 )
+
 # Define a map centered on San Francisco Bay.
 map_evi = geemap.Map(center=[37.4675, -122.1363], zoom=9)
+
 # Add the image layer to the map and display it.
 map_evi.add_layer(
-  evi, {'min': -1, 'max': 1, 'palette': ['a6611a', 'f5f5f5', '4dac26']}, 'evi'
+    evi, {'min': -1, 'max': 1, 'palette': ['a6611a', 'f5f5f5', '4dac26']}, 'evi'
 )
 display(map_evi)
 ```

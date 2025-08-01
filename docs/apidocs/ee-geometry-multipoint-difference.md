@@ -1,31 +1,35 @@
  
 #  ee.Geometry.MultiPoint.difference
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-difference#examples)
 
 
-Returns the result of subtracting the 'right' geometry from the 'left' geometry. 
-Usage| Returns  
+Returns the result of subtracting the 'right' geometry from the 'left' geometry.
+Usage | Returns  
 ---|---  
-`MultiPoint.difference(right,  _maxError_, _proj_)`| Geometry  
-Argument| Type| Details  
+`MultiPoint.difference(right, _maxError_, _proj_)`|  Geometry  
+Argument | Type | Details  
 ---|---|---  
-this: `left`| Geometry| The geometry used as the left operand of the operation.  
-`right`| Geometry| The geometry used as the right operand of the operation.  
-`maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
-`proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
+this: `left` | Geometry | The geometry used as the left operand of the operation.  
+`right` | Geometry | The geometry used as the right operand of the operation.  
+`maxError` | ErrorMargin, default: null | The maximum amount of error tolerated when performing any necessary reprojection.  
+`proj` | Projection, default: null | The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-difference#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multipoint-difference#colab-python-sample) More
 ```
 // Define a MultiPoint object.
 varmultiPoint=ee.Geometry.MultiPoint([[-122.082,37.420],[-122.081,37.426]]);
+
 // Define other inputs.
 varinputGeom=ee.Geometry.BBox(-122.085,37.415,-122.075,37.425);
+
 // Apply the difference method to the MultiPoint object.
 varmultiPointDifference=multiPoint.difference({'right':inputGeom,'maxError':1});
+
 // Print the result to the console.
 print('multiPoint.difference(...) =',multiPointDifference);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(multiPoint,
@@ -47,21 +51,25 @@ importgeemap.coreasgeemap
 ```
 # Define a MultiPoint object.
 multipoint = ee.Geometry.MultiPoint([[-122.082, 37.420], [-122.081, 37.426]])
+
 # Define other inputs.
 input_geom = ee.Geometry.BBox(-122.085, 37.415, -122.075, 37.425)
+
 # Apply the difference method to the MultiPoint object.
 multipoint_difference = multipoint.difference(right=input_geom, maxError=1)
+
 # Print the result.
 display('multipoint.difference(...) =', multipoint_difference)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)
 m.add_layer(multipoint, {'color': 'black'}, 'Geometry [black]: multipoint')
 m.add_layer(input_geom, {'color': 'blue'}, 'Parameter [blue]: input_geom')
 m.add_layer(
-  multipoint_difference,
-  {'color': 'red'},
-  'Result [red]: multipoint.difference',
+    multipoint_difference,
+    {'color': 'red'},
+    'Result [red]: multipoint.difference',
 )
 m
 ```

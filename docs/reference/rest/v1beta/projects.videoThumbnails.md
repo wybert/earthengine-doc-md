@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.videoThumbnails
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.videoThumbnails#resource:-videothumbnail)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.videoThumbnails#methods)
@@ -14,17 +14,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
+  }
 }
 ```
   
@@ -41,3 +41,4 @@ Fields
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
 ### `getPixels[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.videoThumbnails/getPixels)`
 |  Computes an image showing the result of a computation.  
+Was this helpful?

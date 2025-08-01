@@ -1,13 +1,6 @@
  
 #  Introduction to Dynamic World (Part 3) - Exploring Time Series
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Charting Class Probabilities Over Time](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#charting_class_probabilities_over_time)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#summary)
-  * [Change Detection using Probability Bands](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#change_detection_using_probability_bands)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3#summary_2)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-3/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-3/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-3/index.md "View changes to this article over time.")
@@ -31,13 +24,16 @@ We start by first filtering the Dynamic World collection for the time period and
 ```
 varstartDate='2020-01-01';
 varendDate='2021-01-01';
+
 vardw=ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1')
 .filterDate(startDate,endDate)
 .filterBounds(geometry);
+
 varprobabilityBands=[
 'water','trees','grass','flooded_vegetation','crops','shrub_and_scrub',
 'built','bare','snow_and_ice'
 ];
+
 vardwTimeSeries=dw.select(probabilityBands);
 
 ```
@@ -108,8 +104,10 @@ We want to detect newly urbanized regions from the year 2019 to 2020. We first c
 ```
 varbeforeYear=2019;
 varafterYear=2020;
+
 varbeforeStart=ee.Date.fromYMD(beforeYear,1,1);
 varbeforeEnd=beforeStart.advance(1,'year');
+
 varafterStart=ee.Date.fromYMD(afterYear,1,1);
 varafterEnd=afterStart.advance(1,'year');
 
@@ -120,6 +118,7 @@ Now, we select the _built_ band that contains the pixel-wise probabilities indic
 vardw=ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1')
 .filterBounds(geometry)
 .select('built');
+
 varbeforeDw=dw.filterDate(beforeStart,beforeEnd).mean();
 varafterDw=dw.filterDate(afterStart,afterEnd).mean();
 
@@ -131,6 +130,7 @@ To detect newly urbanized regions, we can apply a simple criteria. Any pixel in 
 // < 0.2 'built' probability before
 // > 0.5 'built' probability after
 varnewUrban=beforeDw.lt(0.2).and(afterDw.gt(0.5));
+
 varchangeVisParams={min:0,max:1,palette:['white','red']};
 Map.addLayer(newUrban.clip(geometry),changeVisParams,'New Urban');
 
@@ -143,8 +143,10 @@ It is always a good idea to validate our analysis. We can add before and after c
 vars2=ee.ImageCollection('COPERNICUS/S2')
 .filterBounds(geometry)
 .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',35));
+
 varbeforeS2=s2.filterDate(beforeStart,beforeEnd).median();
 varafterS2=s2.filterDate(afterStart,afterEnd).median();
+
 vars2VisParams={bands:['B4','B3','B2'],min:0,max:3000};
 Map.addLayer(beforeS2.clip(geometry),s2VisParams,'Before S2');
 Map.addLayer(afterS2.clip(geometry),s2VisParams,'After S2');
@@ -157,7 +159,6 @@ Map.addLayer(
 newUrban.selfMask().clip(geometry),changeVisParams,'New Urban (Masked)');
 
 ```
-
 Before Composite | After Composite | Detected New Urban Areas  
 ---|---|---  
 ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_before.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_after.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3/change_new.png)  
@@ -165,4 +166,5 @@ _Before and After Sentinel-2 Composites and Detected Change_
 ### Summary
 This section covered techniques to explore the probability time-series to build a robust change detection model with just a few lines of code. We could detect newly urbanized regions by comparing the before and after probabilities of the built class and visualize the results on a map.
 The full script for this section can be accessed from this Code Editor link: <https://code.earthengine.google.com/2dc41ef62608d81ee4cb8d2e72287a1b>
+* * *
 The data described in this tutorial were produced by Google, in partnership with the World Resources Institute and National Geographic Society and are provided under a CC-BY-4.0 Attribution license.

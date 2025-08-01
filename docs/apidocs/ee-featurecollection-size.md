@@ -1,18 +1,19 @@
  
 #  ee.FeatureCollection.size
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the number of elements in the collection. Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the number of elements in the collection. Usage | Returns  
 ---|---  
-`FeatureCollection.size()`| Integer  
-Argument| Type| Details  
+`FeatureCollection.size()` | Integer  
+Argument | Type | Details  
 ---|---|---  
-this: `collection`| FeatureCollection| The collection to count.  
+this: `collection` | FeatureCollection | The collection to count.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
 // FeatureCollection of power plants in Belgium.
 varfc=ee.FeatureCollection('WRI/GPPD/power_plants')
 .filter('country_lg == "Belgium"');
+
 print('Number of power plants in Belgium',fc.size());
 ```
 
@@ -27,7 +28,8 @@ importgeemap.coreasgeemap
 ```
 # FeatureCollection of power plants in Belgium.
 fc = ee.FeatureCollection('WRI/GPPD/power_plants').filter(
-  'country_lg == "Belgium"')
+    'country_lg == "Belgium"')
+
 print('Number of power plants in Belgium:', fc.size().getInfo())
 ```
 

@@ -1,22 +1,6 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 2)
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#context)
-  * [Preliminaries](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#preliminaries)
-    * [Routines from Part 1](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#routines_from_part_1)
-  * [Iterative re-weighting](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#iterative_re-weighting)
-    * [The iMAD code](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#the_imad_code)
-    * [Run iMAD algorithm as export task](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#run_imad_algorithm_as_export_task)
-    * [Clustering](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#clustering)
-    * [Interpretation](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#interpretation)
-    * [Comparison with Dynamic World](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#comparison_with_dynamic_world)
-    * [Simple difference revisited](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#simple_difference_revisited)
-    * [Deforestation quantified](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#deforestation_quantified)
-  * [Summary](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#summary)
-  * [Exercises](https://developers.google.com/earth-engine/tutorials/community/imad-tutorial-pt2#exercises)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt2/index.ipynb)  
@@ -34,6 +18,7 @@ EXPORT_PATH = 'projects/YOUR_GEE_PROJECT_NAME/assets/imad/'
 ```
 ```
 importee
+
 ee.Authenticate(auth_mode='notebook')
 ee.Initialize()
 
@@ -46,181 +31,183 @@ importnumpyasnp
 importrandom,time
 importmatplotlib.pyplotasplt
 fromscipy.statsimport norm, chi2
-frompprintimport pprint # for pretty printing
 
-```
-```
-/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/geemap/conversion.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
- import pkg_resources
+frompprintimport pprint  # for pretty printing
 
 ```
 
 ### Routines from Part 1
-Toggle code ```
+Toggle code```
 deftrunc(values, dec = 3):
 '''Truncate a 1-D array to dec decimal places.'''
-  return np.trunc(values*10**dec)/(10**dec)
+    return np.trunc(values*10**dec)/(10**dec)
+
 # Display an image in a one percent linear stretch.
 defdisplay_ls(image, map, name, centered = False):
-  bns = image.bandNames().length().getInfo()
-  if bns == 3:
-    image = image.rename('B1', 'B2', 'B3')
-    pb_99 = ['B1_p99', 'B2_p99', 'B3_p99']
-    pb_1 = ['B1_p1', 'B2_p1', 'B3_p1']
-    img = ee.Image.rgb(image.select('B1'), image.select('B2'), image.select('B3'))
-  else:
-    image = image.rename('B1')
-    pb_99 = ['B1_p99']
-    pb_1 = ['B1_p1']
-    img = image.select('B1')
-  percentiles = image.reduceRegion(ee.Reducer.percentile([1, 99]), maxPixels=1e11)
-  mx = percentiles.values(pb_99)
-  if centered:
-    mn = ee.Array(mx).multiply(-1).toList()
-  else:
-    mn = percentiles.values(pb_1)
-  map.addLayer(img, {'min': mn, 'max': mx}, name)
+    bns = image.bandNames().length().getInfo()
+    if bns == 3:
+        image = image.rename('B1', 'B2', 'B3')
+        pb_99 = ['B1_p99', 'B2_p99', 'B3_p99']
+        pb_1 = ['B1_p1', 'B2_p1', 'B3_p1']
+        img = ee.Image.rgb(image.select('B1'), image.select('B2'), image.select('B3'))
+    else:
+        image = image.rename('B1')
+        pb_99 = ['B1_p99']
+        pb_1 = ['B1_p1']
+        img = image.select('B1')
+    percentiles = image.reduceRegion(ee.Reducer.percentile([1, 99]), maxPixels=1e11)
+    mx = percentiles.values(pb_99)
+    if centered:
+        mn = ee.Array(mx).multiply(-1).toList()
+    else:
+        mn = percentiles.values(pb_1)
+    map.addLayer(img, {'min': mn, 'max': mx}, name)
+
 defcollect(aoi, t1a ,t1b, t2a, t2b):
-  try:
-    im1 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
-                .filterBounds(aoi)
-                .filterDate(ee.Date(t1a), ee.Date(t1b))
-                .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
-                .sort('CLOUDY_PIXEL_PERCENTAGE')
-                .first()
-                .clip(aoi) )
-    im2 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
-                .filterBounds(aoi)
-                .filterDate(ee.Date(t2a), ee.Date(t2b))
-                .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
-                .sort('CLOUDY_PIXEL_PERCENTAGE')
-                .first()
-                .clip(aoi) )
-    timestamp = im1.date().format('E MMM dd HH:mm:ss YYYY')
-    print(timestamp.getInfo())
-    timestamp = im2.date().format('E MMM dd HH:mm:ss YYYY')
-    print(timestamp.getInfo())
-    return (im1, im2)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        im1 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
+                               .filterBounds(aoi)
+                               .filterDate(ee.Date(t1a), ee.Date(t1b))
+                               .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
+                               .sort('CLOUDY_PIXEL_PERCENTAGE')
+                               .first()
+                               .clip(aoi) )
+        im2 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
+                               .filterBounds(aoi)
+                               .filterDate(ee.Date(t2a), ee.Date(t2b))
+                               .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
+                               .sort('CLOUDY_PIXEL_PERCENTAGE')
+                               .first()
+                               .clip(aoi) )
+        timestamp = im1.date().format('E MMM dd HH:mm:ss YYYY')
+        print(timestamp.getInfo())
+        timestamp = im2.date().format('E MMM dd HH:mm:ss YYYY')
+        print(timestamp.getInfo())
+        return (im1, im2)
+    except Exception as e:
+        print('Error: %s'%e)
+
 defcovarw(image, weights=None, scale=20, maxPixels=1e10):
 '''Return the centered image and its weighted covariance matrix.'''
-  try:
-    geometry = image.geometry()
-    bandNames = image.bandNames()
-    N = bandNames.length()
-    if weights is None:
-      weights = image.constant(1)
-    weightsImage = image.multiply(ee.Image.constant(0)).add(weights)
-    means = image.addBands(weightsImage) \
-          .reduceRegion(ee.Reducer.mean().repeat(N).splitWeights(),
-                scale = scale,
-                maxPixels = maxPixels) \
-          .toArray() \
-          .project([1])
-    centered = image.toArray().subtract(means)
-    B1 = centered.bandNames().get(0)
-    b1 = weights.bandNames().get(0)
-    nPixels = ee.Number(centered.reduceRegion(ee.Reducer.count(),
-                        scale=scale,
-                        maxPixels=maxPixels).get(B1))
-    sumWeights = ee.Number(weights.reduceRegion(ee.Reducer.sum(),
-                          geometry=geometry,
-                          scale=scale,
-                          maxPixels=maxPixels).get(b1))
-    covw = centered.multiply(weights.sqrt()) \
-          .toArray() \
-          .reduceRegion(ee.Reducer.centeredCovariance(),
-                  geometry=geometry,
-                  scale=scale,
-                  maxPixels=maxPixels) \
-          .get('array')
-    covw = ee.Array(covw).multiply(nPixels).divide(sumWeights)
-    return (centered.arrayFlatten([bandNames]), covw)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        geometry = image.geometry()
+        bandNames = image.bandNames()
+        N = bandNames.length()
+        if weights is None:
+            weights = image.constant(1)
+        weightsImage = image.multiply(ee.Image.constant(0)).add(weights)
+        means = image.addBands(weightsImage) \
+                    .reduceRegion(ee.Reducer.mean().repeat(N).splitWeights(),
+                                scale = scale,
+                                maxPixels = maxPixels) \
+                    .toArray() \
+                    .project([1])
+        centered = image.toArray().subtract(means)
+        B1 = centered.bandNames().get(0)
+        b1 = weights.bandNames().get(0)
+        nPixels = ee.Number(centered.reduceRegion(ee.Reducer.count(),
+                                                scale=scale,
+                                                maxPixels=maxPixels).get(B1))
+        sumWeights = ee.Number(weights.reduceRegion(ee.Reducer.sum(),
+                                                    geometry=geometry,
+                                                    scale=scale,
+                                                    maxPixels=maxPixels).get(b1))
+        covw = centered.multiply(weights.sqrt()) \
+                    .toArray() \
+                    .reduceRegion(ee.Reducer.centeredCovariance(),
+                                    geometry=geometry,
+                                    scale=scale,
+                                    maxPixels=maxPixels) \
+                    .get('array')
+        covw = ee.Array(covw).multiply(nPixels).divide(sumWeights)
+        return (centered.arrayFlatten([bandNames]), covw)
+    except Exception as e:
+        print('Error: %s'%e)
+
 defcorr(cov):
 '''Transfrom covariance matrix to correlation matrix.'''
-  # Diagonal matrix of inverse sigmas.
-  sInv = cov.matrixDiagonal().sqrt().matrixToDiag().matrixInverse()
-  # Transform.
-  corr = sInv.matrixMultiply(cov).matrixMultiply(sInv).getInfo()
-  # Truncate.
-  return [list(map(trunc, corr[i])) for i in range(len(corr))]
+    # Diagonal matrix of inverse sigmas.
+    sInv = cov.matrixDiagonal().sqrt().matrixToDiag().matrixInverse()
+    # Transform.
+    corr = sInv.matrixMultiply(cov).matrixMultiply(sInv).getInfo()
+    # Truncate.
+    return [list(map(trunc, corr[i])) for i in range(len(corr))]
+
 defgeneiv(C,B):
 '''Return the eignvalues and eigenvectors of the generalized eigenproblem
-    C*X = lambda*B*X'''
-  try:
-    C = ee.Array(C)
-    B = ee.Array(B)
-    # Li = choldc(B)^-1
-    Li = ee.Array(B.matrixCholeskyDecomposition().get('L')).matrixInverse()
-    # Solve symmetric, ordinary eigenproblem Li*C*Li^T*x = lambda*x
-    Xa = Li.matrixMultiply(C) \
-      .matrixMultiply(Li.matrixTranspose()) \
-      .eigen()
-    # Eigenvalues as a row vector.
-    lambdas = Xa.slice(1, 0, 1).matrixTranspose()
-    # Eigenvectors as columns.
-    X = Xa.slice(1, 1).matrixTranspose()
-    # Generalized eigenvectors as columns, Li^T*X
-    eigenvecs = Li.matrixTranspose().matrixMultiply(X)
-    return (lambdas, eigenvecs)
-  except Exception as e:
-    print('Error: %s'%e)
+       C*X = lambda*B*X'''
+    try:
+        C = ee.Array(C)
+        B = ee.Array(B)
+        #  Li = choldc(B)^-1
+        Li = ee.Array(B.matrixCholeskyDecomposition().get('L')).matrixInverse()
+        # Solve symmetric, ordinary eigenproblem Li*C*Li^T*x = lambda*x
+        Xa = Li.matrixMultiply(C) \
+            .matrixMultiply(Li.matrixTranspose()) \
+            .eigen()
+        # Eigenvalues as a row vector.
+        lambdas = Xa.slice(1, 0, 1).matrixTranspose()
+        # Eigenvectors as columns.
+        X = Xa.slice(1, 1).matrixTranspose()
+        # Generalized eigenvectors as columns, Li^T*X
+        eigenvecs = Li.matrixTranspose().matrixMultiply(X)
+        return (lambdas, eigenvecs)
+    except Exception as e:
+        print('Error: %s'%e)
+
 defmad_run(image1, image2, scale=20):
 '''The MAD transformation of two multiband images.'''
-  try:
-    image = image1.addBands(image2)
-    nBands = image.bandNames().length().divide(2)
-    centeredImage,covarArray = covarw(image,scale=scale)
-    bNames = centeredImage.bandNames()
-    bNames1 = bNames.slice(0,nBands)
-    bNames2 = bNames.slice(nBands)
-    centeredImage1 = centeredImage.select(bNames1)
-    centeredImage2 = centeredImage.select(bNames2)
-    s11 = covarArray.slice(0, 0, nBands).slice(1, 0, nBands)
-    s22 = covarArray.slice(0, nBands).slice(1, nBands)
-    s12 = covarArray.slice(0, 0, nBands).slice(1, nBands)
-    s21 = covarArray.slice(0, nBands).slice(1, 0, nBands)
-    c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
-    b1 = s11
-    c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
-    b2 = s22
-    # Solution of generalized eigenproblems.
-    lambdas, A = geneiv(c1, b1)
-    _,    B = geneiv(c2, b2)
-    rhos = lambdas.sqrt().project(ee.List([1]))
-    # MAD variances.
-    sigma2s = rhos.subtract(1).multiply(-2).toList()
-    sigma2s = ee.Image.constant(sigma2s)
-    # Ensure sum of positive correlations between X and U is positive.
-    tmp = s11.matrixDiagonal().sqrt()
-    ones = tmp.multiply(0).add(1)
-    tmp = ones.divide(tmp).matrixToDiag()
-    s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(),[0]).transpose()
-    A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
-    # Ensure positive correlation.
-    tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
-    tmp = tmp.divide(tmp.abs()).matrixToDiag()
-    B = B.matrixMultiply(tmp)
-    # Canonical and MAD variates as images.
-    centeredImage1Array = centeredImage1.toArray().toArray(1)
-    centeredImage2Array = centeredImage2.toArray().toArray(1)
-    U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames2])
-    V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames2])
-    MAD = U.subtract(V)
-    # Chi-square image.
-    Z = MAD.pow(2) \
-        .divide(sigma2s) \
-        .reduce(ee.Reducer.sum())
-    return (U, V, MAD, Z)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        image = image1.addBands(image2)
+        nBands = image.bandNames().length().divide(2)
+        centeredImage,covarArray = covarw(image,scale=scale)
+        bNames = centeredImage.bandNames()
+        bNames1 = bNames.slice(0,nBands)
+        bNames2 = bNames.slice(nBands)
+        centeredImage1 = centeredImage.select(bNames1)
+        centeredImage2 = centeredImage.select(bNames2)
+        s11 = covarArray.slice(0, 0, nBands).slice(1, 0, nBands)
+        s22 = covarArray.slice(0, nBands).slice(1, nBands)
+        s12 = covarArray.slice(0, 0, nBands).slice(1, nBands)
+        s21 = covarArray.slice(0, nBands).slice(1, 0, nBands)
+        c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
+        b1 = s11
+        c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
+        b2 = s22
+        # Solution of generalized eigenproblems.
+        lambdas, A = geneiv(c1, b1)
+        _,       B = geneiv(c2, b2)
+        rhos = lambdas.sqrt().project(ee.List([1]))
+        # MAD variances.
+        sigma2s = rhos.subtract(1).multiply(-2).toList()
+        sigma2s = ee.Image.constant(sigma2s)
+        # Ensure sum of positive correlations between X and U is positive.
+        tmp = s11.matrixDiagonal().sqrt()
+        ones = tmp.multiply(0).add(1)
+        tmp = ones.divide(tmp).matrixToDiag()
+        s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(),[0]).transpose()
+        A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
+        # Ensure positive correlation.
+        tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
+        tmp = tmp.divide(tmp.abs()).matrixToDiag()
+        B = B.matrixMultiply(tmp)
+        # Canonical and MAD variates as images.
+        centeredImage1Array = centeredImage1.toArray().toArray(1)
+        centeredImage2Array = centeredImage2.toArray().toArray(1)
+        U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
+                    .arrayProject([0]) \
+                    .arrayFlatten([bNames2])
+        V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
+                    .arrayProject([0]) \
+                    .arrayFlatten([bNames2])
+        MAD = U.subtract(V)
+        # Chi-square image.
+        Z = MAD.pow(2) \
+               .divide(sigma2s) \
+               .reduce(ee.Reducer.sum())
+        return (U, V, MAD, Z)
+    except Exception as e:
+        print('Error: %s'%e)
 
 ```
 
@@ -236,18 +223,22 @@ and \\(\rho_i = {\rm cov}(U_i,V_i)\\). Then, since the no-change observations ar
 ```
 # Landkreis Olpe.
 aoi = ee.FeatureCollection(
-  'projects/google/imad_tutorial/landkreis_olpe_aoi').geometry()
+    'projects/google/imad_tutorial/landkreis_olpe_aoi').geometry()
+
 visirbands = ['B2', 'B3', 'B4', 'B8', 'B11', 'B12']
 visbands = ['B2', 'B3', 'B4']
 rededgebands = ['B5', 'B6', 'B7', 'B8A']
+
 # Collect the two Sentinel-2 images.
 im1, im2 = collect(aoi, '2021-06-01', '2021-06-30', '2022-06-01', '2022-06-30')
+
 # Re-run MAD.
 U, V, MAD, Z = mad_run(im1.select(visirbands), im2.select(visirbands), scale=20)
+
 # Plot histogram of Z.
 hist = Z.reduceRegion(ee.Reducer.fixedHistogram(0, 50, 500), aoi, scale=20).get('sum').getInfo()
 a = np.array(hist)
-x = a[:, 0]         # array of bucket edge positions
+x = a[:, 0]                 # array of bucket edge positions
 y = a[:, 1]/np.sum(a[:, 1]) # normalized array of bucket contents
 plt.plot(x, y, '.', label='data')
 # The chi-square distribution with 6 degrees of freedom.
@@ -269,116 +260,118 @@ $$ p(z) = 1-P_{\chi^2;N}(z),\quad 0 < p(z) < 1, $$
 where \\(P_{\chi^2;N}(z)\\) is the cumulative chi-square probability distribution, i.e., the area under the chi-square distribution up to the value \\(z\\), and \\(p(z)\\) is its complement. All \\(p\\)-values are equally likely if no change has occurred at that pixel location\\(^\star\\), but **change will always be associated with small \\(p\\)-values**. Therefore in order to eliminate the change observations from the MAD transformation, the \\(p\\)-value itself can be used to weight each pixel before re-sampling the images to determine the statistics for the next iteration. (This was the motivation for coding a _weighted_ covariance matrix routine in Part 1 earlier). The influence of the change observations on the MAD transformation is thereby gradually reduced. Iteration continues until some stopping criterion is met, such as lack of significant change in the canonical correlations \\(\rho_i\\). The whole procedure constitutes the _iMAD algorithm_. It is implemented in the GEE Python API in the following cell:
 \\(\star\\) Thus the \\(p\\)-value is _not_ a no-change probability, a common misapprehension! See again the [SAR Tutorial](https://developers.google.com/earth-engine/tutorials/community/detecting-changes-in-sentinel-1-imagery-pt-2).
 ### The iMAD code
-Toggle code ```
+Toggle code```
 defchi2cdf(Z,df):
 '''Chi-square cumulative distribution function with df degrees of freedom.'''
-  return ee.Image(Z.divide(2)).gammainc(ee.Number(df).divide(2))
+    return ee.Image(Z.divide(2)).gammainc(ee.Number(df).divide(2))
+
 defimad(current,prev):
 '''Iterator function for iMAD.'''
-  done = ee.Number(ee.Dictionary(prev).get('done'))
-  return ee.Algorithms.If(done, prev, imad1(current, prev))
+    done =  ee.Number(ee.Dictionary(prev).get('done'))
+    return ee.Algorithms.If(done, prev, imad1(current, prev))
+
 defimad1(current,prev):
 '''Iteratively re-weighted MAD.'''
-  image = ee.Image(ee.Dictionary(prev).get('image'))
-  Z = ee.Image(ee.Dictionary(prev).get('Z'))
-  allrhos = ee.List(ee.Dictionary(prev).get('allrhos'))
-  nBands = image.bandNames().length().divide(2)
-  weights = chi2cdf(Z,nBands).subtract(1).multiply(-1)
-  scale = ee.Dictionary(prev).getNumber('scale')
-  niter = ee.Dictionary(prev).getNumber('niter')
-  # Weighted stacked image and weighted covariance matrix.
-  centeredImage, covarArray = covarw(image, weights, scale)
-  bNames = centeredImage.bandNames()
-  bNames1 = bNames.slice(0, nBands)
-  bNames2 = bNames.slice(nBands)
-  centeredImage1 = centeredImage.select(bNames1)
-  centeredImage2 = centeredImage.select(bNames2)
-  s11 = covarArray.slice(0, 0, nBands).slice(1, 0, nBands)
-  s22 = covarArray.slice(0, nBands).slice(1, nBands)
-  s12 = covarArray.slice(0, 0, nBands).slice(1, nBands)
-  s21 = covarArray.slice(0, nBands).slice(1, 0, nBands)
-  c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
-  b1 = s11
-  c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
-  b2 = s22
-  # Solution of generalized eigenproblems.
-  lambdas, A = geneiv(c1, b1)
-  _, B    = geneiv(c2, b2)
-  rhos = lambdas.sqrt().project(ee.List([1]))
-  # Test for convergence.
-  lastrhos = ee.Array(allrhos.get(-1))
-  done = rhos.subtract(lastrhos) \
-        .abs() \
-        .reduce(ee.Reducer.max(), ee.List([0])) \
-        .lt(ee.Number(0.0001)) \
-        .toList() \
-        .get(0)
-  allrhos = allrhos.cat([rhos.toList()])
-  # MAD variances.
-  sigma2s = rhos.subtract(1).multiply(-2).toList()
-  sigma2s = ee.Image.constant(sigma2s)
-  # Ensure sum of positive correlations between X and U is positive.
-  tmp = s11.matrixDiagonal().sqrt()
-  ones = tmp.multiply(0).add(1)
-  tmp = ones.divide(tmp).matrixToDiag()
-  s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(), [0]).transpose()
-  A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
-  # Ensure positive correlation.
-  tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
-  tmp = tmp.divide(tmp.abs()).matrixToDiag()
-  B = B.matrixMultiply(tmp)
-  # Canonical and MAD variates.
-  centeredImage1Array = centeredImage1.toArray().toArray(1)
-  centeredImage2Array = centeredImage2.toArray().toArray(1)
-  U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames1])
-  V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames2])
-  iMAD = U.subtract(V)
-  # Chi-square image.
-  Z = iMAD.pow(2) \
-       .divide(sigma2s) \
-       .reduce(ee.Reducer.sum())
-  return ee.Dictionary({'done': done, 'scale': scale, 'niter': niter.add(1),
-             'image': image, 'allrhos': allrhos, 'Z': Z, 'iMAD': iMAD})
+    image = ee.Image(ee.Dictionary(prev).get('image'))
+    Z = ee.Image(ee.Dictionary(prev).get('Z'))
+    allrhos = ee.List(ee.Dictionary(prev).get('allrhos'))
+    nBands = image.bandNames().length().divide(2)
+    weights = chi2cdf(Z,nBands).subtract(1).multiply(-1)
+    scale = ee.Dictionary(prev).getNumber('scale')
+    niter = ee.Dictionary(prev).getNumber('niter')
+    # Weighted stacked image and weighted covariance matrix.
+    centeredImage, covarArray = covarw(image, weights, scale)
+    bNames = centeredImage.bandNames()
+    bNames1 = bNames.slice(0, nBands)
+    bNames2 = bNames.slice(nBands)
+    centeredImage1 = centeredImage.select(bNames1)
+    centeredImage2 = centeredImage.select(bNames2)
+    s11 = covarArray.slice(0, 0, nBands).slice(1, 0, nBands)
+    s22 = covarArray.slice(0, nBands).slice(1, nBands)
+    s12 = covarArray.slice(0, 0, nBands).slice(1, nBands)
+    s21 = covarArray.slice(0, nBands).slice(1, 0, nBands)
+    c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
+    b1 = s11
+    c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
+    b2 = s22
+    # Solution of generalized eigenproblems.
+    lambdas, A = geneiv(c1, b1)
+    _, B       = geneiv(c2, b2)
+    rhos = lambdas.sqrt().project(ee.List([1]))
+    # Test for convergence.
+    lastrhos = ee.Array(allrhos.get(-1))
+    done = rhos.subtract(lastrhos) \
+               .abs() \
+               .reduce(ee.Reducer.max(), ee.List([0])) \
+               .lt(ee.Number(0.0001)) \
+               .toList() \
+               .get(0)
+    allrhos = allrhos.cat([rhos.toList()])
+    # MAD variances.
+    sigma2s = rhos.subtract(1).multiply(-2).toList()
+    sigma2s = ee.Image.constant(sigma2s)
+    # Ensure sum of positive correlations between X and U is positive.
+    tmp = s11.matrixDiagonal().sqrt()
+    ones = tmp.multiply(0).add(1)
+    tmp = ones.divide(tmp).matrixToDiag()
+    s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(), [0]).transpose()
+    A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
+    # Ensure positive correlation.
+    tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
+    tmp = tmp.divide(tmp.abs()).matrixToDiag()
+    B = B.matrixMultiply(tmp)
+    # Canonical and MAD variates.
+    centeredImage1Array = centeredImage1.toArray().toArray(1)
+    centeredImage2Array = centeredImage2.toArray().toArray(1)
+    U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
+                   .arrayProject([0]) \
+                   .arrayFlatten([bNames1])
+    V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
+                   .arrayProject([0]) \
+                   .arrayFlatten([bNames2])
+    iMAD = U.subtract(V)
+    # Chi-square image.
+    Z = iMAD.pow(2) \
+              .divide(sigma2s) \
+              .reduce(ee.Reducer.sum())
+    return ee.Dictionary({'done': done, 'scale': scale, 'niter': niter.add(1),
+                          'image': image, 'allrhos': allrhos, 'Z': Z, 'iMAD': iMAD})
 
 ```
 
 The following code cell is a routine to run the iMAD algorithm as an export task, avoiding memory and time limitations in the active runtime. The asset will be exported to the location specified by the `EXPORT_PATH` variable defined earlier. It requires about 130 MB of space and can take 15 to 20 minutes to complete. Earth Engine provides the asset for use in this demo, so it is not required that you run the export cell to complete the tutorial.
 ### Run iMAD algorithm as export task
-Toggle code ```
+Toggle code```
 defrun_imad(aoi, image1, image2, assetId, scale=20, maxiter=100):
-  try:
-    N = image1.bandNames().length().getInfo()
-    imadnames = ['iMAD'+str(i+1) for i in range(N)]
-    imadnames.append('Z')
-    # Maximum iterations.
-    inputlist = ee.List.sequence(1, maxiter)
-    first = ee.Dictionary({'done':0,
-              'scale': scale,
-              'niter': ee.Number(0),
-              'image': image1.addBands(image2),
-              'allrhos': [ee.List.sequence(1, N)],
-              'Z': ee.Image.constant(0),
-              'iMAD': ee.Image.constant(0)})
-    # Iteration.
-    result = ee.Dictionary(inputlist.iterate(imad, first))
-    # Retrieve results.
-    iMAD = ee.Image(result.get('iMAD')).clip(aoi)
-    rhos = ee.String.encodeJSON(ee.List(result.get('allrhos')).get(-1))
-    Z = ee.Image(result.get('Z'))
-    niter = result.getNumber('niter')
-    # Export iMAD and Z as a single image, including rhos and number of iterations in properties.
-    iMAD_export = ee.Image.cat(iMAD, Z).rename(imadnames).set('rhos', rhos, 'niter', niter)
-    assexport = ee.batch.Export.image.toAsset(iMAD_export,
-            description='assetExportTask',
-            assetId=assetId, scale=scale, maxPixels=1e10)
-    assexport.start()
-    print('Exporting iMAD to %s\n task id: %s'%(assetId, str(assexport.id)))
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        N = image1.bandNames().length().getInfo()
+        imadnames = ['iMAD'+str(i+1) for i in range(N)]
+        imadnames.append('Z')
+        # Maximum iterations.
+        inputlist = ee.List.sequence(1, maxiter)
+        first = ee.Dictionary({'done':0,
+                            'scale': scale,
+                            'niter': ee.Number(0),
+                            'image': image1.addBands(image2),
+                            'allrhos': [ee.List.sequence(1, N)],
+                            'Z': ee.Image.constant(0),
+                            'iMAD': ee.Image.constant(0)})
+        # Iteration.
+        result = ee.Dictionary(inputlist.iterate(imad, first))
+        # Retrieve results.
+        iMAD = ee.Image(result.get('iMAD')).clip(aoi)
+        rhos = ee.String.encodeJSON(ee.List(result.get('allrhos')).get(-1))
+        Z = ee.Image(result.get('Z'))
+        niter = result.getNumber('niter')
+        # Export iMAD and Z as a single image, including rhos and number of iterations in properties.
+        iMAD_export = ee.Image.cat(iMAD, Z).rename(imadnames).set('rhos', rhos, 'niter', niter)
+        assexport = ee.batch.Export.image.toAsset(iMAD_export,
+                        description='assetExportTask',
+                        assetId=assetId, scale=scale, maxPixels=1e10)
+        assexport.start()
+        print('Exporting iMAD to %s\n task id: %s'%(assetId, str(assexport.id)))
+    except Exception as e:
+        print('Error: %s'%e)
 
 ```
 
@@ -397,9 +390,9 @@ Exporting iMAD to projects/YOUR_GEE_PROJECT_NAME/assets/imad/LandkreisOlpe
 After the export finishes (if you ran it), the number of iterations and the final canonical correlations can be read from properties of the exported image. (Earth Engine-hosted assets are imported here, edit the paths if you'd like to use your copies)
 ```
 im_imad = ee.Image(
-  'projects/google/imad_tutorial/LandkreisOlpe').select(0, 1, 2, 3, 4, 5)
+    'projects/google/imad_tutorial/LandkreisOlpe').select(0, 1, 2, 3, 4, 5)
 im_z = ee.Image(
-  'projects/google/imad_tutorial/LandkreisOlpe').select(6).rename('Z')
+    'projects/google/imad_tutorial/LandkreisOlpe').select(6).rename('Z')
 niter = im_imad.get('niter').getInfo()
 rhos = ee.List(im_imad.get('rhos')).getInfo()
 print('iteratons: %i'%niter)
@@ -420,10 +413,10 @@ pval = chi2cdf(im_z, 6).subtract(1).multiply(-1).rename('pval')
 # No-change mask (use p-values greater than 0.1).
 noChangeMask = pval.gt(0.1)
 hist = im_z.updateMask(noChangeMask).reduceRegion(ee.Reducer \
-      .fixedHistogram(0, 50, 500), aoi, scale=scale, maxPixels=1e11) \
-      .get('Z').getInfo()
+           .fixedHistogram(0, 50, 500), aoi, scale=scale, maxPixels=1e11) \
+           .get('Z').getInfo()
 a = np.array(hist)
-x = a[:, 0]         # array of bucket edge positions
+x = a[:, 0]                 # array of bucket edge positions
 y = a[:, 1]/np.sum(a[:, 1]) # normalized array of bucket contents
 plt.plot(x, y, '.', label = 'data')
 plt.plot(x, chi2.pdf(x, 6)/10, '-r', label='chi2(6)')
@@ -440,6 +433,7 @@ M1.centerObject(aoi, 11)
 display_ls(im1.select(visbands), M1, 'im1')
 display_ls(im2.select(visbands), M1, 'im2')
 display_ls(im_imad.select('iMAD1', 'iMAD2', 'iMAD3'), M1, 'iMAD123', True)
+
 M1
 
 ```
@@ -479,6 +473,7 @@ M2.addLayer(cluster0, vis_params, 'new clearcuts')
 M2.addLayer(cluster1, vis_params, 'agriculture')
 M2.addLayer(cluster2, vis_params, 'prior clearcuts')
 M2.addLayer(cluster3, vis_params, 'no change')
+
 M2
 
 ```
@@ -494,17 +489,19 @@ Google's recently released [Dynamic World](https://developers.google.com/earth-e
 Generally the agreement is excellent, although the iMAD change map registers a number of small-area clear cuts missed in the Dynamic World map:
 ```
 dyn = ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1') \
-          .filterDate('2021-06-01', '2022-06-30') \
-          .filterBounds(aoi) \
-          .select('label').mosaic()
+                    .filterDate('2021-06-01', '2022-06-30') \
+                    .filterBounds(aoi) \
+                    .select('label').mosaic()
 # 'trees' class = class 1
 dw = dyn.clip(aoi).updateMask(dyn.eq(1))
+
 M3 = geemap.Map()
 M3.centerObject(aoi, 13)
 display_ls(im1.select(visbands), M3, 'im1')
 display_ls(im2.select(visbands), M3, 'im2')
 M3.addLayer(dw, {'min': 0, 'max': 1, 'palette': ['black', 'green']}, 'dynamic world')
 M3.addLayer(cluster0, vis_params, 'new clearcuts')
+
 M3
 
 ```
@@ -520,11 +517,13 @@ training = diff.sample(region=aoi, scale=20, numPixels=50000)
 clusterer = ee.Clusterer.wekaKMeans(4).train(training)
 result1 = diff.cluster(clusterer)
 cluster0d = result1.updateMask(result1.eq(0))
+
 display_ls(im1.select(visbands), M4, 'im1')
 display_ls(im2.select(visbands), M4, 'im2')
 M4.addLayer(cluster0d, {'min': 0, 'max': 3,
-          'palette': ['orange', 'yellow', 'blue', 'black']}, 'clearcuts (diff)')
+                    'palette': ['orange', 'yellow', 'blue', 'black']}, 'clearcuts (diff)')
 M4.addLayer(cluster0, vis_params, 'clearcuts (iMAD)')
+
 M4
 
 ```
@@ -540,16 +539,16 @@ mp = contArea.gte(ee.Number(5)).selfMask()
 # Clear cuts in hectares.
 pixelArea = mp.multiply(ee.Image.pixelArea()).divide(10000)
 clearcutArea = pixelArea.reduceRegion(
-          reducer=ee.Reducer.sum(),
-          geometry=aoi,
-          scale=scale,
-          maxPixels=1e11)
+                    reducer=ee.Reducer.sum(),
+                    geometry=aoi,
+                    scale=scale,
+                    maxPixels=1e11)
 ccA = clearcutArea.get('cluster').getInfo()
 print(ccA, 'hectare')
 
 ```
 ```
-3726.941522981636 hectare
+3726.9415229785836 hectare
 
 ```
 
@@ -560,10 +559,10 @@ contArea = cluster0d.connectedPixelCount().selfMask()
 mp = contArea.gte(ee.Number(5)).selfMask()
 pixelArea = mp.multiply(ee.Image.pixelArea()).divide(10000)
 clearcutArea = pixelArea.reduceRegion(
-          reducer=ee.Reducer.sum(),
-          geometry=aoi,
-          scale=scale,
-          maxPixels=1e11)
+                    reducer=ee.Reducer.sum(),
+                    geometry=aoi,
+                    scale=scale,
+                    maxPixels=1e11)
 ccA = clearcutArea.get('cluster').getInfo()
 print(ccA, 'hectare')
 
@@ -605,6 +604,7 @@ M5 = geemap.Map()
 M5.centerObject(aoi, 10)
 display_ls(im1.select(visbands), M5, 'Image 1')
 display_ls(im2.select(visbands), M5, 'Image 2')
+
 M5
 
 ```

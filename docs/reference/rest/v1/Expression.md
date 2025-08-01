@@ -6,18 +6,18 @@ JSON representation
 ---  
 ```
 {
- "values": {
-  string: {
-   object (ValueNode[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/ArrayValue#ValueNode))
+  "values": {
+    string: {
+      object (ValueNode[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/ArrayValue#ValueNode))
+    },
+    ...
   },
-  ...
- },
- "result": string
+  "result": string
 }
 ```
   
 Fields  
 ---  
-`values` |  `map (key: string, value: object (`ValueNode[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/ArrayValue#ValueNode)`))` All intermediate values in the computation. The directed graph these form must be acyclic.An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
+`values` |  `map (key: string, value: object (`ValueNode[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/ArrayValue#ValueNode)`))` All intermediate values in the computation. The directed graph these form must be acyclic. An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
 `result` |  `string` Which of the ValueNodes in "values" is the final result of the computation.  
 Was this helpful?

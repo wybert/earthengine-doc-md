@@ -1,14 +1,6 @@
  
 #  Image Predictions
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [ee.Model.predictImage](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions#eemodelpredictimage)
-  * [Input Options](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions#input_options)
-    * [Bands and Properties](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions#bands_and_properties)
-    * [Tile Sizes](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions#tile_sizes)
-    * [Projection](https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions#projection)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine provides `ee.Model` as a connector to models hosted on [Vertex AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform). This connector sends image or table data as online prediction requests to a trained model deployed on a Vertex AI endpoint. The model outputs are then returned as Earth Engine images or tables.
 ## ee.Model.predictImage
 Use `model.predictImage()` to make predictions on an `ee.Image` using a hosted model. The `ee.Image` is used to create tiles (image patch) of bands which are then sent to the hosted model. The return type of `predictImage()` is an `ee.Image` which can be added to the map, exported, or used in other computations.
@@ -23,13 +15,13 @@ To specify the input bands and properties use the following parameters:
 For example if you are computing "slope" by mapping the `ee.Terrain.slope` function over a collection you will need to specify the output type of "slope" in our inference inputs like so:
 ```
 inputTypeOverride = {
- "slope": {
-  "type": "PixelType",
-  "precision": "float",
-  "dimensions": 0,
-  "min": -100.0,
-  "max": 100.0
- }
+  "slope": {
+    "type": "PixelType",
+    "precision": "float",
+    "dimensions": 0,
+    "min": -100.0,
+    "max": 100.0
+  }
 }
 
 ```
@@ -39,9 +31,9 @@ TIP: If you encounter the error message that a band or property "cannot be conve
 `inputShapes` is a dictionary of band names and array-pixel shape. To send your model array-valued pixels with lengths greater than 1 then set the `inputShapes` argument. to be set. The argument is similar to `inputTypeOverride` but is specific to input band shapes for image predictions. For example, to encode three bands, (1) "ndvi_series" as a 1D time series with 12 values, (2) "temp" as a scalar, and (3) "patch" as a 2D pixel array, use the following:
 ```
 inputShapes = {
- "ndvi_series": [12], # 12 ndvi samples
- "temp": [], # scalar
- "patch": [2, 2], # 2px * 2px patch
+  "ndvi_series": [12],  # 12 ndvi samples
+  "temp": [], # scalar
+  "patch": [2, 2], # 2px * 2px patch
 }
 
 ```
@@ -50,7 +42,7 @@ inputShapes = {
 `outputBands` is a dictionary of output band names to an object containing the `ee.PixelType` and dimensions of the band. Here dimensions should be the same as the length of the tensor shape array. In other words, scalar data with shape () should have dimension 0, 1D data with shape (N) should have dimensions 1, 2D data with shape (N, M) should have dimensions 2. For example, an output band named "B1" with array-valued pixels with shape is specified with the following:
 ```
 outputBands = {
- 'B1': {'type': ee.PixelType.float(), 'dimensions': 1}
+  'B1': {'type': ee.PixelType.float(), 'dimensions': 1}
 }
 
 ```
@@ -68,10 +60,10 @@ For example, a fully convolutional model may expect inputs with shape (256 x 256
 For example if our model expects (256 x 256 x 3) and we want to discard the 32 border pixels we would specify the following:
 ```
 ee.Model({
- "endpoint": endpoint,
- "inputTileSize": [192, 192],
- "inputOverlapSize": [64, 64],
- # rest omitted.
+  "endpoint": endpoint,
+  "inputTileSize": [192, 192],
+  "inputOverlapSize": [64, 64],
+  # rest omitted.
 }
 
 ```

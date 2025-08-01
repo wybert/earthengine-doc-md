@@ -6,16 +6,17 @@ JSON representation
 ---  
 ```
 {
- "dimensions": {
-  object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
- },
- "affineTransform": {
-  object (AffineTransform[](https://developers.google.com/earth-engine/reference/rest/v1/AffineTransform))
- },
- // Union field crs can be only one of the following:
- "crsCode": string,
- "crsWkt": string
- // End of list of possible types for union field crs.
+  "dimensions": {
+    object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
+  },
+  "affineTransform": {
+    object (AffineTransform[](https://developers.google.com/earth-engine/reference/rest/v1/AffineTransform))
+  },
+
+  // Union field crs can be only one of the following:
+  "crsCode": string,
+  "crsWkt": string
+  // End of list of possible types for union field crs.
 }
 ```
   

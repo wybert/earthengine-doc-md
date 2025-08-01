@@ -1,6 +1,6 @@
  
 #  Vector to Raster Interpolation
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Inverse Distance Weighted Interpolation](https://developers.google.com/earth-engine/guides/interpolation#inverse-distance-weighted-interpolation)
   * [Kriging](https://developers.google.com/earth-engine/guides/interpolation#kriging)
@@ -16,6 +16,7 @@ varch4=ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_CH4')
 .filterDate('2019-08-01','2019-08-15')
 .mean()
 .rename('ch4');
+
 //Defineanareatoperforminterpolationover.
 varaoi=
 ee.Geometry.Polygon(
@@ -23,6 +24,7 @@ ee.Geometry.Polygon(
 [-95.68487605978851,37.39358590079781],
 [-87.96148738791351,37.39358590079781],
 [-87.96148738791351,43.09844605027055]]],null,false);
+
 //SamplethemethanecompositetogenerateaFeatureCollection.
 varsamples=ch4.addBands(ee.Image.pixelLonLat())
 .sample({region:aoi,numPixels:1500,
@@ -33,14 +35,17 @@ varlon=sample.get('longitude');
 varch4=sample.get('ch4');
 returnee.Feature(ee.Geometry.Point([lon,lat]),{ch4:ch4});
 });
+
 //Combinemeanandstandarddeviationreducersforefficiency.
 varcombinedReducer=ee.Reducer.mean().combine({
 reducer2:ee.Reducer.stdDev(),
 sharedInputs:true});
+
 //Estimateglobalmeanandstandarddeviationfromthepoints.
 varstats=samples.reduceColumns({
 reducer:combinedReducer,
 selectors:['ch4']});
+
 //Dotheinterpolation,validto70kilometers.
 varinterpolated=samples.inverseDistance({
 range:7e4,
@@ -48,12 +53,14 @@ propertyName:'ch4',
 mean:stats.get('mean'),
 stdDev:stats.get('stdDev'),
 gamma:0.3});
+
 //Definevisualizationarguments.
 varband_viz={
 min:1800,
 max:1900,
 palette:['0D0887','5B02A3','9A179B','CB4678',
 'EB7852','FBB32F','F0F921']};
+
 //Displaytomap.
 Map.centerObject(aoi,7);
 Map.addLayer(ch4,band_viz,'CH4');
@@ -68,34 +75,39 @@ The following example samples a sea surface temperature (SST) image at random lo
 ```
 // Load an image of sea surface temperature (SST).
 var sst = ee.Image('NOAA/AVHRR_Pathfinder_V52_L3/20120802025048')
- .select('sea_surface_temperature')
- .rename('sst')
- .divide(100);
+  .select('sea_surface_temperature')
+  .rename('sst')
+  .divide(100);
+
 // Define a geometry in which to sample points
 var geometry = ee.Geometry.Rectangle([-65.60, 31.75, -52.18, 43.12]);
+
 // Sample the SST image at 1000 random locations.
 var samples = sst.addBands(ee.Image.pixelLonLat())
- .sample({region: geometry, numPixels: 1000})
- .map(function(sample) {
-  var lat = sample.get('latitude');
-  var lon = sample.get('longitude');
-  var sst = sample.get('sst');
-  return ee.Feature(ee.Geometry.Point([lon, lat]), {sst: sst});
- });
+  .sample({region: geometry, numPixels: 1000})
+  .map(function(sample) {
+    var lat = sample.get('latitude');
+    var lon = sample.get('longitude');
+    var sst = sample.get('sst');
+    return ee.Feature(ee.Geometry.Point([lon, lat]), {sst: sst});
+  });
+
 // Interpolate SST from the sampled points.
 var interpolated = samples.kriging({
- propertyName: 'sst',
- shape: 'exponential',
- range: 100 * 1000,
- sill: 1.0,
- nugget: 0.1,
- maxDistance: 100 * 1000,
- reducer: 'mean',
+  propertyName: 'sst',
+  shape: 'exponential',
+  range: 100 * 1000,
+  sill: 1.0,
+  nugget: 0.1,
+  maxDistance: 100 * 1000,
+  reducer: 'mean',
 });
+
 var colors = ['00007F', '0000FF', '0074FF',
-       '0DFFEA', '8CFF41', 'FFDD00',
-       'FF3700', 'C30000', '790000'];
+              '0DFFEA', '8CFF41', 'FFDD00',
+              'FF3700', 'C30000', '790000'];
 var vis = {min:-3, max:40, palette: colors};
+
 Map.setCenter(-60.029, 36.457, 5);
 Map.addLayer(interpolated, vis, 'Interpolated');
 Map.addLayer(sst, vis, 'Raw SST');

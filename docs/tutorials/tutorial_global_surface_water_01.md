@@ -26,4 +26,3 @@ If you are using the data as a layer in a published map, please include the foll
 ## Get access to Earth Engine
 Access to Earth Engine is free, but requires signup. To get access, please fill out our [Earth Engine signup form](https://earthengine.google.com/signup) to apply for an Evaluator account. Those granted access will receive an email within a few business days with further instructions. 
 Once you're familiar with the Code Editor, [ get started on the tutorial](https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_02)!
-Was this helpful?

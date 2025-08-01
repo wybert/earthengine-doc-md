@@ -1,10 +1,10 @@
  
 #  ui.Panel.widgets
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the list of widgets currently in the panel. 
-Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+Usage | Returns  
 ---|---  
-`Panel.widgets()`| ui.data.ActiveList  
-Argument| Type| Details  
+`Panel.widgets()` | ui.data.ActiveList<ui.Widget>  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.panel`| ui.Panel| The ui.Panel instance.  
+this: `ui.panel` | ui.Panel | The ui.Panel instance.  
+Was this helpful?

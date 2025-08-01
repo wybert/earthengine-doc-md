@@ -28,19 +28,19 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "description": string,
- "tileOptions": {
-  object (TileOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.map/export#TileOptions))
- },
- "tileExportOptions": {
-  object (ImageFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileExportOptions))
- },
- "requestId": string,
- "workloadTag": string,
- "priority": integer
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "description": string,
+  "tileOptions": {
+    object (TileOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.map/export#TileOptions))
+  },
+  "tileExportOptions": {
+    object (ImageFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileExportOptions))
+  },
+  "requestId": string,
+  "workloadTag": string,
+  "priority": integer
 }
 ```
   
@@ -58,8 +58,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/devstorage.full_control`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/devstorage.full_control`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -69,20 +69,21 @@ JSON representation
 ---  
 ```
 {
- "startZoom": integer,
- "skipEmpty": boolean,
- "mapsApiKey": string,
- "dimensions": {
-  object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1beta/GridDimensions))
- },
- "stride": integer,
- "zoomSubset": {
-  object (ZoomSubset[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.map/export#ZoomSubset))
- },
- // Union field end_zoom_or_scale can be only one of the following:
- "endZoom": integer,
- "scale": number
- // End of list of possible types for union field end_zoom_or_scale.
+  "startZoom": integer,
+  "skipEmpty": boolean,
+  "mapsApiKey": string,
+  "dimensions": {
+    object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1beta/GridDimensions))
+  },
+  "stride": integer,
+  "zoomSubset": {
+    object (ZoomSubset[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.map/export#ZoomSubset))
+  },
+
+  // Union field end_zoom_or_scale can be only one of the following:
+  "endZoom": integer,
+  "scale": number
+  // End of list of possible types for union field end_zoom_or_scale.
 }
 ```
   
@@ -103,8 +104,8 @@ JSON representation
 ---  
 ```
 {
- "start": number,
- "end": number
+  "start": number,
+  "end": number
 }
 ```
   
@@ -112,3 +113,4 @@ Fields
 ---  
 `start` |  `number` Starting zoom level subset for which to generate tiles (ExportVideoMap) Here, subset is a double precision value, allowing you to render a zoom level incrementally, so 12.1 for example is the first 10% of the tiles in zoom 12 in some unspecified but deterministic order.  
 `end` |  `number` Ending zoom level subset for which to generate tiles (ExportVideoMap), allowing you to render a zoom level incrementally, up to but not including the maximum subset (if provided) in some unspecified but deterministic order.  
+Was this helpful?

@@ -1,12 +1,12 @@
  
 #  ee.Geometry.geodesic
 Stay organized with collections  Save and categorize content based on your preferences. 
-If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage| Returns  
+If false, edges are straight in the projection. If true, edges are curved to follow the shortest path on the surface of the Earth. Usage | Returns  
 ---|---  
-`Geometry.geodesic()`| Boolean  
-Argument| Type| Details  
+`Geometry.geodesic()` | Boolean  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry|   
+this: `geometry` | Geometry |   
 ## Examples
 ### Code Editor (JavaScript)
 ```
@@ -19,10 +19,13 @@ vargeometry=ee.Geometry({
 [-122.084,37.418],
 [-122.089,37.416]]]
 });
+
 // Apply the geodesic method to the Geometry object.
 vargeometryGeodesic=geometry.geodesic();
+
 // Print the result to the console.
 print('geometry.geodesic(...) =',geometryGeodesic);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(geometry,
@@ -41,18 +44,21 @@ importgeemap.coreasgeemap
 ```
 # Define a Geometry object.
 geometry = ee.Geometry({
-  'type': 'Polygon',
-  'coordinates': [[
-    [-122.081, 37.417],
-    [-122.086, 37.421],
-    [-122.084, 37.418],
-    [-122.089, 37.416],
-  ]],
+    'type': 'Polygon',
+    'coordinates': [[
+        [-122.081, 37.417],
+        [-122.086, 37.421],
+        [-122.084, 37.418],
+        [-122.089, 37.416],
+    ]],
 })
+
 # Apply the geodesic method to the Geometry object.
 geometry_geodesic = geometry.geodesic()
+
 # Print the result.
 display('geometry.geodesic(...) =', geometry_geodesic)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)

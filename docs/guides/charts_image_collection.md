@@ -39,10 +39,12 @@ Use `ui.Chart.image.series` to display an image time series for a given region; 
 // Import the example feature collection and subset the forest feature.
 varforest=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Forest'));
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -75,10 +77,12 @@ Use `ui.Chart.image.seriesByRegion` to display a single image band time series f
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -112,10 +116,12 @@ Use `ui.Chart.image.doySeries` to display a day-of-year time series for a given 
 // Import the example feature collection and subset the grassland feature.
 vargrassland=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Grassland'));
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 // Define the chart and print it to the console.
 varchart=
 ui.Chart.image
@@ -153,12 +159,14 @@ Use `ui.Chart.image.doySeriesByYear` to display a day-of-year time series for a 
 // Import the example feature collection and subset the grassland feature.
 vargrassland=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Grassland'));
+
 // Load MODIS vegetation indices data and subset years 2012 and 2019.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.or(
 ee.Filter.date('2012-01-01','2013-01-01'),
 ee.Filter.date('2019-01-01','2020-01-01')))
 .select(['NDVI','EVI']);
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .doySeriesByYear({
@@ -194,10 +202,12 @@ Use `ui.Chart.image.doySeriesByRegion` to display a single image band day-of-yea
 ```
 // Import the example feature collection.
 varecoregions=ee.FeatureCollection('projects/google/charts_feature_example');
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 // Define the chart and print it to the console.
 varchart=ui.Chart.image
 .doySeriesByRegion({
@@ -227,4 +237,3 @@ colors:['f0af07','0f8755','76b349'],
 print(chart);
 ```
 
-Was this helpful?

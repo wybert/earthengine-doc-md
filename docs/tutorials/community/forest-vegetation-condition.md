@@ -1,16 +1,6 @@
  
 #  Monitoring Forest Vegetation Condition
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Context](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#context)
-  * [Rationale](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#rationale)
-  * [Approach](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#approach)
-    * [Import images, features](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#import_images_features)
-    * [Compute annual summertime composites](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#compute_annual_summertime_composites)
-    * [Estimate trends and infer vegetation condition](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#estimate_trends_and_infer_vegetation_condition)
-    * [Visualise results](https://developers.google.com/earth-engine/tutorials/community/forest-vegetation-condition#visualise_results)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/forest-vegetation-condition/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/forest-vegetation-condition/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/forest-vegetation-condition/index.md "View changes to this article over time.")
@@ -27,6 +17,7 @@ Import the MODIS 250m/pixel 16-day composite vegetation indices dataset. Load bo
 ```
 // Get MODIS 250m vegetation data.
 varmod13=ee.ImageCollection('MODIS/006/MOD13Q1');
+
 // Get features of the forest national parks.
 varnps=ee.FeatureCollection('WCMC/WDPA/202006/polygons')
 .filter(ee.Filter.inList('NAME',['Bandipur','Rajiv Gandhi (Nagarhole)']));
@@ -43,12 +34,14 @@ varmod13Summer=mod13.filter(ee.Filter.calendarRange(1,4,'month'))
 .map(function(img){
 returnimg.set('year',img.date().get('year'));
 });
+
 // Generate lists of images from the year using a join.
 varmod13SummerAnnualJoin=ee.Join.saveAll('same_year').apply({
 primary:mod13Summer.distinct('year'),
 secondary:mod13Summer,
 condition:ee.Filter.equals({leftField:'year',rightField:'year'})
 });
+
 // Calculate annual max EVI composite images from the "same year" join lists.
 // Return an image with two bands for use in time series slope calculation;
 // year as band 1, max EVI as band 2.
@@ -67,6 +60,7 @@ Estimate a linear trend at each pixel by calculating its Sen's slope of maximum 
 ```
 // Calculate time series slope using sensSlope().
 varsens=summerStats.reduce(ee.Reducer.sensSlope());
+
 // Define a function to calculate a histogram of slope values to be calculated
 // for each park; defining a custom histogram function instead of using
 // ui.Chart.image.histogram because it does not allow baseline to be set as 0,
@@ -79,10 +73,12 @@ geometry:geometry,
 scale:250,
 maxPixels:1e13,
 });
+
 // Get the array and extract the bin column and pixel count columns.
 varhistArray=ee.Array(hist.get('slope'));
 varbinBottom=histArray.slice(1,0,1);
 varnPixels=histArray.slice(1,1,null);
+
 // Chart the two arrays using the `ui.Chart.array.values` function.
 varhistColumnFromArray=
 ui.Chart.array.values({array:nPixels,axis:0,xLabels:binBottom})
@@ -96,8 +92,10 @@ lineSize:2,
 colors:['1b7837'],
 legend:{position:'none'}
 });
+
 returnhistColumnFromArray;
 }
+
 // Get the slope histogram charts and print them to the console per park.
 print(getHistogram(
 sens,nps.filter(ee.Filter.eq('NAME','Bandipur')),'Bandipur'));
@@ -106,7 +104,6 @@ sens,nps.filter(ee.Filter.eq('NAME','Rajiv Gandhi (Nagarhole)')),
 'Rajiv Gandhi (Nagarhole)'));
 
 ```
-
 ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-vegetation-condition/slopes-histogram-bandipur.png) | ![](https://developers.google.com/static/earth-engine/tutorials/community/forest-vegetation-condition/slopes-histogram-nagarhole.png)  
 ---|---  
 Infer pixel-wise vegetation greening or browning based on the sign of the slope value. Calculate summary of areas under greening and browning for each national park.
@@ -114,6 +111,7 @@ Infer pixel-wise vegetation greening or browning based on the sign of the slope 
 // Infer pixel-wise vegetation condition based on sign of the slope.
 varcond=ee.Image.cat(sens.select('slope').gt(0).rename('greening'),
 sens.select('slope').lt(0).rename('browning'));
+
 // Calculate area under greening and browning in each national park.
 varnpsRes=cond.multiply(ee.Image.pixelArea())
 .reduceRegions(nps,ee.Reducer.sum(),250);
@@ -136,6 +134,7 @@ returnfeature.set({
 'Greening fraction':greeningSqM.divide(forestSqM),
 });
 });
+
 // Display area summary of vegetation condition as a table "chart".
 print(ui.Chart.feature.byFeature(npsRes.select(['NAME','Browning sq km',
 'Browning fraction','Greening sq km','Greening fraction']),
@@ -150,6 +149,7 @@ Choose suitable visualization parameters and display the slope values on the map
 // Prepare to display vegetation condition to the map; set map display options.
 Map.setOptions('SATELLITE');
 Map.centerObject(nps,10);
+
 // Set visualisation parameters for greening and browning areas; display to map.
 varvisParams={
 opacity:1,
@@ -160,6 +160,7 @@ palette:
 ['8c510a','d8b365','f6e8c3','f5f5f5','d9f0d3','7fbf7b','1b7837']
 };
 Map.addLayer(sens.clipToCollection(nps),visParams,'Sen\'s slope');
+
 // Draw national park boundaries to the map.
 varpaimg=ee.Image().byte().paint(nps,0,2);
 Map.addLayer(paimg,{palette:'000000'},'National Parks');

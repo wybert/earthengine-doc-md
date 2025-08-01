@@ -1,9 +1,10 @@
  
 #  ee.Image.uint8
-Stay organized with collections  Save and categorize content based on your preferences. 
-Casts the input value to an unsigned 8-bit integer. Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Casts the input value to an unsigned 8-bit integer.
+Usage | Returns  
 ---|---  
-`Image.uint8()`| Image  
-Argument| Type| Details  
+`Image.uint8()` | Image  
+Argument | Type | Details  
 ---|---|---  
-this: `value`| Image| The image to which the operation is applied.  
+this: `value` | Image | The image to which the operation is applied.  

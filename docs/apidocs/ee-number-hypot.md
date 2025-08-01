@@ -5,14 +5,14 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-hypot#examples)
 
 
-Calculates the magnitude of the 2D vector [x, y]. 
-Usage| Returns  
+Calculates the magnitude of the 2D vector [x, y].
+Usage | Returns  
 ---|---  
-`Number.hypot(right)`| Number  
-Argument| Type| Details  
+`Number.hypot(right)` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `left`| Number| The left-hand value.  
-`right`| Number| The right-hand value.  
+this: `left` | Number | The left-hand value.  
+`right` | Number | The right-hand value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-hypot#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-hypot#colab-python-sample) More
 ```

@@ -1,19 +1,12 @@
  
 #  Combining FeatureCollections
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Create two ee.FeatureCollection objects](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#create_two_eefeaturecollection_objects)
-  * [Combine the ee.FeatureCollection objects](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#combine_the_eefeaturecollection_objects)
-  * [Visualize the Results](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#visualize_the_results)
-  * [Bonus Points](https://developers.google.com/earth-engine/tutorials/community/combining-feature-collections#bonus_points)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/combining-feature-collections/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/combining-feature-collections/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/combining-feature-collections/index.md)
-Author(s): [ sabrinaszeto ](https://github.com/sabrinaszeto)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/combining-feature-collections/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/combining-feature-collections/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/combining-feature-collections/index.md "View changes to this article over time.")
+Author(s): [ sabrinaszeto ](https://github.com/sabrinaszeto "View the profile for sabrinaszeto on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-This basic tutorial shows how users can combine two `ee.FeatureCollection`s into a new `ee.FeatureCollection`. 
+This basic tutorial shows how users can combine two `ee.FeatureCollection`s into a new `ee.FeatureCollection`.
 ## Create two `ee.FeatureCollection` objects
 Let's begin by generating two sets of random points within the boundary of Utah state in the USA. First, define the boundary of Utah as a geometry.
 ```
@@ -54,6 +47,7 @@ Now, we add all the layers, specifying the layer labels as text strings (for exa
 Map.addLayer(newFeatures,{},'New Features');
 Map.addLayer(moreNewFeatures,{color:'red'},'More New Features');
 Map.addLayer(combinedFeatureCollection,{color:'yellow'},'Combined FeatureCollection');
+
 print(newFeatures,moreNewFeatures,combinedFeatureCollection);
 
 ```
@@ -63,4 +57,3 @@ print(newFeatures,moreNewFeatures,combinedFeatureCollection);
   * Try changing the layer label of `'More New Features'` to `'Red Points'`. Run the script again to see if it worked.
 
 
-Was this helpful?

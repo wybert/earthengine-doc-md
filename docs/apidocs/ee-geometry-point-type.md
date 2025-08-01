@@ -1,21 +1,24 @@
  
 #  ee.Geometry.Point.type
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the GeoJSON type of the geometry. Usage| Returns  
+Returns the GeoJSON type of the geometry. Usage | Returns  
 ---|---  
-`Point.type()`| String  
-Argument| Type| Details  
+`Point.type()` | String  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry|   
+this: `geometry` | Geometry |   
 ## Examples
 ### Code Editor (JavaScript)
 ```
 // Define a Point object.
 varpoint=ee.Geometry.Point(-122.082,37.42);
+
 // Apply the type method to the Point object.
 varpointType=point.type();
+
 // Print the result to the console.
 print('point.type(...) =',pointType);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(point,
@@ -34,10 +37,13 @@ importgeemap.coreasgeemap
 ```
 # Define a Point object.
 point = ee.Geometry.Point(-122.082, 37.42)
+
 # Apply the type method to the Point object.
 point_type = point.type()
+
 # Print the result.
 display('point.type(...) =', point_type)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)

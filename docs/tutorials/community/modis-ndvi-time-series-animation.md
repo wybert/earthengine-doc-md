@@ -34,6 +34,7 @@ Clipping the data is an optional step that sets pixels outside an area of intere
 // Define a mask to clip the NDVI data by.
 varmask=ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
 .filter(ee.Filter.eq('wld_rgn','Africa'));
+
 // Define the regional bounds of animation frames.
 varregion=ee.Geometry.Polygon(
 [[[-18.698368046353494,38.1446395611524],
@@ -70,8 +71,10 @@ Complete the join by:
 // Define a filter that identifies which images from the complete collection
 // match the DOY from the distinct DOY collection.
 varfilter=ee.Filter.equals({leftField:'doy',rightField:'doy'});
+
 // Define a join.
 varjoin=ee.Join.saveAll('doy_matches');
+
 // Apply the join and convert the resulting FeatureCollection to an
 // ImageCollection.
 varjoinCol=ee.ImageCollection(join.apply(distinctDOY,col,filter));
@@ -105,6 +108,7 @@ palette:[
 '012E01','011D01','011301'
 ],
 };
+
 // Create RGB visualization images for use as animation frames.
 varrgbVis=comp.map(function(img){
 returnimg.visualize(visParams).clip(mask);
@@ -127,6 +131,7 @@ vargifParams={
 'crs':'EPSG:3857',
 'framesPerSecond':10
 };
+
 // Print the GIF URL to the console.
 print(rgbVis.getVideoThumbURL(gifParams));
 

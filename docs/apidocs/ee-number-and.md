@@ -1,13 +1,13 @@
  
 #  ee.Number.and
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns 1 if and only if both values are non-zero. Usage| Returns  
+Returns 1 if and only if both values are non-zero. Usage | Returns  
 ---|---  
-`Number.and(right)`| Number  
-Argument| Type| Details  
+`Number.and(right)` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `left`| Number| The left-hand value.  
-`right`| Number| The right-hand value.  
+this: `left` | Number | The left-hand value.  
+`right` | Number | The right-hand value.  
 ## Examples
 ### Code Editor (JavaScript)
 ```

@@ -24,7 +24,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

@@ -5,14 +5,14 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-or#examples)
 
 
-Returns 1 if and only if either input value is non-zero. 
-Usage| Returns  
+Returns 1 if and only if either input value is non-zero.
+Usage | Returns  
 ---|---  
-`Number.or(right)`| Number  
-Argument| Type| Details  
+`Number.or(right)` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `left`| Number| The left-hand value.  
-`right`| Number| The right-hand value.  
+this: `left` | Number | The left-hand value.  
+`right` | Number | The right-hand value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-or#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-or#colab-python-sample) More
 ```
@@ -26,7 +26,7 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print('Either 0 or 5 non-zero?', ee.Number(0).Or(ee.Number(5)).getInfo()) # 1
-print('Either 0 or 0 non-zero?', ee.Number(0).Or(ee.Number(0)).getInfo()) # 0
+print('Either 0 or 5 non-zero?', ee.Number(0).Or(ee.Number(5)).getInfo())  # 1
+print('Either 0 or 0 non-zero?', ee.Number(0).Or(ee.Number(0)).getInfo())  # 0
 ```
 

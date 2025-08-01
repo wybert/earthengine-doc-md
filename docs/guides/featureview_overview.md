@@ -1,6 +1,6 @@
  
 #  FeatureView Overview
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Creating a FeatureView](https://developers.google.com/earth-engine/guides/featureview_overview#creating_a_featureview)
   * [FeatureView asset locations](https://developers.google.com/earth-engine/guides/featureview_overview#featureview_asset_locations)
@@ -34,6 +34,7 @@ In the example below, the specified arguments for these parameters produce a `Fe
 ```
 // Import the WDPA feature collection.
 varwdpa=ee.FeatureCollection('WCMC/WDPA/current/polygons');
+
 // Export the WDPA FeatureCollection as a FeatureView asset.
 Export.table.toFeatureView({
 collection:wdpa,
@@ -69,8 +70,10 @@ The Code Editor includes the `ui.Map.FeatureViewLayer` component to visualize `F
 ```
 // Define the FeatureView asset ID.
 varassetId='WCMC/WDPA/current/polygons_FeatureView';
+
 // Import the FeatureView asset as a FeatureViewLayer.
 varlayer=ui.Map.FeatureViewLayer(assetId);
+
 // Add the FeatureViewLayer to the map.
 Map.add(layer);
 ```
@@ -129,8 +132,10 @@ Filter rules can be applied to selectively style or hide features based on their
 ```
 // Define the FeatureView asset ID.
 varassetId='WCMC/WDPA/current/polygons_FeatureView';
+
 // Import the FeatureView asset as a FeatureViewLayer.
 varlayer=ui.Map.FeatureViewLayer(assetId,null,'WDPA FeatureViewLayer');
+
 // Callback function to update FeatureViewLayer style.
 varupdateVisParams=function(){
 layer.setVisParams({
@@ -175,6 +180,7 @@ isVisible:false,
 ],
 });
 };
+
 // Slider widget that calls the updateVisParams function on change.
 varfilterSlider=ui.Slider({
 min:0,
@@ -186,10 +192,13 @@ onChange:updateVisParams,
 });
 varfilterSliderLabel=ui.Label(
 'Adjust slider to hide features less than the specified area (km²)');
+
 // Add the slider to the map.
 Map.add(ui.Panel([filterSliderLabel,filterSlider]));
+
 // Initialize the FeatureViewLayer style.
 updateVisParams();
+
 // Add the FeatureViewLayer to the map.
 Map.add(layer);
 ```
@@ -203,6 +212,7 @@ vartilesKey=ee.data.getFeatureViewTilesKey({
 assetId:'WCMC/WDPA/current/polygons_FeatureView',
 visParams:{…},
 });
+
 vartileSource=newee.layers.FeatureViewTileSource(tilesKey);
 varoverlay=newee.layers.ImageOverlay(tileSource);
 

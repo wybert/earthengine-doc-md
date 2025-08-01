@@ -1,6 +1,6 @@
  
 #  Change Detection in Google Earth Engine - The MAD Transformation (Part 1)
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Author(s): [ mortcanty ](https://github.com/mortcanty "View the profile for mortcanty on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt1/index.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/tutorials/imad-tutorial-pt1/index.ipynb)  
@@ -31,6 +31,7 @@ Since we are in a Colab environment we will use the Python API, but it is so sim
 The cells below execute the necessary formalities for accessing Earth Engine from this Colab notebook. They also import the various Python add-ons needed, including the [geemap](https://geemap.org/) interactive map package, and define a few helper routines for displaying results.
 ```
 importee
+
 ee.Authenticate(auth_mode='notebook')
 ee.Initialize()
 
@@ -43,41 +44,37 @@ importnumpyasnp
 importrandom,time
 importmatplotlib.pyplotasplt
 fromscipy.statsimport norm, chi2
-frompprintimport pprint # for pretty printing
 
-```
-```
-/tmpfs/src/tf_docs_env/lib/python3.9/site-packages/geemap/conversion.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
- import pkg_resources
+frompprintimport pprint  # for pretty printing
 
 ```
 ```
 # Truncate a 1-D array to dec decimal places
 deftrunc(values, dec = 3):
-  return np.trunc(values*10**dec)/(10**dec)
+    return np.trunc(values*10**dec)/(10**dec)
 
 ```
 ```
 # Display an image in a one percent linear stretch
 defdisplay_ls(image, map, name, centered = False):
-  bns = image.bandNames().length().getInfo()
-  if bns == 3:
-    image = image.rename('B1', 'B2', 'B3')
-    pb_99 = ['B1_p99', 'B2_p99', 'B3_p99']
-    pb_1 = ['B1_p1', 'B2_p1', 'B3_p1']
-    img = ee.Image.rgb(image.select('B1'), image.select('B2'), image.select('B3'))
-  else:
-    image = image.rename('B1')
-    pb_99 = ['B1_p99']
-    pb_1 = ['B1_p1']
-    img = image.select('B1')
-  percentiles = image.reduceRegion(ee.Reducer.percentile([1, 99]), maxPixels=1e11)
-  mx = percentiles.values(pb_99)
-  if centered:
-    mn = ee.Array(mx).multiply(-1).toList()
-  else:
-    mn = percentiles.values(pb_1)
-  map.addLayer(img, {'min': mn, 'max': mx}, name)
+    bns = image.bandNames().length().getInfo()
+    if bns == 3:
+        image = image.rename('B1', 'B2', 'B3')
+        pb_99 = ['B1_p99', 'B2_p99', 'B3_p99']
+        pb_1 = ['B1_p1', 'B2_p1', 'B3_p1']
+        img = ee.Image.rgb(image.select('B1'), image.select('B2'), image.select('B3'))
+    else:
+        image = image.rename('B1')
+        pb_99 = ['B1_p99']
+        pb_1 = ['B1_p1']
+        img = image.select('B1')
+    percentiles = image.reduceRegion(ee.Reducer.percentile([1, 99]), maxPixels=1e11)
+    mx = percentiles.values(pb_99)
+    if centered:
+        mn = ee.Array(mx).multiply(-1).toList()
+    else:
+        mn = percentiles.values(pb_1)
+    map.addLayer(img, {'min': mn, 'max': mx}, name)
 
 ```
 
@@ -89,37 +86,38 @@ $$ X= \begin{pmatrix}X_1\cr X_2\cr\vdots\cr X_N\end{pmatrix},\quad Y= \begin{pma
 are 'typical' pixel vectors (more formally: _random vectors_) representing the first and second image, respectively.
 ### Landkreis Olpe
 For example, here is an area of interest (aoi) covering a heavily forested administrative district (Landkreis Olpe) in North Rhine Westphalia, Germany. Due to severe drought in recent years large swaths of shallow-root coniferous trees have died and been cleared away, leaving deciduous trees for the most part untouched.
-Toggle code ```
+Toggle code```
 aoi = ee.FeatureCollection(
-  'projects/google/imad_tutorial/landkreis_olpe_aoi').geometry()
+    'projects/google/imad_tutorial/landkreis_olpe_aoi').geometry()
 
 ```
 
 We first collect two Sentinel-2 scenes which bracket some of the recent clear cutting (June, 2021 and June, 2022) and print out their timestamps. For demonstration purposes we choose top of atmosphere reflectance since the MAD transformation does not require absolute surface reflectances.
 ```
 defcollect(aoi, t1a ,t1b, t2a, t2b):
-  try:
-    im1 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
-                .filterBounds(aoi)
-                .filterDate(ee.Date(t1a), ee.Date(t1b))
-                .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
-                .sort('CLOUDY_PIXEL_PERCENTAGE')
-                .first()
-                .clip(aoi) )
-    im2 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
-                .filterBounds(aoi)
-                .filterDate(ee.Date(t2a), ee.Date(t2b))
-                .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
-                .sort('CLOUDY_PIXEL_PERCENTAGE')
-                .first()
-                .clip(aoi) )
-    timestamp = im1.date().format('E MMM dd HH:mm:ss YYYY')
-    print(timestamp.getInfo())
-    timestamp = im2.date().format('E MMM dd HH:mm:ss YYYY')
-    print(timestamp.getInfo())
-    return (im1, im2)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        im1 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
+                               .filterBounds(aoi)
+                               .filterDate(ee.Date(t1a), ee.Date(t1b))
+                               .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
+                               .sort('CLOUDY_PIXEL_PERCENTAGE')
+                               .first()
+                               .clip(aoi) )
+        im2 = ee.Image( ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
+                               .filterBounds(aoi)
+                               .filterDate(ee.Date(t2a), ee.Date(t2b))
+                               .filter(ee.Filter.contains(rightValue=aoi,leftField='.geo'))
+                               .sort('CLOUDY_PIXEL_PERCENTAGE')
+                               .first()
+                               .clip(aoi) )
+        timestamp = im1.date().format('E MMM dd HH:mm:ss YYYY')
+        print(timestamp.getInfo())
+        timestamp = im2.date().format('E MMM dd HH:mm:ss YYYY')
+        print(timestamp.getInfo())
+        return (im1, im2)
+    except Exception as e:
+        print('Error: %s'%e)
+
 im1, im2 = collect(aoi, '2021-06-01', '2021-06-30', '2022-06-01', '2022-06-30')
 
 ```
@@ -134,6 +132,7 @@ In order to view the images, we instantiate an interactive map located at the ce
 # Interactive map
 M1 = geemap.Map()
 M1.centerObject(aoi, 11)
+
 M1
 
 ```
@@ -143,6 +142,7 @@ Then we display RGB composites of the first 3 (visual) bands of the Sentinel ima
 ```
 visirbands = ['B2','B3','B4','B8','B11','B12']
 visbands = ['B2','B3','B4']
+
 diff = im1.subtract(im2).select(visbands)
 display_ls(im1.select(visbands), M1, 'Image 1')
 display_ls(im2.select(visbands), M1, 'Image 2')
@@ -178,40 +178,40 @@ To run the MAD transformation on GEE image pairs we need some helper routines. T
 ```
 defcovarw(image, weights = None, scale = 20, maxPixels = 1e10):
 '''Return the weighted centered image and its weighted covariance matrix'''
-  try:
-    geometry = image.geometry()
-    bandNames = image.bandNames()
-    N = bandNames.length()
-    if weights is None:
-      weights = image.constant(1)
-    weightsImage = image.multiply(ee.Image.constant(0)).add(weights)
-    means = image.addBands(weightsImage) \
-          .reduceRegion(ee.Reducer.mean().repeat(N).splitWeights(),
-                scale = scale,
-                maxPixels = maxPixels) \
-          .toArray() \
-          .project([1])
-    centered = image.toArray().subtract(means)
-    B1 = centered.bandNames().get(0)
-    b1 = weights.bandNames().get(0)
-    nPixels = ee.Number(centered.reduceRegion(ee.Reducer.count(),
-                        scale = scale,
-                        maxPixels = maxPixels).get(B1))
-    sumWeights = ee.Number(weights.reduceRegion(ee.Reducer.sum(),
-                          geometry = geometry,
-                          scale = scale,
-                          maxPixels = maxPixels).get(b1))
-    covw = centered.multiply(weights.sqrt()) \
-          .toArray() \
-          .reduceRegion(ee.Reducer.centeredCovariance(),
-                  geometry = geometry,
-                  scale = scale,
-                  maxPixels = maxPixels) \
-          .get('array')
-    covw = ee.Array(covw).multiply(nPixels).divide(sumWeights)
-    return (centered.arrayFlatten([bandNames]), covw)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        geometry = image.geometry()
+        bandNames = image.bandNames()
+        N = bandNames.length()
+        if weights is None:
+            weights = image.constant(1)
+        weightsImage = image.multiply(ee.Image.constant(0)).add(weights)
+        means = image.addBands(weightsImage) \
+                    .reduceRegion(ee.Reducer.mean().repeat(N).splitWeights(),
+                                scale = scale,
+                                maxPixels = maxPixels) \
+                    .toArray() \
+                    .project([1])
+        centered = image.toArray().subtract(means)
+        B1 = centered.bandNames().get(0)
+        b1 = weights.bandNames().get(0)
+        nPixels = ee.Number(centered.reduceRegion(ee.Reducer.count(),
+                                                scale = scale,
+                                                maxPixels = maxPixels).get(B1))
+        sumWeights = ee.Number(weights.reduceRegion(ee.Reducer.sum(),
+                                                    geometry = geometry,
+                                                    scale = scale,
+                                                    maxPixels = maxPixels).get(b1))
+        covw = centered.multiply(weights.sqrt()) \
+                    .toArray() \
+                    .reduceRegion(ee.Reducer.centeredCovariance(),
+                                    geometry = geometry,
+                                    scale = scale,
+                                    maxPixels = maxPixels) \
+                    .get('array')
+        covw = ee.Array(covw).multiply(nPixels).divide(sumWeights)
+        return (centered.arrayFlatten([bandNames]), covw)
+    except Exception as e:
+        print('Error: %s'%e)
 
 ```
 
@@ -219,12 +219,12 @@ The second routine, called _corr()_ , transforms a covariance matrix to the equi
 ```
 defcorr(cov):
 '''Transform covariance matrix to correlation matrix'''
-  # diagonal matrix of inverse sigmas
-  sInv = cov.matrixDiagonal().sqrt().matrixToDiag().matrixInverse()
-  # transform
-  corr = sInv.matrixMultiply(cov).matrixMultiply(sInv).getInfo()
-  # truncate
-  return [list(map(trunc, corr[i])) for i in range(len(corr))]
+    # diagonal matrix of inverse sigmas
+    sInv = cov.matrixDiagonal().sqrt().matrixToDiag().matrixInverse()
+    # transform
+    corr = sInv.matrixMultiply(cov).matrixMultiply(sInv).getInfo()
+    # truncate
+    return [list(map(trunc, corr[i])) for i in range(len(corr))]
 
 ```
 
@@ -236,41 +236,41 @@ pprint(corr(cov))
 ```
 ```
 [[np.float64(1.0),
- np.float64(0.952),
- np.float64(0.949),
- np.float64(0.063),
- np.float64(0.647),
- np.float64(0.79)],
+  np.float64(0.952),
+  np.float64(0.949),
+  np.float64(0.063),
+  np.float64(0.647),
+  np.float64(0.79)],
  [np.float64(0.952),
- np.float64(0.999),
- np.float64(0.927),
- np.float64(0.291),
- np.float64(0.772),
- np.float64(0.847)],
+  np.float64(0.999),
+  np.float64(0.927),
+  np.float64(0.291),
+  np.float64(0.772),
+  np.float64(0.847)],
  [np.float64(0.949),
- np.float64(0.927),
- np.float64(0.999),
- np.float64(0.008),
- np.float64(0.74),
- np.float64(0.893)],
+  np.float64(0.927),
+  np.float64(0.999),
+  np.float64(0.008),
+  np.float64(0.74),
+  np.float64(0.893)],
  [np.float64(0.063),
- np.float64(0.291),
- np.float64(0.008),
- np.float64(1.0),
- np.float64(0.486),
- np.float64(0.22)],
+  np.float64(0.291),
+  np.float64(0.008),
+  np.float64(1.0),
+  np.float64(0.486),
+  np.float64(0.22)],
  [np.float64(0.647),
- np.float64(0.772),
- np.float64(0.74),
- np.float64(0.486),
- np.float64(1.0),
- np.float64(0.933)],
+  np.float64(0.772),
+  np.float64(0.74),
+  np.float64(0.486),
+  np.float64(1.0),
+  np.float64(0.933)],
  [np.float64(0.79),
- np.float64(0.847),
- np.float64(0.893),
- np.float64(0.22),
- np.float64(0.933),
- np.float64(1.0)]]
+  np.float64(0.847),
+  np.float64(0.893),
+  np.float64(0.22),
+  np.float64(0.933),
+  np.float64(1.0)]]
 
 ```
 
@@ -294,28 +294,28 @@ It is these between image correlations that the MAD algorithm tries to maximize.
 The third and last auxiliary routine, _geneiv()_ , is the core of CCA and the MAD transformation. It solves the _generalized eigenproblem_ ,
 $$ CX = \lambda BX $$
 for two \\(N\times N\\) matrices \\(C\\) and \\(B\\), returning the \\(N\\) solutions, or eigenvectors, \\(X_i\\) and the \\(N\\) eigenvalues \\(\lambda_i, \ i=1\dots N\\).
-Toggle code ```
+Toggle code```
 defgeneiv(C,B):
 '''Return the eigenvalues and eigenvectors of the generalized eigenproblem
-             C*X = lambda*B*X'''
-  try:
-    C = ee.Array(C)
-    B = ee.Array(B)
-    # Li = choldc(B)^-1
-    Li = ee.Array(B.matrixCholeskyDecomposition().get('L')).matrixInverse()
-    # solve symmetric, ordinary eigenproblem Li*C*Li^T*x = lambda*x
-    Xa = Li.matrixMultiply(C) \
-      .matrixMultiply(Li.matrixTranspose()) \
-      .eigen()
-    # eigenvalues as a row vector
-    lambdas = Xa.slice(1, 0, 1).matrixTranspose()
-    # eigenvectors as columns
-    X = Xa.slice(1, 1).matrixTranspose()
-    # generalized eigenvectors as columns, Li^T*X
-    eigenvecs = Li.matrixTranspose().matrixMultiply(X)
-    return (lambdas, eigenvecs)
-  except Exception as e:
-    print('Error: %s'%e)
+                         C*X = lambda*B*X'''
+    try:
+        C = ee.Array(C)
+        B = ee.Array(B)
+        #  Li = choldc(B)^-1
+        Li = ee.Array(B.matrixCholeskyDecomposition().get('L')).matrixInverse()
+        #  solve symmetric, ordinary eigenproblem Li*C*Li^T*x = lambda*x
+        Xa = Li.matrixMultiply(C) \
+            .matrixMultiply(Li.matrixTranspose()) \
+            .eigen()
+        #  eigenvalues as a row vector
+        lambdas = Xa.slice(1, 0, 1).matrixTranspose()
+        #  eigenvectors as columns
+        X = Xa.slice(1, 1).matrixTranspose()
+        #  generalized eigenvectors as columns, Li^T*X
+        eigenvecs = Li.matrixTranspose().matrixMultiply(X)
+        return (lambdas, eigenvecs)
+    except Exception as e:
+        print('Error: %s'%e)
 
 ```
 
@@ -326,62 +326,62 @@ $$ M_i = U_i - V_i, \quad i=1\dots N, $$
 as well as the sum of the squares of the standardized MAD variates,
 $$ Z = \sum_{i=1}^N\left({M_i\over \sigma_{M_i}}\right)^2. $$
 ### The MAD transformation
-Toggle code ```
+Toggle code```
 defmad_run(image1, image2, scale = 20):
 '''The MAD transformation of two multiband images'''
-  try:
-    image = image1.addBands(image2)
-    region = image.geometry()
-    nBands = image.bandNames().length().divide(2)
-    centeredImage,covarArray = covarw(image,scale=scale)
-    bNames = centeredImage.bandNames()
-    bNames1 = bNames.slice(0,nBands)
-    bNames2 = bNames.slice(nBands)
-    centeredImage1 = centeredImage.select(bNames1)
-    centeredImage2 = centeredImage.select(bNames2)
-    s11 = covarArray.slice(0,0,nBands).slice(1,0,nBands)
-    s22 = covarArray.slice(0,nBands).slice(1,nBands)
-    s12 = covarArray.slice(0,0,nBands).slice(1,nBands)
-    s21 = covarArray.slice(0,nBands).slice(1,0,nBands)
-    c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
-    b1 = s11
-    c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
-    b2 = s22
-    # solution of generalized eigenproblems
-    lambdas, A = geneiv(c1,b1)
-    _,    B = geneiv(c2,b2)
-    rhos = lambdas.sqrt().project(ee.List([1]))
-    # MAD variances
-    sigma2s = rhos.subtract(1).multiply(-2).toList()
-    sigma2s = ee.Image.constant(sigma2s)
-    # ensure sum of correlations between X and U is positive
-    tmp = s11.matrixDiagonal().sqrt()
-    ones = tmp.multiply(0).add(1)
-    tmp = ones.divide(tmp).matrixToDiag()
-    s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(),[0]).transpose()
-    A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
-    # ensure positive correlation between U and V
-    tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
-    tmp = tmp.divide(tmp.abs()).matrixToDiag()
-    B = B.matrixMultiply(tmp)
-    # canonical and MAD variates
-    centeredImage1Array = centeredImage1.toArray().toArray(1)
-    centeredImage2Array = centeredImage2.toArray().toArray(1)
-    U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames2])
-    V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
-          .arrayProject([0]) \
-          .arrayFlatten([bNames2])
-    MAD = U.subtract(V)
-    # chi square image
-    Z = MAD.pow(2) \
-        .divide(sigma2s) \
-        .reduce(ee.Reducer.sum()) \
-        .clip(region)
-    return (U, V, MAD, Z)
-  except Exception as e:
-    print('Error: %s'%e)
+    try:
+        image = image1.addBands(image2)
+        region = image.geometry()
+        nBands = image.bandNames().length().divide(2)
+        centeredImage,covarArray = covarw(image,scale=scale)
+        bNames = centeredImage.bandNames()
+        bNames1 = bNames.slice(0,nBands)
+        bNames2 = bNames.slice(nBands)
+        centeredImage1 = centeredImage.select(bNames1)
+        centeredImage2 = centeredImage.select(bNames2)
+        s11 = covarArray.slice(0,0,nBands).slice(1,0,nBands)
+        s22 = covarArray.slice(0,nBands).slice(1,nBands)
+        s12 = covarArray.slice(0,0,nBands).slice(1,nBands)
+        s21 = covarArray.slice(0,nBands).slice(1,0,nBands)
+        c1 = s12.matrixMultiply(s22.matrixInverse()).matrixMultiply(s21)
+        b1 = s11
+        c2 = s21.matrixMultiply(s11.matrixInverse()).matrixMultiply(s12)
+        b2 = s22
+        # solution of generalized eigenproblems
+        lambdas, A = geneiv(c1,b1)
+        _,       B = geneiv(c2,b2)
+        rhos = lambdas.sqrt().project(ee.List([1]))
+        # MAD variances
+        sigma2s = rhos.subtract(1).multiply(-2).toList()
+        sigma2s = ee.Image.constant(sigma2s)
+        # ensure sum of correlations between X and U is positive
+        tmp = s11.matrixDiagonal().sqrt()
+        ones = tmp.multiply(0).add(1)
+        tmp = ones.divide(tmp).matrixToDiag()
+        s = tmp.matrixMultiply(s11).matrixMultiply(A).reduce(ee.Reducer.sum(),[0]).transpose()
+        A = A.matrixMultiply(s.divide(s.abs()).matrixToDiag())
+        # ensure positive correlation between U and V
+        tmp = A.transpose().matrixMultiply(s12).matrixMultiply(B).matrixDiagonal()
+        tmp = tmp.divide(tmp.abs()).matrixToDiag()
+        B = B.matrixMultiply(tmp)
+        # canonical and MAD variates
+        centeredImage1Array = centeredImage1.toArray().toArray(1)
+        centeredImage2Array = centeredImage2.toArray().toArray(1)
+        U = ee.Image(A.transpose()).matrixMultiply(centeredImage1Array) \
+                    .arrayProject([0]) \
+                    .arrayFlatten([bNames2])
+        V = ee.Image(B.transpose()).matrixMultiply(centeredImage2Array) \
+                    .arrayProject([0]) \
+                    .arrayFlatten([bNames2])
+        MAD = U.subtract(V)
+        #  chi square image
+        Z = MAD.pow(2) \
+                .divide(sigma2s) \
+                .reduce(ee.Reducer.sum()) \
+                .clip(region)
+        return (U, V, MAD, Z)
+    except Exception as e:
+        print('Error: %s'%e)
 
 ```
 
@@ -399,6 +399,7 @@ display_ls(im1.select(visbands), M2, 'Image 1')
 display_ls(im2.select(visbands), M2, 'Image 2')
 display_ls(diff, M2, 'Difference')
 display_ls(MAD.select(0, 1, 2), M2, 'MAD Image', True)
+
 M2
 
 ```
@@ -418,30 +419,30 @@ print('rho =', np.diag(correl[:6,6:]))
 
 ```
 ```
-array([[ 1.  , 0.001, -0.  , 0.  , -0.  , 0.  , 0.923, 0.  ,
-    -0.  , 0.  , -0.  , -0.  ],
-    [ 0.001, 0.999, 0.  , 0.  , -0.  , -0.  , 0.  , 0.864,
-     0.  , 0.  , -0.  , -0.  ],
-    [-0.  , 0.  , 1.  , 0.  , 0.  , -0.  , -0.  , 0.  ,
-     0.707, -0.  , 0.  , -0.  ],
-    [ 0.  , 0.  , 0.  , 1.  , 0.  , 0.  , 0.  , 0.  ,
-    -0.  , 0.642, 0.  , 0.  ],
-    [-0.  , -0.  , 0.  , 0.  , 1.  , 0.  , -0.  , -0.  ,
-     0.  , 0.  , 0.536, 0.  ],
-    [ 0.  , -0.  , -0.  , 0.  , 0.  , 0.999, -0.  , -0.  ,
-    -0.  , 0.  , 0.  , 0.369],
-    [ 0.923, 0.  , -0.  , 0.  , -0.  , -0.  , 1.  , 0.  ,
-    -0.  , 0.  , -0.  , -0.  ],
-    [ 0.  , 0.864, 0.  , 0.  , -0.  , -0.  , 0.  , 0.999,
-     0.  , 0.  , -0.  , -0.  ],
-    [-0.  , 0.  , 0.707, -0.  , 0.  , -0.  , -0.  , 0.  ,
-     1.  , -0.  , 0.  , -0.  ],
-    [ 0.  , 0.  , -0.  , 0.642, 0.  , 0.  , 0.  , 0.  ,
-    -0.  , 1.  , 0.  , 0.  ],
-    [-0.  , -0.  , 0.  , 0.  , 0.536, 0.  , -0.  , -0.  ,
-     0.  , 0.  , 0.999, 0.  ],
-    [-0.  , -0.  , -0.  , 0.  , 0.  , 0.369, -0.  , -0.  ,
-    -0.  , 0.  , 0.  , 1.  ]])
+array([[ 1.   ,  0.001, -0.   ,  0.   , -0.   ,  0.   ,  0.923,  0.   ,
+        -0.   ,  0.   , -0.   , -0.   ],
+       [ 0.001,  0.999,  0.   ,  0.   , -0.   , -0.   ,  0.   ,  0.864,
+         0.   ,  0.   , -0.   , -0.   ],
+       [-0.   ,  0.   ,  1.   ,  0.   ,  0.   , -0.   , -0.   ,  0.   ,
+         0.707, -0.   ,  0.   , -0.   ],
+       [ 0.   ,  0.   ,  0.   ,  1.   ,  0.   ,  0.   ,  0.   ,  0.   ,
+        -0.   ,  0.642,  0.   ,  0.   ],
+       [-0.   , -0.   ,  0.   ,  0.   ,  0.999,  0.   , -0.   , -0.   ,
+         0.   ,  0.   ,  0.536,  0.   ],
+       [ 0.   , -0.   , -0.   ,  0.   ,  0.   ,  1.   , -0.   , -0.   ,
+        -0.   ,  0.   ,  0.   ,  0.369],
+       [ 0.923,  0.   , -0.   ,  0.   , -0.   , -0.   ,  1.   ,  0.   ,
+        -0.   ,  0.   , -0.   , -0.   ],
+       [ 0.   ,  0.864,  0.   ,  0.   , -0.   , -0.   ,  0.   ,  0.999,
+         0.   ,  0.   , -0.   , -0.   ],
+       [-0.   ,  0.   ,  0.707, -0.   ,  0.   , -0.   , -0.   ,  0.   ,
+         1.   , -0.   ,  0.   , -0.   ],
+       [ 0.   ,  0.   , -0.   ,  0.642,  0.   ,  0.   ,  0.   ,  0.   ,
+        -0.   ,  1.   ,  0.   ,  0.   ],
+       [-0.   , -0.   ,  0.   ,  0.   ,  0.536,  0.   , -0.   , -0.   ,
+         0.   ,  0.   ,  0.999,  0.   ],
+       [-0.   , -0.   , -0.   ,  0.   ,  0.   ,  0.369, -0.   , -0.   ,
+        -0.   ,  0.   ,  0.   ,  1.   ]])
 rho = [0.923 0.864 0.707 0.642 0.536 0.369]
 
 ```
@@ -460,41 +461,41 @@ covar = covar.getInfo()
 ```
 ```
 [[np.float64(0.079),
- np.float64(0.0),
- np.float64(-0.0),
- np.float64(0.0),
- np.float64(0.0),
- np.float64(0.0)],
+  np.float64(0.0),
+  np.float64(-0.0),
+  np.float64(0.0),
+  np.float64(0.0),
+  np.float64(0.0)],
  [np.float64(0.0),
- np.float64(0.14),
- np.float64(0.0),
- np.float64(-0.0),
- np.float64(-0.0),
- np.float64(0.0)],
+  np.float64(0.14),
+  np.float64(0.0),
+  np.float64(-0.0),
+  np.float64(-0.0),
+  np.float64(0.0)],
  [np.float64(-0.0),
- np.float64(0.0),
- np.float64(0.304),
- np.float64(0.0),
- np.float64(-0.0),
- np.float64(-0.0)],
+  np.float64(0.0),
+  np.float64(0.304),
+  np.float64(0.0),
+  np.float64(-0.0),
+  np.float64(-0.0)],
  [np.float64(0.0),
- np.float64(-0.0),
- np.float64(0.0),
- np.float64(0.372),
- np.float64(0.0),
- np.float64(0.0)],
+  np.float64(-0.0),
+  np.float64(0.0),
+  np.float64(0.372),
+  np.float64(0.0),
+  np.float64(0.0)],
  [np.float64(0.0),
- np.float64(-0.0),
- np.float64(-0.0),
- np.float64(0.0),
- np.float64(0.482),
- np.float64(0.0)],
+  np.float64(-0.0),
+  np.float64(-0.0),
+  np.float64(0.0),
+  np.float64(0.482),
+  np.float64(0.0)],
  [np.float64(0.0),
- np.float64(0.0),
- np.float64(-0.0),
- np.float64(0.0),
- np.float64(0.0),
- np.float64(0.657)]]
+  np.float64(0.0),
+  np.float64(-0.0),
+  np.float64(0.0),
+  np.float64(0.0),
+  np.float64(0.657)]]
 
 ```
 

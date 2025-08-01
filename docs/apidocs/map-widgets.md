@@ -1,7 +1,7 @@
  
 #  Map.widgets
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the list of the widgets currently on the map. Usage| Returns  
+Usage | Returns  
 ---|---  
-`Map.widgets()`| ui.data.ActiveList  
+`Map.widgets()` | ui.data.ActiveList<ui.Widget>  
 **No arguments.**

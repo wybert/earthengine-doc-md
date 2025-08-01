@@ -6,8 +6,8 @@ JSON representation
 ---  
 ```
 {
- "width": integer,
- "height": integer
+  "width": integer,
+  "height": integer
 }
 ```
   

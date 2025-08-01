@@ -1,6 +1,6 @@
  
 #  Method: projects.assets.copy
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/copy#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets/copy#path-parameters)
@@ -26,8 +26,8 @@ JSON representation
 ---  
 ```
 {
- "destinationName": string,
- "overwrite": boolean
+  "destinationName": string,
+  "overwrite": boolean
 }
 ```
   
@@ -43,7 +43,7 @@ If successful, the response body contains an instance of `EarthEngineAsset[](htt
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

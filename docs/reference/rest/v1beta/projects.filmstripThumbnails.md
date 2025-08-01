@@ -15,15 +15,15 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "orientation": enum (Orientation[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#FilmstripThumbnail.Orientation)),
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "orientation": enum (Orientation[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.filmstripThumbnails#FilmstripThumbnail.Orientation)),
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
+  }
 }
 ```
   

@@ -6,7 +6,7 @@ Stay organized with collections  Save and categorize content based on your prefe
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools-region-reduction/index.md "View changes to this article over time.")
 Author(s): [ jdbcode ](https://github.com/jdbcode "View the profile for jdbcode on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-This tutorial demonstrates how to use the [drawing tools API](https://developers.google.com/earth-engine/ui_widgets#ui.map.drawingtools) with a custom interface to make a simple [Earth Engine App](https://developers.google.com/earth-engine/apps) that charts an NDVI time series for a user-drawn geometry. The app provides options for drawing a rectangle, polygon, or point. It listens for when a user draws a geometry and displays a chart of mean NDVI for pixels intersecting the drawn geometry. 
+This tutorial demonstrates how to use the [drawing tools API](https://developers.google.com/earth-engine/ui_widgets#ui.map.drawingtools) with a custom interface to make a simple [Earth Engine App](https://developers.google.com/earth-engine/apps) that charts an NDVI time series for a user-drawn geometry. The app provides options for drawing a rectangle, polygon, or point. It listens for when a user draws a geometry and displays a chart of mean NDVI for pixels intersecting the drawn geometry.
 ![](https://developers.google.com/static/earth-engine/tutorials/community/drawing-tools-region-reduction/app-img.jpg) _The Earth Engine App resulting from this tutorial. Shown is an NDVI time series chart for the drawn polygon around Carmel Valley, California._
 ## Functionality
 The app has two main functions: 1) allow a user to draw a geometry and; 2) render a region reduction time series chart for the drawn geometry. Clicking a "draw" button will allow a user to draw a geometry, and once the drawing is complete, the chart will render. These two events (button click to draw and drawing finished) need associated functions to complete the event-callback cycle.
@@ -37,6 +37,7 @@ drawingTools.layers().remove(layer);
 ```
 vardummyGeometry=
 ui.Map.GeometryLayer({geometries:null,name:'geometry',color:'23cba7'});
+
 drawingTools.layers().add(dummyGeometry);
 
 ```
@@ -61,11 +62,13 @@ clearGeometry();
 drawingTools.setShape('rectangle');
 drawingTools.draw();
 }
+
 functiondrawPolygon(){
 clearGeometry();
 drawingTools.setShape('polygon');
 drawingTools.draw();
 }
+
 functiondrawPoint(){
 clearGeometry();
 drawingTools.setShape('point');
@@ -97,13 +100,17 @@ functionchartNdviTimeSeries(){
 if(!chartPanel.style().get('shown')){
 chartPanel.style().set('shown',true);
 }
+
 // Get the drawn geometry; it will define the reduction region.
 varaoi=drawingTools.layers().get(0).getEeObject();
+
 // Set the drawing mode back to null; turns drawing off.
 drawingTools.setShape(null);
+
 // Reduction scale is based on map scale to avoid memory/timeout errors.
 varmapScale=Map.getScale();
 varscale=mapScale > 5000?mapScale*2:5000;
+
 // Chart NDVI time series for the selected area of interest.
 varchart=ui.Chart.image
 .seriesByRegion({
@@ -121,6 +128,7 @@ hAxis:{title:'Date'},
 vAxis:{title:'NDVI (x1e4)'},
 series:{0:{color:'23cba7'}}
 });
+
 // Replace the existing chart in the chart panel with the new chart.
 chartPanel.widgets().reset([chart]);
 }

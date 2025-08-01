@@ -1,30 +1,31 @@
  
 #  ee.Algorithms.If
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#examples)
 
 
-Selects one of its inputs based on a condition, similar to an if-then-else construct. 
-Usage| Returns  
+Selects one of its inputs based on a condition, similar to an if-then-else construct.
+Usage | Returns  
 ---|---  
-`ee.Algorithms.If( _condition_, _trueCase_, _falseCase_)`| Object  
-Argument| Type| Details  
+`ee.Algorithms.If(_condition_, _trueCase_, _falseCase_)`|  Object  
+Argument | Type | Details  
 ---|---|---  
-`condition`| Object, default: null| The condition that determines which result is returned. If this is not a boolean, it is interpreted as a boolean by the following rules: 
+`condition` | Object, default: null | The condition that determines which result is returned. If this is not a boolean, it is interpreted as a boolean by the following rules: 
   * Numbers that are equal to 0 or a NaN are false.
   * Empty strings, lists and dictionaries are false.
   * Null is false.
   * Everything else is true.
 
   
-`trueCase`| Object, default: null| The result to return if the condition is true.  
-`falseCase`| Object, default: null| The result to return if the condition is false.  
+`trueCase` | Object, default: null | The result to return if the condition is true.  
+`falseCase` | Object, default: null | The result to return if the condition is false.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-algorithms-if#colab-python-sample) More
 ```
 print(ee.Algorithms.If(false,'*true*','*false*'));// The string "*false*"
 print(ee.Algorithms.If(true,'*true*','*false*'));// The string "*true*"
+
 // Consider using remap rather than If for tasks like numbers for classes.
 print(ee.Algorithms.If(ee.String('Tree').compareTo('Tree'),0,1));
 print(ee.Algorithms.If(ee.String('NotTree').compareTo('Tree'),0,1));
@@ -38,8 +39,10 @@ importgeemap.coreasgeemap
 ```
 # The string "*false*"
 print(ee.Algorithms.If(False, '*true*', '*false*').getInfo())
+
 # The string "*true*"
 print(ee.Algorithms.If(True, '*true*', '*false*').getInfo())
+
 # Consider using remap rather than If for tasks like numbers for classes.
 print(ee.Algorithms.If(ee.String('Tree').compareTo('Tree'), 0, 1).getInfo())
 print(ee.Algorithms.If(ee.String('NotTree').compareTo('Tree'), 0, 1).getInfo())

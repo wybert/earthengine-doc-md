@@ -1,12 +1,12 @@
  
 #  ui.Panel.remove
-Stay organized with collections  Save and categorize content based on your preferences. 
-Removes the given widget from the panel, if it exists. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 Returns whether the widget was successfully removed.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Panel.remove(widget)`| Boolean  
-Argument| Type| Details  
+`Panel.remove(widget)` | Boolean  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.panel`| ui.Panel| The ui.Panel instance.  
-`widget`| ui.Widget| The widget to remove.  
+this: `ui.panel` | ui.Panel | The ui.Panel instance.  
+`widget` | ui.Widget | The widget to remove.  
+Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Water Occurrence (1984-2015)
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 The GSW dataset contains many data layers that present the surface water data in different ways. We will start by visualizing the water occurrence layer, which provides a summary of where and how often surface water occurred over the entire time-period between March 1984 and October 2015. 
 This section of the tutorial will:
   1. add a map layer for visualizing surface water occurrence,
@@ -95,15 +95,15 @@ It is fun to explore the world by panning and zooming around, but the world is l
 ### Code Editor (JavaScript)
 ```
 // Uncomment one of the following statements to center the map.
-// Map.setCenter(-90.162, 29.8597, 10);  // New Orleans, USA
+// Map.setCenter(-90.162, 29.8597, 10);   // New Orleans, USA
 // Map.setCenter(-114.9774, 31.9254, 10); // Mouth of the Colorado River, Mexico
 // Map.setCenter(-111.1871, 37.0963, 11); // Lake Powell, USA
-// Map.setCenter(149.412, -35.0789, 11); // Lake George, Australia
-// Map.setCenter(105.26, 11.2134, 9);   // Mekong River Basin, SouthEast Asia
-// Map.setCenter(90.6743, 22.7382, 10);  // Meghna River, Bangladesh
-// Map.setCenter(81.2714, 16.5079, 11);  // Godavari River Basin Irrigation Project, India
-// Map.setCenter(14.7035, 52.0985, 12);  // River Oder, Germany & Poland
-// Map.setCenter(-59.1696, -33.8111, 9); // Buenos Aires, Argentina
+// Map.setCenter(149.412, -35.0789, 11);  // Lake George, Australia
+// Map.setCenter(105.26, 11.2134, 9);     // Mekong River Basin, SouthEast Asia
+// Map.setCenter(90.6743, 22.7382, 10);   // Meghna River, Bangladesh
+// Map.setCenter(81.2714, 16.5079, 11);   // Godavari River Basin Irrigation Project, India
+// Map.setCenter(14.7035, 52.0985, 12);   // River Oder, Germany & Poland
+// Map.setCenter(-59.1696, -33.8111, 9);  // Buenos Aires, Argentina
 Map.setCenter(-74.4557,-8.4289,11);// Ucayali River, Peru
 ```
 
@@ -116,11 +116,14 @@ Here is the final refactored script:
 //////////////////////////////////////////////////////////////
 // Asset List
 //////////////////////////////////////////////////////////////
+
 vargsw=ee.Image('JRC/GSW1_0/GlobalSurfaceWater');
 varoccurrence=gsw.select('occurrence');
+
 //////////////////////////////////////////////////////////////
 // Constants
 //////////////////////////////////////////////////////////////
+
 varVIS_OCCURRENCE={
 min:0,
 max:100,
@@ -129,29 +132,35 @@ palette:['red','blue']
 varVIS_WATER_MASK={
 palette:['white','black']
 };
+
 //////////////////////////////////////////////////////////////
 // Calculations
 //////////////////////////////////////////////////////////////
+
 // Create a water mask layer, and set the image mask so that non-water areas
 // are opaque.
 varwater_mask=occurrence.gt(90).unmask(0);
+
 //////////////////////////////////////////////////////////////
 // Initialize Map Location
 //////////////////////////////////////////////////////////////
+
 // Uncomment one of the following statements to center the map.
-// Map.setCenter(-90.162, 29.8597, 10);  // New Orleans, USA
+// Map.setCenter(-90.162, 29.8597, 10);   // New Orleans, USA
 // Map.setCenter(-114.9774, 31.9254, 10); // Mouth of the Colorado River, Mexico
 // Map.setCenter(-111.1871, 37.0963, 11); // Lake Powell, USA
-// Map.setCenter(149.412, -35.0789, 11); // Lake George, Australia
-// Map.setCenter(105.26, 11.2134, 9);   // Mekong River Basin, SouthEast Asia
-// Map.setCenter(90.6743, 22.7382, 10);  // Meghna River, Bangladesh
-// Map.setCenter(81.2714, 16.5079, 11);  // Godavari River Basin Irrigation Project, India
-// Map.setCenter(14.7035, 52.0985, 12);  // River Oder, Germany & Poland
-// Map.setCenter(-59.1696, -33.8111, 9); // Buenos Aires, Argentina
+// Map.setCenter(149.412, -35.0789, 11);  // Lake George, Australia
+// Map.setCenter(105.26, 11.2134, 9);     // Mekong River Basin, SouthEast Asia
+// Map.setCenter(90.6743, 22.7382, 10);   // Meghna River, Bangladesh
+// Map.setCenter(81.2714, 16.5079, 11);   // Godavari River Basin Irrigation Project, India
+// Map.setCenter(14.7035, 52.0985, 12);   // River Oder, Germany & Poland
+// Map.setCenter(-59.1696, -33.8111, 9);  // Buenos Aires, Argentina
 Map.setCenter(-74.4557,-8.4289,11);// Ucayali River, Peru
+
 //////////////////////////////////////////////////////////////
 // Map Layers
 //////////////////////////////////////////////////////////////
+
 Map.addLayer({
 eeObject:water_mask,
 visParams:VIS_WATER_MASK,

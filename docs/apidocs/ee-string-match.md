@@ -5,15 +5,15 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-match#examples)
 
 
-Matches a string against a regular expression. Returns a list of matching strings. 
-Usage| Returns  
+Matches a string against a regular expression. Returns a list of matching strings.
+Usage | Returns  
 ---|---  
-`String.match(regex,  _flags_)`| List  
-Argument| Type| Details  
+`String.match(regex, _flags_)`|  List  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| String| The string in which to search.  
-`regex`| String| The regular expression to match.  
-`flags`| String, default: ""| A string specifying a combination of regular expression flags, specifically one or more of: 'g' (global match) or 'i' (ignore case).  
+this: `input` | String | The string in which to search.  
+`regex` | String | The regular expression to match.  
+`flags` | String, default: "" | A string specifying a combination of regular expression flags, specifically one or more of: 'g' (global match) or 'i' (ignore case).  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-match#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-match#colab-python-sample) More
 ```
@@ -24,6 +24,7 @@ print(s.match('ab','i'));// AB
 print(s.match('AB','ig'));// ["AB","ab"]
 print(s.match('[a-z]+[0-9]+'));// "abc123"
 print(s.match('\\d{2}'));// "12"
+
 // Use [^] to match any character except a digit.
 print(s.match('abc[^0-9]','i'));// ["ABCa"]
 ```
@@ -35,13 +36,15 @@ importgeemap.coreasgeemap
 ```
 ```
 s = ee.String('ABCabc123')
-print(s.match('').getInfo()) # ""
-print(s.match('ab', 'g').getInfo()) # ab
-print(s.match('ab', 'i').getInfo()) # AB
-print(s.match('AB', 'ig').getInfo()) # ['AB','ab']
-print(s.match('[a-z]+[0-9]+').getInfo()) # 'abc123'
-print(s.match('\\d{2}').getInfo()) # '12'
+print(s.match('').getInfo())  # ""
+print(s.match('ab', 'g').getInfo())  # ab
+print(s.match('ab', 'i').getInfo())  # AB
+print(s.match('AB', 'ig').getInfo())  # ['AB','ab']
+print(s.match('[a-z]+[0-9]+').getInfo())  # 'abc123'
+print(s.match('\\d{2}').getInfo())  # '12'
+
 # Use [^] to match any character except a digit.
-print(s.match('abc[^0-9]', 'i').getInfo()) # ['ABCa']
+print(s.match('abc[^0-9]', 'i').getInfo())  # ['ABCa']
 ```
 
+Was this helpful?

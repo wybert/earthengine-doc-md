@@ -27,25 +27,26 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "description": string,
- "maxPixels": string,
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
- },
- "requestId": string,
- "workloadTag": string,
- "priority": integer,
- // Union field export_options can be only one of the following:
- "fileExportOptions": {
-  object (ImageFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileExportOptions))
- },
- "assetExportOptions": {
-  object (ImageAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/export#ImageAssetExportOptions))
- }
- // End of list of possible types for union field export_options.
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "description": string,
+  "maxPixels": string,
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
+  },
+  "requestId": string,
+  "workloadTag": string,
+  "priority": integer,
+
+  // Union field export_options can be only one of the following:
+  "fileExportOptions": {
+    object (ImageFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileExportOptions))
+  },
+  "assetExportOptions": {
+    object (ImageAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/export#ImageAssetExportOptions))
+  }
+  // End of list of possible types for union field export_options.
 }
 ```
   
@@ -66,8 +67,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/devstorage.full_control`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/devstorage.full_control`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -77,23 +78,24 @@ JSON representation
 ---  
 ```
 {
- "pyramidingPolicy": enum (PyramidingPolicy),
- "pyramidingPolicyOverrides": {
-  string: enum (PyramidingPolicy),
-  ...
- },
- // Union field destination can be only one of the following:
- "earthEngineDestination": {
-  object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/EarthEngineDestination))
- }
- // End of list of possible types for union field destination.
+  "pyramidingPolicy": enum (PyramidingPolicy),
+  "pyramidingPolicyOverrides": {
+    string: enum (PyramidingPolicy),
+    ...
+  },
+
+  // Union field destination can be only one of the following:
+  "earthEngineDestination": {
+    object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/EarthEngineDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
 Fields  
 ---  
 `pyramidingPolicy` |  `enum (`PyramidingPolicy`)` The pyramiding policy to apply by default to all bands.  
-`pyramidingPolicyOverrides` |  `map (key: string, value: enum (`PyramidingPolicy`))` Specific per-band pyramid policy overrides.An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
+`pyramidingPolicyOverrides` |  `map (key: string, value: enum (`PyramidingPolicy`))` Specific per-band pyramid policy overrides. An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `earthEngineDestination` |  `object (`EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/EarthEngineDestination)`)` If specified, configures export to Earth Engine.  
 Was this helpful?

@@ -13,17 +13,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/VisualizationOptions))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/VisualizationOptions))
+  }
 }
 ```
   
@@ -38,4 +38,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.maps/create)`
 |  Creates an ID that can be used to render map tiles showing the results of a computation.  
-Was this helpful?

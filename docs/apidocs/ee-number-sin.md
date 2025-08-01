@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-sin#examples)
 
 
-Computes the sine of the input in radians. 
-Usage| Returns  
+Computes the sine of the input in radians.
+Usage | Returns  
 ---|---  
-`Number.sin()`| Number  
-Argument| Type| Details  
+`Number.sin()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-sin#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-sin#colab-python-sample) More
 ```
@@ -19,6 +19,7 @@ this: `input`| Number| The input value.
 print('Sine of 0',ee.Number(0).sin());// 0
 print('Sine of π/2',ee.Number(Math.PI/2).sin());// 1
 print('Sine of 3π/2',ee.Number(3*Math.PI/2).sin());// -1
+
 // Convert degrees to radians.
 vardegrees=45;
 varradians=degrees*(Math.PI/180);
@@ -32,13 +33,16 @@ importgeemap.coreasgeemap
 ```
 ```
 importmath
+
 # Input angle in radians.
-print('Sine of 0:', ee.Number(0).sin().getInfo()) # 0
-print('Sine of π/2:', ee.Number(math.pi/2).sin().getInfo()) # 1
-print('Sine of 3π/2:', ee.Number(3*math.pi/2).sin().getInfo()) # -1
+print('Sine of 0:', ee.Number(0).sin().getInfo())  # 0
+print('Sine of π/2:', ee.Number(math.pi/2).sin().getInfo())  # 1
+print('Sine of 3π/2:', ee.Number(3*math.pi/2).sin().getInfo())  # -1
+
 # Convert degrees to radians.
 degrees = 45
 radians = degrees * (math.pi/180)
-print('Sine of 45 degrees:', ee.Number(radians).sin().getInfo()) # 0.707106781
+print('Sine of 45 degrees:', ee.Number(radians).sin().getInfo())  # 0.707106781
 ```
 
+Was this helpful?

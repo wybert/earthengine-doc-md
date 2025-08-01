@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-gamma#examples)
 
 
-Computes the gamma function of the input. 
-Usage| Returns  
+Computes the gamma function of the input.
+Usage | Returns  
 ---|---  
-`Number.gamma()`| Number  
-Argument| Type| Details  
+`Number.gamma()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-gamma#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-gamma#colab-python-sample) More
 ```
@@ -30,10 +30,11 @@ importgeemap.coreasgeemap
 ```
 ```
 # Values less than or equal to 0 are invalid.
-print('Gamma for 0.001:', ee.Number(0.001).gamma().getInfo()) # 999.423772484
-print('Gamma for 0.5:', ee.Number(0.5).gamma().getInfo()) # 1.772453850
-print('Gamma for 1:', ee.Number(1).gamma().getInfo()) # 1
-print('Gamma for 100:', ee.Number(100).gamma().getInfo()) # 9.332621544e+155
-print('Gamma for 200:', ee.Number(200).gamma().getInfo()) # Infinity
+print('Gamma for 0.001:', ee.Number(0.001).gamma().getInfo())  # 999.423772484
+print('Gamma for 0.5:', ee.Number(0.5).gamma().getInfo())  # 1.772453850
+print('Gamma for 1:', ee.Number(1).gamma().getInfo())  # 1
+print('Gamma for 100:', ee.Number(100).gamma().getInfo())  # 9.332621544e+155
+print('Gamma for 200:', ee.Number(200).gamma().getInfo())  # Infinity
 ```
 
+Was this helpful?

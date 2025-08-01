@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-sqrt#examples)
 
 
-Computes the square root of the input. 
-Usage| Returns  
+Computes the square root of the input.
+Usage | Returns  
 ---|---  
-`Number.sqrt()`| Number  
-Argument| Type| Details  
+`Number.sqrt()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-sqrt#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-sqrt#colab-python-sample) More
 ```
@@ -26,6 +26,6 @@ importgeemap.coreasgeemap
 ```
 ```
 # Values less than 0 are invalid.
-print('Square root of 100:', ee.Number(100).sqrt().getInfo()) # 10
+print('Square root of 100:', ee.Number(100).sqrt().getInfo())  # 10
 ```
 

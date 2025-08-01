@@ -1,6 +1,6 @@
  
 #  Introduction to Forest Change Analysis in Earth Engine
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ![global](https://developers.google.com/static/earth-engine/images/Tutorial_hansen_011.png) |  ![Indonesia](https://developers.google.com/static/earth-engine/images/Tutorial_hansen_012.png) |  ![Paraguay](https://developers.google.com/static/earth-engine/images/Tutorial_hansen_013.png) |  ![Legend](https://developers.google.com/static/earth-engine/images/Tutorial_hansen_014.png)  
 ---|---|---|---  
 Figure 1. Forest change estimated by Hansen et al. (2013). Global Change, 2000 - 2012 (left); Change in Riau, Indonesia, 2000 - 2012 (center); Change in Paraguay, 2000 - 2012 (right)

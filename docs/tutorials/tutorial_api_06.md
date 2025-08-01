@@ -8,8 +8,10 @@ Previously, you learned how to get individual Landsat scenes by doing something 
 // geometry and name it "point" or set the point coordinates with the
 // ee.Geometry.Point() function as demonstrated here.
 varpoint=ee.Geometry.Point([-122.292,37.9018]);
+
 // Import the Landsat 8 TOA image collection.
 varl8=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA');
+
 // Get the least cloudy image in 2015.
 varimage=ee.Image(
 l8.filterBounds(point)
@@ -26,6 +28,7 @@ Suppose now that you want to compute a Normalized Difference Vegetation Index (N
 varnir=image.select('B5');
 varred=image.select('B4');
 varndvi=nir.subtract(red).divide(nir.add(red)).rename('NDVI');
+
 // Display the result.
 Map.centerObject(image,9);
 varndviParams={min:-1,max:1,palette:['blue','white','green']};
@@ -48,6 +51,7 @@ varaddNDVI=function(image){
 varndvi=image.normalizedDifference(['B5','B4']).rename('NDVI');
 returnimage.addBands(ndvi);
 };
+
 // Test the addNDVI function on a single image.
 varndvi=addNDVI(image).select('NDVI');
 ```
@@ -65,6 +69,7 @@ Now that you've made an image collection in which each image has an NDVI band, w
 ```
 // Make a "greenest" pixel composite.
 vargreenest=withNDVI.qualityMosaic('NDVI');
+
 // Display the result.
 varvisParams={bands:['B4','B3','B2'],max:0.3};
 Map.addLayer(greenest,visParams,'Greenest pixel composite');

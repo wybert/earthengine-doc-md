@@ -5,14 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-evaluate#examples)
 
 
-Asynchronously retrieves the value of this object from the server and passes it to the provided callback function. 
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`FeatureCollection.evaluate(callback)`|   
-Argument| Type| Details  
+`FeatureCollection.evaluate(callback)` |   
+Argument | Type | Details  
 ---|---|---  
-this: `computedobject`| ComputedObject| The ComputedObject instance.  
-`callback`| Function| A function of the form function(success, failure), called when the server returns an answer. If the request succeeded, the success argument contains the evaluated result. If the request failed, the failure argument will contains an error message.  
+this: `computedobject` | ComputedObject | The ComputedObject instance.  
+`callback` | Function | A function of the form function(success, failure), called when the server returns an answer. If the request succeeded, the success argument contains the evaluated result. If the request failed, the failure argument will contains an error message.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-evaluate#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-evaluate#colab-python-sample) More
 ```
@@ -23,9 +22,11 @@ this: `computedobject`| ComputedObject| The ComputedObject instance.
  * Learn more about the distinction between server and client:
  * https://developers.google.com/earth-engine/guides/client_server
  */
+
 // FeatureCollection of power plants in Belgium.
 varfcServer=ee.FeatureCollection('WRI/GPPD/power_plants')
 .filter('country_lg == "Belgium"');
+
 fcServer.evaluate(function(fcClient){
 print('Client-side feature collection is an object',typeoffcClient);
 print('Feature collection object keys',Object.keys(fcClient));

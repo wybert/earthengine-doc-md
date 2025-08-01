@@ -1,15 +1,6 @@
  
 #  Method: projects.video.export
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#authorization-scopes)
-  * [VideoFileExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#videofileexportoptions)
-
-
 Initiates a batch process that computes a video and writes the result to one of several destinations.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/video:export`
@@ -27,19 +18,19 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "description": string,
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileExportOptions": {
-  object (VideoFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#VideoFileExportOptions))
- },
- "requestId": string,
- "workloadTag": string,
- "priority": integer
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "description": string,
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileExportOptions": {
+    object (VideoFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.video/export#VideoFileExportOptions))
+  },
+  "requestId": string,
+  "workloadTag": string,
+  "priority": integer
 }
 ```
   
@@ -57,8 +48,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/devstorage.full_control`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/devstorage.full_control`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -68,18 +59,19 @@ JSON representation
 ---  
 ```
 {
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- // Union field destination can be only one of the following:
- "driveDestination": {
-  object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/DriveDestination))
- },
- "cloudStorageDestination": {
-  object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/CloudStorageDestination))
- },
- "gcsDestination": {
-  object (GcsDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination))
- }
- // End of list of possible types for union field destination.
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+
+  // Union field destination can be only one of the following:
+  "driveDestination": {
+    object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/DriveDestination))
+  },
+  "cloudStorageDestination": {
+    object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/CloudStorageDestination))
+  },
+  "gcsDestination": {
+    object (GcsDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -89,4 +81,5 @@ Fields
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `driveDestination` |  `object (`DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/DriveDestination)`)` If specified, configures export to Google Drive.  
 `cloudStorageDestination` |  `object (`CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/CloudStorageDestination)`)` If specified, configures export to Google Cloud Storage.  
-`gcsDestination**(deprecated)**`|  `object (`GcsDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination)`)` This item is deprecated! If specified, configures export to Google Cloud Storage.  
+`gcsDestination  
+**(deprecated)**`|  `object (`GcsDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination)`)` This item is deprecated! If specified, configures export to Google Cloud Storage.  

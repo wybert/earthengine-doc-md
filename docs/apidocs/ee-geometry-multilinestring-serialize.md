@@ -1,14 +1,13 @@
  
 #  ee.Geometry.MultiLineString.serialize
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the serialized representation of this object. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Usage | Returns  
 ---|---  
-`MultiLineString.serialize( _legacy_)`| String  
-Argument| Type| Details  
+`MultiLineString.serialize(_legacy_)`|  String  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry| The Geometry instance.  
-`legacy`| Boolean, optional| Enables legacy format.  
+this: `geometry` | Geometry | The Geometry instance.  
+`legacy` | Boolean, optional | Enables legacy format.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
@@ -16,10 +15,13 @@ this: `geometry`| Geometry| The Geometry instance.
 varmultiLineString=ee.Geometry.MultiLineString(
 [[[-122.088,37.418],[-122.086,37.422],[-122.082,37.418]],
 [[-122.087,37.416],[-122.083,37.416],[-122.082,37.419]]]);
+
 // Apply the serialize method to the MultiLineString object.
 varmultiLineStringSerialize=multiLineString.serialize();
+
 // Print the result to the console.
 print('multiLineString.serialize(...) =',multiLineStringSerialize);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(multiLineString,
@@ -38,18 +40,21 @@ importgeemap.coreasgeemap
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
-  [[-122.088, 37.418], [-122.086, 37.422], [-122.082, 37.418]],
-  [[-122.087, 37.416], [-122.083, 37.416], [-122.082, 37.419]],
+    [[-122.088, 37.418], [-122.086, 37.422], [-122.082, 37.418]],
+    [[-122.087, 37.416], [-122.083, 37.416], [-122.082, 37.419]],
 ])
+
 # Apply the serialize method to the MultiLineString object.
 multilinestring_serialize = multilinestring.serialize()
+
 # Print the result.
 display('multilinestring.serialize(...) =', multilinestring_serialize)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)
 m.add_layer(
-  multilinestring, {'color': 'black'}, 'Geometry [black]: multilinestring'
+    multilinestring, {'color': 'black'}, 'Geometry [black]: multilinestring'
 )
 m
 ```

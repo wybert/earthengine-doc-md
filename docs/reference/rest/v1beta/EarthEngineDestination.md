@@ -6,7 +6,7 @@ JSON representation
 ---  
 ```
 {
- "name": string
+  "name": string
 }
 ```
   

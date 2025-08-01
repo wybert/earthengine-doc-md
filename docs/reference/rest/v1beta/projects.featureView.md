@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.featureView
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: FeatureView](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureView#resource:-featureview)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureView#methods)
@@ -13,13 +13,14 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "visualizationExpression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- // Union field source can be only one of the following:
- "asset": string
- // End of list of possible types for union field source.
+  "name": string,
+  "visualizationExpression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+
+  // Union field source can be only one of the following:
+  "asset": string
+  // End of list of possible types for union field source.
 }
 ```
   
@@ -33,4 +34,3 @@ Union field `source`. The source of this map's data. `source` can be only one of
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.featureView/create)`
 |  Create a FeatureView.  
-Was this helpful?

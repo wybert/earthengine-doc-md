@@ -1,29 +1,10 @@
  
 #  Introduction to Dynamic World (Part 1) - Visualization and Creating Composites
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#prerequisites)
-  * [Hello [Dynamic] World](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#hello_dynamic_world)
-    * [Using the NRT Image Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#using_the_nrt_image_collection)
-    * [Load a Sentinel-2 Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#load_a_sentinel-2_image)
-    * [Find the Matching Dynamic World Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#find_the_matching_dynamic_world_image)
-    * [Visualize the Classified Image](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_classified_image)
-    * [Create a Probability Hillshade Visualization](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_visualization)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary)
-  * [Creating Multi-Temporal Composites](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#creating_multi-temporal_composites)
-    * [Select a Region](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#select_a_region)
-    * [Filter the Dynamic World NRT Collection](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#filter_the_dynamic_world_nrt_collection)
-    * [Create a Mode Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_mode_composite)
-    * [Visualize the Annual Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#visualize_the_annual_composite)
-    * [Create a Probability Hillshade Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#create_a_probability_hillshade_composite)
-    * [Export the Composite](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#export_the_composite)
-    * [Summary](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-1#summary_2)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-1/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-1/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-1/index.md)
-Author(s): [ spatialthoughts ](https://github.com/spatialthoughts)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/introduction-to-dynamic-world-pt-1/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/introduction-to-dynamic-world-pt-1/index.md "View changes to this article over time.")
+Author(s): [ spatialthoughts ](https://github.com/spatialthoughts "View the profile for spatialthoughts on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 _This is part 1 of a 3-part tutorial, see also[part 2](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2) and [part 3](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-3)._
 Welcome to the Google Earth Engine tutorial for working with the Dynamic World (DW) dataset. The dataset contains near real-time (NRT) land use land cover (LULC) predictions created from Sentinel-2 imagery for nine land use land cover (LULC) classes as described in the table below.
@@ -132,6 +113,7 @@ palette:[
 '#C4281B','#A59B8F','#B39FE1'
 ]
 };
+
 Map.addLayer(classification,dwVisParams,'Classified Image');
 
 ```
@@ -146,7 +128,9 @@ varprobabilityBands=[
 'water','trees','grass','flooded_vegetation','crops','shrub_and_scrub',
 'built','bare','snow_and_ice'
 ];
+
 varprobabilityImage=dwImage.select(probabilityBands);
+
 // Create the image with the highest probability value at each pixel.
 vartop1Probability=probabilityImage.reduce(ee.Reducer.max());
 
@@ -156,6 +140,7 @@ The pixel values in the resulting image range from 0-1. The hillshade algorithm 
 ```
 // Convert the probability values to integers.
 vartop1Confidence=top1Probability.multiply(100).int();
+
 // Compute the hillshade.
 varhillshade=ee.Terrain.hillshade(top1Confidence).divide(255);
 
@@ -165,8 +150,10 @@ For the last step, we colorize the hillshade by multiplying the classification i
 ```
 // Colorize the classification image.
 varrgbImage=classification.visualize(dwVisParams).divide(255);
+
 // Colorize the hillshade.
 varprobabilityHillshade=rgbImage.multiply(hillshade);
+
 varhillshadeVisParams={min:0,max:0.8};
 Map.addLayer(probabilityHillshade,hillshadeVisParams,'Probability Hillshade');
 
@@ -197,6 +184,7 @@ Now we apply a date and bounds filter to select all images in the NRT collection
 ```
 varstartDate='2020-01-01';
 varendDate='2021-01-01';
+
 vardw=ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1')
 .filterDate(startDate,endDate)
 .filterBounds(geometry);
@@ -222,6 +210,7 @@ palette:[
 '#C4281B','#A59B8F','#B39FE1'
 ]
 };
+
 // Clip the composite and add it to the Map.
 Map.addLayer(dwComposite.clip(geometry),dwVisParams,'Classified Composite');
 
@@ -236,8 +225,10 @@ varprobabilityBands=[
 'water','trees','grass','flooded_vegetation','crops','shrub_and_scrub',
 'built','bare','snow_and_ice'
 ];
+
 // Select probability bands.
 varprobabilityCol=dw.select(probabilityBands);
+
 // Create an image with the average pixel-wise probability
 // of each class across the time-period.
 varmeanProbability=probabilityCol.reduce(ee.Reducer.mean());
@@ -290,6 +281,7 @@ Alternatively, if you wish to create a map using this composite or use it as a b
 ```
 // Top-1 Probability Hillshade Composite.
 varhillshadeComposite=probabilityHillshade.visualize(hillshadeVisParams);
+
 Export.image.toDrive({
 image:hillshadeComposite.clip(geometry),
 description:'2020_dw_composite_hillshade',
@@ -309,5 +301,5 @@ _Exported GeoTIFF Images Loaded in QGIS_
 You now know how to create temporally aggregated products from the Dynamic World NRT collection for a region of your choice and visualize them. This section also showed how you can download a GeoTIFF of the resulting composite using the `Export` function.
 The full script for this section can be accessed from this Code Editor link: <https://code.earthengine.google.com/35657f5dc56c19e8d957cd729138a327>
 In [Part 2](https://developers.google.com/earth-engine/tutorials/community/introduction-to-dynamic-world-pt-2) of this tutorial, we will learn how to calculate and summarize statistics of a region.
+* * *
 The data described in this tutorial were produced by Google, in partnership with the World Resources Institute and National Geographic Society and are provided under a CC-BY-4.0 Attribution license.
-Was this helpful?

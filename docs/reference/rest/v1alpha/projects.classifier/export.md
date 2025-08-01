@@ -1,15 +1,6 @@
  
 #  Method: projects.classifier.export
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#authorization-scopes)
-  * [ClassifierAssetExportOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#classifierassetexportoptions)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Initiates a batch process that computes a classifier and saves it as an Earth Engine asset.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/classifier:export`
@@ -27,16 +18,16 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "description": string,
- "requestId": string,
- "assetExportOptions": {
-  object (ClassifierAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#ClassifierAssetExportOptions))
- },
- "workloadTag": string,
- "priority": integer
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "description": string,
+  "requestId": string,
+  "assetExportOptions": {
+    object (ClassifierAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.classifier/export#ClassifierAssetExportOptions))
+  },
+  "workloadTag": string,
+  "priority": integer
 }
 ```
   
@@ -53,7 +44,7 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -63,11 +54,12 @@ JSON representation
 ---  
 ```
 {
- // Union field destination can be only one of the following:
- "earthEngineDestination": {
-  object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/EarthEngineDestination))
- }
- // End of list of possible types for union field destination.
+
+  // Union field destination can be only one of the following:
+  "earthEngineDestination": {
+    object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/EarthEngineDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -75,4 +67,3 @@ Fields
 ---  
 Union field `destination`. Where to write the results. `destination` can be only one of the following:  
 `earthEngineDestination` |  `object (`EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1alpha/EarthEngineDestination)`)` If specified, configures export to Earth Engine.  
-Was this helpful?

@@ -14,12 +14,15 @@ Map.addLayer(
 image,
 {bands:['B4','B3','B2'],min:0,max:0.25,gamma:[1.1,1.1,1]},
 'rgb');
+
 // Convert the RGB bands to the HSV color space.
 varhsv=image.select(['B4','B3','B2']).rgbToHsv();
+
 // Swap in the panchromatic band and convert back to RGB.
 varsharpened=ee.Image.cat([
 hsv.select('hue'),hsv.select('saturation'),image.select('B8')
 ]).hsvToRgb();
+
 // Display the pan-sharpened result.
 Map.setCenter(-122.44829,37.76664,13);
 Map.addLayer(sharpened,
@@ -38,29 +41,33 @@ importgeemap.coreasgeemap
 ```
 # Load a Landsat 8 top-of-atmosphere reflectance image.
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318')
+
 # Convert the RGB bands to the HSV color space.
 hsv = image.select(['B4', 'B3', 'B2']).rgbToHsv()
+
 # Swap in the panchromatic band and convert back to RGB.
 sharpened = ee.Image.cat(
-  [hsv.select('hue'), hsv.select('saturation'), image.select('B8')]
+    [hsv.select('hue'), hsv.select('saturation'), image.select('B8')]
 ).hsvToRgb()
+
 # Define a map centered on San Francisco, California.
 map_sharpened = geemap.Map(center=[37.76664, -122.44829], zoom=13)
+
 # Add the image layers to the map and display it.
 map_sharpened.add_layer(
-  image,
-  {
-    'bands': ['B4', 'B3', 'B2'],
-    'min': 0,
-    'max': 0.25,
-    'gamma': [1.1, 1.1, 1],
-  },
-  'rgb',
+    image,
+    {
+        'bands': ['B4', 'B3', 'B2'],
+        'min': 0,
+        'max': 0.25,
+        'gamma': [1.1, 1.1, 1],
+    },
+    'rgb',
 )
 map_sharpened.add_layer(
-  sharpened,
-  {'min': 0, 'max': 0.25, 'gamma': [1.3, 1.3, 1.3]},
-  'pan-sharpened',
+    sharpened,
+    {'min': 0, 'max': 0.25, 'gamma': [1.3, 1.3, 1.3]},
+    'pan-sharpened',
 )
 display(map_sharpened)
 ```
@@ -75,10 +82,12 @@ varimage=ee.Image('LANDSAT/LT05/C02/T1/LT05_044034_20080214')
 .select(bands);
 Map.setCenter(-122.1899,37.5010,10);// San Francisco Bay
 Map.addLayer(image,{bands:['B4','B3','B2'],min:0,max:128},'image');
+
 // Define spectral endmembers.
 varurban=[88,42,48,38,86,115,59];
 varveg=[50,21,20,35,50,110,23];
 varwater=[51,20,14,9,7,116,4];
+
 // Unmix the image.
 varfractions=image.unmix([urban,veg,water]);
 Map.addLayer(fractions,{},'unmixed');
@@ -96,17 +105,21 @@ importgeemap.coreasgeemap
 # Load a Landsat 5 image and select the bands we want to unmix.
 bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7']
 image = ee.Image('LANDSAT/LT05/C02/T1/LT05_044034_20080214').select(bands)
+
 # Define spectral endmembers.
 urban = [88, 42, 48, 38, 86, 115, 59]
 veg = [50, 21, 20, 35, 50, 110, 23]
 water = [51, 20, 14, 9, 7, 116, 4]
+
 # Unmix the image.
 fractions = image.unmix([urban, veg, water])
+
 # Define a map centered on San Francisco Bay.
 map_fractions = geemap.Map(center=[37.5010, -122.1899], zoom=10)
+
 # Add the image layers to the map and display it.
 map_fractions.add_layer(
-  image, {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 128}, 'image'
+    image, {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 128}, 'image'
 )
 map_fractions.add_layer(fractions, None, 'unmixed')
 display(map_fractions)

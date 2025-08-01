@@ -19,4 +19,3 @@ There is no persistent data associated with this resource.
 |  Lists any container asset, such as a folder or collection.  
 ### `update[Config](https://developers.google.com/earth-engine/reference/rest/v1beta/projects/updateConfig)`
 |  Updates the config state of a project.  
-Was this helpful?

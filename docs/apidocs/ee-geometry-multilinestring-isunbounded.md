@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-isunbounded#examples)
 
 
-Returns whether the geometry is unbounded. 
-Usage| Returns  
+Returns whether the geometry is unbounded.
+Usage | Returns  
 ---|---  
-`MultiLineString.isUnbounded()`| Boolean  
-Argument| Type| Details  
+`MultiLineString.isUnbounded()` | Boolean  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry|   
+this: `geometry` | Geometry |   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-isunbounded#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-multilinestring-isunbounded#colab-python-sample) More
 ```
@@ -19,10 +19,13 @@ this: `geometry`| Geometry|
 varmultiLineString=ee.Geometry.MultiLineString(
 [[[-122.088,37.418],[-122.086,37.422],[-122.082,37.418]],
 [[-122.087,37.416],[-122.083,37.416],[-122.082,37.419]]]);
+
 // Apply the isUnbounded method to the MultiLineString object.
 varmultiLineStringIsUnbounded=multiLineString.isUnbounded();
+
 // Print the result to the console.
 print('multiLineString.isUnbounded(...) =',multiLineStringIsUnbounded);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(multiLineString,
@@ -38,19 +41,23 @@ importgeemap.coreasgeemap
 ```
 # Define a MultiLineString object.
 multilinestring = ee.Geometry.MultiLineString([
-  [[-122.088, 37.418], [-122.086, 37.422], [-122.082, 37.418]],
-  [[-122.087, 37.416], [-122.083, 37.416], [-122.082, 37.419]],
+    [[-122.088, 37.418], [-122.086, 37.422], [-122.082, 37.418]],
+    [[-122.087, 37.416], [-122.083, 37.416], [-122.082, 37.419]],
 ])
+
 # Apply the isUnbounded method to the MultiLineString object.
 multilinestring_is_unbounded = multilinestring.isUnbounded()
+
 # Print the result.
 display('multilinestring.isUnbounded(...) =', multilinestring_is_unbounded)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)
 m.add_layer(
-  multilinestring, {'color': 'black'}, 'Geometry [black]: multilinestring'
+    multilinestring, {'color': 'black'}, 'Geometry [black]: multilinestring'
 )
 m
 ```
 
+Was this helpful?

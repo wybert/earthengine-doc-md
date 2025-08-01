@@ -1,12 +1,6 @@
  
 #  Sentinel-1 Algorithms
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Metadata and Filtering](https://developers.google.com/earth-engine/guides/sentinel1#metadata-and-filtering)
-  * [Sentinel-1 Preprocessing](https://developers.google.com/earth-engine/guides/sentinel1#sentinel-1-preprocessing)
-  * [Dataset Notes](https://developers.google.com/earth-engine/guides/sentinel1#dataset-notes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [Sentinel-1](https://earth.esa.int/web/sentinel/missions/sentinel-1) is a space mission funded by the European Union and carried out by the European Space Agency (ESA) within the Copernicus Programme. Sentinel-1 collects C-band synthetic aperture radar (SAR) imagery at a variety of polarizations and resolutions. Since radar data requires several specialized algorithms to obtain calibrated, orthorectified imagery, this document describes pre-processing of Sentinel-1 data in Earth Engine.
 Sentinel-1 data is collected with several different instrument configurations, resolutions, band combinations during both ascending and descending orbits. Because of this heterogeneity, it's usually necessary to filter the data down to a homogeneous subset before starting processing. This process is outlined below in the [Metadata and Filtering](https://developers.google.com/earth-engine/guides/sentinel1#metadata-and-filtering) section.
 ## Metadata and Filtering
@@ -19,11 +13,12 @@ To create a homogeneous subset of Sentinel-1 data, it will usually be necessary 
 
 
 The following code filters the Sentinel-1 collection by `transmitterReceiverPolarisation`, `instrumentMode`, and `orbitProperties_pass` properties, then calculates composites for several observation combinations that are displayed in the map to demonstrate how these characteristics affect the data.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/sentinel1#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/sentinel1#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // Load the Sentinel-1 ImageCollection, filter to Jun-Sep 2020 observations.
 varsentinel1=ee.ImageCollection('COPERNICUS/S1_GRD')
 .filterDate('2020-06-01','2020-10-01');
+
 // Filter the Sentinel-1 collection by metadata properties.
 varvvVhIw=sentinel1
 // Filter to get images with VV and VH dual polarization.
@@ -31,11 +26,13 @@ varvvVhIw=sentinel1
 .filter(ee.Filter.listContains('transmitterReceiverPolarisation','VH'))
 // Filter to get images collected in interferometric wide swath mode.
 .filter(ee.Filter.eq('instrumentMode','IW'));
+
 // Separate ascending and descending orbit images into distinct collections.
 varvvVhIwAsc=vvVhIw.filter(
 ee.Filter.eq('orbitProperties_pass','ASCENDING'));
 varvvVhIwDesc=vvVhIw.filter(
 ee.Filter.eq('orbitProperties_pass','DESCENDING'));
+
 // Calculate temporal means for various observations to use for visualization.
 // Mean VH ascending.
 varvhIwAscMean=vvVhIwAsc.select('VH').mean();
@@ -45,6 +42,7 @@ varvhIwDescMean=vvVhIwDesc.select('VH').mean();
 varvvIwAscDescMean=vvVhIwAsc.merge(vvVhIwDesc).select('VV').mean();
 // Mean VH for combined ascending and descending image collections.
 varvhIwAscDescMean=vvVhIwAsc.merge(vvVhIwDesc).select('VH').mean();
+
 // Display the temporal means for various observations, compare them.
 Map.addLayer(vvIwAscDescMean,{min:-12,max:-4},'vvIwAscDescMean');
 Map.addLayer(vhIwAscDescMean,{min:-18,max:-10},'vhIwAscDescMean');
@@ -52,36 +50,42 @@ Map.addLayer(vhIwAscMean,{min:-18,max:-10},'vhIwAscMean');
 Map.addLayer(vhIwDescMean,{min:-18,max:-10},'vhIwDescMean');
 Map.setCenter(-73.8719,4.512,9);// Bogota, Colombia
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # Load the Sentinel-1 ImageCollection, filter to Jun-Sep 2020 observations.
 sentinel_1 = ee.ImageCollection('COPERNICUS/S1_GRD').filterDate(
-  '2020-06-01', '2020-10-01'
+    '2020-06-01', '2020-10-01'
 )
+
 # Filter the Sentinel-1 collection by metadata properties.
 vv_vh_iw = (
-  sentinel_1.filter(
-    # Filter to get images with VV and VH dual polarization.
-    ee.Filter.listContains('transmitterReceiverPolarisation', 'VV')
-  )
-  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
-  .filter(
-    # Filter to get images collected in interferometric wide swath mode.
-    ee.Filter.eq('instrumentMode', 'IW')
-  )
+    sentinel_1.filter(
+        # Filter to get images with VV and VH dual polarization.
+        ee.Filter.listContains('transmitterReceiverPolarisation', 'VV')
+    )
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+    .filter(
+        # Filter to get images collected in interferometric wide swath mode.
+        ee.Filter.eq('instrumentMode', 'IW')
+    )
 )
+
 # Separate ascending and descending orbit images into distinct collections.
 vv_vh_iw_asc = vv_vh_iw.filter(
-  ee.Filter.eq('orbitProperties_pass', 'ASCENDING')
+    ee.Filter.eq('orbitProperties_pass', 'ASCENDING')
 )
 vv_vh_iw_desc = vv_vh_iw.filter(
-  ee.Filter.eq('orbitProperties_pass', 'DESCENDING')
+    ee.Filter.eq('orbitProperties_pass', 'DESCENDING')
 )
+
 # Calculate temporal means for various observations to use for visualization.
 # Mean VH ascending.
 vh_iw_asc_mean = vv_vh_iw_asc.select('VH').mean()
@@ -91,15 +95,16 @@ vh_iw_desc_mean = vv_vh_iw_desc.select('VH').mean()
 vv_iw_asc_desc_mean = vv_vh_iw_asc.merge(vv_vh_iw_desc).select('VV').mean()
 # Mean VH for combined ascending and descending image collections.
 vh_iw_asc_desc_mean = vv_vh_iw_asc.merge(vv_vh_iw_desc).select('VH').mean()
+
 # Display the temporal means for various observations, compare them.
 m = geemap.Map()
 m.add_layer(vv_iw_asc_desc_mean, {'min': -12, 'max': -4}, 'vv_iw_asc_desc_mean')
 m.add_layer(
-  vh_iw_asc_desc_mean, {'min': -18, 'max': -10}, 'vh_iw_asc_desc_mean'
+    vh_iw_asc_desc_mean, {'min': -18, 'max': -10}, 'vh_iw_asc_desc_mean'
 )
 m.add_layer(vh_iw_asc_mean, {'min': -18, 'max': -10}, 'vh_iw_asc_mean')
 m.add_layer(vh_iw_desc_mean, {'min': -18, 'max': -10}, 'vh_iw_desc_mean')
-m.set_center(-73.8719, 4.512, 9) # Bogota, Colombia
+m.set_center(-73.8719, 4.512, 9)  # Bogota, Colombia
 m
 ```
 
@@ -125,4 +130,3 @@ Earth Engine uses the following preprocessing steps (as implemented by the [Sent
   * GRD SM assets are not ingested because the `computeNoiseScalingFactor()` function in the [border noise removal operation in the S1 toolbox](https://github.com/senbox-org/s1tbx/blob/master/s1tbx-op-calibration/src/main/java/org/esa/s1tbx/calibration/gpf/RemoveGRDBorderNoiseOp.java) does not support the SM mode.
 
 
-Was this helpful?

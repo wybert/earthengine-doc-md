@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-decodejson#examples)
 
 
-Decodes a JSON string. 
-Usage| Returns  
+Decodes a JSON string.
+Usage | Returns  
 ---|---  
-`String.decodeJSON()`| Object  
-Argument| Type| Details  
+`String.decodeJSON()` | Object  
+Argument | Type | Details  
 ---|---|---  
-this: `string`| String| The string to decode.  
+this: `string` | String | The string to decode.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-decodejson#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-decodejson#colab-python-sample) More
 ```

@@ -15,14 +15,18 @@ varsheds=ee.FeatureCollection('USGS/WBD/2017/HUC06')
 varnum=ee.Number.parse(feature.get('areasqkm'));
 returnfeature.set('areasqkm',num);
 });
+
 // Display the table and print its first element.
 Map.addLayer(sheds,{},'watersheds');
 print('First watershed',sheds.first());
+
 // Print the number of watersheds.
 print('Count:',sheds.size());
+
 // Print stats for an area property.
 print('Area stats:',sheds.aggregate_stats('areasqkm'));
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -34,23 +38,26 @@ importgeemap.coreasgeemap
 ```
 # Load watersheds from a data table.
 sheds = (
-  ee.FeatureCollection('USGS/WBD/2017/HUC06')
-  # Filter to the continental US.
-  .filterBounds(ee.Geometry.Rectangle(-127.18, 19.39, -62.75, 51.29))
-  # Convert 'areasqkm' property from string to number.
-  .map(
-    lambda feature: feature.set(
-      'areasqkm', ee.Number.parse(feature.get('areasqkm'))
+    ee.FeatureCollection('USGS/WBD/2017/HUC06')
+    # Filter to the continental US.
+    .filterBounds(ee.Geometry.Rectangle(-127.18, 19.39, -62.75, 51.29))
+    # Convert 'areasqkm' property from string to number.
+    .map(
+        lambda feature: feature.set(
+            'areasqkm', ee.Number.parse(feature.get('areasqkm'))
+        )
     )
-  )
 )
+
 # Display the table and print its first element.
 m = geemap.Map()
 m.add_layer(sheds, {}, 'watersheds')
 display(m)
 display('First watershed:', sheds.first())
+
 # Print the number of watersheds.
 display('Count:', sheds.size())
+
 # Print stats for an area property.
 display('Area stats:', sheds.aggregate_stats('areasqkm'))
 ```
@@ -61,6 +68,7 @@ Knowing the names and dataypes of `FeatureCollection` columns can be helpful (e.
 ```
 // Import a protected areas point feature collection.
 varwdpa=ee.FeatureCollection("WCMC/WDPA/current/points");
+
 // Define a function to print metadata column names and datatypes. This function
 // is intended to be applied by the `evaluate` method which provides the
 // function a client-side dictionary allowing the 'columns' object of the
@@ -69,11 +77,13 @@ varwdpa=ee.FeatureCollection("WCMC/WDPA/current/points");
 functiongetCols(tableMetadata){
 print(tableMetadata.columns);
 }
+
 // Fetch collection metadata (`.limit(0)`) and apply the
 // previously defined function using `evaluate()`. The printed object is a
 // dictionary where keys are column names and values are datatypes.
 wdpa.limit(0).evaluate(getCols);
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
@@ -85,6 +95,7 @@ importgeemap.coreasgeemap
 ```
 # Import a protected areas point feature collection.
 wdpa = ee.FeatureCollection('WCMC/WDPA/current/points')
+
 # Fetch collection metadata (`.limit(0)`). The printed object is a
 # dictionary where keys are column names and values are datatypes.
 wdpa.limit(0).getInfo()['columns']

@@ -1,27 +1,15 @@
  
 #  HISTARFM - How to Work with Gap-Filled Imagery
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#overview)
-    * [Background](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#background)
-    * [Versions](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#versions)
-    * [Study areas](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#study_areas)
-  * [Examples of use of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#examples_of_use_of_the_histarfm_database)
-    * [1. Importing and visualizing the database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#1_importing_and_visualizing_the_database)
-    * [2. Calculate the timing and value of the maximum NDVI](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#2_calculate_the_timing_and_value_of_the_maximum_ndvi)
-    * [3. Temporal interpolation of the HISTARFM database](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#3_temporal_interpolation_of_the_histarfm_database)
-    * [4. High resolution biophysical variable retrieval](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#4_high_resolution_biophysical_variable_retrieval)
-  * [Acknowledgements](https://developers.google.com/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat#acknowledgements)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/histarfm-cloud-and-gap-free-landsat/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md)
-Author(s): [ EIzquierdo ](https://github.com/EIzquierdo)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/histarfm-cloud-and-gap-free-landsat/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/histarfm-cloud-and-gap-free-landsat/index.md "View changes to this article over time.")
+Author(s): [ EIzquierdo ](https://github.com/EIzquierdo "View the profile for EIzquierdo on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
 ## Overview
 Although there is an extensive array of optical remote sensing sensors from a variety of satellites providing long time data records, their data are incapable of retrieving reliable land surface information when clouds, aerosols, shadows, and strong angular effects are present in the scenes. The mitigation of noise and gap filling of satellite data are preliminary and almost mandatory tasks for any remote sensing application aimed at effectively analyzing the earth's surface continuously through time.
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/rgb-conus.png) _An example of cloud contaminated Landsat surface reflectance data_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/rgb-conus.png)  
+_An example of cloud contaminated Landsat surface reflectance data_
 In 2020, to tackle this challenging problem [Moreno-Martinez et al. (2020)](https://www.sciencedirect.com/science/article/pii/S0034425720302716) proposed using the Google Earth Engine (GEE) cloud computing platform to implement the HIghly Scalable Temporal Adaptive Reflectance Fusion Model (HISTARFM). This method generates reduced noise and gap-free estimates of Landsat reflectance values at vast scales. Despite the computational power of GEE and the optimizations of HISTARFM, the computational burden and memory costs of HISTARFM are too high to carry out any extra computations after the gap-filling process. Therefore, the data have to be pre-processed in different study areas. We have generated data for number of world regions already, and in this tutorial we will show how to use it and provide examples of how you can improve your research and applications with this enhanced Landsat-based dataset.
 ### Background
 The HISTARFM database is a gap-filled monthly reflectance temporal series at 30m spatial resolution generated by the fusion of Landsat and Moderate Resolution Imaging Spectroradiometer (MODIS) temporal series. The fusion algorithm relies on a bias-aware Bayesian data assimilation scheme implemented in GEE. The approach uses two linked estimators operating synergistically to filter out random noise and reduce the bias of Landsat spectral reflectances. The first estimator is an optimal interpolator that produces Landsat reflectance estimation values by combining Landsat historical data, pre-computed from the available Landsat record, and fused MODIS and Landsat reflectances obtained from overpasses closest to the time of interest. The fusion of reflectances results from using an efficient pixel-wise linear regression model. The second linked estimator is a Kalman filter that corrects the bias of the reflectance produced by the first estimator. For more information about HISTARFM algorithm, see the [Moreno-Martinez et al. 2020](https://www.sciencedirect.com/science/article/pii/S0034425720302716) manuscript.
@@ -50,12 +38,15 @@ In this tutorial, we focus on 2019 in the European continent. Using the code bel
 // Import HISTARTFM database.
 varGF_Landsat=
 ee.ImageCollection('projects/ee-emma/assets/GF_Landsat_Europe_C2');
+
 // Filter per year.
 varyear='2019';// In version 5 the properties are in string format, it
 // seems to be a limitation of adding properties to COGs In
 // case of using version 2 data (CONUS), the metadata is in
 // standard integer format: `var year = 2019;`
+
 GF_Landsat=GF_Landsat.filter(ee.Filter.eq('year',year));
+
 varmonths=GF_Landsat.aggregate_array('month').distinct().sort();
 // Join all images of a month into a single image.
 functionEuropeanMosaic(num){
@@ -66,6 +57,7 @@ returnimg.copyProperties(ic.first(),['system:time_start','month','year']);
 varGF_Landsat=ee.ImageCollection(months.map(EuropeanMosaic));
 // Sort the ImageCollection considering the 'system:time_start' property.
 GF_Landsat=GF_Landsat.sort('system:time_start');
+
 // Scaling the data to reflectance units.
 functionscaleError(img){
 vary=ee.Number.parse(img.get('year'));
@@ -77,6 +69,7 @@ returnimg.addBands(scaled,null,true)
 .set({'month':m,'year':y,'DOY':doy})
 .copyProperties(img,['system:time_start']);
 }
+
 GF_Landsat=GF_Landsat.map(scaleError);
 
 ```
@@ -87,8 +80,10 @@ Once the HISTARFM dataset is prepared, the RGB gap-filled Landsat reflectance mo
 // Set map options.
 Map.setOptions('HYBRID');
 Map.setCenter(14.76,49.28,4);
+
 // Subset a single month for display (e.g. July, the 7th month).
 varjulyImg=GF_Landsat.filter(ee.Filter.eq('month',7));
+
 // Display the RGB gap-filled Landsat reflectance mosaic to the map.
 varimageVisParam={
 'opacity':1,
@@ -98,6 +93,7 @@ varimageVisParam={
 'gamma':1
 };
 Map.addLayer(julyImg,imageVisParam,'example July RGB');
+
 // Display the error gap-filled Landsat reflectance mosaic to the map.
 varimageVisParam=
 {'opacity':1,'bands':['P1_postSD'],'min':0,'max':200,'gamma':1};
@@ -105,14 +101,15 @@ Map.addLayer(GF_Landsat,imageVisParam,'example error B1');
 
 ```
 
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/rgb-europe.png) _Example of a mosaic of the HISTARFM data over Europe for a given date_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/rgb-europe.png)  
+_Example of a mosaic of the HISTARFM data over Europe for a given date_
 ### 2. Calculate the timing and value of the maximum NDVI
 The Normalized Difference Vegetation Index (NDVI) is the most widely used among the vast options of remotely sensed vegetation indices. The annual maximum value of NDVI is especially relevant in many studies as it represents the best status the vegetation can achieve in a growing season related to characteristics such as biomass, health, and photosynthetic capacity. To achieve this goal, the gap-free observations provided by the HISTARFM to correctly track vegetation phenology are very beneficial.
 #### a. Calculate the NDVI and its error
 The NDVI is based on the RED and NIR reflectances difference defined as follows:
-NDVI=NIR−REDNIR+RED
+$$ NDVI = \frac{NIR-RED}{NIR+RED} $$
 As HISTARFM provides the reflectance values and reflectance uncertainties, it is possible to calculate the NDVI error using standard [error propagation approach](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). Under the assumption of independence among the input variables, it is possible to obtain the error using a simplified approach:
-ϵ(NDVI)=2(NIR+RED)2⋅√NIR2⋅ϵ(RED)2+RED2⋅ϵ(NIR)2
+$$ \epsilon(NDVI) = \frac{2}{(NIR+RED)^2} \cdot \sqrt{NIR^2 \cdot \epsilon(RED)^2 + RED^2 \cdot \epsilon(NIR)^2} $$
 Reminder: NIR reflectance is the band called B4_mean_post and the RED is B3_mean_post in HISTARFM database.
 Therefore, a function to calculate the NDVI and its error of the image collection is defined. The function `ndvicompGF` calculates NDVI and the error for each image. Additionally, the properties 'system:time_start', 'DOY', 'month', and 'year' are also included in the images from the original ones.
 ```
@@ -133,12 +130,14 @@ returnimg.addBands([ndvi,errorNDVI]).copyProperties(img,[
 'system:time_start','month','year','DOY'
 ]);
 }
+
 // Compute the NDVI and its error.
 GF_Landsat=GF_Landsat.map(ndvicompGF);
 
 ```
 
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-error.png) _An example of the computed NDVI and its corresponding propagated error_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-error.png)  
+_An example of the computed NDVI and its corresponding propagated error_
 #### b. Extracting growing season maximum NDVI value and timing
 A function called `maxMonth` is defined to obtain the maximum NDVI value and the month when it is reached. Within this function, the GF_Landsat ImageCollection is mapped to add the month value as a band. Afterward, NDVI and Month bands are selected from the collection and reduced using a reducer `ee.Reducer.max`.
 ```
@@ -167,6 +166,7 @@ varimageVisParam={
 'palette':['ffffff','c5ff15','94c00f','617e0a','000000']
 };
 Map.addLayer(maxMonthNdvi,imageVisParam,'max NDVI');
+
 varimageVisParam={
 'opacity':1,
 'bands':['Month'],
@@ -191,7 +191,8 @@ Map.addLayer(maxMonthNdvi,imageVisParam,'max month');
 
 ```
 
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-max.png) _Timing of the maximum value of the NDVI for Europe (2019)_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-max.png)  
+_Timing of the maximum value of the NDVI for Europe (2019)_
 ### 3. Temporal interpolation of the HISTARFM database
 #### a. Creating a dummy ImageCollection with the desired temporal resolution
 The first step to interpolating the HISTARFM database is the creation of a dummy (empty) ImageCollection with a regular time step sampling defined by `tResolution`. The function `RegTimeColl` requires a list of dates (interpreted as milliseconds since 1970-01-01T00:00:00Z) as input (`timeRange` in our example). Therefore, `RegTimeColl` creates the desired ImageCollection with the metadata ready ('DOY', 'system:time_start', and 'month'), which will be used to store the results of the interpolation.
@@ -199,6 +200,7 @@ The first step to interpolating the HISTARFM database is the creation of a dummy
 // Desired interpolation temporal resolution in day units.
 vartUnit='days';
 vartResolution=5;
+
 // Create a list of DOYs.
 vardateini=ee.Date(year+'-01-01');
 vardateend=ee.Date(year+'-12-31');
@@ -207,6 +209,7 @@ varsteps=ee.List.sequence(0,nSteps);
 vartimeRange=steps.map(function(i){
 returndateini.advance(ee.Number(i).multiply(tResolution),tUnit).millis();
 });
+
 // Create a dummy collection with regular time space.
 functionRegTimeColl(date){
 varDOY=ee.Date(date).getRelative('day','year').add(1);
@@ -214,6 +217,7 @@ varm=ee.Number(ee.Date(date).get('month'));
 returnee.Image(DOY).rename('DOY').short().set(
 {'dummy':true,'system:time_start':date,'DOY':DOY,'month':m});
 }
+
 varfiveDaysRes=ee.ImageCollection(timeRange.map(RegTimeColl));
 
 ```
@@ -234,9 +238,9 @@ ee.ImageCollection(join.apply(fiveDaysRes,GF_Landsat,filter));
 ```
 
 ##### b.2 Defining the interpolation function step
-Once the `fiveDaysRes` ImageCollection contains the selected GF_Landsat images in the 'LS' property, an interpolation function (named `CompositeInterpolate`) is defined to map the `fiveDaysRes` ImageCollection. The interpolation between two points is a method to estimate new data between two known points. Considering (x0,y0) and (x1,y1) as these two known points, the linear prediction in an intermediate location is possible using the following equation:
-y=y0+y1−y0x1−x0⋅(x−x0),
-where y0 and y1 are the Gap-filled Landsat reflectances before and after respectively from `GF_Landsat`, x0 and x1 are their respective acquisition times (i.e. 'system:time_start'), x is the time step for prediction, and y is the predicted reflectance (of the new point) in the instant x.
+Once the `fiveDaysRes` ImageCollection contains the selected GF_Landsat images in the 'LS' property, an interpolation function (named `CompositeInterpolate`) is defined to map the `fiveDaysRes` ImageCollection. The interpolation between two points is a method to estimate new data between two known points. Considering \\((x_0,y_0)\\) and \\((x_1,y_1)\\) as these two known points, the linear prediction in an intermediate location is possible using the following equation:
+$$ y = y_0 + \frac{y_1-y_0}{x_1-x_0} \cdot (x-x_0), $$
+where \\(y_0\\) and \\(y_1\\) are the Gap-filled Landsat reflectances before and after respectively from `GF_Landsat`, \\(x_0\\) and \\(x_1\\) are their respective acquisition times (i.e. 'system:time_start'), \\(x\\) is the time step for prediction, and \\(y\\) is the predicted reflectance (of the new point) in the instant \\(x\\).
 Note two essential points:
   * Landsat images within the 'LS' property are sorted by 'system:time_start'. Therefore selecting the last element (i.e., get -1 element of the list) always is the after reflectance image, and selecting the previous to the last element (i.e., get -2 element of the list) always is the before reflectance image.
   * If the number of Landsat images in the 'LS' property is lower than 2 (extrapolation case), the image is either the first or the last in the `fiveDaysRes` ImageCollection. Therefore, the first or last images in `fiveDaysRes` are not interpolated. We only consider the values of Gap-filled Landsat reflectance contained in the 'LS' property.
@@ -246,6 +250,7 @@ Note two essential points:
 varinit_doy=ee.Image(GF_Landsat.first()).get('DOY');
 varend_doy=
 ee.Image(GF_Landsat.sort('system:time_start',false).first()).get('DOY');
+
 functionCompositeInterpolate(img){
 varlist=ee.List(img.get('LS'));
 varLSbefore=ee.Image(
@@ -276,6 +281,7 @@ returnimg_inter.set({
 'year':year
 });
 }
+
 GF_Landsat=fiveDaysRes.map(CompositeInterpolate);
 
 ```
@@ -285,6 +291,7 @@ In this case, a NDVI temporal series at one specific point is shown using a char
 ```
 // Define the geometry
 varpoint=ee.Geometry.Point([-3.7010995437603,40.41436099577093]);
+
 // Define the chart
 varchart=ui.Chart.image
 .series({
@@ -306,13 +313,15 @@ curveType:'function'
 }
 }
 });
+
 // Add the chart to the map.
 chart.style().set({position:'top-left',width:'300px',height:'200px'});
 Map.add(chart);
 
 ```
 
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-series.png) _NDVI interpolated time series from monthly to 5 days temporal resolution_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/ndvi-series.png)  
+_NDVI interpolated time series from monthly to 5 days temporal resolution_
 ### 4. High resolution biophysical variable retrieval
 Estimating biophysical variables is at the core of remote sensing science, allowing close monitoring of crops and forests. Deriving temporally resolved and spatially explicit maps of these variables of interest have been the subject of intense research. This section shows how to generate an animated GIF of one key biophysical variable, the Leaf Area Index (LAI), using HISTARFM data. The LAI measures the total area of leaves per unit ground area and is directly related to the amount of light plants can intercept. To estimate the LAI, we have used the _BioNet_ algorithm from [Martinez-Ferrer et al. 2022](https://www.sciencedirect.com/science/article/pii/S0034425722003091). _BioNet_ provides new high resolution products of several key variables to quantify the terrestrial biosphere at 30 m Landsat spatial resolution:
   * Leaf Area Index (LAI)
@@ -327,6 +336,7 @@ We are going to calculate the LAI from `GF_Landsat` obtained in section 3.b. Oth
 ```
 // Include the bioNet repository.
 varbioNet=require('users/ispguv/BioNet:Code/bioNet_nested.js').bioNet;
+
 // Apply the created method to compute the LAI parameter.
 varpar='LAI';
 varlai=bioNet.bioNetcompute(GF_Landsat,par);
@@ -349,12 +359,15 @@ min:0.0,
 max:1,
 palette:['fef0d9','fdcc8a','fc8d59','e34a33','b30000']
 };
+
 // LAI and its uncertanty maps.
 Map.addLayer(lai.select(par),vis_vi_dp,par,true);
 Map.addLayer(
 lai.select(par.concat('total')),vis_vi_dp_err,par.concat('_err'),true);
+
 // Select a location in a cropland area in Spain.
 varpoint=ee.Geometry.Point([-0.4600542766311655,39.24615305773666]);
+
 // Plot the temporal profile; create an image time series chart.
 varchart=ui.Chart.image
 .series({
@@ -376,19 +389,22 @@ curveType:'function'
 }
 }
 });
+
 // Add the chart to the map.
 chart.style().set({position:'bottom-left',width:'300px',height:'200px'});
 Map.add(chart);
 
 ```
 
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/lai.png) _Computed LAI over Europe and temporal profile for a region in Spain_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/lai.png)  
+_Computed LAI over Europe and temporal profile for a region in Spain_
 #### c. Yearly LAI animation (GIF format)
 The text added over the GIF is done using the Gennadii Donchyts packages **text** and **style** from the available [repository](https://code.earthengine.google.com/?accept_repo=users/gena/packages) for all GEE users. With this repository, the DOY and the year is added to the images. They require a position in the image, a scale and size and color of the text. Additionally, the visualization parameters of the LAI are defined. All variables are used in the function called `gifImages` to obtain the ImageCollection to visualize in the GIF. After that, the GIF parameters are defined to obtain the GIF visualization using the function `ui.Thumbnail`, which is added in the map.
 ```
 // Include text and style repositories.
 vartext=require('users/gena/packages:text');
 varstyle=require('users/gena/packages:style');
+
 // Get text location for the DOY and the year.
 varreg=ee.Geometry.Polygon(
 [[
@@ -404,6 +420,7 @@ varscale=4500;
 vartextProperties={fontSize:64,textColor:'ffffff'};
 varvisParams=
 {'opacity':1,'bands':[par],'min':0,'max':6,'palette':colors};
+
 // Create RGB visualization images for use as animation frames.
 functiongifImages(img){
 varlabel=text.draw(
@@ -413,6 +430,7 @@ varlabel2=text.draw(img.get('day'),pt_doy,scale,textProperties);
 returnimg.visualize(visParams).blend(label).blend(label2);
 }
 varLAIvis=lai.select(par).map(gifImages);
+
 // Generate animation.
 vargifParams={
 'region':reg,
@@ -427,7 +445,8 @@ ee.ImageCollection(LAIvis),gifParams,null,{position:'bottom-right'}));
 ```
 
 Once the animation appears in the map, you can download the image by right-clicking on it.
-![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/lai.gif) _Resulting LAI animation from interpolated and gap-free HISTARFM data_
+![](https://developers.google.com/static/earth-engine/tutorials/community/histarfm-cloud-and-gap-free-landsat/lai.gif)  
+_Resulting LAI animation from interpolated and gap-free HISTARFM data_
 Now you know how to work with HISTARFM database and few tips of what you can do with it. Hope you like the gap-filled database and you use it in your research and work. If so, please, cite us as follow:
 Moreno-Martínez, Á., Izquierdo-Verdiguier, E., Maneta, M. P., Camps-Valls, G., Robinson, N., Muñoz-Marí, J., Sedano, F., Clinton, N. & Running, S. W. (2020). Multispectral high resolution sensor fusion for smoothing and gap-filling in the cloud. Remote Sensing of Environment, 247, 111901.
 ## Acknowledgements

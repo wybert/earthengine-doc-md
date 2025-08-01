@@ -1,6 +1,6 @@
  
 #  Manage assets
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine assets are project-owned geospatial data stored within the platform. You can upload your own data and store data produced from your Earth Engine analyses as assets.
 ## Asset types
 Earth Engine offers various asset formats for different data types, along with container elements for organization.
@@ -46,7 +46,7 @@ print(ee.Image('projects/my-project/assets/my-asset'))
 
 ### Command line
 ```
-earthengineassetinfoprojects/my-project/assets/my-asset
+earthengine
 ```
 
 ## Create assets
@@ -56,18 +56,18 @@ You can create folders and ImageCollections and ingest images and tables from lo
 Use the [`ee.data.startIngestion`](https://developers.google.com/earth-engine/apidocs/ee-data-startingestion) function to ingest images from Cloud Storage. See the [image manifest](https://developers.google.com/earth-engine/guides/image_manifest#using-manifests) page for more information on configuring the upload.
 ```
 manifest = {
- 'name': 'projects/my-project/assets/asset-name',
- 'tilesets': [
-  {
-   'sources': [
+  'name': 'projects/my-project/assets/asset-name',
+  'tilesets': [
     {
-     'uris': [
-      'gs://my-bucket/filename.tif'
-     ]
+      'sources': [
+        {
+          'uris': [
+            'gs://my-bucket/filename.tif'
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 ee.data.startIngestion(None, manifest)
 
@@ -77,14 +77,14 @@ ee.data.startIngestion(None, manifest)
 Use the [`ee.data.startTableIngestion`](https://developers.google.com/earth-engine/apidocs/ee-data-starttableingestion) function to ingest tables from Cloud Storage. See the [image manifest](https://developers.google.com/earth-engine/guides/table_manifest#using-manifests) page for more information on configuring the upload.
 ```
 manifest = {
- 'name': 'projects/my-project/assets/asset-name',
- 'sources': [
-  {
-   'uris': [
-    'gs://my-bucket/filename.csv'
-   ]
-  }
- ]
+  'name': 'projects/my-project/assets/asset-name',
+  'sources': [
+    {
+      'uris': [
+        'gs://my-bucket/filename.csv'
+      ]
+    }
+  ]
 }
 ee.data.startTableIngestion(None, manifest)
 
@@ -94,8 +94,8 @@ ee.data.startTableIngestion(None, manifest)
 Use the [`ee.data.createAsset`](https://developers.google.com/earth-engine/apidocs/ee-data-createasset) function to create empty folders or ImageCollections.
 ```
 ee.data.createAsset(
-  {'type': 'FOLDER'}, # or 'IMAGE_COLLECTION'
-  'projects/my-project/assets/asset-name'
+    {'type': 'FOLDER'}, # or 'IMAGE_COLLECTION'
+    'projects/my-project/assets/asset-name'
 )
 
 ```
@@ -105,21 +105,21 @@ Within the Asset Manager, click the NEW button and select the asset type you'd l
 ### Command line
 ### Image or table
 ```
-earthengineuploadimage--asset_id=projects/my-project/assets/asset-namegs://my-bucket/filename.tif
-earthengineuploadtable--asset_id=projects/my-project/assets/asset-namegs://my-bucket/filename.csv
+earthengine=projects/my-project/assets/asset-name
+earthengine=projects/my-project/assets/asset-name
 ```
 
 ### Folder or ImageCollection
 Use the [`earthengine create`](https://developers.google.com/earth-engine/guides/command_line#create) command to create empty folders or ImageCollections.
 ```
-earthenginecreatefolderprojects/my-project/assets/folder-name
-earthenginecreatecollectionprojects/my-project/assets/collection-name
+earthengine
+earthengine
 ```
 
 ### External image
 Cloud-optimized GeoTIFF (COG) files that you upload to a Google Cloud Storage bucket can be registered as external image assets and used directly in Earth Engine. See the [reference docs](https://developers.google.com/earth-engine/guides/command_line#upload-external_image) for more information on COG backed assets and constructing a manifest.
 ```
-earthenginealphauploadexternal_image--manifest/tmp/foo.json
+earthengine
 ```
 
 ## List assets
@@ -136,7 +136,7 @@ Expand folders in the Asset Manager to view assets.
 ### Command line
 Use the [`earthengine ls`](https://developers.google.com/earth-engine/guides/command_line#ls) command to list assets in a folder or collection (not recursive). See the reference docs for more information about limiting the number of assets to list and the amount detail to return.
 ```
-earthenginelsprojects/my-project/assets
+earthengine
 ```
 
 ## Set asset permissions
@@ -145,20 +145,20 @@ Use the [`ee.data.setAssetAcl`](https://developers.google.com/earth-engine/apido
 ```
 asset_id = 'projects/my-project/assets/asset-name'
 acl_update = {
-  'owners': [
-    'user:big_cheese@example.com',
-    'user:el_jefe@example.com'
-  ],
-  'writers': [
-    'user:romeo@example.com',
-    'user:juliet@example.com'
-  ],
-  'readers': [
-    'group:some-group@googlegroups.com',
-    'domain:example.com',
-    'serviceAccount:some-project-id@appspot.gserviceaccount.com'
-  ],
-  'all_users_can_read': False
+    'owners': [
+        'user:big_cheese@example.com',
+        'user:el_jefe@example.com'
+    ],
+    'writers': [
+        'user:romeo@example.com',
+        'user:juliet@example.com'
+    ],
+    'readers': [
+        'group:some-group@googlegroups.com',
+        'domain:example.com',
+        'serviceAccount:some-project-id@appspot.gserviceaccount.com'
+    ],
+    'all_users_can_read': False
 }
 ee.data.setAssetAcl(asset_id, acl_update)
 
@@ -169,12 +169,12 @@ Within the Asset Manager, hold the pointer over an asset and click the share ico
 ### Command line
 Use the `earthengine acl set` command to set an asset's read access to `public` or `private`.
 ```
-earthengineaclsetpublicprojects/my-project/assets/asset-name
+earthengineset
 ```
 
 Use the `earthengine acl ch` command to set individual permissions for asset read and write.
 ```
-earthengineaclch-uperson@gmail.com:Rprojects/my-project/assets/asset-name
+earthengine
 ```
 
 See the [command line reference](https://developers.google.com/earth-engine/guides/command_line#acl) page for more details.
@@ -191,7 +191,7 @@ Within the Asset Manager, hold the pointer over an asset and click the share ico
 ### Command line
 Use the [`earthengine acl get`](https://developers.google.com/earth-engine/guides/command_line#acl) command to fetch the access control list for an asset.
 ```
-earthengineaclgetprojects/my-project/assets/asset-name
+earthengine
 ```
 
 ## Copy assets
@@ -207,7 +207,7 @@ Use the Python client or the command line tool to copy assets.
 ### Command line
 Use the [`earthengine cp`](https://developers.google.com/earth-engine/guides/command_line#cp) command to copy an asset.
 ```
-earthenginecpprojects/my-project/assets/asset-nameprojects/my-project/assets/asset-copy-name
+earthengine
 ```
 
 ## Move or rename assets
@@ -226,7 +226,7 @@ Within the Asset Manager, hold the pointer over an asset and click the edit icon
 ### Command line
 Use the [`earthengine mv`](https://developers.google.com/earth-engine/guides/command_line#mv) command to move or rename an asset.
 ```
-earthenginemvprojects/my-project/assets/asset-nameprojects/my-project/assets/new-asset-name
+earthengine
 ```
 
 ## Delete assets
@@ -242,7 +242,7 @@ Click an asset to open the asset dialog page, then click the DELETE button.
 ### Command line
 Use the [`earthengine rm`](https://developers.google.com/earth-engine/guides/command_line#rm) command to delete an asset. See the function reference for recursive and dry run options.
 ```
-earthenginermprojects/my-project/assets/asset-name
+earthengine
 ```
 
 ## View asset metadata
@@ -258,7 +258,7 @@ Click an asset to open the asset dialog page. View the asset information.
 ### Command line
 Use the [`earthengine asset info`](https://developers.google.com/earth-engine/guides/command_line#asset) command to get asset metadata.
 ```
-earthengineassetinfoprojects/my-project/assets/asset-name
+earthengine
 ```
 
 ## Set asset metadata
@@ -273,13 +273,14 @@ Use the [`ee.data.updateAsset`](https://developers.google.com/earth-engine/apido
 ```
 asset_id = 'projects/my-project/assets/asset-name'
 new_metadata = {
- 'properties': {
-  'name': 'value'
- },
- 'start_time': '2024-10-02T15:01:24Z',
- 'end_time': '2024-10-02T15:01:25Z',
+  'properties': {
+    'name': 'value'
+  },
+  'start_time': '2024-10-02T15:01:24Z',
+  'end_time': '2024-10-02T15:01:25Z',
 }
 update_these = ['start_time', 'end_time', 'properties']
+
 ee.data.updateAsset(asset_id, new_metadata, update_these)
 
 ```
@@ -290,10 +291,10 @@ Click an asset to open the asset dialog page, then activate the edit toggle in t
 Use the [`earthengine asset set`](https://developers.google.com/earth-engine/guides/command_line#asset) command to update asset metadata. See the reference docs for more information.
 ```
 earthengine asset set \
- --time_start 2024-10-02T15:01:24 \
- --time_end 2024-10-02T15:01:25 \
- --property 'name=value' \
- projects/my-project/assets/asset-name
+  --time_start 2024-10-02T15:01:24 \
+  --time_end 2024-10-02T15:01:25 \
+  --property 'name=value' \
+  projects/my-project/assets/asset-name
 
 ```
 

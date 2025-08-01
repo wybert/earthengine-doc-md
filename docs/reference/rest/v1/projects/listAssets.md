@@ -1,6 +1,6 @@
  
 #  Method: projects.listAssets
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects/listAssets#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects/listAssets#path-parameters)
@@ -27,7 +27,7 @@ Parameters
 ---  
 `pageSize` |  `integer` The maximum number of results per page. The server may return fewer assets than requested. If unspecified, the page size default depends on the EarthEngineAssetView, with higher limits for more restrictive views.  
 `pageToken` |  `string` A token identifying a page of results the server should return. Typically this is the value of `ListAssetsResponse.next_page_token[](https://developers.google.com/earth-engine/reference/rest/v1/ListAssetsResponse#FIELDS.next_page_token)` returned from the previous call to the `projects.listAssets` method.  
-`filter` |  `string` If present, specifies a filter. Filters are only applied to `ImageCollection` assets and are ignored for `Folder` assets.The fields `startTime`, `endTime`, and members of `properties` are recognized. The custom function `intersects(str)` is available, which allows filtering by geometry.An example date filter: ```
+`filter` |  `string` If present, specifies a filter. Filters are only applied to `ImageCollection` assets and are ignored for `Folder` assets. The fields `startTime`, `endTime`, and members of `properties` are recognized. The custom function `intersects(str)` is available, which allows filtering by geometry. An example date filter: ```
 "startTime>\"2020-01-01T00:00:00+00:00\" AND
 endTime<\"2020-02-01T00:00:00+00:00\""
 
@@ -50,10 +50,9 @@ If successful, the response body contains an instance of `ListAssetsResponse[](h
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

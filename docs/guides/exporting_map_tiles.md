@@ -1,22 +1,6 @@
  
 #  Exporting Map Tiles
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Overview](https://developers.google.com/earth-engine/guides/exporting_map_tiles#overview)
-  * [Exporting Map Tiles To Cloud Storage](https://developers.google.com/earth-engine/guides/exporting_map_tiles#exporting-map-tiles-to-cloud-storage)
-    * [ACLs and CORS options](https://developers.google.com/earth-engine/guides/exporting_map_tiles#acls-and-cors-options)
-    * [Parameter list](https://developers.google.com/earth-engine/guides/exporting_map_tiles#parameter-list)
-    * [Scale and Zoom](https://developers.google.com/earth-engine/guides/exporting_map_tiles#scale-and-zoom)
-  * [Platform Specific Guidelines](https://developers.google.com/earth-engine/guides/exporting_map_tiles#platforms)
-    * [Using map tiles in Earth Engine (Code Editor or EE Apps)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#using-map-tiles-in-earth-engine-code-editor-or-ee-apps)
-    * [Viewing a Google Maps Preview](https://developers.google.com/earth-engine/guides/exporting_map_tiles#viewing-a-google-maps-preview)
-    * [Viewing a Google Earth Preview](https://developers.google.com/earth-engine/guides/exporting_map_tiles#viewing-a-google-earth-preview)
-    * [Publishing with Google Maps Platform (Maps APIs)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#publishing-with-google-maps-platform-maps-apis)
-    * [Publishing to Google Earth (on the web)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#publishing-to-google-earth-on-the-web)
-    * [Publishing to other mapping platforms](https://developers.google.com/earth-engine/guides/exporting_map_tiles#publishing-to-other-mapping-platforms)
-    * [Generating a Google Maps Platform API Key](https://developers.google.com/earth-engine/guides/exporting_map_tiles#generating-a-google-maps-platform-api-key)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 For information on exporting to other formats including images, videos and tables (vector data), see [Exporting Data](https://developers.google.com/earth-engine/guides/exporting). 
 ## Overview
 To display image data (raster data) on an online map, you can export map tiles using `Export.map.toCloudStorage()`. This function exports a pyramid of map tiles to a Cloud Storage bucket, from where it can be served publicly or privately. It's useful when your image data is too large to overlay as a single image. These tiles use [Google Map Tile Coordinates](https://developers.google.com/maps/documentation/javascript/coordinates) and are suitable for display using Google Maps Platform (Maps APIs), Google Earth for web, and other mapping platforms. The tiles can easily be previewed in Google Maps or Earth using HTML files provided as part of the export. 
@@ -24,7 +8,7 @@ There are a number of settings and steps for the export, which may or may not be
 ## Exporting Map Tiles To Cloud Storage
 The following example exports tiles from a Landsat image for an area in California. 
 **Warning:** this example will create files in your cloud storage bucket which could result in charges to your account. You can use the [ `gsutil` ](https://cloud.google.com/storage/docs/gsutil) utility to delete multiple files and folders that may be created. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // --- Example Export Map Tiles - basic ---
 // Specify area to clip/export, setup image and preview on map.
@@ -35,6 +19,7 @@ varlandsatImage=ee.Image('LANDSAT/LC09/C02/T1_TOA/LC09_044034_20220111')
 .clip(exportRegion);
 Map.addLayer(landsatImage,{},'landsatImage');
 Map.centerObject(exportRegion);
+
 // Set up Export task.
 Export.map.toCloudStorage({
 image:landsatImage,
@@ -46,35 +31,39 @@ region:exportRegion,
 writePublicTiles:true
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Example Export Map Tiles - basic ---
 # Specify area to clip/export, setup image and preview on map.
 export_region = ee.Geometry.BBox(-122.9, 37.1, -121.2, 38.2)
 landsat_image = (
-  ee.Image('LANDSAT/LC09/C02/T1_TOA/LC09_044034_20220111')
-  .select(['B4', 'B3', 'B2'])
-  .visualize(min=0.02, max=0.4, gamma=1.2)
-  .clip(export_region)
+    ee.Image('LANDSAT/LC09/C02/T1_TOA/LC09_044034_20220111')
+    .select(['B4', 'B3', 'B2'])
+    .visualize(min=0.02, max=0.4, gamma=1.2)
+    .clip(export_region)
 )
 m = geemap.Map()
 m.add_layer(landsat_image, {}, 'landsatImage')
 m.center_object(export_region)
 display(m)
+
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForEE',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
+    image=landsat_image,
+    description='mapTilesForEE',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
 )
 task.start()
 ```
@@ -123,6 +112,9 @@ Zoom Level | Pixel Size (at equator) | Zoom Level | Pixel Size (at equator)
 9 | 305 m | 19 | 0.3 m  
 |  | 20 | 0.15 m  
 Observe from the previous table that the `maxZoom` set in the example corresponds to 19 meters at the equator, smaller at higher latitudes. This is less than the nominal 30 arc-seconds per pixel resolution of the input image. As a result, the map displayed in the output [ index.html ](https://storage.googleapis.com/ee-docs-demos/mapToCloudExample/index.html) can be zoomed in until pixels in native resolution are visible in the map. To limit the map display to native pixel resolution, set `maxZoom` to a value that corresponds to the native resolution or less. 
+  
+
+* * *
 ## Platform Specific Guidelines
 Below are a number of platforms where you might want to view and use map tiles. Each section indicates which settings are required for the tiles to work with that platform, and a copy of the example code with the necessary parameters. 
 ### Using map tiles in Earth Engine (Code Editor or EE Apps)
@@ -133,7 +125,7 @@ bucketCorsUris: ['https://code.earthengine.google.com','https://*.earthengine.ap
 ```
 
 Once you export the tiles, they will then be accessible in Earth Engine.
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // --- Export Map Tiles for use in EE ---
 // Use image setup code from example at top of the page.
@@ -149,28 +141,31 @@ writePublicTiles:true,
 bucketCorsUris:['https://code.earthengine.google.com','https://*.earthengine.app']
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Export Map Tiles for use in EE ---
 # Use image setup code from example at top of the page.
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForEE',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
-  bucketCorsUris=[
-    'https://code.earthengine.google.com',
-    'https://*.earthengine.app',
-  ],
+    image=landsat_image,
+    description='mapTilesForEE',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
+    bucketCorsUris=[
+        'https://code.earthengine.google.com',
+        'https://*.earthengine.app',
+    ],
 )
 task.start()
 ```
@@ -178,7 +173,7 @@ task.start()
 ### Viewing a Google Maps Preview
 To preview your map tiles on Google Maps, go to the output folder on Google Cloud Storage, and open the "index.html" file in your browser. This will open a full-page map showing your tiles on Google Maps using the Google Maps Platform Javascript API, like this one: [ index.html](https://storage.googleapis.com/ee-docs-demos/mapToCloudExample/index.html). A basic export will result in basemap tiles that are grayed out and watermarked "For Development Purposes Only". To avoid this and show standard Google basemap tiles, generate an API key and include it in your export settings. 
 If you provide an API Key at the time of export, this preview page is publicly viewable, can be embedded on other pages, and does not require the viewer to be a registered Earth Engine user. 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // --- Export Map Tiles for use with Map Preview ---
 // Use image setup code from example at top of the page.
@@ -194,25 +189,28 @@ writePublicTiles:true,
 mapsApiKey:'fakeMapsApiKey012345'// replace with a valid API Key
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Export Map Tiles for use with Map Preview ---
 # Use image setup code from example at top of the page.
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForMapPreview',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
-  mapsApiKey='fakeMapsApiKey012345', # replace with a valid API Key
+    image=landsat_image,
+    description='mapTilesForMapPreview',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
+    mapsApiKey='fakeMapsApiKey012345',  # replace with a valid API Key
 )
 task.start()
 ```
@@ -220,7 +218,7 @@ task.start()
 ### Viewing a Google Earth Preview
 To preview your map tiles in Google Earth on the web, make sure you export your tiles with the Access Level set to 'Publicly Accessible'. Then go to the output folder on Google Cloud Storage, open the "earth.html" file in your browser, like this one: [ earth.html ](https://storage.googleapis.com/ee-docs-demos/mapToCloudExample/earth.html) and click the "Open in Google Earth" button that appears. This will open Google Earth and show your tiles on the 3D map. It is best practice to also set the "JS Access" level to 'Publicly Accessible', which will allow you to use the tiles in Google Earth without the preview file (which uses a proxy server if the tiles do not have the necessary JS Access/CORS settings). 
 To download a KML file that contains a link to your data, click the 3-dot menu in Google Earth and select 'Export as KML file'. **Note:** The KML file generated in this manner is NOT compatible with Google Earth Pro (the desktop version of Earth). 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // --- Export Map Tiles for use with Earth Preview ---
 // Use image setup code from example at top of the page.
@@ -238,34 +236,37 @@ bucketCorsUris:[]// leaving blank is ok for Earth Preview only
 // or set to public: ['*'] (risk of misuse)
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Export Map Tiles for use with Earth Preview ---
 # Use image setup code from example at top of the page.
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForEarthPreview',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
-  bucketCorsUris=[], # leaving blank is ok for Earth Preview only
-  # for direct use in Earth, set to: ['https://earth.google.com']
-  # or set to public: ['*'] (risk of misuse)
+    image=landsat_image,
+    description='mapTilesForEarthPreview',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
+    bucketCorsUris=[],  # leaving blank is ok for Earth Preview only
+    # for direct use in Earth, set to: ['https://earth.google.com']
+    # or set to public: ['*'] (risk of misuse)
 )
 task.start()
 ```
 
 ### Publishing with Google Maps Platform (Maps APIs)
-To create a set of map tiles ready for publishing publicly via the Google Maps Platform, you will need to have or create an API key, and make sure the Access Level is set to 'Publicly Accessible'. Depending on how your Maps API application accesses the tiles, you may also need to set an appropriate "JS Access Level" for your site. Once you have exported your tiles, the output in the code editor Task tab provides a URL for your tiles with the appropriate variables for use with Google Maps API, for example: `     https://storage.googleapis.com/my_bucket/my_test_tiles/{Z}/{X}/{Y}    `
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+To create a set of map tiles ready for publishing publicly via the Google Maps Platform, you will need to have or create an API key, and make sure the Access Level is set to 'Publicly Accessible'. Depending on how your Maps API application accesses the tiles, you may also need to set an appropriate "JS Access Level" for your site. Once you have exported your tiles, the output in the code editor Task tab provides a URL for your tiles with the appropriate variables for use with Google Maps API, for example: `         https://storage.googleapis.com/my_bucket/my_test_tiles/{Z}/{X}/{Y}       `
+### Code Editor (JavaScript)
 ```
 // --- Export Map Tiles for use with Maps Platform APIs ---
 // Use image setup code from example at top of the page.
@@ -284,35 +285,38 @@ bucketCorsUris:['*'],// '*' = All domains = risk of misuse
 mapsApiKey:'fakeMapsApiKey012345'// replace with a valid API Key
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Export Map Tiles for use with Maps Platform APIs ---
 # Use image setup code from example at top of the page.
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForMapsPlatform',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
-  bucketCorsUris=['*'], # '*' = All domains = risk of misuse
-  # For better protection, specify the domain(s) where the
-  # tiles will be used, eg: ['https://mysite.mydomain.com']
-  mapsApiKey='fakeMapsApiKey012345', # replace with a valid API Key
+    image=landsat_image,
+    description='mapTilesForMapsPlatform',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
+    bucketCorsUris=['*'],  # '*' = All domains = risk of misuse
+    # For better protection, specify the domain(s) where the
+    # tiles will be used, eg: ['https://mysite.mydomain.com']
+    mapsApiKey='fakeMapsApiKey012345',  # replace with a valid API Key
 )
 task.start()
 ```
 
 ### Publishing to Google Earth (on the web)
 To create a set of map tiles for publishing publicly via Google Earth, you will need to set the Access Level to 'Publicly Accessible', and set the JS Access Level to allow 'https://earth.google.com' (or 'Publicly Accessible'). After export, you can preview them in Google Earth using the earth.html file in the export directory (see above). 
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/exporting_map_tiles#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 // --- Export Map Tiles for use with Google Earth web ---
 // Use image setup code from example at top of the page.
@@ -329,36 +333,42 @@ bucketCorsUris:['https://earth.google.com']
 // ['*'] will also work, but risks misuse
 });
 ```
+
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
 ```
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
 # --- Export Map Tiles for use with Google Earth web ---
 # Use image setup code from example at top of the page.
 # Set up Export task.
 task = ee.batch.Export.map.toCloudStorage(
-  image=landsat_image,
-  description='mapTilesForEarthWeb',
-  bucket='yourBucketName', # replace with your GCS bucket name
-  fileFormat='auto',
-  maxZoom=13,
-  region=export_region,
-  writePublicTiles=True,
-  bucketCorsUris=['https://earth.google.com'],
-  # ['*'] will also work, but risks misuse
+    image=landsat_image,
+    description='mapTilesForEarthWeb',
+    bucket='yourBucketName',  # replace with your GCS bucket name
+    fileFormat='auto',
+    maxZoom=13,
+    region=export_region,
+    writePublicTiles=True,
+    bucketCorsUris=['https://earth.google.com'],
+    # ['*'] will also work, but risks misuse
 )
 task.start()
 ```
 
-Once you export the tiles, you can add them to a project in [Google Earth web](http://earth.google.com/web). The output in the code editor Tasks tab (shown below) provides the URL for your tiles with the appropriate variables for use in Google Earth, for example: `     https://storage.googleapis.com/my_bucket/my_test_tiles/$[level]/$[x]/$[y]    `
+Once you export the tiles, you can add them to a project in [Google Earth web](http://earth.google.com/web). The output in the code editor Tasks tab (shown below) provides the URL for your tiles with the appropriate variables for use in Google Earth, for example: `         https://storage.googleapis.com/my_bucket/my_test_tiles/$[level]/$[x]/$[y]       `
 ![Output URLs from a tile export task](https://developers.google.com/static/earth-engine/images/tile_output_urls.png) Output URLs from a tile export task.
 To use this in Earth web, create a [Tile Overlay feature](https://support.google.com/earth/answer/9394930) and add this URL as the "Overlay URL". If your dataset is not global and you want to avoid tile request errors for non-existent tiles, then make sure to open up the "Overlay Options" section and adjust the four Tile Coverage parameters to match the extents of your exported tiles. 
 ![Map Tiles shown in Earth web](https://developers.google.com/static/earth-engine/images/tiles_in_earth_web.jpg) Map Tiles displayed in Earth web.
 ### Publishing to other mapping platforms
 When exporting tiles for use with other platforms or applications, the necessary settings will depend on how they access the tiles. To make the tiles as widely accessible as possible, set the Access Level to 'Publicly Accessible', and set the JS Access Level to 'Publicly Accessible'. 
+  
+
+* * *
 ### Generating a Google Maps Platform API Key
 If you plan to use your map tiles with the Google Maps Platform, or want to preview them on Maps without the developer restricted basemap, then you will need to have or generate a [ Google Maps Platform API key ](https://developers.google.com/maps/documentation/javascript/get-api-key) and either include it in your export settings, or add it to the site(s) afterward. This is not necessary for use with Google Earth. 
 Since June 2018, Google Maps Platform no longer supports keyless access. Any request to the Maps JavaScript API and Street View API that doesn't include an API key (or Client ID) will return low-resolution maps watermarked with "for development purposes only." Read more about the changes at [Google Maps Platform's guide for Existing Users](https://cloud.google.com/maps-platform/user-guide/). 
@@ -380,4 +390,3 @@ When adding an API key, referrer restrictions ensure that only the designated ap
   * Hit Save. The "Saving..." indicator should appear.
 
 ![Add referrers](https://developers.google.com/static/earth-engine/images/maps-api-set-referrer-restriction.jpg)
-Was this helpful?

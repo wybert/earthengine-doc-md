@@ -1,6 +1,6 @@
  
 #  Image Collections
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 An image collection refers to a set of Earth Engine images. For example, the collection of all Landsat 8 images is an `ee.ImageCollection`. Like the SRTM image you have been working with, image collections also have an ID. As with single images, you can discover the ID of an image collection by searching the [Earth Engine data catalog](https://developers.google.com/earth-engine/datasets) from the Code Editor and looking at the details page of the dataset. For example, search for 'landsat 8 toa' and click on the first result, which should correspond to the [ USGS Landsat 8 Collection 1 Tier 1 TOA Reflectance](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_TOA) dataset. Either import that dataset using the **Import** button and rename it to `l8`, or copy the ID into the image collection constructor:
 ### Code Editor (JavaScript)
 ```
@@ -13,6 +13,7 @@ It's worth noting that this collection represents _every_ Landsat 8 scene collec
 ```
 varspatialFiltered=l8.filterBounds(point);
 print('spatialFiltered',spatialFiltered);
+
 vartemporalFiltered=spatialFiltered.filterDate('2015-01-01','2015-12-31');
 print('temporalFiltered',temporalFiltered);
 ```
@@ -23,6 +24,7 @@ Note that you can `print()` the filtered collections. You can't print more than 
 ```
 // This will sort from least to most cloudy.
 varsorted=temporalFiltered.sort('CLOUD_COVER');
+
 // Get the first (least cloudy) image.
 varscene=sorted.first();
 ```

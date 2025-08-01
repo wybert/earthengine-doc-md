@@ -4,7 +4,8 @@ Stay organized with collections  Save and categorize content based on your prefe
 These video tutorials are from lectures or hands-on trainings conducted at Earth Engine User Summits and [Earth Outreach digital events](https://earthoutreachonair.withgoogle.com/). 
 ## Introduction to Earth Engine (condensed)
 Learn about Earth Engine from developer advocate Noel Gorelick in this fast-paced intro.
-[companion slides](https://docs.google.com/presentation/d/1iZtkBNzl2HBWFT0wEhwCov89kyiBO7rSHcmMa6WNMa8) [code repository](https://code.earthengine.google.com/?accept_repo=users/gorelick/EE101-B)
+[companion slides](https://docs.google.com/presentation/d/1iZtkBNzl2HBWFT0wEhwCov89kyiBO7rSHcmMa6WNMa8)   
+[code repository](https://code.earthengine.google.com/?accept_repo=users/gorelick/EE101-B)
 ## Hands-on Intermediate Training
 Topics covered include classification, spectral unmixing and terrain visualization.
 ## Tables and Vectors
@@ -14,7 +15,8 @@ Overview of tables and vectors in Earth Engine. Topics include how to load, mani
 Topics covered include importing and exporting Earth Engine data, the command line interface, and map publishing.
 ## Classification
 Learn all about classifiers (both supervised and unsupervised), training data, test data, the dreaded "computed value too large" message, and the awesome linear regression reducer.
-[companion slides](https://docs.google.com/presentation/d/1esEXY4rlyl3J2oXxfhSPBHQvxie_Fmda6wSDu_S2aQo) [code repository](https://code.earthengine.google.com/?accept_repo=users/akarbasi/simple_classifier)
+[companion slides](https://docs.google.com/presentation/d/1esEXY4rlyl3J2oXxfhSPBHQvxie_Fmda6wSDu_S2aQo)   
+[code repository](https://code.earthengine.google.com/?accept_repo=users/akarbasi/simple_classifier)
 Topics covered include supervised and unsupervised classification.
 ## Machine Learning
 ### Machine Learning Best Practices

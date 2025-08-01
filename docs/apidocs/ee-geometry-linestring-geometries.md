@@ -5,22 +5,25 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-geometries#examples)
 
 
-Returns the list of geometries in a GeometryCollection, or a singleton list of the geometry for single geometries. 
-Usage| Returns  
+Returns the list of geometries in a GeometryCollection, or a singleton list of the geometry for single geometries.
+Usage | Returns  
 ---|---  
-`LineString.geometries()`| List  
-Argument| Type| Details  
+`LineString.geometries()` | List  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry|   
+this: `geometry` | Geometry |   
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-geometries#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-linestring-geometries#colab-python-sample) More
 ```
 // Define a LineString object.
 varlineString=ee.Geometry.LineString([[-122.09,37.42],[-122.08,37.43]]);
+
 // Apply the geometries method to the LineString object.
 varlineStringGeometries=lineString.geometries();
+
 // Print the result to the console.
 print('lineString.geometries(...) =',lineStringGeometries);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(lineString,
@@ -36,10 +39,13 @@ importgeemap.coreasgeemap
 ```
 # Define a LineString object.
 linestring = ee.Geometry.LineString([[-122.09, 37.42], [-122.08, 37.43]])
+
 # Apply the geometries method to the LineString object.
 linestring_geometries = linestring.geometries()
+
 # Print the result.
 display('linestring.geometries(...) =', linestring_geometries)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)
@@ -47,4 +53,3 @@ m.add_layer(linestring, {'color': 'black'}, 'Geometry [black]: linestring')
 m
 ```
 
-Was this helpful?

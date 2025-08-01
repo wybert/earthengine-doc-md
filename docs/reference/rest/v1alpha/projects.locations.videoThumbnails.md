@@ -1,31 +1,23 @@
  
 #  REST Resource: projects.locations.videoThumbnails
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#resource:-videothumbnail)
-    * [VideoOptions](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#videooptions)
-    * [VideoFileFormat](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#videofileformat)
-  * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#methods)
-    * [create](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#create)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: VideoThumbnail
 Information about a video thumbnail.
 JSON representation  
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
+  }
 }
 ```
   
@@ -42,9 +34,9 @@ JSON representation
 ---  
 ```
 {
- "framesPerSecond": number,
- "maxFrames": integer,
- "maxPixelsPerFrame": string
+  "framesPerSecond": number,
+  "maxFrames": integer,
+  "maxPixelsPerFrame": string
 }
 ```
   
@@ -65,4 +57,3 @@ Enums
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails/create)`
 |  Creates an ID that can be used to render an image containing an animation of multiple images from a collection.  
-Was this helpful?

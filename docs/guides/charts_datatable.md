@@ -2,7 +2,7 @@
 #  DataTable Charts
 Stay organized with collections  Save and categorize content based on your preferences. 
 The `ui.Chart` function renders charts from a client-side JSON object that follows the same structure as the Google Charts [`DataTable`](https://developers.google.com/chart/interactive/docs/reference#datatable-class), class, but lacks `DataTable` methods and mutability. It is essentially a 2-D table with rows that represent observations and columns that represent observation attributes. It provides a flexible, base interface to charting in Earth Engine. It is a good option when a high degree of chart customization is required.
-## `DataTable` schema
+##  `DataTable` schema
 There are two ways to define a pseudo-`DataTable` in Earth Engine: a JavaScript 2-D array and a JavaScript literal object. For most applications, constructing a 2-D array will be the simplest approach. In both cases, the table passed to `ui.Chart` must be a client-side object. A manually coded table will be inherently client-side, whereas a computed object will need to be transferred client-side using `evaluate`. Please see the [Client vs. Server](https://developers.google.com/earth-engine/guides/client_server) page for more information on the distinction between server-side and client-side objects.
 ### JavaScript array
 A 2-D `DataTable` is composed of an array of rows and columns. Rows are observations and columns are attributes. The first column defines values for the x-axis, while additional columns define values for y-axis series. The first row is expected to be a column header. The simplest header is a series of column labels, demonstrated in the following array `DataTable` relating population by selected states.
@@ -68,6 +68,7 @@ vardataTable=[
 ['MI',9883640,'9.8e6'],
 ['OR',3831074,'3.8e6']
 ];
+
 // Define the chart and print it to the console.
 varchart=ui.Chart(dataTable).setChartType('ColumnChart').setOptions({
 title:'State Population (US census, 2010)',
@@ -90,33 +91,41 @@ This example shows a time series of MODIS-derived NDVI and EVI vegetation indice
 // Import the example feature collection and subset the forest feature.
 varforest=ee.FeatureCollection('projects/google/charts_feature_example')
 .filter(ee.Filter.eq('label','Forest'));
+
 // Load MODIS vegetation indices data and subset a decade of images.
 varvegIndices=ee.ImageCollection('MODIS/061/MOD13A1')
 .filter(ee.Filter.date('2010-01-01','2020-01-01'))
 .select(['NDVI','EVI']);
+
 // Define a function to format an image timestamp as a JavaScript Date string.
 functionformatDate(img){
 varmillis=img.date().millis().format();
 returnee.String('Date(').cat(millis).cat(')');
 }
+
 // Build a feature collection where each feature has a property that represents
 // a DataFrame row.
 varreductionTable=vegIndices.map(function(img){
 // Reduce the image to the mean of pixels intersecting the forest ecoregion.
 varstat=img.reduceRegion(
 {reducer:ee.Reducer.mean(),geometry:forest,scale:500});
+
 // Extract the reduction results along with the image date.
 vardate=formatDate(img);// x-axis values.
 varevi=stat.get('EVI');// y-axis series 1 values.
 varndvi=stat.get('NDVI');// y-axis series 2 values.
+
 // Make a list of observation attributes to define a row in the DataTable.
 varrow=ee.List([date,evi,ndvi]);
+
 // Return the row as a property of an ee.Feature.
 returnee.Feature(null,{'row':row});
 });
+
 // Aggregate the 'row' property from all features in the new feature collection
 // to make a server-side 2-D list (DataTable).
 vardataTableServer=reductionTable.aggregate_array('row');
+
 // Define column names and properties for the DataTable. The order should
 // correspond to the order in the construction of the 'row' property above.
 varcolumnHeader=ee.List([[
@@ -124,8 +133,10 @@ varcolumnHeader=ee.List([[
 {label:'EVI',role:'data',type:'number'},
 {label:'NDVI',role:'data',type:'number'}
 ]]);
+
 // Concatenate the column header to the table.
 dataTableServer=columnHeader.cat(dataTableServer);
+
 // Use 'evaluate' to transfer the server-side table to the client, define the
 // chart and print it to the console.
 dataTableServer.evaluate(function(dataTableClient){
@@ -154,10 +165,12 @@ This chart takes advantage of the `DataTable` column `'role'` property to genera
 ```
 // Define a point to extract an NDVI time series for.
 vargeometry=ee.Geometry.Point([-121.679,36.479]);
+
 // Define a band of interest (NDVI), import the MODIS vegetation index dataset,
 // and select the band.
 varband='NDVI';
 varndviCol=ee.ImageCollection('MODIS/006/MOD13Q1').select(band);
+
 // Map over the collection to add a day of year (doy) property to each image.
 ndviCol=ndviCol.map(function(img){
 vardoy=ee.Date(img.get('system:time_start')).getRelative('day','year');
@@ -165,11 +178,13 @@ vardoy=ee.Date(img.get('system:time_start')).getRelative('day','year');
 // the 16-day MODIS NDVI composite.
 returnimg.set('doy',ee.Number(doy).add(8));
 });
+
 // Join all coincident day of year observations into a set of image collections.
 vardistinctDOY=ndviCol.filterDate('2013-01-01','2014-01-01');
 varfilter=ee.Filter.equals({leftField:'doy',rightField:'doy'});
 varjoin=ee.Join.saveAll('doy_matches');
 varjoinCol=ee.ImageCollection(join.apply(distinctDOY,ndviCol,filter));
+
 // Calculate the absolute range, interquartile range, and median for the set
 // of images composing each coincident doy observation group. The result is
 // an image collection with an image representative per unique doy observation
@@ -177,11 +192,13 @@ varjoinCol=ee.ImageCollection(join.apply(distinctDOY,ndviCol,filter));
 // coincident doy images.
 varcomp=ee.ImageCollection(joinCol.map(function(img){
 vardoyCol=ee.ImageCollection.fromImages(img.get('doy_matches'));
+
 returndoyCol
 .reduce(ee.Reducer.percentile(
 [0,25,50,75,100],['p0','p25','p50','p75','p100']))
 .set({'doy':img.get('doy')});
 }));
+
 // Extract the inter-annual NDVI doy percentile statistics for the
 // point of interest per unique doy representative. The result is
 // is a feature collection where each feature is a doy representative that
@@ -190,6 +207,7 @@ returndoyCol
 varreductionTable=comp.map(function(img){
 varstats=ee.Dictionary(img.reduceRegion(
 {reducer:ee.Reducer.first(),geometry:geometry,scale:250}));
+
 // Order the percentile reduction elements according to how you want columns
 // in the DataTable arranged (x-axis values need to be first).
 varrow=ee.List([
@@ -200,11 +218,14 @@ stats.get(band+'_p25'),// y-axis, 1st quartile interval.
 stats.get(band+'_p75'),// y-axis, 3rd quartile interval.
 stats.get(band+'_p100')// y-axis, max interval.
 ]);
+
 // Return the row as a property of an ee.Feature.
 returnee.Feature(null,{row:row});
 });
+
 // Aggregate the 'row' properties to make a server-side 2-D array (DataTable).
 vardataTableServer=reductionTable.aggregate_array('row');
+
 // Define column names and properties for the DataTable. The order should
 // correspond to the order in the construction of the 'row' property above.
 varcolumnHeader=ee.List([[
@@ -215,8 +236,10 @@ varcolumnHeader=ee.List([[
 {label:'p75',role:'interval'},
 {label:'p100',role:'interval'}
 ]]);
+
 // Concatenate the column header to the table.
 dataTableServer=columnHeader.cat(dataTableServer);
+
 // Use 'evaluate' to transfer the server-side table to the client, define the
 // chart and print it to the console.
 dataTableServer.evaluate(function(dataTableClient){

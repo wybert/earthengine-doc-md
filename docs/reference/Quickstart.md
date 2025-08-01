@@ -1,19 +1,6 @@
  
 #  Quickstart
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/reference/Quickstart#before-you-begin)
-  * [Set up your Colab notebook](https://developers.google.com/earth-engine/reference/Quickstart#set-up-your-colab-notebook)
-  * [Authenticate to Google Cloud](https://developers.google.com/earth-engine/reference/Quickstart#authenticate-to-google-cloud)
-    * [Obtain a private key file for your service account](https://developers.google.com/earth-engine/reference/Quickstart#obtain-a-private-key-file-for-your-service-account)
-  * [Accessing and Testing your Credentials](https://developers.google.com/earth-engine/reference/Quickstart#accessing-and-testing-your-credentials)
-  * [Pick a Dataset](https://developers.google.com/earth-engine/reference/Quickstart#pick-a-dataset)
-  * [Query for Particular Images](https://developers.google.com/earth-engine/reference/Quickstart#query-for-particular-images)
-  * [Inspect a Particular Image](https://developers.google.com/earth-engine/reference/Quickstart#inspect-a-particular-image)
-  * [Fetching Pixel Values](https://developers.google.com/earth-engine/reference/Quickstart#fetching-pixel-values)
-  * [Generating a Thumbnail Image](https://developers.google.com/earth-engine/reference/Quickstart#generating-a-thumbnail-image)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 This guide explains how you can quickly get started issuing queries to the Earth Engine REST API from Python using [Google Colab](https://colab.research.google.com). The same concepts apply to accessing the API from other languages and environments.
 **_Note:_** _The REST API contains new and advanced features that may not be suitable for all users. If you are new to Earth Engine, please get started with the[JavaScript guide](https://developers.google.com/earth-engine/getstarted)._
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_Quickstart.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_Quickstart.ipynb)  
@@ -63,12 +50,17 @@ You are now ready to send your first query to the Earth Engine API. Use the priv
 ```
 fromgoogle.auth.transport.requestsimport AuthorizedSession
 fromgoogle.oauth2import service_account
+
 credentials = service_account.Credentials.from_service_account_file(KEY)
 scoped_credentials = credentials.with_scopes(
-  ['https://www.googleapis.com/auth/cloud-platform'])
+    ['https://www.googleapis.com/auth/cloud-platform'])
+
 session = AuthorizedSession(scoped_credentials)
+
 url = 'https://earthengine.googleapis.com/v1alpha/projects/earthengine-public/assets/LANDSAT'
+
 response = session.get(url)
+
 frompprintimport pprint
 importjson
 pprint(json.loads(response.content))
@@ -93,23 +85,27 @@ In this case we see on the right side of the window that this is an image collec
 This Sentinel-2 dataset includes over two million images covering the world from 2015 through the present. Let's issue a [projects.assets.listImages](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.assets/listImages) query against the image collection to find some data from April, 2017, with low cloud cover that includes a particular point in Mountain View, California.
 ```
 importurllib
+
 coords = [-122.085, 37.422]
+
 project = 'projects/earthengine-public'
 asset_id = 'COPERNICUS/S2'
 name = '{}/assets/{}'.format(project, asset_id)
 url = 'https://earthengine.googleapis.com/v1alpha/{}:listImages?{}'.format(
- name, urllib.parse.urlencode({
-  'startTime': '2017-04-01T00:00:00.000Z',
-  'endTime': '2017-05-01T00:00:00.000Z',
-  'region': '{"type":"Point", "coordinates":' + str(coords) + '}',
-  'filter': 'CLOUDY_PIXEL_PERCENTAGE < 10',
+  name, urllib.parse.urlencode({
+    'startTime': '2017-04-01T00:00:00.000Z',
+    'endTime': '2017-05-01T00:00:00.000Z',
+    'region': '{"type":"Point", "coordinates":' + str(coords) + '}',
+    'filter': 'CLOUDY_PIXEL_PERCENTAGE < 10',
 }))
+
 response = session.get(url)
 content = response.content
+
 for asset in json.loads(content)['images']:
-  id = asset['id']
-  cloud_cover = asset['properties']['CLOUDY_PIXEL_PERCENTAGE']
-  print('%s : %s' % (id, cloud_cover))
+    id = asset['id']
+    cloud_cover = asset['properties']['CLOUDY_PIXEL_PERCENTAGE']
+    print('%s : %s' % (id, cloud_cover))
 ```
 
 This script queries the collection for matching images, decodes the resulting JSON response, and prints the asset ID and cloud cover for each matching image asset. The output should look like:
@@ -126,8 +122,10 @@ It looks like one of the matching has essentially zero cloud cover. Let's take a
 asset_id = 'COPERNICUS/S2/20170430T190351_20170430T190351_T10SEG'
 name = '{}/assets/{}'.format(project, asset_id)
 url = 'https://earthengine.googleapis.com/v1alpha/{}'.format(name)
+
 response = session.get(url)
 content = response.content
+
 asset = json.loads(content)
 print('Band Names: %s' % ','.join(band['id'] for band in asset['bands']))
 print('First Band: %s' % json.dumps(asset['bands'][0], indent=2, sort_keys=True))
@@ -137,27 +135,27 @@ The output should look like something like this:
 ```
 Band Names: B1,B2,B3,B4,B5,B6,B7,B8,B8A,B9,B10,B11,B12,QA10,QA20,QA60
 First Band: {
- "dataType": {
-  "precision": "INTEGER",
-  "range": {
-   "max": 65535
-  }
- },
- "grid": {
-  "affineTransform": {
-   "scaleX": 60,
-   "scaleY": -60,
-   "translateX": 499980,
-   "translateY": 4200000
+  "dataType": {
+    "precision": "INTEGER",
+    "range": {
+      "max": 65535
+    }
   },
-  "crsCode": "EPSG:32610",
-  "dimensions": {
-   "height": 1830,
-   "width": 1830
-  }
- },
- "id": "B1",
- "pyramidingPolicy": "MEAN"
+  "grid": {
+    "affineTransform": {
+      "scaleX": 60,
+      "scaleY": -60,
+      "translateX": 499980,
+      "translateY": 4200000
+    },
+    "crsCode": "EPSG:32610",
+    "dimensions": {
+      "height": 1830,
+      "width": 1830
+    }
+  },
+  "id": "B1",
+  "pyramidingPolicy": "MEAN"
 }
 
 ```
@@ -169,23 +167,26 @@ Let's issue a [projects.assets.getPixels](https://developers.google.com/earth-en
 ```
 importnumpy
 importio
+
 name = '{}/assets/{}'.format(project, asset_id)
 url = 'https://earthengine.googleapis.com/v1alpha/{}:getPixels'.format(name)
 body = json.dumps({
-  'fileFormat': 'NPY',
-  'bandIds': ['B2', 'B3', 'B4', 'B8'],
-  'grid': {
-    'affineTransform': {
-      'scaleX': 10,
-      'scaleY': -10,
-      'translateX': 499980,
-      'translateY': 4200000,
+    'fileFormat': 'NPY',
+    'bandIds': ['B2', 'B3', 'B4', 'B8'],
+    'grid': {
+        'affineTransform': {
+            'scaleX': 10,
+            'scaleY': -10,
+            'translateX': 499980,
+            'translateY': 4200000,
+        },
+        'dimensions': {'width': 256, 'height': 256},
     },
-    'dimensions': {'width': 256, 'height': 256},
-  },
 })
+
 pixels_response = session.post(url, body)
 pixels_content = pixels_response.content
+
 array = numpy.load(io.BytesIO(pixels_content))
 print('Shape: %s' % (array.shape,))
 print('Data:')
@@ -197,18 +198,18 @@ The output should look like this:
 Shape: (256, 256)
 Data:
 [[( 899, 586, 351, 189) ( 918, 630, 501, 248) (1013, 773, 654, 378) ...,
- (1014, 690, 419, 323) ( 942, 657, 424, 260) ( 987, 691, 431, 315)]
+  (1014, 690, 419, 323) ( 942, 657, 424, 260) ( 987, 691, 431, 315)]
  [( 902, 630, 541, 227) (1059, 866, 719, 429) (1195, 922, 626, 539) ...,
- ( 978, 659, 404, 287) ( 954, 672, 426, 279) ( 990, 678, 397, 304)]
+  ( 978, 659, 404, 287) ( 954, 672, 426, 279) ( 990, 678, 397, 304)]
  [(1050, 855, 721, 419) (1257, 977, 635, 569) (1137, 770, 400, 435) ...,
- ( 972, 674, 421, 312) (1001, 688, 431, 311) (1004, 659, 378, 284)]
+  ( 972, 674, 421, 312) (1001, 688, 431, 311) (1004, 659, 378, 284)]
  ...,
  [( 969, 672, 375, 275) ( 927, 680, 478, 294) (1018, 724, 455, 353) ...,
- ( 924, 659, 375, 232) ( 921, 664, 438, 273) ( 966, 737, 521, 306)]
+  ( 924, 659, 375, 232) ( 921, 664, 438, 273) ( 966, 737, 521, 306)]
  [( 920, 645, 391, 248) ( 979, 728, 481, 327) ( 997, 708, 425, 324) ...,
- ( 927, 673, 387, 243) ( 927, 688, 459, 284) ( 962, 732, 509, 331)]
+  ( 927, 673, 387, 243) ( 927, 688, 459, 284) ( 962, 732, 509, 331)]
  [( 978, 723, 449, 330) (1005, 712, 446, 314) ( 946, 667, 393, 269) ...,
- ( 949, 692, 413, 271) ( 927, 689, 472, 285) ( 966, 742, 516, 331)]]
+  ( 949, 692, 413, 271) ( 927, 689, 472, 285) ( 966, 742, 516, 331)]]
 
 ```
 
@@ -223,22 +224,23 @@ Putting this all together, the Python snippet looks like this (using the Colab `
 ```
 url = 'https://earthengine.googleapis.com/v1alpha/{}:getPixels'.format(name)
 body = json.dumps({
-  'fileFormat': 'PNG',
-  'bandIds': ['B4', 'B3', 'B2'],
-  'region': asset['geometry'],
-  'grid': {
-    'dimensions': {'width': 256, 'height': 256},
-  },
-  'visualizationOptions': {
-    'ranges': [{'min': 0, 'max': 3000}],
-  },
+    'fileFormat': 'PNG',
+    'bandIds': ['B4', 'B3', 'B2'],
+    'region': asset['geometry'],
+    'grid': {
+        'dimensions': {'width': 256, 'height': 256},
+    },
+    'visualizationOptions': {
+        'ranges': [{'min': 0, 'max': 3000}],
+    },
 })
+
 image_response = session.post(url, body)
 image_content = image_response.content
+
 fromIPython.displayimport Image
 Image(image_content)
 ```
 
 Here is the resulting thumbnail image:
 ![](https://developers.google.com/static/earth-engine/images/sentinel_2_thumbnail.png)
-Was this helpful?

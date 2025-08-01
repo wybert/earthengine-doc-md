@@ -1,6 +1,18 @@
  
 #  Computation Overview
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+  * On this page
+  * [EECUs](https://developers.google.com/earth-engine/guides/computation_overview#eecus)
+    * [Overview](https://developers.google.com/earth-engine/guides/computation_overview#overview)
+    * [Motivation](https://developers.google.com/earth-engine/guides/computation_overview#motivation)
+    * [Comparison with CPU metrics](https://developers.google.com/earth-engine/guides/computation_overview#comparison_with_cpu_metrics)
+    * [Stability and predictability](https://developers.google.com/earth-engine/guides/computation_overview#stability_and_predictability)
+    * [Benchmarks](https://developers.google.com/earth-engine/guides/computation_overview#benchmarks)
+    * [Metrics for failed requests](https://developers.google.com/earth-engine/guides/computation_overview#metrics_for_failed_requests)
+  * [Profiler](https://developers.google.com/earth-engine/guides/computation_overview#profiler)
+    * [Enabling the profiler](https://developers.google.com/earth-engine/guides/computation_overview#enabling_the_profiler)
+
+
 Earth Engine is built on top of Google's tools and services for performing computations at a massive scale. To make it easy to run large geospatial analyses, the Earth Engine platform and API hide much of the complexity of the underlying parallel-processing infrastructure.
 ## EECUs
 ### Overview
@@ -44,13 +56,12 @@ Peak Mem
     
 Maximum memory used on any single compute node for the operation.
 ### Enabling the profiler
-### Code Editor
+[Code Editor](https://developers.google.com/earth-engine/guides/computation_overview#code-editor)[Python](https://developers.google.com/earth-engine/guides/computation_overview#python) More
 Use the "Run with Profiler" button, as described in the [Code Editor guide](https://developers.google.com/earth-engine/guides/playground#profiler).
-### Python
 Include the following code in your Python script to enable the profiler:
 ```
 with ee.profilePrinting():
-  print(ee.Number(3.14).add(0.00159).getInfo())
+   print(ee.Number(3.14).add(0.00159).getInfo())
 
 ```
 
@@ -58,9 +69,11 @@ The profile will be printed when the context ends, whether or not any error occu
 To capture the profile as a string, write the profile to a string buffer:
 ```
 importio
+
 out = io.StringIO()
 with ee.profilePrinting(destination=out) as p:
-  print(ee.Number(3.14).add(0.00159).getInfo())
+    print(ee.Number(3.14).add(0.00159).getInfo())
+
 print('Output:')
 print(out.getvalue())
 
@@ -70,13 +83,17 @@ Here is a suggestion for turning the profile string into a table for easier anal
 ```
 importre
 importpandasaspd
+
 lines = out.getvalue().split('\n')
+
 column_names = re.split(r'\s{1,}', lines[0])
 column_names = [name.strip() for name in column_names if name.strip()]
+
 data = [
-  [element for element in re.split(r'\s{2,}', line) if element.strip()]
-  for line in lines[1:-1]
+    [element for element in re.split(r'\s{2,}', line) if element.strip()]
+    for line in lines[1:-1]
 ]
+
 df = pd.DataFrame(data, columns=column_names)
 display(df)
 

@@ -1,21 +1,6 @@
  
 #  Earth Engine resources for workshops
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Prerequisites](https://developers.google.com/earth-engine/tutorials/ttt#prerequisites)
-  * [Before the Workshop](https://developers.google.com/earth-engine/tutorials/ttt#before-the-workshop)
-  * [Slides for a one hour introductory lecture](https://developers.google.com/earth-engine/tutorials/ttt#slides-for-a-one-hour-introductory-lecture)
-  * [Instructor reference for a beginning workshop](https://developers.google.com/earth-engine/tutorials/ttt#instructor-reference-for-a-beginning-workshop)
-  * [Instructor reference for an intermediate workshop](https://developers.google.com/earth-engine/tutorials/ttt#instructor-reference-for-an-intermediate-workshop)
-  * [Externally developed training materials](https://developers.google.com/earth-engine/tutorials/ttt#externally-developed-training-materials)
-    * [Spatial Thoughts](https://developers.google.com/earth-engine/tutorials/ttt#spatial-thoughts)
-    * [SERVIR-Mekong](https://developers.google.com/earth-engine/tutorials/ttt#servir-mekong)
-    * [ NASA Applied Remote Sensing Training (ARSET) ](https://developers.google.com/earth-engine/tutorials/ttt#nasa-applied-remote-sensing-training-arset)
-    * [University of Washington](https://developers.google.com/earth-engine/tutorials/ttt#university-of-washington)
-    * [Columbia University](https://developers.google.com/earth-engine/tutorials/ttt#columbia-university)
-    * [Deltares](https://developers.google.com/earth-engine/tutorials/ttt#deltares)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Content produced by the Earth Engine developer community is not part of the official Earth Engine product documentation. 
 Teach others to use Earth Engine! This page includes training materials developed by the Earth Engine team for hands-on coding workshops using the JavaScript API as well as [externally developed training materials](https://developers.google.com/earth-engine/tutorials/ttt#externally-developed-training-materials). Trainings typically start with a one hour lecture ([slides provided below](https://developers.google.com/earth-engine/tutorials/ttt#slides-for-a-one-hour-introductory-lecture)) and proceed to a "follow me" style coding lab in which the instuctor writes code in the [Earth Engine Code Editor](https://developers.google.com/earth-engine/tutorials/code.earthengine.google.com) (projected such that participants see it) and participants follow along in their own code editors. The code and instructional content are provided below for a [beginner workshop](https://developers.google.com/earth-engine/tutorials/ttt#instructor-reference-for-a-beginning-workshop) (no previous Earth Engine experience necessary) and an [intermediate workshop](https://developers.google.com/earth-engine/tutorials/ttt#instructor-reference-for-an-intermediate-workshop) (for users who have Earth Engine experience equivalent to that provided in the beginner workshop). The hands-on workshops generally take _at least_ two hours, depending on particpant experience.
 ### Prerequisites
@@ -41,13 +26,15 @@ The following training materials were developed in support of the [SERVIR-Mekong
 The Spanish versions were created by the [Spatial Informatics Group](https://sig-gis.com/) with support from FAO's Analysis and Mapping of Impacts Under Climate Change for Adaptation and Food Security (AMICAF) program.
 #### Vietnamese
 The Vietnamese versions were created by [SERVIR-Mekong](https://servir.adpc.net/) in conjunction with the [Spatial Informatics Group](https://sig-gis.com/) and the [University of San Francisco](https://www.usfca.edu/).
+* * *
 ###  NASA Applied Remote Sensing Training (ARSET) 
 NASA ARSET offers [webinars for disasters monitoring](https://arset.gsfc.nasa.gov/disasters/webinars) and other remote sensing topics, many of which use Earth Engine. 
 ### University of Washington
 [This page](https://geohackweek.github.io/GoogleEarthEngine/) features an excellent set of introductory tutorials developed by [Catherine Kuhn](http://www.thebutmanlab.com/catherine-kuhn/) and Jillian Deines for the eScience Institute’s [Geohackweek 2017](https://geohackweek.github.io/ghw2017/) at the [University of Washington](https://www.washington.edu/).
 ### Columbia University
 The following trainings were developed by [Pietro Ceccato](http://iri.columbia.edu/contact/staff-directory/pietro-ceccato/) to support public health trainings done by the Columbia University International Research Institute for Climate and Society.
+* * *
 ### Deltares
 The following trainings were developed by Gennadii Donchyts of [Deltares](https://www.deltares.nl/en/) in support of workshops for water resource monitoring and research.
+* * *
 _Please[ submit an issue](https://github.com/google/earthengine-community/issues/new) to the Earth Engine Community GitHub repository for questions or feedback regarding material on this page._
-Was this helpful?

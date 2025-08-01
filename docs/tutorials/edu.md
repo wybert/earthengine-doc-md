@@ -1,23 +1,6 @@
  
 #  Earth Engine resources for higher education
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications](https://developers.google.com/earth-engine/tutorials/edu#cloud-based-remote-sensing-with-google-earth-engine:-fundamentals-and-applications)
-  * [GEO 717 - A hitchhiker's guide to Google Earth Engine](https://developers.google.com/earth-engine/tutorials/edu#geo-717---a-hitchhikers-guide-to-google-earth-engine)
-  * [Introductory Remote Sensing Code Labs](https://developers.google.com/earth-engine/tutorials/edu#introductory-remote-sensing-code-labs)
-  * [Introductory Workshop on Geospatial Analysis at Yale-NUS Data 2.0](https://developers.google.com/earth-engine/tutorials/edu#introductory-workshop-on-geospatial-analysis-at-yale-nus-data-2.0)
-  * [Introduction to Remote Sensing Course at Colorado State University](https://developers.google.com/earth-engine/tutorials/edu#introduction-to-remote-sensing-course-at-colorado-state-university)
-  * [Introductory Remote Sensing Lectures](https://developers.google.com/earth-engine/tutorials/edu#introductory-remote-sensing-lectures)
-  * [Geospatial Software Design Exercises](https://developers.google.com/earth-engine/tutorials/edu#geospatial-software-design-exercises)
-  * [ Advanced Remote Sensing Tutorials ](https://developers.google.com/earth-engine/tutorials/edu#advanced-remote-sensing-tutorials)
-  * [ Chinese language materials ](https://developers.google.com/earth-engine/tutorials/edu#chinese-language-materials)
-  * [ Russian language materials ](https://developers.google.com/earth-engine/tutorials/edu#russian-language-materials)
-  * [ Persian language materials ](https://developers.google.com/earth-engine/tutorials/edu#persian-language-materials)
-  * [ Ukrainian language materials ](https://developers.google.com/earth-engine/tutorials/edu#ukrainian-language-materials)
-  * [The Global Snow Observatory](https://developers.google.com/earth-engine/tutorials/edu#the-global-snow-observatory)
-  * [Where The City Meets The Sea](https://developers.google.com/earth-engine/tutorials/edu#where-the-city-meets-the-sea)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Content produced by the Earth Engine developer community is not part of the official Earth Engine product documentation. 
 Use Earth Engine in your teaching! The materials on this page are community developed curricula for teaching Earth Engine in higher education. Scroll the directories below to see all the contributed content. If you use these materials to develop courses with Earth Engine, please give attribution! To contribute teaching materials to this page, contact nclinton@google.com.
 ## Cloud-Based Remote Sensing with Google Earth Engine: Fundamentals and Applications
@@ -41,9 +24,15 @@ The following materials were prepared by [Dana Tomlin](https://www.design.upenn.
 These tutorials were developed by Ge (Jeff) Pu and Dr. Lindi Quackenbush at [State University of New York - College of Environmental Science and Forestry](https://www.esf.edu/) as part of an advanced remote sensing course. Funding for developing these tutorials was provided by [AmericaView](https://americaview.org/). 
 ##  Chinese language materials 
 These docs are contributed by Jinzhu Wang of Southwest University & Deakin University Australia, School of Life and Environmental Sciences. They are based on the Google Earth Engine guide and tutorials. 
+* * *
+  
+
 These slides and docs are contributed by Shiwei Li from Beijing Huanyuyiyan Research Center. They were used for a two-day workshop held at the Institute of Remote Sensing and Digital Earth (RADI), Chinese Academy of Sciences (CAS), Beijing, China, March 8-9, 2019. 
 ##  Russian language materials 
 These docs are contributed by Elizaveta Khazieva, Nikolay Nikiforov and Nikolay Bilev at Moscow State University, Geology Department, for a 2019 course on new approaches for geospatial data analysis. Please see the [providers' course website](http://datamsu.com/course/overview) for an alternative format that includes videos, links to suggested reading, and tasks. 
+* * *
+  
+
 These tutorials are provided by Vasily Lobanov and Yaroslav Vasyunin, Center for Remote Sensing at the Academy of Engineering, RUDN University, Moscow. 
 ##  Persian language materials 
 These video tutorials are contributed by [Salim Soltani](https://www.linkedin.com/in/salim-soltani-11186b9b/) at Leipzig University. The series consists of [17 videos](https://www.youtube.com/playlist?list=PLR8Kil7OHEcebe3WC-BwB0-XyxrpzD5wE) that include a range of material covering basic to advanced Earth Engine use. The goal of the series is to lift language barriers toward Earth Engine use among the Persian speaking community. 

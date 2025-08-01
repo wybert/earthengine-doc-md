@@ -28,20 +28,20 @@ JSON representation
 ---  
 ```
 {
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
- },
- "region": {
-  object
- },
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/VisualizationOptions))
- },
- "workloadTag": string
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1beta/ImageFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid))
+  },
+  "region": {
+    object
+  },
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/VisualizationOptions))
+  },
+  "workloadTag": string
 }
 ```
   
@@ -58,9 +58,9 @@ If successful, the response is a generic HTTP response whose format is defined b
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

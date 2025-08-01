@@ -5,23 +5,24 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-kernel-kirsch#examples)
 
 
-Generates a 3x3 Kirsch's Compass edge-detection kernel. 
-Usage| Returns  
+Generates a 3x3 Kirsch's Compass edge-detection kernel.
+Usage | Returns  
 ---|---  
-`ee.Kernel.kirsch( _magnitude_, _normalize_)`| Kernel  
-Argument| Type| Details  
+`ee.Kernel.kirsch(_magnitude_, _normalize_)`|  Kernel  
+Argument | Type | Details  
 ---|---|---  
-`magnitude`| Float, default: 1| Scale each value by this amount.  
-`normalize`| Boolean, default: false| Normalize the kernel values to sum to 1.  
+`magnitude` | Float, default: 1 | Scale each value by this amount.  
+`normalize` | Boolean, default: false | Normalize the kernel values to sum to 1.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-kernel-kirsch#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-kernel-kirsch#colab-python-sample) More
 ```
 print('A Kirsch compass kernel',ee.Kernel.kirsch());
+
 /**
  * Output weights matrix
  *
  * [5, -3, -3]
- * [5, 0, -3]
+ * [5,  0, -3]
  * [5, -3, -3]
  */
 ```
@@ -33,12 +34,14 @@ importgeemap.coreasgeemap
 ```
 ```
 frompprintimport pprint
+
 print('A Kirsch compass kernel:')
 pprint(ee.Kernel.kirsch().getInfo())
-# Output weights matrix
-# [5, -3, -3]
-# [5, 0, -3]
-# [5, -3, -3]
+
+#  Output weights matrix
+
+#  [5, -3, -3]
+#  [5,  0, -3]
+#  [5, -3, -3]
 ```
 
-Was this helpful?

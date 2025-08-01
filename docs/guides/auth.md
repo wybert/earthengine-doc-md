@@ -1,6 +1,6 @@
  
 #  Authentication and Initialization
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Earth Engine Code Editor and JavaScript](https://developers.google.com/earth-engine/guides/auth#earth_engine_code_editor_and_javascript)
   * [Python and Command Line](https://developers.google.com/earth-engine/guides/auth#python_and_command_line)
@@ -26,8 +26,8 @@ If you are using the JavaScript API (outside of the Code Editor), use one of the
 ## Python and Command Line
 Prior to using the Earth Engine Python client library, you need to authenticate (verify your identity) and use the resultant credentials to initialize the Python client. The authentication flows use [Cloud Projects](https://developers.google.com/earth-engine/cloud/earthengine_cloud_project_setup) to authenticate, and they're used for unpaid (free, noncommercial) use as well as paid use. To authenticate and initialize, run
 ```
-  ee.Authenticate()
-  ee.Initialize(project='my-project')
+    ee.Authenticate()
+    ee.Initialize(project='my-project')
 
 ```
 

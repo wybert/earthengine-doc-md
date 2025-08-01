@@ -1,6 +1,6 @@
  
 #  Hosted Custom Model for Earth Engine
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Performing inference with a custom trained model using a machine learning framework such as TensorFlow or PyTorch requires saving and uploading the model to Vertex AI, creating a prediction endpoint and deploying the model to serve traffic at the created endpoint.
 ## Model Input
 Before you save and upload your model to Vertex AI you should ensure that the model accepts data in a payload format that Earth Engine supports. For more details see our [payload formats](https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats.md) page for more details.
@@ -18,13 +18,13 @@ model_scripted.save('model.pt') # Save
 
 Once the model file is saved it needs to be archived so it can be deployed to Vertex AI. When using a prebuilt container the model [must be named "model"](https://cloud.google.com/vertex-ai/docs/training/exporting-model-artifacts#pytorch). To archive the model torch-model-archiver needs to be run including any custom handler and additional files your model requires. An example of that is here:
 ```
-torch-model-archiver-f\
---model-namemodel\
---version1.0\
---serialized-file$model_file\
---handler$hander_file\
---extra-files$index_to_name_file\
---export-path$model_path
+torch-model-archiver\
+\
+1.0\
+$model_file\
+$hander_file\
+$index_to_name_file\
+$model_path
 
 ```
 
@@ -32,11 +32,11 @@ torch-model-archiver-f\
 Once your model files are saved the next step is to upload your model to Vertex AI. If your model artifact is not already in Google Cloud Storage copy your model archive there first with a command like `gsutil cp $model_path gs://${your-bucket}/models/model`.
 Once copied you can either use the [Vertex AI's Model Registry](https://console.cloud.google.com/vertex-ai/models) to upload your model or use gcloud command line and run something like:
 ```
-gcloudaimodelsupload\
---artifact-uri=gs://{your-bucket}/models/model\
---display-name=${display-name}\
---container-image-uri=${model-container}\
---container-grpc-ports=8500
+gcloud\
+=gs://{your-bucket}/models/model\
+=${display-name}\
+=${model-container}\
+=8500
 
 ```
 
@@ -45,19 +45,19 @@ TIP: For optimal performance enable gRPC predictions with the `container-grpc-po
 Once a model is uploaded to Vertex AI, create an endpoint and deploy the model through the Online Prediction page by [creating a new endpoint](https://console.cloud.google.com/vertex-ai/online-prediction/endpoints) or by using the gcloud command line with the commands `endpoints create` and `endpoints deploy-model`. For example:
 Creating an model:
 ```
-gcloudaiendpointscreate\
---display-name=${endpoint-name}
+gcloud\
+=${endpoint-name}
 
 ```
 
 Deploying a model
 ```
-gcloudaiendpointsdeploy-model{endpoint-id}\
---model=${model-id}\
---traffic-split=0=100\
---display-name=${model-display-name}\
---min-replica-count=${min-replica-count}\
---max-replica-count=${max-replica-count}
+gcloud{endpoint-id}\
+=${model-id}\
+=0=100\
+=${model-display-name}\
+=${min-replica-count}\
+=${max-replica-count}
 
 ```
 

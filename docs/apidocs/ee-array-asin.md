@@ -5,23 +5,25 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-array-asin#examples)
 
 
-On an element-wise basis, computes the arcsine in radians of the input. 
-Usage| Returns  
+On an element-wise basis, computes the arcsine in radians of the input.
+Usage | Returns  
 ---|---  
-`Array.asin()`| Array  
-Argument| Type| Details  
+`Array.asin()` | Array  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Array| The input array.  
+this: `input` | Array | The input array.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-array-asin#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-array-asin#colab-python-sample) More
 ```
 print(ee.Array([-1]).asin());// [-π/2]
 print(ee.Array([0]).asin());// [0]
 print(ee.Array([1]).asin());// [π/2]
+
 varstart=-1;
 varend=1;
 varpoints=ee.Array(ee.List.sequence(start,end,null,50));
 varvalues=points.asin();
+
 // Plot asin() defined above.
 varchart=ui.Chart.array.values(values,0,points)
 .setOptions({
@@ -56,18 +58,22 @@ importgeemap.coreasgeemap
 importmath
 importaltairasalt
 importpandasaspd
-display(ee.Array([-1]).asin()) # [-π/2]
-display(ee.Array([0]).asin()) # [0]
-display(ee.Array([1]).asin()) # [π/2]
+
+display(ee.Array([-1]).asin())  # [-π/2]
+display(ee.Array([0]).asin())  # [0]
+display(ee.Array([1]).asin())  # [π/2]
+
 start = -1
 end = 1
 points = ee.Array(ee.List.sequence(start, end, None, 50))
 values = points.asin()
+
 df = pd.DataFrame({'x': points.getInfo(), 'asin(x)': values.getInfo()})
+
 # Plot asin() defined above.
 alt.Chart(df).mark_line().encode(
-  x=alt.X('x', axis=alt.Axis(values=[start, 0, end])),
-  y=alt.Y('asin(x)', axis=alt.Axis(values=[-math.pi / 2, 0, math.pi / 2]))
+    x=alt.X('x', axis=alt.Axis(values=[start, 0, end])),
+    y=alt.Y('asin(x)', axis=alt.Axis(values=[-math.pi / 2, 0, math.pi / 2]))
 )
 ```
 

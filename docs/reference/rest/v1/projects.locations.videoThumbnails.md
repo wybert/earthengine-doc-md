@@ -7,17 +7,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
+  }
 }
 ```
   
@@ -34,9 +34,9 @@ JSON representation
 ---  
 ```
 {
- "framesPerSecond": number,
- "maxFrames": integer,
- "maxPixelsPerFrame": string
+  "framesPerSecond": number,
+  "maxFrames": integer,
+  "maxPixelsPerFrame": string
 }
 ```
   

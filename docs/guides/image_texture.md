@@ -1,18 +1,22 @@
  
 #  Texture
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Earth Engine has several special methods for estimating spatial texture. When the image is discrete valued (not floating point), you can use `image.entropy()` to compute the [entropy](http://en.wikipedia.org/wiki/Entropy_\(information_theory\)) in a neighborhood:
 ### Code Editor (JavaScript)
 ```
 // Load a high-resolution NAIP image.
 varimage=ee.Image('USDA/NAIP/DOQQ/m_3712213_sw_10_1_20140613');
+
 // Zoom to San Francisco, display.
 Map.setCenter(-122.466123,37.769833,17);
 Map.addLayer(image,{max:255},'image');
+
 // Get the NIR band.
 varnir=image.select('N');
+
 // Define a neighborhood with a kernel.
 varsquare=ee.Kernel.square({radius:4});
+
 // Compute entropy and display.
 varentropy=nir.entropy(square);
 Map.addLayer(entropy,
@@ -45,8 +49,10 @@ varrows=[row,row,row,row,centerRow,row,row,row,row];
 // Create the kernel from the weights.
 // Non-zero weights represent the spatial neighborhood.
 varkernel=ee.Kernel.fixed(9,9,rows,-4,-4,false);
+
 // Convert the neighborhood into multiple bands.
 varneighs=nir.neighborhoodToBands(kernel);
+
 // Compute local Geary's C, a measure of spatial association.
 vargearys=nir.subtract(neighs).pow(2).reduce(ee.Reducer.sum())
 .divide(Math.pow(9,2));

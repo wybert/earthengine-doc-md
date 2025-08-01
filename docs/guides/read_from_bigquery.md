@@ -1,6 +1,6 @@
  
 #  Read from BigQuery
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 **Note:** The [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) and [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) functions are in [**Preview**](https://cloud.google.com/products#product-launch-stages). To request support or provide feedback for them, email bigquery-earthengine-preview-support@google.com.
 This page describes how to integrate BigQuery tables into Earth Engine workflows as `ee.FeatureCollection` objects, using the [`ee.FeatureCollection.loadBigQueryTable()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-loadbigquerytable) and [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-engine/apidocs/ee-featurecollection-runbigquery) methods.
 ## Load data from BigQuery
@@ -13,6 +13,7 @@ varfeatures=ee.FeatureCollection.loadBigQueryTable({
 table:'my_project.my_dataset.my_table',
 geometryColumn:'geo'
 });
+
 // Display features on the map.
 Map.addLayer(features);
 
@@ -22,11 +23,12 @@ Map.addLayer(features);
 ```
 # Load the BigQuery table with a specified geometry column.
 features = ee.FeatureCollection.loadBigQueryTable(
-  table='my_project.my_dataset.my_table',
-  geometryColumn='geo')
+    table='my_project.my_dataset.my_table',
+    geometryColumn='geo')
+
 # Display the first feature.
 display(features.first().getInfo())
-   
+      
 ```
 
 ### Billing
@@ -39,8 +41,10 @@ The [`ee.FeatureCollection.runBigQuery()`](https://developers.google.com/earth-e
 ```
 // Construct a BigQuery query.
 varquery='SELECT * FROM my_project.my_dataset.my_table WHERE column > 1000';
+
 // Run the query and return the results as a FeatureCollection.
 varfeatures=ee.FeatureCollection.runBigQuery(query);
+
 // Print the first feature.
 print(features.first());
 
@@ -50,11 +54,13 @@ print(features.first());
 ```
 # Construct a BigQuery query.
 query = 'SELECT * FROM my_project.my_dataset.my_table WHERE column > 1000'
+
 # Run the query and retrieve the results as a FeatureCollection.
 features = ee.FeatureCollection.runBigQuery(query)
+
 # Print the first feature.
 print(features.first().getInfo())
-   
+      
 ```
 
 ### BigQuery queries
@@ -118,9 +124,9 @@ geometryColumn:'geo'
 ### Python
 ```
 features = ee.FeatureCollection.runBigQuery(
- query='SELECT * FROM my_project.my_linked_dataset.my_table',
- geometryColumn='geo')
-   
+  query='SELECT * FROM my_project.my_linked_dataset.my_table',
+  geometryColumn='geo')
+      
 ```
 
   * Joining on `system:index` for BigQuery tables with auto-generated IDs may lead to unexpected behaviours. To prevent this from happening, consider adding `system:index` to BigQuery table manually or joining the table on a different property. Read more about indexing in the [Data indexing section](https://developers.google.com/earth-engine/guides/read_from_bigquery#data_indexing).

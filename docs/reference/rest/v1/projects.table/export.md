@@ -32,32 +32,33 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "description": string,
- "selectors": [
-  string
- ],
- "requestId": string,
- "maxErrorMeters": number,
- "maxVertices": integer,
- "workloadTag": string,
- "priority": integer,
- // Union field export_options can be only one of the following:
- "fileExportOptions": {
-  object (TableFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#TableFileExportOptions))
- },
- "assetExportOptions": {
-  object (TableAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#TableAssetExportOptions))
- },
- "featureViewExportOptions": {
-  object (FeatureViewAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#FeatureViewAssetExportOptions))
- },
- "bigqueryExportOptions": {
-  object (BigQueryExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#BigQueryExportOptions))
- }
- // End of list of possible types for union field export_options.
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "description": string,
+  "selectors": [
+    string
+  ],
+  "requestId": string,
+  "maxErrorMeters": number,
+  "maxVertices": integer,
+  "workloadTag": string,
+  "priority": integer,
+
+  // Union field export_options can be only one of the following:
+  "fileExportOptions": {
+    object (TableFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#TableFileExportOptions))
+  },
+  "assetExportOptions": {
+    object (TableAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#TableAssetExportOptions))
+  },
+  "featureViewExportOptions": {
+    object (FeatureViewAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#FeatureViewAssetExportOptions))
+  },
+  "bigqueryExportOptions": {
+    object (BigQueryExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#BigQueryExportOptions))
+  }
+  // End of list of possible types for union field export_options.
 }
 ```
   
@@ -81,8 +82,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/devstorage.full_control`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/devstorage.full_control`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -92,15 +93,16 @@ JSON representation
 ---  
 ```
 {
- "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables#Table.TableFileFormat)),
- // Union field destination can be only one of the following:
- "driveDestination": {
-  object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
- },
- "cloudStorageDestination": {
-  object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
- }
- // End of list of possible types for union field destination.
+  "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.tables#Table.TableFileFormat)),
+
+  // Union field destination can be only one of the following:
+  "driveDestination": {
+    object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
+  },
+  "cloudStorageDestination": {
+    object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -116,11 +118,12 @@ JSON representation
 ---  
 ```
 {
- // Union field destination can be only one of the following:
- "earthEngineDestination": {
-  object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1/EarthEngineDestination))
- }
- // End of list of possible types for union field destination.
+
+  // Union field destination can be only one of the following:
+  "earthEngineDestination": {
+    object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1/EarthEngineDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -134,14 +137,15 @@ JSON representation
 ---  
 ```
 {
- "ingestionTimeParameters": {
-  object (FeatureViewIngestionTimeParameters[](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets#EarthEngineAsset.FeatureViewIngestionTimeParameters))
- },
- // Union field destination can be only one of the following:
- "featureViewDestination": {
-  object (FeatureViewDestination[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#FeatureViewDestination))
- }
- // End of list of possible types for union field destination.
+  "ingestionTimeParameters": {
+    object (FeatureViewIngestionTimeParameters[](https://developers.google.com/earth-engine/reference/rest/v1/projects.assets#EarthEngineAsset.FeatureViewIngestionTimeParameters))
+  },
+
+  // Union field destination can be only one of the following:
+  "featureViewDestination": {
+    object (FeatureViewDestination[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#FeatureViewDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -156,8 +160,8 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "assetVersion": integer
+  "name": string,
+  "assetVersion": integer
 }
 ```
   
@@ -171,11 +175,12 @@ JSON representation
 ---  
 ```
 {
- // Union field destination can be only one of the following:
- "bigqueryDestination": {
-  object (BigQueryDestination[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#BigQueryDestination))
- }
- // End of list of possible types for union field destination.
+
+  // Union field destination can be only one of the following:
+  "bigqueryDestination": {
+    object (BigQueryDestination[](https://developers.google.com/earth-engine/reference/rest/v1/projects.table/export#BigQueryDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   
@@ -189,15 +194,15 @@ JSON representation
 ---  
 ```
 {
- "table": string,
- "overwrite": boolean,
- "append": boolean
+  "table": string,
+  "overwrite": boolean,
+  "append": boolean
 }
 ```
   
 Fields  
 ---  
-`table` |  `string` Required. The BigQuery destination table reference in the following format: "projectId.dataset_id.table_id".If the referenced resource does not exist, new table will be created. This applies if "append" and "overwrite" parameters are both false as well.If the referenced resource does exist and has compatible schema, one of the "overwrite" and "append" parameters has to be true, otherwise the task will fail.If referenced resource exists and schema is not compatible with the existing one, task will also fail.  
-`overwrite` |  `boolean` Specifies if the table data should be overwritten if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
-`append` |  `boolean` Specifies if the table data should be appended if the table already exists and has a compatible schema.The `overwrite` and `append` parameters cannot be `true` simultaneously.  
+`table` |  `string` Required. The BigQuery destination table reference in the following format: "projectId.dataset_id.table_id". If the referenced resource does not exist, new table will be created. This applies if "append" and "overwrite" parameters are both false as well. If the referenced resource does exist and has compatible schema, one of the "overwrite" and "append" parameters has to be true, otherwise the task will fail. If referenced resource exists and schema is not compatible with the existing one, task will also fail.  
+`overwrite` |  `boolean` Specifies if the table data should be overwritten if the table already exists and has a compatible schema. The `overwrite` and `append` parameters cannot be `true` simultaneously.  
+`append` |  `boolean` Specifies if the table data should be appended if the table already exists and has a compatible schema. The `overwrite` and `append` parameters cannot be `true` simultaneously.  
 Was this helpful?

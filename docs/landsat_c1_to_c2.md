@@ -58,15 +58,17 @@ varthermalBand=image.select('ST_B10').multiply(0.00341802).add(149.0);
 returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBand,null,true);
 }
+
 varsrColScaled=srCol.map(applyScaleFactors)
 ```
 ```
 defapply_scale_factors(image):
- optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
- thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
- return image.addBands(optical_bands, None, True).addBands(
-   thermal_band, None, True
- )
+  optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
+  thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
+  return image.addBands(optical_bands, None, True).addBands(
+      thermal_band, None, True
+  )
+
 sr_col_scaled = sr_col.map(apply_scale_factors)
 ```
 
@@ -167,7 +169,7 @@ SENSING_TIME |
 | SPACECRAFT_ID  
 | STATION_ID  
 **SOLAR_AZIMUTH_ANGLE** | **SUN_AZIMUTH**  
-**SOLAR_ZENITH_ANGLE** | **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
+**SOLAR_ZENITH_ANGLE** |  **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
 SR_APP_VERSION |   
 | TARGET_WRS_PATH  
 | TARGET_WRS_ROW  
@@ -228,15 +230,17 @@ varthermalBand=image.select('ST_B6').multiply(0.00341802).add(149.0);
 returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBand,null,true);
 }
+
 varsrColScaled=srCol.map(applyScaleFactors)
 ```
 ```
 defapply_scale_factors(image):
- optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
- thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
- return image.addBands(optical_bands, None, True).addBands(
-   thermal_band, None, True
- )
+  optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
+  thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
+  return image.addBands(optical_bands, None, True).addBands(
+      thermal_band, None, True
+  )
+
 sr_col_scaled = sr_col.map(apply_scale_factors)
 ```
 
@@ -378,7 +382,7 @@ SENSING_TIME |
 | SPACECRAFT_ID  
 | STATION_ID  
 **SOLAR_AZIMUTH_ANGLE** | **SUN_AZIMUTH**  
-**SOLAR_ZENITH_ANGLE** | **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
+**SOLAR_ZENITH_ANGLE** |  **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
 SR_APP_VERSION |   
 | TEMPERATURE_ADD_BAND_ST_B6  
 | TEMPERATURE_MAXIMUM_BAND_ST_B6  
@@ -434,15 +438,17 @@ varthermalBand=image.select('ST_B6').multiply(0.00341802).add(149.0);
 returnimage.addBands(opticalBands,null,true)
 .addBands(thermalBand,null,true);
 }
+
 varsrColScaled=srCol.map(applyScaleFactors)
 ```
 ```
 defapply_scale_factors(image):
- optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
- thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
- return image.addBands(optical_bands, None, True).addBands(
-   thermal_band, None, True
- )
+  optical_bands = image.select('SR_B.').multiply(0.0000275).add(-0.2)
+  thermal_band = image.select('ST_B6').multiply(0.00341802).add(149.0)
+  return image.addBands(optical_bands, None, True).addBands(
+      thermal_band, None, True
+  )
+
 sr_col_scaled = sr_col.map(apply_scale_factors)
 ```
 
@@ -558,7 +564,7 @@ SENSING_TIME |
 | SPACECRAFT_ID  
 | STATION_ID  
 **SOLAR_AZIMUTH_ANGLE** | **SUN_AZIMUTH**  
-**SOLAR_ZENITH_ANGLE** | **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
+**SOLAR_ZENITH_ANGLE** |  **SUN_ELEVATION** _(Collection 2 uses elevation instead of zenith angle. To calculate zenith angle, use`90 - elevation`.)_  
 SR_APP_VERSION |   
 | TEMPERATURE_ADD_BAND_ST_B6  
 | TEMPERATURE_MAXIMUM_BAND_ST_B6  
@@ -1914,3 +1920,4 @@ LANDSAT/LC08/C01/T1_ANNUAL_RAW |
 LANDSAT/LC08/C01/T1_ANNUAL_TOA |   
 
 
+Was this helpful?

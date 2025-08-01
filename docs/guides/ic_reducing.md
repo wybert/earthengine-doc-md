@@ -13,6 +13,7 @@ varcollection=ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
 .filter(ee.Filter.eq('WRS_PATH',44))
 .filter(ee.Filter.eq('WRS_ROW',34))
 .filterDate('2014-01-01','2015-01-01');
+
 // Compute a median image and display.
 varmedian=collection.median();
 Map.setCenter(-122.3578,37.7726,12);
@@ -27,11 +28,12 @@ importgeemap.coreasgeemap
 ```
 # Load a Landsat 8 collection for a single path-row.
 collection = (
-  ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
-  .filter(ee.Filter.eq('WRS_PATH', 44))
-  .filter(ee.Filter.eq('WRS_ROW', 34))
-  .filterDate('2014-01-01', '2015-01-01')
+    ee.ImageCollection('LANDSAT/LC08/C02/T1_TOA')
+    .filter(ee.Filter.eq('WRS_PATH', 44))
+    .filter(ee.Filter.eq('WRS_ROW', 34))
+    .filterDate('2014-01-01', '2015-01-01')
 )
+
 # Compute a median image and display.
 median = collection.median()
 m = geemap.Map()
@@ -45,6 +47,7 @@ At each location in the output image, in each band, the pixel value is the media
 ```
 // Reduce the collection with a median reducer.
 varmedian=collection.reduce(ee.Reducer.median());
+
 // Display the median image.
 Map.addLayer(median,
 {bands:['B4_median','B3_median','B2_median'],max:0.3},
@@ -59,11 +62,12 @@ importgeemap.coreasgeemap
 ```
 # Reduce the collection with a median reducer.
 median = collection.reduce(ee.Reducer.median())
+
 # Display the median image.
 m.add_layer(
-  median,
-  {'bands': ['B4_median', 'B3_median', 'B2_median'], 'max': 0.3},
-  'Also median',
+    median,
+    {'bands': ['B4_median', 'B3_median', 'B2_median'], 'max': 0.3},
+    'Also median',
 )
 m
 ```
@@ -79,15 +83,18 @@ returnimage.addBands(image.metadata('system:time_start')
 // interpretation of the following trend calculation.
 .divide(1000*60*60*24*365));
 };
+
 // Load a MODIS collection, filter to several years of 16 day mosaics,
 // and map the time band function over it.
 varcollection=ee.ImageCollection('MODIS/006/MYD13A1')
 .filterDate('2004-01-01','2010-10-31')
 .map(addTime);
+
 // Select the bands to model with the independent variable first.
 vartrend=collection.select(['system:time_start','EVI'])
 // Compute the linear trend over time.
 .reduce(ee.Reducer.linearFit());
+
 // Display the trend with increasing slopes in green, decreasing in red.
 Map.setCenter(-96.943,39.436,5);
 Map.addLayer(
@@ -104,36 +111,39 @@ importgeemap.coreasgeemap
 ```
 # This function adds a band representing the image timestamp.
 defadd_time(image):
- return image.addBands(
-   image.metadata('system:time_start')
-   # Convert milliseconds from epoch to years to aid in
-   # interpretation of the following trend calculation.
-   .divide(1000 * 60 * 60 * 24 * 365)
- )
+  return image.addBands(
+      image.metadata('system:time_start')
+      # Convert milliseconds from epoch to years to aid in
+      # interpretation of the following trend calculation.
+      .divide(1000 * 60 * 60 * 24 * 365)
+  )
+
 
 # Load a MODIS collection, filter to several years of 16 day mosaics,
 # and map the time band function over it.
 collection = (
-  ee.ImageCollection('MODIS/006/MYD13A1')
-  .filterDate('2004-01-01', '2010-10-31')
-  .map(add_time)
+    ee.ImageCollection('MODIS/006/MYD13A1')
+    .filterDate('2004-01-01', '2010-10-31')
+    .map(add_time)
 )
+
 # Select the bands to model with the independent variable first.
 trend = collection.select(['system:time_start', 'EVI']).reduce(
-  # Compute the linear trend over time.
-  ee.Reducer.linearFit()
+    # Compute the linear trend over time.
+    ee.Reducer.linearFit()
 )
+
 # Display the trend with increasing slopes in green, decreasing in red.
 m.set_center(-96.943, 39.436, 5)
 m = geemap.Map()
 m.add_layer(
-  trend,
-  {
-    'min': 0,
-    'max': [-100, 100, 10000],
-    'bands': ['scale', 'scale', 'offset'],
-  },
-  'EVI trend',
+    trend,
+    {
+        'min': 0,
+        'max': [-100, 100, 10000],
+        'bands': ['scale', 'scale', 'offset'],
+    },
+    'EVI trend',
 )
 m
 ```

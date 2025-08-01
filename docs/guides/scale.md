@@ -1,11 +1,6 @@
  
 #  Scale
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Image Pyramids](https://developers.google.com/earth-engine/guides/scale#image-pyramids)
-  * [Scale of analysis](https://developers.google.com/earth-engine/guides/scale#scale-of-analysis)
-
-
 Understanding how Earth Engine handles scale is crucial to interpreting scientific results obtained from Earth Engine. Here, scale means pixel resolution. Unlike other GIS and image processing platforms, the scale of analysis is determined from the output, rather than the input. Specifically, when you make a request for results, an image to display or a statistic, for example, you specify the scale at which data is input to the analysis. This concept is illustrated in Figure 1.
 ![pyramids](https://developers.google.com/static/earth-engine/images/Pyramids.png) Figure 1. A graphic representation of an image dataset in Earth Engine. Dashed lines represent the pyramiding policy for aggregating 2x2 blocks of 4 pixels. Earth Engine uses the scale specified by the output to determine the appropriate level of the image pyramid to use as input. 
 ## Image Pyramids
@@ -16,6 +11,7 @@ Scale of analysis in Earth Engine is determined on a "pull" basis. The scale at 
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/scale#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/scale#colab-python-sample) More
 ```
 varimage=ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318').select('B4');
+
 varprintAtScale=function(scale){
 print('Pixel value at '+scale+' meters scale',
 image.reduceRegion({
@@ -25,6 +21,7 @@ geometry:image.geometry().centroid(),
 scale:scale
 }).get('B4'));
 };
+
 printAtScale(10);// 0.10394100844860077
 printAtScale(30);// 0.10394100844860077
 printAtScale(50);// 0.09130698442459106
@@ -41,23 +38,25 @@ importgeemap.coreasgeemap
 ```
 image = ee.Image('LANDSAT/LC08/C02/T1_TOA/LC08_044034_20140318').select('B4')
 
-defprint_at_scale(scale):
- display(
-   f'Pixel value at {scale} meters scale',
-   image.reduceRegion(
-     reducer=ee.Reducer.first(),
-     geometry=image.geometry().centroid(),
-     # The scale determines the pyramid level from which to pull the input
-     scale=scale,
-   ).get('B4'),
- )
 
-print_at_scale(10) # 0.10394100844860077
-print_at_scale(30) # 0.10394100844860077
-print_at_scale(50) # 0.09130698442459106
-print_at_scale(70) # 0.1150854229927063
-print_at_scale(200) # 0.102478988468647
-print_at_scale(500) # 0.09072770178318024
+defprint_at_scale(scale):
+  display(
+      f'Pixel value at {scale} meters scale',
+      image.reduceRegion(
+          reducer=ee.Reducer.first(),
+          geometry=image.geometry().centroid(),
+          # The scale determines the pyramid level from which to pull the input
+          scale=scale,
+      ).get('B4'),
+  )
+
+
+print_at_scale(10)  # 0.10394100844860077
+print_at_scale(30)  # 0.10394100844860077
+print_at_scale(50)  # 0.09130698442459106
+print_at_scale(70)  # 0.1150854229927063
+print_at_scale(200)  # 0.102478988468647
+print_at_scale(500)  # 0.09072770178318024
 ```
 
 In this example, note that the pixel value at a constant location (the image centroid) varies based on scale. This is due to the fact that different pyramid levels are selected for different scales. For similar scales, nearest neighbor resampling results in the same pixel value being returned. The important point is that by varying the scale, different image inputs are requested.

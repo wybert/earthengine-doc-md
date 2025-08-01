@@ -6,9 +6,9 @@ JSON representation
 ---  
 ```
 {
- "type": string,
- "geometry": value,
- "properties": value
+  "type": string,
+  "geometry": value,
+  "properties": value
 }
 ```
   

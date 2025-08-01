@@ -1,11 +1,10 @@
  
 #  ee.data.makeThumbUrl
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Create a thumbnail URL from a thumbid and token. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Returns the thumbnail URL.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`ee.data.makeThumbUrl(id)`| String  
-Argument| Type| Details  
+`ee.data.makeThumbUrl(id)` | String  
+Argument | Type | Details  
 ---|---|---  
-`id`| ThumbnailId| A thumbnail ID and token.  
+`id` | ThumbnailId | A thumbnail ID and token.  

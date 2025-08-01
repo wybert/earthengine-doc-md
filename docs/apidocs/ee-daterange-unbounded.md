@@ -5,10 +5,10 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-daterange-unbounded#examples)
 
 
-Returns a DateRange that includes all possible dates. 
-Usage| Returns  
+Returns a DateRange that includes all possible dates.
+Usage | Returns  
 ---|---  
-`ee.DateRange.unbounded()`| DateRange  
+`ee.DateRange.unbounded()` | DateRange  
 **No arguments.**
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-daterange-unbounded#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-daterange-unbounded#colab-python-sample) More

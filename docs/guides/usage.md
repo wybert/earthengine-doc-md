@@ -16,6 +16,7 @@ Max rate of requests (per account) | 100 requests/s (6000 requests/min)
 Average concurrent batch tasks | 2 tasks (on average)  
 Max asset storage space | 250 GB  
 Max number of assets | 10,000  
+Earth Engine compute time (EECU-time) per day in seconds | Unlimited  
 ### Concurrent interactive requests
 Each project can make [interactive requests](https://developers.google.com/earth-engine/guides/processing_environments#interactive-environment) in parallel, up to a quota limit. If the limit is exceeded, Earth Engine will return ["HTTP 429: Too Many Requests" errors](https://www.rfc-editor.org/rfc/rfc6585#section-4). Generally, these errors are handled by the Earth Engine client library, which wraps requests in exponential backoff, retrying the query until it succeeds. The Earth Engine client library will retry the request up to five times.
 To help avoid receiving these 429 errors, you may want to enable caching for your application, for example using memcache, to avoid redundant queries when possible. If using an older version of the Earth Engine client library that does not retry queries automatically, or if a query is still not completed after five retries, you may need to implement exponential backoff around requests.
@@ -27,17 +28,33 @@ When using Earth Engine noncommercially, the maximum number of batch tasks that 
 When using Earth Engine commercially, the maximum number of batch tasks that you're able to run concurrently is determined by the [pricing plan](https://cloud.google.com/earth-engine/pricing), though it may be further lowered by setting the per-project batch task concurrency limit. By default, the batch task concurrency limit on a project is set to the maximum allowed by the payment plan configured on the project's billing account. To view or update this limit on a project, see the [documentation for the command line tool](https://developers.google.com/earth-engine/guides/command_line#project_config).
 ### Asset storage quota
 Each [Earth Engine asset](https://developers.google.com/earth-engine/cloud/assets) has a corresponding data storage size measured in bytes. Assets can be owned by Cloud Projects or by individuals (legacy assets), and each asset counts against its owner's Earth Engine limit on overall storage and asset count.
+### EECU-time per day
+If you're looking to control costs, you can limit the amount of EECU-time that a project is allowed to consume on Earth Engine per day. By default, this quota is unlimited. Quota Administrators can [set this limit in the Cloud Console](https://console.cloud.google.com/iam-admin/quotas?service=earthengine.googleapis.com&metric=earthengine.googleapis.com/daily_eecu_usage_time) by filtering for the `earthengine.googleapis.com/daily_eecu_usage_time` quota metric. Once set, this quota accumulates the EECU-time consumed by successful Earth Engine requests of all users in a project. When the quota is exceeded, requests will fail until the quota is reset the next day or the limit is increased. See the [cost controls guide](https://developers.google.com/earth-engine/guides/cost_controls#daily-limits) for more details on setting this quota.
+**Note:** This quota is approximate. It provides a safeguard against excessive spending, but is not designed to strictly limit EECU-time. Earth Engine might occasionally run a query that exceeds the quota limit.
 ### User seats
 When using Earth Engine commercially, each [subscription tier](https://cloud.google.com/earth-engine/pricing) comes with a number of user seats, though it's also possible to purchase a number of additional seats.
 Service admins are expected to purchase a seat count to accommodate the number of Code Editor users within a given billing cycle.
 #### FAQ
-**Q: Who counts towards a seat?** **A:** Only distinct human users who perform Earth Engine compute usage using the Code Editor (view map tiles, send computation queries, etc.) count towards the seat limit. 
-**Q: What if users change from one month to the next?** **A:** Seats aren't allocated to specific individuals - they're not named slots. As long as you don't exceed the count in a given month, the individual user identities don't matter. 
-**Q: What about service accounts?** **A:** Service accounts are exempt from seat counts. They don't count as human users performing compute. 
-**Q: What about users accessing Earth Engine via Python?** **A:** Users who only access Earth Engine through the Python API and don't use the Code Editor don't count towards seat usage. Seat counts are tied to Code Editor usage. 
-**Q: Where are seats counted?** **A:** Seat counts apply at the billing account level. All human users across your organization who use the Code Editor contribute to the total seat count for your billing account. 
-**Q: What happens if we exceed our seat limit?** **A:** We monitor for consistent violations and enforce limits at the billing account level. 
-**Q: How do I purchase more or fewer seats?** **A:** See the [Earth Engine pricing](https://cloud.google.com/earth-engine/pricing) page for details.
+**Q: Who counts towards a seat?**   
+**A:** Only distinct human users who perform Earth Engine compute usage using the Code Editor (view map tiles, send computation queries, etc.) count towards the seat limit.   
+
+**Q: What if users change from one month to the next?**   
+**A:** Seats aren't allocated to specific individuals - they're not named slots. As long as you don't exceed the count in a given month, the individual user identities don't matter.   
+
+**Q: What about service accounts?**   
+**A:** Service accounts are exempt from seat counts. They don't count as human users performing compute.   
+
+**Q: What about users accessing Earth Engine via Python?**   
+**A:** Users who only access Earth Engine through the Python API and don't use the Code Editor don't count towards seat usage. Seat counts are tied to Code Editor usage.   
+
+**Q: Where are seats counted?**   
+**A:** Seat counts apply at the billing account level. All human users across your organization who use the Code Editor contribute to the total seat count for your billing account.   
+
+**Q: What happens if we exceed our seat limit?**   
+**A:** We monitor for consistent violations and enforce limits at the billing account level.   
+
+**Q: How do I purchase more or fewer seats?**   
+**A:** See the [Earth Engine pricing](https://cloud.google.com/earth-engine/pricing) page for details.
 ## Fixed quota limits
 These types of quota limits are set at the platform level, so they **can't be adjusted** on a per-user or per-project basis. They're unlikely to change significantly over time.
 ### Computation time
@@ -67,6 +84,6 @@ BigQuery slot-time per day | 1,260,000 slot-seconds (350 slot-hours)
 ### BigQuery slot-time per day
 The BigQuery slot-time per day quota is a custom quota that lets you limit the amount of slot-time that BigQuery raster functions are allowed to consume on Earth Engine on a given day for a given project. The daily quota accumulates the total time on all queries, even those that fail. You can view the quota in the [Cloud Console](https://console.cloud.google.com/iam-admin/quotas?service=earthengine.googleapis.com&metric=earthengine.googleapis.com/bigquery_slot_usage_time) under the `earthengine.googleapis.com/bigquery_slot_usage_time` metric, and the value can be adjusted up or down by a Quota Administrator. To increase the value above the default value, [create a quota increase request](https://cloud.google.com/docs/quotas/view-manage#requesting_higher_quota), which will be automatically approved. The change should take effect within 10 minutes.
 If you exceed this quota, BigQuery will return the following error message:
-> `From Earth Engine: Custom quota exceeded: Your usage exceeded the custom quota for 'earthengine.googleapis.com/bigquery_slot_usage_time', which is adjustable by your administrator in the Google Cloud console: https://console.cloud.google.com/quotas/?project=_.`
+> `From Earth Engine: Custom quota exceeded: Your usage exceeded the custom quota for`'earthengine.googleapis.com/bigquery_slot_usage_time'`, which is adjustable by your administrator in the Google Cloud console: https://console.cloud.google.com/quotas/?project=_.`
 Once the quota is exceeded, `ST_REGIONSTATS` calls will fail until the quota is reset the next day or the limit is increased by an administrator.
-**Note:** Like [BigQuery custom query quotas](https://cloud.google.com/bigquery/docs/custom-quotas), this quota is approximate. It provides a safeguard against excessive spending, but is not designed to strictly limit slot time. BigQuery might occasionally run a query that exceeds the quota limit, and you might exhaust your quota without being billed for the entire consumed amount.
+**Note:** Like [BigQuery custom query quotas](https://cloud.google.com/bigquery/docs/custom-quotas), this quota is approximate. It provides a safeguard against excessive spending, but is not designed to strictly limit slot time. BigQuery might occasionally run a query that exceeds the quota limit.

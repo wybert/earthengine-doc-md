@@ -1,14 +1,6 @@
  
 #  Method: projects.getConfig
 bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/getConfig#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/getConfig#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/getConfig#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/getConfig#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects/getConfig#authorization-scopes)
-
-
 Gets the config state of a project.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1alpha/{name=projects/*/config}`
@@ -27,8 +19,7 @@ If successful, the response body contains an instance of `ProjectConfig[](https:
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

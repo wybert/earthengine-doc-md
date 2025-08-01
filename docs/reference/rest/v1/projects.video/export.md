@@ -27,19 +27,19 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "description": string,
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileExportOptions": {
-  object (VideoFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.video/export#VideoFileExportOptions))
- },
- "requestId": string,
- "workloadTag": string,
- "priority": integer
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "description": string,
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileExportOptions": {
+    object (VideoFileExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/projects.video/export#VideoFileExportOptions))
+  },
+  "requestId": string,
+  "workloadTag": string,
+  "priority": integer
 }
 ```
   
@@ -57,8 +57,8 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/devstorage.full_control`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/devstorage.full_control`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -68,15 +68,16 @@ JSON representation
 ---  
 ```
 {
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- // Union field destination can be only one of the following:
- "driveDestination": {
-  object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
- },
- "cloudStorageDestination": {
-  object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
- }
- // End of list of possible types for union field destination.
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+
+  // Union field destination can be only one of the following:
+  "driveDestination": {
+    object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
+  },
+  "cloudStorageDestination": {
+    object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   

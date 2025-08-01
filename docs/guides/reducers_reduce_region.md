@@ -1,6 +1,11 @@
  
 #  Statistics of an Image Region
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [ reduceRegion ](https://developers.google.com/earth-engine/guides/reducers_reduce_region#reduceregion)
+  * [ Pixels in the region ](https://developers.google.com/earth-engine/guides/reducers_reduce_region#pixels-in-the-region)
+
+
 ##  `reduceRegion`
 To get statistics of pixel values in a region of an `ee.Image`, use [`image.reduceRegion()`](https://developers.google.com/earth-engine/apidocs/ee-image-reduceregion). This reduces all the pixels in the region(s) to a statistic or other compact representation of the pixel data in the region (e.g. histogram). The region is represented as a `Geometry`, which might be a polygon, containing many pixels, or it might be a single point, in which case there will only be one pixel in the region. In either case, as illustrated in Figure 1, the output is a statistic derived from the pixels in the region.
 ![reduceRegion diagram](https://developers.google.com/static/earth-engine/images/Reduce_region_diagram.png) Figure 1. An illustration of an `ee.Reducer` applied to an image and a region.
@@ -8,10 +13,12 @@ For an example of getting pixel statistics in a region of an image using `reduce
 ```
 //Loadinputimagery:Landsat75-yearcomposite.
 varimage=ee.Image('LANDSAT/LE7_TOA_5YEAR/2008_2012');
+
 //Loadaninputregion:SierraNevada.
 varregion=ee.Feature(ee.FeatureCollection('EPA/Ecoregions/2013/L3')
 .filter(ee.Filter.eq('us_l3name','Sierra Nevada'))
 .first());
+
 //Reducetheregion.TheregionparameteristheFeaturegeometry.
 varmeanDictionary=image.reduceRegion({
 reducer:ee.Reducer.mean(),
@@ -19,6 +26,7 @@ geometry:region.geometry(),
 scale:30,
 maxPixels:1e9
 });
+
 //TheresultisaDictionary.Printit.
 print(meanDictionary);
 ```
@@ -41,6 +49,7 @@ There are two ways to set the scale: by specifying the `scale` parameter, or by 
 //Makethisarraybyconstructinga4326projectionat30meters,
 //thencopyingtheboundsofthecomposite,fromcomposite.projection().
 varaffine=[0.00026949458523585647,0,-180,0,-0.00026949458523585647,86.0000269494563];
+
 //Performthereduction,printtheresult.
 print(image.reduceRegion({
 reducer:ee.Reducer.mean(),
@@ -59,5 +68,7 @@ Pixels are determined to be in the region (and weighted) according to the follow
 
 
 The `maxPixels` parameter is needed to get the computation to succeed. If this parameter is left out of the example, an error is returned, which looks something like:
-Dictionary (Error) Image.reduceRegion: Too many pixels in the region. Found 527001545, but only 10000000 allowed. 
+Dictionary (Error)  
+Image.reduceRegion: Too many pixels in the region. Found 527001545, but only 10000000 allowed.  
+
 There are multiple options to get past these errors: increase `maxPixels`, as in the example, increase the `scale`, or set `bestEffort` to true, which automatically computes a new (larger) scale such that `maxPixels` is not exceeded. If you do not specify `maxPixels`, the default value is used.

@@ -26,10 +26,10 @@ JSON representation
 ---  
 ```
 {
- "imageManifest": {
-  object (ImageManifest[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest))
- },
- "overwrite": boolean
+  "imageManifest": {
+    object (ImageManifest[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageManifest))
+  },
+  "overwrite": boolean
 }
 ```
   
@@ -42,7 +42,7 @@ If successful, the response body is empty.
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

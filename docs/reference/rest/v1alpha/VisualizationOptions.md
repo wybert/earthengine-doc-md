@@ -6,16 +6,16 @@ JSON representation
 ---  
 ```
 {
- "ranges": [
-  {
-   object (DoubleRange[](https://developers.google.com/earth-engine/reference/rest/v1alpha/DoubleRange))
-  }
- ],
- "paletteColors": [
-  string
- ],
- "gamma": number,
- "opacity": number
+  "ranges": [
+    {
+      object (DoubleRange[](https://developers.google.com/earth-engine/reference/rest/v1alpha/DoubleRange))
+    }
+  ],
+  "paletteColors": [
+    string
+  ],
+  "gamma": number,
+  "opacity": number
 }
 ```
   
@@ -25,4 +25,3 @@ Fields
 `paletteColors[]` |  `string` If present, specifies sequence of CSS-style RGB color identifiers to apply as a color palette. Only allowed when visualizing a single data band.  
 `gamma` |  `number` If present, specifies an overall gamma correction factor to apply to the image.  
 `opacity` |  `number` If present, specifies an overall opacity factor to apply to the image, in the range 0.0 to 1.0.  
-Was this helpful?

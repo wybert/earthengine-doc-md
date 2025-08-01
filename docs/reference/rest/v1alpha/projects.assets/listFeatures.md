@@ -37,13 +37,13 @@ JSON representation
 ---  
 ```
 {
- "type": string,
- "features": [
-  {
-   object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Feature))
-  }
- ],
- "nextPageToken": string
+  "type": string,
+  "features": [
+    {
+      object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Feature))
+    }
+  ],
+  "nextPageToken": string
 }
 ```
   
@@ -55,9 +55,9 @@ Fields
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

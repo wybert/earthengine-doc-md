@@ -1,17 +1,6 @@
  
 #  NPM Installation
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Installing the client library](https://developers.google.com/earth-engine/guides/npm_install#installing-the-client-library)
-  * [Updating the client library](https://developers.google.com/earth-engine/guides/npm_install#updating-the-client-library)
-  * [Uninstalling the client library](https://developers.google.com/earth-engine/guides/npm_install#uninstalling-the-client-library)
-  * [ Create a Cloud Project and activate the Earth Engine API ](https://developers.google.com/earth-engine/guides/npm_install#create-a-cloud-project-and-activate-the-earth-engine-api)
-  * [Setting Up Authentication Credentials](https://developers.google.com/earth-engine/guides/npm_install#setting-up-authentication-credentials)
-    * [Client-side authentication with OAuth](https://developers.google.com/earth-engine/guides/npm_install#client-side-authentication-with-oauth)
-    * [Server-side authentication with a service account](https://developers.google.com/earth-engine/guides/npm_install#server-side-authentication-with-a-service-account)
-  * [Testing the installation](https://developers.google.com/earth-engine/guides/npm_install#testing-the-installation)
-
-
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Keep your client library up to date by running: `npm update @google/earthengine`
 The Earth Engine JavaScript API is distributed as an [npm package](https://www.npmjs.com/package/@google/earthengine) that is [hosted on GitHub](https://github.com/google/earthengine-api). The following instructions give an overview of installing the Google Earth Engine JavaScript API. To use the Earth Engine JavaScript API you'll need to [install the client library and its dependencies](https://developers.google.com/earth-engine/guides/npm_install#installing-the-client-library) on your computer and then [set up authentication credentials](https://developers.google.com/earth-engine/guides/npm_install#setting-up-authentication-credentials).
 _The JavaScript client library does not include all functionality of the Earth Engine[Code Editor](https://developers.google.com/earth-engine/guides/playground). Notably, user interface features such as buttons, panels, and charts are excluded._
@@ -60,6 +49,7 @@ After [creating an OAuth 2.0 Client ID](https://developers.google.com/earth-engi
 ```
 //Loadclientlibrary.
 varee=require('@google/earthengine');
+
 //Initializeclientlibraryandrunanalysis.
 varinitialize=function(){
 ee.initialize(null,null,function(){
@@ -68,6 +58,7 @@ ee.initialize(null,null,function(){
 console.error('Initialization error: '+e);
 });
 };
+
 //AuthenticateusinganOAuthpop-up.
 ee.data.authenticateViaOauth(YOUR_CLIENT_ID,initialize,function(e){
 console.error('Authentication error: '+e);
@@ -84,6 +75,7 @@ After [creating a new service account](https://developers.google.com/earth-engin
 //Requireclientlibraryandprivatekey.
 varee=require('@google/earthengine');
 varprivateKey=require('./.private-key.json');
+
 //Initializeclientlibraryandrunanalysis.
 varrunAnalysis=function(){
 ee.initialize(null,null,function(){
@@ -92,6 +84,7 @@ ee.initialize(null,null,function(){
 console.error('Initialization error: '+e);
 });
 };
+
 //Authenticateusingaserviceaccount.
 ee.data.authenticateViaPrivateKey(privateKey,runAnalysis,function(e){
 console.error('Authentication error: '+e);
@@ -102,10 +95,13 @@ console.error('Authentication error: '+e);
 To test that authentication has been set up correctly, run the following script:
 ```
 varee=require('@google/earthengine');
+
 //Authenticateusingone(butnotboth)ofthemethodsbelow.
 ee.data.authenticateViaOauth(YOUR_CLIENT_ID);
 ee.data.authenticateViaPrivateKey(YOUR_PRIVATE_KEY);
+
 ee.initialize();
+
 //RunanEarthEnginescript.
 varimage=newee.Image('srtm90_v4');
 image.getMap({min:0,max:1000},function(map){

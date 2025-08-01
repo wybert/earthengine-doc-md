@@ -10,8 +10,8 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "registrationState": enum (RegistrationState[](https://developers.google.com/earth-engine/reference/rest/v1beta/ProjectConfig#RegistrationState))
+  "name": string,
+  "registrationState": enum (RegistrationState[](https://developers.google.com/earth-engine/reference/rest/v1beta/ProjectConfig#RegistrationState))
 }
 ```
   

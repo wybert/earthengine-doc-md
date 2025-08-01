@@ -11,12 +11,12 @@ JSON representation
 ---  
 ```
 {
- "bucket": string,
- "filenamePrefix": string,
- "permissions": enum (TilePermissions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination#TilePermissions)),
- "bucketCorsUris": [
-  string
- ]
+  "bucket": string,
+  "filenamePrefix": string,
+  "permissions": enum (TilePermissions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/GcsDestination#TilePermissions)),
+  "bucketCorsUris": [
+    string
+  ]
 }
 ```
   

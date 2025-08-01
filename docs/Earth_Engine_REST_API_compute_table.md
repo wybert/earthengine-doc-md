@@ -1,6 +1,18 @@
  
 #  Table computations with the Earth Engine REST API
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [Before you begin](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#before_you_begin)
+  * [Authenticate to Google Cloud](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#authenticate_to_google_cloud)
+  * [Obtain a private key file for your service account](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#obtain_a_private_key_file_for_your_service_account)
+  * [Start an AuthorizedSession and test your credentials](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#start_an_authorizedsession_and_test_your_credentials)
+  * [Serialize a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#serialize_a_computation)
+    * [Authenticate to Earth Engine](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#authenticate_to_earth_engine)
+    * [Define a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#define_a_computation)
+    * [Serialize the expression graph](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#serialize_the_expression_graph)
+  * [Send the request](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table#send_the_request)
+
+
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_table.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_table.ipynb)  
 ---|---  
 **_Note:_** _The REST API contains new and advanced features that may not be suitable for all users. If you are new to Earth Engine, please get started with the[JavaScript guide](https://developers.google.com/earth-engine/guides/getstarted)._
@@ -20,6 +32,7 @@ The first thing to do is login so that you can make authenticated requests to Go
 ```
 #INSERTYOURPROJECTHERE
 PROJECT='your-project'
+
 !gcloud auth login --project {PROJECT}
 
 ```
@@ -30,6 +43,7 @@ You should already have a service account registered to use Earth Engine. If you
 #INSERTYOURSERVICEACCOUNTHERE
 SERVICE_ACCOUNT='your-service-account@your-project.iam.gserviceaccount.com'
 KEY='key.json'
+
 !gcloud iam service-accounts keys create {KEY} --iam-account {SERVICE_ACCOUNT}
 
 ```
@@ -39,12 +53,17 @@ Test the private key by using it to get credentials. Use the credentials to crea
 ```
 fromgoogle.auth.transport.requestsimport AuthorizedSession
 fromgoogle.oauth2import service_account
+
 credentials = service_account.Credentials.from_service_account_file(KEY)
 scoped_credentials = credentials.with_scopes(
-  ['https://www.googleapis.com/auth/cloud-platform'])
+    ['https://www.googleapis.com/auth/cloud-platform'])
+
 session = AuthorizedSession(scoped_credentials)
+
 url = 'https://earthengine.googleapis.com/v1beta/projects/earthengine-public/assets/LANDSAT'
+
 response = session.get(url)
+
 frompprintimport pprint
 importjson
 pprint(json.loads(response.content))
@@ -57,6 +76,7 @@ Before you can send a request to compute something, the computation needs to be 
 Get Earth Engine scoped credentials from the service account. Use them to initialize Earth Engine.
 ```
 importee
+
 # Get some new credentials since the other ones are cloud scope.
 ee_creds = ee.ServiceAccountCredentials(SERVICE_ACCOUNT, KEY)
 ee.Initialize(ee_creds)
@@ -69,15 +89,16 @@ Prototype a simple computation with the client API. Note that the result of the 
 #Acollectionofpolygons.
 states=ee.FeatureCollection('TIGER/2018/States')
 maine=states.filter(ee.Filter.eq('NAME','Maine'))
+
 #Imagery:NDVIvegetationindexfromMODIS.
 band='NDVI'
 images=ee.ImageCollection('MODIS/006/MOD13Q1').select(band)
 image=images.first()
+
 computation=image.reduceRegions(
-collection=maine,
-reducer=ee.Reducer.mean().setOutputs([band]),
-scale=image.projection().nominalScale()
+collection=maine,reducer=ee.Reducer.mean().setOutputs([band]),scale=image.projection().nominalScale()
 )
+
 #Printthevaluetotest.
 print(computation.first().get(band).getInfo())
 
@@ -95,14 +116,18 @@ serialized = ee.serializer.encode(computation)
 Make a `POST` request to the [`computeFeatures`](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.table/computeFeatures) endpoint. Note that the request contains the [`Expression`](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression), which is the serialized computation.
 ```
 importjson
+
 url = 'https://earthengine.googleapis.com/v1beta/projects/{}/table:computeFeatures'
+
 response = session.post(
- url = url.format(PROJECT),
- data = json.dumps({'expression': serialized})
+  url = url.format(PROJECT),
+  data = json.dumps({'expression': serialized})
 )
+
 importjson
 pprint(json.loads(response.content))
 
 ```
 
 The response contains the resultant `FeatureCollection` as GeoJSON, which can be consumed by other apps or processes.
+Was this helpful?

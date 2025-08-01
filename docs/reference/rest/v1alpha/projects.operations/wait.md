@@ -1,6 +1,6 @@
  
 #  Method: projects.operations.wait
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations/wait#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.operations/wait#path-parameters)
@@ -23,20 +23,19 @@ JSON representation
 ---  
 ```
 {
- "timeout": string
+  "timeout": string
 }
 ```
   
 Fields  
 ---  
-`timeout` |  `string (`Duration[](https://protobuf.dev/reference/protobuf/google.protobuf/#duration)` format)` The maximum duration to wait before timing out. If left blank, the wait will be at most the time permitted by the underlying HTTP/RPC protocol. If RPC context deadline is also specified, the shorter one will be used.A duration in seconds with up to nine fractional digits, ending with '`s`'. Example: `"3.5s"`.  
+`timeout` |  `string (`Duration[](https://protobuf.dev/reference/protobuf/google.protobuf/#duration)` format)` The maximum duration to wait before timing out. If left blank, the wait will be at most the time permitted by the underlying HTTP/RPC protocol. If RPC context deadline is also specified, the shorter one will be used. A duration in seconds with up to nine fractional digits, ending with '`s`'. Example: `"3.5s"`.  
 ### Response body
 If successful, the response body contains an instance of `Operation[](https://developers.google.com/earth-engine/reference/rest/Shared.Types/ListOperationsResponse#Operation)`.
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
-Was this helpful?

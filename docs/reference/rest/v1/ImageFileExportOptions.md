@@ -1,28 +1,30 @@
  
 #  ImageFileExportOptions
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 Options for exporting images as files outside Earth Engine.
 JSON representation  
 ---  
 ```
 {
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
- // Union field destination can be only one of the following:
- "driveDestination": {
-  object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
- },
- "cloudStorageDestination": {
-  object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
- }
- // End of list of possible types for union field destination.
- // Union field format_options can be only one of the following:
- "geoTiffOptions": {
-  object (GeoTiffImageExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#GeoTiffImageExportOptions))
- },
- "tfRecordOptions": {
-  object (TfRecordImageExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#TfRecordImageExportOptions))
- }
- // End of list of possible types for union field format_options.
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
+
+  // Union field destination can be only one of the following:
+  "driveDestination": {
+    object (DriveDestination[](https://developers.google.com/earth-engine/reference/rest/v1/DriveDestination))
+  },
+  "cloudStorageDestination": {
+    object (CloudStorageDestination[](https://developers.google.com/earth-engine/reference/rest/v1/CloudStorageDestination))
+  }
+  // End of list of possible types for union field destination.
+
+  // Union field format_options can be only one of the following:
+  "geoTiffOptions": {
+    object (GeoTiffImageExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#GeoTiffImageExportOptions))
+  },
+  "tfRecordOptions": {
+    object (TfRecordImageExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#TfRecordImageExportOptions))
+  }
+  // End of list of possible types for union field format_options.
 }
 ```
   
@@ -41,15 +43,15 @@ JSON representation
 ---  
 ```
 {
- "cloudOptimized": boolean,
- "tileDimensions": {
-  object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
- },
- "skipEmptyFiles": boolean,
- "tileSize": integer,
- "noData": {
-  object (Number[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#Number))
- }
+  "cloudOptimized": boolean,
+  "tileDimensions": {
+    object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
+  },
+  "skipEmptyFiles": boolean,
+  "tileSize": integer,
+  "noData": {
+    object (Number[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileExportOptions#Number))
+  }
 }
 ```
   
@@ -66,10 +68,11 @@ JSON representation
 ---  
 ```
 {
- // Union field value can be only one of the following:
- "floatValue": number,
- "integerValue": string
- // End of list of possible types for union field value.
+
+  // Union field value can be only one of the following:
+  "floatValue": number,
+  "integerValue": string
+  // End of list of possible types for union field value.
 }
 ```
   
@@ -84,22 +87,22 @@ JSON representation
 ---  
 ```
 {
- "tileDimensions": {
-  object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
- },
- "marginDimensions": {
-  object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
- },
- "compress": boolean,
- "maxSizeBytes": string,
- "defaultValue": number,
- "tensorDepths": {
-  string: integer,
-  ...
- },
- "sequenceData": boolean,
- "collapseBands": boolean,
- "maxMaskedRatio": number
+  "tileDimensions": {
+    object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
+  },
+  "marginDimensions": {
+    object (GridDimensions[](https://developers.google.com/earth-engine/reference/rest/v1/GridDimensions))
+  },
+  "compress": boolean,
+  "maxSizeBytes": string,
+  "defaultValue": number,
+  "tensorDepths": {
+    string: integer,
+    ...
+  },
+  "sequenceData": boolean,
+  "collapseBands": boolean,
+  "maxMaskedRatio": number
 }
 ```
   
@@ -110,7 +113,7 @@ Fields
 `compress` |  `boolean` If true, compresses the .tfrecord files with gzip and appends the ".gz" suffix.  
 `maxSizeBytes` |  `string (Int64Value[](https://developers.google.com/discovery/v1/type-format) format)` Maximum size, in bytes, for an exported .tfrecord (before compression). A smaller file size will result in greater sharding (and, thus, more output files). Defaults to 1GiB.  
 `defaultValue` |  `number` The value set in each band of a pixel that is partially or completely masked, and, the value set at each value in an output 3D feature made from an array band where the array length at the source pixel was less than the depth of the feature value. The fractional part is dropped for integer type bands, and clamped to the range of the band type. Defaults to 0.  
-`tensorDepths` |  `map (key: string, value: integer)` Mapping from the names of input array bands to the depth of the 3D tensors they create. Arrays will be truncated, or padded with default values to fit the shape specified. For each array band, this must have a corresponding entry.An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
+`tensorDepths` |  `map (key: string, value: integer)` Mapping from the names of input array bands to the depth of the 3D tensors they create. Arrays will be truncated, or padded with default values to fit the shape specified. For each array band, this must have a corresponding entry. An object containing a list of `"key": value` pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.  
 `sequenceData` |  `boolean` If true, each pixel is output as a SequenceExample mapping scalar bands to the context and array bands to the example’s sequences. The SequenceExamples are output in row-major order of pixels in each patch, and then by row-major order of area patches in the file sequence.  
 `collapseBands` |  `boolean` If true, all bands will be combined into a single 3D tensor, taking on the name of the first band in the image. All bands are promoted to bytes, int64s, then floats in that order depending on the type furthest in that sequence within all bands. Array bands are allowed as long as tensorDepths is specified.  
 `maxMaskedRatio` |  `number` Maximum allowed proportion of masked pixels in a patch. Patches which exceed this allowance will be dropped rather than written to files. If this field is set to anything but 1, the JSON sidecar will not be produced. Defaults to 1.  

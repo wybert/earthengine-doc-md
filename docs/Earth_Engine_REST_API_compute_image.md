@@ -1,18 +1,6 @@
  
 #  Image computations with the Earth Engine REST API
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Before you begin](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#before_you_begin)
-  * [Authenticate to Google Cloud](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#authenticate_to_google_cloud)
-  * [Obtain a private key file for your service account](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#obtain_a_private_key_file_for_your_service_account)
-  * [Start an AuthorizedSession and test your credentials](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#start_an_authorizedsession_and_test_your_credentials)
-  * [Serialize a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#serialize_a_computation)
-    * [Authenticate to Earth Engine](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#authenticate_to_earth_engine)
-    * [Define a computation](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#define_a_computation)
-    * [Serialize the expression graph](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#serialize_the_expression_graph)
-  * [Send the request](https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image#send_the_request)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ ![Colab logo](https://developers.google.com/static/earth-engine/images/colab_logo_32px.png) Run in Google Colab ](https://colab.research.google.com/github/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_image.ipynb) |  [ ![GitHub logo](https://developers.google.com/static/earth-engine/images/GitHub-Mark-32px.png) View source on GitHub ](https://github.com/google/earthengine-community/blob/master/guides/linked/Earth_Engine_REST_API_compute_image.ipynb)  
 ---|---  
 **_Note:_** _The REST API contains new and advanced features that may not be suitable for all users. If you are new to Earth Engine, please get started with the[JavaScript guide](https://developers.google.com/earth-engine/guides/getstarted)._
@@ -32,6 +20,7 @@ The first thing to do is login so that you can make authenticated requests to Go
 ```
 #INSERTYOURPROJECTHERE
 PROJECT='your-project'
+
 !gcloud auth login --project {PROJECT}
 
 ```
@@ -42,6 +31,7 @@ You should already have a service account registered to use Earth Engine. If you
 #INSERTYOURSERVICEACCOUNTHERE
 SERVICE_ACCOUNT='your-service-account@your-project.iam.gserviceaccount.com'
 KEY='key.json'
+
 !gcloud iam service-accounts keys create {KEY} --iam-account {SERVICE_ACCOUNT}
 
 ```
@@ -51,12 +41,17 @@ Test the private key by using it to get credentials. Use the credentials to crea
 ```
 fromgoogle.auth.transport.requestsimport AuthorizedSession
 fromgoogle.oauth2import service_account
+
 credentials = service_account.Credentials.from_service_account_file(KEY)
 scoped_credentials = credentials.with_scopes(
-  ['https://www.googleapis.com/auth/cloud-platform'])
+    ['https://www.googleapis.com/auth/cloud-platform'])
+
 session = AuthorizedSession(scoped_credentials)
+
 url = 'https://earthengine.googleapis.com/v1beta/projects/earthengine-public/assets/LANDSAT'
+
 response = session.get(url)
+
 frompprintimport pprint
 importjson
 pprint(json.loads(response.content))
@@ -69,6 +64,7 @@ Before you can send a request to compute something, the computation needs to be 
 Get Earth Engine scoped credentials from the service account. Use them to initialize Earth Engine.
 ```
 importee
+
 # Get some new credentials since the other ones are cloud scope.
 ee_creds = ee.ServiceAccountCredentials(SERVICE_ACCOUNT, KEY)
 ee.Initialize(ee_creds)
@@ -83,6 +79,7 @@ coords=[
 38.059141484827485,
 ]
 region=ee.Geometry.Point(coords)
+
 collection=ee.ImageCollection('COPERNICUS/S2')
 collection=collection.filterBounds(region)
 collection=collection.filterDate('2020-04-01','2020-09-01')
@@ -101,6 +98,7 @@ Create the desired projection (WGS84) at the desired scale (10 meters for Sentin
 ```
 # Make a projection to discover the scale in degrees.
 proj = ee.Projection('EPSG:4326').atScale(10).getInfo()
+
 # Get scales out of the transform.
 scale_x = proj['transform'][0]
 scale_y = -proj['transform'][4]
@@ -111,32 +109,35 @@ scale_y = -proj['transform'][4]
 Make a `POST` request to the [`computePixels`](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.image/computePixels) endpoint. Note that the request contains the [`Expression`](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression), which is the serialized computation. It also contains a [`PixelGrid`](https://developers.google.com/earth-engine/reference/rest/v1beta/PixelGrid). The `PixelGrid` contains `dimensions` for the desired output and an `AffineTransform` in the units of the requested coordinate system. Here the coordinate system is geographic, so the transform is specified with scale in degrees and geographic coordinates of the upper left corner of the requested image patch.
 ```
 importjson
+
 url = 'https://earthengine.googleapis.com/v1beta/projects/{}/image:computePixels'
 url = url.format(PROJECT)
+
 response = session.post(
- url=url,
- data=json.dumps({
-  'expression': serialized,
-  'fileFormat': 'PNG',
-  'bandIds': ['B4','B3','B2'],
-  'grid': {
-   'dimensions': {
-    'width': 640,
-    'height': 640
-   },
-   'affineTransform': {
-    'scaleX': scale_x,
-    'shearX': 0,
-    'translateX': coords[0],
-    'shearY': 0,
-    'scaleY': scale_y,
-    'translateY': coords[1]
-   },
-   'crsCode': 'EPSG:4326',
-  },
-  'visualizationOptions': {'ranges': [{'min': 0, 'max': 3000}]},
- })
+  url=url,
+  data=json.dumps({
+    'expression': serialized,
+    'fileFormat': 'PNG',
+    'bandIds': ['B4','B3','B2'],
+    'grid': {
+      'dimensions': {
+        'width': 640,
+        'height': 640
+      },
+      'affineTransform': {
+        'scaleX': scale_x,
+        'shearX': 0,
+        'translateX': coords[0],
+        'shearY': 0,
+        'scaleY': scale_y,
+        'translateY': coords[1]
+      },
+      'crsCode': 'EPSG:4326',
+    },
+    'visualizationOptions': {'ranges': [{'min': 0, 'max': 3000}]},
+  })
 )
+
 image_content = response.content
 
 ```

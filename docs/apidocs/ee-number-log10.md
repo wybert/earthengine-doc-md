@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-log10#examples)
 
 
-Computes the base-10 logarithm of the input. 
-Usage| Returns  
+Computes the base-10 logarithm of the input.
+Usage | Returns  
 ---|---  
-`Number.log10()`| Number  
-Argument| Type| Details  
+`Number.log10()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-log10#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-log10#colab-python-sample) More
 ```
@@ -27,10 +27,9 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print(ee.Number(0.1).log10().getInfo()) # -1
-print(ee.Number(1).log10().getInfo()) # 0
-print(ee.Number(10).log10().getInfo()) # 1
-print(ee.Number(100).log10().getInfo()) # 2
+print(ee.Number(0.1).log10().getInfo())  # -1
+print(ee.Number(1).log10().getInfo())  # 0
+print(ee.Number(10).log10().getInfo())  # 1
+print(ee.Number(100).log10().getInfo())  # 2
 ```
 
-Was this helpful?

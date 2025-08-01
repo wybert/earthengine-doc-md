@@ -10,12 +10,12 @@ JSON representation
 ---  
 ```
 {
- "bucket": string,
- "filenamePrefix": string,
- "permissions": enum (TilePermissions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/CloudStorageDestination#TilePermissions)),
- "bucketCorsUris": [
-  string
- ]
+  "bucket": string,
+  "filenamePrefix": string,
+  "permissions": enum (TilePermissions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/CloudStorageDestination#TilePermissions)),
+  "bucketCorsUris": [
+    string
+  ]
 }
 ```
   
@@ -32,3 +32,4 @@ Enums
 `TILE_PERMISSIONS_UNSPECIFIED` | Unspecified.  
 `PUBLIC` | Write public tiles. Requires the caller to be an OWNER of the bucket.  
 `DEFAULT_OBJECT_ACL` | Write tiles using the bucket's default object ACL.  
+Was this helpful?

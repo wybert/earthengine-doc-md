@@ -27,16 +27,16 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
- },
- "description": string,
- "requestId": string,
- "assetExportOptions": {
-  object (ClassifierAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.classifier/export#ClassifierAssetExportOptions))
- },
- "workloadTag": string,
- "priority": integer
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1beta/Expression))
+  },
+  "description": string,
+  "requestId": string,
+  "assetExportOptions": {
+    object (ClassifierAssetExportOptions[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.classifier/export#ClassifierAssetExportOptions))
+  },
+  "workloadTag": string,
+  "priority": integer
 }
 ```
   
@@ -53,7 +53,7 @@ If successful, the response body contains an instance of `Operation[](https://de
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -63,11 +63,12 @@ JSON representation
 ---  
 ```
 {
- // Union field destination can be only one of the following:
- "earthEngineDestination": {
-  object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/EarthEngineDestination))
- }
- // End of list of possible types for union field destination.
+
+  // Union field destination can be only one of the following:
+  "earthEngineDestination": {
+    object (EarthEngineDestination[](https://developers.google.com/earth-engine/reference/rest/v1beta/EarthEngineDestination))
+  }
+  // End of list of possible types for union field destination.
 }
 ```
   

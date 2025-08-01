@@ -1,6 +1,15 @@
  
 #  Method: projects.maps.create
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#path-parameters)
+  * [Query parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#query-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.maps/create#authorization-scopes)
+
+
 Creates an ID that can be used to render map tiles showing the results of a computation. The resulting ID should be used as part of `GetTile` requests.
 This is used in conjunction with `GetTile`. A call to `maps.create` provides an expression and some output options. The result of `maps.create` is a map ID that represents an image that is the result of evaluating that expression and applying those options. Subsequently, calls to `GetTile` can be made to get image data for a tile of the resulting image, at any desired location and zoom. The map ID will be valid for a moderate period (a few hours).
 The most common use case for this pair of endpoints is to populate a map viewport with a visualization of the output of some computation. In order for that to be possible, the computation output has to meet some reasonable requirements for the requested image format. In particular, JPEG or PNG format requires that there be one or three output bands, and clips values that are outside the 0-255 range.
@@ -25,9 +34,10 @@ If successful, the response body contains a newly created instance of `EarthEngi
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

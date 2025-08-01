@@ -1,9 +1,9 @@
  
 #  Deferred Execution
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
 The [Client vs. Server](https://developers.google.com/earth-engine/guides/client_server) doc describes how objects referenced in your script can be either client-side or server-side. The complete script contains not only the objects you want to use, but also a set of instructions that tell Earth Engine what to do with them. This doc describes how those instructions are sent to Google for processing and how the results are sent back to the client for display.
 When you write a script in Earth Engine (either JavaScript or Python), that code does NOT run directly on Earth Engine servers at Google. Instead, the [client library](https://github.com/google/earthengine-api) encodes the script into a set of [JSON](http://www.json.org/) objects, sends the objects to Google and waits for a response. Each object represents a set of operations required to get a particular output, an image to display in the client, for example. Consider the following code:
-### Code Editor (JavaScript)
+[Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/deferred_execution#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/deferred_execution#colab-python-sample) More
 ```
 varimage=ee.Image('CGIAR/SRTM90_V4');
 varoperation=image.add(10);
@@ -16,8 +16,6 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
-
-### Colab (Python)
 ```
 image = ee.Image('CGIAR/SRTM90_V4')
 operation = image.add(10)

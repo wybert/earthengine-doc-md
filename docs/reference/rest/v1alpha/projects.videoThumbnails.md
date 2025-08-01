@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.videoThumbnails
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Resource: VideoThumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#resource:-videothumbnail)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.videoThumbnails#methods)
@@ -14,17 +14,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "videoOptions": {
-  object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
- },
- "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "videoOptions": {
+    object (VideoOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoOptions))
+  },
+  "fileFormat": enum (VideoFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.videoThumbnails#VideoThumbnail.VideoFileFormat)),
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
+  }
 }
 ```
   

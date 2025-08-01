@@ -21,7 +21,11 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
     * [Code Editor scripts](https://developers.google.com/earth-engine/guides/access#code_editor_scripts)
     * [Earth Engine Apps](https://developers.google.com/earth-engine/guides/access#earth_engine_apps_2)
     * ["Get Link" references](https://developers.google.com/earth-engine/guides/access#get_link_references)
-  * [Terminating commercial access](https://developers.google.com/earth-engine/guides/access#terminating_commercial_access)
+  * [Configuring noncommercial access](https://developers.google.com/earth-engine/guides/access#configuring_noncommercial_access)
+    * [Verification](https://developers.google.com/earth-engine/guides/access#verification)
+    * [Reverification](https://developers.google.com/earth-engine/guides/access#reverification)
+  * [Configuring commercial access](https://developers.google.com/earth-engine/guides/access#configuring_commercial_access)
+    * [Terminating commercial access](https://developers.google.com/earth-engine/guides/access#terminating_commercial_access)
 
 
 Earth Engine runs on Google Cloud and requires Cloud projects for access and API management. All Earth Engine calls (whether from the Code Editor, client libraries, Apps, or REST API) are routed through a Cloud project, enabling access control, resource management, and usage monitoring in the Cloud Console.
@@ -33,7 +37,7 @@ To use Earth Engine you'll need access to a Cloud project that:
 
 
 [Create a project](https://developers.google.com/earth-engine/guides/access#create-a-project)[Use an existing project](https://developers.google.com/earth-engine/guides/access#use-an-existing-project) More
-Visit the [ registration page](https://console.cloud.google.com/earth-engine) to create and register a new Cloud project or register an existing project. 
+Visit the [ registration page](https://console.cloud.google.com/earth-engine) to create and register a new Cloud project or register an existing project. After registration, Earth Engine access is enabled immediately. 
 Projects created during the registration process can be managed in the [ Google Cloud Console](https://console.cloud.google.com/cloud-resource-manager). You can activate or deactivate the Earth Engine API from the [ Earth Engine API page on the Cloud Console](https://console.cloud.google.com/apis/library/earthengine.googleapis.com). 
 **Note:** In some cases, your organization's IT policy may prevent you from creating Google Cloud projects. In that case, we recommend reaching out to your admins to grant you the correct permissions (or to create a project for you). 
 _Manual steps (automated by the registration page)_ The [ registration page](https://console.cloud.google.com/earth-engine) automates these steps and is recommended. 
@@ -130,7 +134,7 @@ ee.data.deleteAsset('projects/my-project/assets/my-asset')
 
 Use the `rm` command:
 ```
-earthenginermprojects/my-project/assets/my-asset
+earthenginemy-project/assets/my-asset
 ```
 **Note:** for legacy user-owned assets, the path structure is `users/{user-id}/{asset-id}`.
 ### Code Editor scripts
@@ -142,7 +146,17 @@ Advanced users can use Git to manage their scripts. See <https://earthengine.goo
 To delete your Earth Engine Apps, use the ["Apps" button in the Code Editor to manage your Apps](https://developers.google.com/earth-engine/guides/apps#publishing-your-app).
 ### "Get Link" references
 Use the [Manage Links page](https://code.earthengine.google.com/links?page_size=1000&days=all) to view and delete your "Get Link" links from the Code Editor. This page can be found by navigating to the ["Manage Links" option in the drop-down menu](https://developers.google.com/earth-engine/guides/playground#get_link) next to the "Get Link" button.
-## Terminating commercial access
+## Configuring noncommercial access
+To set up noncommercial (unpaid) Earth Engine access for your project, you'll need to fill out the [registration questionnaire](https://console.cloud.google.com/earth-engine) in the Cloud console to confirm your project's eligibility.
+### Verification
+**Important:** If you registered your project before **April 16th, 2025** , you'll need to fill out the questionnaire to complete verification before **September 26, 2025**.
+Because Earth Engine grants unpaid access to a large amount of compute resources, Google requires verification of each project that is registered for noncommercial access. The verification process is done as a part of [registration](https://console.cloud.google.com/earth-engine). If you complete the verification questionnaire and your project is determined to be commercial, you won't be eligible to use Earth Engine without paying.
+Starting September 26, 2025, all noncommercial projects must have filled out the questionnaire in the Cloud console. We recommend completing the verification process as soon as possible. If you don't take action before September 26, 2025, your project's access to Earth Engine will be paused until you complete the verification process.
+### Reverification
+All projects with noncommercial access will need to reverify for access on a periodic basis.
+## Configuring commercial access
+To set up commercial (paid) Earth Engine access for your project, you'll need to configure the project using the [registration page](https://console.cloud.google.com/earth-engine) and choose a [plan](https://cloud.google.com/earth-engine/pricing) on the billing account.
+### Terminating commercial access
 If you are a direct customer of Earth Engine and want to stop using Earth Engine in a paid context, there are several changes needed to stop incurring charges:
   * **Stop subscription charges**
     * To terminate the Earth Engine subscription on your billing account, you need to use the "Manage Plans" page (accessible from the user settings drop-down menu in the top right of the Code Editor when using a registered Cloud project linked to that billing account).

@@ -13,13 +13,14 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "visualizationExpression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- // Union field source can be only one of the following:
- "asset": string
- // End of list of possible types for union field source.
+  "name": string,
+  "visualizationExpression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+
+  // Union field source can be only one of the following:
+  "asset": string
+  // End of list of possible types for union field source.
 }
 ```
   

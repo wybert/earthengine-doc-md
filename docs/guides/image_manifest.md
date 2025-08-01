@@ -1,6 +1,6 @@
  
 #  Image Manifest Upload
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 If you need more flexibility uploading images into Google Earth Engine (EE) than the [Code Editor UI](https://developers.google.com/earth-engine/image_upload) or the `upload` command of the ['earthengine' command-line tool](https://developers.google.com/earth-engine/command_line#upload) provide, you can do so by describing an image upload using a JSON file known as a "manifest" and using the `upload image --manifest` command of the command-line tool.
 See a complete example in [this Colab notebook](https://github.com/google/earthengine-community/blob/master/guides/linked/Uploading_image_tiles_as_a_single_asset_using_a_manifest.ipynb) which demonstrates uploading image tiles as a single asset using a manifest. 
 ## One-time setup
@@ -13,25 +13,25 @@ See a complete example in [this Colab notebook](https://github.com/google/earthe
 Very large source files (100 GB or more) might be uploaded faster if they are broken down into multiple tiles.
 ## Asset IDs and names
 For Cloud project-owned assets, use this convention for asset names: `projects/some-project-id/assets/some-asset-id`.
-Learn about asset names for legacy project and user-owned assets
+###### Learn about asset names for legacy project and user-owned assets
 For older legacy projects, the asset name in the manifest needs to be slightly different from the asset ID visible elsewhere in Earth Engine. To upload assets whose asset IDs start with `users/some_user` or `projects/some_project`, the asset name in the manifest must have the string `projects/earthengine-legacy/assets/` prepended to the ID. For example, EE asset ID `users/username/my_geotiff` should be uploaded using the name `projects/earthengine-legacy/assets/users/username/my_geotiff`.
 Yes, this means that IDs like `projects/some_projects/some_asset` get converted into names where `projects` is mentioned twice: `projects/earthengine-legacy/assets/projects/some_projects/some_asset`. This is confusing but necessary to conform to the Google Cloud API standards.
 ## Using manifests
 A basic manifest is shown in the following code block. It uploads a file named `small.tif` from a Google Cloud Storage bucket named `gs://earthengine-test`.
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://earthengine-test/small.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://earthengine-test/small.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 ```
 
@@ -49,53 +49,53 @@ To describe these options, manifests introduce the notion of a **_tileset_**. A 
 For **_mosaic ingestion_** , the manifest will look like this:
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/N30W22.tif"
-     ]
-    },
-    {
-     "uris": [
-      "gs://bucket/N31W22.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/N30W22.tif"
+          ]
+        },
+        {
+          "uris": [
+            "gs://bucket/N31W22.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 ```
 
 For **_separate bands_** , the manifest will look like this (you also need to add a `bands` section as explained below):
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "bands": ...,
- "tilesets": [
-  {
-   "id": "tileset_for_band1",
-   "sources": [
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "bands": ...,
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/band1.tif"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "tileset_for_band2",
-   "sources": [
+      "id": "tileset_for_band1",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/band1.tif"
+          ]
+        }
+      ]
+    },
     {
-     "uris": [
-      "gs://bucket/band2.tif"
-     ]
+      "id": "tileset_for_band2",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/band2.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 ```
 
@@ -105,32 +105,32 @@ The second important concept is matching source files to EE asset bands. This is
 The `bands` section can be omitted, in which case the bands are created first from the files in the first tileset, then from the next tileset, and so on. By default, the bands are named "b1", "b2", etc. To override the default band names, include a "bands" section at the end, like this:
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/rgb.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/rgb.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "R",
-   "tilesetBandIndex": 0
-  },
-  {
-   "id": "G",
-   "tilesetBandIndex": 1
-  },
-  {
-   "id": "B",
-   "tilesetBandIndex": 2
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "R",
+      "tilesetBandIndex": 0
+    },
+    {
+      "id": "G",
+      "tilesetBandIndex": 1
+    },
+    {
+      "id": "B",
+      "tilesetBandIndex": 2
+    }
+  ]
 }
 ```
 
@@ -140,31 +140,31 @@ Example:
 Suppose the source file has four bands: "tmin", "tmin_error", "tmax", "tmax_error". We only want to ingest "tmin" and "tmax". Relevant manifest sections will look like this:
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "id": "temperature",
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/temperature.tif"
-     ]
+      "id": "temperature",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/temperature.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "tmin",
-   "tilesetBandIndex": 0,
-   "tilesetId": "temperature"
-  },
-  {
-   "id": "tmax",
-   "tilesetBandIndex": 2,
-   "tilesetId": "temperature"
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "tmin",
+      "tilesetBandIndex": 0,
+      "tilesetId": "temperature"
+    },
+    {
+      "id": "tmax",
+      "tilesetBandIndex": 2,
+      "tilesetId": "temperature"
+    }
+  ]
 }
 ```
 
@@ -178,123 +178,123 @@ Band masking is controlled by the `maskBands` component of the manifest. Three p
 1. The most common case is a single GeoTIFF whose last band is used as mask for the other bands. This only works for GeoTIFFs of type Byte. Use the following manifest:
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "id": "data_tileset",
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/data_file.tif"
-     ]
+      "id": "data_tileset",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/data_file.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "data_band",
-   "tilesetId": "data_tileset"
-  },
-  {
-   "id": "qa_band",
-   "tilesetId": "data_tileset"
-  }
- ],
- "maskBands": [
-  {
-   "tilesetId": "data_tileset"
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "data_band",
+      "tilesetId": "data_tileset"
+    },
+    {
+      "id": "qa_band",
+      "tilesetId": "data_tileset"
+    }
+  ],
+  "maskBands": [
+    {
+      "tilesetId": "data_tileset"
+    }
+  ]
 }
 ```
 
 2. To use a mask GeoTIFF as a mask for all bands in another GeoTIFF, use the following manifest:
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "id": "data_tileset",
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/data_file.tif"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "mask_tileset",
-   "sources": [
+      "id": "data_tileset",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/data_file.tif"
+          ]
+        }
+      ]
+    },
     {
-     "uris": [
-      "gs://bucket/mask_file.tif"
-     ]
+      "id": "mask_tileset",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/mask_file.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "data_band",
-   "tilesetId": "data_tileset"
-  },
-  {
-   "id": "qa_band",
-   "tilesetId": "data_tileset"
-  }
- ],
- "maskBands": [
-  {
-   "tilesetId": "mask_tileset"
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "data_band",
+      "tilesetId": "data_tileset"
+    },
+    {
+      "id": "qa_band",
+      "tilesetId": "data_tileset"
+    }
+  ],
+  "maskBands": [
+    {
+      "tilesetId": "mask_tileset"
+    }
+  ]
 }
 ```
 
 3. To use a GeoTIFF as a mask for a specific band in another file, use the following manifest (the difference with the previous case is that the `bandIds` field in `maskBands` is set):
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "id": "data_tileset",
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/data_file.tif"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "mask_tileset",
-   "sources": [
+      "id": "data_tileset",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/data_file.tif"
+          ]
+        }
+      ]
+    },
     {
-     "uris": [
-      "gs://bucket/mask_file.tif"
-     ]
+      "id": "mask_tileset",
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/mask_file.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "data_band",
-   "tilesetId": "data_tileset"
-  },
-  {
-   "id": "qa_band",
-   "tilesetId": "data_tileset"
-  }
- ],
- "maskBands": [
-  {
-   "tilesetId": "mask_tileset",
-   "bandIds": ["data_band"]
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "data_band",
+      "tilesetId": "data_tileset"
+    },
+    {
+      "id": "qa_band",
+      "tilesetId": "data_tileset"
+    }
+  ],
+  "maskBands": [
+    {
+      "tilesetId": "mask_tileset",
+      "bandIds": ["data_band"]
+    }
+  ]
 }
 ```
 
@@ -305,54 +305,54 @@ When Earth Engine constructs [image pyramids](https://developers.google.com/eart
 For classification of raster images (for land cover classification, for example) the most logical way of pyramiding pixels is to take the majority of the four values to produce the next one. This is done using the "MODE" pyramiding policy:
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/landcover.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/landcover.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "landcover",
-   "pyramidingPolicy": "MODE"
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "landcover",
+      "pyramidingPolicy": "MODE"
+    }
+  ]
 }
 ```
 
 For raster bands where neither "MEAN" nor "MODE" make sense (for example, bitpacked pixels), the "SAMPLE" pyramiding policy should be used. "SAMPLE" always takes the value of the upper left-hand pixel from each 2x2 grid. The following example assigns the "MEAN" pyramiding policy to a band representing a continuous variable ("NDVI") and "SAMPLE" to the data's "QA" band.
 ```
 {
- "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/earthengine-legacy/assets/users/username/some_folder/some_id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/ndvi.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/ndvi.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "bands": [
-  {
-   "id": "NDVI",
-   "tilesetBandIndex": 0,
-   "pyramidingPolicy": "MEAN"
-  },
-  {
-   "id": "QA",
-   "tilesetBandIndex": 1,
-   "pyramidingPolicy": "SAMPLE"
-  }
- ]
+  ],
+  "bands": [
+    {
+      "id": "NDVI",
+      "tilesetBandIndex": 0,
+      "pyramidingPolicy": "MEAN"
+    },
+    {
+      "id": "QA",
+      "tilesetBandIndex": 1,
+      "pyramidingPolicy": "SAMPLE"
+    }
+  ]
 }
 ```
 
@@ -363,20 +363,20 @@ The end time is treated as an exclusive boundary for simplicity. For example, fo
 Example:
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "tilesets": [
-  {
-   "sources": [
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "tilesets": [
     {
-     "uris": [
-      "gs://bucket/img_20190612.tif"
-     ]
+      "sources": [
+        {
+          "uris": [
+            "gs://bucket/img_20190612.tif"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ],
- "startTime": "1980-01-31T00:00:00Z",
- "endTime": "1980-02-01T00:00:00Z"
+  ],
+  "startTime": "1980-01-31T00:00:00Z",
+  "endTime": "1980-02-01T00:00:00Z"
 }
 ```
 
@@ -386,14 +386,14 @@ The following JSON structure includes all possible image upload manifest fields.
 {
 "name":_<string>_,
 "tilesets":[
-  {
-   "dataType": _<string>_,
-   "id": _<string>_,
-   "crs": _<string>_,
-   "sources": [
     {
-     "uris": [
-      _<string__>_
+      "dataType": _<string>_,
+      "id": _<string>_,
+      "crs": _<string>_,
+      "sources": [
+        {
+          "uris": [
+            _<string__>_
 ],
 "affineTransform":{
 "scaleX":_<double>_,
@@ -408,30 +408,30 @@ The following JSON structure includes all possible image upload manifest fields.
 }
 ],
 "bands":[
-  {
-   "id": _<string>_,
-   "tilesetId": _<string>_,
-   "tilesetBandIndex": _<int32>_,
-   "missingData": {
-    "values": [_<double__>_]
+    {
+      "id": _<string>_,
+      "tilesetId": _<string>_,
+      "tilesetBandIndex": _<int32>_,
+      "missingData": {
+        "values": [_<double__>_]
 },
 "pyramindingPolicy":_<string>_
 }
 ],
 "maskBands":[
-  {
-   "tilesetId": _<string>_,
-   "bandIds": [
-    _<string__>_
+    {
+      "tilesetId": _<string>_,
+      "bandIds": [
+        _<string__>_
 ]
 }
 ],
 "footprint":{
 "points":[
-   {
-    "x": _<double>_,
-    "y": _<double__>_
-   }
+      {
+        "x": _<double>_,
+        "y": _<double__>_
+      }
 ],
 "bandId":_<string>_
 },
@@ -491,12 +491,12 @@ An optional affine transform. Should only be specified if the data from `uris` (
 Example keys and values:
 ```
 {
- "scaleX": 0.1,
- "shearX": 0.0,
- "translateX": -180.0,
- "shearY": 0.0,
- "scaleY": -0.1,
- "translateY": 90.0
+  "scaleX": 0.1,
+  "shearX": 0.0,
+  "translateX": -180.0,
+  "shearY": 0.0,
+  "scaleY": -0.1,
+  "translateY": 90.0
 }
 ```
 
@@ -542,26 +542,26 @@ Note: Use non-integer coordinates such as the center of each pixel because `foot
 For example, for a 2x2 image with all four valid pixels, the following is one possible ring:
 ```
 [
- {
-  "x": 0.5,
-  "y": 0.5
- },
- {
-  "x": 0.5,
-  "y": 1.5
- },
- {
-  "x": 1.5,
-  "y": 1.5
- },
- {
-  "x": 1.5,
-  "y": 0.5
- },
- {
-  "x": 0.5,
-  "y": 0.5
- }
+  {
+    "x": 0.5,
+    "y": 0.5
+  },
+  {
+    "x": 0.5,
+    "y": 1.5
+  },
+  {
+    "x": 1.5,
+    "y": 1.5
+  },
+  {
+    "x": 1.5,
+    "y": 0.5
+  },
+  {
+    "x": 0.5,
+    "y": 0.5
+  }
 ]
 ```
 

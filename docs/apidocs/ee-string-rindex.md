@@ -5,14 +5,14 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-rindex#examples)
 
 
-Searches a string for the last occurrence of a substring. Returns the index of the first match, or -1. 
-Usage| Returns  
+Searches a string for the last occurrence of a substring. Returns the index of the first match, or -1.
+Usage | Returns  
 ---|---  
-`String.rindex(pattern)`| Integer  
-Argument| Type| Details  
+`String.rindex(pattern)` | Integer  
+Argument | Type | Details  
 ---|---|---  
-this: `target`| String| The string to search.  
-`pattern`| String| The string to find.  
+this: `target` | String | The string to search.  
+`pattern` | String | The string to find.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-rindex#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-rindex#colab-python-sample) More
 ```
@@ -30,11 +30,12 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print(ee.String('aBc-Abc').rindex('A').getInfo()) # 4
-print(ee.String('aBc-Abc').rindex('a').getInfo()) # 0
-print(ee.String('aBc-Abc').rindex('Bc').getInfo()) # 1
-print(ee.String('aBc-Abc').rindex('Z').getInfo()) # -1
-print(ee.String('aBc-Abc').rindex('-').getInfo()) # 3
-print(ee.String('aBc-Abc').rindex('').getInfo()) # 7
+print(ee.String('aBc-Abc').rindex('A').getInfo())  # 4
+print(ee.String('aBc-Abc').rindex('a').getInfo())  # 0
+print(ee.String('aBc-Abc').rindex('Bc').getInfo())  # 1
+print(ee.String('aBc-Abc').rindex('Z').getInfo())  # -1
+print(ee.String('aBc-Abc').rindex('-').getInfo())  # 3
+print(ee.String('aBc-Abc').rindex('').getInfo())  # 7
 ```
 
+Was this helpful?

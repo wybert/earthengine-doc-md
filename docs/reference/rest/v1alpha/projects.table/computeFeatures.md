@@ -1,6 +1,14 @@
  
 #  Method: projects.table.computeFeatures
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+  * On this page
+  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/computeFeatures#http-request)
+  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/computeFeatures#path-parameters)
+  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/computeFeatures#request-body)
+  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/computeFeatures#response-body)
+  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.table/computeFeatures#authorization-scopes)
+
+
 Computes a set of features by applying an arbitrary computation to features in one or more tables. Results are returned as a list of GeoJSON feature objects.
 ### HTTP request
 `POST https://earthengine.googleapis.com/v1alpha/{project=projects/*}/table:computeFeatures`
@@ -18,12 +26,12 @@ JSON representation
 ---  
 ```
 {
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "pageSize": integer,
- "pageToken": string,
- "workloadTag": string
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "pageSize": integer,
+  "pageToken": string,
+  "workloadTag": string
 }
 ```
   
@@ -40,13 +48,13 @@ JSON representation
 ---  
 ```
 {
- "type": string,
- "features": [
-  {
-   object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Feature))
-  }
- ],
- "nextPageToken": string
+  "type": string,
+  "features": [
+    {
+      object (Feature[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Feature))
+    }
+  ],
+  "nextPageToken": string
 }
 ```
   
@@ -58,9 +66,10 @@ Fields
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
+Was this helpful?

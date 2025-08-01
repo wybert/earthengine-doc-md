@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.locations.thumbnails
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: Thumbnail](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.thumbnails#resource:-thumbnail)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.thumbnails#methods)
@@ -13,21 +13,21 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
- },
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
- },
- "filenamePrefix": string
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/ImageFileFormat)),
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1alpha/VisualizationOptions))
+  },
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1alpha/PixelGrid))
+  },
+  "filenamePrefix": string
 }
 ```
   

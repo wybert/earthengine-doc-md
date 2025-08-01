@@ -5,15 +5,14 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point#examples)
 
 
-Constructs an ee.Geometry describing a point. 
 For convenience, varargs may be used when all arguments are numbers. This allows creating EPSG:4326 points, e.g. ee.Geometry.Point(lng, lat).
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`ee.Geometry.Point(coords,  _proj_)`| Geometry.Point  
-Argument| Type| Details  
+`ee.Geometry.Point(coords, _proj_)`|  Geometry.Point  
+Argument | Type | Details  
 ---|---|---  
-`coords`| List| A list of two [x,y] coordinates in the given projection.  
-`proj`| Projection, optional| The projection of this geometry, or EPSG:4326 if unspecified.  
+`coords` | List<Number> | A list of two [x,y] coordinates in the given projection.  
+`proj` | Projection, optional | The projection of this geometry, or EPSG:4326 if unspecified.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point#colab-python-sample) More
 ```
@@ -31,4 +30,3 @@ importgeemap.coreasgeemap
 point = ee.Geometry.Point([-122.08412, 37.42189])
 ```
 
-Was this helpful?

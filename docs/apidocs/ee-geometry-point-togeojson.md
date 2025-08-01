@@ -5,22 +5,24 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-togeojson#examples)
 
 
-Returns a GeoJSON representation of the geometry. 
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Point.toGeoJSON()`| GeoJSONGeometry  
-Argument| Type| Details  
+`Point.toGeoJSON()` | GeoJSONGeometry  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry| The Geometry instance.  
+this: `geometry` | Geometry | The Geometry instance.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-togeojson#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-geometry-point-togeojson#colab-python-sample) More
 ```
 // Define a Point object.
 varpoint=ee.Geometry.Point(-122.082,37.42);
+
 // Apply the toGeoJSON method to the Point object.
 varpointToGeoJSON=point.toGeoJSON();
+
 // Print the result to the console.
 print('point.toGeoJSON(...) =',pointToGeoJSON);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(point,
@@ -36,10 +38,13 @@ importgeemap.coreasgeemap
 ```
 # Define a Point object.
 point = ee.Geometry.Point(-122.082, 37.42)
+
 # Apply the toGeoJSON method to the Point object.
 point_to_geojson = point.toGeoJSON()
+
 # Print the result.
 display('point.toGeoJSON(...) =', point_to_geojson)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)

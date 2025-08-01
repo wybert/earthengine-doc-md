@@ -6,7 +6,7 @@ Stay organized with collections  Save and categorize content based on your prefe
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/creating-web-apps/index.md "View changes to this article over time.")
 Author(s): [ TC25 ](https://github.com/TC25 "View the profile for TC25 on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-The Earth Engine Javascript API allows users to develop and [deploy web apps](https://developers.google.com/earth-engine/guides/apps) to make [datasets](https://developers.google.com/earth-engine/datasets) and results easy to explore and query. In addition to being able to control how others interact with your data, this lets individuals without Earth Engine access explore your data without having to use the [Code Editor](https://developers.google.com/earth-engine/guides/playground). In this tutorial, we will give an introduction to developing a simple Earth Engine web app for a sample dataset (in this case, some global gridded ground-level concentration estimates for particulate matter under 2.5 microns (PM2.5)). The tutorial breaks down the web app development process into some major stages, with relevant comments accompanying the code blocks. All web app development starts by writing a regular script on the Code Editor using the Earth Engine JavaScript API. 
+The Earth Engine Javascript API allows users to develop and [deploy web apps](https://developers.google.com/earth-engine/guides/apps) to make [datasets](https://developers.google.com/earth-engine/datasets) and results easy to explore and query. In addition to being able to control how others interact with your data, this lets individuals without Earth Engine access explore your data without having to use the [Code Editor](https://developers.google.com/earth-engine/guides/playground). In this tutorial, we will give an introduction to developing a simple Earth Engine web app for a sample dataset (in this case, some global gridded ground-level concentration estimates for particulate matter under 2.5 microns (PM2.5)). The tutorial breaks down the web app development process into some major stages, with relevant comments accompanying the code blocks. All web app development starts by writing a regular script on the Code Editor using the Earth Engine JavaScript API.
 ## Generating a new base map for your web app
 To better control how to visualize our data, we can generate a new base map for our web app and add it to the map. Earth Engine uses [Google's Map API](https://developers.google.com/maps/documentation/javascript) to set the base map style. An example is given below, but you can learn more about these options in the [Customizing Base Map Style](https://developers.google.com/earth-engine/tutorials/community/customizing-base-map-styles) tutorial.
 ```
@@ -228,16 +228,21 @@ lightness:17
 ],
 },
 ];
+
 // Clear existing map.
 ui.root.clear();
+
 // Initiate new map object.
 varmap=ui.Map();
+
 // Add custom map.
 ui.root.add(map);
+
 // Set basemap options.
 map.setOptions('Base',{
 Base:basemapStyle
 });
+
 // Set visibility options to remove geometry creator, map type controller,
 // and layer list.
 map.setControlVisibility({
@@ -248,8 +253,10 @@ scaleControl:true,
 mapTypeControl:false,
 fullscreenControl:false
 });
+
 // Set the default map's cursor to a 'crosshair'.
 map.style().set('cursor','crosshair');
+
 // Set the center and zoom level of the new map.
 map.setCenter(79.32,26.56,4);
 
@@ -286,19 +293,24 @@ fontWeight:'normal'
 },
 }),
 ]);
+
 // Add intro panel to the main panel.
 panel.add(intro);
 }
+
 // Create main panel.
 varpanel=ui.Panel();
+
 // Set the width and font style for the main panel.
 panel.style().set({
 width:'20%',
 fontSize:'1vw',
 fontWeight:'bold'
 });
+
 // Add the main panel to the UI root.
 ui.root.insert(1,panel);
+
 // Call the panelcreate function to create the intro panel.
 panelcreate();
 
@@ -353,6 +365,7 @@ textAlign:'center'
 },
 targetUrl:'https://tc25.github.io/'
 });
+
 // Add reference to the panel.
 panel.add(referenceZero);
 panel.add(referenceOne);
@@ -360,6 +373,7 @@ panel.add(referenceTwo);
 panel.add(referenceThree);
 panel.add(referenceFour);
 }
+
 // Call the reference panel creation function.
 referencecreate();
 
@@ -374,6 +388,7 @@ Now we can start adding more functionality to the app. We start by adding a pane
 varinspector=ui.Panel({
 layout:ui.Panel.Layout.flow('vertical'),
 });
+
 // Add a label to the panel.
 inspector.add(
 ui.Label({
@@ -386,6 +401,7 @@ margin:'0px 0px 0px 0px'
 },
 })
 );
+
 // Add the inspector panel to the default map.
 map.add(inspector);
 
@@ -398,13 +414,17 @@ We now load images and define visualization properties of the datasets that we w
 // PM2.5 data for the year 2020 regridded to the same grids as the
 // population estimates.
 varPM=ee.Image('users/tirthankar25/PM_2020_regrid');
+
 // Image collection of the original annual mean PM2.5 data.
 varpmTime=ee.ImageCollection('projects/gee-datastore/assets/PM25_v5GL03');
+
 // Population data.
 varPop=ee.Image(
 'CIESIN/GPWv411/GPW_Population_Count/gpw_v4_population_count_rev11_2020_30_sec');
+
 // Exceedance factor of PM2.5 concentration.
 varexceedanceFactor=ee.Image('users/tirthankar25/PMtimes_2020');
+
 // Define color palette:
 varthePalette=[
 '#40004b',
@@ -419,6 +439,7 @@ varthePalette=[
 '#1b7837',
 '#00441b'
 ].reverse();
+
 // Define information about each layer that will be used to visualize it and
 // describe it in a selector widget and legend.
 vardataInfo={
@@ -466,10 +487,13 @@ We will write a callback function that is invoked whenever the map is clicked. T
 map.onClick(function(coords){
 // Clear the main panel.
 panel.clear();
+
 // Call the panel creation function again.
 panelcreate();
+
 // Call the reference panel creation function again.
 referencecreate();
+
 // Create panels to hold lon/lat and UHI values.
 varlat=ui.Label();
 varlon=ui.Label();
@@ -478,19 +502,23 @@ varpmPix=ui.Label();
 pmPix.style().set('padding','0px 0px 4px 0px');
 varpopPix=ui.Label();
 varefPix=ui.Label();
+
 // Add panels to show longitude, latitude, and pixel values to the main panel.
 panel.add(ui.Panel([lat,lon],ui.Panel.Layout.flow('horizontal')));
 panel.add(ui.Panel([popPix],ui.Panel.Layout.flow('horizontal')));
 panel.add(ui.Panel([pmPix],ui.Panel.Layout.flow('horizontal')));
 panel.add(ui.Panel([efPix],ui.Panel.Layout.flow('horizontal')));
+
 // Add a red dot showing the point clicked on.
 varpoint=ee.Geometry.Point(coords.lon,coords.lat);
 vardot=ui.Map.Layer(point,{
 color:'red'
 });
 map.layers().set(1,dot);
+
 // Clear the inspector panel.
 inspector.clear();
+
 // Show the inspector panel and add a loading label.
 inspector.style().set('shown',true);
 inspector.add(
@@ -505,6 +533,7 @@ margin:'0px 0px 0px 0px'
 },
 })
 );
+
 // Sample data at the clicked point from the images.
 functiongetVal(img,point,scale,key,places){
 varinfo=ee.Image(img).sample(point,scale).first().getInfo();
@@ -519,13 +548,16 @@ returnformattedValue;
 varsamplePop=getVal(Pop,point,300,'population_count',0);
 varsamplePM=getVal(PM,point,300,'b1',2);
 varsampleEF=getVal(exceedanceFactor,point,300,'b1',2);
+
 // Update the lon/lat panel with values from the click event.
 lat.setValue('Lat: '+coords.lat.toFixed(2));
 lon.setValue('Lon: '+coords.lon.toFixed(2));
+
 // Update the pmPix, popPix, and efPix panels with their respective values.
 pmPix.setValue('PM₂.₅ concentration (µg/m3): '+samplePM);
 popPix.setValue('Population count: '+samplePop);
 efPix.setValue('Exceedance factor: '+sampleEF);
+
 // Create a pmChart line chart.
 // Create a line chart from the pmTime image and point data.
 if(samplePM!='NoData'){
@@ -587,14 +619,17 @@ visibleInLegend:false
 },
 },
 });
+
 // Add the chart to the panel.
 panel.widgets().set(10,pmChart);
 }else{
 // Add a blank label widget if there is no data.
 panel.widgets().set(10,ui.Label());
 }
+
 // Clear inspector again and display a new label.
 inspector.clear();
+
 inspector.style().set('shown',true);
 inspector.add(
 // Set the label text.
@@ -637,6 +672,7 @@ Object.keys(dataInfo).forEach(function(key){
 items.push({value:key,label:dataInfo[key].name});
 });
 items.push({value:'none',label:'Remove all'});
+
 varselect=ui.Select({
 items:items,
 value:items[0].value,
@@ -651,9 +687,11 @@ Define a callback function that will reset the map and update the dataset displa
 functionredraw(layer){
 // Fetch the info that corresponds to the selected layer.
 varinfo=dataInfo[layer];
+
 // Reset the layers and the legend.
 map.layers().reset();
 legend.clear();
+
 // Construct the layer selection widgets.
 legend
 .add(
@@ -668,6 +706,7 @@ margin:'4px 0px'
 })
 )
 .add(select);
+
 // Construct the legend widgets.
 functionmakeLegend(vis){
 // Creates a color bar thumbnail image for use in legend from the given
@@ -688,6 +727,7 @@ max:1,
 palette:palette
 };
 }
+
 // Create the color bar for the legend.
 varcolorBar=ui.Thumbnail({
 // Image to use for color bar.
@@ -705,6 +745,7 @@ maxHeight:'10%',
 width:'100%'
 },
 });
+
 // Create a panel with three numbers for the legend.
 varlegendLabels=ui.Panel({
 widgets:[
@@ -722,6 +763,7 @@ margin:'0px 0px'
 ],
 layout:ui.Panel.Layout.flow('horizontal')
 });
+
 // Add label to legend.
 legend.add(
 ui.Label({
@@ -734,22 +776,27 @@ margin:'8px 0px'
 },
 })
 );
+
 // Add colorbar to legend.
 legend.add(colorBar);
+
 // Add labels to legend.
 legend.add(legendLabels);
 }
+
 // If layer is none, reset layers on map.
 if(layer=='none'){
 map.layers().reset();
 }else{
 // Check which layer is selected and create the corresponding legend.
 makeLegend(info.vis);
+
 // Add layer to map.
 varvisImg=info.img.visualize(info.vis);
 map.addLayer(visImg,{},layer);
 }
 }
+
 // Register the `redraw` function to the layer selector.
 select.onChange(redraw);
 
@@ -760,6 +807,7 @@ Finally, to initialize the script, we will invoke the function to display the de
 ```
 // Invoke the redraw function at start up to initialize the exceedance map.
 redraw('ex');
+
 // Add legend to map.
 map.add(legend);
 

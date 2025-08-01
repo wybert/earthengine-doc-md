@@ -1,17 +1,17 @@
  
 #  ListAssetsResponse
-Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Response message for EarthEngineService.ListAssets.
 JSON representation  
 ---  
 ```
 {
- "assets": [
-  {
-   object (EarthEngineAsset[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets#EarthEngineAsset))
-  }
- ],
- "nextPageToken": string
+  "assets": [
+    {
+      object (EarthEngineAsset[](https://developers.google.com/earth-engine/reference/rest/v1beta/projects.assets#EarthEngineAsset))
+    }
+  ],
+  "nextPageToken": string
 }
 ```
   

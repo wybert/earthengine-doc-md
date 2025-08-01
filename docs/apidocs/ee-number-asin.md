@@ -5,13 +5,13 @@ bookmark_borderbookmark Stay organized with collections  Save and categorize con
   * [Examples](https://developers.google.com/earth-engine/apidocs/ee-number-asin#examples)
 
 
-Computes the arcsine in radians of the input. 
-Usage| Returns  
+Computes the arcsine in radians of the input.
+Usage | Returns  
 ---|---  
-`Number.asin()`| Number  
-Argument| Type| Details  
+`Number.asin()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-number-asin#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-number-asin#colab-python-sample) More
 ```
@@ -28,8 +28,9 @@ importgeemap.coreasgeemap
 ```
 ```
 # The domain of arcsine is [-1,1], inputs outside the domain are invalid.
-print('Arcsine of -1:', ee.Number(-1).asin().getInfo()) # -1.570796326 (-π/2)
-print('Arcsine of 0:', ee.Number(0).asin().getInfo()) # 0
-print('Arcsine of 1:', ee.Number(1).asin().getInfo()) # 1.570796326 (π/2)
+print('Arcsine of -1:', ee.Number(-1).asin().getInfo())  # -1.570796326 (-π/2)
+print('Arcsine of 0:', ee.Number(0).asin().getInfo())  # 0
+print('Arcsine of 1:', ee.Number(1).asin().getInfo())  # 1.570796326 (π/2)
 ```
 
+Was this helpful?

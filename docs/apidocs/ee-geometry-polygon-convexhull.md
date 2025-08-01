@@ -1,14 +1,14 @@
  
 #  ee.Geometry.Polygon.convexHull
 Stay organized with collections  Save and categorize content based on your preferences. 
-Returns the convex hull of the given geometry. The convex hull of a single point is the point itself, the convex hull of collinear points is a line, and the convex hull of everything else is a polygon. Note that a degenerate polygon with all vertices on the same line will result in a line segment. Usage| Returns  
+Returns the convex hull of the given geometry. The convex hull of a single point is the point itself, the convex hull of collinear points is a line, and the convex hull of everything else is a polygon. Note that a degenerate polygon with all vertices on the same line will result in a line segment. Usage | Returns  
 ---|---  
-`Polygon.convexHull( _maxError_, _proj_)`| Geometry  
-Argument| Type| Details  
+`Polygon.convexHull(_maxError_, _proj_)`|  Geometry  
+Argument | Type | Details  
 ---|---|---  
-this: `geometry`| Geometry| Calculates the convex hull of this geometry.  
-`maxError`| ErrorMargin, default: null| The maximum amount of error tolerated when performing any necessary reprojection.  
-`proj`| Projection, default: null| The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
+this: `geometry` | Geometry | Calculates the convex hull of this geometry.  
+`maxError` | ErrorMargin, default: null | The maximum amount of error tolerated when performing any necessary reprojection.  
+`proj` | Projection, default: null | The projection in which to perform the operation. If not specified, the operation will be performed in a spherical coordinate system, and linear distances will be in meters on the sphere.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
@@ -18,10 +18,13 @@ varpolygon=ee.Geometry.Polygon(
 [-122.086,37.418],
 [-122.079,37.425],
 [-122.085,37.423]]]);
+
 // Apply the convexHull method to the Polygon object.
 varpolygonConvexHull=polygon.convexHull({'maxError':1});
+
 // Print the result to the console.
 print('polygon.convexHull(...) =',polygonConvexHull);
+
 // Display relevant geometries on the map.
 Map.setCenter(-122.085,37.422,15);
 Map.addLayer(polygon,
@@ -43,21 +46,24 @@ importgeemap.coreasgeemap
 ```
 # Define a Polygon object.
 polygon = ee.Geometry.Polygon([[
-  [-122.092, 37.424],
-  [-122.086, 37.418],
-  [-122.079, 37.425],
-  [-122.085, 37.423],
+    [-122.092, 37.424],
+    [-122.086, 37.418],
+    [-122.079, 37.425],
+    [-122.085, 37.423],
 ]])
+
 # Apply the convexHull method to the Polygon object.
 polygon_convex_hull = polygon.convexHull(maxError=1)
+
 # Print the result.
 display('polygon.convexHull(...) =', polygon_convex_hull)
+
 # Display relevant geometries on the map.
 m = geemap.Map()
 m.set_center(-122.085, 37.422, 15)
 m.add_layer(polygon, {'color': 'black'}, 'Geometry [black]: polygon')
 m.add_layer(
-  polygon_convex_hull, {'color': 'red'}, 'Result [red]: polygon.convexHull'
+    polygon_convex_hull, {'color': 'red'}, 'Result [red]: polygon.convexHull'
 )
 m
 ```

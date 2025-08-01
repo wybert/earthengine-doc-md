@@ -1,6 +1,6 @@
  
 #  REST Resource: projects.maps
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Resource: EarthEngineMap](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps#resource:-earthenginemap)
   * [Methods](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps#methods)
@@ -13,17 +13,17 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1/VisualizationOptions))
- }
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1/VisualizationOptions))
+  }
 }
 ```
   
@@ -38,4 +38,3 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.maps/create)`
 |  Creates an ID that can be used to render map tiles showing the results of a computation.  
-Was this helpful?

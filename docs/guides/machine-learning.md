@@ -1,6 +1,6 @@
  
 #  Machine Learning in Earth Engine
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [Machine Learning APIs](https://developers.google.com/earth-engine/guides/machine-learning#machine-learning-apis)
   * [Training and Prediction outside Earth Engine](https://developers.google.com/earth-engine/guides/machine-learning#training-and-prediction-outside-earth-engine)
@@ -47,6 +47,7 @@ You can retrain a classifier more than once to keep the dataset for each trainin
 vartrainings=ee.List.sequence(0,3).map(function(cover){
 returnimage.addBands(landcover.eq(cover).stratifiedSample(…)
 })
+
 varclassifier=ee.Classifier.smileCart()
 .train(trainings.get(0),"cover")
 .train(trainings.get(1),"cover")

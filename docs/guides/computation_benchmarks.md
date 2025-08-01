@@ -20,15 +20,24 @@ The regions used here are:
   * **Bay Area** : a simple `ee.Geometry.Rectangle` around the San Francisco Bay area. This is interesting because it contains both land and ocean pixels, so not all areas are covered by Sentinel-2 imagery. 
 Area (approx) | Dimensions at 10 m/pixel | Dimensions at 30 m/pixel | Dimensions at 120 m/pixel  
 ---|---|---|---  
-22779 km² | [21342,13554]2.9E8 pixels | [7114x4518]3.2E7 pixels | [1779x1130]2010270 pixels  
+22779 km² | [21342,13554]  
+2.9E8 pixels | [7114x4518]  
+3.2E7 pixels | [1779x1130]  
+2010270 pixels  
   * **Nigeria** : The bounds of Nigeria from the [simplified LSIB dataset](https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017). This is the largest region, and is interesting because it's both a cloudy region (meaning that there are fewer cloud-free pixels) and it's close to the equator (meaning that it gets relatively fewer visits from polar-orbit satellites like Sentinel-2). 
 Area (approx) | Dimensions at 10 m/pixel | Dimensions at 30 m/pixel | Dimensions at 120 m/pixel  
 ---|---|---|---  
-912554 km² | [133595x107035]1.4E10 pixels | [44532x35679]1.6E9 pixels | [11133x8920]9.9E7 pixels  
+912554 km² | [133595x107035]  
+1.4E10 pixels | [44532x35679]  
+1.6E9 pixels | [11133x8920]  
+9.9E7 pixels  
   * **Germany** : The bounds of Germany from the [simplified LISB dataset](https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017). It's more affected by seasonality than the other regions. 
 Area (approx) | Dimensions at 10 m/pixel | Dimensions at 30 m/pixel | Dimensions at 120 m/pixel  
 ---|---|---|---  
-356077 km² | [102130x86666]8.9E9 pixels | [34044x28889]9.8E8 pixels | [8511x7223]6.1E7 pixels  
+356077 km² | [102130x86666]  
+8.9E9 pixels | [34044x28889]  
+9.8E8 pixels | [8511x7223]  
+6.1E7 pixels  
 
 
 For more info about the regions, see [a view of the regions in the Code Editor](https://code.earthengine.google.com/5c92dff15500c1c541fe7e944fc31aae).

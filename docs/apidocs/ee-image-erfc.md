@@ -1,10 +1,9 @@
  
 #  ee.Image.erfc
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the complementary error function of the input. 
-Usage| Returns  
+Stay organized with collections  Save and categorize content based on your preferences. 
+Computes the complementary error function of the input. Usage | Returns  
 ---|---  
-`Image.erfc()`| Image  
-Argument| Type| Details  
+`Image.erfc()` | Image  
+Argument | Type | Details  
 ---|---|---  
-this: `value`| Image| The image to which the operation is applied.  
+this: `value` | Image | The image to which the operation is applied.  

@@ -1,19 +1,15 @@
  
 #  ee.String.length
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Examples](https://developers.google.com/earth-engine/apidocs/ee-string-length#examples)
-
-
-Returns the length of a string. 
-Usage| Returns  
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Returns the length of a string.
+Usage | Returns  
 ---|---  
-`String.length()`| Integer  
-Argument| Type| Details  
+`String.length()` | Integer  
+Argument | Type | Details  
 ---|---|---  
-this: `string`| String| The string from which to get the length.  
+this: `string` | String | The string from which to get the length.  
 ## Examples
-[Code Editor (JavaScript)](https://developers.google.com/earth-engine/apidocs/ee-string-length#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/apidocs/ee-string-length#colab-python-sample) More
+### Code Editor (JavaScript)
 ```
 print(ee.String('').length());// 0
 print(ee.String('abc123').length());// 6
@@ -24,9 +20,10 @@ See the [ Python Environment](https://developers.google.com/earth-engine/guides/
 importee
 importgeemap.coreasgeemap
 ```
+
+### Colab (Python)
 ```
-print(ee.String('').length().getInfo()) # 0
-print(ee.String('abc123').length().getInfo()) # 6
+print(ee.String('').length().getInfo())  # 0
+print(ee.String('abc123').length().getInfo())  # 6
 ```
 
-Was this helpful?

@@ -1,6 +1,6 @@
  
 #  Client vs. Server
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
   * On this page
   * [Looping](https://developers.google.com/earth-engine/guides/client_server#looping)
   * [Conditionals](https://developers.google.com/earth-engine/guides/client_server#conditionals)
@@ -23,7 +23,7 @@ importgeemap.coreasgeemap
 ```
 ```
 client_string = 'I am a String'
-print(type(client_string)) # str
+print(type(client_string))  # str
 ```
 
 Observe from the output that the client (the web browser or notebook) has interpreted this code and run it, determining that the variable is type `string`. Now suppose you want Earth Engine to be able to do something with this string. To do that, you need to wrap up the string in a nice container and send it to Google. That container is the proxy object. Here's an example:
@@ -42,10 +42,10 @@ importgeemap.coreasgeemap
 ```
 ```
 server_string = ee.String('I am not a String!')
-print(type(server_string)) # ee.ee_string.String
+print(type(server_string))  # ee.ee_string.String
 print(
-  'Is this an EE object?', isinstance(server_string, ee.ee_string.String)
-) # True
+    'Is this an EE object?', isinstance(server_string, ee.ee_string.String)
+)  # True
 ```
 
 Observe from the output that the `ee.String` is an `object`, NOT a `string`. More specifically, it's an `ee.computedObject`, which means it's a proxy object for something on the server. Think of `ee.Thing` as the way to put a thing in a container for sending to Google. Your client doesn't know what's in the container, but you can find out what's in it by printing it:
@@ -60,7 +60,7 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print(server_string.getInfo()) # I am not a String
+print(server_string.getInfo())  # I am not a String
 ```
 
 To see what the container itself looks like, print the string representation of the object:
@@ -75,15 +75,15 @@ importee
 importgeemap.coreasgeemap
 ```
 ```
-print(server_string) # ee.String({"constantValue": "I am not a String!"})
+print(server_string)  # ee.String({"constantValue": "I am not a String!"})
 ```
 
 If, for some reason, you need to use Python or JavaScript running in the client to manipulate whatever is in the container, then use `getInfo()` to get the contents of the container and assign it to a variable:
 [Code Editor (JavaScript)](https://developers.google.com/earth-engine/guides/client_server#code-editor-javascript-sample)[Colab (Python)](https://developers.google.com/earth-engine/guides/client_server#colab-python-sample) More
 ```
 varsomeString=serverString.getInfo();
-varstrings=someString+' Am I?';
-print(strings);// I am not a String! Am I?
+varstrings=someString+'  Am I?';
+print(strings);// I am not a String!  Am I?
 ```
 Python setup
 See the [ Python Environment](https://developers.google.com/earth-engine/guides/python_install) page for information on the Python API and using `geemap` for interactive development.
@@ -93,8 +93,8 @@ importgeemap.coreasgeemap
 ```
 ```
 some_string = server_string.getInfo()
-strings = some_string + ' Am I?'
-print(strings) # I am not a String! Am I?
+strings = some_string + '  Am I?'
+print(strings)  # I am not a String!  Am I?
 ```
 **Warning:** Use `getInfo()` with caution! If you call `getInfo()` in your code, Earth Engine will open the container and tell you what's inside, but it will block the rest of your code until that's done. Whenever possible, it's best to do everything on the server. 
 ## Looping
@@ -117,7 +117,7 @@ importgeemap.coreasgeemap
 ```
 client_list = []
 for i in range(8):
- client_list.append(i + 1)
+  client_list.append(i + 1)
 print(client_list)
 ```
 
@@ -177,7 +177,7 @@ importgeemap.coreasgeemap
 ```
 my_list = ee.List([1, 2, 3])
 server_boolean = my_list.contains(5)
-print(server_boolean.getInfo()) # False
+print(server_boolean.getInfo())  # False
 ```
 
 As shown in the following example, the variable does not behave in a client-side conditional because it is a server-side object. To correctly check a server-side boolean, use a server-side function:
@@ -200,10 +200,10 @@ importgeemap.coreasgeemap
 ```
 ```
 if server_boolean:
- client_conditional = True
+  client_conditional = True
 else:
- client_conditional = False
-print('Should be False:', client_conditional) # True!
+  client_conditional = False
+print('Should be False:', client_conditional)  # True!
 ```
 
 Recommended — server-side conditional
@@ -220,7 +220,7 @@ importgeemap.coreasgeemap
 ```
 ```
 server_conditional = ee.Algorithms.If(server_boolean, 'True!', 'False!')
-print('Should be False:', server_conditional.getInfo()) # False!
+print('Should be False:', server_conditional.getInfo())  # False!
 ```
 **Warning:** Use `ee.Algorithms.If()` with caution! The preferred way to accomplish conditional tests on the server is with filters. For example, see [Filtering an `ImageCollection`](https://developers.google.com/earth-engine/guides/ic_filtering) and [Filtering a `FeatureCollection`](https://developers.google.com/earth-engine/guides/feature_collection_filtering). 
 ## Client and Server Functions

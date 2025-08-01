@@ -1,26 +1,12 @@
  
 #  Getting Started with Drawing Tools
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [Background](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#background)
-  * [Getting Started with Drawing Tools](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#getting_started_with_drawing_tools)
-  * [Configuring the Drawing Tools](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#configuring_the_drawing_tools)
-    * [Example: Linked Maps](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_linked_maps)
-  * [Client Side Geometries](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#client_side_geometries)
-    * [Example: Build a Client-Side Grid](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_build_a_client-side_grid)
-  * [Event handling](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#event_handling)
-    * [Drawing Tools Events:](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#drawing_tools_events)
-    * [Example: Classification With User-Drawn Geometries](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#example_classification_with_user-drawn_geometries)
-  * [Conclusion](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#conclusion)
-    * [Bonus](https://developers.google.com/earth-engine/tutorials/community/drawing-tools#bonus)
-
-
-[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools/index.md)
-[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools/index.md&body=Issue%20Description)
-[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools/index.md)
-Author(s): [ sufyanAbbasi ](https://github.com/sufyanAbbasi)
+Stay organized with collections  Save and categorize content based on your preferences. 
+[ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/drawing-tools/index.md "Contribute to this article on GitHub.")
+[ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/drawing-tools/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
+[ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/drawing-tools/index.md "View changes to this article over time.")
+Author(s): [ sufyanAbbasi ](https://github.com/sufyanAbbasi "View the profile for sufyanAbbasi on GitHub")
 Tutorials contributed by the Earth Engine developer community are not part of the official Earth Engine product documentation. 
-In this tutorial, we'll deep dive into some interesting uses of the new drawing tools API. 
+In this tutorial, we'll deep dive into some interesting uses of the new drawing tools API.
   * We'll learn how to dynamically generate a grid and save it as a client-side geometry.
   * We'll also build a simple classification tool that classifies based on user-drawn points.
 
@@ -57,14 +43,18 @@ ui.root.widgets().reset([map]);
 Use the `layers()` method on the drawing tools to retrieve an `ActiveList` of the geometry layers. A geometry layer contains a list of geometries that you can obtain by calling the `geometries()` method on the layer. There are two ways to add new geometry layers to the drawing tools:
 ```
 vardrawingTools=Map.drawingTools();
+
 // Use the addLayer method on the drawing tools directly.
 vargeometries=[ee.Geometry.Point([0,0]),ee.Geometry.Rectangle([[0,0],[1,1]])];
 drawingTools.addLayer(geometries,'my_geometry1','red');
+
 // Create a new GeometryLayer and add it to the layers list.
 varlayer=ui.Map.GeometryLayer(geometries,'my_geometry2','blue');
 drawingTools.layers().add(layer);
+
 // Print the list of geometries.
 print(layer.geometries());
+
 // Add a geometry to the layer.
 layer.geometries().add(ee.Geometry.Point(1,1));
 
@@ -91,10 +81,14 @@ Suppose you wanted to make a **split map where geometries are reflected on both 
 ```
 varmap1=ui.Map();
 map1.drawingTools().setLinked(true);
+
 varmap2=ui.Map();
 map2.drawingTools().setLinked(true);
+
 ui.Map.Linker([map1,map2]);
+
 ui.root.widgets().reset([ui.SplitPanel({firstPanel:map1,secondPanel:map2})]);
+
 // Now try drawing a geometry on both maps!
 
 ```
@@ -115,16 +109,19 @@ First, we'll need to write a function that generates a grid based on a geometry.
 // pixelLonLat returns an image with each pixel labeled with longitude and
 // latitude values.
 varlonLat=ee.Image.pixelLonLat();
+
 // Select the longitude and latitude bands, multiply by a large number then
 // truncate them to integers.
 varlonGrid=lonLat
 .select('longitude')
 .multiply(10000000)
 .toInt();
+
 varlatGrid=lonLat
 .select('latitude')
 .multiply(10000000)
 .toInt();
+
 // To produce the grid, multiply the latitude and longitude images and then use
 // reduce to vectors at the 10km resolution to group the grid into vectors.
 vargrid=lonGrid
@@ -134,6 +131,7 @@ geometry:geometry,// This is undefined until you draw a geometry.
 scale:10000,
 geometryType:'polygon',
 });
+
 Map.addLayer(grid);
 
 ```
@@ -176,16 +174,19 @@ functionmakeGrid(geometry,scale){
 // pixelLonLat returns an image with each pixel labeled with longitude and
 // latitude values.
 varlonLat=ee.Image.pixelLonLat();
+
 // Select the longitude and latitude bands, multiply by a large number then
 // truncate them to integers.
 varlonGrid=lonLat
 .select('longitude')
 .multiply(10000000)
 .toInt();
+
 varlatGrid=lonLat
 .select('latitude')
 .multiply(10000000)
 .toInt();
+
 // To produce the grid, multiply the latitude and longitude images and then use
 // reduce to vectors at the 10km resolution to group the grid into vectors.
 returnlonGrid
@@ -196,6 +197,7 @@ scale:scale,
 geometryType:'polygon',
 });
 }
+
 functionbuildGeometryList(grid,limit){
 returngrid.toList(limit).map(function(feature){
 varfeatureGeometry=ee.Feature(feature).geometry();
@@ -203,8 +205,10 @@ varcoordinates=featureGeometry.coordinates().get(0);
 returnee.Geometry.LinearRing(coordinates);
 });
 }
+
 vargrid=makeGrid(geometry,10000);// 10 km scale
 vargeometries=buildGeometryList(grid,1000);
+
 vardrawingTools=Map.drawingTools();
 geometries.evaluate(function(geometriesList){
 varlayer=ui.Map.GeometryLayer({
@@ -223,16 +227,17 @@ Since the grid has already been added to the imports, the `grid` variable is now
 ```
 // var grid = makeGrid(geometry);
 // var geometries = buildGeometryList(grid);
+
 // var drawingTools = Map.drawingTools();
 // geometries.evaluate(function(geometriesList) {
-//  var layer = ui.Map.GeometryLayer({
-//   geometries: geometriesList,
-//   name: 'grid',
-//   color: 'black',
-//   shown: true, // Show the layer (already defaults to true).
-//   locked: true, // Lock the layer.
-//  });
-//  drawingTools.layers().set(1, layer);
+//   var layer = ui.Map.GeometryLayer({
+//     geometries: geometriesList,
+//     name: 'grid',
+//     color: 'black',
+//     shown: true, // Show the layer (already defaults to true).
+//     locked: true, // Lock the layer.
+//   });
+//   drawingTools.layers().set(1, layer);
 // });
 
 ```
@@ -274,11 +279,14 @@ _Figure 3. Classification tools example with imported feature collections._
 Next, get the geometry layers associated with each of the feature collections, since any edits to the geometries will be reflected on the layer (add to the top of the file):
 ```
 // Starter script: https://code.earthengine.google.com/?scriptPath=Examples:Demos/Classification
+
 vardrawingTools=Map.drawingTools();
 // Only allow drawing points.
 drawingTools.setDrawModes(['point']);
+
 // Get the layers list.
 varlayers=drawingTools.layers();
+
 // Assuming the order is urban, vegetation, then water.
 varurbanLayer=layers.get(0);
 varvegetationLayer=layers.get(1);
@@ -313,17 +321,20 @@ varurbanfc=urbanLayer.getEeObject();
 varvegetationfc=vegetationLayer.getEeObject();
 varwaterfc=waterLayer.getEeObject();
 varnewfc=urbanfc.merge(vegetationfc).merge(waterfc);
+
 // Use these bands for classification.
 varbands=['B2','B3','B4','B5','B6','B7'];
 // The name of the property on the points storing the class label.
 varclassProperty='landcover';
-// Sample the composite to generate training data. Note that the
+
+// Sample the composite to generate training data.  Note that the
 // class label is stored in the 'landcover' property.
 vartraining=composite.select(bands).sampleRegions({
 collection:newfc,
 properties:[classProperty],
 scale:30
 });
+
 // Train a CART classifier.
 varclassifier=ee.Classifier.smileCart().train({
 features:training,
@@ -331,31 +342,39 @@ classProperty:classProperty,
 });
 // Print some info about the classifier (specific to CART).
 print('CART, explained',classifier.explain());
+
 // Classify the composite.
 varclassified=composite.classify(classifier);
+
 varpalette={min:0,max:2,palette:['red','green','blue']};
 varlayer=ui.Map.Layer(classified,palette,'classified');
 Map.layers().set(0,layer);
-// Optionally, do some accuracy assessment. Fist, add a column of
+
+// Optionally, do some accuracy assessment.  Fist, add a column of
 // random uniforms to the training dataset.
 varwithRandom=training.randomColumn('random');
+
 // We want to reserve some of the data for testing,
 // to avoid overfitting the model.
 varsplit=0.7;// Roughly 70% training, 30% testing.
 vartrainingPartition=withRandom.filter(ee.Filter.lt('random',split));
 vartestingPartition=withRandom.filter(ee.Filter.gte('random',split));
+
 // Trained with 70% of our data.
 vartrainedClassifier=ee.Classifier.smileRandomForest(5).train({
 features:trainingPartition,
 classProperty:classProperty,
 inputProperties:bands
 });
+
 // Classify the test FeatureCollection.
 vartest=testingPartition.classify(trainedClassifier);
+
 // Print the confusion matrix.
 varconfusionMatrix=test.errorMatrix(classProperty,'classification');
 print('Confusion Matrix',confusionMatrix);
 }
+
 classify();
 
 ```
@@ -367,6 +386,7 @@ We add event listeners to detect when the user has made any edits to the geometr
 drawingTools.onEdit(ui.util.debounce(classify,100));
 drawingTools.onDraw(ui.util.debounce(classify,100));
 drawingTools.onErase(ui.util.debounce(classify,100));
+
 Map.centerObject(urban);
 
 ```

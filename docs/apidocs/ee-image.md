@@ -1,32 +1,33 @@
  
 #  ee.Image
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-An object to represent an Earth Engine image. This constructor accepts a variety of arguments: 
+Stay organized with collections  Save and categorize content based on your preferences. 
 - A string: an EarthEngine asset id,
 - A string and a number: an EarthEngine asset id and version,
 - A number or ee.Array: creates a constant image,
 - A list: creates an image out of each list element and combines them into a single image,
 - An ee.Image: returns the argument,
 - Nothing: results in an empty transparent image.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`ee.Image( _args_)`| Image  
-Argument| Type| Details  
+`ee.Image(_args_)`|  Image  
+Argument | Type | Details  
 ---|---|---  
-`args`| Image|List, optional| Constructor argument.  
+`args` | Image|List<Object>|Number|Object|String, optional | Constructor argument.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
-varimage=ee.Image('JAXA/ALOS/AW3D30/V2_2');
+varimage=ee.Image('NASA/NASADEM_HGT/001');
+
 Map.setZoom(3);
-Map.addLayer(image.select('AVE_DSM'),{min:-1e3,max:5e3},'AVE_DSM');
-// Image JAXA/ALOS/AW3D30/V2_2 (3 bands)
+Map.addLayer(image.select('elevation'),{min:-1e3,max:5e3},'Elevation');
+// Image NASA/NASADEM_HGT/001 (3 bands)
 // type: Image
-// id: JAXA/ALOS/AW3D30/V2_2
-// version: 1595337806697615
+// id: NASA/NASADEM_HGT/001
+// version: 1641990521971299
 // bands: List (3 elements)
-// properties: Object (21 properties)
+// properties: Object (22 properties)
 print(image);
+
 vartransparent=ee.Image();
 Map.addLayer(transparent,null,'transparent',false);
 // Image (1 band)
@@ -34,6 +35,7 @@ Map.addLayer(transparent,null,'transparent',false);
 // bands: List (1 element)
 // 0: "constant", int ∈ [0, 0], EPSG:4326
 print(transparent);
+
 // Create a multi-band image from a list of constants.
 varorange=ee.Image([0xff,0x88,0x00]);
 Map.addLayer(orange,{min:0,max:0xff},'orange',false);
@@ -44,6 +46,7 @@ Map.addLayer(orange,{min:0,max:0xff},'orange',false);
 // 1: "constant_1", int ∈ [136, 136], EPSG:4326
 // 2: "constant_2", int ∈ [0, 0], EPSG:4326
 print(orange);
+
 // Create a one band image where each pixel is an array of three values.
 varimageOfArray=ee.Image(ee.Array([0x00,0x00,0xff]));
 Map.addLayer(imageOfArray,null,'imageOfArray',false);
@@ -72,18 +75,20 @@ importgeemap.coreasgeemap
 
 ### Colab (Python)
 ```
-image = ee.Image('JAXA/ALOS/AW3D30/V2_2')
+image = ee.Image('NASA/NASADEM_HGT/001')
+
 m = geemap.Map()
 m.zoom = 3
 display(m)
-m.add_layer(image.select('AVE_DSM'), {'min': -1e3, 'max': 5e3}, 'AVE_DSM')
-# Image JAXA/ALOS/AW3D30/V2_2 (3 bands)
+m.add_layer(image.select('elevation'), {'min': -1e3, 'max': 5e3}, 'Elevation')
+# Image NASA/NASADEM_HGT/001 (3 bands)
 # type: Image
-# id: JAXA/ALOS/AW3D30/V2_2
-# version: 1595337806697615
+# id: NASA/NASADEM_HGT/001
+# version: 1641990521971299
 # 'bands': List (3 elements)
-# properties: Object (21 properties)
+# properties: Object (22 properties)
 display(image)
+
 transparent = ee.Image()
 m.add_layer(transparent, None, 'transparent', False)
 # Image (1 band)
@@ -91,6 +96,7 @@ m.add_layer(transparent, None, 'transparent', False)
 # 'bands': List (1 element)
 # 0: "constant", int ∈ [0, 0], EPSG:4326
 display(transparent)
+
 # Create a multi-band image from a list of constants.
 orange = ee.Image([0xFF, 0x88, 0x00])
 m.add_layer(orange, {'min': 0, 'max': 0xFF}, 'orange', False)
@@ -101,6 +107,7 @@ m.add_layer(orange, {'min': 0, 'max': 0xFF}, 'orange', False)
 # 1: "constant_1", int ∈ [136, 136], EPSG:4326
 # 2: "constant_2", int ∈ [0, 0], EPSG:4326
 display(orange)
+
 # Create a one band image where each pixel is an array of three values.
 image_of_array = ee.Image(ee.Array([0x00, 0x00, 0xFF]))
 m.add_layer(image_of_array, None, 'image_of_array', False)

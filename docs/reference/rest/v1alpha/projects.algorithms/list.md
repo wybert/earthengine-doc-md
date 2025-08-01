@@ -1,6 +1,6 @@
  
 #  Method: projects.algorithms.list
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
   * On this page
   * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#http-request)
   * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#path-parameters)
@@ -31,11 +31,11 @@ JSON representation
 ---  
 ```
 {
- "algorithms": [
-  {
-   object (Algorithm[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#Algorithm))
-  }
- ]
+  "algorithms": [
+    {
+      object (Algorithm[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#Algorithm))
+    }
+  ]
 }
 ```
   
@@ -45,9 +45,9 @@ Fields
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).
@@ -57,19 +57,19 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "description": string,
- "returnType": string,
- "arguments": [
-  {
-   object (AlgorithmArgument[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#AlgorithmArgument))
-  }
- ],
- "deprecated": boolean,
- "deprecationReason": string,
- "hidden": boolean,
- "preview": boolean,
- "sourceCodeUri": string
+  "name": string,
+  "description": string,
+  "returnType": string,
+  "arguments": [
+    {
+      object (AlgorithmArgument[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.algorithms/list#AlgorithmArgument))
+    }
+  ],
+  "deprecated": boolean,
+  "deprecationReason": string,
+  "hidden": boolean,
+  "preview": boolean,
+  "sourceCodeUri": string
 }
 ```
   
@@ -90,11 +90,11 @@ JSON representation
 ---  
 ```
 {
- "argumentName": string,
- "type": string,
- "description": string,
- "optional": boolean,
- "defaultValue": value
+  "argumentName": string,
+  "type": string,
+  "description": string,
+  "optional": boolean,
+  "defaultValue": value
 }
 ```
   
@@ -105,3 +105,4 @@ Fields
 `description` |  `string` A human-readable description of the argument.  
 `optional` |  `boolean` Whether the argument is optional.  
 `defaultValue` |  `value (`Value[](https://protobuf.dev/reference/protobuf/google.protobuf/#value)` format)` The default value the argument takes if a value is not provided.  
+Was this helpful?

@@ -1,21 +1,21 @@
  
 #  REST Resource: projects.locations.tables
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
+Stay organized with collections  Save and categorize content based on your preferences. 
 ## Resource: Table
 Information about a table.
 JSON representation  
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
- },
- "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#Table.TableFileFormat)),
- "selectors": [
-  string
- ],
- "filename": string
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1alpha/Expression))
+  },
+  "fileFormat": enum (TableFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1alpha/projects.locations.tables#Table.TableFileFormat)),
+  "selectors": [
+    string
+  ],
+  "filename": string
 }
 ```
   

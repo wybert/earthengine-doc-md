@@ -1,25 +1,6 @@
  
 #  Introduction to Soil Moisture Active Passive (SMAP)
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [Soil Moisture Active Passive (SMAP)](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#soil_moisture_active_passive_smap)
-    * [Mission objective](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#mission_objective)
-    * [Instrument description](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#instrument_description)
-    * [What does SMAP measure?](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#what_does_smap_measure)
-    * [How does SMAP measure soil moisture?](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#how_does_smap_measure_soil_moisture)
-  * [SMAP products in GEE](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#smap_products_in_gee)
-  * [Visualizing SMAP](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#visualizing_smap)
-    * [No coding required](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#no_coding_required)
-    * [New to GEE](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#new_to_gee)
-  * [Analysis and visualization of SMAP L3 product](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#analysis_and_visualization_of_smap_l3_product)
-    * [Intermediate](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#intermediate)
-  * [Plotting soil moisture over time with the SMAP L4 product](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#plotting_soil_moisture_over_time_with_the_smap_l4_product)
-    * [Intermediate](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#intermediate_2)
-  * [Drought monitoring with SMAP and Global Precipitation Mission (GPM) IMERG](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#drought_monitoring_with_smap_and_global_precipitation_mission_gpm_imerg)
-    * [Advanced](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#advanced)
-  * [Resources](https://developers.google.com/earth-engine/tutorials/community/smap-soil-moisture#resources)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 [ Edit on GitHub ](https://github.com/google/earthengine-community/edit/master/tutorials/smap-soil-moisture/index.md "Contribute to this article on GitHub.")
 [ Report issue ](https://github.com/google/earthengine-community/issues/new?title=Issue%20with%20tutorials/smap-soil-moisture/index.md&body=Issue%20Description "Report an issue with this article on GitHub.")
 [ Page history ](https://github.com/google/earthengine-community/commits/master/tutorials/smap-soil-moisture/index.md "View changes to this article over time.")
@@ -71,7 +52,9 @@ There are three different SMAP products available in the catalog.
      * This Level-3 (L3) soil moisture product provides a daily composite of global land surface conditions retrieved by the Soil Moisture Active Passive (SMAP) L-Band radiometer.
 temporal resolution | gridded resolutions | availability | uses  
 ---|---|---|---  
-Daily | 9 km | March 31, 2015 - present | L-band brightness temperature measures from this product can be used to analyze soil moisture, fine fuel moisture content, ocean salinity, and sea ice thickness. The L3 surface soil moisture product is highly accurate, within 4%.The attenuation of soil-emitted radiation by vegetation limits the accuracy of the soil moisture estimates in densely forested areas, therefore masking the data with the retrieval quality flag bands is recommended.  
+Daily | 9 km | March 31, 2015 - present | L-band brightness temperature measures from this product can be used to analyze soil moisture, fine fuel moisture content, ocean salinity, and sea ice thickness.  
+The L3 surface soil moisture product is highly accurate, within 4%.  
+The attenuation of soil-emitted radiation by vegetation limits the accuracy of the soil moisture estimates in densely forested areas, therefore masking the data with the retrieval quality flag bands is recommended.  
      * Data outages: June 19-July 23, 2019; September 20-October 6th, 2022
   2. [SPL4SMGP.007 Level 4 product](https://developers.google.com/earth-engine/datasets/catalog/NASA_SMAP_SPL4SMGP_007)
      * The SMAP Level-4 (L4) Soil Moisture product includes surface soil moisture (0-5 cm vertical average), root-zone soil moisture (0-100 cm vertical average), and additional research products (not validated), including surface meteorological forcing variables, soil temperature, evapotranspiration, and net radiation.
@@ -89,13 +72,16 @@ Daily | 10 km | April 2, 2015 - August 2, 2022 | Modeled surface and root zone s
      * As of August 2022, the NASA-USDA Enhanced SMAP Global soil moisture product has been discontinued.
 
 
+  
 The table below describes the surface soil moisture, root-zone soil moisture, and soil moisture anomaly bands available with each product.
 Band description | [NASA-USDA Enhanced SMAP](https://developers.google.com/earth-engine/datasets/catalog/NASA_USDA_HSL_SMAP10KM_soil_moisture) | [SPL4SMGP.007](https://developers.google.com/earth-engine/datasets/catalog/NASA_SMAP_SPL4SMGP_007) | [SPL3SMP_E.005](https://developers.google.com/earth-engine/datasets/catalog/NASA_SMAP_SPL3SMP_E_005)  
 ---|---|---|---  
-Surface soil moisture | ssm | sm_surface | soil_moisture_am soil_moisture_pm  
+Surface soil moisture | ssm | sm_surface | soil_moisture_am   
+soil_moisture_pm  
 Subsurface soil moisture | susm | sm_rootzone | NA  
 Soil moisture profile | smp | sm_profile | sm_profile  
-Surface soil moisture anomaly | ssma | sm_surface_anomaly | soil_moisture_am_anomaly soil_moisture_pm_anomaly  
+Surface soil moisture anomaly | ssma | sm_surface_anomaly | soil_moisture_am_anomaly   
+soil_moisture_pm_anomaly  
 Subsurface soil moisture anomaly | susma | NA | NA  
 ## Visualizing SMAP
 In this section, you will learn ways to visualize SMAP in GEE based on your level of experience with the Code Editor.

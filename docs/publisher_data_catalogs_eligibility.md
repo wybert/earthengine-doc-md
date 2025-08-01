@@ -21,4 +21,3 @@ Data publishers who meet the following requirements can request to publish a Pub
 
 
 If you meet these requirements, and want to become a Publisher Data Catalog, fill out this [form](http://forms.gle/V9UdR145L8hmbJoL6).
-Was this helpful?

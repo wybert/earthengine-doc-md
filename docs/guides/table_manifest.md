@@ -1,17 +1,6 @@
  
 #  Table Manifest Upload
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-  * On this page
-  * [One-time setup](https://developers.google.com/earth-engine/guides/table_manifest#one-time-setup)
-  * [Asset IDs and names](https://developers.google.com/earth-engine/guides/table_manifest#asset-ids-and-names)
-  * [Using manifests](https://developers.google.com/earth-engine/guides/table_manifest#using-manifests)
-    * [Multiple sources](https://developers.google.com/earth-engine/guides/table_manifest#multiple-sources)
-  * [Start and end time](https://developers.google.com/earth-engine/guides/table_manifest#start-and-end-time)
-  * [Manifest structure reference](https://developers.google.com/earth-engine/guides/table_manifest#manifest-structure-reference)
-  * [Manifest field definitions](https://developers.google.com/earth-engine/guides/table_manifest#manifest-field-definitions)
-  * [Limitations](https://developers.google.com/earth-engine/guides/table_manifest#limitations)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 If you need more flexibility uploading tables into Google Earth Engine (EE) than the [Code Editor UI](https://developers.google.com/earth-engine/table_upload) or the `upload` command of the ['earthengine' command-line tool](https://developers.google.com/earth-engine/command_line#upload) provide, you can do so by describing a table upload using a JSON file known as a "manifest" and using the `upload table --manifest` command of the command-line tool.
 ## One-time setup
   1. Manifest uploads only work with files located in [Google Cloud Storage](https://cloud.google.com/storage/getting-started/). To start using Google Cloud Storage, [create a Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects), if you don't already have one. Note that setup requires specifying a credit card for billing. EE itself isn't charging anyone at this point, but transferring files to Google Cloud Storage before uploading them to EE will have [a small cost](https://cloud.google.com/storage/pricing). For typical upload data sizes (tens or hundreds of gigabytes), the cost will be quite low.
@@ -28,14 +17,14 @@ Yes, this means that IDs like `projects/some_projects/some_asset` get converted 
 The simplest possible manifest is shown below. It uploads a file named `small.csv` from a Google Cloud Storage bucket named `gs://earthengine-test`.
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "sources": [
-  {
-   "uris": [
-    "gs://earthengine-test/small.csv"
-   ]
-  }
- ]
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "sources": [
+    {
+      "uris": [
+        "gs://earthengine-test/small.csv"
+      ]
+    }
+  ]
 }
 ```
 
@@ -84,16 +73,16 @@ The end time is treated as an exclusive boundary for simplicity. For example, fo
 Example:
 ```
 {
- "name": "projects/some-project-id/assets/some-asset-id",
- "sources": [
-  {
-   "uris": [
-    "gs://bucket/table_20190612.csv"
-   ]
-  }
- ],
- "startTime": "1980-01-31T00:00:00Z",
- "endTime": "1980-02-01T00:00:00Z"
+  "name": "projects/some-project-id/assets/some-asset-id",
+  "sources": [
+    {
+      "uris": [
+        "gs://bucket/table_20190612.csv"
+      ]
+    }
+  ],
+  "startTime": "1980-01-31T00:00:00Z",
+  "endTime": "1980-02-01T00:00:00Z"
 }
 ```
 
@@ -101,35 +90,35 @@ Example:
 The following JSON structure includes all possible table upload manifest fields. Find field definitions in the following [ Manifest field definitions section.](https://developers.google.com/earth-engine/guides/table_manifest#manifest_field_definitions)
 ```
 {
- "name": _<string>_,
- "sources": [
-  {
-   "uris": [
-    _<string>_
-   ],
-   "charset": _<string>_,
-   "maxErrorMeters": _<double>_,
-   "maxVertices": _<int32>_,
-   "crs": _<string>_,
-   "geodesic": _<boolean>_,
-   "primaryGeometryColumn": _<string>_,
-   "xColumn": _<string>_,
-   "yColumn": _<string>_,
-   "dateFormat": _<string>_,
-   "csvDelimiter": _<string>_,
-   "csvQualifier": _<string>_,
+  "name": _<string>_,
+  "sources": [
+    {
+      "uris": [
+        _<string>_
+      ],
+      "charset": _<string>_,
+      "maxErrorMeters": _<double>_,
+      "maxVertices": _<int32>_,
+      "crs": _<string>_,
+      "geodesic": _<boolean>_,
+      "primaryGeometryColumn": _<string>_,
+      "xColumn": _<string>_,
+      "yColumn": _<string>_,
+      "dateFormat": _<string>_,
+      "csvDelimiter": _<string>_,
+      "csvQualifier": _<string>_,
+    }
+  ],
+  "uriPrefix": _<string>_,
+  "startTime": {
+    "seconds": _<integer>_
+  },
+  "endTime": {
+    "seconds": _<integer>_
+  },
+  "properties": {
+    _<unspecified>_
   }
- ],
- "uriPrefix": _<string>_,
- "startTime": {
-  "seconds": _<integer>_
- },
- "endTime": {
-  "seconds": _<integer>_
- },
- "properties": {
-  _<unspecified>_
- }
 }
 ```
 
@@ -181,14 +170,14 @@ When ingesting CSV files, a single character used as a delimiter between column 
 When ingesting CSV files, a character that surrounds column values (a.k.a. "quote character"). If left blank, defaults to `"`. For CSV sources only.
 If a column value is not surrounded by qualifiers, leading and tailing whitespace is trimmed. For example: 
 ```
-  ..., test,...      <== this value is not qualified
+    ..., test,...            <== this value is not qualified
 becomes the string value:
-  "test"          <== leading whitespace is stripped
+    "test"                   <== leading whitespace is stripped
 ```
 while: ```
-  ...," test",...     <== this value IS qualified with quotes
+    ...," test",...          <== this value IS qualified with quotes
 becomes the string value:
-  " test"         <== leading whitespace remains!
+    " test"                  <== leading whitespace remains!
 ```
 
 #### uriPrefix

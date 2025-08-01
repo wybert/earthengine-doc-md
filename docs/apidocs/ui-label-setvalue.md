@@ -1,13 +1,11 @@
  
 #  ui.Label.setValue
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences.
-Sets the value of the label. 
+bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
 Returns this label.
-Usage| Returns  
+Usage | Returns  
 ---|---  
-`Label.setValue(value)`| ui.Label  
-Argument| Type| Details  
+`Label.setValue(value)` | ui.Label  
+Argument | Type | Details  
 ---|---|---  
-this: `ui.label`| ui.Label| The ui.Label instance.  
-`value`| String| The value of the label.  
-Was this helpful?
+this: `ui.label` | ui.Label | The ui.Label instance.  
+`value` | String | The value of the label.  

@@ -1,14 +1,6 @@
  
 #  Method: projects.videoThumbnails.getPixels
-bookmark_borderbookmark Stay organized with collections  Save and categorize content based on your preferences. 
-  * On this page
-  * [HTTP request](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#http-request)
-  * [Path parameters](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#path-parameters)
-  * [Request body](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#request-body)
-  * [Response body](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#response-body)
-  * [Authorization scopes](https://developers.google.com/earth-engine/reference/rest/v1/projects.videoThumbnails/getPixels#authorization-scopes)
-
-
+Stay organized with collections  Save and categorize content based on your preferences. 
 Computes an image showing the result of a computation. The request includes values (an ID and authorisation token) from a previous `videoThumbnails.create` request.
 ### HTTP request
 `GET https://earthengine.googleapis.com/v1/{name=projects/*/videoThumbnails/*}:getPixels`
@@ -24,9 +16,9 @@ If successful, the response is a generic HTTP response whose format is defined b
 ### Authorization scopes
 Requires one of the following OAuth scopes:
   * `https://www.googleapis.com/auth/earthengine`
-  * `      https://www.googleapis.com/auth/earthengine.readonly`
-  * `      https://www.googleapis.com/auth/cloud-platform`
-  * `      https://www.googleapis.com/auth/cloud-platform.read-only`
+  * `           https://www.googleapis.com/auth/earthengine.readonly`
+  * `           https://www.googleapis.com/auth/cloud-platform`
+  * `           https://www.googleapis.com/auth/cloud-platform.read-only`
 
 
 For more information, see the [OAuth 2.0 Overview](https://developers.google.com/identity/protocols/OAuth2).

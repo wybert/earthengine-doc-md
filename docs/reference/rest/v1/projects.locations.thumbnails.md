@@ -13,21 +13,21 @@ JSON representation
 ---  
 ```
 {
- "name": string,
- "expression": {
-  object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
- },
- "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
- "bandIds": [
-  string
- ],
- "visualizationOptions": {
-  object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1/VisualizationOptions))
- },
- "grid": {
-  object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
- },
- "filenamePrefix": string
+  "name": string,
+  "expression": {
+    object (Expression[](https://developers.google.com/earth-engine/reference/rest/v1/Expression))
+  },
+  "fileFormat": enum (ImageFileFormat[](https://developers.google.com/earth-engine/reference/rest/v1/ImageFileFormat)),
+  "bandIds": [
+    string
+  ],
+  "visualizationOptions": {
+    object (VisualizationOptions[](https://developers.google.com/earth-engine/reference/rest/v1/VisualizationOptions))
+  },
+  "grid": {
+    object (PixelGrid[](https://developers.google.com/earth-engine/reference/rest/v1/PixelGrid))
+  },
+  "filenamePrefix": string
 }
 ```
   
@@ -44,3 +44,4 @@ Fields
 ---  
 ### `create[](https://developers.google.com/earth-engine/reference/rest/v1/projects.locations.thumbnails/create)`
 |  Creates an ID that can be used to render a "thumbnail" image.  
+Was this helpful?

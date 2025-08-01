@@ -1,23 +1,27 @@
  
 #  ee.Number.erfInv
 Stay organized with collections  Save and categorize content based on your preferences. 
-Computes the inverse error function of the input. Usage| Returns  
+Computes the inverse error function of the input. Usage | Returns  
 ---|---  
-`Number.erfInv()`| Number  
-Argument| Type| Details  
+`Number.erfInv()` | Number  
+Argument | Type | Details  
 ---|---|---  
-this: `input`| Number| The input value.  
+this: `input` | Number | The input value.  
 ## Examples
 ### Code Editor (JavaScript)
 ```
 print('Inverse error function of -1',
 ee.Number(-1).erfInv());// -Infinity
+
 print('Inverse error function of -0.001',
 ee.Number(-0.001).erfInv());// -0.000886227
+
 print('Inverse error function of 0',
 ee.Number(0).erfInv());// 0
+
 print('Inverse error function of 0.001',
 ee.Number(0.001).erfInv());// 0.000886227
+
 print('Inverse error function of 1',
 ee.Number(1).erfInv());// Infinity
 ```
@@ -32,14 +36,18 @@ importgeemap.coreasgeemap
 ### Colab (Python)
 ```
 print('Inverse error function of -1:',
-   ee.Number(-1).erfInv().getInfo()) # -Infinity
+      ee.Number(-1).erfInv().getInfo())  # -Infinity
+
 print('Inverse error function of -0.001:',
-   ee.Number(-0.001).erfInv().getInfo()) # -0.000886227
+      ee.Number(-0.001).erfInv().getInfo())  # -0.000886227
+
 print('Inverse error function of 0:',
-   ee.Number(0).erfInv().getInfo()) # 0
+      ee.Number(0).erfInv().getInfo())  # 0
+
 print('Inverse error function of 0.001:',
-   ee.Number(0.001).erfInv().getInfo()) # 0.000886227
+      ee.Number(0.001).erfInv().getInfo())  # 0.000886227
+
 print('Inverse error function of 1:',
-   ee.Number(1).erfInv().getInfo()) # Infinity
+      ee.Number(1).erfInv().getInfo())  # Infinity
 ```
 
